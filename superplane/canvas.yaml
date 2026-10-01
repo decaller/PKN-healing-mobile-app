@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Canvas
+metadata:
+  name: "PKN Microlearning Automation"
+  description: "AI workflows, lesson generation, and quality checks for PKN Healing Mobile App"
+spec:
+  nodes:
+    - id: "schedule-daily-lesson"
+      name: "Daily Lesson Trigger"
+      type: "TYPE_TRIGGER"
+      configuration:
+        type: "days"
+        daysInterval: 1
+      position:
+        x: 200
+        "y": 300
+      component: "schedule"
+      isCollapsed: false
+
+    - id: "http-check-backend"
+      name: "Verify Backend Health"
+      type: "TYPE_ACTION"
+      configuration:
+        method: "GET"
+        url: "https://httpbin.org/status/200"
+        successCodes: "2xx"
+        timeoutSeconds: 10
+      position:
+        x: 600
+        "y": 300
+      component: "http"
+      isCollapsed: false
+
+  edges:
+    - sourceId: "schedule-daily-lesson"
+      targetId: "http-check-backend"
+      channel: "default"
