@@ -19,7 +19,7 @@ void main() {
     test('Initializes with step 0 and correct lesson', () {
       final controller = LessonPlayerController(storageService, lesson);
       expect(controller.state.currentStepIndex, 0);
-      expect(controller.state.currentCard.id, 'ns_1');
+      expect(controller.state.currentCard.id, 'kk_1');
       expect(controller.state.isDeckCompleted, isFalse);
     });
 

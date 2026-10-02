@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import '../../../../app/theme/color_palette.dart';
-import '../../../data/models/lesson_models.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
 
 class FillInBlankStepView extends StatelessWidget {
   final FillInBlankCard card;
   final String? selectedWord;
-  final bool isAnswerChecked;
+  final bool isSubmitted;
   final ValueChanged<String> onSelectWord;
 
   const FillInBlankStepView({
     super.key,
     required this.card,
     required this.selectedWord,
-    required this.isAnswerChecked,
+    required this.isSubmitted,
     required this.onSelectWord,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isCorrect = isAnswerChecked &&
-        selectedWord?.trim().toLowerCase() ==
-            card.blankExpected.trim().toLowerCase();
+    final isCorrect = selectedWord?.trim().toLowerCase() ==
+        card.blankExpected.trim().toLowerCase();
 
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -31,15 +30,15 @@ class FillInBlankStepView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: AppColors.domainFinance.withOpacity(0.15),
+              color: AppColors.brandPrimary.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(6),
             ),
             child: const Text(
-              'FILL IN THE FRAMEWORK',
+              'LATIHAN REKONSTRUKSI FITRAH',
               style: TextStyle(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w800,
-                color: AppColors.domainFinance,
+                color: AppColors.brandPrimary,
                 letterSpacing: 0.8,
               ),
             ),
@@ -81,47 +80,47 @@ class FillInBlankStepView extends StatelessWidget {
                             ? (isDark
                                 ? AppColors.darkSurfaceElevated
                                 : Colors.grey.shade200)
-                            : (isAnswerChecked
+                            : (isSubmitted
                                 ? (isCorrect
-                                    ? AppColors.success.withOpacity(0.2)
-                                    : AppColors.error.withOpacity(0.2))
-                                : AppColors.brandPrimary.withOpacity(0.15)),
+                                    ? AppColors.success.withValues(alpha: 0.2)
+                                    : AppColors.error.withValues(alpha: 0.2))
+                                : AppColors.brandPrimary.withValues(alpha: 0.15)),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: selectedWord == null
-                              ? AppColors.brandGold.withOpacity(0.6)
-                              : (isAnswerChecked
+                              ? AppColors.brandGold.withValues(alpha: 0.6)
+                              : (isSubmitted
                                   ? (isCorrect ? AppColors.success : AppColors.error)
                                   : AppColors.brandPrimary),
                           width: 1.5,
                         ),
                       ),
                       child: Text(
-                        selectedWord ?? ' [ Tap Word Below ] ',
+                        selectedWord ?? ' [ Ketuk Kata di Bawah ] ',
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w800,
                           color: selectedWord == null
                               ? AppColors.brandGold
-                              : (isAnswerChecked
+                              : (isSubmitted
                                   ? (isCorrect ? AppColors.success : AppColors.error)
-                                  : AppColors.brandPrimary),
+                                  : (isDark ? Colors.white : Colors.black87)),
                         ),
                       ),
                     ),
                   ),
-                  TextSpan(text: ' ${card.sentenceAfter}'),
+                  TextSpan(text: card.sentenceAfter),
                 ],
               ),
             ),
           ),
 
-          const SizedBox(height: 24),
+          const SizedBox(height: 28),
           Text(
-            'WORD BANK',
+            'PILIH KATA DARI BANK KATA',
             style: TextStyle(
               fontSize: 11,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w700,
               letterSpacing: 1.2,
               color: isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted,
             ),
@@ -137,8 +136,8 @@ class FillInBlankStepView extends StatelessWidget {
               return ChoiceChip(
                 label: Text(word),
                 selected: isChosen,
-                onSelected: isAnswerChecked ? null : (_) => onSelectWord(word),
-                selectedColor: AppColors.brandPrimary.withOpacity(0.2),
+                onSelected: isSubmitted ? null : (_) => onSelectWord(word),
+                selectedColor: AppColors.brandPrimary.withValues(alpha: 0.2),
                 labelStyle: TextStyle(
                   fontWeight: isChosen ? FontWeight.w700 : FontWeight.w500,
                   color: isChosen
@@ -150,7 +149,7 @@ class FillInBlankStepView extends StatelessWidget {
           ),
 
           // Feedback explanation
-          if (isAnswerChecked) ...[
+          if (isSubmitted) ...[
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(16),
@@ -161,8 +160,8 @@ class FillInBlankStepView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
                 border: Border.all(
                   color: isCorrect
-                      ? AppColors.success.withOpacity(0.4)
-                      : AppColors.error.withOpacity(0.4),
+                      ? AppColors.success.withValues(alpha: 0.4)
+                      : AppColors.error.withValues(alpha: 0.4),
                 ),
               ),
               child: Column(
@@ -179,8 +178,9 @@ class FillInBlankStepView extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        isCorrect ? 'Correct Placement!' : 'Not quite right',
+                        isCorrect ? 'Tepat Sekali!' : 'Perlu Diteliti Kembali',
                         style: TextStyle(
+                          fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: isCorrect ? AppColors.success : AppColors.error,
                         ),
@@ -190,7 +190,9 @@ class FillInBlankStepView extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     card.explanation,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.5),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          height: 1.5,
+                        ),
                   ),
                 ],
               ),

@@ -39,3 +39,6 @@ build/
 # Symbol / debug files
 app.*.symbols
 app.*.map.json
+
+# Scratch & temporary workspace
+scratch/

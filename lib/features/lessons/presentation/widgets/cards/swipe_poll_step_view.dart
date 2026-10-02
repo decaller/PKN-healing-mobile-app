@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import '../../../../app/theme/color_palette.dart';
-import '../../../data/models/lesson_models.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
 
 class SwipePollStepView extends StatelessWidget {
   final SwipePollCard card;
-  final bool? choice;
-  final ValueChanged<bool> onChoose;
+  final bool? userAgreed;
+  final ValueChanged<bool> onVote;
 
   const SwipePollStepView({
     super.key,
     required this.card,
-    required this.choice,
-    required this.onChoose,
+    required this.userAgreed,
+    required this.onVote,
   });
 
   @override
@@ -26,15 +26,15 @@ class SwipePollStepView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: AppColors.domainStrategy.withOpacity(0.15),
+              color: AppColors.brandGold.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(6),
             ),
             child: const Text(
-              'INTUITION CHECK',
+              'UJI INTUISI FITRAH',
               style: TextStyle(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w800,
-                color: AppColors.domainStrategy,
+                color: AppColors.brandGold,
                 letterSpacing: 0.8,
               ),
             ),
@@ -60,7 +60,7 @@ class SwipePollStepView extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+                  color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
                   blurRadius: 16,
                   offset: const Offset(0, 4),
                 ),
@@ -91,10 +91,10 @@ class SwipePollStepView extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: choice == true
+                          backgroundColor: userAgreed == true
                               ? AppColors.brandPrimary
                               : (isDark ? AppColors.darkSurfaceElevated : Colors.grey.shade200),
-                          foregroundColor: choice == true
+                          foregroundColor: userAgreed == true
                               ? Colors.white
                               : (isDark ? Colors.white : Colors.black87),
                           elevation: 0,
@@ -104,18 +104,18 @@ class SwipePollStepView extends StatelessWidget {
                           ),
                         ),
                         icon: const Icon(Icons.thumb_up_rounded, size: 16),
-                        label: const Text('Yes / Agree'),
-                        onPressed: () => onChoose(true),
+                        label: const Text('Ya / Setuju'),
+                        onPressed: () => onVote(true),
                       ),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
                       child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: choice == false
+                          backgroundColor: userAgreed == false
                               ? AppColors.brandGold
                               : (isDark ? AppColors.darkSurfaceElevated : Colors.grey.shade200),
-                          foregroundColor: choice == false
+                          foregroundColor: userAgreed == false
                               ? Colors.black
                               : (isDark ? Colors.white : Colors.black87),
                           elevation: 0,
@@ -125,8 +125,8 @@ class SwipePollStepView extends StatelessWidget {
                           ),
                         ),
                         icon: const Icon(Icons.thumb_down_rounded, size: 16),
-                        label: const Text('No / Disagree'),
-                        onPressed: () => onChoose(false),
+                        label: const Text('Tidak / Ragu'),
+                        onPressed: () => onVote(false),
                       ),
                     ),
                   ],
@@ -136,7 +136,7 @@ class SwipePollStepView extends StatelessWidget {
           ),
 
           // Feedback Box
-          if (choice != null) ...[
+          if (userAgreed != null) ...[
             const SizedBox(height: 24),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 300),
@@ -149,7 +149,7 @@ class SwipePollStepView extends StatelessWidget {
                       : AppColors.lightSurfaceElevated,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: AppColors.brandGold.withOpacity(0.4),
+                    color: AppColors.brandGold.withValues(alpha: 0.4),
                   ),
                 ),
                 child: Column(
@@ -164,7 +164,7 @@ class SwipePollStepView extends StatelessWidget {
                         ),
                         SizedBox(width: 8),
                         Text(
-                          'EXPERT PERSPECTIVE',
+                          'SUDUT PANDANG NABAWIYAH',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
@@ -176,7 +176,7 @@ class SwipePollStepView extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      choice == true ? card.agreeFeedback : card.disagreeFeedback,
+                      userAgreed == true ? card.agreeFeedback : card.disagreeFeedback,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             height: 1.55,
                             fontSize: 15,

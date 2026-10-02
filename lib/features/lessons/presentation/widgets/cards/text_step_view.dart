@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import '../../../../app/theme/color_palette.dart';
-import '../../../../core/widgets/takeaway_badge.dart';
-import '../../../data/models/lesson_models.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/core/widgets/takeaway_badge.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
 
 class TextStepView extends StatelessWidget {
   final TextInsightCard card;
@@ -53,7 +53,7 @@ class TextStepView extends StatelessWidget {
                     : AppColors.lightSurfaceElevated,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: AppColors.brandGold.withOpacity(0.4),
+                  color: AppColors.brandGold.withValues(alpha: 0.4),
                   width: 1,
                 ),
               ),

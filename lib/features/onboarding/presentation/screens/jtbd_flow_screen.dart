@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../app/router/route_paths.dart';
-import '../../../app/theme/color_palette.dart';
-import '../../../core/widgets/segmented_progress_bar.dart';
-import '../../data/jtbd_data.dart';
-import '../controllers/onboarding_controller.dart';
+import 'package:pkn_microlearning_app/app/router/route_paths.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/app/theme/pkn_tokens.dart';
+import 'package:pkn_microlearning_app/core/widgets/pkn_button.dart';
+import 'package:pkn_microlearning_app/core/widgets/segmented_progress_bar.dart';
+import 'package:pkn_microlearning_app/features/onboarding/data/jtbd_data.dart';
+import 'package:pkn_microlearning_app/features/onboarding/presentation/controllers/onboarding_controller.dart';
 
 class JTBDFlowScreen extends ConsumerWidget {
   const JTBDFlowScreen({super.key});
@@ -46,24 +48,30 @@ class JTBDFlowScreen extends ConsumerWidget {
               ),
             ),
 
-            // Question Header
+            // Question Header & Option Cards
             Expanded(
               child: ListView(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(PknSpacing.lg),
                 children: [
                   const SizedBox(height: 12),
                   Text(
                     currentQ.question,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          fontWeight: FontWeight.w800,
+                        ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     currentQ.subtitle,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: isDark
+                              ? AppColors.darkTextSecondary
+                              : AppColors.lightTextSecondary,
+                        ),
                   ),
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 24),
 
-                  // Option Cards
+                  // Option Cards (Modeled on Education Apps Level Screen)
                   ...currentQ.options.map((option) {
                     final isSelected = selectedOptionId == option.id;
 
@@ -73,19 +81,19 @@ class JTBDFlowScreen extends ConsumerWidget {
                         onTap: () {
                           controller.selectOption(currentQ.id, option.id);
                         },
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: PknRadius.roundedCard,
                         child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          padding: const EdgeInsets.all(18),
+                          duration: PknDurations.normal,
+                          padding: const EdgeInsets.all(PknSpacing.md),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? (isDark
-                                    ? AppColors.brandGold.withOpacity(0.12)
-                                    : AppColors.brandGold.withOpacity(0.08))
+                                    ? AppColors.brandGold.withValues(alpha: 0.14)
+                                    : AppColors.brandGold.withValues(alpha: 0.08))
                                 : (isDark
                                     ? AppColors.darkSurface
                                     : AppColors.lightSurface),
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: PknRadius.roundedCard,
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.brandGold
@@ -94,6 +102,7 @@ class JTBDFlowScreen extends ConsumerWidget {
                                       : AppColors.lightBorder),
                               width: isSelected ? 1.8 : 1.0,
                             ),
+                            boxShadow: isSelected ? PknElevation.cardShadow : null,
                           ),
                           child: Row(
                             children: [
@@ -112,7 +121,7 @@ class JTBDFlowScreen extends ConsumerWidget {
                                   style: const TextStyle(fontSize: 22),
                                 ),
                               ),
-                              const SizedBox(width: 16),
+                              const SizedBox(width: 14),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,13 +132,15 @@ class JTBDFlowScreen extends ConsumerWidget {
                                             color: isSelected
                                                 ? (isDark ? Colors.white : Colors.black87)
                                                 : null,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w700,
                                           ),
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
                                       option.description,
-                                      style: Theme.of(context).textTheme.bodySmall,
+                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                            height: 1.4,
+                                          ),
                                     ),
                                   ],
                                 ),
@@ -156,9 +167,12 @@ class JTBDFlowScreen extends ConsumerWidget {
               ),
             ),
 
-            // Continue Button Dock
+            // Continue Button Dock with WCAG 48dp Minimum Touch Target
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              padding: const EdgeInsets.symmetric(
+                horizontal: PknSpacing.lg,
+                vertical: PknSpacing.md,
+              ),
               decoration: BoxDecoration(
                 color: isDark ? AppColors.darkSurface : AppColors.lightSurface,
                 border: Border(
@@ -167,47 +181,21 @@ class JTBDFlowScreen extends ConsumerWidget {
                   ),
                 ),
               ),
-              child: SizedBox(
+              child: PknButton.primary(
                 width: double.infinity,
                 height: 52,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: selectedOptionId != null
-                        ? AppColors.brandGold
-                        : (isDark ? AppColors.darkSurfaceElevated : Colors.grey.shade300),
-                    foregroundColor: selectedOptionId != null
-                        ? Colors.black
-                        : Colors.grey,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                  ),
-                  onPressed: selectedOptionId == null
-                      ? null
-                      : () {
-                          final isLastStep = controller.nextStep();
-                          if (isLastStep) {
-                            context.push(RoutePaths.activationalInsight);
-                          }
-                        },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        state.currentStepIndex == questions.length - 1
-                            ? 'Generate My Profile'
-                            : 'Continue',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      const Icon(Icons.arrow_forward_rounded, size: 18),
-                    ],
-                  ),
-                ),
+                text: state.currentStepIndex < questions.length - 1
+                    ? 'Lanjutkan'
+                    : 'Lihat Trajektori Saya',
+                icon: Icons.arrow_forward_rounded,
+                onPressed: selectedOptionId == null
+                    ? null
+                    : () {
+                        final isFinished = controller.nextStep();
+                        if (isFinished) {
+                          context.go(RoutePaths.activationalInsight);
+                        }
+                      },
               ),
             ),
           ],

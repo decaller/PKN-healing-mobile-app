@@ -21,10 +21,10 @@ class DomainBadge extends StatelessWidget {
     final badge = Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: isSelected ? color : color.withOpacity(isDark ? 0.18 : 0.1),
+        color: isSelected ? color : color.withValues(alpha: isDark ? 0.18 : 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isSelected ? color : color.withOpacity(0.4),
+          color: isSelected ? color : color.withValues(alpha: 0.4),
           width: 1,
         ),
       ),
@@ -48,7 +48,7 @@ class DomainBadge extends StatelessWidget {
               letterSpacing: 0.6,
               color: isSelected
                   ? Colors.white
-                  : (isDark ? Colors.white70 : color.withOpacity(0.95)),
+                  : (isDark ? Colors.white70 : color.withValues(alpha: 0.95)),
             ),
           ),
         ],

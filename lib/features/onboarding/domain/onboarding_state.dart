@@ -21,28 +21,51 @@ class OnboardingState {
     );
   }
 
-  String get userRole => answers['current_role'] ?? 'founder_c_suite';
-  String get primaryBottleneck => answers['bottleneck'] ?? 'strategy_clarity';
-  String get primaryDomain => answers['primary_domain'] ?? 'strategy';
+  String get userRole => answers['current_role'] ?? 'ayah';
+  String get targetFase => answers['target_fase'] ?? 'tamyiz';
+  String get primaryBottleneck => answers['bottleneck'] ?? 'tantrum_emosi';
+  String get dailyCommitment => answers['daily_time'] ?? 'time_5min';
+  String get primaryDomain => recommendedPilarMoc;
 
   String get personaArchetype {
-    if (userRole == 'product_tech') return 'Strategic Product Architect';
-    if (userRole == 'growth_marketing') return 'Venture Growth Strategist';
-    if (userRole == 'founder_c_suite') return 'High-Leverage Executive';
-    return 'Systems & Operations Specialist';
+    switch (userRole) {
+      case 'bunda':
+        return 'Bunda • Madrasah Utama & Pusat Kelekatan';
+      case 'guru':
+        return 'Pendidik Fitrah & Fasilitator Adab';
+      case 'pembelajar_santri':
+        return 'Pembelajar Mandiri • Penjelajah Fitrah TB-40';
+      case 'ayah':
+      default:
+        return 'Ayah • Qawwamun & Penegak Visi Nabawiyah';
+    }
+  }
+
+  String get recommendedPilarMoc {
+    switch (primaryBottleneck) {
+      case 'tantrum_emosi':
+        return 'P4: Praktik Keluarga';
+      case 'disiplin_shalat':
+        return 'P2: Fase Tumbuh Kembang';
+      case 'bakat_syakilah':
+        return 'P3: Fitrah & Bakat TB-40';
+      case 'burnout_lelah':
+      default:
+        return 'P1: Mulai di Sini';
+    }
   }
 
   String get recommendedFocusDescription {
-    switch (primaryDomain) {
-      case 'product':
-        return 'Focusing on activation loops, user friction elimination, and defensible moats.';
-      case 'finance':
-        return 'Optimizing capital efficiency, burn multiple, and margin expansion.';
-      case 'marketing':
-        return 'Mastering product positioning, viral coefficient, and category design.';
-      case 'strategy':
+    switch (userRole) {
+      case 'bunda':
+        return 'Fokus pada teknik Bahasa Hati, pengisian tangki cinta ananda, dan self-care syar\'i untuk mencegah caregiver burnout.';
+      case 'guru':
+        return 'Fokus pada apersepsi sirah KBM 5 menit, lembar observasi adab fast-tap (BT-MT-BK-MM), dan SOP disiplin positif tanpa ranking.';
+      case 'pembelajar_santri':
+        return 'Fokus pada pemetaan 40 pilar bakat ciptaan Allah, orientasi penjurusan syakilah, dan penjagaan iffah pemuda.';
+      case 'ayah':
       default:
-        return 'Mastering high-output delegation, 7 Powers, and ruthlessly clear prioritization.';
+        return 'Fokus pada sinergi penegakan disiplin shalat usia 7 vs 10 tahun, panduan dialog Luqman akhir pekan, dan penguatan visi keluarga.';
     }
   }
 }

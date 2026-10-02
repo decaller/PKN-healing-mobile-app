@@ -36,23 +36,23 @@ void main() {
 
     test('Computes persona archetype correctly', () {
       final controller = OnboardingController(storageService);
-      controller.selectOption('current_role', 'product_tech');
-      expect(controller.state.personaArchetype, 'Strategic Product Architect');
+      controller.selectOption('current_role', 'ayah');
+      expect(controller.state.personaArchetype, 'Ayah • Qawwamun & Penegak Visi Nabawiyah');
 
-      controller.selectOption('current_role', 'growth_marketing');
-      expect(controller.state.personaArchetype, 'Venture Growth Strategist');
+      controller.selectOption('current_role', 'bunda');
+      expect(controller.state.personaArchetype, 'Bunda • Madrasah Utama & Pusat Kelekatan');
     });
 
     test('Finalizes onboarding and writes flags to storage', () async {
       final controller = OnboardingController(storageService);
-      controller.selectOption('current_role', 'founder_c_suite');
-      controller.selectOption('primary_domain', 'strategy');
+      controller.selectOption('current_role', 'ayah');
+      controller.selectOption('bottleneck', 'tantrum_emosi');
 
       await controller.finalizeOnboarding();
       expect(controller.state.isCompleted, isTrue);
       expect(storageService.isOnboardingCompleted, isTrue);
-      expect(storageService.getUserRole(), 'founder_c_suite');
-      expect(storageService.getUserFocus(), 'strategy');
+      expect(storageService.getUserRole(), 'ayah');
+      expect(storageService.getUserFocus(), 'P4: Praktik Keluarga');
     });
   });
 }

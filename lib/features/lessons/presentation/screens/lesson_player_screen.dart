@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../app/theme/color_palette.dart';
-import '../../../core/widgets/segmented_progress_bar.dart';
-import '../../data/models/lesson_models.dart';
-import '../controllers/lesson_player_controller.dart';
-import '../widgets/cards/fill_in_blank_step_view.dart';
-import '../widgets/cards/multiple_choice_step_view.dart';
-import '../widgets/cards/swipe_poll_step_view.dart';
-import '../widgets/cards/text_step_view.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/core/widgets/segmented_progress_bar.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
+import 'package:pkn_microlearning_app/features/lessons/presentation/controllers/lesson_player_controller.dart';
+import 'package:pkn_microlearning_app/features/lessons/presentation/widgets/cards/fill_in_blank_step_view.dart';
+import 'package:pkn_microlearning_app/features/lessons/presentation/widgets/cards/multiple_choice_step_view.dart';
+import 'package:pkn_microlearning_app/features/lessons/presentation/widgets/cards/swipe_poll_step_view.dart';
+import 'package:pkn_microlearning_app/features/lessons/presentation/widgets/cards/text_step_view.dart';
+import 'adab_growth_report_screen.dart';
 
 class LessonPlayerScreen extends ConsumerWidget {
   final Lesson lesson;
@@ -104,20 +105,20 @@ class LessonPlayerScreen extends ConsumerWidget {
       return MultipleChoiceStepView(
         card: card,
         selectedIndex: state.selectedOptionIndex,
-        isAnswerChecked: state.isAnswerChecked,
+        isSubmitted: state.isAnswerChecked,
         onSelectOption: (idx) => controller.selectMultipleChoiceOption(idx),
       );
     } else if (card is SwipePollCard) {
       return SwipePollStepView(
         card: card,
-        choice: state.pollChoice,
-        onChoose: (agree) => controller.choosePoll(agree),
+        userAgreed: state.pollChoice,
+        onVote: (agree) => controller.choosePoll(agree),
       );
     } else if (card is FillInBlankCard) {
       return FillInBlankStepView(
         card: card,
         selectedWord: state.selectedBlankWord,
-        isAnswerChecked: state.isAnswerChecked,
+        isSubmitted: state.isAnswerChecked,
         onSelectWord: (word) => controller.selectBlankWord(word),
       );
     }
@@ -184,14 +185,18 @@ class LessonPlayerScreen extends ConsumerWidget {
       onPressed: () async {
         final isFinished = await controller.proceedNext();
         if (isFinished && context.mounted) {
-          _showCompletionDialog(context);
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (ctx) => AdabGrowthReportScreen(lesson: lesson),
+            ),
+          );
         }
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            state.isLastStep ? 'Complete Deck' : 'Continue',
+            state.isLastStep ? 'Lihat Laporan Pertumbuhan Adab' : 'Lanjutkan',
             style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
           ),
           const SizedBox(width: 8),
@@ -201,75 +206,6 @@ class LessonPlayerScreen extends ConsumerWidget {
           ),
         ],
       ),
-    );
-  }
-
-  void _showCompletionDialog(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isDismissible: false,
-      enableDrag: false,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
-      ),
-      builder: (ctx) {
-        return Padding(
-          padding: const EdgeInsets.all(28.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  color: AppColors.success.withOpacity(0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.emoji_events_rounded,
-                  color: AppColors.success,
-                  size: 34,
-                ),
-              ),
-              const SizedBox(height: 18),
-              Text(
-                'Lesson Mastered!',
-                style: Theme.of(ctx).textTheme.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.w800,
-                    ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'You’ve completed "${lesson.title}" and locked in key executive mental models.',
-                textAlign: TextAlign.center,
-                style: Theme.of(ctx).textTheme.bodyMedium,
-              ),
-              const SizedBox(height: 24),
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.brandPrimary,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.of(ctx).pop(); // Close bottom sheet
-                    context.pop(); // Return from player
-                  },
-                  child: const Text(
-                    'Return to Lessons',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

@@ -116,19 +116,19 @@ class _AppNavigationScaffold extends StatelessWidget {
         onDestinationSelected: (idx) => _onItemTapped(idx, context),
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.style_outlined),
-            selectedIcon: Icon(Icons.style_rounded),
-            label: 'Feed',
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home_rounded),
+            label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Icon(Icons.play_circle_outline_rounded),
-            selectedIcon: Icon(Icons.play_circle_fill_rounded),
-            label: 'Lessons',
+            icon: Icon(Icons.school_outlined),
+            selectedIcon: Icon(Icons.school_rounded),
+            label: 'Modul Primer',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline_rounded),
             selectedIcon: Icon(Icons.person_rounded),
-            label: 'Profile',
+            label: 'Profil & Adab',
           ),
         ],
       ),

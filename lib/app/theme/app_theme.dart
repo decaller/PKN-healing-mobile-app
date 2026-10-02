@@ -50,7 +50,7 @@ class AppTheme {
       ),
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.darkSurfaceElevated,
-        selectedColor: AppColors.brandPrimary.withOpacity(0.25),
+        selectedColor: AppColors.brandPrimary.withValues(alpha: 0.25),
         side: const BorderSide(color: AppColors.darkBorder, width: 1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         labelStyle: textTheme.labelMedium,
@@ -107,7 +107,7 @@ class AppTheme {
       ),
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.lightSurfaceElevated,
-        selectedColor: AppColors.brandPrimary.withOpacity(0.12),
+        selectedColor: AppColors.brandPrimary.withValues(alpha: 0.12),
         side: const BorderSide(color: AppColors.lightBorder, width: 1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         labelStyle: textTheme.labelMedium,

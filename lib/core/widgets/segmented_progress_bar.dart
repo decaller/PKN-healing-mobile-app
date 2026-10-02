@@ -35,13 +35,13 @@ class SegmentedProgressBar extends StatelessWidget {
               color: isCompleted
                   ? activeColor
                   : (isCurrent
-                      ? activeColor.withOpacity(0.85)
+                      ? activeColor.withValues(alpha: 0.85)
                       : inactiveColor),
               borderRadius: BorderRadius.circular(4),
               boxShadow: isCurrent
                   ? [
                       BoxShadow(
-                        color: activeColor.withOpacity(0.4),
+                        color: activeColor.withValues(alpha: 0.4),
                         blurRadius: 4,
                         offset: const Offset(0, 1),
                       ),

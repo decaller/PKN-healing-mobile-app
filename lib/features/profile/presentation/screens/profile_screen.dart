@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../app/router/route_paths.dart';
-import '../../../app/theme/color_palette.dart';
-import '../../../core/storage/storage_service.dart';
-import '../../feed/presentation/controllers/feed_controller.dart';
-import '../../feed/presentation/widgets/idea_card_widget.dart';
-import '../../lessons/data/mock_lessons.dart';
+import 'package:pkn_microlearning_app/app/router/route_paths.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/app/theme/pkn_tokens.dart';
+import 'package:pkn_microlearning_app/core/storage/storage_service.dart';
+import 'package:pkn_microlearning_app/core/widgets/pkn_audio_player_sheet.dart';
+import 'package:pkn_microlearning_app/features/feed/presentation/controllers/feed_controller.dart';
+import 'package:pkn_microlearning_app/features/feed/presentation/widgets/idea_card_widget.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/mock_lessons.dart';
 
-class ProfileScreen extends ConsumerWidget {
+class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
+  bool _isChildSafeMode = false;
+
+  @override
+  Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final storageService = ref.watch(storageServiceProvider);
     final feedState = ref.watch(feedControllerProvider);
@@ -20,22 +29,27 @@ class ProfileScreen extends ConsumerWidget {
 
     final completedLessons = storageService.getCompletedLessonIds();
     final bookmarkedIdeas = feedState.allIdeas.where((i) => i.isBookmarked).toList();
-    final userRole = storageService.getUserRole() ?? 'founder_c_suite';
-    final userFocus = storageService.getUserFocus() ?? 'Strategy';
+    final userRole = storageService.getUserRole() ?? 'ayah';
+    final userFocus = storageService.getUserFocus() ?? 'Praktik Keluarga';
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'EXECUTIVE PROFILE',
+          'PROFIL TARBIYAH NABAWIYAH',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                letterSpacing: 1.2,
+                letterSpacing: 1.0,
                 fontWeight: FontWeight.w800,
               ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh_rounded),
-            tooltip: 'Retake Diagnostic',
+            icon: const Icon(Icons.headphones_rounded, color: AppColors.brandGold),
+            tooltip: 'Audio Sirah & Tazkiyah',
+            onPressed: () => PknAudioPlayerSheet.show(context),
+          ),
+          IconButton(
+            icon: const Icon(Icons.tune_rounded),
+            tooltip: 'Ganti Peran & Fase',
             onPressed: () {
               context.go(RoutePaths.onboarding);
             },
@@ -43,22 +57,19 @@ class ProfileScreen extends ConsumerWidget {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(PknSpacing.lg),
         children: [
-          // Executive Profile Card
+          // Profile Card
           Container(
-            padding: const EdgeInsets.all(22),
+            padding: const EdgeInsets.all(PknSpacing.xl),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: isDark
-                    ? [const Color(0xFF1E222A), const Color(0xFF14171E)]
-                    : [Colors.white, const Color(0xFFF6F8FB)],
-              ),
-              borderRadius: BorderRadius.circular(20),
+              color: isDark ? AppColors.darkSurface : AppColors.lightSurface,
+              borderRadius: PknRadius.roundedCard,
               border: Border.all(
-                color: AppColors.brandGold.withOpacity(0.3),
+                color: AppColors.brandGold.withValues(alpha: 0.35),
                 width: 1.2,
               ),
+              boxShadow: PknElevation.cardShadow,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,11 +80,11 @@ class ProfileScreen extends ConsumerWidget {
                       width: 52,
                       height: 52,
                       decoration: BoxDecoration(
-                        color: AppColors.brandGold.withOpacity(0.15),
+                        color: AppColors.brandGold.withValues(alpha: 0.15),
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: const Text('👑', style: TextStyle(fontSize: 26)),
+                      child: Text(_getRoleEmoji(userRole), style: const TextStyle(fontSize: 26)),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
@@ -82,13 +93,13 @@ class ProfileScreen extends ConsumerWidget {
                         children: [
                           Text(
                             _formatRole(userRole),
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                   fontWeight: FontWeight.w800,
                                 ),
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Focus: ${userFocus.toUpperCase()}',
+                            'Fokus Pilar: ${userFocus.toUpperCase()}',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
@@ -105,17 +116,17 @@ class ProfileScreen extends ConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildStatColumn(context, '5', 'Day Streak', '🔥'),
+                    _buildStatColumn(context, '7', 'Hari Istiqamah', '🌟'),
                     _buildStatColumn(
                       context,
                       '${completedLessons.length}/${MockLessonsRepository.lessons.length}',
-                      'Decks Mastered',
+                      'Modul Tuntas',
                       '🎯',
                     ),
                     _buildStatColumn(
                       context,
                       '${bookmarkedIdeas.length}',
-                      'Saved Ideas',
+                      'Tersimpan',
                       '📌',
                     ),
                   ],
@@ -124,20 +135,77 @@ class ProfileScreen extends ConsumerWidget {
             ),
           ),
 
-          const SizedBox(height: 28),
+          const SizedBox(height: 20),
+
+          // Child-Safe Mode Toggle (Rambu Khusus Perlindungan Anak)
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated,
+              borderRadius: PknRadius.roundedCard,
+              border: Border.all(
+                color: isDark ? AppColors.darkBorder : AppColors.lightBorder,
+                width: 1,
+              ),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.child_care_rounded, color: AppColors.brandPrimary, size: 24),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Mode Khusus Anak (TB-40 Kids)',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Antarmuka visual ramah anak, bebas formulir & tanpa vonis',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ),
+                ),
+                Switch(
+                  value: _isChildSafeMode,
+                  activeColor: AppColors.brandPrimary,
+                  onChanged: (val) {
+                    setState(() => _isChildSafeMode = val);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          val
+                              ? 'Mode Anak Aktif: Menampilkan kartu bergambar dan stiker amal.'
+                              : 'Kembali ke Mode Pengasuh Dewasa.',
+                        ),
+                        duration: const Duration(seconds: 2),
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 24),
 
           // Saved Ideas Section Header
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Saved Mental Models',
+                'Materi Tarbiyah Tersimpan',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w800,
                     ),
               ),
               Text(
-                '${bookmarkedIdeas.length} cards',
+                '${bookmarkedIdeas.length} materi',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
@@ -149,7 +217,7 @@ class ProfileScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(28),
               decoration: BoxDecoration(
                 color: isDark ? AppColors.darkSurface : AppColors.lightSurface,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: PknRadius.roundedCard,
                 border: Border.all(
                   color: isDark ? AppColors.darkBorder : AppColors.lightBorder,
                 ),
@@ -164,12 +232,12 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'No saved idea cards yet',
+                      'Belum ada materi tersimpan',
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Tap the bookmark icon on any card in the feed to save it here for fast reference.',
+                      'Tekan ikon simpan pada kartu di beranda untuk referensi cepat kapan saja.',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
@@ -206,7 +274,7 @@ class ProfileScreen extends ConsumerWidget {
             Text(
               value,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w800,
                 color: AppColors.brandGold,
               ),
@@ -226,15 +294,29 @@ class ProfileScreen extends ConsumerWidget {
 
   String _formatRole(String role) {
     switch (role) {
-      case 'product_tech':
-        return 'Product & Tech Leader';
-      case 'growth_marketing':
-        return 'Revenue & Growth Leader';
-      case 'operator_specialist':
-        return 'Operations Specialist';
-      case 'founder_c_suite':
+      case 'bunda':
+        return 'Ibu / Bunda • Madrasah Utama';
+      case 'guru':
+        return 'Guru & Pendidik Karakter';
+      case 'pembelajar_santri':
+        return 'Santri & Pembelajar Mandiri';
+      case 'ayah':
       default:
-        return 'Founder & Executive';
+        return 'Ayah • Qawwamun Keluarga';
+    }
+  }
+
+  String _getRoleEmoji(String role) {
+    switch (role) {
+      case 'bunda':
+        return '🏡';
+      case 'guru':
+        return '🏫';
+      case 'pembelajar_santri':
+        return '🎒';
+      case 'ayah':
+      default:
+        return '🛡️';
     }
   }
 }

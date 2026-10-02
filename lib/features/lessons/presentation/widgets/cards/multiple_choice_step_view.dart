@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../../../app/theme/color_palette.dart';
-import '../../../data/models/lesson_models.dart';
+import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
+import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
 
 class MultipleChoiceStepView extends StatelessWidget {
   final MultipleChoiceCard card;
   final int? selectedIndex;
-  final bool isAnswerChecked;
+  final bool isSubmitted;
   final ValueChanged<int> onSelectOption;
 
   const MultipleChoiceStepView({
     super.key,
     required this.card,
     required this.selectedIndex,
-    required this.isAnswerChecked,
+    required this.isSubmitted,
     required this.onSelectOption,
   });
 
@@ -28,11 +28,11 @@ class MultipleChoiceStepView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: AppColors.brandPrimary.withOpacity(0.15),
+              color: AppColors.brandPrimary.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(6),
             ),
             child: const Text(
-              'TEST YOUR KNOWLEDGE',
+              'STUDI KASUS PRAKTIK LAPANGAN',
               style: TextStyle(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w800,
@@ -48,18 +48,18 @@ class MultipleChoiceStepView extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                 ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           Text(
             card.question,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: 18,
+                  fontSize: 16,
+                  height: 1.5,
                   fontWeight: FontWeight.w600,
-                  height: 1.45,
                 ),
           ),
           const SizedBox(height: 24),
 
-          // Options
+          // Options List (Directly modeled on Education Apps Test node 0:429)
           ...List.generate(card.options.length, (index) {
             final optionText = card.options[index];
             final isSelected = selectedIndex == index;
@@ -69,14 +69,14 @@ class MultipleChoiceStepView extends StatelessWidget {
             Color bgColor;
             Widget? trailingIcon;
 
-            if (isAnswerChecked) {
+            if (isSubmitted) {
               if (isCorrect) {
-                borderColor = AppColors.success;
-                bgColor = AppColors.success.withOpacity(0.15);
-                trailingIcon = const Icon(Icons.check_circle_rounded, color: AppColors.success);
+                borderColor = AppColors.adabBK;
+                bgColor = AppColors.adabBK.withValues(alpha: 0.15);
+                trailingIcon = const Icon(Icons.check_circle_rounded, color: AppColors.adabBK);
               } else if (isSelected && !isCorrect) {
                 borderColor = AppColors.error;
-                bgColor = AppColors.error.withOpacity(0.15);
+                bgColor = AppColors.error.withValues(alpha: 0.15);
                 trailingIcon = const Icon(Icons.cancel_rounded, color: AppColors.error);
               } else {
                 borderColor = isDark ? AppColors.darkBorder : AppColors.lightBorder;
@@ -85,7 +85,7 @@ class MultipleChoiceStepView extends StatelessWidget {
             } else {
               if (isSelected) {
                 borderColor = AppColors.brandPrimary;
-                bgColor = AppColors.brandPrimary.withOpacity(0.12);
+                bgColor = AppColors.brandPrimary.withValues(alpha: 0.12);
                 trailingIcon = const Icon(Icons.radio_button_checked, color: AppColors.brandPrimary);
               } else {
                 borderColor = isDark ? AppColors.darkBorder : AppColors.lightBorder;
@@ -100,7 +100,7 @@ class MultipleChoiceStepView extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.only(bottom: 12.0),
               child: InkWell(
-                onTap: isAnswerChecked ? null : () => onSelectOption(index),
+                onTap: isSubmitted ? null : () => onSelectOption(index),
                 borderRadius: BorderRadius.circular(14),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
@@ -132,7 +132,7 @@ class MultipleChoiceStepView extends StatelessWidget {
           }),
 
           // Post-Verification Explanation
-          if (isAnswerChecked) ...[
+          if (isSubmitted) ...[
             const SizedBox(height: 16),
             Container(
               padding: const EdgeInsets.all(16),
@@ -156,18 +156,18 @@ class MultipleChoiceStepView extends StatelessWidget {
                             : Icons.info_outline_rounded,
                         size: 18,
                         color: selectedIndex == card.correctIndex
-                            ? AppColors.success
+                            ? AppColors.adabBK
                             : AppColors.brandGold,
                       ),
                       const SizedBox(width: 8),
                       Text(
                         selectedIndex == card.correctIndex
-                            ? 'Spot On!'
-                            : 'Good Try!',
+                            ? 'Jawaban Tepat!'
+                            : 'Hikmah & Penjelasan',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: selectedIndex == card.correctIndex
-                              ? AppColors.success
+                              ? AppColors.adabBK
                               : AppColors.brandGold,
                         ),
                       ),
