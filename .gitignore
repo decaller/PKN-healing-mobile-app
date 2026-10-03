@@ -42,3 +42,5 @@ app.*.map.json
 
 # Scratch & temporary workspace
 scratch/
+.claude/
+skills-lock.json

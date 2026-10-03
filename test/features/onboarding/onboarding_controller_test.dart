@@ -41,6 +41,20 @@ void main() {
 
       controller.selectOption('current_role', 'bunda');
       expect(controller.state.personaArchetype, 'Bunda • Madrasah Utama & Pusat Kelekatan');
+
+      controller.selectOption('current_role', 'guru');
+      expect(controller.state.personaArchetype, 'Pendidik Fitrah & Fasilitator Adab');
+
+      controller.selectOption('current_role', 'pengelola');
+      expect(controller.state.personaArchetype, 'Pengelola Lembaga & Arsitek Ekosistem Fitrah');
+      expect(controller.state.recommendedPilarMoc, 'P5: Lembaga & Guru');
+
+      controller.selectOption('current_role', 'pembelajar_santri');
+      expect(controller.state.personaArchetype, 'Santri & Pemuda • Penjelajah Fitrah TB-40');
+
+      controller.selectOption('current_role', 'mandiri_tazkiyah');
+      expect(controller.state.personaArchetype, 'Pembelajar Mandiri • Penata Jiwa & Tazkiyah');
+      expect(controller.state.recommendedPilarMoc, 'P1: Mulai di Sini');
     });
 
     test('Finalizes onboarding and writes flags to storage', () async {
