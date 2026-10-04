@@ -1,181 +1,100 @@
-# Laporan Analisis, Evaluasi & Rekomendasi Pengembangan Desain Figma PKN
+# Laporan Analisis dan Pengembangan Desain PKN
 
-**Berkas Target**: [`design/PKN_Healing_App_Design.fig`](PKN_Healing_App_Design.fig)  
-**Dokumentasi Teknis Terkait**: [`design/README.md`](README.md), [`DESIGN_SYSTEM.md`](../DESIGN_SYSTEM.md), [`docs/USER_JOURNEYS.md`](../docs/USER_JOURNEYS.md)  
-**Waktu Pemeriksaan**: 3 Oktober 2026  
-**Status Audit**: Selesai Diverifikasi (Audit Otomatis & Visual Smoke Test)
+**Berkas:** [PKN_Healing_App_Design.fig](PKN_Healing_App_Design.fig)  
+**Referensi:** [README](README.md), [DESIGN_SYSTEM](../DESIGN_SYSTEM.md), [USER_JOURNEYS](../docs/USER_JOURNEYS.md)  
+**Pembaruan:** 4 Oktober 2026  
+**Status:** Implementasi desain native dan simulasi browser; bukti terbatas pada inspeksi/smoke yang disebutkan, bukan audit aksesibilitas atau kesiapan produksi menyeluruh.
 
----
+## 1. Ringkasan Implementasi
 
-## 1. Ringkasan Eksekutif (Executive Summary)
+- **Persona:** 16 persona tetap dipetakan melalui key layar stabil; matriks lengkap di README. Pemetaan bukan validasi usability terhadap pengguna nyata.
+- **Layar utama:** 53 key × Light/Dark, empat varian tablet L1/R1 dan H_Android, total **111 viewport**. MAP terpisah. Mobile dasar 390×844, Android 412×915, tablet 768×1024; klaim grid seragam 428×1040 sudah tidak berlaku.
+- **Komponen utama:** Tiga master header, docked CTA dan navigasi empat tab; **333 instance** pada viewport utama. Propagasi menggunakan `figma.graph.syncInstances`, bukan perubahan otomatis yang sudah dibuktikan pada setiap editor.
+- **Tema:** 14 color variables native pada koleksi `PKN`, mode Light/Dark dan binding scene; sumber tema dapat diekspor ke Dart.
+- **Tipografi:** Metadata root `pknTypography` menetapkan Inter Display26/36, Heading18/27, Subhead15/23, Body13/20, Caption12/18 serta Amiri Arabic28/48. Skala lama Plus Jakarta Sans/Poppins bukan sumber sinkronisasi aktual.
+- **Dalil:** D2/Dk2 menggunakan penggalan QS Ali Imran 3:159 dengan atribusi [Quran.com Indonesia](https://quran.com/id/keluarga-imran/159). Tidak ada klaim seluruh registry turats/takhrij telah diverifikasi.
+- **Prototype:** Enam start aplikasi utama tersedia pada browser; native reactions/flow starting points tidak writable melalui API yang diperiksa. Klik dan state browser bukan backend atau implementasi Flutter lengkap.
 
-Pemeriksaan ulang terhadap berkas desain master Figma [`design/PKN_Healing_App_Design.fig`](PKN_Healing_App_Design.fig) telah dilakukan melalui inspeksi API OpenPencil SceneGraph dan visual rendering pada 53 pratinjau resolusi tinggi di [`design/previews/`](previews/).
+## 2. Koreksi atas Audit Lama
 
-### Hasil Utama Pemeriksaan:
-* **Kelengkapan Struktur**: Berkas memuat **4 halaman**, **1.672 nodes** (616 frames, 1.047 text nodes, 4 rectangles, 5 master components).
-* **Cakupan Persona**: Seluruh **16 persona** dari 5 ranah ekosistem PKN telah terpetakan ke dalam **53 layar fungsional unik** di halaman *Parcours • 16 Persona / 5 Ranah* (`0:233`), dilengkapi satu peta navigasi induk *MAP* (`0:1627`).
-* **Integritas Tata Letak (Layout)**: Masalah tumpang tindih teks (*text collision*) dan offset global pada ekspor sebelumnya telah **100% terselesaikan**. Seluruh layar menggunakan grid modular ($428\times 1040\text{ dp}$) dengan jarak horizontal konsisten ($\Delta x = 476\text{ dp}$, gutter $48\text{ dp}$) dan vertikal ($\Delta y = 1400\text{ dp}$, gutter $360\text{ dp}$).
-* **Kepatuhan Aksesibilitas**: Seluruh tombol utama dirancang dengan tinggi **52 dp**, melampaui ambang batas minimum WCAG 2.1 AA ($\ge 48\times 48\text{ dp}$). Kontras warna teks dasar (#FFFFFF dan #9CA3AF) di atas latar gelap (#121417 dan #1E2229) mencapai rasio kontras $> 7:1$ (lulus Level AAA untuk teks besar, AA untuk teks normal).
-* **Fidelity Filosofis Manhaj**: Tidak ditemukan indikator gamifikasi toksik (tanpa streak, tanpa ranking poin komparatif). Seluruh layar menyertakan batas keamanan adab dan disclaimer pedagogis syar'i.
+| Klaim sebelumnya | Status yang dapat dipertanggungjawabkan |
+|---|---|
+| Semua layar hanya Dark | Utama memiliki padanan Light/Dark; Virtual Fitrah tidak memiliki padanan Dark lengkap. |
+| Semua layar grid 428×1040 dan navigasi y992 | Viewport ukuran perangkat dengan konten terpisah dan dock; resize proxy harus dihitung eksplisit. |
+| Komponen detached tanpa instance | Header/CTA/navigasi utama kini instance; propagasi radius diuji dengan syncInstances. |
+| Font hanya Inter, Arab belum tersedia | Amiri dimuat, penggalan ayat diatribusikan; RTL seluruh aplikasi belum diaudit. |
+| Tidak ada prototype berjalan | Browser prototype berjalan terpisah; native reactions tetap tidak tersedia. |
+| Radar audit delapan standar | L3 berupa daftar standar/prioritas ilustratif; bukan radar audit tervalidasi. |
+| Radar TB40 sebagai hasil | B6 radar ilustratif empat kluster, tanpa skor pribadi atau scoring resmi. |
+| WCAG AA/AAA dan 100% target sentuh | Target utama ≥48 adalah keputusan desain; bukan audit semua kontrol, pasangan warna, keyboard atau pembaca layar. |
+| Nol collision, semua layout 100% terselesaikan | Smoke sampel terbatas; tidak ada bukti bebas overlap/clipping seluruh layar, ukuran dan text scaling. |
+| Kesiapan handoff 90% | Tidak ada persentase kesiapan yang tervalidasi. Desain editable, prototype dan token membantu handoff; fungsi produksi tetap terpisah. |
 
----
+Jumlah node/halaman/ID dari audit lama tidak dipertahankan sebagai metrik terkini. Generator dan serialisasi mengubah tree; gunakan `screenKey` serta manifest terbaru, bukan ID lama dalam tabel dokumentasi.
 
-## 2. Audit Rinci Struktur Berkas Figma
+## 3. Persona dan Isi Pedagogis
 
-### A. Anatomi Halaman & Komposisi Node
+Onboarding bersama O1–O4/H mempertahankan peran/fase kondisional. Ranah keluarga memakai F/K/N/N2, guru T1–T5 serta R1–R5, lembaga L1–L3b, kajian/peneliti D1–D3, santri B1–B7 dan mandiri A1–A3/J. Deck tepat lima langkah Dk1–Dk5; Dkf feedback langkah ketiga. Utility S0/S1/E1–E3 menyediakan contoh bookmark/kosong/error/luring.
 
-```
-PKN_Healing_App_Design.fig (4 Halaman, 1.672 Nodes)
-│
-├── [0] 📐 Design System & Tokens (ID 0:3 • 103 nodes)
-│   ├── Color Palette (Dark Theme, Brand Gold, MOC Pillars P1-P6)
-│   ├── Typography Scale (Inter: Display, Headline, Title, Body, Caption)
-│   └── Spacing, Radius & Elevation Tokens
-│
-├── [1] 📱 Layar Aplikasi PKN (ID 0:107 • 125 nodes)
-│   ├── O1 (0:108)  • JTBD Diagnostic Onboarding
-│   ├── H  (0:133)  • Beranda Tarbiyah & 6 Pilar MOC Filter
-│   ├── Dk3(0:158)  • Pemain Modul 5 Menit (Step 3: Kuis Skenario)
-│   ├── R5 (0:179)  • Fast-Tap Rubric & Laporan Adab Kualitatif (BT-MM)
-│   └── A1 (0:204)  • Pemutar Audio Sirah & Tazkiyah Hands-Free
-│
-├── [2] Parcours • 16 Persona / 5 Ranah (ID 0:233 • 1.377 nodes)
-│   ├── Ranah 1 (Keluarga)  : O1, O2, O3, O4, F (Ayah 3-min), K (Bunda crisis), N, N2
-│   ├── Ranah 2 (Pendidik)  : T1 (Thufulah), T2 (Tamyiz), T3 (Murahaqah), T3b, T4, T4b, T5, R1-R4
-│   ├── Ranah 3 (Lembaga)   : L1 (Maqashid filter), L1b, L2 (Kuttab), L2b, L2c, L3 (Audit), L3b
-│   ├── Ranah 4 (Dalil/Kajian): D1 (Silabus daurah), D2 (Telaah sanad), D3 (Syarah & registry)
-│   ├── Ranah 5 (Santri/Mandiri): B1-B5 (TB-40 quiz), B6 (4 Kluster), B7 (Syakilah), J (Jurnal syukur)
-│   └── Utility & State     : Dk1-Dkf (Deck steps), A2-A3 (Audio luring), S0-S1 (Bookmarks), E1-E3 (Error/Offline)
-│
-└── [3] Komponen & Peta Journey (ID 0:1611 • 67 nodes)
-    ├── Master Component 1: Tombol Utama • 48+ (0:1612)
-    ├── Master Component 2: Lead TL;DR (0:1615)
-    ├── Master Component 3: Rubrik BT / MT / BK / MM (0:1618)
-    ├── Master Component 4: Mini-Player Audio (0:1621)
-    ├── Master Component 5: Navigasi Bawah (0:1624)
-    └── MAP (0:1627): 16 Persona Linked Screen Matrix Canvas (1680x1680 dp)
-```
+Rubrik BT Belum Tampak, MT Mulai Tampak, BK Berkembang, MM Membudaya memakai bukti naratif tanpa nilai total adab, donut persentase, ranking atau streak shaming. Pertanyaan TB40, nama 19 butir rubrik dan delapan standar audit masih ilustratif; pemetaan tidak mengesahkan instrumen, psikometri atau sumber syar'i. Konten sumber tambahan memerlukan review ahli sebelum dipakai produksi.
 
----
+## 4. Virtual Fitrah
 
-## 3. Matriks Evaluasi Kesesuaian Persona (16 Persona)
+Generator `generate-virtual-fitrah.js` mendefinisikan **51 layar mobile + 4 companion** pada tiga halaman miliknya. Empat companion: GF_HOME_Dark, GF_AVATAR_Dark, GF_MAP_Web 1440×1050 dan GF_MAP_Tablet 1024×1050. Inventori lengkap key ada di README dan root `pknGameManifest` setelah generasi.
 
-| Ranah | Persona | Layar Terkait | Status Validasi Desain | Catatan Khusus |
-| :--- | :--- | :--- | :---: | :--- |
-| **Keluarga** | 01a Ayah | `F`, `O2`, `O4` | **Sangat Baik** | Mode eksekutif 3-menit ringkas, batas sanksi 10 tahun terlihat jelas. |
-| | 01b Bunda | `K`, `O3`, `A1` | **Sangat Baik** | "Tenang Dulu, Bunda" menyajikan protokol respon < 60 detik tanpa ceramah. |
-| | 01 Ortu Pemula | `N`, `N2` | **Baik** | Peta 4 fase usia dan primer 5 hari menyederhanakan glosarium fitrah. |
-| **Guru** | 02a Thufulah | `T1`, `R1` | **Sangat Baik** | Cerita sirah ramah balita, rubrik adab fokus pada pembiasaan kemandirian. |
-| | 02b Tamyiz | `T2`, `R2` | **Sangat Baik** | Pembiasaan shalat 7 tahun tanpa bentakan, observasi keteraturan wudhu. |
-| | 02c Murahaqah | `T3`, `T3b`, `R3` | **Sangat Baik** | SOP mediasi konflik remaja dan panduan fiqih thaharah yang santun. |
-| | 02d Baligh/Syabab | `T4`, `T4b`, `B6` | **Sangat Baik** | Konsep aqil baligh mukallaf, mentoring kemandirian dan iffah pergaulan. |
-| | 02e Dewasa | `T5`, `A1`, `Dk2` | **Baik** | Anatomi tiga lapisan jiwa dan materi recovery luka masa lalu. |
-| | 02 Guru Umum | `R1`–`R4`, `H` | **Sangat Baik** | Fast-Tap Rubric 19 butir adab memangkas beban pencatatan kertas. |
-| **Lembaga**| 03a Formal | `L1`, `L1b`, `L3` | **Sangat Baik** | *The Maqashid Filter* memangkas program seremonial yang membakar energi guru. |
-| | 03b Non-Formal | `L2`, `L2b`, `L2c` | **Sangat Baik** | Template kurikulum murni sirah & portofolio naratif tanpa ranking angka. |
-| | 03 Pengelola | `L3`, `L3b` | **Baik** | Radar audit 8 standar implementasi PKN untuk evaluasi tahunan. |
-| **Dalil** | 04 Fasilitator | `D1`, `D3` | **Baik** | Silabus daurah tematik dan pembagian materi pengantar vs pendalaman. |
-| | 05 Peneliti | `D2`, `D3` | **Baik** | Penelusuran sanad, teks rujukan, dan status registry turats kanonikal. |
-| **Mandiri** | 06 Santri/Pemuda | `B1`–`B7` | **Sangat Baik** | Eksplorasi 40 bakat tanpa nada menggurui; visual 4 kluster kontribusi. |
-| | 07 Pembelajar | `A1`, `J`, `Dk5` | **Sangat Baik** | Audio muhasabah malam hari dan jurnal syukur penenang jiwa (sakinah). |
+Kelompok layar:
 
----
+1. **Ledger/panen:** GF_LEDGER, GF_HARVEST, GF_HARVEST_DONE.
+2. **Tujuh venue:** rumah, sekolah, masjid, kebun, pasar, asrama, tetangga; key GF_HOME/GF_SCHOOL/GF_MOSQUE/GF_GARDEN/GF_MARKET/GF_DORM/GF_NEIGHBOUR.
+3. **Panel aktivitas:** enam venue di luar rumah memiliki `_ACT`; rumah menampilkan ruang keluarga, dua ruang tidur dan musholla.
+4. **Avatar/perkembangan:** GF_MAP, GF_AVATAR, GF_CARE, GF_ADAB, GF_AGES, GF_PRIVACY, GF_TB40.
+5. **Ritme/jembatan nyata:** GF_RHYTHM, GF_AFK, GF_BRIDGE, GF_CHECKIN, GF_CHECKIN_DONE, GF_BREAK.
+6. **Lima skenario:** GF_SCENARIOS, GF_Q1–GF_Q5, masing-masing tiga feedback _A/_B/_C.
+7. **Roadmap:** GF_ROADMAP menghubungkan konsep dan batas implementasi.
 
-## 4. Temuan Kritis & Area yang Perlu Ditingkatkan (Gap Analysis)
+Scene venue adalah geometri isometrik native editable, bukan screenshot dan bukan engine game hidup. GDD diterjemahkan menjadi layar adab, perawatan, usia, privasi/persetujuan anak, ritme ibadah, AFK aman tanpa penalti, check-in sukarela, panen dan jeda lembut 10–15 menit. Waktu salat ilustratif; TB40 bukan inventori resmi 40 butir. Interaksi browser adalah simulasi lokal: tidak ada backend, AI hidup, ekonomi nyata, pengawasan anak, layanan notifikasi/jadwal salat aktual atau diagnosis. Tidak ada klaim konsep simulasi sudah menjadi fitur Flutter produksi.
 
-Meskipun secara visual dan struktural berkas Figma sudah sangat solid, terdapat beberapa aspek teknis dan interaksi yang perlu diperbaiki:
+## 5. Pipeline dan Identitas Stabil
 
-### A. Keterbatasan Komponen (Instances vs. Detached Frame Helpers)
-* **Temuan**: Layar pada halaman *Parcours* (`0:233`) dibangun menggunakan fungsi pembantu tata letak (`layout helper`), bukan sebagai *Component Instance* yang terhubung langsung ke Master Components di halaman *Komponen* (`0:1611`).
-* **Dampak**: Jika pimpinan desain mengubah warna atau radius pada Master Component `Tombol utama • 48+` (`0:1612`), ke-53 layar di halaman Parcours tidak akan berubah secara otomatis.
-* **Tingkat Urgensi**: Sedang (perlu migrasi ke `createComponent` + `createInstance` untuk maintainability jangka panjang).
+Commands lengkap dan contoh resize ada di README:
 
-### B. Ketiadaan Tipografi Arab Khusus & Penataan RTL (Right-to-Left)
-* **Temuan**: Seluruh teks dalil Arab pada layar `D2` dan `Dk2` masih ditampilkan dalam transliterasi Latin atau teks terjemahan bahasa Indonesia karena font engine OpenPencil hanya memuat font `Inter`.
-* **Dampak**: Layar khazanah dalil kehilangan keanggunan matan hadits Arab berharakat asli.
-* **Tingkat Urgensi**: Tinggi untuk ranah P6 (*Khazanah Dalil*).
-
-### C. Ketiadaan Wireframe Interaktif (Prototyping Noodles / Reactions)
-* **Temuan**: Plugin API OpenPencil saat ini belum mendukung pembuatan interaksi klik otomatis (`reactions` / `setReactions`). Navigasi antar-layar saat ini hanya diidentifikasi melalui label teks dan diagram peta `MAP`.
-* **Dampak**: Ketika file diimpor ke Figma Desktop/Web, transisi klik animasi antar-layar harus ditarik secara manual oleh desainer UI/UX.
-* **Tingkat Urgensi**: Rendah untuk fase desain statis, Tinggi untuk pengujian kegunaan (*usability testing*).
-
-### D. Variasi Mode Terang (Light Mode) untuk Layar Parcours
-* **Temuan**: Seluruh 53 layar di halaman Parcours dirancang dalam Dark Mode (*Executive Deep Charcoal*). Halaman Design System memuat palet Light Mode, namun belum ada frame layar padanan untuk Light Theme.
-* **Dampak**: Pengguna yang lebih menyukai tema terang (seperti saat membaca di bawah sinar matahari) belum memiliki referensi visual langsung untuk seluruh layar.
-* **Tingkat Urgensi**: Sedang.
-
-### E. Dimensi Kanvas Tetap vs. Sticky Bottom Bar
-* **Temuan**: Seluruh layar menggunakan tinggi $1.040\text{ dp}$ (scrollable). Baris navigasi bawah diletakkan di $y = 992\text{ dp}$. Pada perangkat asli ($390\times 844$ atau $412\times 915$), navigasi ini akan berada di luar layar jika tidak dikunci dengan constraint `FIXED_BOTTOM`.
-* **Dampak**: Pada pratinjau statis terlihat rapi, namun saat diuji interaktif memerlukan pengaturan auto-layout constraint yang tepat di Figma.
-* **Tingkat Urgensi**: Sedang.
-
----
-
-## 5. Rekomendasi Perbaikan Konkret (Actionable Recommendations)
-
-### Prioritas 1 — Segera (Quick Wins & Patching)
-1. **Refaktor Menjadi Component Instances**:
-   Perbarui generator script agar layar di halaman Parcours menggunakan `figma.importComponentByKeyAsync` atau `masterComponent.createInstance()` untuk 3 elemen global:
-   - Status Bar & Header Navigation (Top Bar)
-   - Primary Action Button (Docked Bottom CTA)
-   - Global Bottom Navigation (4 Tab Icon)
-2. **Penyempurnaan Constraints Auto-Layout**:
-   Tetapkan constraint pada seluruh bottom bar menjadi:
-   ```javascript
-   bottomBar.constraints = { horizontal: "STRETCH", vertical: "MAX" };
-   ```
-   Hal ini memastikan saat frame diubah ukurannya ke resolusi layar lain (misal iPhone SE atau Android Compact), tombol navigasi tetap menempel di dasar layar.
-3. **Pengayaan Visual Kartu Kluster Bakat TB-40 (`0:1265` - `B6`)**:
-   Tambahkan representasi diagram poligon/radar sederhana (menggunakan vector path) untuk mengilustrasikan 4 kluster bakat (*Al-Qiyadah, Al-Fashahah, Al-Idarah, Al-Fikriyyah*) sehingga lebih intuitif dibandingkan kartu teks biasa.
-
-### Prioritas 2 — Jangka Menengah (Menuju Rilis Beta)
-1. **Penerapan Figma Variables & Mode Switcher**:
-   Manfaatkan fitur native *Figma Variables* untuk token:
-   - `Tokens/Color/Background` $\rightarrow$ Mode Light: `#F8FAFC`, Mode Dark: `#121417`
-   - `Tokens/Color/Surface` $\rightarrow$ Mode Light: `#FFFFFF`, Mode Dark: `#1E2229`
-   - `Tokens/Color/TextPrimary` $\rightarrow$ Mode Light: `#0F172A`, Mode Dark: `#FFFFFF`
-   Dengan demikian, peralihan dari Dark Mode ke Light Mode dapat dilakukan dalam satu klik pada level frame.
-2. **Dukungan Tipografi Arab Berharakat (Amiri / Scheherazade New)**:
-   Muat font Arab berkualitas tinggi ke dalam pipeline desain untuk mempercantik kartu dalil `P6`, sehingga matan hadits dan ayat Al-Qur'an tampil dengan khat naskh yang proporsional.
-3. **Penyusunan Alur Prototyping Terarah (Flow Starting Points)**:
-   Buat 6 *Flow Starting Points* di Figma untuk kebutuhan presentasi dan pengujian pengguna:
-   - Flow 1: *Ayah 3-Minute Executive Flow*
-   - Flow 2: *Bunda Panic & Crisis Recovery Flow*
-   - Flow 3: *Guru Tamyiz Shalat KBM Flow*
-   - Flow 4: *Santri TB-40 Radar Discovery Flow*
-   - Flow 5: *Mudir Maqashid Filter Flow*
-   - Flow 6: *Mandiri Night Tazkiyah Flow*
-
-### Prioritas 3 — Jangka Panjang (Penyempurnaan Ekosistem)
-1. **Desain Layar Adaptif (Tablet & Layar Lipat / Foldable)**:
-   Pendidik (guru kelas) dan Pengelola (kepala sekolah) sering menggunakan iPad atau tablet sekolah saat menyiapkan kurikulum atau supervisi. Buat varian tata letak $768\times 1024\text{ dp}$ (2 kolom split view) untuk halaman `L1` (Maqashid Filter) dan `R1` (Fast-Tap Rubric).
-2. **Sinkronisasi Desain-ke-Kode Otomatis (Design Tokens Sync)**:
-   Bangun skrip generator yang mengekspor token warna dan tipografi dari berkas Figma langsung menjadi berkas Dart di Flutter:
-   - `design/PKN_Healing_App_Design.fig` $\rightarrow$ `lib/app/theme/pkn_tokens.dart` & `color_palette.dart`.
-
----
-
-## 6. Rangkuman Metrik Desain
-
-```
-┌──────────────────────────────────────┬────────────────────────────┐
-│ Metrik Kualitas                      │ Status Saat Ini            │
-├──────────────────────────────────────┼────────────────────────────┤
-│ Jumlah Layar Terpetakan              │ 53 Layar + 1 Peta Master   │
-│ Keterwakilan Persona                 │ 16 dari 16 Persona (100%)  │
-│ Kepatuhan Target Sentuh (>= 48 dp)   │ 100% pada Tombol Utama     │
-│ Rasio Kontras Aksesibilitas (WCAG)   │ Lulus Level AA & AAA       │
-│ Keselarasan Grid & Padding           │ Standar 8dp Grid Konsisten │
-│ Tumpang Tindih Teks (Text Collision) │ 0 Temuan (Bebas Masalah)   │
-│ Kesiapan Hand-off ke Flutter         │ Sangat Tinggi (90%)        │
-└──────────────────────────────────────┴────────────────────────────┘
+```bash
+openpencil eval design/PKN_Healing_App_Design.fig --stdin -w < design/generate-journeys.js
+openpencil eval design/PKN_Healing_App_Design.fig --stdin -w < design/generate-virtual-fitrah.js
+node design/generate-prototype.mjs
+node design/sync-tokens.mjs
+node design/sync-tokens.mjs --check
+openpencil eval design/PKN_Healing_App_Design.fig --stdin < design/resize-viewport.js
 ```
 
----
+Root `pknPrototype`/`pknGamePrototype` menyimpan specs dan flow browser. `pknGameManifest` menyimpan inventori game; generator utama hanya mengembalikan manifest saat dijalankan. Lookup `screenKey` dari berkas yang baru dibuka adalah kontrak identitas ekspor utama, bukan root manifest yang tidak tersimpan. Node ID companion dapat dibedakan dengan nama/page. Jangan menyalin ID lama sebagai kontrak. Browser dapat disajikan dari `design/prototype.html` melalui server statis lokal.
 
-## 7. Kesimpulan
+Helper resize mengaplikasikan constraint child dan normalisasi chrome secara eksplisit. `resize()` atau metadata STRETCH/MAX saja pada proxy tidak otomatis membuktikan resize responsif. Konten native dipotong viewport; scroll native belum berjalan, sedangkan browser menyediakan scroll nyata. Import Figma cloud, native prototype cloud dan kolaborasi cloud belum diuji.
 
-Berkas master desain [`design/PKN_Healing_App_Design.fig`](PKN_Healing_App_Design.fig) kini berada pada kondisi **terstruktur, bersih, komprehensif, dan siap dijadikan panduan implementasi antarmuka**. Masalah tata letak pada iterasi terdahulu telah sepenuhnya diperbaiki, dan kedalaman materi mencerminkan kekayaan manhaj Pendidikan Karakter Nabawiyah secara otentik.
+## 6. Bukti Teramati dan Batas Verifikasi
 
-Rekomendasi di atas dapat diimplementasikan secara bertahap seiring dengan pengembangan fungsionalitas aplikasi Flutter di `lib/features/`.
+Parent melaporkan bukti fase utama berikut:
+
+- `graph.updateNode` dan `graph.syncInstances` mengubah radius CTA menjadi22 pada 111 CTA utama; override instance dapat mempertahankan nilai lain.
+- Helper H 412×915 menghasilkan dock y751/tinggi164, CTA lebar364 dan navigasi lebar412.
+- `node design/sync-tokens.mjs --check` lulus.
+- Native mode smoke pada H: `graph.resolveColorVariableForNode` mengembalikan Background Light #F8FAFC, kemudian #121417 setelah variableModes diubah ke Dark; check token setelah reopen tetap lulus.
+- Berkas gabungan memiliki tujuh halaman (empat utama +tiga game), **166 frame dengan screenKey unik** (111 utama +55 game); seluruh166 PNG terbaru diekspor ulang. Companion memiliki empat key unik. Ini verifikasi inventory/ekspor, bukan audit visual setiap layar.
+- `flutter analyze lib/app/theme` tanpa issue; smoke runtime sementara light/dark/Arabic lulus lalu dibuang. Cakupannya tema, bukan seluruh aplikasi.
+- Browser final memuat **104 layar kanonis dan12 flow** (enam utama +enam Virtual Fitrah), bukan166 viewport tema/companion native.
+- Parent membuka tujuh tombol Buka venue pada peta; masing-masing menghasilkan header berbeda. Semua15 pilihan A/B/C pada GF_Q1–GF_Q5 mencapai feedback _A/_B/_C dengan judul berbeda.
+- Parent menempuh ledger → panen → selesai, bridge → check-in dengan input textarea → selesai, serta jeda → AFK → ledger.
+- Simulator avatar dengan input love20 menampilkan “Tawarkan pendampingan hangat; tidak ada hukuman.” Ini respons simulasi fiktif, bukan pengukuran anak.
+- Pemeriksaan visual peta Web native melihat semua tujuh label tanpa clipping; peta browser terlihat tanpa overlap utama pada surface yang diperiksa. Tidak digeneralisasi ke semua layar/ukuran.
+
+Bukti tersebut tidak digeneralisasi menjadi WCAG100%, bebas collision seluruh desain, semua ukuran responsif, semua fungsi game produksi selesai atau audit klinis/syar'i. Dokumen ini tidak menjalankan tests/build/lint; verifikasi proyek dimiliki parent. Bukti browser di atas berasal dari interaksi surface aktual parent, bukan hanya inspeksi source atau ekspor berhasil.
+
+## 7. Prioritas Lanjutan Berdasarkan Batas Nyata
+
+- **Konten/keamanan:** review ahli atas dalil, rubrik, standar audit dan instrumen TB40 sebelum rilis; pisahkan contoh dari sumber resmi.
+- **Aksesibilitas:** audit actual surface Light/Dark, text scaling, focus/keyboard, TalkBack/VoiceOver, bahasa/RTL dan seluruh target sentuh. Kontras token tunggal tidak cukup.
+- **Usability:** uji pengguna pada enam persona-flow dan alur game dengan persetujuan, privasi serta pemisahan dunia simulasi/aksi nyata.
+- **Produksi:** implementasikan persistence, audio/unduhan/latar belakang, laporan dan game runtime hanya dengan kontrak produk yang disepakati. State contoh tidak dianggap layanan berjalan.
+- **Interop:** uji import Figma cloud dan perilaku komponen/variables/constraints di editor target sebelum menjanjikan handoff interaktif native.
+
+Prioritas ini adalah batas yang belum terbukti, bukan tambahan scope yang diklaim sudah selesai.

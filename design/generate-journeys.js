@@ -6,13 +6,15 @@ await figma.loadFontAsync({family:'Inter',style:'Regular'});
 await figma.loadFontAsync({family:'Inter',style:'Bold'});
 function box(p,name,x,y,w,h,color=C.surface,r=16){const n=figma.createFrame();n.name=name;n.resize(w,h);n.fills=paint(color);n.cornerRadius=r;p.appendChild(n);n.x=x;n.y=y;return n;}
 function text(p,s,x,y,w=380,size=16,color=C.ink,bold=false){const n=figma.createText();n.name=s.slice(0,55);n.fontName={family:'Inter',style:bold?'Bold':'Regular'};n.fontSize=size;n.fills=paint(color);n.characters=s;n.resize(w,Math.max(size*1.5,Math.ceil(s.length/(w/(size*.54)))*size*1.45));p.appendChild(n);n.x=x;n.y=y;return n;}
-function button(p,label,y,target,secondary=false){const b=box(p,`Action | ${target||label}`,24,y,380,52,secondary?C.surface:C.teal,14);text(b,label,16,15,348,14,secondary?C.teal:'#FFFFFF',true);if(target)b.setPluginData('navigationTarget',target);return b;}
-const old=figma.root.children.find(p=>p.id==='0:107');
-// Preserve frame IDs for the original five screens, migrate their obsolete content.
-const keep=old.children.slice();for(const f of keep)for(const child of f.children.slice())child.remove();
-for(const p of figma.root.children.slice())if(p.name.startsWith('Parcours')||p.name==='Komponen & Peta Journey')p.remove();
-const page=figma.createPage();page.name='Parcours • 16 Persona / 5 Ranah';
-const lib=figma.createPage();lib.name='Komponen & Peta Journey';
+await figma.loadFontAsync({family:'Amiri',style:'Regular'});
+const old=figma.root.children.find(p=>p.name==='📱 Layar Aplikasi PKN');
+if(!old)throw new Error('Missing original application page: 📱 Layar Aplikasi PKN');
+// Rebuild only owned screens, preserving unrelated user frames and assets.
+const originalKeys=['O1','H','Dk3','R5','A1'];
+const keep=originalKeys.map(key=>old.children.find(f=>f.getPluginData('screenKey')===key||f.name.startsWith(key+' | ')));
+for(const f of keep.filter(Boolean))for(const child of f.children.slice())child.remove();
+const page=figma.root.children.find(p=>p.name==='Parcours • 16 Persona / 5 Ranah')||figma.createPage();page.name='Parcours • 16 Persona / 5 Ranah';
+const lib=figma.root.children.find(p=>p.name==='Komponen & Peta Journey')||figma.createPage();lib.name='Komponen & Peta Journey';
 const specs=[];
 function S(key,title,sub,cards,cta,target,kind='cards'){specs.push({key,title,sub,cards,cta,target,kind});}
 S('O1','Amanah Anda hari ini','1 / 4 • Pilih ranah. Bisa diubah kapan saja.',[['Pengasuhan keluarga','Ayah • Bunda • Orang tua pemula'],['Guru & pendidik','Thufulah • Tamyiz • Murahaqah • Syabab • Dewasa • Umum'],['Tata kelola lembaga','Formal • Non-formal • Pengelola umum'],['Keilmuan & pengkaji','Fasilitator kajian • Peneliti dalil'],['Pelajar & mandiri','Siswa / santri • Pembelajar mandiri']],'Lanjut: pilih peran','O2','options');
@@ -43,7 +45,7 @@ S('L2c','Portofolio naratif santri','Contoh laporan berkala untuk wali.', [['Pen
 S('L3','Audit 8 standar PKN','03 Pengelola umum • Label contoh; bukan standar resmi.',Array.from({length:8},(_,i)=>[`${i+1}. ${['Visi adab','Kurikulum','Pendidik','Pembelajaran','Lingkungan','Kemitraan','Evaluasi','Tata kelola'][i]}`,'Belum ditelaah / Perlu penguatan / Siap • Bukti']),'Susun prioritas tahun pertama','L3b','audit');
 S('L3b','Prioritas transformasi','Bertahap tanpa membuat guru panik.', [['Prioritas 1 • kemitraan','Contoh: dialog rutin dengan wali\nPemilik: koordinator • Waktu: bulan awal'],['Prioritas 2 • observasi','Latih pencatatan naratif; mulai dari satu rutinitas.'],['Alasan & bukti','Gunakan temuan audit, bukan radar angka kesiapan.'],['Tinjau bersama','Periksa beban kerja dan masukan guru sebelum keputusan final.']],'Simpan prioritas','E1');
 S('D1','Silabus kajian tematik','04 Fasilitator • P6 Dalil / P1 Mulai', [['Tema • koneksi sebelum koreksi','Pembuka pengalaman jamaah; satu tujuan pembelajaran.'],['Dalil sheet','Bidang matan Arab, terjemahan, kitab, bab, nomor, takhrij, dan derajat. Belum diisi riwayat tanpa sumber.'],['Outline 3 poin','1. Fenomena keluarga\n2. Prinsip dengan rujukan\n3. Respons praktis dan refleksi'],['Batas penyampaian','Bedakan nash dengan penjelasan pedagogis; jangan menyebut sahih sebelum verifikasi.']],'Telaah sumber dalil','D2');
-S('D2','Penelusuran sumber','05 Peneliti • P6 Dalil • Belum diverifikasi', [['Matan & terjemahan','Belum tersedia sumber terverifikasi dalam desain. Tidak menampilkan kutipan Arab rekaan.'],['Rujukan yang harus diperiksa','Kitab • Bab • Nomor • Sanad • Takhrij ulama\nStatus: belum ditelaah; bukan klaim sahih/hasan.'],['Syarah & konteks','Buka D3 untuk catatan telaah dan batas pemakaian.'],['Pisahkan jenis pernyataan','Nash: teks bersumber\nIjtihad: interpretasi perumus\nIlustrasi: contoh pedagogis desain']],'Buka catatan syarah / status','D3');
+S('D2','Penelusuran sumber','05 Peneliti • P6 Dalil • Kutipan Al-Qur’an', [['QS Ali Imran 3:159 • penggalan ayat','Maka berkat rahmat Allah engkau (Muhammad) berlaku lemah lembut terhadap mereka.'],['Atribusi sumber','Quran.com • terjemahan Indonesia • QS Ali Imran 3:159\nhttps://quran.com/id/keluarga-imran/159'],['Syarah & konteks','Kutipan adalah penggalan ayat, bukan hadis. Ringkasan koneksi sebelum koreksi merupakan ilustrasi pedagogis; bukan bunyi nash.'],['Pisahkan jenis pernyataan','Nash: teks bersumber\nIjtihad: interpretasi perumus\nIlustrasi: contoh pedagogis desain']],'Buka catatan syarah / status','D3');
 S('D3','Syarah & registry status','Jejak telaah, bukan sertifikat validitas.', [['Nash • menunggu rujukan','Matan, lokasi kitab, dan derajat belum tersedia.'],['Ijtihad • pisahkan konteks','Ringkasan pedagogis tidak otomatis sama dengan bunyi nash.'],['Catatan penelaah','Penelaah • tanggal • sumber pembanding • batas penggunaan. Tidak diisi nama otoritas rekaan.'],['Keputusan status','Belum ditelaah / Perlu revisi / Ditelaah dengan rujukan\nContoh opsi, bukan hasil verifikasi.']],'Kembali ke silabus / sumber','D1');
 const questions=[['Dalam tugas bersama, apa yang kamu nikmati?','Mengajak teman • Menulis pesan • Menata tugas • Mencari ide'],['Bagaimana kamu menjelaskan ide?','Bercerita • Menggambar alur • Mengatur contoh • Bertanya'],['Saat kegiatan baru, kamu ingin mencoba apa?','Memimpin kecil • Menulis • Mengelola • Meneliti'],['Apa yang membuatmu merasa berguna?','Mendampingi • Menyampaikan • Merapikan • Memecahkan'],['Kontribusi apa yang ingin dicoba?','Proyek tim • Cerita • Kegiatan rutin • Kajian ide']];
 questions.forEach((q,i)=>S('B'+(i+1),'Eksplorasi TB40',`06 Siswa / santri • Pertanyaan ${i+1} / 5`,[[q[0],'Pilih yang paling dekat, tidak ada jawaban buruk.'],...q[1].split(' • ').map(v=>[v,'Ketuk pilihan • bisa berubah']),['Batas asesmen','Pertanyaan ilustratif; bukan instrumen TB40 tervalidasi.']],i===4?'Lihat ilustrasi 4 kluster':'Lanjut',i===4?'B6':'B'+(i+2),'options'));
@@ -61,50 +63,67 @@ S('S1','Panduan tersimpan','Bookmark • contoh setelah menyimpan.', [['Kalimat 
 S('E1','Tersimpan untuk dilanjutkan','State sukses • contoh interaksi', [['Catatan tersimpan','Anda dapat kembali tanpa harus mulai dari awal.'],['Tidak ada skor atau peringkat','Keberhasilan di sini adalah langkah nyata dan refleksi.'],['Kembali ke konteks','Jurnal J • Laporan R5 • Rencana B7\nKeputusan L1b • Portofolio L2c']],'Kembali ke beranda','H');
 S('E2','Belum berhasil menyimpan','State error • jangan hilangkan tulisan pengguna.', [['Catatan tetap di layar','Penyimpanan gagal. Salin catatan bila perlu, lalu coba lagi.'],['Coba ulang dengan aman','Tombol “Coba simpan lagi”; tidak meminta mengetik ulang.'],['Jika sedang luring','Simpan lokal bila tersedia; sinkronisasi belum didukung dalam desain.']],'Coba simpan lagi','E1');
 S('E3','Anda sedang luring','State konten belum tersedia', [['Yang tersimpan tetap bisa dibuka','Audio unduhan A3 • Bookmark S1'],['Konten ini belum diunduh','Sambungkan internet untuk memuat sumber; jangan mengganti nash dengan teks tebakan.'],['Kembali tanpa kehilangan arah','Pilihan persona dan kebutuhan tetap menjadi konteks.']],'Buka audio tersimpan','A3');
-const manifest={pages:{original:old.id,journeys:page.id,library:lib.id},frames:{}};
-function render(s,index){
-  const originals={O1:keep[0],H:keep[1],Dk3:keep[2],R5:keep[3],A1:keep[4]};
-  const f=originals[s.key]||box(page,'',0,0,428,1040,C.bg,24);
-  f.name=`${s.key} | ${s.title}`;f.resize(428,1040);f.x=(index%8)*476;f.y=Math.floor(index/8)*1400;f.fills=paint(C.bg);f.clipsContent=true;
-  manifest.frames[s.key]={id:f.id,name:f.name,page:f.parent.id};
-  text(f,'9:41                      PKN                     •••',24,18,380,12,C.muted,true);
-  text(f,'‹ Kembali                                      Simpan',24,56,380,14,C.teal,true);
-  text(f,s.title,24,98,380,26,C.ink,true);text(f,s.sub,24,166,380,13,C.muted);
-  let y=224;
-  if(s.kind==='deck'||s.kind==='quiz')for(let j=0;j<5;j++)box(f,'Step '+(j+1),24+j*77,206,65,5,j<Number(s.key.slice(2))?C.teal:C.border,2);
-  const compact=s.cards.length>5;
-  for(const [a,b] of s.cards){
-    const h=s.kind==='rubric'?100:compact?76:Math.max(104,48+Math.ceil(b.length/43)*21);
-    const card=box(f,a,24,y,380,h,a.includes('Lead')||s.kind==='crisis'?C.soft:C.surface,16);
-    card.strokes=paint(C.border);card.strokeWeight=1;text(card,a,16,12,348,compact?13:15,C.ink,true);
-    if(s.kind==='rubric'){
-      ['BT','MT','BK','MM','—'].forEach((label,j)=>{const chip=box(card,'Rubric option '+label,16+j*68,40,60,48,j===1?C.soft:C.bg,10);text(chip,label,12,16,45,12,C.teal,true);});
-    }else text(card,b,16,compact?36:40,348,compact?11:14,C.muted);
-    if(s.kind==='options'&&s.key.startsWith('B')&&a!==s.cards[0][0]&&a!=='Batas asesmen'){const mark=box(card,'Radio option',328,12,28,28,C.soft,14);text(mark,'○',7,3,20,16,C.teal);}
-    if(['J','R4','L1','L2b','B7'].includes(s.key))box(card,'Editable field underline',16,h-8,348,2,C.border,0);
-    y+=h+12;
-  }
-  if(s.kind==='audio'){
-    const panel=box(f,'Audio transport',24,y,380,120,C.soft,20);box(panel,'Track',24,20,330,4,C.border,2);box(panel,'Elapsed',24,20,120,4,C.teal,2);
-    const play=box(panel,'Play or pause',152,44,64,64,C.teal,32);text(play,'Ⅱ',22,18,28,24,'#FFFFFF',true);text(panel,'−15',72,65,50,18,C.teal,true);text(panel,'+15',264,65,50,18,C.teal,true);y+=132;
-  }
-  if(s.kind==='clusters'){
-    const chart=box(f,'Four-cluster illustration • no numerical score',24,y,380,72,C.soft,16);
-    ['Qiyadah','Fashahah','Idarah','Fikriyyah'].forEach((v,j)=>{box(chart,v,16+j*91,16,80,8,C.P3,4);text(chart,v,16+j*91,36,88,11,C.ink,true);});y+=84;
-  }
-  const actionY=Math.max(884,y+8);f.resize(428,Math.max(1040,actionY+156));button(f,s.cta,actionY,s.target);
-  text(f,'Edukasi, bukan diagnosis / terapi. Konten contoh.',24,actionY+60,380,11,C.muted);
-  const nav=box(f,'Navigation | H S1 A1 O2',0,f.height-48,428,48,C.surface,0);text(nav,'Beranda       Tersimpan       Audio       Profil',24,16,380,12,C.teal,true);
-  f.setPluginData('screenKey',s.key);f.setPluginData('nextScreen',s.target||'');return f;
+const tokens={Light:{Background:C.bg,Surface:C.surface,TextPrimary:C.ink,TextSecondary:C.muted,Border:C.border,Primary:C.teal,PrimarySoft:C.soft},Dark:{Background:'#121417',Surface:'#1E2229',TextPrimary:'#FFFFFF',TextSecondary:'#CBD5E1',Border:'#475569',Primary:'#5EEAD4',PrimarySoft:'#163D38'}};
+for(const mode of Object.values(tokens))for(let i=1;i<=6;i++)mode['Pillar'+i]=C['P'+i];
+tokens.Light.OnPrimary='#FFFFFF';tokens.Dark.OnPrimary='#0F172A';
+const collection=figma.getLocalVariableCollections().find(c=>c.name==='PKN')||figma.createVariableCollection('PKN');
+const lightMode=collection.defaultModeId;figma.graph.renameMode(collection.id,lightMode,'Light');
+let darkMode=collection.modes.find(m=>m.name==='Dark')?.modeId;if(!darkMode){darkMode='pkn-dark';figma.graph.addMode(collection.id,darkMode,'Dark',lightMode);}
+const colorVariables={};
+for(const name of Object.keys(tokens.Light)){const v=figma.getLocalVariables().find(v=>v.collectionId===collection.id&&v.name==='Tokens/Color/'+name)||figma.createVariable('Tokens/Color/'+name,'COLOR',collection.id);for(const [mode,id] of [['Light',lightMode],['Dark',darkMode]])figma.setVariableValue(v.id,id,{...paint(tokens[mode][name])[0].color,a:1});colorVariables[name]=v;}
+const typography={version:1,styles:[['Display',26,700,36],['Heading',18,700,27],['Subhead',15,400,23],['Body',13,400,20],['Caption',12,400,18],['Arabic',28,400,48]].map(([name,fontSize,fontWeight,lineHeight])=>({name,fontFamily:name==='Arabic'?'Amiri':'Inter',fontSize,fontWeight,lineHeight,letterSpacing:0}))};
+figma.root.setPluginData('pknTypography',JSON.stringify(typography));
+const source={arabic:'فَبِمَا رَحْمَةٍ مِّنَ اللّٰهِ لِنْتَ لَهُمْ',translation:'Maka berkat rahmat Allah engkau (Muhammad) berlaku lemah lembut terhadap mereka.',url:'https://quran.com/id/keluarga-imran/159',attribution:'QS Ali Imran 3:159 • penggalan ayat • Quran.com (Indonesia)'};
+const ds=specs.find(s=>s.key==='Dk2');ds.cards=[['QS Ali Imran 3:159 • penggalan ayat',source.translation],['Atribusi sumber',source.attribution+'\n'+source.url],['Prinsip pedagogis','Koneksi sebelum koreksi adalah ringkasan pedagogis, bukan teks ayat atau hadis. Telaah konteks lengkap di D2.']];
+const starts=[['Ayah 3-Minute Executive Flow','F'],['Bunda Panic & Crisis Recovery Flow','K'],['Guru Tamyiz Shalat KBM Flow','T2'],['Santri TB-40 Radar Discovery Flow','B1'],['Mudir Maqashid Filter Flow','L1'],['Mandiri Night Tazkiyah Flow','A1']].map(([name,start])=>({name,start}));
+figma.root.setPluginData('pknPrototype',JSON.stringify({version:1,specs,flows:starts,tokens,source,typography}));
+const manifest={pages:{original:old.id,journeys:page.id,library:lib.id},frames:{},collection:{id:collection.id,modes:collection.modes},components:{},prototype:{native:false,reason:'Plugin API has no reactions setter; serializer preserves imported raw fields only.',flows:starts}};
+function bindTree(n,mode){const raw=figma.graph.getNode(n.id);raw.variableModes={[collection.id]:mode};for(const field of ['fills','strokes'])if(n[field]?.[0]?.type==='SOLID'&&!raw.boundVariables?.[field+'/0/color']){const c=n[field][0].color;const h='#'+[c.r,c.g,c.b].map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('').toUpperCase();const name=Object.keys(tokens.Light).find(k=>tokens.Light[k].toUpperCase()===h);if(name)figma.bindVariable(n.id,field+'/0/color',colorVariables[name].id);}if(n.children)for(const child of n.children)bindTree(child,mode);}
+// Replace only generator-owned masters and screens, retaining user-added library assets.
+const masterNames=['Status & header','Docked primary action','Four-tab icon navigation'];
+const obsolete=['Tombol utama • 48+','Lead TL;DR','Rubrik BT / MT / BK / MM','Mini-player','Navigasi bawah'];
+for(const n of lib.children.slice())if(obsolete.includes(n.name)||n.name.startsWith('MAP |'))n.remove();
+function master(name,w,h,x){const n=lib.children.find(n=>n.type==='COMPONENT'&&n.name===name)||figma.createComponent();lib.appendChild(n);for(const child of n.children.slice())child.remove();n.name=name;n.resize(w,h);n.x=x;n.y=0;n.fills=paint(C.surface);manifest.components[name]=n.id;return n;}
+const top=master(masterNames[0],390,88,0);const status=text(top,'9:41                  PKN                  •••',24,12,342,12,C.muted,true);status.constraints={horizontal:'STRETCH',vertical:'MIN'};text(top,'‹ Kembali',24,46,180,14,C.teal,true);const save=text(top,'Simpan',292,46,74,14,C.teal,true);save.constraints={horizontal:'MAX',vertical:'MIN'};
+const action=master(masterNames[1],342,52,430);action.fills=paint(C.teal);action.cornerRadius=14;const actionText=text(action,'Lanjutkan',16,15,310,14,'#FFFFFF',true);actionText.name='Action label';actionText.constraints={horizontal:'STRETCH',vertical:'CENTER'};figma.bindVariable(actionText.id,'fills/0/color',colorVariables.OnPrimary.id);
+const nav=master(masterNames[2],390,88,820);
+const iconPaths=['M 2 10 L 12 2 L 22 10 L 22 22 L 15 22 L 15 14 L 9 14 L 9 22 L 2 22 Z','M 6 2 L 18 2 L 18 23 L 12 18 L 6 23 Z','M 3 10 L 3 19 L 8 19 L 8 10 Z M 16 10 L 16 19 L 21 19 L 21 10 Z M 3 10 C 3 -1 21 -1 21 10','M 12 1 C 19 1 19 11 12 11 C 5 11 5 1 12 1 Z M 2 24 C 2 12 22 12 22 24 Z'];
+['Beranda','Tersimpan','Audio','Profil'].forEach((label,i)=>{const v=figma.createVector();v.vectorPaths=[{windingRule:'NONZERO',data:iconPaths[i]}];v.fills=paint(C.teal);nav.appendChild(v);v.x=i*97.5+37;v.y=10;v.name=label+' icon';text(nav,label,i*97.5+4,40,90,11,C.teal,true).name='Tab '+i;});box(nav,'Safe area inset',0,64,390,24,C.surface,0);
+for(const n of [top,action,nav])bindTree(n,lightMode);
+function instance(master,p,x,y,w,h){const n=master.createInstance();p.appendChild(n);n.resize(w,h);n.x=x;n.y=y;n.constraints={horizontal:'STRETCH',vertical:'MAX'};return n;}
+function radar(p,x,y,w){const chart=box(p,'Illustrative radar • no personal score',x,y,w,280,C.soft);const cx=w/2;const cy=135;for(const r of [35,70,100]){const v=figma.createVector();v.vectorPaths=[{windingRule:'NONZERO',data:`M ${cx} ${cy-r} L ${cx+r} ${cy} L ${cx} ${cy+r} L ${cx-r} ${cy} Z`}];v.fills=[];v.strokes=paint(C.border);v.strokeWeight=1;chart.appendChild(v);v.x=cx-r;v.y=cy-r;v.name='Editable radar guide';}const v=figma.createVector();v.vectorPaths=[{windingRule:'NONZERO',data:'M 100 0 L 200 100 L 100 200 L 0 100 Z'}];v.fills=paint(C.P3);v.opacity=.22;v.strokes=paint(C.P3);chart.appendChild(v);v.x=cx-100;v.y=cy-100;v.name='Equal illustrative polygon • not scored';[['Al-Qiyadah',cx-60,8],['Al-Fashahah',w-108,124],['Al-Idarah',cx-50,238],['Al-Fikriyyah',8,124]].forEach(([s,x,y])=>text(chart,s,x,y,104,11,C.ink,true));return chart;}
+function render(s,index,mode='Light',w=390,h=844,variant=''){
+  const key=s.key+(variant?'_'+variant:'')+(mode==='Dark'?'_Dark':'');
+  const parent=mode==='Light'&&!variant&&originalKeys.includes(s.key)?old:page;
+  const f=parent.children.find(n=>n.getPluginData('screenKey')===key||n.name.startsWith(key+' | '))||box(parent,'',0,0,w,h,C.bg,24);
+  for(const child of f.children.slice())child.remove();f.name=`${key} | ${s.title}`;f.resize(w,h);f.x=(index%8)*(w+48);f.y=Math.floor(index/8)*1120;f.fills=paint(C.bg);f.clipsContent=true;
+  const header=instance(top,f,0,0,w,88);header.constraints={horizontal:'STRETCH',vertical:'MIN'};
+  header.children.forEach(n=>{if(n.type==='TEXT'&&n.characters==='Simpan')n.x=w-98;else if(n.type==='TEXT'&&n.y<30)n.resize(w-48,n.height);});
+  const scroll=box(f,'Scroll viewport • content only',0,88,w,h-252,C.bg,0);scroll.clipsContent=true;scroll.constraints={horizontal:'STRETCH',vertical:'STRETCH'};
+  const tablet=w===768;const cw=tablet?348:w-48;const content=box(scroll,'Scrollable editable content',0,0,w,2000,C.bg,0);
+  const titleNode=text(content,s.title,24,16,w-48,26,C.ink,true);const subtitle=text(content,s.sub,24,32+titleNode.height,w-48,13,C.muted);let y=32+titleNode.height+subtitle.height+24;
+  if(s.kind==='deck'||s.kind==='quiz'){for(let j=0;j<5;j++)box(content,'Step '+(j+1),24+j*(cw/5+2),y,cw/5-8,5,j<Number(s.key.slice(2))?C.teal:C.border,2);y+=24;}
+  if(s.key==='D2'||s.key==='Dk2'){const a=text(content,source.arabic,24,y,w-48,28,C.ink);a.fontName={family:'Amiri',style:'Regular'};a.textAlignHorizontal='RIGHT';a.name='Arabic RTL • QS Ali Imran 3:159 excerpt';a.resize(w-48,96);a.setPluginData('textDirection','RTL');y+=112;}
+  if(s.kind==='clusters'){radar(content,24,y,cw);y+=296;}
+  const columnY=[y,y];s.cards.forEach(([a,b],i)=>{const col=tablet?i%2:0;const x=24+col*372;const card=box(content,a,x,columnY[col],cw,160,a.includes('Lead')||s.kind==='crisis'?C.soft:C.surface,16);card.strokes=paint(C.border);card.strokeWeight=1;const title=text(card,a,16,12,cw-32,15,C.ink,true);let cardH;if(s.kind==='rubric'){const chipsY=title.height+24;['BT','MT','BK','MM','—'].forEach((label,j)=>{const chip=box(card,'Rubric option '+label,16+j*((cw-32)/5),chipsY,(cw-40)/5,48,j===1?C.soft:C.bg,10);text(chip,label,8,15,48,12,C.teal,true);});cardH=chipsY+64;}else{const body=text(card,b,16,20+title.height,cw-32,14,C.muted);cardH=Math.max(112,36+title.height+body.height);}card.resize(cw,cardH);if(s.kind==='options'&&s.key.startsWith('B')&&i>0&&a!=='Batas asesmen'){const radio=box(card,'Radio choice',cw-44,12,28,28,C.soft,14);text(radio,'○',6,2,20,18,C.teal);}if(['J','R4','L1','L2b','B7'].includes(s.key))box(card,'Editable field underline',16,cardH-8,cw-32,2,C.border,0);columnY[col]+=cardH+16;});
+  y=Math.max(...columnY);
+  if(s.kind==='audio'){const panel=box(content,'Audio transport • simulated controls',24,y,cw,136,C.soft,16);box(panel,'Track',24,20,cw-48,4,C.border,2);box(panel,'Elapsed',24,20,(cw-48)*.31,4,C.teal,2);const play=box(panel,'Play or pause',cw/2-32,42,64,64,C.teal,32);const glyph=text(play,'Ⅱ',22,16,30,24,'#FFFFFF',true);figma.bindVariable(glyph.id,'fills/0/color',colorVariables.OnPrimary.id);text(panel,'−15',32,64,50,18,C.teal,true);text(panel,'+15',cw-82,64,50,18,C.teal,true);text(panel,'Simulasi desain • tidak ada audio nyata',16,110,cw-32,10,C.muted);y+=152;}
+  content.resize(w,y+24);scroll.setPluginData('overflowDirection','VERTICAL_SCROLLING');
+  const dock=box(f,'Docked CTA & safe navigation',0,h-164,w,164,C.surface,0);dock.constraints={horizontal:'STRETCH',vertical:'MAX'};
+  const cta=instance(action,dock,24,8,w-48,52);const label=cta.findAll(n=>n.type==='TEXT'&&n.name==='Action label')[0];label.characters=s.cta;label.resize(w-80,24);figma.bindVariable(label.id,'fills/0/color',colorVariables.OnPrimary.id);cta.setPluginData('navigationTarget',s.target||'');
+  const tabs=instance(nav,dock,0,76,w,88);tabs.children.forEach(n=>{if(n.type==='TEXT'&&n.name.startsWith('Tab ')){const i=Number(n.name.slice(4));n.characters=['Beranda','Tersimpan','Audio','Profil'][i];n.x=i*w/4+4;n.resize(w/4-8,18);}else if(n.type==='VECTOR'){const i=['Beranda icon','Tersimpan icon','Audio icon','Profil icon'].indexOf(n.name);n.x=i*w/4+w/8-12;}else if(n.name==='Safe area inset')n.resize(w,24);});tabs.setPluginData('navigationTargets',JSON.stringify(['H','S1','A1','O2']));
+  text(dock,'Edukasi, bukan diagnosis / terapi.',24,62,w-48,10,C.muted);
+  f.setPluginData('screenKey',key);f.setPluginData('nextScreen',s.target||'');f.setPluginData('pknOwned','true');bindTree(f,mode==='Dark'?darkMode:lightMode);
+  manifest.frames[key]={id:f.id,name:f.name,page:f.parent.id,width:w,height:h,contentHeight:content.height,mode};return f;
 }
-specs.forEach(render);
-// Native reusable master components; screen compositions use the same construction helpers.
+specs.forEach((s,i)=>render(s,i));specs.forEach((s,i)=>render(s,i+56,'Dark'));
+['L1','R1'].forEach((key,i)=>{const s=specs.find(s=>s.key===key);render(s,112+i,'Light',768,1024,'Tablet');render(s,114+i,'Dark',768,1024,'Tablet');});
+render(specs.find(s=>s.key==='H'),116,'Light',412,915,'Android');
 figma.currentPage=lib;
-for(const [i,title] of ['Tombol utama • 48+','Lead TL;DR','Rubrik BT / MT / BK / MM','Mini-player','Navigasi bawah'].entries()){const c=figma.createComponent();c.name=title;c.resize(380,110);c.x=i*420;c.y=0;c.fills=paint(C.surface);c.cornerRadius=16;text(c,title,16,16,348,16,C.teal,true);text(c,['Lanjutkan','Satu prinsip dan satu respons praktis.','BT Belum Tampak • MT Mulai Tampak\nBK Berkembang • MM Membudaya','Jeda • 02:10 / 07:00 • Luring','Beranda • Tersimpan • Audio • Profil'][i],16,52,348,14,C.ink);}
 const flows=[['01a','Ayah','F • S1 • Dk1–5 • R1–5','P4 / P2'],['01b','Bunda','K • S1 • A1–3 • R1–5','P4 / P1'],['01','Orang tua pemula','N • N2 • Dk1–5','P1'],['02a','Guru Thufulah','T1 • A2 • R1–5','P5 / P2'],['02b','Guru Tamyiz','T2 • R1–5 • D2','P5 / P2'],['02c','Guru Murahaqah','T3 • T3b • E1','P5 / P2'],['02d','Pembimbing Syabab','T4 • T4b • B1–7','P3 / P5'],['02e','Pembimbing dewasa','T5 • Dk1–5 • J','P1 / P4'],['02','Guru umum','R1 • R2 • R3 • R4 • R5','P5'],['03a','Pengelola formal','L1 • L1b • L3 • L3b','P5'],['03b','Pengelola non-formal','L2 • L2b • L2c','P5 / P6'],['03','Pengelola umum','L3 • L3b • E1','P5'],['04','Fasilitator kajian','D1 • D2 • D3 • D1','P6 / P1'],['05','Peneliti dalil','D2 • D3 • S1','P6'],['06','Siswa / santri','B1 • B2 • B3 • B4 • B5 • B6 • B7','P3'],['07','Pembelajar mandiri','A1 • A2 • A3 • J • E1','P1 / P4']];
 const map=box(lib,'MAP | 16 persona • linked screen IDs',0,180,1680,1680,C.bg,16);text(map,'Peta journey • 5 ranah / 16 persona',32,24,1600,28,C.ink,true);text(map,'Semua mulai O1 → O2 → O3 → O4 → H. Fase kondisional; profil tidak mengunci pilihan.\nDeck tepat 5 langkah: Dk1 → Dk2 → Dk3 → Dkf (feedback langkah 3) → Dk4 → Dk5.\nNavigasi eksplisit dengan identifier; OpenPencil API ini tidak menyediakan reactions prototype.',32,78,1600,16,C.muted);let my=188;flows.forEach((r,i)=>{const row=box(map,r[0],32,my,1616,76,i%2?C.soft:C.surface,12);text(row,`${r[0]} • ${r[1]}   |   ${r[3]}`,16,12,480,16,C.ink,true);text(row,r[2]+'\nIdentifier layar stabil: cocokkan prefix frame pada halaman journey.',510,12,1090,13,C.muted);my+=84;});text(map,'States bersama: S0 kosong • S1 bookmark • E1 tersimpan • E2 gagal simpan • E3 luring.\nSemua teks, kartu, indikator dan kontrol adalah layer native; tidak ada gambar layar sebagai fill.',32,1550,1600,16,C.muted);manifest.frames.MAP={id:map.id,name:map.name,page:lib.id};
 // Canonical tokens: migrate wrong pillar labels/colors and unsupported verification claims.
-const tokenPage=figma.root.children.find(p=>p.id==='0:3');const replacements={'P1: Mulai di Sini':'P1: Mulai','#059669':'#6366F1','P2: Fase Tumbuh':'P2: Fase','#0284C7':'#0EA5E9','P3: Bakat TB-40':'P3: Bakat','#7C3AED':'#8B5CF6','P4: Praktik Keluarga':'P4: Keluarga','#EA580C':'#F43F5E','P5: Krisis & Solusi':'P5: Lembaga & Guru','#DC2626':'#10B981','P6: Manhaj & Glosarium':'P6: Dalil','#4B5563':'#D4AF37','BT • Belum Terlihat':'BT • Belum Tampak','MT • Mulai Terlihat':'MT • Mulai Tampak'};
+const tokenPage=figma.root.children.find(p=>p.name==='📐 Design System & Tokens');const replacements={'P1: Mulai di Sini':'P1: Mulai','#059669':'#6366F1','P2: Fase Tumbuh':'P2: Fase','#0284C7':'#0EA5E9','P3: Bakat TB-40':'P3: Bakat','#7C3AED':'#8B5CF6','P4: Praktik Keluarga':'P4: Keluarga','#EA580C':'#F43F5E','P5: Krisis & Solusi':'P5: Lembaga & Guru','#DC2626':'#10B981','P6: Manhaj & Glosarium':'P6: Dalil','#4B5563':'#D4AF37','BT • Belum Terlihat':'BT • Belum Tampak','MT • Mulai Terlihat':'MT • Mulai Tampak'};
 const oldColors={'#059669':C.P1,'#0284C7':C.P2,'#7C3AED':C.P3,'#EA580C':C.P4,'#DC2626':C.P5,'#4B5563':C.P6};
 for(const n of tokenPage.findAll(()=>true)){if(n.type==='TEXT'){if(replacements[n.characters])n.characters=replacements[n.characters];else if(/[\u0600-\u06ff]/.test(n.characters))n.characters='Bidang matan Arab • isi setelah verifikasi sumber';else if(/shahih|sahih|takhrij|100%/i.test(n.characters))n.characters='Contoh layout sumber • status belum diverifikasi';}if(n.fills?.[0]?.type==='SOLID'){const c=n.fills[0].color;const h='#'+[c.r,c.g,c.b].map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('').toUpperCase();if(oldColors[h])n.fills=paint(oldColors[h]);}}
 figma.currentPage=page;

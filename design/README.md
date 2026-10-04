@@ -12,7 +12,7 @@ Konflik sumber diselesaikan mengikuti journey dan permintaan pengguna: donut ada
 
 ## Cakupan persona
 
-Semua jalur dimulai dengan onboarding bersama. Identifier berikut adalah prefix nama frame native. Rentang berarti seluruh layar pada rentang, bukan satu layar ringkasan.
+Semua jalur dimulai dengan onboarding bersama. Identifier berikut adalah **key layar stabil**, bukan node ID. Rentang berarti seluruh layar pada rentang. Resolusi key ke node dilakukan melalui manifest root setelah membuka berkas.
 
 | Persona | Ranah | Aha dan alur tugas | Pilar |
 |---|---|---|---|
@@ -33,100 +33,79 @@ Semua jalur dimulai dengan onboarding bersama. Identifier berikut adalah prefix 
 | 06 Siswa/Santri | Pelajar | B1–5 lima pertanyaan; B6 ilustrasi 4 kluster; B7 kontribusi | P3 |
 | 07 Pembelajar Mandiri | Mandiri | A1 audio malam; A2 unduh/luring; A3 latar belakang; J syukur | P1 / P4 |
 
-## Halaman dan manifest ekspor
+## Artefak dan manifest
 
-| Halaman | ID |
-|---|---|
-| Design System & Tokens | `0:3` (canvas `0:4`) |
-| Layar Aplikasi PKN — lima layar awal diperbarui | `0:107` |
-| Parcours • 16 Persona / 5 Ranah | `0:233` |
-| Komponen & Peta Journey | `0:1611` |
+`design/PKN_Healing_App_Design.fig` berisi objek native editable yang dibuat melalui OpenPencil v0.15.1. Tidak ada perubahan cloud Figma atau URL kolaborasi; import Figma cloud belum diuji.
 
-| Prefix | Frame ID tersimpan | Layar/state | Page ID |
-|---|---|---|---|
-| O1 | `0:108` | Amanah Anda hari ini | `0:107` |
-| H | `0:133` | Ruang tarbiyah Anda | `0:107` |
-| Dk3 | `0:158` | Pilih respons | `0:107` |
-| R5 | `0:179` | Laporan pertumbuhan adab | `0:107` |
-| A1 | `0:204` | Audio untuk menemani malam | `0:107` |
-| O2 | `0:234` | Peran dan fase fokus | `0:233` |
-| O3 | `0:259` | Apa yang paling mendesak? | `0:233` |
-| O4 | `0:284` | Arah yang sesuai amanah | `0:233` |
-| F | `0:303` | Mode Eksekutif • 3 menit | `0:233` |
-| K | `0:325` | Tenang dulu, Bunda | `0:233` |
-| N | `0:347` | Peta 4 fase tarbiyah | `0:233` |
-| N2 | `0:372` | Primer orang tua • 5 hari | `0:233` |
-| T1 | `0:397` | Cerita & sentra bermain | `0:233` |
-| T2 | `0:422` | Tertib shalat bersama | `0:233` |
-| T3 | `0:447` | Mediasi dengan menjaga martabat | `0:233` |
-| T3b | `0:469` | Thaharah • ruang privat | `0:233` |
-| T4 | `0:491` | Mentoring pemuda | `0:233` |
-| T4b | `0:513` | Menjaga iffah bersama | `0:233` |
-| T5 | `0:535` | Pendampingan jiwa dewasa | `0:233` |
-| R1 | `0:557` | Fast-Tap • observasi adab | `0:233` |
-| R2 | `0:651` | Fast-Tap • observasi adab | `0:233` |
-| R3 | `0:745` | Fast-Tap • observasi adab | `0:233` |
-| R4 | `0:815` | Bukti kecil yang bermakna | `0:233` |
-| L1 | `0:841` | Filter program Maqashid | `0:233` |
-| L1b | `0:867` | Keputusan program tahunan | `0:233` |
-| L2 | `0:889` | Kurikulum adab non-formal | `0:233` |
-| L2b | `0:911` | Komitmen rumah & lembaga | `0:233` |
-| L2c | `0:941` | Portofolio naratif santri | `0:233` |
-| L3 | `0:963` | Audit 8 standar PKN | `0:233` |
-| L3b | `0:997` | Prioritas transformasi | `0:233` |
-| D1 | `0:1019` | Silabus kajian tematik | `0:233` |
-| D2 | `0:1041` | Penelusuran sumber | `0:233` |
-| D3 | `0:1063` | Syarah & registry status | `0:233` |
-| B1 | `0:1085` | Eksplorasi TB40 | `0:233` |
-| B2 | `0:1121` | Eksplorasi TB40 | `0:233` |
-| B3 | `0:1157` | Eksplorasi TB40 | `0:233` |
-| B4 | `0:1193` | Eksplorasi TB40 | `0:233` |
-| B5 | `0:1229` | Eksplorasi TB40 | `0:233` |
-| B6 | `0:1265` | Empat ruang kontribusi | `0:233` |
-| B7 | `0:1299` | Rencana kontribusi kecil | `0:233` |
-| Dk1 | `0:1329` | Fenomena nyata | `0:233` |
-| Dk2 | `0:1350` | Prinsip & dalil | `0:233` |
-| Dk4 | `0:1371` | Kalimat yang dapat dicoba | `0:233` |
-| Dk5 | `0:1392` | Doa & refleksi | `0:233` |
-| Dkf | `0:1413` | Umpan balik respons | `0:233` |
-| A2 | `0:1432` | Unduh & dengar luring | `0:233` |
-| A3 | `0:1461` | Audio tetap menemani | `0:233` |
-| J | `0:1490` | Jurnal syukur malam | `0:233` |
-| S0 | `0:1516` | Bookmark masih kosong | `0:233` |
-| S1 | `0:1532` | Panduan tersimpan | `0:233` |
-| E1 | `0:1554` | Tersimpan untuk dilanjutkan | `0:233` |
-| E2 | `0:1573` | Belum berhasil menyimpan | `0:233` |
-| E3 | `0:1592` | Anda sedang luring | `0:233` |
-| MAP | `0:1627` | 16 persona • linked screen IDs | `0:1611` |
+Fase aplikasi utama memuat **53 key layar**, masing-masing dalam Light dan Dark, **4 varian tablet** (`L1_Tablet`, `R1_Tablet` dan padanan `_Dark`) serta **H_Android**: total **111 viewport**. Peta persona MAP terpisah dari jumlah viewport. Ukuran mobile dasar 390×844, Android 412×915, tablet 768×1024; bukan lagi kanvas seragam 428×1040. Konten panjang dipisahkan dari dock dan dipotong viewport. Native scrolling belum diimplementasikan; browser prototype menyediakan scroll nyata.
 
-Master komponen: tombol `0:1612`, lead `0:1615`, rubrik `0:1618`, mini-player `0:1621`, navigasi `0:1624`. Komposisi layar memakai helper layout yang sama; bukan instance terikat ke master. Layar panjang adalah kanvas konten scroll, bukan klaim viewport produksi.
+Library utama memiliki tiga master: `Status & header`, `Docked primary action`, `Four-tab icon navigation`; 333 instance dipakai pada 111 viewport. Propagasi perubahan master membutuhkan `figma.graph.updateNode` lalu `figma.graph.syncInstances`; instance override dapat mempertahankan nilai sendiri. Pemeriksaan parent mengubah radius CTA menjadi 22 dan mengamati propagasi pada 111 CTA.
 
-## Membuka, regenerasi, ekspor
+Gunakan `screenKey`, bukan daftar node ID yang mudah basi. Generator utama mengembalikan manifest saat dijalankan, tetapi tidak menyimpannya sebagai root field; `pknGameManifest` menyimpan frame dan scene Virtual Fitrah. Node ID dapat berubah saat serialisasi. Lookup frame dari berkas yang baru dibuka sebelum ekspor. Data `pknPrototype` dan `pknGamePrototype` menjadi sumber browser prototype, bukan native reactions.
 
-`design/PKN_Healing_App_Design.fig` ditulis oleh OpenPencil v0.15.1 melalui API createFrame/createText/createComponent. Tidak ada perubahan cloud Figma atau URL kolaborasi. Kompatibilitas import Figma cloud belum diuji.
+## Regenerasi dan penggunaan
 
-`design/generate-journeys.js` adalah generator reproducible, bukan kode Flutter. Jalankan dari root:
+Jalankan dari root, dengan CLI OpenPencil dan Node.js tersedia. Generator hanya membangun ulang halaman/aset yang dimilikinya; simpan perubahan manual sebelum regenerasi.
 
 ```bash
 openpencil info design/PKN_Healing_App_Design.fig
 openpencil eval design/PKN_Healing_App_Design.fig --stdin -w < design/generate-journeys.js
-openpencil eval design/PKN_Healing_App_Design.fig -c 'return figma.root.children.map(p=>({id:p.id,name:p.name,frames:p.children.map(n=>({id:n.id,name:n.name}))}));' --json
-openpencil export design/PKN_Healing_App_Design.fig --node 0:325 -f png -o design/previews/journey_K_crisis.png --font-policy warn
-openpencil export design/PKN_Healing_App_Design.fig --node 0:557 -f png -o design/previews/journey_R1_rubric.png --font-policy warn
-openpencil export design/PKN_Healing_App_Design.fig --node 0:1265 -f png -o design/previews/journey_B6_clusters.png --font-policy warn
-openpencil export design/PKN_Healing_App_Design.fig --node 0:1627 -f png -o design/previews/journey_MAP.png --font-policy warn
+openpencil eval design/PKN_Healing_App_Design.fig --stdin -w < design/generate-virtual-fitrah.js
+node design/generate-prototype.mjs
+node design/sync-tokens.mjs
+node design/sync-tokens.mjs --check
+openpencil eval design/PKN_Healing_App_Design.fig -c 'return figma.root.findAll(n=>n.type==="FRAME"&&n.getPluginData("screenKey")).map(n=>({key:n.getPluginData("screenKey"),id:n.id,name:n.name,page:n.parent.name}));' --json
 ```
 
-OpenPencil renumber node ID ketika serialisasi; **manifest menggunakan ID hasil reopen, bukan ID sementara hasil generator**. Setelah regenerasi, baca ulang tree dan sesuaikan manifest/ekspor. Prefix layar tetap stabil. Pratinjau lama bernama screen_01 sampai screen_05 adalah artefak historis sampai diekspor ulang; tidak menjadi bukti desain terbaru.
+Buka `design/prototype.html` melalui server statis lokal. Enam start aplikasi utama: Ayah/F, Bunda/K, Guru Tamyiz/T2, Santri/B1, Mudir/L1, Mandiri/A1. Nama flow Santri masih menyebut radar; radar B6 adalah ilustrasi empat kluster, **bukan hasil asesmen**. Generator prototype juga membaca flow Virtual Fitrah bila datanya tersedia. Native `reactions` dan flow starting points tidak writable pada API yang diperiksa; start dan klik yang berjalan berada di browser, bukan Figma cloud.
 
-Smoke ekspor setelah perbaikan koordinat: journey_K_crisis.png (75,1 KB), journey_R1_rubric.png (66,6 KB), journey_B6_clusters.png (68,8 KB), journey_MAP.png (161,4 KB). Pemeriksaan visual K menunjukkan empat kartu, tombol simpan, dan navigasi; R1 menunjukkan tujuh baris rubrik dan seluruh tombol tanpa clipping. Penyebab ekspor blank sebelumnya: appendChild mempertahankan posisi global. Generator sekarang melakukan append terlebih dahulu lalu menetapkan koordinat lokal. Semua layar, komponen, dan MAP diregenerasi dengan urutan benar.
+Untuk ekspor, ambil ID dari lookup terkini lalu gunakan `openpencil export ... --node <ID> -f png -o <output> --font-policy warn`. Parent mengekspor ulang **seluruh166 frame screenKey** (111 utama +55 game) ke PNG; keberhasilan ekspor tidak berarti semua166 telah diaudit visual/aksesibilitas.
 
-Verifikasi akhir: seluruh **53 layar dan satu peta journey** berhasil diekspor ke `design/previews/journey_<prefix>.png` sesuai manifest. Pemeriksaan visual sampel K, R1, B6, dan L1 menunjukkan konten terbaca, tombol terlihat, dan tidak ada overlap utama. B6 memuat empat kartu kluster; bukan radar hasil asesmen karena instrumen dan scoring resmi belum tersedia. Ekspor berhasil bukan bukti import Figma cloud atau audit aksesibilitas menyeluruh.
+### Resize viewport eksplisit
 
-## Batas yang jujur
+```bash
+# Default: H menjadi 412×915; tanpa -w hanya smoke, tidak menyimpan berkas.
+openpencil eval design/PKN_Healing_App_Design.fig --stdin < design/resize-viewport.js
+# Permintaan lain ditulis ke root pluginData pknResizeRequest sebelum helper dijalankan.
+openpencil eval design/PKN_Healing_App_Design.fig -c 'figma.root.setPluginData("pknResizeRequest",JSON.stringify({screen:"R1",width:412,height:915}));' -w
+openpencil eval design/PKN_Healing_App_Design.fig --stdin -w < design/resize-viewport.js
+```
 
-- Prototype klik native tidak tersedia pada proxy Plugin API yang diperiksa (tidak ada reactions/setReactions). MAP dan nama action menyediakan target identifier editable; pluginData navigationTarget/nextScreen bukan interaksi berjalan.
-- Tidak ada audio aktual, unduhan, background playback, penyimpanan, asesmen, pembuatan laporan atau generator outline berjalan. Ini state desain dan keluaran contoh, bukan implementasi aplikasi.
-- Tidak ada matan Arab/derajat hadis rekaan. D1–D3 memperlihatkan kebutuhan metadata sumber, syarah dan registry dengan status belum diverifikasi. Konten pedagogis, doa dengan kata sendiri, pertanyaan TB40, nama 19 butir rubrik, dan nama 8 standar audit **ilustratif**, bukan klaim instrumen/dalil resmi. Sumber turats, takhrij ahli, instrumen TB40 dan rubric/audit otoritatif belum tersedia dalam sumber yang diperiksa.
-- Font native Inter mengikuti dokumen lama; tipografi Arab final/RTL belum diuji karena tidak memasukkan kutipan yang belum bersumber. WCAG/TalkBack/VoiceOver tidak dinyatakan lulus; desain menyediakan target utama ≥48 dan teks kontras gelap, tetapi perlu audit actual surface.
-- Tidak mengubah Flutter. Tidak menjalankan build, lint, test permanen, atau formatter.
+Constraint metadata saja tidak cukup: `resize()` pada proxy tidak otomatis menerapkannya. Helper menghitung ulang posisi/ukuran child dan chrome. Smoke H 412×915 yang diamati parent menghasilkan dock y=751/tinggi164, CTA lebar364, navigasi lebar412. Ini bukti satu skenario helper, bukan klaim responsif otomatis untuk semua ukuran.
+
+## Token, tema dan tipografi
+
+Koleksi native `PKN` memiliki **14 color variables** dengan mode Light/Dark: Background, Surface, TextPrimary, TextSecondary, Border, Primary, PrimarySoft, OnPrimary, Pillar1–6. Binding dan mode disimpan pada scene; browser membaca token, Flutter menerima keluaran generator `color_palette.dart` dan `pkn_tokens.dart`. `AppTheme.light`/`dark` mengonsumsi token tema. `--check` membandingkan keluaran tanpa menulisnya.
+
+Sumber tipografi aktual adalah root `pknTypography`: Inter Display26/36, Heading18/27, Subhead15/23, Body13/20, Caption12/18; Amiri Arabic28/48 (ukuran/tinggi baris). Ini menggantikan skala lama Plus Jakarta Sans/Poppins dan body16/14 sebagai kontrak sinkronisasi, bukan bukti setiap teks utilitas memakai satu role secara mutlak. D2 dan Dk2 memuat **penggalan QS Ali Imran 3:159**, bersumber dari [Quran.com Indonesia](https://quran.com/id/keluarga-imran/159), dengan atribusi, Amiri, dan alignment kanan. Metadata arah RTL native tidak sama dengan bukti implementasi RTL Flutter seluruh aplikasi.
+
+## Virtual Fitrah
+
+Generator `generate-virtual-fitrah.js` mendefinisikan **51 layar mobile + 4 companion** pada halaman `Virtual Fitrah • Mobile`, `Virtual Fitrah • Companion`, dan `Virtual Fitrah • Components`. Companion: `GF_HOME_Dark`, `GF_AVATAR_Dark`, `GF_MAP_Web` (1440×1050), `GF_MAP_Tablet` (1024×1050). Mobile tidak diklaim memiliki padanan Dark lengkap.
+
+Companion final memiliki key unik `GF_HOME_Dark`, `GF_AVATAR_Dark`, `GF_MAP_Web`, `GF_MAP_Tablet`. Seluruh166 frame utama/game memiliki screenKey unik; gunakan lookup setelah reopen untuk node ID terkini.
+
+| Kelompok | Key layar |
+|---|---|
+| Ledger dan panen | GF_LEDGER, GF_HARVEST, GF_HARVEST_DONE |
+| Tujuh venue | GF_HOME, GF_SCHOOL, GF_MOSQUE, GF_GARDEN, GF_MARKET, GF_DORM, GF_NEIGHBOUR |
+| Panel aktivitas | GF_SCHOOL_ACT, GF_MOSQUE_ACT, GF_GARDEN_ACT, GF_MARKET_ACT, GF_DORM_ACT, GF_NEIGHBOUR_ACT |
+| Avatar dan perkembangan | GF_MAP, GF_AVATAR, GF_CARE, GF_ADAB, GF_AGES, GF_PRIVACY, GF_TB40 |
+| Ritme dan jembatan nyata | GF_RHYTHM, GF_AFK, GF_BRIDGE, GF_CHECKIN, GF_CHECKIN_DONE, GF_BREAK |
+| Skenario | GF_SCENARIOS, GF_Q1–GF_Q5; setiap pertanyaan memiliki feedback _A, _B, _C terpisah |
+| Roadmap | GF_ROADMAP |
+
+Tujuh venue memakai geometri isometrik native editable yang berbeda; rumah memuat ruang keluarga, dua ruang tidur, dan musholla. Ini desain scene, bukan engine permainan produksi. Konsep mencakup ledger adab tanpa peringkat, perawatan avatar, usia/fase, privasi dan persetujuan anak, panen, ritme ibadah, AFK aman, jembatan aktivitas nyata, check-in sukarela, skenario dan jeda lembut 10–15 menit. Jam salat ilustratif; pilihan TB40 bukan inventori resmi 40 butir. Interaksi browser adalah simulasi lokal tanpa backend, AI hidup, ekonomi nyata atau validasi psikometrik; bookmark, pilihan dan tulisan hanya bertahan selama halaman terbuka.
+
+Browser game merender scene SVG inline tujuh venue dan hotspot peta, feedback A/B/C, serta dock Rumah/Peta/Kabar/Jeda. Simulator avatar fiktif dan check-in opsional hanya menyimpan state sesi. Peta browser adalah companion responsif; bukan seluruh frame companion native diekspor menjadi runtime, bukan AI atau mesin AFK hidup.
+
+Prototype final memuat **104 layar kanonis /12 flow** (enam utama +enam game), bukan166 varian viewport native. Parent membuka tujuh venue dengan header berbeda, semua15 pilihan skenario A/B/C menuju feedback berjudul berbeda, alur ledger/panen/selesai, bridge/check-in berisi tulisan/selesai dan jeda/AFK/ledger. Input love20 pada simulator avatar memberi respons “Tawarkan pendampingan hangat; tidak ada hukuman.” Pemeriksaan visual terbatas peta Web native dan peta browser melihat tujuh label tanpa clipping/overlap utama; bukan audit semua layar.
+
+## Bukti dan batas
+
+- Parent mengamati propagasi master CTA dan resize helper sebagaimana angka di atas; pemeriksaan `sync-tokens --check` lulus. Analisis Flutter terbatas `lib/app/theme` tidak menemukan issue, dan smoke runtime sementara mengamati light/dark/Arabic. Itu bukan pengujian seluruh Flutter atau implementasi game.
+- Smoke variable mode native H mengembalikan Background Light #F8FAFC lalu Dark #121417 melalui `graph.resolveColorVariableForNode`; token check setelah reopen tetap lulus. Berkas gabungan memiliki tujuh halaman, bukan empat halaman audit lama.
+- Audio, unduhan, background playback, penyimpanan, laporan dan asesmen produksi tidak diimplementasikan oleh desain. Browser mensimulasikan state; tidak mengirim data ke server.
+- Pertanyaan TB40, nama 19 butir rubrik dan 8 standar audit ilustratif, bukan instrumen resmi. L3 berupa daftar standar/prioritas, bukan radar audit tervalidasi. B6 radar ilustratif tidak boleh diberi skor pribadi.
+- Tidak ada klaim bebas collision pada semua layar, WCAG100%, AA/AAA menyeluruh, TalkBack/VoiceOver lulus, atau persentase kesiapan handoff. Target utama ≥48 adalah pilihan desain; aksesibilitas memerlukan audit surface, semua pasangan warna, keyboard, pembaca layar dan text scaling.
+- Konten syar'i di luar penggalan ayat yang diatribusikan tetap membutuhkan review sumber/ahli. Ringkasan pedagogis bukan kutipan ayat/hadis dan aplikasi bukan pengganti layanan klinis.

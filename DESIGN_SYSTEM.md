@@ -1,6 +1,6 @@
 # 🎨 PKN Mobile Design System Specification
 ## *(Pendidikan Karakter Nabawiyah & Tafsir Bakat 40)*
-### Version: 1.0.0 • Target: Flutter M3 & OpenPencil Vector Architecture
+### Version: 2.0.0 • Kontrak desain native, prototype browser & tema Flutter
 
 ---
 
@@ -14,7 +14,7 @@ Desain antarmuka PKN Mobile dibangun di atas perpaduan antara **keanggunan eksek
 | **Koneksi Sebelum Koreksi** | Hierarki visual memprioritaskan sentuhan hati (*Bahasa Hati*) dan validasi emosi sebelum menyajikan konsekuensi kedisiplinan atau aturan teknis. |
 | **Rekayasa Kognitif Zero-Fluff** | Menekan beban mental (*extraneous cognitive load*) orang tua yang lelah setelah bekerja dan guru yang terburu-buru menyiapkan KBM. Menyajikan solusi instan 10 detik (*Lead TL;DR*) paling atas (*above the fold*). |
 | **Keselamatan Manhaj & Batas Klinis** | Perlindungan anak: larangan sanksi fisik pada balita, batas sanksi disiplin mendidik hanya setelah usia 10 tahun (tidak memukul wajah/tidak melukai), serta penegasan bahwa asesmen adalah panduan fitrah, bukan vonis psikometrik permanen. |
-| **Aksesibilitas Universal (WCAG 2.1 AA)** | Rasio kontras $\ge 4.5:1$, target sentuh minimal $48 \times 48\text{ dp}$, font Arab berharakat proporsional ($\ge 22\text{ sp}$, RTL), dan dukungan penuh TalkBack / VoiceOver. |
+| **Aksesibilitas sebagai Target** | Sasaran kontras teks normal ≥4.5:1, target sentuh utama 48×48 dp, Arab Amiri/RTL, dan semantics pembaca layar. Ini persyaratan implementasi, bukan klaim WCAG/TalkBack/VoiceOver sudah lulus. |
 
 ---
 
@@ -30,20 +30,23 @@ Desain antarmuka PKN Mobile dibangun di atas perpaduan antara **keanggunan eksek
 ### 2.2 Warna Permukaan & Mode Tampilan
 | Token | Dark Mode (`ThemeMode.dark`) | Light Mode (`ThemeMode.light`) | Peruntukan |
 |---|---|---|---|
-| `background` | `#0B132B` (Deep Nabawi Slate) | `#F8FAFC` (Slate 50) | Latar belakang seluruh layar |
-| `surface` | `#151D3B` (Elevated Slate) | `#FFFFFF` (Pure White) | Kartu konten, dialog, bottom sheet |
-| `surfaceElevated` | `#1C274C` | `#F1F5F9` (Slate 100) | Chip terpilih, pill filter, input |
-| `border` | `#2A3764` | `#E2E8F0` (Slate 200) | Garis pemisah, outline kartu ($1\text{ dp}$) |
-| `textPrimary` | `#F8FAFC` (White 95%) | `#0F172A` (Slate 900) | Judul, ayat Al-Qur'an, teks primer |
-| `textSecondary` | `#94A3B8` (Slate 400) | `#475569` (Slate 600) | Teks penjelas, deskripsi, terjemahan |
-| `textMuted` | `#64748B` (Slate 500) | `#94A3B8` (Slate 400) | Placeholder, meta data, durasi baca |
+| `Background` | `#121417` | `#F8FAFC` | Latar viewport |
+| `Surface` | `#1E2229` | `#FFFFFF` | Kartu dan dock |
+| `PrimarySoft` | `#163D38` | `#E6F4F1` | Callout dan pilihan |
+| `Border` | `#475569` | `#E2E8F0` | Garis pemisah |
+| `TextPrimary` | `#FFFFFF` | `#0F172A` | Teks primer |
+| `TextSecondary` | `#CBD5E1` | `#475569` | Teks sekunder |
+| `Primary` | `#5EEAD4` | `#0F766E` | CTA |
+| `OnPrimary` | `#0F172A` | `#FFFFFF` | Teks pada CTA |
+
+Sumber aktual: koleksi native `PKN`, mode Light/Dark, variable `Tokens/Color/<Nama>`. Delapan token di atas ditambah Pillar1–6 menghasilkan 14 variables. `surfaceElevated`/`textMuted` bukan variable native dalam kontrak ini. Warna status rubrik dan callout di bawah adalah spesifikasi pendukung, bukan bukti binding seluruh warna.
 
 ### 2.3 Rubrik Adab Kualitatif (BT - MT - BK - MM)
 Menggantikan sistem nilai angka/peringkat dengan 4 status perkembangan fitrah:
-- 🔴 **BT (Belum Terlihat):** `#EF4444` (Red 500) — Membutuhkan bimbingan intensif dan keteladanan fisik (*Bahasa Tangan*).
-- 🟡 **MT (Mulai Terlihat):** `#F59E0B` (Amber 500) — Muncul sesekali bila diingatkan; membutuhkan pembiasaan teratur.
-- 🟢 **BK (Berkembang Konsisten):** `#10B981` (Emerald 500) — Dilakukan mandiri dengan kesadaran hati tanpa perlu dipaksa.
-- 🔵 **MM (Membudaya Mandiri):** `#3B82F6` (Blue 500) — Telah menjadi karakter spontan dan mampu mengajak orang lain berbuat adab.
+- **BT (Belum Tampak):** `#EF4444` — Perilaku belum teramati; catat konteks tanpa melabeli anak.
+- **MT (Mulai Tampak):** `#F59E0B` — Muncul sesekali dengan dukungan.
+- **BK (Berkembang):** `#10B981` — Berkembang dengan praktik dan pendampingan.
+- **MM (Membudaya):** `#3B82F6` — Kebiasaan makin konsisten; tetap gunakan bukti naratif.
 
 ### 2.4 Warna 6 Pilar MOC (Maps of Content)
 Setiap pilar taksonomi memiliki identitas warna visual konsisten:
@@ -63,30 +66,25 @@ Setiap pilar taksonomi memiliki identitas warna visual konsisten:
 
 ## 3. Sistem Tipografi (Typography Scale)
 
-Tipografi memadukan **Plus Jakarta Sans / Poppins** untuk kejelasan eksekutif modern, **Inter** untuk keterbacaan artikel panjang berkecepatan tinggi (*speed reading*), dan **Amiri / Uthman Taha** untuk teks suci Al-Qur'an dan Hadits Nabawiyah.
+Sumber sinkronisasi aktual adalah root pluginData **`pknTypography`**, bukan skala aspiratif lama Plus Jakarta Sans/Poppins/Uthman Taha. `sync-tokens.mjs` membaca metadata ini dan color variables native lalu menghasilkan token Dart. Inter dipakai untuk Latin, Amiri untuk Arab.
 
-| Level Tipografi | Ukuran (`sp`) | Bobot (`FontWeight`) | Font Family | Tinggi Baris (`height`) | Kegunaan |
+| Role | Ukuran | Bobot | Family | Tinggi baris absolut | Kegunaan |
 |---|---|---|---|---|---|
-| `headlineLarge` | 28 | 800 (Bold) | Plus Jakarta Sans | 1.20 | Judul utama layar & nama modul |
-| `headlineMedium`| 22 | 700 (Bold) | Plus Jakarta Sans | 1.25 | Judul kartu Lead TL;DR & kuis |
-| `headlineSmall` | 18 | 700 (Bold) | Plus Jakarta Sans | 1.30 | Subjudul bab & pertanyaan kuis |
-| `titleLarge`    | 17 | 600 (SemiBold) | Plus Jakarta Sans | 1.35 | Judul kartu rekomendasi feed |
-| `titleMedium`   | 15 | 600 (SemiBold) | Plus Jakarta Sans | 1.40 | Pilihan jawaban kuis / opsi |
-| `titleSmall`    | 13 | 600 (SemiBold) | Plus Jakarta Sans | 1.40 | Judul seksi & step counter |
-| `bodyLarge`     | 16 | 400 (Regular) | Inter | 1.55 | Teks isi nasehat & narasi adab |
-| `bodyMedium`    | 14 | 400 (Regular) | Inter | 1.50 | Teks umum, penjelasan soal |
-| `bodySmall`     | 12 | 400 (Regular) | Inter | 1.40 | Waktu baca, takhrij dalil, takarir |
-| `labelLarge`    | 14 | 600 (SemiBold) | Plus Jakarta Sans | 1.20 | Tombol aksi utama ($48\text{ dp}$) |
-| `labelMedium`   | 12 | 600 (SemiBold) | Plus Jakarta Sans | 1.20 | Chip pilar MOC & filter |
-| `labelSmall`    | 10 | 700 (Bold) | Plus Jakarta Sans | 1.20 | Badge Adab (BT/MT/BK/MM) |
-| **Arabic Dalil**| **$\ge 22$** | **600 (Bold)** | **Amiri / Uthmanic** | **1.85** | **Matan Hadits & Ayat Al-Qur'an (RTL)** |
+| Display | 26 | 700 | Inter | 36 | Judul layar |
+| Heading | 18 | 700 | Inter | 27 | Heading |
+| Subhead | 15 | 400 | Inter | 23 | Subjudul |
+| Body | 13 | 400 | Inter | 20 | Isi |
+| Caption | 12 | 400 | Inter | 18 | Metadata |
+| Arabic | 28 | 400 | Amiri | 48 | Penggalan dalil |
+
+Letter spacing metadata adalah 0. Tinggi Flutter dihitung sebagai lineHeight/fontSize. Teks utilitas generator dapat menggunakan ukuran/bobot khusus; tabel adalah kontrak token, bukan klaim setiap node identik dengan role. Skala lama headline28/22/body16/14 tidak lagi menjadi sumber generator. D2/Dk2 memakai penggalan [QS Ali Imran 3:159 dari Quran.com Indonesia](https://quran.com/id/keluarga-imran/159), attribution dan alignment kanan; metadata RTL native tidak membuktikan RTL seluruh aplikasi.
 
 ---
 
 ## 4. Sistem Spasial, Grid & Geometri (Layout Foundations)
 
 ### 4.1 Grid 8-Point Standar
-Semua dimensi, margin, dan jarak antar elemen adalah kelipatan dari **8dp** (atau 4dp untuk jarak mikro):
+Token jarak menggunakan basis 4/8 dp; ini panduan, bukan hasil audit bahwa semua node adalah kelipatan 8:
 - `spacing.xxs` = 4 dp
 - `spacing.xs` = 8 dp
 - `spacing.sm` = 12 dp
@@ -103,7 +101,7 @@ Semua dimensi, margin, dan jarak antar elemen adalah kelipatan dari **8dp** (ata
 - **Ekstra Besar (Container / Hero):** `24.0 dp` — Kartu Hero TL;DR, Bottom Sheet modal.
 
 ### 4.3 Target Sentuh Ergonomis (Touch Targets)
-Sesuai standar WCAG 2.1 AA dan pengoperasian satu tangan orang tua/guru di lapangan:
+Target ergonomis utama (bukan sertifikasi WCAG):
 - **Minimum Target Area:** $48 \times 48\text{ dp}$.
 - **Tombol Navigasi Bawah:** Tinggi $64\text{ dp}$ (area aman sentuh).
 - **Opsi Kuis:** Tinggi minimal $56\text{ dp}$ dengan padding internal lapang.
@@ -123,19 +121,19 @@ Sesuai standar WCAG 2.1 AA dan pengoperasian satu tangan orang tua/guru di lapan
 ### 5.2 Lencana Adab Kualitatif (`AdabBadge`)
 - **Tujuan:** Menampilkan status pertumbuhan adab tanpa memicu perbandingan toksik.
 - **Varian:**
-  - `BT`: 🔴 Belum Terlihat (Latar merah lembut, teks merah pekat)
-  - `MT`: 🟡 Mulai Terlihat (Latar kuning lembut, teks amber pekat)
-  - `BK`: 🟢 Berkembang Konsisten (Latar hijau lembut, teks emerald pekat)
-  - `MM`: 🔵 Membudaya Mandiri (Latar biru lembut, teks royal blue)
+  - `BT`: Belum Tampak
+  - `MT`: Mulai Tampak
+  - `BK`: Berkembang
+  - `MM`: Membudaya
 - **Aksesibilitas:** Wajib menyertakan atribut `semanticsLabel` agar dibacakan tuntas oleh TalkBack/VoiceOver.
 
 ### 5.3 Blok Teks Dalil & Takhrij Turats (`ArabicDalilCard`)
 - **Tujuan:** Menyajikan rujukan Al-Qur'an dan Hadits dengan penghormatan tertinggi terhadap kaidah turats.
 - **Tata Letak:**
   - Latar belakang berhias pola emas halus atau sudut melengkung $18\text{ dp}$.
-  - Teks Arab menggunakan font *Amiri* $\ge 22\text{ sp}$, `textDirection: TextDirection.rtl`, harakat lengkap.
-  - Tombol aksi collapsible: *"Lihat Takhrij & Sanad Lengkap"* (mencegah beban kognitif berlebih bagi pembaca awam).
-  - Terjemahan bahasa Indonesia di bawah teks Arab dengan font *Inter* 14sp italic.
+  - Teks Arab token aktual Amiri28/48; native alignment kanan dan metadata RTL, Flutter `TextDirection.rtl` saat merender teks Arab.
+  - Atribusi sumber dan tautan konteks; jangan mengarang takhrij/derajat hadis.
+  - Terjemahan Indonesia menggunakan role Inter sesuai hierarki layar.
 
 ### 5.4 5-Minute Primer Microlearning Deck
 - **Tujuan:** Pelatihan kilat 5 menit berbasis kartu geser interaktif (Google Primer format).
@@ -146,14 +144,10 @@ Sesuai standar WCAG 2.1 AA dan pengoperasian satu tangan orang tua/guru di lapan
   4. `FillInBlankCard`: Rekonstruksi kalimat kunci fitrah dengan bank kata interaktif.
 - **Indikator Kemajuan:** Segmented Progress Bar di AppBar atas (menunjukkan posisi step $N$ dari total langkah).
 
-### 5.5 Kartu Donut Refleksi Pertumbuhan Adab (`AdabGrowthReport`)
-- **Tujuan:** Laporan selesai belajar yang merayakan perkembangan karakter, bukan skor angka.
-- **Elemen:**
-  - Donut Chart interaktif 4 segmen (persentase sebaran adab yang tersentuh).
-  - Ringkasan waktu belajar (e.g. 5 Menit).
-  - Butir adab yang diperkuat hari ini (dengan badge BK / MM).
-  - Rekomendasi aksi nyata di rumah / kelas (*Action Checklist*).
-  - Do'a penutup reflektif berharakat.
+### 5.5 Laporan Naratif Pertumbuhan Adab (`AdabGrowthReport`)
+- **Tujuan:** Refleksi perkembangan, bukan nilai total atau peringkat.
+- **Elemen:** Bukti kecil, konteks, status BT/MT/BK/MM, narasi dan aksi berikutnya.
+- Donut persentase/angka total adab dari spesifikasi lama dihapus. Radar B6 hanya ilustrasi empat kluster TB40, bukan hasil psikometrik. L3 adalah daftar delapan standar ilustratif dan prioritas, bukan radar audit tervalidasi.
 
 ### 5.6 Pemutar Audio Sirah & Tazkiyah (`PknAudioPlayerSheet`)
 - **Tujuan:** Pendampingan audio riang bagi ibu saat menyusui/menidurkan anak, serta podcast daurah Ustadz Abdul Kholiq.
@@ -167,13 +161,13 @@ Sesuai standar WCAG 2.1 AA dan pengoperasian satu tangan orang tua/guru di lapan
 
 Menggunakan **OpenPencil**, layar aplikasi ditransformasikan dari template yang tersedia:
 
-| Layar PKN | Sumber Template Figma | Node ID | Penyelarasan Desain PKN |
-|---|---|---|---|
-| **JTBD Onboarding & Persona** | `14 Screen Education Apps.fig` | `0:1182` (Level) & `0:1555` (Welcome) | Stepper peran vertikal: Ayah, Bunda, Guru (Fase 2-7, 7-10, 10-14, 14+), Siswa/Santri. |
-| **Discovery Feed & Lead TL;DR** | `14 Screen Education Apps.fig` | `0:774` (Home) | Chip 6 Pilar MOC di atas, Banner Respon Krisis Cepat, Feed Kartu Deepstash. |
-| **5-Min Primer Interactive Deck**| `14 Screen Education Apps.fig` | `0:429` (Test) | Segmented progress bar, kartu pertanyaan interaktif, umpan balik seketika. |
-| **Adab Growth & Reflection Report**| `14 Screen Education Apps.fig` | `0:379` (Test Report) | Mengganti skor persentase ujian dengan Donut Chart Adab, waktu muhasabah, dan action steps. |
-| **Audio Sirah & Tazkiyah Player**| `13 Screen Online Course.fig` | `0:142` (Learning) | Player audio melayang, scrubber waktu, dan playlist kajian/sirah shahabat. |
+Template adalah referensi historis, bukan identifier handoff saat ini. Gunakan key layar (`O1`, `H`, `Dk1–5`, `R1–5`, `A1–3`) dan lookup `screenKey` dari berkas terbaru; node ID lama tidak stabil. Game menyimpan root pknGameManifest; generator utama mengembalikan manifest tanpa menyimpan root manifest.
+
+Implementasi utama memiliki 53 key Light/Dark, empat varian tablet L1/R1 dan H_Android: 111 viewport. Tiga master header/CTA/navigasi terhubung ke 333 instance. Propagasi perlu `figma.graph.syncInstances`; proxy resize memerlukan `design/resize-viewport.js`. Native clipped viewport tidak menyediakan scroll yang sudah berjalan; browser menyediakan scroll, enam start dan state simulasi. Tidak ada native reactions writable atau cloud prototype yang diklaim.
+
+Virtual Fitrah menambahkan 51 mobile + 4 companion dengan tujuh venue native isometrik editable (rumah, sekolah, masjid, kebun, pasar, asrama, tetangga). Ini scene desain dan simulasi browser, bukan runtime game, asesmen resmi, AI, layanan salat atau backend. Inventori key/kelompok dan commands regenerasi tersedia di [design/README.md](design/README.md).
+
+Browser game merender tujuh venue SVG inline, hotspot peta, feedback A/B/C dan dock Rumah/Peta/Kabar/Jeda. Companion browser responsif, bukan reproduksi semua dimensi frame native. Simulator avatar dan check-in opsional hanya state sesi lokal, bukan AI atau engine AFK hidup.
 
 ---
 
@@ -182,4 +176,10 @@ Menggunakan **OpenPencil**, layar aplikasi ditransformasikan dari template yang 
 1. **Larangan Sanksi Fisik Balita:** UI tidak boleh menampilkan opsi atau saran sanksi fisik pada anak usia di bawah 7 tahun.
 2. **Batas Sanksi Usia 10 Tahun:** Peringatan tegas (*Callout Warning*) muncul pada modul anak tamyiz bahwa sanksi mendidik hanya boleh setelah 10 tahun penuh bila membangkang shalat, tanpa melukai dan haram memukul wajah.
 3. **Tanpa Label Permanen Anak:** Pada asesmen TB-40 anak/remaja, hasil berupa eksplorasi kecenderungan fitrah, dilarang memberi label anak "tidak berbakat", "nakal", atau "sulit diatur".
-4. **Bukan Pengganti Terapi Klinis:** Seluruh layar memuat catatan kaki bahwa aplikasi merupakan pendamping edukasi karakter nabawiyah, bukan diagnosis medis psikologis atau terapi psikiatri.
+4. **Bukan Pengganti Terapi Klinis:** Desain memakai disclaimer edukasi, bukan diagnosis medis/psikologis atau terapi. Jangan menganggap semua surface produksi telah memiliki semantics/disclaimer sebelum diverifikasi.
+
+## 8. Sinkronisasi dan Bukti Terbatas
+
+`node design/sync-tokens.mjs` menghasilkan `lib/app/theme/color_palette.dart` dan `pkn_tokens.dart`; `node design/sync-tokens.mjs --check` mendeteksi drift tanpa menulis. `AppTheme.light`/`dark` mengonsumsi hasilnya. Parent mengamati check token lulus, analisis terbatas `lib/app/theme` tanpa issue, dan smoke runtime sementara light/dark/Arabic. Itu bukan bukti seluruh Flutter, game produksi, WCAG atau pembaca layar lulus. Bukti scene/prototype dan batas terbaru berada di [laporan desain](design/ANALISIS_DAN_PENGEMBANGAN.md).
+
+Inventori final: tujuh halaman,166 screenKey unik (111 utama +55 game), seluruh166 PNG terbaru diekspor. Browser104 layar kanonis/12 flow; parent mengamati tujuh venue,15 feedback A/B/C dan alur panen/check-in/jeda. Angka ekspor tidak berarti audit semua layar. Empat companion game memiliki key unik; ID node tetap dicari ulang setelah reopen.

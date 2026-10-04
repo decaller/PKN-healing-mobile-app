@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
 
+// BEGIN GENERATED PKN TYPOGRAPHY
+// Generated from root pknTypography in PKN_Healing_App_Design.fig.
+class PknTextToken {
+  const PknTextToken({required this.fontFamily, required this.fontSize,
+    required this.fontWeight, required this.lineHeight, required this.letterSpacing});
+  final String fontFamily;
+  final double fontSize;
+  final FontWeight fontWeight;
+  final double lineHeight;
+  final double letterSpacing;
+  double get height => lineHeight / fontSize;
+}
+
+class PknTypography {
+  PknTypography._();
+  static const display = PknTextToken(fontFamily: 'Inter', fontSize: 26.0, fontWeight: FontWeight.w700, lineHeight: 36.0, letterSpacing: 0.0);
+  static const heading = PknTextToken(fontFamily: 'Inter', fontSize: 18.0, fontWeight: FontWeight.w700, lineHeight: 27.0, letterSpacing: 0.0);
+  static const subhead = PknTextToken(fontFamily: 'Inter', fontSize: 15.0, fontWeight: FontWeight.w400, lineHeight: 23.0, letterSpacing: 0.0);
+  static const body = PknTextToken(fontFamily: 'Inter', fontSize: 13.0, fontWeight: FontWeight.w400, lineHeight: 20.0, letterSpacing: 0.0);
+  static const caption = PknTextToken(fontFamily: 'Inter', fontSize: 12.0, fontWeight: FontWeight.w400, lineHeight: 18.0, letterSpacing: 0.0);
+  static const arabic = PknTextToken(fontFamily: 'Amiri', fontSize: 28.0, fontWeight: FontWeight.w400, lineHeight: 48.0, letterSpacing: 0.0);
+}
+// END GENERATED PKN TYPOGRAPHY
+
 /// PKN Design System Layout & Spacing Tokens
 /// Based on 8-point spatial grid system & WCAG 2.1 AA accessibility standards.
 class PknSpacing {

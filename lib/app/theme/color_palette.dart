@@ -5,27 +5,56 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  // Dark Mode Neutrals
-  static const Color darkBackground = Color(0xFF0B132B); // Deep Nabawi Slate
-  static const Color darkSurface = Color(0xFF151D3B);
-  static const Color darkSurfaceElevated = Color(0xFF1C274C);
-  static const Color darkBorder = Color(0xFF2A3764);
-  static const Color darkTextPrimary = Color(0xFFF8FAFC);
-  static const Color darkTextSecondary = Color(0xFF94A3B8);
-  static const Color darkTextMuted = Color(0xFF64748B);
-
-  // Light Mode Neutrals
+  // BEGIN GENERATED PKN COLORS
+  // Generated from PKN_Healing_App_Design.fig; run node design/sync-tokens.mjs.
   static const Color lightBackground = Color(0xFFF8FAFC);
   static const Color lightSurface = Color(0xFFFFFFFF);
-  static const Color lightSurfaceElevated = Color(0xFFF1F5F9);
-  static const Color lightBorder = Color(0xFFE2E8F0);
   static const Color lightTextPrimary = Color(0xFF0F172A);
   static const Color lightTextSecondary = Color(0xFF475569);
+  static const Color lightBorder = Color(0xFFE2E8F0);
+  static const Color lightPrimary = Color(0xFF0F766E);
+  static const Color lightPrimarySoft = Color(0xFFE6F4F1);
+  static const Color lightPillar1 = Color(0xFF6366F1);
+  static const Color lightPillar2 = Color(0xFF0EA5E9);
+  static const Color lightPillar3 = Color(0xFF8B5CF6);
+  static const Color lightPillar4 = Color(0xFFF43F5E);
+  static const Color lightPillar5 = Color(0xFF10B981);
+  static const Color lightPillar6 = Color(0xFFD4AF37);
+  static const Color lightOnPrimary = Color(0xFFFFFFFF);
+  static const Color darkBackground = Color(0xFF121417);
+  static const Color darkSurface = Color(0xFF1E2229);
+  static const Color darkTextPrimary = Color(0xFFFFFFFF);
+  static const Color darkTextSecondary = Color(0xFFCBD5E1);
+  static const Color darkBorder = Color(0xFF475569);
+  static const Color darkPrimary = Color(0xFF5EEAD4);
+  static const Color darkPrimarySoft = Color(0xFF163D38);
+  static const Color darkPillar1 = Color(0xFF6366F1);
+  static const Color darkPillar2 = Color(0xFF0EA5E9);
+  static const Color darkPillar3 = Color(0xFF8B5CF6);
+  static const Color darkPillar4 = Color(0xFFF43F5E);
+  static const Color darkPillar5 = Color(0xFF10B981);
+  static const Color darkPillar6 = Color(0xFFD4AF37);
+  static const Color darkOnPrimary = Color(0xFF0F172A);
+
+  // Existing mode-independent APIs retain the Light design value.
+  static const Color brandPrimary = lightPrimary;
+  static const Color pilarMulai = lightPillar1;
+  static const Color pilarTumbuh = lightPillar2;
+  static const Color pilarBakat = lightPillar3;
+  static const Color pilarKeluarga = lightPillar4;
+  static const Color pilarLembaga = lightPillar5;
+  static const Color pilarDalil = lightPillar6;
+  // END GENERATED PKN COLORS
+
+  // App-only extended neutrals (not present in the design token collection).
+  static const Color darkSurfaceElevated = Color(0xFF1C274C);
+  static const Color darkTextMuted = Color(0xFF64748B);
+
+  static const Color lightSurfaceElevated = Color(0xFFF1F5F9);
   static const Color lightTextMuted = Color(0xFF94A3B8);
 
   // Brand & Accent Colors (Nabawiyah Theme)
   static const Color brandGold = Color(0xFFD4AF37); // Nabawi Gold
-  static const Color brandPrimary = Color(0xFF0D9488); // Deep Teal / Fitrah Emerald
   static const Color brandPrimaryDark = Color(0xFF0F766E);
   static const Color brandAccent = Color(0xFF10B981); // Emerald Green
   static const Color brandSecondary = Color(0xFF6366F1); // Indigo
@@ -47,13 +76,6 @@ class AppColors {
   static const Color warning = Color(0xFFF59E0B);
   static const Color info = Color(0xFF3B82F6);
 
-  // 6 Pilar MOC & Domain Accent Colors
-  static const Color pilarMulai = Color(0xFF6366F1); // P1: Mulai di Sini (Indigo)
-  static const Color pilarTumbuh = Color(0xFF0EA5E9); // P2: Fase Tumbuh Kembang (Sky Blue)
-  static const Color pilarBakat = Color(0xFF8B5CF6); // P3: Fitrah & Bakat TB-40 (Purple)
-  static const Color pilarKeluarga = Color(0xFFF43F5E); // P4: Praktik Keluarga (Rose/Coral)
-  static const Color pilarLembaga = Color(0xFF10B981); // P5: Lembaga & Guru (Emerald)
-  static const Color pilarDalil = Color(0xFFD4AF37); // P6: Khazanah Dalil (Gold)
 
   // Backward compatibility / Domain mapping
   static Color getDomainColor(String domain) {
