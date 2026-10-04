@@ -30,8 +30,9 @@
    - [Flowchart 5: Persona Pengelola Lembaga Formal / Mudir (KOSP & Maqashid)](#f-flowchart-persona-pengelola-lembaga-formal--mudir-kosp--maqashid)
    - [Flowchart 6: Persona Pembelajar Mandiri (Tazkiyatun Nafs & Sakinah)](#g-flowchart-persona-pembelajar-mandiri-tazkiyatun-nafs--sakinah)
 4. [Showcase Desain Antarmuka (Figma & OpenPencil)](#4-showcase-desain-antarmuka-figma--openpencil)
-5. [Struktur Direktori Proyek](#5-struktur-direktori-proyek)
-6. [Panduan Instalasi & Pengujian](#6-panduan-instalasi--pengujian)
+5. [Arsitektur Simulasi Virtual & Gamifikasi (Flame + Bonfire + Rive)](#5-arsitektur-simulasi-virtual--gamifikasi-flame--bonfire--rive)
+6. [Struktur Direktori Proyek](#6-struktur-direktori-proyek)
+7. [Panduan Instalasi & Pengujian](#7-panduan-instalasi--pengujian)
 
 ---
 
@@ -320,7 +321,41 @@ Desain antarmuka aplikasi dibangun mengikuti token visual yang ketat, kontras ti
 
 ---
 
-## 5. Struktur Direktori Proyek
+## 5. Arsitektur Simulasi Virtual & Gamifikasi (Flame + Bonfire + Rive)
+
+Untuk menghadirkan modul gamifikasi simulasi kehidupan insan dan komunitas (*"Baitul Fitrah & Madinah Virtual"*) dalam **satu bundle Flutter terpadu** tanpa aplikasi terpisah, proyek ini mengadopsi tumpukan teknologi murni Dart paling ringan:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   UNIFIED FLUTTER BUNDLE (ANDROID & iOS)               │
+├───────────────────────────────────┬────────────────────────────────────┤
+│     MODUL EDUKASI & UTILITY       │       MODUL SIMULASI & GAME        │
+│  • Feed 6 Pilar MOC PKN           │  • 7 Venue Komunitas Virtual       │
+│  • Micro-learning Deck 5 Menit    │  • Virtual Human (Tangki Cinta)    │
+│  • Pemutar Audio Sirah Latar      │  • Simulasi Waktu Otonom (AFK)     │
+│  • Fast-Tap Rubric 19 Butir Adab  │  • Skenario Pilihan Respons Adab   │
+├───────────────────────────────────┴────────────────────────────────────┤
+│                    FRAMEWORK GAME & ENGINE TERPILIH                    │
+│ • FLAME ENGINE: Game loop 2D isometrik murni Dart (+3 MB APK)          │
+│ • BONFIRE: Sistem pergerakan karakter, tabrakan, dialog & pencahayaan  │
+│ • RIVE: Animasi vektor ekspresi jiwa (Tangki Cinta & Nafs, ~200 KB)    │
+│ • ISAR DATABASE: Penyimpanan cepat luring untuk Welcome Back Ledger    │
+│ • WORKMANAGER: Kalkulasi delta-time AFK ramah baterai saat offline     │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### Mengapa Framework Ini Dipilih?
+1. **Paling Ringan di Android & iOS**: Tambahan ukuran instalasi hanya **~3–5 MB** (total aplikasi $< 40\text{ MB}$), sangat kontras dengan engine 3D berat seperti Unity yang membengkak $+70\text{ s.d. }120\text{ MB}$.
+2. **Hemat RAM & Baterai**: Pemakaian RAM hanya **35–50 MB**, bebas panas perangkat, dan FPS stabil 60–120 FPS di perangkat entry-level.
+3. **Ekspresi Jiwa yang Luwes (Rive State Machine)**: Parameter *Tangki Cinta* dan *Lapisan Jiwa (Nafs)* menggerakkan ekspresi wajah avatar (menangis tantrum, tersenyum haru, shalat, berpelukan) secara halus tanpa frame pecah.
+4. **Interaksi Multi-Venue (Bonfire)**: Menavigasi 7 lokasi (Rumah, Sekolah, Masjid, Taman, Pasar, Asrama, Tetangga) dengan pathfinding otomatis dan sistem dialog *Bahasa Hati*.
+5. **Simulasi Latar Belakang (Idle / AFK)**: Menggunakan algoritma *Timestamp Delta*—saat pemain kembali login, sistem menyajikan **"The Welcome Back Ledger"** berisi rekaman peristiwa adab dan krisis yang menunggu keputusan pemain tanpa menguras baterai saat ditinggal.
+
+> Analisis teknis perbandingan lengkap dengan opsi 3D (Unity, Godot, Flutter Scene) dapat dipelajari di [`docs/TECH_STACK_GAME_ANALYSIS.md`](docs/TECH_STACK_GAME_ANALYSIS.md), dan rancangan skenario game di [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](docs/GAME_CONCEPT_VIRTUAL_FITRAH.md).
+
+---
+
+## 6. Struktur Direktori Proyek
 
 Proyek ini menggunakan pola **Feature-First Clean Architecture** yang modular dan mudah diuji:
 
@@ -390,7 +425,7 @@ PKN-healing-mobile-app/
 
 ---
 
-## 6. Panduan Instalasi & Pengujian
+## 7. Panduan Instalasi & Pengujian
 
 ### Prasyarat
 * Flutter SDK versi 3.24 atau lebih tinggi
