@@ -351,7 +351,11 @@ Untuk menghadirkan modul gamifikasi simulasi kehidupan insan dan komunitas (*"Ba
 4. **Interaksi Multi-Venue (Bonfire)**: Menavigasi 7 lokasi (Rumah, Sekolah, Masjid, Taman, Pasar, Asrama, Tetangga) dengan pathfinding otomatis dan sistem dialog *Bahasa Hati*.
 5. **Simulasi Latar Belakang (Idle / AFK)**: Menggunakan algoritma *Timestamp Delta*—saat pemain kembali login, sistem menyajikan **"The Welcome Back Ledger"** berisi rekaman peristiwa adab dan krisis yang menunggu keputusan pemain tanpa menguras baterai saat ditinggal.
 
-> Analisis teknis perbandingan lengkap dengan opsi 3D (Unity, Godot, Flutter Scene) dapat dipelajari di [`docs/TECH_STACK_GAME_ANALYSIS.md`](docs/TECH_STACK_GAME_ANALYSIS.md), dan rancangan skenario game di [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](docs/GAME_CONCEPT_VIRTUAL_FITRAH.md).
+> Dokumen pendukung arsitektur simulasi:
+> * ⚙️ **Kajian & Komparasi Engine Game**: [`docs/TECH_STACK_GAME_ANALYSIS.md`](docs/TECH_STACK_GAME_ANALYSIS.md)
+> * 🎮 **Konsep Naratif Baitul Fitrah**: [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](docs/GAME_CONCEPT_VIRTUAL_FITRAH.md)
+> * 📋 **Inventaris & Preparasi Elemen**: [`docs/PREPARASI_ELEMEN_SIMULASI.md`](docs/PREPARASI_ELEMEN_SIMULASI.md)
+> * 🗺️ **Roadmap & Milestone Lengkap (Phase 7 s.d. 12)**: [`TODO_HANDOFF.md`](TODO_HANDOFF.md)
 
 ---
 

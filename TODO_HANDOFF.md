@@ -85,34 +85,44 @@
 
 ---
 
-### Phase 7: Baitul Fitrah Virtual Simulation Module (Flame + Bonfire + Rive) *(UPCOMING / READY FOR EXECUTION)*
-- [ ] **Task 7.1:** Tambahkan dependensi engine ke `pubspec.yaml`:
-  ```yaml
-  flame: ^1.18.0
-  bonfire: ^3.11.1
-  rive: ^0.13.0
-  flame_rive: ^1.10.0
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
-  path_provider: ^2.1.4
-  workmanager: ^0.5.2
-  ```
+### Phase 7: Fondasi Engine Simulasi, Dependensi & Skema Database Isar *(UPCOMING / READY FOR EXECUTION)*
+- [ ] **Task 7.1:** Tambahkan dependensi engine ke `pubspec.yaml` (`flame: ^1.18.0`, `bonfire: ^3.11.1`, `rive: ^0.13.0`, `flame_rive: ^1.10.0`, `isar: ^3.1.0+1`, `isar_flutter_libs: ^3.1.0+1`, `workmanager: ^0.5.2`).
 - [ ] **Task 7.2:** Definisikan entitas database lokal Isar di `lib/features/simulation/data/models/`:
-  - `CharacterEntity`: id, name, agePhase, loveTank (0–100), nafsState, adabScores.
-  - `LedgerEventEntity`: timestamp, venueId, title, description, isPendingDilemma, resolution.
-- [ ] **Task 7.3:** Implementasi `DeltaTimeSimulationService`:
-  - Menghitung waktu shalat dan siklus adab saat aplikasi dibuka kembali setelah AFK.
-  - Menghasilkan daftar log naratif untuk *The Welcome Back Ledger*.
-- [ ] **Task 7.4:** Buat prototipe kanvas 2D isometrik ruangan *Baitul Fitrah* (Ruang Keluarga & Kamar Tidur):
-  - Menggunakan Bonfire GameWidget dengan kamera isometrik.
-  - Penataan furnitur syar'i (meja makan adab, pemisahan tempat tidur usia 10 tahun).
-- [ ] **Task 7.5:** Integrasikan avatar Rive (`.riv`) ke dalam Bonfire:
-  - Tautkan parameter *Tangki Cinta* ke input State Machine (senyum vs menangis).
-  - Tautkan status shalat ke siklus gerakan wudhu & shalat.
-- [ ] **Task 7.6:** Buat layar UI Flutter `WelcomeBackLedgerScreen`:
-  - Menampilkan gulungan peristiwa saat login kembali (< 100 ms).
-  - Modal skenario pilihan respons *Bahasa Hati* untuk menyelesaikan krisis tertunda.
-- [ ] **Task 7.7:** Integrasikan tab navigasi ke-3 di `app_router.dart` bertajuk `"Kampung Fitrah"`.
+  - `CharacterEntity`: id, uuid, name, gender, agePhase, exactAgeYears, loveTankLevel (0–100), nafsState (0–2), currentVenueId, lastStateCalculatedAt, masteredAdabKeys.
+  - `LedgerEventEntity`: id, characterUuid, eventTimestamp, venueId, category, title, narrativeText, isPendingDilemma, dilemmaScenarioId, isResolved, chosenResolutionKey, loveTankImpact, nafsImpact.
+  - `RealToVirtualMissionEntity`: id, missionKey, title, realWorldActionDescription, suggestedDurationMinutes, targetAgePhase, loveTankReward, virtualGardenSeedReward, isCompletedToday, lastCompletedAt.
+- [ ] **Task 7.3:** Bangun arsitektur jembatan Riverpod State Provider $\leftrightarrow$ Bonfire GameController (`SimulationController`, `LedgerNotifier`).
+- [ ] **Task 7.4:** Unit test untuk skema entitas Isar dan Riverpod state bridge.
+
+### Phase 8: Pipeline Aset Vektor Rive & Rigging Manusia Virtual
+- [ ] **Task 8.1:** Integrasikan file vektor Rive (`.riv`) untuk 6 arketipe fitrah (Thufulah Boy/Girl, Tamyiz, Murahaqah, Ayah, Bunda).
+- [ ] **Task 8.2:** Implementasi State Machine Inputs standar (`loveTankLevel`, `nafsState`, `triggerCry`, `triggerHug`, `triggerShalat`, `triggerAdabMakan`, `triggerSleep`).
+- [ ] **Task 8.3:** Sinkronisasi ekspresi mikro wajah (mata, alis, tetesan air mata saat krisis) dan gesture tangan kanan secara anatomis.
+- [ ] **Task 8.4:** Rancang widget HUD Flutter dinamis: *Tangki Cinta Gauge* & *Nafs Barometer* (Ammarah, Lawwamah, Muthma'innah).
+
+### Phase 9: Lingkungan 2D Isometrik & Navigasi Bonfire (Baitul Fitrah & 7 Venue)
+- [ ] **Task 9.1:** Konversi dan integrasikan peta Tiled JSON untuk *Baitul Fitrah* (Ruang Tamu, Ruang Keluarga, Musholla Rumah, Dapur Barakah, Kamar Tidur Bersekat Usia 10 thn).
+- [ ] **Task 9.2:** Implementasi collision layers (`CollisionArea`), zona interaksi furnitur, dan pathfinding otonom Bonfire.
+- [ ] **Task 9.3:** Buat sistem pencahayaan siklus waktu 24 jam alami (Fajar, Siang Cerah, Lembayung Senja, Malam Temaram).
+- [ ] **Task 9.4:** Hubungkan navigasi ke 6 venue komunitas lainnya (*Kuttab*, *Masjid Jami'*, *Taman Fitrah*, *Pasar Barakah*, *Asrama Santri*, *Ruang Kerja Ayah*).
+
+### Phase 10: Delta-Time AFK Simulation Engine & The Welcome Back Ledger
+- [ ] **Task 10.1:** Implementasi algoritma matematika luruh Tangki Cinta offline ($\Delta t = t_{\text{resume}} - t_{\text{last\_exit}}$ dengan koefisien $\lambda_{\text{fase}}$ usia).
+- [ ] **Task 10.2:** Evaluasi siklus waktu shalat astronomis & generator otomatis log kejadian background (zero battery consumption).
+- [ ] **Task 10.3:** Buat layar UI Flutter `WelcomeBackLedgerScreen` (animasi gulungan perkamen digital, render instan $< 100\text{ ms}$).
+- [ ] **Task 10.4:** Modal penyelesaian krisis emosional / dilema adab tertunda dengan pilihan respons *Bahasa Hati*.
+
+### Phase 11: Skenario Dilema Adab, Bahasa Hati & Real-to-Virtual Bridge
+- [ ] **Task 11.1:** Susun dan integrasikan 50+ skenario krisis adab per fase usia di `lib/features/simulation/data/content_bank/`.
+- [ ] **Task 11.2:** Terapkan mekanik respons *Tiga Bahasa Mendidik* (Kasih Sayang, Perhatian, Ketegasan) dan kalkulasi dampaknya pada fitrah anak.
+- [ ] **Task 11.3:** Bangun katalog misi dunia nyata *Real-to-Virtual Bridge* (peluk anak 3 menit, shalat berjamaah ke masjid, baca sirah pengantar tidur).
+- [ ] **Task 11.4:** Integrasikan tautan instan dari dilema virtual langsung ke Modul Kartu MOC & Dalil Syar'i terkait.
+
+### Phase 12: Integrasi Komunitas Multi-Persona, Audio Soundscape & Polish Beta
+- [ ] **Task 12.1:** Integrasikan soundscape alami (kicau burung fajar, gemericik air wudhu, desau angin) & SFX adab nabawiyah yang menenangkan jiwa.
+- [ ] **Task 12.2:** Terapkan prinsip *Anti-Guilt UX* (tanpa penalti jika lama tidak buka aplikasi, sambutan welas asih saat kembali).
+- [ ] **Task 12.3:** Profiling performa memori (RAM $< 50\text{ MB}$, startup $< 1\text{ detik}$, 60–120 FPS di perangkat Android/iOS entry-level).
+- [ ] **Task 12.4:** Registrasikan rute navigasi tab *"Kampung Fitrah"* di `app_router.dart` dan jalankan pengujian integrasi E2E.
 
 ---
 
@@ -150,5 +160,7 @@ flutter run
 2. 👥 **17 Profil Persona Otentik**: [`docs/personas/`](docs/personas/)
 3. 🎮 **Konsep Game Baitul Fitrah & Madinah Virtual**: [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](docs/GAME_CONCEPT_VIRTUAL_FITRAH.md)
 4. ⚙️ **Analisis Kebutuhan Stack Teknis 2D/3D Game**: [`docs/TECH_STACK_GAME_ANALYSIS.md`](docs/TECH_STACK_GAME_ANALYSIS.md)
-5. 🎨 **Audit & Saran Pengembangan Desain Figma**: [`design/ANALISIS_DAN_PENGEMBANGAN.md`](design/ANALISIS_DAN_PENGEMBANGAN.md)
-6. 📐 **Spesifikasi Token Desain**: [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)
+5. 📋 **Inventaris & Preparasi Elemen Simulasi**: [`docs/PREPARASI_ELEMEN_SIMULASI.md`](docs/PREPARASI_ELEMEN_SIMULASI.md)
+6. 🎨 **Audit & Saran Pengembangan Desain Figma**: [`design/ANALISIS_DAN_PENGEMBANGAN.md`](design/ANALISIS_DAN_PENGEMBANGAN.md)
+7. 📐 **Spesifikasi Token Desain**: [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)
+
