@@ -1,0 +1,31 @@
+{
+  "lessonId": "growth-01-cac-ltv",
+  "title": "Mastering the CAC to LTV Ratio",
+  "category": "Finance",
+  "estimatedMinutes": 4,
+  "cards": [
+    {
+      "stepId": "step_01",
+      "type": "text",
+      "title": "The Golden Rule of Unit Economics",
+      "body": "A healthy business model requires your Customer Lifetime Value (**LTV**) to be at least 3x higher than your Customer Acquisition Cost (**CAC**).\n\nIf you spend \$100 to acquire a customer, that customer must generate at least \$300 in gross margin over their lifecycle."
+    },
+    {
+      "stepId": "step_02",
+      "type": "multiple_choice",
+      "question": "What is the standard benchmark LTV:CAC ratio target for a healthy subscription business?",
+      "options": [
+        { "id": "opt_a", "text": "1:1 (Break-even)", "isCorrect": false },
+        { "id": "opt_b", "text": "3:1 or higher", "isCorrect": true },
+        { "id": "opt_c", "text": "0.5:1 (Loss leader)", "isCorrect": false }
+      ],
+      "explanation": "A 3:1 ratio ensures enough margin to cover operational overhead, churn, and sustainable scaling."
+    },
+    {
+      "stepId": "step_03",
+      "type": "summary",
+      "title": "Key Takeaway",
+      "body": "Never scale ad spend until your LTV:CAC ratio consistently crosses the 3x threshold."
+    }
+  ]
+}

@@ -1,57 +1,27 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'app/app.dart';
+import 'core/storage/storage_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize persistent key-value local storage (supported on Web via localStorage)
+  final sharedPreferences = await SharedPreferences.getInstance();
+
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
       defaultDevice: Devices.ios.iPhone13,
-      builder: (_) => const HelloWorldApp(),
+      builder: (context) => ProviderScope(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(sharedPreferences),
+        ],
+        child: const MicrolearningApp(),
+      ),
     ),
   );
-}
-
-class HelloWorldApp extends StatelessWidget {
-  const HelloWorldApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'PKN v1 — Flutter web experiment',
-      debugShowCheckedModeBanner: false,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2563EB)),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  FlutterLogo(size: 72),
-                  SizedBox(height: 24),
-                  Text(
-                    'Hello, world!',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    'Flutter web · Mobile preview · v1',
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }

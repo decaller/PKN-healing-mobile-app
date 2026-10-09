@@ -361,75 +361,38 @@ Untuk menghadirkan modul gamifikasi simulasi kehidupan insan dan komunitas (*"Ba
 
 ## 6. Struktur Direktori Proyek
 
-Prototipe Flutter berada di `prototype/v0/` dan menggunakan pola **Feature-First Clean Architecture** yang modular dan mudah diuji. Dokumen riset dan desain tetap berada di root repositori.
+Prototipe Flutter terbagi menjadi dua direktori:
+- **`prototype/v0/`**: Basis kode aplikasi mobile native kanonikal (Android & iOS).
+- **`prototype/v1/`**: Prototipe web interaktif dengan pratinjau bingkai perangkat seluler (`device_preview`).
+
+Dokumen riset dan desain tetap berada di root repositori.
 
 ```text
 PKN-healing-mobile-app/
 ├── prototype/
-│   └── v0/
+│   ├── v0/                                         # Native Mobile Baseline (Android/iOS)
+│   │   ├── lib/
+│   │   ├── test/
+│   │   ├── assets/
+│   │   └── pubspec.yaml
+│   └── v1/                                         # Interactive Web Prototype & Device Preview
 │       ├── lib/
-│       │   ├── app/                                # Konfigurasi global & routing
-│       │   │   ├── app.dart                        # MaterialApp dengan light/dark theme
-│       │   │   ├── router/
-│       │   │   │   ├── app_router.dart             # GoRouter declarative configuration
-│       │   │   │   └── route_paths.dart            # Konstanta rute navigasi
-│       │   │   └── theme/
-│       │   │       ├── app_theme.dart              # Theme data generator
-│       │   │       ├── color_palette.dart          # Palette warna hex kanonikal
-│       │   │       ├── pkn_tokens.dart             # Spacing, radius, elevasi & durasi
-│       │   │       └── typography.dart             # Konfigurasi GoogleFonts Inter
+│       │   ├── app/                                # Konfigurasi global & routing + DevicePreview
 │       │   ├── core/                               # Komponen dan utilitas bersama
-│       │   │   ├── network/
-│       │   │   │   └── lesson_bundle_service.dart  # Offline JSON package bundle loader
-│       │   │   ├── storage/
-│       │   │   │   └── storage_service.dart        # SharedPreferences persistence layer
-│       │   │   └── widgets/
-│       │   │       ├── adab_badge.dart             # Badge status adab BT-MT-BK-MM
-│       │   │       ├── arabic_dalil_card.dart      # Kartu teks Arab berharakat & takhrij
-│       │   │       ├── domain_badge.dart           # Badge domain kategori
-│       │   │       ├── moc_pilar_chip.dart         # Filter chip 6 Pilar MOC (P1 s.d. P6)
-│       │   │       ├── pkn_audio_player_sheet.dart # Modal bottom sheet audio player
-│       │   │       ├── pkn_button.dart             # Tombol interaktif aksesibel (>=48dp)
-│       │   │       ├── pkn_callout_box.dart        # Kotak catatan & peringatan adab
-│       │   │       ├── segmented_progress_bar.dart # Indikator kemajuan step onboarding
-│       │   │       └── takeaway_badge.dart         # Tag intisari aksi praktis
-│       │   ├── features/
-│       │   │   ├── feed/                           # Beranda Tarbiyah & Eksplorasi MOC
-│       │   │   │   ├── data/
-│       │   │   │   │   ├── mock_ideas.dart         # Bank gagasan tarbiyah dengan Lead TL;DR
-│       │   │   │   │   └── models/idea_card.dart   # Model domain kartu gagasan
-│       │   │   │   └── presentation/
-│       │   │   │       ├── controllers/            # FeedController & BookmarksProvider
-│       │   │   │       ├── screens/feed_screen.dart# Tampilan beranda utama
-│       │   │   │       └── widgets/                # IdeaCardWidget
-│       │   │   ├── lessons/                        # Pemain Modul Pembelajaran 5 Menit
-│       │   │   │   ├── data/                       # Mock lessons & JSON package parser
-│       │   │   │   └── presentation/
-│       │   │   │       ├── controllers/            # LessonPlayerController state machine
-│       │   │   │       ├── screens/                # LessonPlayerScreen & AdabGrowthReport
-│       │   │   │       └── widgets/cards/          # Step views (text, quiz, poll, blank)
-│       │   │   ├── onboarding/                     # Diagnostik JTBD & Personalisasi
-│       │   │   │   ├── data/jtbd_data.dart         # Bank kuesioner diagnosa 4 langkah
-│       │   │   │   ├── domain/onboarding_state.dart# Logika pemetaan 6 kluster arketipe
-│       │   │   │   └── presentation/screens/       # JTBDFlowScreen & ActivationalInsight
-│       │   │   └── profile/                        # Profil Pengguna & Pengaturan
-│       │   └── main.dart                           # Entrypoint aplikasi (Riverpod ProviderScope)
-│       ├── test/                                   # Rangkaian pengujian unit & widget
-│       │   └── features/
-│       │       ├── feed/feed_controller_test.dart
-│       │       ├── lessons/lesson_player_controller_test.dart
-│       │       └── onboarding/onboarding_controller_test.dart
-│       ├── assets/                         # Aset dan data luring Flutter
-│       ├── analysis_options.yaml           # Konfigurasi lint Dart
-│       ├── pubspec.lock                    # Versi dependensi terkunci
-│       └── pubspec.yaml                    # Konfigurasi dependensi Flutter
+│       │   ├── features/                           # Feed, Lessons, Onboarding, Profile
+│       │   ├── demo/                               # hello_world_app.dart (isolated sandbox)
+│       │   └── main.dart                           # Entrypoint Web dengan DevicePreview wrapper
+│       ├── web/                                    # Target web scaffolding (manifest, index.html)
+│       ├── test/                                   # Rangkaian tes unit & widget (13/13 passing)
+│       ├── assets/                                 # Aset data luring & ikon
+│       └── pubspec.yaml                            # Dependensi Riverpod, GoRouter, DevicePreview
 ├── docs/
-│   ├── USER_JOURNEYS.md                    # Peta komprehensif perjalanan 17 persona
-│   └── personas/                           # 17 Berkas profil persona dari wiki-pkn
+│   ├── USER_JOURNEYS.md                            # Peta komprehensif perjalanan 17 persona
+│   └── personas/                                   # 17 Berkas profil persona dari wiki-pkn
 ├── design/
-│   ├── PKN_Healing_App_Design.fig          # Berkas master Figma SceneGraph
-│   └── previews/                           # Hasil render resolusi tinggi antarmuka
-└── DESIGN_SYSTEM.md                        # Spesifikasi token desain lengkap
+│   ├── PKN_Healing_App_Design.fig                  # Berkas master Figma SceneGraph
+│   └── previews/                                   # Hasil render resolusi tinggi antarmuka
+└── DESIGN_SYSTEM.md                                # Spesifikasi token desain lengkap
 ```
 
 ---
@@ -441,20 +404,23 @@ PKN-healing-mobile-app/
 * Dart SDK versi 3.5 atau lebih tinggi
 
 ### Menjalankan Aplikasi
+
+#### A. Prototipe Web dengan Device Preview (`prototype/v1`)
+Untuk pratinjau browser instan dengan bingkai iPhone 13 dan simulasi perangkat seluler:
 ```bash
-# Jalankan dari root repositori
-cd prototype/v0
-
-# 1. Unduh seluruh dependensi paket
+cd prototype/v1
 flutter pub get
+flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8181
+```
+Buka browser di **`http://localhost:8181`**.
 
-# 2. Periksa kualitas kode dan linting
+#### B. Basis Kode Native Mobile (`prototype/v0`)
+Untuk pengujian di emulator seluler atau perangkat fisik Android/iOS:
+```bash
+cd prototype/v0
+flutter pub get
 flutter analyze
-
-# 3. Jalankan seluruh rangkaian tes otomatis
 flutter test
-
-# 4. Jalankan aplikasi di emulator atau perangkat fisik
 flutter run
 ```
 

@@ -1,0 +1,311 @@
+{
+  "scenarioId": "scen_home_shalat_crisis_001",
+  "title": "Krisis Shalat di Baitul Fitrah: Meniti Jembatan Hati Antara Ayah dan Anak",
+  "category": "Adab Shalat & Komunikasi Kasih Sayang",
+  "targetAgePhase": "Tamyiz (7-10 tahun) & Syabab (Ayah 36 tahun)",
+  "venueId": "GF_HOME",
+  "venueName": "Baitul Fitrah (Ruang Tamu & Musholla Rumah)",
+  "summary": "Studi kasus interaktif multi-karakter yang memperlihatkan dinamika saat anak usia tamyiz enggan shalat dan ayah yang letih baru pulang kerja. Menampilkan seluruh pilihan adab dengan sistem prasyarat (gating) dan jalur pemulihan (islah).",
+  "cast": [
+    {
+      "characterId": "char_zaid_01",
+      "name": "Zaid",
+      "agePhase": "Tamyiz",
+      "exactAge": 8,
+      "role": "Anak Kedua",
+      "baseTalents": {
+        "Al-Fikriyyah": 3,
+        "Al-Idarah": 2,
+        "Al-Fashahah": 1,
+        "Al-Qiyadah": 1
+      },
+      "adabLevels": {
+        "adab_shalat": "MT",
+        "adab_birrul_walidain": "BK",
+        "adab_bicara_santun": "MT"
+      },
+      "initialLoveTank": 45,
+      "initialNafsState": "Lawwamah"
+    },
+    {
+      "characterId": "char_ayah_01",
+      "name": "Abu Zaid (Ayah)",
+      "agePhase": "Syabab",
+      "exactAge": 36,
+      "role": "Kepala Keluarga / Qawwamun",
+      "baseTalents": {
+        "Al-Qiyadah": 3,
+        "Al-Idarah": 3,
+        "Al-Fashahah": 2,
+        "Al-Fikriyyah": 2
+      },
+      "adabLevels": {
+        "adab_tahan_amarah": "MT",
+        "adab_lemah_lembut": "BK",
+        "adab_keteladanan": "MM"
+      },
+      "initialLoveTank": 50,
+      "initialNafsState": "Lawwamah"
+    },
+    {
+      "characterId": "char_kakek_01",
+      "name": "Kakek Usman",
+      "agePhase": "Syaikh",
+      "exactAge": 68,
+      "role": "Sesepuh Keluarga / Murabbi",
+      "baseTalents": {
+        "Al-Fashahah": 4,
+        "Al-Qiyadah": 4,
+        "Al-Fikriyyah": 4,
+        "Al-Idarah": 3
+      },
+      "adabLevels": {
+        "adab_hikmah_nasihat": "MM",
+        "adab_sabar_mendalam": "MM",
+        "adab_tazkiyah": "MM"
+      },
+      "initialLoveTank": 95,
+      "initialNafsState": "Muthma'innah"
+    }
+  ],
+  "nodes": [
+    {
+      "nodeId": "node_01_zaid_perspective",
+      "activeCharacterId": "char_zaid_01",
+      "title": "Babak 1: Hati Zaid (POV Anak Tamyiz)",
+      "narrative": "Adzan Ashar baru saja selesai berkumandang dari Masjid Jami'. Zaid sedang asyik menyelesaikan susunan menara balok kayu yang hampir selesai. Tubuhnya lelah setelah bermain seharian di sekolah, dan di hatinya ada keengganan beranjak mengambil wudhu.",
+      "choices": [
+        {
+          "choiceId": "c_zaid_01_mumtaz",
+          "tier": "MUMTAZ",
+          "tierLabel": "Tingkat Terbaik (Adab Nabawiyah)",
+          "text": "Segera meletakkan balok kayu, menjawab adzan, dan bergegas mengambil wudhu mendahului panggilan orang tua.",
+          "prerequisites": {
+            "minAdabLevel": {
+              "adab_shalat": "MM"
+            },
+            "minLoveTank": 70,
+            "requiredNafs": ["Muthma'innah"],
+            "minTalent": {
+              "Al-Qiyadah": 2
+            }
+          },
+          "educationalTooltip": {
+            "isLocked": true,
+            "dalilNash": "Atsar Shahabat: 'Dahulu para salaf apabila mendengar adzan, seakan-akan mereka tidak mengenal kami dan kami tidak mengenal mereka karena bersegera menghadap Allah.'",
+            "hikmah": "Inilah puncak fitrah keimanan mandiri di mana anak bergerak atas dorongan cinta kepada Allah tanpa perlu diinstruksikan.",
+            "unmetReason": "Terkunci: Level adab shalat Zaid masih MT (Mulai Tampak), Tangki Cinta (45%) belum optimal, dan kondisi jiwa saat ini masih terbelenggu rasa enggan."
+          },
+          "consequences": {
+            "deltaLoveTank": 15,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": "node_02_ayah_perspective"
+          }
+        },
+        {
+          "choiceId": "c_zaid_02_jayyid",
+          "tier": "JAYYID",
+          "tierLabel": "Tingkat Baik (Izin Santun)",
+          "text": "Menoleh dan berbicara santun: 'Ayah, Zaid selesaikan satu balok ini sebentar ya, setelah ini Zaid langsung ambil wudhu.'",
+          "prerequisites": {
+            "minAdabLevel": {
+              "adab_bicara_santun": "BK"
+            },
+            "minLoveTank": 40,
+            "requiredNafs": ["Lawwamah", "Muthma'innah"]
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "QS. Al-Isra: 23: 'Dan ucapkanlah kepada kedua orang tuamu perkataan yang mulia (karima).'",
+            "hikmah": "Mengkomunikasikan kebutuhan bermain secara jujur dan santun kepada orang tua adalah bentuk adab awal yang sangat sehat.",
+            "unmetReason": "Terbuka: Zaid memiliki adab birrul walidain BK dan Tangki Cinta mencukupi."
+          },
+          "consequences": {
+            "deltaLoveTank": 5,
+            "deltaNafsState": "Lawwamah",
+            "nextNodeId": "node_02_ayah_perspective"
+          }
+        },
+        {
+          "choiceId": "c_zaid_03_dhaif",
+          "tier": "DHAIF",
+          "tierLabel": "Tingkat Sub-Optimal (Menunda & Pura-Pura Lupa)",
+          "text": "Pura-pura tidak mendengar adzan, terus menumpuk balok, dan berharap tidak ada yang menyuruh ke masjid.",
+          "prerequisites": {
+            "minLoveTank": 0
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "Kaidah Tarbiyah: Anak usia 7-10 tahun masih dalam fase pembiasaan nalar dan sangat wajar mengalami godaan keengganan bermain.",
+            "hikmah": "Ini adalah respon alami anak saat Tangki Cinta rendah dan kelelahan fisik, membutuhkan pendampingan bukan hukuman.",
+            "unmetReason": "Terbuka sebagai opsi dasar."
+          },
+          "consequences": {
+            "deltaLoveTank": -5,
+            "deltaNafsState": "Ammarah",
+            "nextNodeId": "node_02_ayah_perspective"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "node_02_ayah_perspective",
+      "activeCharacterId": "char_ayah_01",
+      "title": "Babak 2: Respons Ayah (POV Qawwamun Berganti Kendali)",
+      "narrative": "Kendali kini berpindah ke Abu Zaid (Ayah). Ayah baru saja masuk rumah setelah seharian bekerja di luar, badan letih dan kepala penat. Melangkah ke ruang tengah, Ayah melihat Zaid masih asyik menumpuk balok padahal iqamah di masjid tinggal 10 menit lagi.",
+      "choices": [
+        {
+          "choiceId": "c_ayah_01_mumtaz",
+          "tier": "MUMTAZ",
+          "tierLabel": "Tingkat Terbaik (Tiga Bahasa Mendidik Nabawiyah)",
+          "text": "Meletakkan tas, mendekat dan berlutut sejajar mata Zaid, mengusap kepalanya lembut: 'Nak, menaramu bagus sekali. Allah Maha Indah dan mencintai shalat kita. Yuk, Ayah temani wudhu sekarang, kita jalan bareng ke masjid.'",
+          "prerequisites": {
+            "minTalent": {
+              "Al-Fashahah": 3
+            },
+            "minAdabLevel": {
+              "adab_tahan_amarah": "BK",
+              "adab_lemah_lembut": "BK"
+            },
+            "minLoveTank": 60,
+            "requiredNafs": ["Muthma'innah"]
+          },
+          "educationalTooltip": {
+            "isLocked": true,
+            "dalilNash": "QS. Ali 'Imran: 159: 'Maka berkat rahmat Allah engkau (Muhammad) berlaku lemah lembut terhadap mereka. Sekiranya engkau bersikap keras lagi berhati kasar, tentulah mereka menjauhkan diri dari sekitarmu.'",
+            "hikmah": "Koneksi Sebelum Koreksi (Connection Before Correction). Tatapan mata sejajar dan validasi karya anak meluluhkan pembangkangan seketika.",
+            "unmetReason": "Terkunci: Abu Zaid sedang lelah kerja sehingga Tangki Cinta (50%) di bawah ambang batas 60%, dan adab tahan amarah masih MT."
+          },
+          "consequences": {
+            "deltaLoveTank": 25,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": "node_03_harmonious_success"
+          }
+        },
+        {
+          "choiceId": "c_ayah_02_jayyid",
+          "tier": "JAYYID",
+          "tierLabel": "Tingkat Cukup (Instruksi Tegas Tanpa Bentakan)",
+          "text": "Tersenyum tipis menahan lelah: 'Zaid, simpan baloknya sekarang ya. Waktu shalat sudah tiba. Ayah tunggu di tempat wudhu 2 menit lagi.'",
+          "prerequisites": {
+            "minAdabLevel": {
+              "adab_tahan_amarah": "MT"
+            },
+            "minLoveTank": 30,
+            "requiredNafs": ["Lawwamah", "Muthma'innah"]
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "HR. Abu Dawud: 'Perintahkan anak-anakmu shalat ketika berusia 7 tahun...' (Perintah dengan ketegasan berwibawa tanpa makian).",
+            "hikmah": "Instruksi yang jelas dengan batasan waktu spesifik tanpa melibatkan ledakan emosi pribadi.",
+            "unmetReason": "Terbuka: Abu Zaid memenuhi syarat dasar adab tahan amarah MT."
+          },
+          "consequences": {
+            "deltaLoveTank": 5,
+            "deltaNafsState": "Lawwamah",
+            "nextNodeId": "node_03_standard_resolution"
+          }
+        },
+        {
+          "choiceId": "c_ayah_03_munkar",
+          "tier": "MUNKAR",
+          "tierLabel": "Tingkat Terburuk (Bentakan & Pelampiasan Kelelahan)",
+          "text": "Membentak dengan nada tinggi: 'Zaid! Sudah adzan masih saja main! Mau jadi anak pembangkang? Cepat ke kamar mandi atau Ayah buang balok-balok itu!'",
+          "prerequisites": {
+            "minLoveTank": 0
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "Larangan Syar'i: Larangan memukul anak di bawah 10 tahun dan larangan mendidik dengan makian/labeling ('anak pembangkang').",
+            "hikmah": "Bentakan memicu hormon kortisol (stres), mematikan nalar fitrah anak, dan membuat anak memandang shalat sebagai beban traumatik.",
+            "unmetReason": "Terbuka sebagai pilihan sub-optimal yang memicu alur islah (pembelajaran)."
+          },
+          "consequences": {
+            "deltaLoveTank": -30,
+            "deltaNafsState": "Ammarah",
+            "nextNodeId": "node_04_conflict_islah_pathway"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "node_04_conflict_islah_pathway",
+      "activeCharacterId": "char_ayah_01",
+      "title": "Babak 3: Krisis Terjadi & Jalur Pemulihan (Islah & Rekonsiliasi)",
+      "narrative": "Zaid tersentak kaget, matanya basah, dan menara baloknya roboh tersenggol lututnya saat ia panik. Zaid berlari ke sudut ruangan sambil terisak menundukkan kepala. Tangki Cinta Zaid anjlok drastis ke level krisis (15%). Abu Zaid terdiam, dadanya sesak oleh penyesalan (Nafs Lawwamah aktif). Tidak ada 'Game Over' di sini. Bagaimana langkah pemulihan jiwa (Islah)?",
+      "choices": [
+        {
+          "choiceId": "c_islah_01_ayah_apology",
+          "tier": "MUMTAZ",
+          "tierLabel": "Pilihan Islah Utama (Ayah Mengakui Kesalahan & Memeluk)",
+          "text": "Beristighfar perlahan, mendekati Zaid di sudut ruangan, duduk di sampingnya, memeluk erat selama 3 menit tanpa ceramah: 'Maafkan Ayah, Zaid. Ayah tadi lelah dan salah telah membentak. Zaid anak baik, bukan anak pembangkang. Yuk, kita mulai lagi dengan tenang.'",
+          "prerequisites": {
+            "minAdabLevel": {
+              "adab_lemah_lembut": "BK"
+            },
+            "requiredNafs": ["Lawwamah", "Muthma'innah"]
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "HR. Tirmidzi: 'Orang yang bertaubat dari dosanya seperti orang yang tidak memiliki dosa.' Dan mencontoh kerendahan hati para nabi dalam meminta maaf kepada keluarga.",
+            "hikmah": "Meminta maaf kepada anak tidak meruntuhkan wibawa orang tua, justru menanamkan integritas dan teladan adab tertinggi.",
+            "unmetReason": "Terbuka: Hati Ayah terketuk oleh Nafs Lawwamah untuk segera memperbaiki diri."
+          },
+          "consequences": {
+            "deltaLoveTank": 35,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": "node_05_kakek_wisdom_reflection"
+          }
+        },
+        {
+          "choiceId": "c_islah_02_kakek_intervention",
+          "tier": "JAYYID",
+          "tierLabel": "Pilihan Islah Alternatif (Kakek Masuk Menengahi)",
+          "text": "Beralih kendali ke Kakek Usman (Fase Syaikh): Kakek masuk dengan tongkatnya, membimbing Abu Zaid untuk duduk tenang meneguk air, lalu merangkul cucunya dengan kisah sirah Rasulullah bersama cucu beliau Hasan dan Husain.",
+          "prerequisites": {
+            "minTalent": {
+              "Al-Fashahah": 3
+            }
+          },
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "Fungsi Wasathiyah Kakek/Nenek: Peran generasi Syaikh adalah mendinginkan ketegangan antara generasi Syabab dan Tamyiz dengan khazanah hikmah.",
+            "hikmah": "Intervensi sesepuh yang penuh adab dan kasih sayang menyelamatkan suasana rumah dari racun konflik berkepanjangan.",
+            "unmetReason": "Terbuka."
+          },
+          "consequences": {
+            "deltaLoveTank": 25,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": "node_05_kakek_wisdom_reflection"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "node_05_kakek_wisdom_reflection",
+      "activeCharacterId": "char_kakek_01",
+      "title": "Babak Akhir: Refleksi Tarbiyah & Penutup Skenario",
+      "narrative": "Alhamdulillah, badai emosi telah reda. Zaid, Abu Zaid, dan Kakek Usman melangkah bersama menuju Musholla Rumah untuk shalat berjamaah. Zaid dengan bangga mengumandangkan iqamah kecil. Pemain mendapatkan evaluasi kualitatif dan catatan adab harian.",
+      "choices": [
+        {
+          "choiceId": "c_finish_scenario",
+          "tier": "MUMTAZ",
+          "tierLabel": "Selesaikan Skenario & Rekam ke Welcome Back Ledger",
+          "text": "Simpan catatan hikmah: 'Kelembutan mendahului ketegasan; jangan pernah mendisiplinkan shalat dengan melukai fitrah jiwa.'",
+          "prerequisites": {},
+          "educationalTooltip": {
+            "isLocked": false,
+            "dalilNash": "HR. Muslim: 'Sesungguhnya kelembutan tidaklah berada pada sesuatu melainkan ia akan menghiasinya.'",
+            "hikmah": "Selesai: Rekam perkembangan ke profil Zaid (Adab shalat: MT -> BK) dan Abu Zaid (Adab sabar: MT -> BK).",
+            "unmetReason": "Terbuka."
+          },
+          "consequences": {
+            "deltaLoveTank": 20,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": null
+          }
+        }
+      ]
+    }
+  ]
+}

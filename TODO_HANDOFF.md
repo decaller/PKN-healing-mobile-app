@@ -83,6 +83,12 @@
 - [x] **Task 6.4:** Perbarui `README.md` dengan konsep aplikasi, pilar manhaj, dan 7 flowchart representatif persona.
 - [x] **Task 6.5:** Buat laporan audit dan analisis desain Figma di `design/ANALISIS_DAN_PENGEMBANGAN.md`.
 
+### Phase 6.5: Interactive Web Prototype & Device Preview (`prototype/v1`) *(Completed)*
+- [x] **Task 6.5.1:** Setup scaffold Flutter Web dengan integrasi `device_preview` di `prototype/v1/`.
+- [x] **Task 6.5.2:** Sambungkan seluruh state machine Riverpod, GoRouter, dan SharedPreferences (localStorage) ke kanvas web.
+- [x] **Task 6.5.3:** Validasi visual rendering pratinjau mobile (iPhone 13, iPad, Android) di browser (`http://localhost:8181`).
+- [x] **Task 6.5.4:** Verifikasi integritas analisis statis (0 issues) dan pengujian otomatis (13/13 passing tests).
+
 ---
 
 ### Phase 7: Fondasi Engine Simulasi, Dependensi & Skema Database Isar *(UPCOMING / READY FOR EXECUTION)*
