@@ -48,7 +48,7 @@
 
 ### Phase 1: Local Tooling & State Machine Verification *(Completed)*
 - [x] **Task 1.1:** Setup `flutter pub get` dan verifikasi integritas dependensi.
-- [x] **Task 1.2:** Implementasi Riverpod state architecture di `lib/features/`.
+- [x] **Task 1.2:** Implementasi Riverpod state architecture di `prototype/v0/lib/features/`.
 - [x] **Task 1.3:** Validasi deserialisasi JSON schema untuk polymorphic lesson cards.
 - [x] **Task 1.4:** Pengujian unit test `LessonPlayerNotifier` (13/13 test passing).
 
@@ -58,7 +58,7 @@
 - [x] **Task 2.3:** Spesifikasi token visual dan preview Figma 53 layar di `design/`.
 
 ### Phase 3: Onboarding & JTBD Diagnostic Flow *(Completed)*
-- [x] **Task 3.1:** Kuesioner diagnostik 4 langkah di `lib/features/onboarding/`.
+- [x] **Task 3.1:** Kuesioner diagnostik 4 langkah di `prototype/v0/lib/features/onboarding/`.
 - [x] **Task 3.2:** Algoritma komputasi arketipe persona (Ayah, Bunda, Guru, Pengelola, Santri, Mandiri).
 - [x] **Task 3.3:** Layar `ActivationalInsightScreen` dengan rute rekomendasi pilar MOC otomatis.
 - [x] **Task 3.4:** Persistensi flag onboarding ke `SharedPreferences`.
@@ -86,14 +86,14 @@
 ---
 
 ### Phase 7: Fondasi Engine Simulasi, Dependensi & Skema Database Isar *(UPCOMING / READY FOR EXECUTION)*
-- [ ] **Task 7.1:** Tambahkan dependensi engine ke `pubspec.yaml` (`flame: ^1.18.0`, `bonfire: ^3.11.1`, `rive: ^0.13.0`, `flame_rive: ^1.10.0`, `isar: ^3.1.0+1`, `isar_flutter_libs: ^3.1.0+1`, `workmanager: ^0.5.2`).
-- [ ] **Task 7.2:** Definisikan entitas database lokal Isar di `lib/features/simulation/data/models/`:
+- [ ] **Task 7.1:** Tambahkan dependensi engine ke `prototype/v0/pubspec.yaml` (`flame: ^1.18.0`, `bonfire: ^3.11.1`, `rive: ^0.13.0`, `flame_rive: ^1.10.0`, `isar: ^3.1.0+1`, `isar_flutter_libs: ^3.1.0+1`, `workmanager: ^0.5.2`).
+- [ ] **Task 7.2:** Definisikan entitas database lokal Isar di `prototype/v0/lib/features/simulation/data/models/`:
   - `CharacterEntity`: id, uuid, name, gender, agePhase (Thufulah..Syaikh), exactAgeYears, loveTankLevel (0–100), nafsState (0–2), currentVenueId, lastStateCalculatedAt, masteredAdabKeys, talentScores.
   - `LedgerEventEntity`: id, characterUuid, eventTimestamp, venueId, category, title, narrativeText, isPendingDilemma, dilemmaScenarioId, isResolved, chosenResolutionKey, loveTankImpact, nafsImpact.
   - `RealToVirtualMissionEntity`: id, missionKey, title, realWorldActionDescription, suggestedDurationMinutes, targetAgePhase, loveTankReward, virtualGardenSeedReward, isCompletedToday, lastCompletedAt.
   - `ScenarioProgressEntity`: id, scenarioId, currentActiveNodeId, chosenChoiceHistory, isCompleted, lastPlayedAt, triggeredIslahPathway, acquiredSkillPoints.
 - [ ] **Task 7.3:** Bangun arsitektur jembatan Riverpod State Provider $\leftrightarrow$ Bonfire GameController (`SimulationController`, `LedgerNotifier`, `ScenarioPlayerNotifier`).
-- [ ] **Task 7.4:** Parser & Graph Loader luring untuk skrip skenario JSON di `assets/data/scenarios/`.
+- [ ] **Task 7.4:** Parser & Graph Loader luring untuk skrip skenario JSON di `prototype/v0/assets/data/scenarios/`.
 - [ ] **Task 7.5:** Unit test untuk skema entitas Isar, Riverpod state bridge, dan logika prerequisite choice gating.
 
 ### Phase 8: Pipeline Aset Vektor Rive & Rigging Manusia Virtual
@@ -115,7 +115,7 @@
 - [ ] **Task 10.4:** Modal penyelesaian krisis emosional / dilema adab tertunda dengan pilihan respons *Bahasa Hati*.
 
 ### Phase 11: Skenario Dilema Adab, Gating Prasyarat & Multi-Character POV Relay
-- [ ] **Task 11.1:** Susun katalog 50+ skenario interaktif berbasis format JSON Graph Node Tree di `assets/data/scenarios/` untuk 6 fase usia (Thufulah s.d. Syaikh).
+- [ ] **Task 11.1:** Susun katalog 50+ skenario interaktif berbasis format JSON Graph Node Tree di `prototype/v0/assets/data/scenarios/` untuk 6 fase usia (Thufulah s.d. Syaikh).
 - [ ] **Task 11.2:** Terapkan arsitektur kendali bergantian (POV Relay mode): pemain mengendalikan anak, orang tua, dan sesepuh/guru secara berestafet dalam satu krisis.
 - [ ] **Task 11.3:** Implementasikan widget UI pilihan berjenjang (Mumtaz s.d. Munkar) dengan *Prerequisite Gating* (dinonaktifkan jika syarat bakat TB-40, level adab BT-MM, atau nafs belum terpenuhi).
 - [ ] **Task 11.4:** Bangun modal interaktif *Educational Learning Tooltip*: membedah teks dalil syar'i dan analisis gap fitrah saat pemain mengetuk pilihan terkunci.
@@ -135,6 +135,9 @@
 
 ### Flutter Commands
 ```bash
+# From the repository root
+cd prototype/v0
+
 # Install dependencies
 flutter pub get
 
@@ -151,11 +154,6 @@ flutter run
 ### Git & Remote Repository
 * **Remote Repository:** [`https://github.com/decaller/PKN-healing-mobile-app`](https://github.com/decaller/PKN-healing-mobile-app)
 * **Active Branch:** `main`
-
-### SuperPlane Control Plane (Local Docker)
-* **Web UI:** `http://localhost:8095/<ORGANIZATION_ID>/apps/<APP_ID>`
-* **CLI:** `superplane apps active`
-* **Canvas File:** `superplane/canvas.yaml`
 
 ---
 
@@ -177,7 +175,7 @@ flutter run
 12. 🧠 **Riset Mekanik TB-40 Ala Disco Elysium**: [`docs/RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md`](docs/RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md)
 13. 📊 **Laporan Pengujian Empiris Google Gemma 3 (TB-40)**: [`docs/LAPORAN_PENGUJIAN_GEMMA3_TB40.md`](docs/LAPORAN_PENGUJIAN_GEMMA3_TB40.md)
 14. 🔍 **Kritik Desain & Evaluasi Lean Product**: [`design/DESIGN_CRITIQUE.md`](design/DESIGN_CRITIQUE.md) & [`design/IDEA_REFINEMENT.md`](design/IDEA_REFINEMENT.md)
-15. 🎭 **Data Skenario JSON Graf Multi-Karakter**: [`assets/data/scenarios/skenario_krisis_shalat_rumah.json`](assets/data/scenarios/skenario_krisis_shalat_rumah.json)
+15. 🎭 **Data Skenario JSON Graf Multi-Karakter**: [`prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json`](prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json)
 16. 💖 **Konsep Mekanik Riyadhoh & Dinamika Tangki Cinta**: [`docs/KONSEP_MEKANIK_RIYADHOH_DAN_TANGKI_CINTA.md`](docs/KONSEP_MEKANIK_RIYADHOH_DAN_TANGKI_CINTA.md)
 17. 🎙️ **Riset Edge AI LiteRT, Voice Dialectics (TTS) & Teman Curhat**: [`docs/RISET_EDGE_AI_LITERT_DAN_VOICE_CURHAT.md`](docs/RISET_EDGE_AI_LITERT_DAN_VOICE_CURHAT.md)
 18. 📖 **Spesifikasi Struktur Cerita Dual-Mode & Sandbox Bertema**: [`docs/STRUKTUR_CERITA_DUAL_MODE_DAN_SANDBOX_TEMA.md`](docs/STRUKTUR_CERITA_DUAL_MODE_DAN_SANDBOX_TEMA.md)

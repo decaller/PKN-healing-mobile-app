@@ -103,7 +103,7 @@ Prototype final memuat **104 layar kanonis /12 flow** (enam utama +enam game), b
 
 ## Bukti dan batas
 
-- Parent mengamati propagasi master CTA dan resize helper sebagaimana angka di atas; pemeriksaan `sync-tokens --check` lulus. Analisis Flutter terbatas `lib/app/theme` tidak menemukan issue, dan smoke runtime sementara mengamati light/dark/Arabic. Itu bukan pengujian seluruh Flutter atau implementasi game.
+- Parent mengamati propagasi master CTA dan resize helper sebagaimana angka di atas; pemeriksaan `sync-tokens --check` lulus. Analisis Flutter terbatas `prototype/v0/lib/app/theme` tidak menemukan issue, dan smoke runtime sementara mengamati light/dark/Arabic. Itu bukan pengujian seluruh Flutter atau implementasi game.
 - Smoke variable mode native H mengembalikan Background Light #F8FAFC lalu Dark #121417 melalui `graph.resolveColorVariableForNode`; token check setelah reopen tetap lulus. Berkas gabungan memiliki tujuh halaman, bukan empat halaman audit lama.
 - Audio, unduhan, background playback, penyimpanan, laporan dan asesmen produksi tidak diimplementasikan oleh desain. Browser mensimulasikan state; tidak mengirim data ke server.
 - Pertanyaan TB40, nama 19 butir rubrik dan 8 standar audit ilustratif, bukan instrumen resmi. L3 berupa daftar standar/prioritas, bukan radar audit tervalidasi. B6 radar ilustratif tidak boleh diberi skor pribadi.

@@ -59,14 +59,14 @@ Inputs:
 ```
 
 ### 2.3. Checklist Berkas Aset Vektor Rive
-- [ ] `assets/simulation/rive/character_thufulah_boy.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/character_thufulah_girl.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/character_tamyiz.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/character_murahaqah.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/character_parent_ayah.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/character_parent_bunda.riv` (Rig & State Machine)
-- [ ] `assets/simulation/rive/fx_love_burst.riv` (Efek partikel cahaya saat Tangki Cinta terisi)
-- [ ] `assets/simulation/rive/ui_love_tank_gauge.riv` (Meteran dinamis Tangki Cinta di HUD)
+- [ ] `prototype/v0/assets/simulation/rive/character_thufulah_boy.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/character_thufulah_girl.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/character_tamyiz.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/character_murahaqah.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/character_parent_ayah.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/character_parent_bunda.riv` (Rig & State Machine)
+- [ ] `prototype/v0/assets/simulation/rive/fx_love_burst.riv` (Efek partikel cahaya saat Tangki Cinta terisi)
+- [ ] `prototype/v0/assets/simulation/rive/ui_love_tank_gauge.riv` (Meteran dinamis Tangki Cinta di HUD)
 
 ---
 
@@ -100,13 +100,13 @@ Peta lingkungan dirender menggunakan sistem isometrik 2D / 2.5D melalui framewor
   4. `Lighting_Ambient`: Dynamic color filter siklus 24 jam (Fajar: oranye lembut; Siang: putih hangat cerah; Maghrib: lembayung senja; Malam: biru gelap temaram).
 
 ### 3.3. Checklist Berkas Lingkungan & Tileset
-- [ ] `assets/simulation/maps/home_baitul_fitrah.json` (Peta Tiled Ruangan Rumah)
-- [ ] `assets/simulation/maps/kuttab_school.json` (Peta Tiled Sekolah Adab)
-- [ ] `assets/simulation/maps/masjid_jami.json` (Peta Tiled Masjid)
-- [ ] `assets/simulation/maps/fitrah_garden.json` (Peta Tiled Kebun/Taman)
-- [ ] `assets/simulation/tilesets/interior_house_tiles.png` (Atlas tekstur furnitur & dinding)
-- [ ] `assets/simulation/tilesets/nature_props_tiles.png` (Atlas pohon kurma, rumput, kolam)
-- [ ] `assets/simulation/tilesets/islamic_props.png` (Sajadah, mushaf, mimbar, teko wudhu)
+- [ ] `prototype/v0/assets/simulation/maps/home_baitul_fitrah.json` (Peta Tiled Ruangan Rumah)
+- [ ] `prototype/v0/assets/simulation/maps/kuttab_school.json` (Peta Tiled Sekolah Adab)
+- [ ] `prototype/v0/assets/simulation/maps/masjid_jami.json` (Peta Tiled Masjid)
+- [ ] `prototype/v0/assets/simulation/maps/fitrah_garden.json` (Peta Tiled Kebun/Taman)
+- [ ] `prototype/v0/assets/simulation/tilesets/interior_house_tiles.png` (Atlas tekstur furnitur & dinding)
+- [ ] `prototype/v0/assets/simulation/tilesets/nature_props_tiles.png` (Atlas pohon kurma, rumput, kolam)
+- [ ] `prototype/v0/assets/simulation/tilesets/islamic_props.png` (Sajadah, mushaf, mimbar, teko wudhu)
 
 ---
 
@@ -295,7 +295,7 @@ Konten skenario ditulis secara sastrawi dan berbasis riset Nabawiyah untuk mendi
 | `R2V_MOSQUE_01` | *Langkah Menuju Rumah-Nya* | Gandeng tangan anak laki-laki berjalan kaki menuju shalat berjamaah di masjid terdekat. | Karakter virtual membuka interaksi khusus di Masjid Jami' Nabawi. |
 
 ### 7.3. Skema JSON Graph Node Tree & Prerequisite Choice Gating
-Seluruh skenario interaktif multi-karakter disimpan sebagai berkas JSON luring di `assets/data/scenarios/*.json`. Format ini mendukung relasi graf berarah (Node ID $\rightarrow$ Choices $\rightarrow$ Next Node ID) dengan sistem evaluasi prasyarat komposit:
+Seluruh skenario interaktif multi-karakter disimpan sebagai berkas JSON luring di `prototype/v0/assets/data/scenarios/*.json`. Format ini mendukung relasi graf berarah (Node ID $\rightarrow$ Choices $\rightarrow$ Next Node ID) dengan sistem evaluasi prasyarat komposit:
 
 ```json
 {
@@ -386,7 +386,7 @@ Berikut adalah ringkasan inventaris berkas yang perlu disiapkan di dalam reposit
 
 ```text
 PKN-healing-mobile-app/
-├── assets/
+├── prototype/v0/assets/
 │   └── simulation/
 │       ├── rive/
 │       │   ├── character_thufulah_boy.riv
@@ -407,7 +407,7 @@ PKN-healing-mobile-app/
 │           ├── amb_wudhu_water.mp3
 │           ├── sfx_love_fill_chime.wav
 │           └── sfx_door_knock_salam.wav
-└── lib/features/simulation/
+└── prototype/v0/lib/features/simulation/
     ├── data/
     │   ├── models/ (CharacterEntity, LedgerEventEntity, MissionEntity)
     │   ├── repositories/ (SimulationRepository)

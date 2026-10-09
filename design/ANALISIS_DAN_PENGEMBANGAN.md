@@ -80,7 +80,7 @@ Parent melaporkan bukti fase utama berikut:
 - `node design/sync-tokens.mjs --check` lulus.
 - Native mode smoke pada H: `graph.resolveColorVariableForNode` mengembalikan Background Light #F8FAFC, kemudian #121417 setelah variableModes diubah ke Dark; check token setelah reopen tetap lulus.
 - Berkas gabungan memiliki tujuh halaman (empat utama +tiga game), **166 frame dengan screenKey unik** (111 utama +55 game); seluruh166 PNG terbaru diekspor ulang. Companion memiliki empat key unik. Ini verifikasi inventory/ekspor, bukan audit visual setiap layar.
-- `flutter analyze lib/app/theme` tanpa issue; smoke runtime sementara light/dark/Arabic lulus lalu dibuang. Cakupannya tema, bukan seluruh aplikasi.
+- `flutter analyze lib/app/theme` (dari `prototype/v0/`) tanpa issue; smoke runtime sementara light/dark/Arabic lulus lalu dibuang. Cakupannya tema, bukan seluruh aplikasi.
 - Browser final memuat **104 layar kanonis dan12 flow** (enam utama +enam Virtual Fitrah), bukan166 viewport tema/companion native.
 - Parent membuka tujuh tombol Buka venue pada peta; masing-masing menghasilkan header berbeda. Semua15 pilihan A/B/C pada GF_Q1–GF_Q5 mencapai feedback _A/_B/_C dengan judul berbeda.
 - Parent menempuh ledger → panen → selesai, bridge → check-in dengan input textarea → selesai, serta jeda → AFK → ledger.

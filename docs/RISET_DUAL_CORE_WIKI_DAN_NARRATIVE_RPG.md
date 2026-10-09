@@ -181,7 +181,7 @@ sequenceDiagram
      * Alur cerita secara otomatis berpindah ke **Fase Islah (Pemulihan Jiwa)**: Pemain dibimbing cara meminta maaf kepada anak, mengakui kelemahan diri tanpa kehilangan wibawa syar'i, dan melatih muhasabah malam. Pemain belajar bagaimana cara bangkit dari kesalahan nyata!
 
 ### 3.2. Fitur Unggulan: Multi-Character POV Relay (Estafet Perspektif)
-Berdasarkan spesifikasi [`assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../assets/data/scenarios/skenario_krisis_shalat_rumah.json):
+Berdasarkan spesifikasi [`prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json):
 * Dalam satu skenario krisis keluarga, pemain bermain secara bergiliran lintas generasi:
   1. **Babak 1 (POV Zaid - 8 Tahun Tamyiz):** Merasakan lelahnya fisik setelah sekolah, asyiknya menara balok, dan beratnya beranjak wudhu.
   2. **Babak 2 (POV Abu Zaid - 36 Tahun Ayah Syabab):** Merasakan letihnya mencari nafkah, kekhawatiran masa depan anak, dan godaan untuk membentak.
@@ -213,7 +213,7 @@ Mengadaptasi kajian pada [`resources/App-Oriented Narrative Game with Flutter an
 ### 4.1. Mengapa Pendekatan Ini Unggul?
 1. **Performa Super Ringan:** 100% berjalan di atas widget native Flutter (Dart 3.5+). Tidak ada kompilasi C++ game engine yang rumit, ukuran APK tetap ramping (+2–3 MB), dan konsumsi memori $< 45\text{ MB}$.
 2. **Estetika Elegan & Dewasa:** Tampilan panel dialog yang terinspirasi oleh *Disco Elysium* dan *21st.dev* memberikan nuansa karya sastra interaktif berkelas tinggi, bukan sekadar game anak-anak.
-3. **Penyimpanan Lokal Offline:** Seluruh skrip skenario graf disimpan dalam format JSON statis di [`assets/data/scenarios/`](../assets/data/scenarios/), dan riwayat keputusan dicatat melalui Isar Database lokal tanpa membutuhkan backend server yang mahal.
+3. **Penyimpanan Lokal Offline:** Seluruh skrip skenario graf disimpan dalam format JSON statis di [`prototype/v0/assets/data/scenarios/`](../prototype/v0/assets/data/scenarios/), dan riwayat keputusan dicatat melalui Isar Database lokal tanpa membutuhkan backend server yang mahal.
 
 ---
 
@@ -232,7 +232,7 @@ Mengadaptasi kajian pada [`resources/App-Oriented Narrative Game with Flutter an
 ## 6. Skenario Prototipe Percontohan: "Krisis Shalat di Baitul Fitrah"
 
 Sebagai bukti kelayakan (*Proof of Concept*), skenario percontohan telah diwujudkan dalam berkas data:
-👉 [`assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../assets/data/scenarios/skenario_krisis_shalat_rumah.json)
+👉 [`prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json)
 
 ### Alur Demonstrasi Cerita:
 1. **Insiden Pembuka:** Waktu Ashar tiba. Zaid (8 tahun, fase Tamyiz) sedang asyik menyelesaikan menara balok kayu. Abu Zaid (Ayah, 36 tahun) baru saja melangkah masuk rumah dengan tubuh letih dan kepala penat dari urusan kantor.
@@ -260,7 +260,7 @@ graph TD
 ```
 
 1. **Langkah 1 (Validasi Dokumen):** Konfirmasi keselarasan konsep dual-core ini bersama tim/stakeholder.
-2. **Langkah 2 (Sanitasi Keamanan Wording):** Selesaikan temuan F1 pada [`feed_screen.dart`](../lib/features/feed/presentation/screens/feed_screen.dart) agar rujukan keselamatan di kedua pilar berada pada standar syar'i yang sama.
+2. **Langkah 2 (Sanitasi Keamanan Wording):** Selesaikan temuan F1 pada [`feed_screen.dart`](../prototype/v0/lib/features/feed/presentation/screens/feed_screen.dart) agar rujukan keselamatan di kedua pilar berada pada standar syar'i yang sama.
 3. **Langkah 3 (Engine Data Skenario):** Buat model Dart dan parser unit test untuk skenario format JSON graf tanpa dependensi UI luar.
 4. **Langkah 4 (Widget Dialog & Dialektika Nafs):** Bangun prototipe antarmuka panel dialog interaktif (monolog batin, pilihan bertingkat, dan *Learning Tooltip* popover ala *21st.dev*).
 5. **Langkah 5 (Navigasi Dual-Core):** Rampingkan dock navigasi utama menjadi 2 pusat kendali: **Khazanah & Tools** (Wiki-PKN) dan **Cerita Fitrah** (Narrative Rehearsal).

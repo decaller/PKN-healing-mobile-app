@@ -2,9 +2,9 @@
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.35+-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.9+-0175C2?logo=dart&logoColor=white)](https://dart.dev)
-[![Architecture](https://img.shields.io/badge/Architecture-Feature--First%20Clean-emerald)](lib/)
-[![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen)](test/)
-[![Linter](https://img.shields.io/badge/Linter-0%20Issues-blue)](analysis_options.yaml)
+[![Architecture](https://img.shields.io/badge/Architecture-Feature--First%20Clean-emerald)](prototype/v0/lib/)
+[![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen)](prototype/v0/test/)
+[![Linter](https://img.shields.io/badge/Linter-0%20Issues-blue)](prototype/v0/analysis_options.yaml)
 [![WCAG](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-gold)](DESIGN_SYSTEM.md)
 [![Design](https://img.shields.io/badge/Figma-OpenPencil%20v2-purple)](design/)
 
@@ -361,70 +361,75 @@ Untuk menghadirkan modul gamifikasi simulasi kehidupan insan dan komunitas (*"Ba
 
 ## 6. Struktur Direktori Proyek
 
-Proyek ini menggunakan pola **Feature-First Clean Architecture** yang modular dan mudah diuji:
+Prototipe Flutter berada di `prototype/v0/` dan menggunakan pola **Feature-First Clean Architecture** yang modular dan mudah diuji. Dokumen riset dan desain tetap berada di root repositori.
 
 ```text
 PKN-healing-mobile-app/
-├── lib/
-│   ├── app/                                # Konfigurasi global & routing
-│   │   ├── app.dart                        # MaterialApp dengan light/dark theme
-│   │   ├── router/
-│   │   │   ├── app_router.dart             # GoRouter declarative configuration
-│   │   │   └── route_paths.dart            # Konstanta rute navigasi
-│   │   └── theme/
-│   │       ├── app_theme.dart              # Theme data generator
-│   │       ├── color_palette.dart          # Palette warna hex kanonikal
-│   │       ├── pkn_tokens.dart             # Spacing, radius, elevasi & durasi
-│   │       └── typography.dart             # Konfigurasi GoogleFonts Inter
-│   ├── core/                               # Komponen dan utilitas bersama
-│   │   ├── network/
-│   │   │   └── lesson_bundle_service.dart  # Offline JSON package bundle loader
-│   │   ├── storage/
-│   │   │   └── storage_service.dart        # SharedPreferences persistence layer
-│   │   └── widgets/
-│   │       ├── adab_badge.dart             # Badge status adab BT-MT-BK-MM
-│   │       ├── arabic_dalil_card.dart      # Kartu teks Arab berharakat & takhrij
-│   │       ├── domain_badge.dart           # Badge domain kategori
-│   │       ├── moc_pilar_chip.dart         # Filter chip 6 Pilar MOC (P1 s.d. P6)
-│   │       ├── pkn_audio_player_sheet.dart # Modal bottom sheet audio player
-│   │       ├── pkn_button.dart             # Tombol interaktif aksesibel (>=48dp)
-│   │       ├── pkn_callout_box.dart        # Kotak catatan & peringatan adab
-│   │       ├── segmented_progress_bar.dart # Indikator kemajuan step onboarding
-│   │       └── takeaway_badge.dart         # Tag intisari aksi praktis
-│   ├── features/
-│   │   ├── feed/                           # Beranda Tarbiyah & Eksplorasi MOC
-│   │   │   ├── data/
-│   │   │   │   ├── mock_ideas.dart         # Bank gagasan tarbiyah dengan Lead TL;DR
-│   │   │   │   └── models/idea_card.dart   # Model domain kartu gagasan
-│   │   │   └── presentation/
-│   │   │       ├── controllers/            # FeedController & BookmarksProvider
-│   │   │       ├── screens/feed_screen.dart# Tampilan beranda utama
-│   │   │       └── widgets/                # IdeaCardWidget
-│   │   ├── lessons/                        # Pemain Modul Pembelajaran 5 Menit
-│   │   │   ├── data/                       # Mock lessons & JSON package parser
-│   │   │   └── presentation/
-│   │   │       ├── controllers/            # LessonPlayerController state machine
-│   │   │       ├── screens/                # LessonPlayerScreen & AdabGrowthReport
-│   │   │       └── widgets/cards/          # Step views (text, quiz, poll, blank)
-│   │   ├── onboarding/                     # Diagnostik JTBD & Personalisasi
-│   │   │   ├── data/jtbd_data.dart         # Bank kuesioner diagnosa 4 langkah
-│   │   │   ├── domain/onboarding_state.dart# Logika pemetaan 6 kluster arketipe
-│   │   │   └── presentation/screens/       # JTBDFlowScreen & ActivationalInsight
-│   │   └── profile/                        # Profil Pengguna & Pengaturan
-│   └── main.dart                           # Entrypoint aplikasi (Riverpod ProviderScope)
+├── prototype/
+│   └── v0/
+│       ├── lib/
+│       │   ├── app/                                # Konfigurasi global & routing
+│       │   │   ├── app.dart                        # MaterialApp dengan light/dark theme
+│       │   │   ├── router/
+│       │   │   │   ├── app_router.dart             # GoRouter declarative configuration
+│       │   │   │   └── route_paths.dart            # Konstanta rute navigasi
+│       │   │   └── theme/
+│       │   │       ├── app_theme.dart              # Theme data generator
+│       │   │       ├── color_palette.dart          # Palette warna hex kanonikal
+│       │   │       ├── pkn_tokens.dart             # Spacing, radius, elevasi & durasi
+│       │   │       └── typography.dart             # Konfigurasi GoogleFonts Inter
+│       │   ├── core/                               # Komponen dan utilitas bersama
+│       │   │   ├── network/
+│       │   │   │   └── lesson_bundle_service.dart  # Offline JSON package bundle loader
+│       │   │   ├── storage/
+│       │   │   │   └── storage_service.dart        # SharedPreferences persistence layer
+│       │   │   └── widgets/
+│       │   │       ├── adab_badge.dart             # Badge status adab BT-MT-BK-MM
+│       │   │       ├── arabic_dalil_card.dart      # Kartu teks Arab berharakat & takhrij
+│       │   │       ├── domain_badge.dart           # Badge domain kategori
+│       │   │       ├── moc_pilar_chip.dart         # Filter chip 6 Pilar MOC (P1 s.d. P6)
+│       │   │       ├── pkn_audio_player_sheet.dart # Modal bottom sheet audio player
+│       │   │       ├── pkn_button.dart             # Tombol interaktif aksesibel (>=48dp)
+│       │   │       ├── pkn_callout_box.dart        # Kotak catatan & peringatan adab
+│       │   │       ├── segmented_progress_bar.dart # Indikator kemajuan step onboarding
+│       │   │       └── takeaway_badge.dart         # Tag intisari aksi praktis
+│       │   ├── features/
+│       │   │   ├── feed/                           # Beranda Tarbiyah & Eksplorasi MOC
+│       │   │   │   ├── data/
+│       │   │   │   │   ├── mock_ideas.dart         # Bank gagasan tarbiyah dengan Lead TL;DR
+│       │   │   │   │   └── models/idea_card.dart   # Model domain kartu gagasan
+│       │   │   │   └── presentation/
+│       │   │   │       ├── controllers/            # FeedController & BookmarksProvider
+│       │   │   │       ├── screens/feed_screen.dart# Tampilan beranda utama
+│       │   │   │       └── widgets/                # IdeaCardWidget
+│       │   │   ├── lessons/                        # Pemain Modul Pembelajaran 5 Menit
+│       │   │   │   ├── data/                       # Mock lessons & JSON package parser
+│       │   │   │   └── presentation/
+│       │   │   │       ├── controllers/            # LessonPlayerController state machine
+│       │   │   │       ├── screens/                # LessonPlayerScreen & AdabGrowthReport
+│       │   │   │       └── widgets/cards/          # Step views (text, quiz, poll, blank)
+│       │   │   ├── onboarding/                     # Diagnostik JTBD & Personalisasi
+│       │   │   │   ├── data/jtbd_data.dart         # Bank kuesioner diagnosa 4 langkah
+│       │   │   │   ├── domain/onboarding_state.dart# Logika pemetaan 6 kluster arketipe
+│       │   │   │   └── presentation/screens/       # JTBDFlowScreen & ActivationalInsight
+│       │   │   └── profile/                        # Profil Pengguna & Pengaturan
+│       │   └── main.dart                           # Entrypoint aplikasi (Riverpod ProviderScope)
+│       ├── test/                                   # Rangkaian pengujian unit & widget
+│       │   └── features/
+│       │       ├── feed/feed_controller_test.dart
+│       │       ├── lessons/lesson_player_controller_test.dart
+│       │       └── onboarding/onboarding_controller_test.dart
+│       ├── assets/                         # Aset dan data luring Flutter
+│       ├── analysis_options.yaml           # Konfigurasi lint Dart
+│       ├── pubspec.lock                    # Versi dependensi terkunci
+│       └── pubspec.yaml                    # Konfigurasi dependensi Flutter
 ├── docs/
 │   ├── USER_JOURNEYS.md                    # Peta komprehensif perjalanan 17 persona
 │   └── personas/                           # 17 Berkas profil persona dari wiki-pkn
 ├── design/
 │   ├── PKN_Healing_App_Design.fig          # Berkas master Figma SceneGraph
 │   └── previews/                           # Hasil render resolusi tinggi antarmuka
-├── test/                                   # Rangkaian pengujian unit & widget
-│   └── features/
-│       ├── feed/feed_controller_test.dart
-│       ├── lessons/lesson_player_controller_test.dart
-│       └── onboarding/onboarding_controller_test.dart
-├── DESIGN_SYSTEM.md                        # Spesifikasi token desain lengkap
-└── pubspec.yaml                            # Konfigurasi dependensi Flutter
+└── DESIGN_SYSTEM.md                        # Spesifikasi token desain lengkap
 ```
 
 ---
@@ -437,6 +442,9 @@ PKN-healing-mobile-app/
 
 ### Menjalankan Aplikasi
 ```bash
+# Jalankan dari root repositori
+cd prototype/v0
+
 # 1. Unduh seluruh dependensi paket
 flutter pub get
 

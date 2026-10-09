@@ -214,7 +214,7 @@ Saat Aplikasi Dibuka Kembali (Login):
 
 Berdasarkan analisis kelayakan teknis, stabilitas, efisiensi ukuran, serta keselarasan dengan manhaj PKN, **rekomendasi terbaik untuk diimplementasikan adalah: OPSI 2 (2D Isometrik Hybrid: Flame Engine + Rive Animation)**.
 
-### Rincian Pustaka Paket (`pubspec.yaml`):
+### Rincian Pustaka Paket (`prototype/v0/pubspec.yaml`):
 
 ```yaml
 dependencies:

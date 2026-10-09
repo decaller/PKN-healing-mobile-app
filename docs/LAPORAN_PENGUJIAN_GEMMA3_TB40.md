@@ -178,7 +178,7 @@ flowchart TD
 ```
 
 1. **Prioritas Utama (Pre-Authored Graph JSON):**  
-   Gunakan hasil pengujian ini untuk memvalidasi bahwa skenario dialog TB-40 dapat diproduksi secara masif. Kita dapat meng-generate puluhan variasi cabang debat adab menggunakan script benchmark ini, mengkurasi isinya agar 100% selaras syariat, lalu menyimpannya sebagai berkas JSON statis di [`assets/data/scenarios/`](../assets/data/scenarios/). Dengan cara ini, aplikasi di ponsel pengguna berjalan instan (*zero latency*), tanpa membutuhkan instalasi Ollama di HP.
+   Gunakan hasil pengujian ini untuk memvalidasi bahwa skenario dialog TB-40 dapat diproduksi secara masif. Kita dapat meng-generate puluhan variasi cabang debat adab menggunakan script benchmark ini, mengkurasi isinya agar 100% selaras syariat, lalu menyimpannya sebagai berkas JSON statis di [`prototype/v0/assets/data/scenarios/`](../prototype/v0/assets/data/scenarios/). Dengan cara ini, aplikasi di ponsel pengguna berjalan instan (*zero latency*), tanpa membutuhkan instalasi Ollama di HP.
 2. **Fitur Ekstensi (On-Device AI untuk Desktop/Tablet):**  
    Bagi versi tablet/desktop yang memiliki chip pendukung, `gemma3:1b` (815 MB) dapat dibundel sebagai fitur *"Simulasi Batin Interaktif Bebas"*, di mana orang tua dapat mengetik keluh kesahnya sendiri dan menyaksikan suara-suara fitrah TB-40 mereka berdiskusi mencari jalan keluar.
 

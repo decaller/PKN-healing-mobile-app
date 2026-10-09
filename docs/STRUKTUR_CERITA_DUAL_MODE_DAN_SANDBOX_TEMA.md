@@ -121,7 +121,7 @@ Pengguna tidak perlu khawatir "merusak status karakter" atau takut membuat kesal
 
 ## 5. Standar Format Data Luring (Unified Schema JSON)
 
-Kedua mode ini disatukan dalam struktur JSON terpadu di [`assets/data/scenarios/`](../assets/data/scenarios/):
+Kedua mode ini disatukan dalam struktur JSON terpadu di [`prototype/v0/assets/data/scenarios/`](../prototype/v0/assets/data/scenarios/):
 
 ```json
 {

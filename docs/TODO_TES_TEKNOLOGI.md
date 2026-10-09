@@ -50,17 +50,16 @@ flowchart TD
         TTS["Audio8-TTS / Piper (Voice Synthesis Batin)"]
     end
 
-    subgraph BACKEND_AUTOMATION ["☁️ Layer 6: Backend & Automation Infrastructure"]
+    subgraph BACKEND_INFRASTRUCTURE ["☁️ Layer 6: Backend Infrastructure"]
         POCKETBASE["PocketBase (Auth & Master Sync)"]
         QDRANT["Qdrant Vector DB (Hybrid RAG)"]
-        SUPERPLANE["SuperPlane Canvas (Health Check & Workflow)"]
     end
 
     UI_CORE <--> STORAGE_LAYER
     STORAGE_LAYER <--> ENGINE_LAYER
     ENGINE_LAYER <--> NARRATIVE_LAYER
     NARRATIVE_LAYER <--> EDGE_AI
-    STORAGE_LAYER -.-> BACKEND_AUTOMATION
+    STORAGE_LAYER -.-> BACKEND_INFRASTRUCTURE
 ```
 
 ---
@@ -69,6 +68,8 @@ flowchart TD
 
 ### 2.1. Layer 1: Mobile Core & UI Framework (Flutter & Dart)
 Fokus: Stabilitas UI, routing navigasi, manajemen state reaktif, performa rendering font dalil, dan pemutar audio sirah.
+
+Jalankan perintah Flutter dari `prototype/v0/` (gunakan `cd prototype/v0` dari root repositori); path tes pada perintah di bawah relatif terhadap direktori tersebut.
 
 | ID | Komponen / Target | Metode Uji | Kriteria Keberhasilan (Acceptance Criteria) | Status |
 | :--- | :--- | :--- | :--- | :---: |
@@ -116,7 +117,7 @@ Fokus: Graf percabangan cerita, validasi skema JSON skenario, mekanisme dadu 2D6
 
 | ID | Komponen / Target | Metode Uji | Kriteria Keberhasilan (Acceptance Criteria) | Status |
 | :--- | :--- | :--- | :--- | :---: |
-| **TEST-4.1** | Scenario JSON DAG Schema Validation | Automated Schema Test | Berkas `assets/data/scenarios/*.json` valid terhadap schema: setiap `choice` memiliki `targetNodeId` yang ada, tidak ada *dead-end* tanpa penyelesaian. | [x] |
+| **TEST-4.1** | Scenario JSON DAG Schema Validation | Automated Schema Test | Berkas `prototype/v0/assets/data/scenarios/*.json` valid terhadap schema: setiap `choice` memiliki `targetNodeId` yang ada, tidak ada *dead-end* tanpa penyelesaian. | [x] |
 | **TEST-4.2** | Voices of Syakilah (Passive Skill Checks) | Unit Test | Bakat TB-40 bersuara di kepala karakter jika nilai bakat memenuhi ambang batas (contoh: *Firaasah >= 12* mendeteksi kegelisahan anak tersembunyi). | [ ] |
 | **TEST-4.3** | Active Checks Mechanics (2D6 Roll) | Unit Test Probability | Algoritma simulasi dadu $2D6 + \text{Skill Bonus} \ge \text{Target Difficulty}$ menghasilkan distribusi acak wajar; *Critical Success* (dobel 6) dan *Critical Flaw* (dobel 1) ditangani. | [ ] |
 | **TEST-4.4** | White Check vs Red Check Gating | State Test | *White Check* yang gagal dapat diulang setelah pemain melakukan riyadhoh/wudhu/muhasabah; *Red Check* mengunci pilihan secara permanen pada sesi tersebut. | [ ] |
@@ -144,16 +145,14 @@ Fokus: Integrasi model bahasa kecil lokal, latensi inferensi, privasi percakapan
 
 ---
 
-### 2.6. Layer 6: Backend, Vector Database & Workflow Automation
-Fokus: Ketersediaan API PocketBase, performa pencarian vektor Qdrant, dan orkestrasi otomatis SuperPlane Canvas.
+### 2.6. Layer 6: Backend & Vector Database
+Fokus: Ketersediaan API PocketBase dan performa pencarian vektor Qdrant.
 
 | ID | Komponen / Target | Metode Uji | Kriteria Keberhasilan (Acceptance Criteria) | Status |
 | :--- | :--- | :--- | :--- | :---: |
 | **TEST-6.1** | PocketBase Health & Connectivity | HTTP Health Probe | Endpoint `http://localhost:8090/api/health` merespons status `200 OK` dalam `< 100 ms`. | [ ] |
 | **TEST-6.2** | PocketBase Data Sync & Conflict Resolution | Sync Integration Test | Sinkronisasi profil dan progres bookmark berhasil saat perangkat online kembali; resolusi konflik mengutamakan timestamp termutakhir (*last-write-wins*). | [ ] |
 | **TEST-6.3** | Qdrant Vector DB Health & Vector Indexing | Vector Query Test | Endpoint `http://localhost:6335/healthz` merespons `200 OK`; pencarian kemiripan kosinus (*cosine similarity*) artikel MOC selesai `< 15 ms`. | [ ] |
-| **TEST-6.4** | SuperPlane Manual & Scheduled Trigger | Canvas Execution Test | Node `manual-trigger-001` dan `schedule-trigger-002` di `superplane/canvas.yaml` berhasil mengeksekusi pipeline pengecekan PocketBase dan Qdrant tanpa error. | [ ] |
-| **TEST-6.5** | SuperPlane Canvas Memory & Summary Display | Pipeline State Test | Node `upsert-ecosystem-status-005` berhasil menyimpan timestamp unix dan status `online` ke namespace `pknEcosystemHealth`; node display menampilkan summary hijau. | [ ] |
 
 ---
 
@@ -194,6 +193,9 @@ Berikut kumpulan perintah CLI siap pakai untuk menjalankan verifikasi di lingkun
 # Pastikan path flutter terdaftar
 export PATH="$HOME/flutter/bin:$PATH"
 
+# Jalankan dari root repositori
+cd prototype/v0
+
 # 1. Analisis statis kode (Wajib 0 issues)
 flutter analyze
 
@@ -207,10 +209,11 @@ genhtml coverage/lcov.info -o coverage/html
 
 ### 3.2. Pengujian Validasi Skenario Cerita (JSON Schema)
 ```bash
+# Jalankan dari root repositori
 # Uji integritas berkas skenario DAG JSON
 python3 -c "
 import json, glob, sys
-files = glob.glob('assets/data/scenarios/*.json')
+files = glob.glob('prototype/v0/assets/data/scenarios/*.json')
 for f in files:
     with open(f) as fp:
         data = json.load(fp)
@@ -225,16 +228,13 @@ print(f'✅ All {len(files)} scenario graph files are consistent!')
 "
 ```
 
-### 3.3. Pengujian Infrastruktur Backend & SuperPlane
+### 3.3. Pengujian Infrastruktur Backend
 ```bash
 # Uji respons PocketBase
 curl -I -s --max-time 5 http://localhost:8090/api/health | head -n 1
 
 # Uji respons Qdrant Vector DB
 curl -I -s --max-time 5 http://localhost:6335/healthz | head -n 1
-
-# Uji eksekusi SuperPlane CLI
-superplane apps active
 ```
 
 ### 3.4. Pengujian Model Gemma 3 1B Lokal (Ollama / LiteRT Harness)
@@ -278,12 +278,12 @@ gantt
 | **Layer 3: Simulation & Game Engine** | 7 | 0 | 7 | **0%** |
 | **Layer 4: Narrative Engine TB-40** | 8 | 1 | 7 | **12.5%** |
 | **Layer 5: On-Device Edge AI & TTS** | 9 | 0 | 9 | **0%** |
-| **Layer 6: Backend & Automation** | 5 | 0 | 5 | **0%** |
+| **Layer 6: Backend & Vector Database** | 3 | 0 | 3 | **0%** |
 | **Layer 7: Non-Functional & A11y** | 7 | 0 | 7 | **0%** |
 | **Layer 8: Ethical & Content Safety** | 5 | 0 | 5 | **0%** |
-| **TOTAL KESELURUHAN** | **54** | **5** | **49** | **9.3%** |
+| **TOTAL KESELURUHAN** | **52** | **5** | **47** | **9.6%** |
 
 ---
 
 > 📌 **Catatan Pengembang:**  
-> Setiap penambahan paket pada `pubspec.yaml`, perubahan model database Isar, atau integrasi bobot model LiteRT baru **wajib menambahkan dan memperbarui checklist pengujian pada dokumen ini**.
+> Setiap penambahan paket pada `prototype/v0/pubspec.yaml`, perubahan model database Isar, atau integrasi bobot model LiteRT baru **wajib menambahkan dan memperbarui checklist pengujian pada dokumen ini**.

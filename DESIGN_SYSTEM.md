@@ -180,7 +180,7 @@ Browser game merender tujuh venue SVG inline, hotspot peta, feedback A/B/C dan d
 
 ## 8. Sinkronisasi dan Bukti Terbatas
 
-`node design/sync-tokens.mjs` menghasilkan `lib/app/theme/color_palette.dart` dan `pkn_tokens.dart`; `node design/sync-tokens.mjs --check` mendeteksi drift tanpa menulis. `AppTheme.light`/`dark` mengonsumsi hasilnya. Parent mengamati check token lulus, analisis terbatas `lib/app/theme` tanpa issue, dan smoke runtime sementara light/dark/Arabic. Itu bukan bukti seluruh Flutter, game produksi, WCAG atau pembaca layar lulus. Bukti scene/prototype dan batas terbaru berada di [laporan desain](design/ANALISIS_DAN_PENGEMBANGAN.md).
+`node design/sync-tokens.mjs` menghasilkan `prototype/v0/lib/app/theme/color_palette.dart` dan `pkn_tokens.dart`; `node design/sync-tokens.mjs --check` mendeteksi drift tanpa menulis. `AppTheme.light`/`dark` mengonsumsi hasilnya. Parent mengamati check token lulus, analisis terbatas `prototype/v0/lib/app/theme` tanpa issue, dan smoke runtime sementara light/dark/Arabic. Itu bukan bukti seluruh Flutter, game produksi, WCAG atau pembaca layar lulus. Bukti scene/prototype dan batas terbaru berada di [laporan desain](design/ANALISIS_DAN_PENGEMBANGAN.md).
 
 Inventori final: tujuh halaman,166 screenKey unik (111 utama +55 game), seluruh166 PNG terbaru diekspor. Browser104 layar kanonis/12 flow; parent mengamati tujuh venue,15 feedback A/B/C dan alur panen/check-in/jeda. Angka ekspor tidak berarti audit semua layar. Empat companion game memiliki key unik; ID node tetap dicari ulang setelah reopen.
 

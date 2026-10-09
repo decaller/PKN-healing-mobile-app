@@ -35,7 +35,7 @@ flowchart TD
 *(Merujuk pada [`design/DESIGN_CRITIQUE.md`](../design/DESIGN_CRITIQUE.md) dan [`design/IDEA_REFINEMENT.md`](../design/IDEA_REFINEMENT.md))*
 
 1. **Inkonsistensi Redaksi Keamanan (Temuan F1 - Tingkat Tinggi):**
-   * Di dalam kode Flutter aktif ([`feed_screen.dart:187,270,275`](../lib/features/feed/presentation/screens/feed_screen.dart)), ditemukan instruksi: *"hadirkan pelukan penenteram jiwa"* dan *"peluk saat ia marah"*. Ini bertentangan dengan kaidah penanganan tantrum anak (memaksakan kontak fisik saat anak meronta/disregulasi sensorik dapat mencederai anak dan memicu trauma).
+   * Di dalam kode Flutter aktif ([`feed_screen.dart:187,270,275`](../prototype/v0/lib/features/feed/presentation/screens/feed_screen.dart)), ditemukan instruksi: *"hadirkan pelukan penenteram jiwa"* dan *"peluk saat ia marah"*. Ini bertentangan dengan kaidah penanganan tantrum anak (memaksakan kontak fisik saat anak meronta/disregulasi sensorik dapat mencederai anak dan memicu trauma).
    * Redaksi *"larangan keras memukul sebelum usia 10 tahun"* berisiko disalahpahami sebagai legalisasi pemukulan keras setelah usia 10 tahun. Perlu diselaraskan dengan batas syar'i: kelembutan diutamakan, sanksi fisik ringan setelah 10 tahun harus *ghairu mubarrih* (pantang melukai dan haram memukul wajah).
 2. **Kebocoran Taksonomi Internal (Temuan F2):**
    * Pengguna disajikan kode internal engineering seperti `P1–P6`, `T1–T5`, `R1`, `L1–L3`, `D2`. Ini membingungkan orang tua yang butuh pertolongan darurat. Harus digantikan label tugas nyata (*Job-to-be-Done*).
@@ -105,7 +105,7 @@ Berikut adalah direktori seluruh dokumen riset dan artefak yang telah dibuat dan
 | **Riset Dual-Core Blueprint** | [`docs/RISET_DUAL_CORE_WIKI_DAN_NARRATIVE_RPG.md`](RISET_DUAL_CORE_WIKI_DAN_NARRATIVE_RPG.md) | Cetak biru pemisahan Wiki-Tools vs Narrative RPG |
 | **Mekanik TB-40 Disco Elysium** | [`docs/RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md`](RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md) | Spesifikasi antropomorfis 40 bakat & sistem cek adab |
 | **Laporan Uji Coba Gemma 3** | [`docs/LAPORAN_PENGUJIAN_GEMMA3_TB40.md`](LAPORAN_PENGUJIAN_GEMMA3_TB40.md) | Hasil benchmark kuantitatif & kualitatif model 270m vs 1b |
-| **Contoh Skenario JSON Graph** | [`assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../assets/data/scenarios/skenario_krisis_shalat_rumah.json) | Struktur data luring skenario POV Relay & Jalur Islah |
+| **Contoh Skenario JSON Graph** | [`prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json`](../prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json) | Struktur data luring skenario POV Relay & Jalur Islah |
 | **Data Mentah Benchmark 1B** | `scratch/benchmark_gemma3_1b.json` (lokal) | Log lengkap latensi, token/sec, dan teks respon gemma3:1b |
 | **Data Mentah Benchmark 270M** | `scratch/benchmark_gemma3_270m.json` (lokal) | Log lengkap pengujian gemma3:270m |
 | **Script Eksekutor Benchmark** | `scratch/run_gemma3_benchmarks.py` (lokal) | Script Python penguji otomatis multi-turn Ollama |
@@ -118,9 +118,9 @@ Berikut adalah direktori seluruh dokumen riset dan artefak yang telah dibuat dan
 Berdasarkan seluruh temuan di atas, langkah kerja berikutnya dikelompokkan dalam skala prioritas:
 
 1. **Prioritas 0 (Penyelarasan Keamanan & Konten Segera):**
-   * Perbaiki redaksi instruksi penanganan krisis di [`feed_screen.dart`](../lib/features/feed/presentation/screens/feed_screen.dart) (hindari pemaksaan pelukan saat anak marah; perjelas formulasi usia 10 tahun).
+   * Perbaiki redaksi instruksi penanganan krisis di [`feed_screen.dart`](../prototype/v0/lib/features/feed/presentation/screens/feed_screen.dart) (hindari pemaksaan pelukan saat anak marah; perjelas formulasi usia 10 tahun).
 2. **Prioritas 1 (Arsitektur Engine Data Naratif di Flutter):**
-   * Buat model Dart dan parser unit test untuk struktur data [`skenario_krisis_shalat_rumah.json`](../assets/data/scenarios/skenario_krisis_shalat_rumah.json) di bawah direktori `lib/features/narrative/`.
+   * Buat model Dart dan parser unit test untuk struktur data [`skenario_krisis_shalat_rumah.json`](../prototype/v0/assets/data/scenarios/skenario_krisis_shalat_rumah.json) di bawah direktori `prototype/v0/lib/features/narrative/`.
 3. **Prioritas 2 (Antarmuka Dialog Split-Viewport):**
    * Rancang widget panel monolog batin Flutter native (menampilkan suara bakat TB-40, pilihan berjenjang Mumtaz s.d. Munkar, dan popover *Educational Tooltip* dalil saat opsi terkunci).
 4. **Prioritas 3 (Penyederhanaan Navigasi Aplikasi):**

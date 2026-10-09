@@ -462,7 +462,7 @@ Sesuai prinsip *Anti-Guilt UX*:
 * Narasi secara otomatis bercabang ke **Fase Islah (Pemulihan & Rekonsiliasi)**: karakter diarahkan untuk beristighfar, mengakui kesalahan, meminta maaf kepada anak, memeluk hangat, atau meminta nasihat sesepuh. Pemain belajar bagaimana cara bangkit dan memperbaiki kesalahan pengasuhan nyata di rumah.
 
 ### 8.6. Struktur Format Data Luring (Graph Node Tree JSON)
-Seluruh cabang kemungkinan cerita disimpan sebagai berkas JSON statis luring di `assets/data/scenarios/*.json` dengan format graf berarah (Node ID, Venue ID, Active Character ID, Choices Array, Prerequisites Object, Consequence Pointers).
+Seluruh cabang kemungkinan cerita disimpan sebagai berkas JSON statis luring di `prototype/v0/assets/data/scenarios/*.json` dengan format graf berarah (Node ID, Venue ID, Active Character ID, Choices Array, Prerequisites Object, Consequence Pointers).
 
 ---
 

@@ -10,7 +10,7 @@ Concept alternatives and proposed product direction are kept in [IDEA_REFINEMENT
 
 ## Evidence and limits
 
-- Read project scope and principles in `README.md:11–12,41–48,99–115`, design contracts in `design/README.md:5–11,38–44,76–102`, and the Flutter crisis implementation in `lib/features/feed/presentation/screens/feed_screen.dart:151–212,219–282`.
+- Read project scope and principles in `README.md:11–12,41–48,99–115`, design contracts in `design/README.md:5–11,38–44,76–102`, and the Flutter crisis implementation in `prototype/v0/lib/features/feed/presentation/screens/feed_screen.dart:151–212,219–282`.
 - Served the existing `design/prototype.html` locally and opened it in Chromium. Inspected all 12 flow entry screens through their rendered text/accessibility structure at 390×844. Exercised guidance save and bookmark retrieval, home navigation, TB40 choice/next transition, scenario B feedback, and theme switching. Checked the executive screen at 320×700 and institution entry at 768×1024; neither sampled page had horizontal document overflow.
 - The loaded prototype contains 104 canonical screen definitions. This is inventory evidence, **not** an audit of all 104 screens or 166 native viewport variants.
 - Screenshot capture succeeded, but image inspection was unavailable in this review environment. Layout findings below use measured browser geometry and computed styles, not aesthetic judgments inferred from screenshots.

@@ -487,16 +487,16 @@ flowchart TD
 
 Seluruh User Journey di atas terhubung langsung secara modular dengan arsitektur kode Flutter dalam repositori:
 
-1. **State Onboarding Dinamis (`lib/features/onboarding/`)**:
+1. **State Onboarding Dinamis (`prototype/v0/lib/features/onboarding/`)**:
    - `JTBDRepository` di `jtbd_data.dart` mengelompokkan amanah peran utama ke dalam persona ekosistem.
    - `OnboardingState` menghitung arketipe persona, pilar MOC rekomendasi (`P1` s.d. `P6`), dan teks deskripsi trajektori personal.
    - Pilihan pengguna disimpan secara persisten di `StorageService` (`SharedPreferences`).
 
-2. **Feed Terpersonalisasi Berbasis Pilar MOC (`lib/features/feed/`)**:
+2. **Feed Terpersonalisasi Berbasis Pilar MOC (`prototype/v0/lib/features/feed/`)**:
    - Filter 6 Pilar MOC (`p1_mulai`, `p2_fase`, `p3_bakat`, `p4_keluarga`, `p5_lembaga`, `p6_dalil`).
    - Setiap kartu gagasan (`IdeaCard`) memuat **Lead TL;DR**, **Takeaway Actionable**, dan referensi silang ke persona yang relevan.
 
-3. **Pemain Modul Primer Interaktif (`lib/features/lessons/`)**:
+3. **Pemain Modul Primer Interaktif (`prototype/v0/lib/features/lessons/`)**:
    - Format 5 kartu swipe vertikal (Teks $\rightarrow$ Pilihan Ganda / Skenario $\rightarrow$ Swipe Poll $\rightarrow$ Refleksi Do'a).
    - Pemutar audio terintegrasi (*background playback support*) untuk menyimak naskah Sirah dan Tazkiyatun Nafs secara hands-free.
 

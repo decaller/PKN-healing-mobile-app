@@ -67,8 +67,8 @@ async function main() {
     ...styles.map(s => `  static const ${lower(s.name)} = PknTextToken(fontFamily: ${dartString(s.fontFamily)}, fontSize: ${number(s.fontSize)}, fontWeight: FontWeight.w${s.fontWeight}, lineHeight: ${number(s.lineHeight)}, letterSpacing: ${number(s.letterSpacing)});`), '}',
   ];
   const outputs = [
-    ['lib/app/theme/color_palette.dart', '  // BEGIN GENERATED PKN COLORS', '  // END GENERATED PKN COLORS', palette.join('\n')],
-    ['lib/app/theme/pkn_tokens.dart', '// BEGIN GENERATED PKN TYPOGRAPHY', '// END GENERATED PKN TYPOGRAPHY', tokens.join('\n')],
+    ['prototype/v0/lib/app/theme/color_palette.dart', '  // BEGIN GENERATED PKN COLORS', '  // END GENERATED PKN COLORS', palette.join('\n')],
+    ['prototype/v0/lib/app/theme/pkn_tokens.dart', '// BEGIN GENERATED PKN TYPOGRAPHY', '// END GENERATED PKN TYPOGRAPHY', tokens.join('\n')],
   ];
   const pending = [];
   for (const [file, start, end, body] of outputs) {

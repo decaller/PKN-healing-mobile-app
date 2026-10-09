@@ -797,7 +797,7 @@ Untuk memantapkan pemahaman praktis materi PKN, modul simulasi menghadirkan sist
   Sesuai prinsip *Anti-Guilt UX*, memilih opsi buruk tidak menyebabkan *Game Over*. Dampak alami terjadi (Tangki Cinta anjlok, anak menangis), lalu alur bercabang ke fase *Islah & Rekonsiliasi* (muhasabah, istighfar, meminta maaf kepada anak, pelukan hangat tanpa gawai).
 
 + *Format Data Luring Graph Node Tree JSON:*
-  Seluruh pohon skenario disimpan secara terstruktur di `assets/data/scenarios/*.json` (didemonstrasikan pada berkas percontohan `skenario_krisis_shalat_rumah.json`).
+  Seluruh pohon skenario disimpan secara terstruktur di `prototype/v0/assets/data/scenarios/*.json` (didemonstrasikan pada berkas percontohan `skenario_krisis_shalat_rumah.json`).
 
 #pagebreak()
 
@@ -868,7 +868,7 @@ Berikut adalah daftar tugas terprioritasi untuk implementasi engine Flame, Bonfi
   fill: (col, row) => if row == 0 { tbl_header_fill } else if calc.even(row) { tbl_alt_fill } else { none },
   align: (center, left, center),
   [Fase], [Rencana Implementasi & Deliverable], [Target],
-  [Phase 7], [Pemasangan dependensi engine; definisi skema database Isar (`CharacterEntity`, `LedgerEventEntity`, `RealToVirtualMissionEntity`, `ScenarioProgressEntity`); parser luring Graph Node Tree JSON di `assets/data/scenarios/`.], [#badge("READY / UPCOMING", rgb("FEF3C7"), rgb("B45309"))],
+  [Phase 7], [Pemasangan dependensi engine; definisi skema database Isar (`CharacterEntity`, `LedgerEventEntity`, `RealToVirtualMissionEntity`, `ScenarioProgressEntity`); parser luring Graph Node Tree JSON di `prototype/v0/assets/data/scenarios/`.], [#badge("READY / UPCOMING", rgb("FEF3C7"), rgb("B45309"))],
   [Phase 8], [Pipeline aset Rive (`.riv`) 6 arketipe usia; rigging State Machine Inputs (`loveTankLevel`, `nafsState`, gestur adab, mikroekspresi).], [#badge("PLANNED", rgb("F1F5F9"), rgb("475569"))],
   [Phase 9], [Peta Tiled isometrik 7 venue; zona interaksi furnitur, collision detection Bonfire, sistem siklus cahaya 24 jam shalat.], [#badge("PLANNED", rgb("F1F5F9"), rgb("475569"))],
   [Phase 10], [Algoritma matematika delta-time AFK offline; UI gulungan digital `WelcomeBackLedgerScreen` (< 100 ms render).], [#badge("PLANNED", rgb("F1F5F9"), rgb("475569"))],
@@ -899,12 +899,14 @@ PKN-healing-mobile-app/
 == Panduan Perintah Pengembang (CLI Reference)
 ```bash
 # Pengujian Kode Flutter
+cd prototype/v0               # Dari root repositori
 flutter pub get               # Memperbarui dependensi paket
 flutter analyze               # Menjalankan static analysis (wajib 0 issues)
 flutter test                  # Menjalankan seluruh unit test (13/13 passing)
 flutter run                   # Menjalankan aplikasi pada perangkat / emulator
 
 # Otomasi Desain & Token OpenPencil
+cd ../..                          # Kembali ke root repositori
 node design/sync-tokens.mjs         # Ekspor token warna dan tipografi ke Flutter
 node design/sync-tokens.mjs --check # Pemeriksaan validasi drift token
 openpencil info design/PKN_Healing_App_Design.fig # Cek struktur berkas master desain
