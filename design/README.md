@@ -109,3 +109,9 @@ Prototype final memuat **104 layar kanonis /12 flow** (enam utama +enam game), b
 - Pertanyaan TB40, nama 19 butir rubrik dan 8 standar audit ilustratif, bukan instrumen resmi. L3 berupa daftar standar/prioritas, bukan radar audit tervalidasi. B6 radar ilustratif tidak boleh diberi skor pribadi.
 - Tidak ada klaim bebas collision pada semua layar, WCAG100%, AA/AAA menyeluruh, TalkBack/VoiceOver lulus, atau persentase kesiapan handoff. Target utama ≥48 adalah pilihan desain; aksesibilitas memerlukan audit surface, semua pasangan warna, keyboard, pembaca layar dan text scaling.
 - Konten syar'i di luar penggalan ayat yang diatribusikan tetap membutuhkan review sumber/ahli. Ringkasan pedagogis bukan kutipan ayat/hadis dan aplikasi bukan pengganti layanan klinis.
+
+## Referensi Desain Modern
+
+- **[Oiloil UI](https://ui.oiloil.org/en/):** Rujukan desain antarmuka minimalis, elegan, dan menenangkan jiwa (*calm technology / low visual noise*) untuk feed artikel edukasi dan formulir diagnostik.
+- **[21st.dev](https://21st.dev/):** Pustaka inspirasi komponen rekayasa desain (*design engineering*) dengan animasi mikro taktil, cocok untuk modul swipe deck, learning tooltip, dan widget HUD parameter fitrah.
+

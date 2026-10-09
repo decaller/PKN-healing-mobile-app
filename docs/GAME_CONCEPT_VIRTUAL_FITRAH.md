@@ -413,8 +413,61 @@ Untuk mewujudkan konsep ini secara realistis tanpa membebani pengembangan aplika
 
 ---
 
-## 8. Kesimpulan
+---
+
+## 8. Sistem Simulasi Narasi Multikarakter & Prerequisite Choice Gating
+
+Untuk semakin memantapkan pemahaman praktis materi PKN di lapangan, game menghadirkan sistem narasi interaktif berbasis skenario terstruktur (*Pre-Authored Graph Node Tree*) dengan mekanik kontrol multi-karakter dan evaluasi pilihan berbasis fitrah.
+
+### 8.1. Kendali Bergantian Lintas 6 Fase Usia (Thufulah s.d. Syaikh)
+Pemain tidak terkunci pada satu avatar tunggal, melainkan dapat mengendalikan berbagai karakter dengan rentang usia fitrah lengkap:
+1. **Fase Thufulah (2–7 Tahun):** Mengalami dunia dari kacamata fitrah bermain, kelekatan fisik, dan kepolosan batin.
+2. **Fase Tamyiz (7–10 Tahun):** Menghadapi dilema nalar awal, godaan menunda shalat, kejujuran bicara, dan interaksi sebaya.
+3. **Fase Murahaqah (10–14 Tahun):** Mengalami gejolak pubertas dini, rasa malu (*haya'*), batas privasi tempat tidur, dan penjagaan pandangan.
+4. **Fase Baligh (14–17 Tahun):** Menghadapi tanggung jawab mukallaf penuh, pencarian jati diri peran, dan kemandirian ibadah.
+5. **Fase Syabab & Dewasa (18–40 Tahun):** Menjalankan amanah kepemimpinan keluarga (Ayah Qawwamun, Bunda Madrasah), pengelolaan emosi kerja, dan nafkah barakah.
+6. **Fase Syaikh / Sesepuh (40+ Tahun):** Berperan sebagai murabbi, kakek/nenek bijak, mediator konflik keluarga, dan sumber ketenangan ruhiyah.
+
+### 8.2. Format Antologi Episodik & Mode Estafet Multi-Perspektif (POV Relay)
+Sistem narasi mengadopsi format fleksibel (*hybrid*):
+* **Solo Character Episode:** Pemain memainkan 1 karakter khusus untuk menuntaskan tantangan spesifik fasenya (misal: Santri baligh menelusuri bakat TB-40 di Asrama).
+* **Multi-Perspective POV Relay (Estafet Kasus):** Dalam satu insiden krisis yang sama di satu venue (misal: krisis shalat di Baitul Fitrah), pemain mengendalikan aksi dan reaksi secara bergantian:
+  * *Babak 1:* Mengendalikan Anak Tamyiz yang lelah bermain.
+  * *Babak 2:* Berganti mengendalikan Ayah Syabab yang letih pulang kerja untuk merespon anak.
+  * *Babak 3:* Berganti mengendalikan Kakek Syaikh untuk memberikan mediasi hikmah jika terjadi gesekan.
+
+### 8.3. Hierarki Pilihan Jawaban & Prasyarat Gating (Turned Off Choices)
+Seluruh opsi respon ditampilkan secara transparan di layar, diurutkan dari tingkatan adab tertinggi hingga terburuk:
+* **Mumtaz (Tier Terbaik - Adab Nabawiyah):** Respon berbasis Tiga Bahasa Mendidik, kelembutan, dan dalil shahih.
+* **Jayyid Jiddan / Jayyid (Tier Baik/Cukup):** Respon wajar yang aman secara syar'i namun belum mencapai kelembutan puncak.
+* **Dha'if (Tier Sub-Optimal):** Respon kompromistis, menunda, atau menuruti kelelahan sesaat.
+* **Munkar (Tier Terburuk):** Bentakan emosional, ancaman fisik balita, atau labeling toksik.
+
+**Mekanisme Gating (Kunci Prasyarat):**
+Sebagian pilihan tampil dalam status *turned off* (abu-abu nonaktif dengan ikon gembok) apabila karakter belum memenuhi kombinasi prasyarat:
+1. **Afinitas Bakat TB-40:** Memerlukan level kluster tertentu (*Al-Fashahah, Al-Qiyadah, Al-Idarah, Al-Fikriyyah*).
+2. **Kematangan Adab (BT/MT/BK/MM):** Memerlukan status adab terkait yang sudah terasah (misal: *Adab Tahan Amarah* minimal BK).
+3. **Akumulasi Poin Keterampilan (Skill Points):** Poin kemahiran yang dikumpulkan dari keberhasilan skenario sebelumnya.
+4. **Kondisi Jiwa & Tangki Cinta Real-Time:** Pilihan respon terbaik terkunci jika Tangki Cinta karakter menipis (<50%) atau sedang dikuasai *Nafs Ammarah*.
+
+### 8.4. Nilai Pedagogis: Inspeksi Edukatif (Learning Tooltip)
+Pilihan yang terkunci tidak disembunyikan, melainkan dapat diinspeksi oleh pemain:
+* Saat mengetuk pilihan nonaktif, muncul modal edukasi berisi **Teks Dalil & Hikmah Syar'i** yang menjelaskan mengapa respon tersebut adalah standar keteladanan tertinggi.
+* Menampilkan **Analisis Gap Fitrah**: rincian prasyarat apa yang saat ini belum dimiliki karakter (contoh: *"Terkunci: Ayah sedang kelelahan sehingga Tangki Cinta di bawah 60% dan Adab Lemah Lembut masih bertaraf MT"*).
+
+### 8.5. Dinamika Tanpa Game Over: Alur Islah & Rekonsiliasi Jiwa
+Sesuai prinsip *Anti-Guilt UX*:
+* Jika pemain terpaksa atau sengaja memilih opsi sub-optimal/buruk, sistem **TIDAK memberikan hukuman Game Over**.
+* Konsekuensi alami terjadi (Tangki Cinta anjlok, anak menangis, suasana tegang).
+* Narasi secara otomatis bercabang ke **Fase Islah (Pemulihan & Rekonsiliasi)**: karakter diarahkan untuk beristighfar, mengakui kesalahan, meminta maaf kepada anak, memeluk hangat, atau meminta nasihat sesepuh. Pemain belajar bagaimana cara bangkit dan memperbaiki kesalahan pengasuhan nyata di rumah.
+
+### 8.6. Struktur Format Data Luring (Graph Node Tree JSON)
+Seluruh cabang kemungkinan cerita disimpan sebagai berkas JSON statis luring di `assets/data/scenarios/*.json` dengan format graf berarah (Node ID, Venue ID, Active Character ID, Choices Array, Prerequisites Object, Consequence Pointers).
+
+---
+
+## 9. Kesimpulan
 
 Rancangan **"Baitul Fitrah & Madinah Virtual"** menjembatani dunia digital anak muda dan orang tua masa kini dengan kedalaman manhaj Pendidikan Karakter Nabawiyah. 
 
-Dengan memadukan visualisasi kebutuhan batin (*Tangki Cinta*), simulasi pergaulan sosial di 7 lokasi komunitas islami, serta kepraktisan mekanisme **Idle / AFK** yang tidak menyita waktu, game ini berpotensi menjadi sarana belajar adab yang menghibur, mendidik, sekaligus menyembuhkan jiwa (*syifa'un lima fis-sudur*).
+Dengan memadukan visualisasi kebutuhan batin (*Tangki Cinta*), simulasi pergaulan sosial di 7 lokasi komunitas islami, kepraktisan mekanisme **Idle / AFK**, serta kedalaman narasi **Multikarakter Berprasyarat Fitrah**, game ini berpotensi menjadi sarana belajar adab yang menghibur, mendidik, sekaligus menyembuhkan jiwa (*syifa'un lima fis-sudur*).

@@ -183,3 +183,25 @@ Browser game merender tujuh venue SVG inline, hotspot peta, feedback A/B/C dan d
 `node design/sync-tokens.mjs` menghasilkan `lib/app/theme/color_palette.dart` dan `pkn_tokens.dart`; `node design/sync-tokens.mjs --check` mendeteksi drift tanpa menulis. `AppTheme.light`/`dark` mengonsumsi hasilnya. Parent mengamati check token lulus, analisis terbatas `lib/app/theme` tanpa issue, dan smoke runtime sementara light/dark/Arabic. Itu bukan bukti seluruh Flutter, game produksi, WCAG atau pembaca layar lulus. Bukti scene/prototype dan batas terbaru berada di [laporan desain](design/ANALISIS_DAN_PENGEMBANGAN.md).
 
 Inventori final: tujuh halaman,166 screenKey unik (111 utama +55 game), seluruh166 PNG terbaru diekspor. Browser104 layar kanonis/12 flow; parent mengamati tujuh venue,15 feedback A/B/C dan alur panen/check-in/jeda. Angka ekspor tidak berarti audit semua layar. Empat companion game memiliki key unik; ID node tetap dicari ulang setelah reopen.
+
+---
+
+## 9. Referensi & Inspirasi Desain Modern UI/UX
+
+Untuk menjaga kualitas visual antarmuka tetap mutakhir, menenangkan jiwa (*calm technology*), dan interaktif tanpa mengorbankan kesederhanaan manhaj nabawiyah, dua platform berikut dijadikan rujukan desain utama:
+
+1. **[Oiloil UI](https://ui.oiloil.org/en/)** — *Minimalist, Elegant & Calm Interface Reference*
+   - **Filosofi Relevan:** Desain minimalis yang mengutamakan ruang bernapas (*whitespace*), tipografi bersih, dan peredaman beban kognitif pengguna (*zero visual noise*).
+   - **Penerapan di PKN Mobile:**
+     - Tampilan beranda tarbiyah dan feed kartu gagasan *Lead TL;DR*.
+     - Tata letak kontemplatif pada modul muhasabah, doa, dan tazkiyatun nafs.
+     - Antarmuka formulir asesmen kualitatif yang bebas stres.
+
+2. **[21st.dev](https://21st.dev/)** — *State-of-the-Art Micro-Interactions & Design Engineering*
+   - **Filosofi Relevan:** Komponen UI modern berbasis rekayasa desain (*design engineering*) dengan animasi mikro yang halus, gestur taktil, dan interaksi komponen kelas dunia.
+   - **Penerapan di PKN Mobile:**
+     - Kartu modul geser interaktif 5 langkah (*Primer Deck*).
+     - Modal interaktif *Educational Learning Tooltip* saat pemain mengetuk pilihan adab yang berstatus terkunci (*turned off*).
+     - Widget HUD animasi pengukur *Tangki Cinta (Love Tank)* dan *Barometer Jiwa (Nafs)*.
+     - Transisi dialog *Bahasa Hati* dan gulungan digital *The Welcome Back Ledger*.
+

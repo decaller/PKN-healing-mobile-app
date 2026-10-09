@@ -34,7 +34,7 @@ spec:
       type: "TYPE_ACTION"
       configuration:
         method: "GET"
-        url: "http://100.118.34.69:8090/api/health"
+        url: "http://localhost:8090/api/health"
         successCodes: "2xx, 4xx"
         timeoutSeconds: 10
       position:
@@ -49,7 +49,7 @@ spec:
       type: "TYPE_ACTION"
       configuration:
         method: "GET"
-        url: "http://100.118.34.69:6335/healthz"
+        url: "http://localhost:6335/healthz"
         successCodes: "2xx"
         timeoutSeconds: 10
       position:

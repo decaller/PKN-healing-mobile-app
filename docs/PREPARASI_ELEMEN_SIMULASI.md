@@ -2,8 +2,8 @@
 
 > **Status Dokumen:** Technical & Design Asset Specification  
 > **Target Framework:** Flutter 3.24+ | Flame Engine 1.18+ | Bonfire 3.11+ | Rive 0.13+ | Isar 3.1+  
-> **Konsep Induk:** [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](file:///home/abuhafi/Project/PKN-healing-mobile-app/docs/GAME_CONCEPT_VIRTUAL_FITRAH.md)  
-> **Kajian Stack:** [`docs/TECH_STACK_GAME_ANALYSIS.md`](file:///home/abuhafi/Project/PKN-healing-mobile-app/docs/TECH_STACK_GAME_ANALYSIS.md)
+> **Konsep Induk:** [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](GAME_CONCEPT_VIRTUAL_FITRAH.md)  
+> **Kajian Stack:** [`docs/TECH_STACK_GAME_ANALYSIS.md`](TECH_STACK_GAME_ANALYSIS.md)
 
 ---
 
@@ -294,7 +294,91 @@ Konten skenario ditulis secara sastrawi dan berbasis riset Nabawiyah untuk mendi
 | `R2V_BEDTIME_01`| *Bisikan Sirah Pengantar Tidur* | Bacakan 1 kisah keberanian shahabat cilik (misal: Ali bin Abi Thalib ra.) sebelum tidur. | Log narasi haru di Ledger + Status Tidur Berkah sepanjang malam. |
 | `R2V_MOSQUE_01` | *Langkah Menuju Rumah-Nya* | Gandeng tangan anak laki-laki berjalan kaki menuju shalat berjamaah di masjid terdekat. | Karakter virtual membuka interaksi khusus di Masjid Jami' Nabawi. |
 
+### 7.3. Skema JSON Graph Node Tree & Prerequisite Choice Gating
+Seluruh skenario interaktif multi-karakter disimpan sebagai berkas JSON luring di `assets/data/scenarios/*.json`. Format ini mendukung relasi graf berarah (Node ID $\rightarrow$ Choices $\rightarrow$ Next Node ID) dengan sistem evaluasi prasyarat komposit:
+
+```json
+{
+  "scenarioId": "string",
+  "title": "string",
+  "venueId": "GF_HOME | GF_SCHOOL | GF_MOSQUE | GF_GARDEN | GF_MARKET | GF_DORM | GF_NEIGHBOUR",
+  "cast": [
+    {
+      "characterId": "string",
+      "name": "string",
+      "agePhase": "Thufulah | Tamyiz | Murahaqah | Baligh | Syabab | Syaikh",
+      "exactAge": "int",
+      "baseTalents": { "Al-Qiyadah": 1, "Al-Fashahah": 1, "Al-Idarah": 1, "Al-Fikriyyah": 1 },
+      "adabLevels": { "adab_key": "BT | MT | BK | MM" },
+      "initialLoveTank": 0,
+      "initialNafsState": "Ammarah | Lawwamah | Muthma'innah"
+    }
+  ],
+  "nodes": [
+    {
+      "nodeId": "string",
+      "activeCharacterId": "string",
+      "title": "string",
+      "narrative": "string",
+      "choices": [
+        {
+          "choiceId": "string",
+          "tier": "MUMTAZ | JAYYID | DHAIF | MUNKAR",
+          "text": "string",
+          "prerequisites": {
+            "minTalent": { "Al-Fashahah": 2 },
+            "minAdabLevel": { "adab_key": "BK" },
+            "minLoveTank": 50,
+            "requiredNafs": ["Lawwamah", "Muthma'innah"],
+            "skillPointsCost": 0
+          },
+          "educationalTooltip": {
+            "isLocked": "bool",
+            "dalilNash": "string",
+            "hikmah": "string",
+            "unmetReason": "string"
+          },
+          "consequences": {
+            "deltaLoveTank": 10,
+            "deltaNafsState": "Muthma'innah",
+            "nextNodeId": "string | null"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### 7.4. Logika Evaluasi Gating & Isar Model `ScenarioProgressEntity`
+Engine skenario memeriksa predikat prasyarat saat merender daftar pilihan respon:
+
+$$\text{isChoiceEnabled} = (\text{Talent} \ge \text{minTalent}) \land (\text{Adab} \ge \text{minAdab}) \land (\text{LoveTank} \ge \text{minLoveTank}) \land (\text{Nafs} \in \text{requiredNafs})$$
+
+Jika bernilai `false`, UI menampilkan pilihan dalam mode *disabled* (abu-abu dengan ikon gembok). Saat di-tap, modal interaktif menampilkan `educationalTooltip` yang membedah dalil dan gap fitrah pemain.
+
+Untuk melacak status progres penyelesaian skenario, Isar Database mencatat:
+```dart
+@collection
+class ScenarioProgressEntity {
+  Id id = Isar.autoIncrement;
+
+  @Index(unique: true)
+  late String scenarioId;
+
+  late String currentActiveNodeId;
+  late List<String> chosenChoiceHistory;
+  late bool isCompleted;
+  late DateTime lastPlayedAt;
+
+  // Catatan Islah & Perkembangan Adab
+  bool triggeredIslahPathway = false;
+  int acquiredSkillPoints = 0;
+}
+```
+
 ---
+
 
 ## 8. Ringkasan Kebutuhan Berkas & Aset Baru
 

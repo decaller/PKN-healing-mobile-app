@@ -44,3 +44,9 @@ app.*.map.json
 scratch/
 .claude/
 skills-lock.json
+
+# Third-party offline resources (keep local to avoid redistributing external scrapes/PDFs)
+resources/*
+!resources/README.md
+!resources/App-Oriented Narrative Game with Flutter and Flutter Scene.md
+!resources/flutter_scene_narrative_game_architecture_guide.md
