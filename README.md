@@ -410,9 +410,15 @@ Untuk pratinjau browser instan dengan bingkai iPhone 13 dan simulasi perangkat s
 ```bash
 cd prototype/v1
 flutter pub get
-flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8181
+
+# Jalankan via skrip Tailscale atau manual Flutter:
+./run_web.sh
+# Atau: flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8181
 ```
-Buka browser di **`http://localhost:8181`**.
+Akses antarmuka:
+* 🔒 **Tailscale HTTPS (MagicDNS):** [**`https://cachyos-5600gt.tail0faa6b.ts.net/`**](https://cachyos-5600gt.tail0faa6b.ts.net/) *(dapat dibuka langsung dari HP / iPad yang terhubung Tailscale)*
+* 🌐 **Lokal:** `http://localhost:8181` atau `http://localhost:3001`
+* 📶 **Tailscale Direct IP:** `http://100.118.34.69:8181/`
 
 #### B. Basis Kode Native Mobile (`prototype/v0`)
 Untuk pengujian di emulator seluler atau perangkat fisik Android/iOS:

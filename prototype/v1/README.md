@@ -23,7 +23,7 @@ Basis kode mobile kanonikal native tetap dipertahankan di [`prototype/v0/`](../v
 
 ---
 
-## Menjalankan Pratinjau Lokal
+## Menjalankan Pratinjau Lokal & Tailscale
 
 Dari root repositori:
 
@@ -31,11 +31,20 @@ Dari root repositori:
 cd prototype/v1
 flutter pub get
 
-# Jalankan server web lokal dengan Device Preview
+# Opsi 1: Menggunakan skrip terintegrasi Tailscale (port 3001)
+./run_web.sh
+
+# Opsi 2: Perintah manual Flutter
 flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8181
 ```
 
-Akses antarmuka di: **`http://localhost:8181`**
+### URL Akses
+
+| Jalur Akses | Alamat URL | Keterangan |
+| :--- | :--- | :--- |
+| 🔒 **Tailscale MagicDNS (HTTPS)** | [**`https://cachyos-5600gt.tail0faa6b.ts.net/`**](https://cachyos-5600gt.tail0faa6b.ts.net/) | Akses dari HP / iPad / PC di tailnet via Tailscale Serve (SSL valid otomatis) |
+| 📶 **Tailscale Direct IP** | `http://100.118.34.69:8181/` | Akses IP Tailscale perangkat (`cachyos-5600gt`) |
+| 🌐 **Local Workstation** | `http://localhost:8181/` atau `http://localhost:3001/` | Akses langsung di mesin lokal |
 
 > **Catatan:**
 > - Di mesin lokal ini, biner SDK berada di `/home/abuhafi/flutter/bin/flutter`.
