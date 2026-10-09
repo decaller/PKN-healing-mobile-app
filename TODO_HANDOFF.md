@@ -182,4 +182,5 @@ flutter run
 17. 🎙️ **Riset Edge AI LiteRT, Voice Dialectics (TTS) & Teman Curhat**: [`docs/RISET_EDGE_AI_LITERT_DAN_VOICE_CURHAT.md`](docs/RISET_EDGE_AI_LITERT_DAN_VOICE_CURHAT.md)
 18. 📖 **Spesifikasi Struktur Cerita Dual-Mode & Sandbox Bertema**: [`docs/STRUKTUR_CERITA_DUAL_MODE_DAN_SANDBOX_TEMA.md`](docs/STRUKTUR_CERITA_DUAL_MODE_DAN_SANDBOX_TEMA.md)
 19. 🧪 **Dokumen Master TODO Tes Teknologi**: [`docs/TODO_TES_TEKNOLOGI.md`](docs/TODO_TES_TEKNOLOGI.md)
+20. 🛡️ **Master Audit Kepatuhan, Store Differentiation & Arsitektur**: [`COMPLIANCE_AND_ARCHITECTURE.md`](COMPLIANCE_AND_ARCHITECTURE.md)
 
