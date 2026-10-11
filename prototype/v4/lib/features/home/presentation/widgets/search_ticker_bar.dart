@@ -124,10 +124,10 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
                 ),
                 child: IconButton(
                   tooltip: 'Mulai Sesi Curhat PTT',
-                  icon: const iconoir.Microphone(
+                  icon: iconoir.Microphone(
                     width: 32,
                     height: 32,
-                    color: Colors.white,
+                    color: colors.onCelestialSky,
                   ),
                   onPressed: () {
                     HapticFeedback.selectionClick();

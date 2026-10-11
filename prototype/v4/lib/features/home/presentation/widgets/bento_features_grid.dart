@@ -96,12 +96,12 @@ class BentoFeaturesGrid extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const iconoir.Brain(width: 14, height: 14, color: Colors.white),
+                            iconoir.Brain(width: 14, height: 14, color: colors.onCelestialSky),
                             const SizedBox(width: 4),
                             Text(
                               "AI Sanctuary",
                               style: context.textTheme.labelSmall?.copyWith(
-                                color: Colors.white,
+                                color: colors.onCelestialSky,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

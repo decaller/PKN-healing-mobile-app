@@ -90,10 +90,10 @@ class HeaderGreeting extends StatelessWidget {
                       ],
                     ),
                     alignment: Alignment.center,
-                    child: const Text(
+                    child: Text(
                       "3",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: colors.onMeadowCanopy,
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                       ),

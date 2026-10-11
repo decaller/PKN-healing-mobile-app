@@ -141,8 +141,8 @@ class _AppShellState extends State<AppShell> {
                     alignment: Alignment.center,
                     child: Text(
                       badgeText,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.onMeadowCanopy,
                         fontSize: 9,
                         fontWeight: FontWeight.bold,
                       ),

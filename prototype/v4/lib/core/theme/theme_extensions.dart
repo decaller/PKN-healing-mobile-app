@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'earth_tree_colors.dart';
+export 'earth_tree_colors.dart';
 
 extension BuildContextEarthTreeX on BuildContext {
   ThemeData get theme => Theme.of(this);

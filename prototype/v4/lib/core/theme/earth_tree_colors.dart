@@ -13,12 +13,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
   final Color celestialSky;
   final Color onCelestialSky;
   final Color celestialSkyContainer;
+  final Color onCelestialSkyContainer;
   final Color meadowCanopy;
   final Color onMeadowCanopy;
   final Color meadowCanopyContainer;
+  final Color onMeadowCanopyContainer;
   final Color ancientBark;
   final Color onAncientBark;
   final Color ancientBarkContainer;
+  final Color onAncientBarkContainer;
   final Color nafsLawwamah;
   final Color textPrimary;
   final Color textSecondary;
@@ -26,7 +29,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
   final Color tactileBorder;
   final Color tactileBorderFocus;
   final Color error;
+  final Color onError;
   final Color errorContainer;
+  final Color onErrorContainer;
 
   const EarthTreeColors({
     required this.surface,
@@ -38,12 +43,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     required this.celestialSky,
     required this.onCelestialSky,
     required this.celestialSkyContainer,
+    required this.onCelestialSkyContainer,
     required this.meadowCanopy,
     required this.onMeadowCanopy,
     required this.meadowCanopyContainer,
+    required this.onMeadowCanopyContainer,
     required this.ancientBark,
     required this.onAncientBark,
     required this.ancientBarkContainer,
+    required this.onAncientBarkContainer,
     required this.nafsLawwamah,
     required this.textPrimary,
     required this.textSecondary,
@@ -51,7 +59,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     required this.tactileBorder,
     required this.tactileBorderFocus,
     required this.error,
+    required this.onError,
     required this.errorContainer,
+    required this.onErrorContainer,
   });
 
   /// Mode Terang (Warm Sand-Ecru / River Stone / Milled Limestone)
@@ -65,12 +75,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     celestialSky: Color(0xFF006194),
     onCelestialSky: Color(0xFFFFFFFF),
     celestialSkyContainer: Color(0xFFCCE5FF),
+    onCelestialSkyContainer: Color(0xFF001D31),
     meadowCanopy: Color(0xFF006D30),
     onMeadowCanopy: Color(0xFFFFFFFF),
     meadowCanopyContainer: Color(0xFF92F5A4),
+    onMeadowCanopyContainer: Color(0xFF00210A),
     ancientBark: Color(0xFF7E5223),
     onAncientBark: Color(0xFFFFFFFF),
     ancientBarkContainer: Color(0xFFFFDCBE),
+    onAncientBarkContainer: Color(0xFF2C1600),
     nafsLawwamah: Color(0xFFA67C00),
     textPrimary: Color(0xFF1C1C17),
     textSecondary: Color(0xFF3F4850),
@@ -78,7 +91,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     tactileBorder: Color(0x2E707881), // 18% opacity
     tactileBorderFocus: Color(0xFF006194),
     error: Color(0xFFBA1A1A),
+    onError: Color(0xFFFFFFFF),
     errorContainer: Color(0xFFFFDAD6),
+    onErrorContainer: Color(0xFF410002),
   );
 
   /// Mode Gelap (Deep Igneous Basalt / Mineral Slate / Weathered Granite)
@@ -92,12 +107,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     celestialSky: Color(0xFF93CCFF),
     onCelestialSky: Color(0xFF001D31),
     celestialSkyContainer: Color(0xFF004B73),
+    onCelestialSkyContainer: Color(0xFFCCE5FF),
     meadowCanopy: Color(0xFF79DB8D),
     onMeadowCanopy: Color(0xFF00210A),
     meadowCanopyContainer: Color(0xFF005323),
+    onMeadowCanopyContainer: Color(0xFF92F5A4),
     ancientBark: Color(0xFFF6BB81),
     onAncientBark: Color(0xFF2C1600),
     ancientBarkContainer: Color(0xFF663E0F),
+    onAncientBarkContainer: Color(0xFFFFDCBE),
     nafsLawwamah: Color(0xFFE5C56C),
     textPrimary: Color(0xFFEFECE6),
     textSecondary: Color(0xFFD3CEC4),
@@ -105,7 +123,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     tactileBorder: Color(0x47707881), // 28% opacity
     tactileBorderFocus: Color(0xFF93CCFF),
     error: Color(0xFFFFB4AB),
+    onError: Color(0xFF690005),
     errorContainer: Color(0xFF93000A),
+    onErrorContainer: Color(0xFFFFDAD6),
   );
 
   @override
@@ -119,12 +139,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     Color? celestialSky,
     Color? onCelestialSky,
     Color? celestialSkyContainer,
+    Color? onCelestialSkyContainer,
     Color? meadowCanopy,
     Color? onMeadowCanopy,
     Color? meadowCanopyContainer,
+    Color? onMeadowCanopyContainer,
     Color? ancientBark,
     Color? onAncientBark,
     Color? ancientBarkContainer,
+    Color? onAncientBarkContainer,
     Color? nafsLawwamah,
     Color? textPrimary,
     Color? textSecondary,
@@ -132,7 +155,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     Color? tactileBorder,
     Color? tactileBorderFocus,
     Color? error,
+    Color? onError,
     Color? errorContainer,
+    Color? onErrorContainer,
   }) {
     return EarthTreeColors(
       surface: surface ?? this.surface,
@@ -144,12 +169,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       celestialSky: celestialSky ?? this.celestialSky,
       onCelestialSky: onCelestialSky ?? this.onCelestialSky,
       celestialSkyContainer: celestialSkyContainer ?? this.celestialSkyContainer,
+      onCelestialSkyContainer: onCelestialSkyContainer ?? this.onCelestialSkyContainer,
       meadowCanopy: meadowCanopy ?? this.meadowCanopy,
       onMeadowCanopy: onMeadowCanopy ?? this.onMeadowCanopy,
       meadowCanopyContainer: meadowCanopyContainer ?? this.meadowCanopyContainer,
+      onMeadowCanopyContainer: onMeadowCanopyContainer ?? this.onMeadowCanopyContainer,
       ancientBark: ancientBark ?? this.ancientBark,
       onAncientBark: onAncientBark ?? this.onAncientBark,
       ancientBarkContainer: ancientBarkContainer ?? this.ancientBarkContainer,
+      onAncientBarkContainer: onAncientBarkContainer ?? this.onAncientBarkContainer,
       nafsLawwamah: nafsLawwamah ?? this.nafsLawwamah,
       textPrimary: textPrimary ?? this.textPrimary,
       textSecondary: textSecondary ?? this.textSecondary,
@@ -157,7 +185,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       tactileBorder: tactileBorder ?? this.tactileBorder,
       tactileBorderFocus: tactileBorderFocus ?? this.tactileBorderFocus,
       error: error ?? this.error,
+      onError: onError ?? this.onError,
       errorContainer: errorContainer ?? this.errorContainer,
+      onErrorContainer: onErrorContainer ?? this.onErrorContainer,
     );
   }
 
@@ -174,12 +204,15 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       celestialSky: Color.lerp(celestialSky, other.celestialSky, t)!,
       onCelestialSky: Color.lerp(onCelestialSky, other.onCelestialSky, t)!,
       celestialSkyContainer: Color.lerp(celestialSkyContainer, other.celestialSkyContainer, t)!,
+      onCelestialSkyContainer: Color.lerp(onCelestialSkyContainer, other.onCelestialSkyContainer, t)!,
       meadowCanopy: Color.lerp(meadowCanopy, other.meadowCanopy, t)!,
       onMeadowCanopy: Color.lerp(onMeadowCanopy, other.onMeadowCanopy, t)!,
       meadowCanopyContainer: Color.lerp(meadowCanopyContainer, other.meadowCanopyContainer, t)!,
+      onMeadowCanopyContainer: Color.lerp(onMeadowCanopyContainer, other.onMeadowCanopyContainer, t)!,
       ancientBark: Color.lerp(ancientBark, other.ancientBark, t)!,
       onAncientBark: Color.lerp(onAncientBark, other.onAncientBark, t)!,
       ancientBarkContainer: Color.lerp(ancientBarkContainer, other.ancientBarkContainer, t)!,
+      onAncientBarkContainer: Color.lerp(onAncientBarkContainer, other.onAncientBarkContainer, t)!,
       nafsLawwamah: Color.lerp(nafsLawwamah, other.nafsLawwamah, t)!,
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
@@ -187,7 +220,9 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       tactileBorder: Color.lerp(tactileBorder, other.tactileBorder, t)!,
       tactileBorderFocus: Color.lerp(tactileBorderFocus, other.tactileBorderFocus, t)!,
       error: Color.lerp(error, other.error, t)!,
+      onError: Color.lerp(onError, other.onError, t)!,
       errorContainer: Color.lerp(errorContainer, other.errorContainer, t)!,
+      onErrorContainer: Color.lerp(onErrorContainer, other.onErrorContainer, t)!,
     );
   }
 }

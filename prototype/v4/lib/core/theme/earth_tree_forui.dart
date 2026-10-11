@@ -23,9 +23,9 @@ FThemeData _buildForuiTheme(Brightness brightness) {
     muted: treeColors.surfaceContainerLow,
     mutedForeground: treeColors.textSecondary,
     destructive: treeColors.error,
-    destructiveForeground: Colors.white,
+    destructiveForeground: treeColors.onError,
     error: treeColors.error,
-    errorForeground: Colors.white,
+    errorForeground: treeColors.onError,
     border: treeColors.tactileBorder,
   );
 

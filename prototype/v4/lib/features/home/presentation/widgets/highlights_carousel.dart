@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import '../../../../core/theme/theme_extensions.dart';
 
+enum HighlightColorCategory { celestial, meadow, ancient }
+
 class HighlightItem {
   final String title;
   final String categoryTag;
   final String metaLabel;
   final String ctaLabel;
   final String imageUrl;
-  final Color tagColor;
-  final Color tagTextColor;
+  final HighlightColorCategory colorCategory;
 
   const HighlightItem({
     required this.title,
@@ -17,9 +18,30 @@ class HighlightItem {
     required this.metaLabel,
     required this.ctaLabel,
     required this.imageUrl,
-    required this.tagColor,
-    required this.tagTextColor,
+    this.colorCategory = HighlightColorCategory.celestial,
   });
+
+  Color getTagColor(EarthTreeColors colors) {
+    switch (colorCategory) {
+      case HighlightColorCategory.celestial:
+        return colors.celestialSkyContainer;
+      case HighlightColorCategory.meadow:
+        return colors.meadowCanopyContainer;
+      case HighlightColorCategory.ancient:
+        return colors.ancientBarkContainer;
+    }
+  }
+
+  Color getTagTextColor(EarthTreeColors colors) {
+    switch (colorCategory) {
+      case HighlightColorCategory.celestial:
+        return colors.onCelestialSkyContainer;
+      case HighlightColorCategory.meadow:
+        return colors.onMeadowCanopyContainer;
+      case HighlightColorCategory.ancient:
+        return colors.onAncientBarkContainer;
+    }
+  }
 }
 
 class HighlightsCarousel extends StatelessWidget {
@@ -34,8 +56,7 @@ class HighlightsCarousel extends StatelessWidget {
       metaLabel: "Masjid Agung Nurul Izzah",
       ctaLabel: "Daftar",
       imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDerIK-TwdjaC0cfTYckjElE4Sj4wtOKKMbkMd47cpXtPmru_heOMk53Q2oyEeGLuOi4j4fDgALAeYWE0hWZMUUDql-2AcuD8j13Kvx3vLsJ-zX3JJpIp1JLmC_rWTbdCkDg_WWoyYiq1C0ef69lupJD2Vv5vc7T-UvAQe6h3DMQMG1FJqfIkhevkLCep985g8ftVC-VMcXLoxmx7qn5JViXGcY0_nGs1i0QYr1Rfp2ruRS9wuP4WkcMA",
-      tagColor: Color(0xFF006194),
-      tagTextColor: Colors.white,
+      colorCategory: HighlightColorCategory.celestial,
     ),
     const HighlightItem(
       title: "Mengenal Syakilah TB-40: Membaca Cetak Biru Bakat Bawaan Anak",
@@ -43,8 +64,7 @@ class HighlightsCarousel extends StatelessWidget {
       metaLabel: "Ust. Harry Santosa",
       ctaLabel: "Baca",
       imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuD27LoCC5UVlAWXQO5BMLJih2h7jOy9NPek4akW3QWR3Yp7_xE6vl9aCEABvyteX1kT3wLp_Oza9pp-nhv9kwhy_5fa5x01cMWHruGfp8GUqL9cS1UpHCfqcBdK9jCec9r74TgBulCnw-S9pp-Up6nqtR6geYSBzkVonYvxNph2cpT4Vas5IWo-2R4-tOJJqU94MXFEggFFmBBmnJuLwmyJcQ6JMFLD1jxdPpN7Uhd2tSjl_VbKh01eEw",
-      tagColor: Color(0xFF006D30),
-      tagTextColor: Colors.white,
+      colorCategory: HighlightColorCategory.meadow,
     ),
     const HighlightItem(
       title: "Webinar Interaktif: Menata Jiwa & Thuma'ninah Ayah Bunda",
@@ -52,8 +72,7 @@ class HighlightsCarousel extends StatelessWidget {
       metaLabel: "1,240 Terdaftar",
       ctaLabel: "Ikuti",
       imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAGXdc1elsOdW8HkNqNIHtsVO0Y16GPpXfQuhX2vKP7sKlJY4-omahQyabzby_YGtFwC3igCt_cB7qBQWGEjv6vc-hmuYOMhryo4P-1Qi5x3DKF_4pCQ8ZhrEJ0ZnndrvgvEuODwdIP5yUSRaJ5DUmDfKBjaLVNzUl0ZS5oIYkCc6qPAUsConU1J5I-z6f6l_JcmO193b9pF8jVfTn3l7fAIqtEt61H34S-K_L2-LHyFOZdGS-3e2JxUw",
-      tagColor: Color(0xFF9A6A38),
-      tagTextColor: Colors.white,
+      colorCategory: HighlightColorCategory.ancient,
     ),
   ];
 
@@ -168,13 +187,13 @@ class HighlightsCarousel extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
-                        color: item.tagColor,
+                        color: item.getTagColor(colors),
                         borderRadius: BorderRadius.circular(999),
                       ),
                       child: Text(
                         item.categoryTag,
                         style: context.textTheme.labelSmall?.copyWith(
-                          color: item.tagTextColor,
+                          color: item.getTagTextColor(colors),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

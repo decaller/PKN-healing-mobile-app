@@ -288,7 +288,7 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
-                                color: Colors.white,
+                                color: Colors.white, // ignore_theme_linter: photo_scrim
                                 fontWeight: FontWeight.bold,
                                 fontSize: 10,
                               ),
@@ -432,11 +432,11 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                                       textAlign: TextAlign.center,
                                       style: context.textTheme.labelMedium?.copyWith(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                        color: colors.onCelestialSky,
                                       ),
                                     )),
                                     const SizedBox(width: 4),
-                                    const iconoir.Play(width: 16, height: 16, color: Colors.white),
+                                    iconoir.Play(width: 16, height: 16, color: colors.onCelestialSky),
                                   ],
                                 ),
                               ),

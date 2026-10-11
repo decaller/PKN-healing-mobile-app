@@ -27,7 +27,7 @@ class AppTheme {
         surface: treeColors.surface,
         onSurface: treeColors.textPrimary,
         error: treeColors.error,
-        onError: Colors.white,
+        onError: treeColors.onError,
       ),
       textTheme: textTheme,
       extensions: [treeColors],

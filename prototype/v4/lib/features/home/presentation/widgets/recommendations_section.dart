@@ -44,7 +44,7 @@ class RecommendationsSection extends StatelessWidget {
           // Promo 1 (AI Curhat)
           _buildCard(
             context,
-            icon: const iconoir.Lock(width: 22, height: 22, color: Colors.white),
+            icon: iconoir.Lock(width: 22, height: 22, color: colors.onCelestialSky),
             iconBg: colors.celestialSky,
             badgeText: "Zero Cloud • 100% Amanah",
             badgeColor: colors.celestialSky,
@@ -53,7 +53,7 @@ class RecommendationsSection extends StatelessWidget {
             desc:
                 "Ekspresikan lelah dan kegelisahan ayah-bunda secara privat. Tanpa riwayat tersimpan ke server.",
             buttonText: "Mulai Curhat Mandiri",
-            buttonIcon: const iconoir.ChatBubble(width: 16, height: 16, color: Colors.white),
+            buttonIcon: iconoir.ChatBubble(width: 16, height: 16, color: colors.onCelestialSky),
             buttonBg: colors.celestialSky,
             buttonTextColor: colors.onCelestialSky,
             gradientEnd: colors.celestialSkyContainer.withValues(alpha: 0.25),
@@ -69,7 +69,7 @@ class RecommendationsSection extends StatelessWidget {
           // Promo 2 (Daurah)
           _buildCard(
             context,
-            icon: const iconoir.Calendar(width: 22, height: 22, color: Colors.white),
+            icon: iconoir.Calendar(width: 22, height: 22, color: colors.onMeadowCanopy),
             iconBg: colors.meadowCanopy,
             badgeText: "Sisa 12 Kursi",
             badgeColor: colors.error,
@@ -78,7 +78,7 @@ class RecommendationsSection extends StatelessWidget {
             desc:
                 "Bedah kurikulum thariqah peradaban keluarga bersama asatidz & praktisi fitrah.",
             buttonText: "Klaim Tiket Pass",
-            buttonIcon: const iconoir.ArrowRight(width: 16, height: 16, color: Colors.white),
+            buttonIcon: iconoir.ArrowRight(width: 16, height: 16, color: colors.onMeadowCanopy),
             buttonBg: colors.meadowCanopy,
             buttonTextColor: colors.onMeadowCanopy,
             gradientEnd: colors.meadowCanopyContainer.withValues(alpha: 0.2),
@@ -89,7 +89,7 @@ class RecommendationsSection extends StatelessWidget {
           // Promo 3 (Pemetaan Syakilah)
           _buildCard(
             context,
-            icon: const iconoir.Brain(width: 22, height: 22, color: Colors.white),
+            icon: iconoir.Brain(width: 22, height: 22, color: colors.onAncientBark),
             iconBg: colors.ancientBark,
             badgeText: "Pemetaan Syakilah",
             badgeColor: colors.ancientBark,
@@ -98,7 +98,7 @@ class RecommendationsSection extends StatelessWidget {
             desc:
                 "Pemetaan komprehensif 40 ragam bakat dan fitrah kepemimpinan ananda berdasarkan taksonomi Syakilah nabawiyah.",
             buttonText: "Mulai Pemetaan Bakat",
-            buttonIcon: const iconoir.ArrowRight(width: 16, height: 16, color: Colors.white),
+            buttonIcon: iconoir.ArrowRight(width: 16, height: 16, color: colors.onAncientBark),
             buttonBg: colors.ancientBark,
             buttonTextColor: colors.onAncientBark,
             onTap: onBakatTap ?? () {},
