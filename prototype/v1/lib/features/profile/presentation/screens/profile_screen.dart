@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -32,8 +33,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final userRole = storageService.getUserRole() ?? 'ayah';
     final userFocus = storageService.getUserFocus() ?? 'Praktik Keluarga';
 
-    return Scaffold(
-      appBar: AppBar(
+    return PknScaffold(
+      appBar: PknAppBar(
         title: Text(
           'PROFIL TARBIYAH NABAWIYAH',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -42,12 +43,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ),
         ),
         actions: [
-          IconButton(
+          PknIconButton(
             icon: const Icon(Icons.headphones_rounded, color: AppColors.brandGold),
             tooltip: 'Audio Sirah & Tazkiyah',
             onPressed: () => PknAudioPlayerSheet.show(context),
           ),
-          IconButton(
+          PknIconButton(
             icon: const Icon(Icons.tune_rounded),
             tooltip: 'Ganti Peran & Fase',
             onPressed: () {
@@ -170,12 +171,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     ],
                   ),
                 ),
-                Switch(
+                PknSwitch(
                   value: _isChildSafeMode,
                   activeColor: AppColors.brandPrimary,
                   onChanged: (val) {
                     setState(() => _isChildSafeMode = val);
-                    ScaffoldMessenger.of(context).showSnackBar(
+                    showPknFeedback(context,
                       SnackBar(
                         content: Text(
                           val

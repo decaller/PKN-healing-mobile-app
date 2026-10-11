@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -21,10 +22,11 @@ class JTBDFlowScreen extends ConsumerWidget {
     final selectedOptionId = state.answers[currentQ.id];
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      appBar: AppBar(
+    return PknScaffold(
+      appBar: PknAppBar(
         leading: state.currentStepIndex > 0
-            ? IconButton(
+            ? PknIconButton(
+              tooltip: 'Kembali',
                 icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 18),
                 onPressed: () => controller.previousStep(),
               )
@@ -77,7 +79,7 @@ class JTBDFlowScreen extends ConsumerWidget {
 
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12.0),
-                      child: InkWell(
+                      child: PknTap(
                         onTap: () {
                           controller.selectOption(currentQ.id, option.id);
                         },

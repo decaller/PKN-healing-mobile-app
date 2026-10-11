@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'color_palette.dart';
 import 'pkn_tokens.dart';
 
-/// Material roles mapped explicitly to the native design typography specimens.
+/// Earth-Tree roles loaded through the existing Google Fonts mechanism.
 class AppTypography {
   AppTypography._();
 
@@ -27,22 +27,25 @@ class AppTypography {
     final body = _style(PknTypography.body, primary);
     final caption = _style(PknTypography.caption, secondary);
 
+    TextStyle headingStyle(double size, double lineHeight, FontWeight weight, {double spacing = 0}) =>
+      GoogleFonts.merriweather(color: primary, fontSize: size, height: lineHeight / size,
+        fontWeight: weight, letterSpacing: spacing);
     return TextTheme(
-      displayLarge: display,
-      displayMedium: display,
+      displayLarge: headingStyle(56, 68, FontWeight.w700, spacing: -1.12),
+      displayMedium: headingStyle(40, 52, FontWeight.w700, spacing: -0.6),
       displaySmall: display,
-      headlineLarge: display,
+      headlineLarge: headingStyle(32, 42, FontWeight.w400, spacing: -0.32),
       headlineMedium: heading,
-      headlineSmall: subhead,
-      titleLarge: heading,
-      titleMedium: subhead,
-      titleSmall: _style(PknTypography.subhead, secondary),
-      bodyLarge: body,
-      bodyMedium: _style(PknTypography.body, secondary),
+      headlineSmall: headingStyle(20, 28, FontWeight.w400, spacing: 0.1),
+      titleLarge: subhead,
+      titleMedium: subhead.copyWith(fontSize: 16, height: 1.5, letterSpacing: 0),
+      titleSmall: subhead.copyWith(fontSize: 14, height: 20 / 14),
+      bodyLarge: body.copyWith(fontSize: 18, height: 28 / 18, letterSpacing: 0),
+      bodyMedium: body,
       bodySmall: caption,
-      labelLarge: subhead,
-      labelMedium: caption,
-      labelSmall: caption,
+      labelLarge: body.copyWith(fontSize: 14, height: 20 / 14, fontWeight: FontWeight.w500, letterSpacing: 0.28),
+      labelMedium: caption.copyWith(fontSize: 14, height: 20 / 14, fontWeight: FontWeight.w500, letterSpacing: 0.28),
+      labelSmall: caption.copyWith(fontSize: 11, height: 16 / 11, fontWeight: FontWeight.w600, letterSpacing: 0.44),
     );
   }
 

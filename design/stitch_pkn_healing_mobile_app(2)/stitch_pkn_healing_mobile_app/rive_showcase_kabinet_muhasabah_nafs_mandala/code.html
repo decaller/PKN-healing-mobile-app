@@ -1,0 +1,485 @@
+<!DOCTYPE html><html class="dark" lang="en"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;background-color:#101419;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}.pr-safe{padding-right:env(safe-area-inset-right,0px);}.pl-safe{padding-left:env(safe-area-inset-left,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#006b5f", "outline": "#859490", "on-surface": "#e0e2ea", "primary-fixed-dim": "#4fdbc8", "surface-container-low": "#181c21", "primary-container": "#14b8a6", "on-secondary-fixed-variant": "#5a4300", "primary": "#4fdbc8", "background": "#101419", "on-secondary-container": "#5b4400", "on-secondary": "#3f2e00", "secondary": "#ffca45", "on-tertiary-fixed": "#001e2c", "on-tertiary-container": "#003f58", "surface-variant": "#31353b", "surface-bright": "#36393f", "surface-tint": "#4fdbc8", "on-primary-container": "#00423b", "on-surface-variant": "#bbcac6", "tertiary-fixed": "#c4e7ff", "surface-container-high": "#262a30", "on-primary-fixed-variant": "#005048", "inverse-on-surface": "#2d3136", "outline-variant": "#3c4947", "on-tertiary": "#00354a", "surface-container-lowest": "#0a0e13", "surface-container": "#1c2025", "error": "#ffb4ab", "error-container": "#93000a", "on-error": "#690005", "surface-dim": "#101419", "inverse-surface": "#e0e2ea", "tertiary-fixed-dim": "#7bd0ff", "primary-fixed": "#71f8e4", "surface": "#101419", "secondary-fixed-dim": "#f7be1d", "on-secondary-fixed": "#251a00", "tertiary-container": "#1eb0ea", "on-primary": "#003731", "secondary-container": "#e4ae00", "surface-container-highest": "#31353b", "on-error-container": "#ffdad6", "on-background": "#e0e2ea", "tertiary": "#7bd0ff", "on-primary-fixed": "#00201c", "on-tertiary-fixed-variant": "#004c69", "secondary-fixed": "#ffdf9a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "1.75rem", "margin": "1.25rem", "space-xs": "0.25rem", "gutter": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem" }, fontFamily: { "label-xs": ["Inter"], "label-md": ["Inter"], "sacred-quote-lg": ["Amiri"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "sacred-quote-md": ["Amiri"], "body-md": ["Inter"], "title-sm": ["Inter"], "headline-xl": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "metric-display": ["Inter"] }, fontSize: { "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-title-sm text-title-sm text-on-surface tracking-tight line-clamp-1">Healing Diagnostic Logs</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-safe">
+<!-- System Showcase Intro & Performance Telemetry -->
+<section class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        RIVE VECTOR RUNTIME v2.8
+      </span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-xs text-label-xs shadow-sm">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="tabular-nums" id="fps-counter">60 FPS Vector Smooth</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+      Runtime Vector Engines: Thought Lattice &amp; Living Nafs Mandala
+    </p>
+<!-- Segmented View Controller -->
+<div class="mt-space-xs grid grid-cols-3 p-1 rounded-xl bg-surface-container-lowest shadow-inner gap-1">
+<button class="py-2 px-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-1" id="btn-view-split" onclick="switchShowcaseView('split')">
+<span class="material-symbols-outlined text-[15px] text-primary">view_stream</span>
+        Split View
+      </button>
+<button class="py-2 px-1 rounded-lg text-on-surface-variant font-label-md text-label-md text-center transition-all duration-200 flex items-center justify-center gap-1" id="btn-view-lattice" onclick="switchShowcaseView('lattice')">
+<span class="material-symbols-outlined text-[15px]">hexagon</span>
+        Lattice
+      </button>
+<button class="py-2 px-1 rounded-lg text-on-surface-variant font-label-md text-label-md text-center transition-all duration-200 flex items-center justify-center gap-1" id="btn-view-mandala" onclick="switchShowcaseView('mandala')">
+<span class="material-symbols-outlined text-[15px]">spa</span>
+        Mandala
+      </button>
+</div>
+</section>
+<!-- Dual Interactive Panels Container -->
+<div class="px-margin flex flex-col gap-space-lg mt-space-sm">
+<!-- PANEL 1: RIVE KABINET MUHASABAH -->
+<section class="flex flex-col rounded-xl bg-surface-container-low shadow-md overflow-hidden transition-all duration-300" id="panel-lattice">
+<!-- Panel Header Bar -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-title-sm text-title-sm text-on-surface truncate">Kabinet Muhasabah Lattice</h2>
+<span class="font-label-xs text-label-xs text-secondary tracking-tight">Thought_Lattice_Hexagon.riv</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-xs text-label-xs font-semibold shrink-0">
+          State: RESEARCHING
+        </span>
+</div>
+<!-- Sacred Vector Display Canvas -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest overflow-hidden flex items-center justify-center">
+<!-- Ambient Constellation Vector Background -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40" fill="none" viewBox="0 0 360 270">
+<defs>
+<radialGradient cx="50%" cy="50%" id="sacredGlow" r="50%">
+<stop offset="0%" stop-color="#4fdbc8" stop-opacity="0.25"></stop>
+<stop offset="70%" stop-color="#ffca45" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#101419" stop-opacity="0"></stop>
+</radialGradient>
+<filter id="vectorBloom">
+<feGaussianBlur result="blur" stdDeviation="3"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Core Ambient Glow -->
+<circle cx="180" cy="135" fill="url(#sacredGlow)" r="110"></circle>
+<!-- Dynamic Constellation Link Vectors -->
+<line stroke="#ffca45" stroke-dasharray="3 3" stroke-opacity="0.5" stroke-width="1.5" x1="180" x2="100" y1="135" y2="80">
+<animate attributeName="stroke-dashoffset" dur="3s" repeatCount="indefinite" values="0;24"></animate>
+</line>
+<line stroke="#ffca45" stroke-dasharray="3 3" stroke-opacity="0.5" stroke-width="1.5" x1="180" x2="260" y1="135" y2="85">
+<animate attributeName="stroke-dashoffset" dur="2.5s" repeatCount="indefinite" values="24;0"></animate>
+</line>
+<line stroke="#4fdbc8" stroke-dasharray="4 2" stroke-opacity="0.3" stroke-width="1.5" x1="180" x2="180" y1="135" y2="215">
+<animate attributeName="stroke-dashoffset" dur="4s" repeatCount="indefinite" values="0;18"></animate>
+</line>
+<circle cx="140" cy="107" fill="#ffca45" filter="url(#vectorBloom)" r="2"></circle>
+<circle cx="220" cy="110" fill="#ffca45" filter="url(#vectorBloom)" r="2"></circle>
+<circle cx="180" cy="175" fill="#4fdbc8" filter="url(#vectorBloom)" r="2.5"></circle>
+</svg>
+<!-- Unlocked Auxiliary Node Left: Hak Marwah Anak -->
+<button class="absolute left-4 top-8 p-2 rounded-xl bg-surface-container-high/90 backdrop-blur-md shadow-md flex items-center gap-2 group transition-transform active:scale-95 text-left" onclick="inspectRiveParam('node_hak_marwah', true, 100)">
+<div class="relative w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface font-semibold">Hak Marwah Anak</span>
+<span class="font-label-xs text-[10px] text-secondary">Unlocked (Active)</span>
+</div>
+</button>
+<!-- Unlocked Auxiliary Node Right: Radius < 1 Meter -->
+<button class="absolute right-4 top-10 p-2 rounded-xl bg-surface-container-high/90 backdrop-blur-md shadow-md flex items-center gap-2 group transition-transform active:scale-95 text-left" onclick="inspectRiveParam('node_radius_proximity', true, 100)">
+<div class="relative w-7 h-7 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface font-semibold">Radius &lt; 1 Meter</span>
+<span class="font-label-xs text-[10px] text-primary">Unlocked (Synched)</span>
+</div>
+</button>
+<!-- Central Active Cell: Koneksi Sebelum Koreksi -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="relative w-36 h-40 flex items-center justify-center">
+<!-- Pulsing Rotating Brass Gears Beneath Hexagon -->
+<svg class="absolute -inset-4 w-44 h-44 animate-[spin_30s_linear_infinite] opacity-30 text-secondary pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+<path d="M50 35c-8.28 0-15 6.72-15 15s6.72 15 15 15 15-6.72 15-15-6.72-15-15-15zm0 24c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"></path>
+<path d="M53 20h-6l-1 5c-1.8.4-3.4 1.1-4.9 2.1l-4.5-2.6-4.2 4.2 2.6 4.5c-1 1.5-1.7 3.1-2.1 4.9l-5 1v6l5 1c.4 1.8 1.1 3.4 2.1 4.9l-2.6 4.5 4.2 4.2 4.5-2.6c1.5 1 3.1 1.7 4.9 2.1l1 5h6l1-5c1.8-.4 3.4-1.1 4.9-2.1l4.5 2.6 4.2-4.2-2.6-4.5c1-1.5 1.7-3.1 2.1-4.9l5-1v-6l5-1c-.4-1.8-1.1-3.4-2.1-4.9l2.6-4.5-4.2-4.2-4.5 2.6c-1.5-1-3.1-1.7-4.9-2.1l-1-5z"></path>
+</svg>
+<!-- SVG Hexagon Container with Liquid Emerald Fill -->
+<svg class="w-36 h-40 drop-shadow-xl" fill="none" viewBox="0 0 120 138">
+<defs>
+<clipPath id="hexClip">
+<polygon points="60,3 116,33 116,105 60,135 4,105 4,33"></polygon>
+</clipPath>
+<linearGradient id="emeraldLiquidGrad" x1="0%" x2="0%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#006b5f"></stop>
+<stop offset="75%" stop-color="#14b8a6"></stop>
+<stop offset="100%" stop-color="#4fdbc8"></stop>
+</linearGradient>
+</defs>
+<!-- Hexagon Background Frame -->
+<polygon fill="#1c2025" points="60,3 116,33 116,105 60,135 4,105 4,33"></polygon>
+<!-- Liquid Emerald Progress 75% Filling -->
+<g clip-path="url(#hexClip)">
+<rect fill="url(#emeraldLiquidGrad)" height="104" opacity="0.85" width="120" x="0" y="34">
+<animate attributeName="y" dur="4s" repeatCount="indefinite" values="38;33;38"></animate>
+</rect>
+<!-- Liquid Surface Wave Oscillation -->
+<path d="M0,35 Q30,30 60,35 T120,35 L120,138 L0,138 Z" fill="#4fdbc8" opacity="0.6">
+<animate attributeName="d" dur="3s" repeatCount="indefinite" values="M0,35 Q30,30 60,35 T120,35 L120,138 L0,138 Z; M0,33 Q30,38 60,33 T120,33 L120,138 L0,138 Z; M0,35 Q30,30 60,35 T120,35 L120,138 L0,138 Z"></animate>
+</path>
+</g>
+<!-- Brass Geometric Framing Geometry -->
+<polygon fill="none" opacity="0.75" points="60,3 116,33 116,105 60,135 4,105 4,33" stroke="#ffca45" stroke-width="2.5"></polygon>
+<polygon fill="none" opacity="0.4" points="60,10 110,37 110,101 60,128 10,101 10,37" stroke="#ffdf9a" stroke-dasharray="4 2" stroke-width="0.75"></polygon>
+</svg>
+<!-- Active Cell Content Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center p-3 text-center pointer-events-none">
+<span class="material-symbols-outlined text-secondary text-[22px] drop-shadow">psychology</span>
+<p class="font-title-sm text-[12px] leading-tight text-on-surface font-bold mt-1 max-w-[85px] drop-shadow-md">
+                Koneksi Sebelum Koreksi
+              </p>
+<div class="mt-1 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/80 text-primary font-label-xs text-[10px] font-bold">
+                75% SYNCHED
+              </div>
+</div>
+</div>
+</div>
+<!-- Locked Node Bottom: Metode Lembut Bertahap -->
+<div class="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-surface-container/90 backdrop-blur-md shadow flex items-center gap-2 opacity-80">
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Metode Lembut Bertahap (Locked)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-outline text-[9px] font-mono">REQ: 100%</span>
+</div>
+</div>
+<!-- Lattice Realtime Action Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-label-md">Nabawi Resonance Frequency</span>
+<span class="font-label-xs text-label-xs text-primary font-mono">432 Hz Harmonics</span>
+</div>
+<!-- Parental Healing Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-tertiary-container via-primary to-primary-fixed w-3/4 shadow-[0_0_8px_rgba(79,219,200,0.5)] transition-all duration-500"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="triggerRivePulse('spark_lattice')">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+            Emit Geometric Star Spark
+          </button>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">T_CONV: 14m 28s</span>
+</div>
+</div>
+</section>
+<!-- PANEL 2: RIVE NAFS MANDALA (TEMAN CURHAT AI ROOM) -->
+<section class="flex flex-col rounded-xl bg-surface-container-low shadow-md overflow-hidden transition-all duration-300" id="panel-mandala">
+<!-- Panel Header Bar -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">temp_preferences_custom</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-title-sm text-title-sm text-on-surface truncate">Nafs Barometer Mandala</h2>
+<span class="font-label-xs text-label-xs text-primary font-mono">Nafs_Barometer_Living_Mandala.riv</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-xs text-label-xs text-primary font-bold" id="active-state-tag">MUTHMA'INNAH</span>
+</div>
+</div>
+<!-- Dynamic Nafs Mandala Stage -->
+<div class="relative w-full aspect-square bg-surface-container-lowest overflow-hidden flex flex-col items-center justify-center">
+<!-- Interactive Mic Audio Wave Amplitude Visualization (Outer Ring) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none transition-all duration-700" fill="none" id="mandala-outer-ring" viewBox="0 0 300 300">
+<circle cx="150" cy="150" r="130" stroke="#14b8a6" stroke-dasharray="6 4" stroke-opacity="0.2" stroke-width="2"></circle>
+<circle cx="150" cy="150" id="ripple-circle-1" r="110" stroke="#4fdbc8" stroke-opacity="0.3" stroke-width="1.5">
+<animate attributeName="r" dur="4s" repeatCount="indefinite" values="95;135;95"></animate>
+<animate attributeName="stroke-opacity" dur="4s" repeatCount="indefinite" values="0.4;0.05;0.4"></animate>
+</circle>
+<circle cx="150" cy="150" id="ripple-circle-2" r="125" stroke="#7bd0ff" stroke-opacity="0.2" stroke-width="1">
+<animate attributeName="r" begin="1s" dur="4s" repeatCount="indefinite" values="105;142;105"></animate>
+<animate attributeName="stroke-opacity" begin="1s" dur="4s" repeatCount="indefinite" values="0.3;0;0.3"></animate>
+</circle>
+</svg>
+<!-- STATE MACHINE VISUAL CONTAINER (Switched dynamically) -->
+<div class="relative w-56 h-56 flex items-center justify-center transition-all duration-700" id="mandala-core">
+<!-- State 2: Muthma'innah (Default ACTIVE) - Blooming Sacred Lotus -->
+<svg class="w-full h-full text-primary drop-shadow-[0_0_25px_rgba(20,184,166,0.35)] transition-opacity duration-500 animate-[spin_60s_linear_infinite]" fill="none" id="state-muthmainnah" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="lotusGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4fdbc8" stop-opacity="0.8"></stop>
+<stop offset="50%" stop-color="#14b8a6" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#006b5f" stop-opacity="0.2"></stop>
+</linearGradient>
+</defs>
+<!-- 8 Sacred Petals Symmetry -->
+<g transform="translate(100,100)">
+<!-- Petals Group -->
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(45)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(90)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(135)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(180)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(225)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(270)"></path>
+<path d="M0 -75 C25 -50 25 -20 0 0 C-25 -20 -25 -50 0 -75 Z" fill="url(#lotusGrad)" stroke="#4fdbc8" stroke-width="1" transform="rotate(315)"></path>
+<!-- Sacred Geometric Star Core -->
+<circle cx="0" cy="0" fill="#151D24" r="26" stroke="#ffca45" stroke-width="1.5"></circle>
+<circle cx="0" cy="0" fill="#14b8a6" fill-opacity="0.3" r="14" stroke="#4fdbc8" stroke-width="1"></circle>
+<circle cx="0" cy="0" fill="#ffca45" r="4"></circle>
+</g>
+</svg>
+<!-- State 1: Lawwamah (Hidden initially) - Pulsing Hesitant Amber Wave -->
+<svg class="hidden w-full h-full text-secondary drop-shadow-[0_0_20px_rgba(255,202,69,0.3)] animate-[spin_20s_linear_infinite]" fill="none" id="state-lawwamah" viewBox="0 0 200 200">
+<g transform="translate(100,100)">
+<polygon fill="none" points="0,-70 50,-50 70,0 50,50 0,70 -50,50 -70,0 -50,-50" stroke="#ffca45" stroke-width="2"></polygon>
+<polygon fill="#5a4300" fill-opacity="0.3" points="0,-55 38,-38 55,0 38,38 0,55 -38,38 -55,0 -38,-38" stroke="#ffdf9a" stroke-dasharray="6 3" stroke-width="1.5"></polygon>
+<circle cx="0" cy="0" fill="#151D24" r="18" stroke="#ffca45" stroke-width="2"></circle>
+<circle cx="0" cy="0" fill="#ffca45" r="6"></circle>
+</g>
+</svg>
+<!-- State 0: Ammarah (Hidden initially) - Rapid Crimson Tension Fractal -->
+<svg class="hidden w-full h-full text-error drop-shadow-[0_0_25px_rgba(255,180,171,0.4)] animate-[spin_4s_linear_infinite]" fill="none" id="state-ammarah" viewBox="0 0 200 200">
+<g transform="translate(100,100)">
+<polygon fill="#93000a" fill-opacity="0.4" points="0,-85 22,-25 85,-22 35,15 55,80 0,40 -55,80 -35,15 -85,-22 -22,-25" stroke="#ffb4ab" stroke-width="2"></polygon>
+<polygon fill="none" points="0,-60 16,-18 60,-16 25,10 40,55 0,28 -40,55 -25,10 -60,-16 -16,-18" stroke="#ffb4ab" stroke-width="1.5"></polygon>
+<circle cx="0" cy="0" fill="#690005" r="12" stroke="#ffb4ab" stroke-width="2"></circle>
+</g>
+</svg>
+</div>
+<!-- Mindful Breathing Guidance Overlay -->
+<div class="mt-2 flex flex-col items-center z-10">
+<div class="px-4 py-1.5 rounded-full bg-surface-container-high/90 backdrop-blur-md shadow-sm flex items-center gap-2" id="breath-indicator">
+<span class="material-symbols-outlined text-primary text-[18px] animate-bounce">air</span>
+<span class="font-label-md text-label-md text-primary font-semibold tracking-wide" id="breath-text">
+              Tarik Nafas... Hembuskan... (4.0s)
+            </span>
+</div>
+</div>
+<!-- Live Audio Input Mic Emulation Slider -->
+<div class="absolute bottom-3 inset-x-margin px-3 py-2 rounded-xl bg-surface-container/90 backdrop-blur-md flex items-center gap-3 shadow-md">
+<span class="material-symbols-outlined text-tertiary text-[18px]">mic</span>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-xs text-label-xs text-on-surface-variant">sound_volume input</span>
+<span class="font-label-xs text-label-xs text-tertiary font-mono" id="vol-val">42 / 100</span>
+</div>
+<input class="w-full h-1.5 rounded-lg appearance-none cursor-pointer bg-surface-container-highest accent-primary" id="mic-slider" max="100" min="0" oninput="updateMicVolume(this.value)" type="range" value="42">
+</div>
+</div>
+</div>
+<!-- State Machine Switcher Selector -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-xs">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+          Inner Core State Machine Switcher
+        </span>
+<div class="grid grid-cols-3 gap-2">
+<!-- State 0 Ammarah Button -->
+<button class="py-2 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all" id="btn-nafs-0" onclick="setNafsState(0)">
+<span class="font-semibold text-error">State 0</span>
+<span>Ammarah</span>
+</button>
+<!-- State 1 Lawwamah Button -->
+<button class="py-2 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all" id="btn-nafs-1" onclick="setNafsState(1)">
+<span class="font-semibold text-secondary">State 1</span>
+<span>Lawwamah</span>
+</button>
+<!-- State 2 Muthmainnah Button (Active) -->
+<button class="py-2 px-2 rounded-lg bg-primary text-on-primary font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all shadow-sm" id="btn-nafs-2" onclick="setNafsState(2)">
+<span class="font-bold">State 2</span>
+<span>Muthma'innah</span>
+</button>
+</div>
+</div>
+</section>
+<!-- BOTTOM DIAGNOSTIC & RIVE RUNTIME CONSOLE -->
+<section class="rounded-xl bg-surface-container-lowest p-space-md shadow-md flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-title-sm text-[14px] text-on-surface font-semibold">Rive State Machine Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-xs text-[10px] font-mono">
+          STATUS: READY
+        </span>
+</div>
+<!-- Live Inspector Data Key-Values -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-label-xs text-label-xs">
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="text-outline text-[10px]">active_artboard</span>
+<span class="text-on-surface font-mono font-bold" id="insp-artboard">Mandala_Living_Root</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="text-outline text-[10px]">nafs_level (Number)</span>
+<span class="text-primary font-mono font-bold" id="insp-nafs">2 (Muthma'innah)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="text-outline text-[10px]">sound_volume (Number)</span>
+<span class="text-tertiary font-mono font-bold" id="insp-vol">42</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="text-outline text-[10px]">pulse_trigger (Trigger)</span>
+<span class="text-secondary font-mono font-bold" id="insp-trigger">idle</span>
+</div>
+</div>
+<!-- Live Code Snippet Display -->
+<div class="rounded-lg bg-surface-dim p-2.5 font-mono text-label-xs text-[11px] text-on-surface leading-snug overflow-x-auto shadow-inner">
+<span class="text-outline">// Live Runtime Execution</span><br>
+<span class="text-tertiary">const</span> sm = riveInstance.<span class="text-primary">stateMachineInputs</span>(<span class="text-secondary">'SM_Curhat_Living'</span>);<br>
+<span class="text-primary-fixed" id="code-snippet-line">rive.setNumberState('sound_volume', 42);</span>
+</div>
+</section>
+</div>
+</div>
+<script>
+  let currentNafsState = 2;
+  let currentVolume = 42;
+
+  // View toggle function
+  function switchShowcaseView(mode) {
+    const pLattice = document.getElementById('panel-lattice');
+    const pMandala = document.getElementById('panel-mandala');
+    const btnSplit = document.getElementById('btn-view-split');
+    const btnLattice = document.getElementById('btn-view-lattice');
+    const btnMandala = document.getElementById('btn-view-mandala');
+
+    [btnSplit, btnLattice, btnMandala].forEach(b => {
+      b.className = 'py-2 px-1 rounded-lg text-on-surface-variant font-label-md text-label-md text-center transition-all duration-200 flex items-center justify-center gap-1';
+    });
+
+    if (mode === 'split') {
+      pLattice.classList.remove('hidden');
+      pMandala.classList.remove('hidden');
+      btnSplit.className = 'py-2 px-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-1';
+      document.getElementById('insp-artboard').innerText = 'Thought_&_Mandala_Dual';
+    } else if (mode === 'lattice') {
+      pLattice.classList.remove('hidden');
+      pMandala.classList.add('hidden');
+      btnLattice.className = 'py-2 px-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-1';
+      document.getElementById('insp-artboard').innerText = 'Hex_Thought_Lattice_v3';
+    } else if (mode === 'mandala') {
+      pLattice.classList.add('hidden');
+      pMandala.classList.remove('hidden');
+      btnMandala.className = 'py-2 px-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-1';
+      document.getElementById('insp-artboard').innerText = 'Mandala_Living_Root';
+    }
+  }
+
+  // Update volume input
+  function updateMicVolume(val) {
+    currentVolume = val;
+    document.getElementById('vol-val').innerText = val + ' / 100';
+    document.getElementById('insp-vol').innerText = val;
+    
+    // Scale ripples dynamically
+    const r1 = document.getElementById('ripple-circle-1');
+    const r2 = document.getElementById('ripple-circle-2');
+    if (r1 && r2) {
+      const scaleMultiplier = 1 + (val / 200);
+      r1.style.transform = `scale(${scaleMultiplier})`;
+      r1.style.transformOrigin = '150px 150px';
+    }
+    
+    document.getElementById('code-snippet-line').innerText = `rive.setNumberState('sound_volume', ${val});`;
+  }
+
+  // Trigger spark pulse
+  function triggerRivePulse(trigName) {
+    const triggerEl = document.getElementById('insp-trigger');
+    triggerEl.innerText = trigName + ' (FIRING)';
+    triggerEl.className = 'text-primary font-mono font-bold animate-pulse';
+    
+    document.getElementById('code-snippet-line').innerText = `rive.fireTrigger('${trigName}'); // Star spark erupted`;
+
+    setTimeout(() => {
+      triggerEl.innerText = 'idle';
+      triggerEl.className = 'text-secondary font-mono font-bold';
+    }, 1200);
+  }
+
+  // Inspect node param
+  function inspectRiveParam(paramName, boolVal, valNum) {
+    document.getElementById('code-snippet-line').innerText = `rive.setBooleanState('${paramName}', ${boolVal}); // synched`;
+    const triggerEl = document.getElementById('insp-trigger');
+    triggerEl.innerText = `${paramName}_unlocked`;
+  }
+
+  // Switch Nafs state machine
+  function setNafsState(stateIdx) {
+    currentNafsState = stateIdx;
+    const s0 = document.getElementById('state-ammarah');
+    const s1 = document.getElementById('state-lawwamah');
+    const s2 = document.getElementById('state-muthmainnah');
+    const tag = document.getElementById('active-state-tag');
+    const breathBox = document.getElementById('breath-indicator');
+    const breathText = document.getElementById('breath-text');
+    const inspNafs = document.getElementById('insp-nafs');
+
+    const b0 = document.getElementById('btn-nafs-0');
+    const b1 = document.getElementById('btn-nafs-1');
+    const b2 = document.getElementById('btn-nafs-2');
+
+    // Reset buttons
+    [b0, b1, b2].forEach(btn => {
+      btn.className = 'py-2 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all';
+    });
+
+    s0.classList.add('hidden');
+    s1.classList.add('hidden');
+    s2.classList.add('hidden');
+
+    if (stateIdx === 0) {
+      s0.classList.remove('hidden');
+      b0.className = 'py-2 px-2 rounded-lg bg-error text-on-error font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all shadow-sm';
+      tag.innerText = "AMMARAH";
+      tag.className = "font-label-xs text-label-xs text-error font-bold";
+      breathText.innerText = "Peringatan: Regulasi emosi tinggi...";
+      breathText.className = "font-label-md text-label-md text-error font-semibold";
+      inspNafs.innerText = "0 (Ammarah - Tension Fast)";
+      document.getElementById('code-snippet-line').innerText = `rive.setNumberState('nafs_state', 0); // Fast Tension Fractal`;
+    } else if (stateIdx === 1) {
+      s1.classList.remove('hidden');
+      b1.className = 'py-2 px-2 rounded-lg bg-secondary text-on-secondary font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all shadow-sm';
+      tag.innerText = "LAWWAMAH";
+      tag.className = "font-label-xs text-label-xs text-secondary font-bold";
+      breathText.innerText = "Hesitasi batin: Ambil jeda istighfar...";
+      breathText.className = "font-label-md text-label-md text-secondary font-semibold";
+      inspNafs.innerText = "1 (Lawwamah - Hesitant Amber)";
+      document.getElementById('code-snippet-line').innerText = `rive.setNumberState('nafs_state', 1); // Hesitation Pulsing`;
+    } else {
+      s2.classList.remove('hidden');
+      b2.className = 'py-2 px-2 rounded-lg bg-primary text-on-primary font-label-xs text-label-xs flex flex-col items-center gap-0.5 transition-all shadow-sm';
+      tag.innerText = "MUTHMA'INNAH";
+      tag.className = "font-label-xs text-label-xs text-primary font-bold";
+      breathText.innerText = "Tarik Nafas... Hembuskan... (4.0s)";
+      breathText.className = "font-label-md text-label-md text-primary font-semibold tracking-wide";
+      inspNafs.innerText = "2 (Muthma'innah - Lotus Harmonic)";
+      document.getElementById('code-snippet-line').innerText = `rive.setNumberState('nafs_state', 2); // Blossom 4s Cycle`;
+    }
+  }
+
+  // Minor random jitter on FPS counter to show life
+  setInterval(() => {
+    const fpsEl = document.getElementById('fps-counter');
+    if (fpsEl) {
+      const fps = (Math.random() > 0.1 ? 60 : 59);
+      fpsEl.innerText = `${fps} FPS Vector Smooth`;
+    }
+  }, 2500);
+</script></main></body></html>

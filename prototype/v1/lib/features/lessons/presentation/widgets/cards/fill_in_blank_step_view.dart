@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
 import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
@@ -133,7 +134,7 @@ class FillInBlankStepView extends StatelessWidget {
             runSpacing: 10,
             children: card.wordBank.map((word) {
               final isChosen = selectedWord == word;
-              return ChoiceChip(
+              return PknChoiceChip(
                 label: Text(word),
                 selected: isChosen,
                 onSelected: isSubmitted ? null : (_) => onSelectWord(word),

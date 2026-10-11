@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -18,7 +19,7 @@ class ActivationalInsightScreen extends ConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final pilarMoc = MocPilar.fromText(state.recommendedPilarMoc) ?? MocPilar.p4;
 
-    return Scaffold(
+    return PknScaffold(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),

@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
@@ -110,7 +111,7 @@ class PknCalloutBox extends StatelessWidget {
     return Semantics(
       container: true,
       label: '$title: $content',
-      child: InkWell(
+      child: PknTap(
         onTap: onTap,
         borderRadius: PknRadius.roundedCard,
         child: Container(

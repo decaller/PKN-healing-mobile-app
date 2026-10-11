@@ -1,0 +1,31 @@
+{
+  "lessonId": "product-01-north-star",
+  "title": "Finding Your North Star Metric",
+  "category": "Product",
+  "estimatedMinutes": 3,
+  "cards": [
+    {
+      "stepId": "step_01",
+      "type": "text",
+      "title": "The Vanity Trap",
+      "body": "Most startups track **vanity metrics**: registered accounts, page views, or total downloads. These numbers go up even when the product is bleeding users.\n\nA true **North Star Metric (NSM)** measures the moment your customer actually extracts value from your product."
+    },
+    {
+      "stepId": "step_02",
+      "type": "multiple_choice",
+      "question": "What is Airbnb's legendary North Star Metric?",
+      "options": [
+        { "id": "opt_a", "text": "Total app installs", "isCorrect": false },
+        { "id": "opt_b", "text": "Nights booked", "isCorrect": true },
+        { "id": "opt_c", "text": "Registered host accounts", "isCorrect": false }
+      ],
+      "explanation": "'Nights booked' captures value for both guests (staying) and hosts (earning). Both sides of the marketplace are represented."
+    },
+    {
+      "stepId": "step_03",
+      "type": "summary",
+      "title": "Key Takeaway",
+      "body": "Align every cross-functional sprint around driving your single North Star Metric."
+    }
+  ]
+}

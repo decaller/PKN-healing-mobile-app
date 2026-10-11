@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>PKN Healing - Ruang Batin</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base{
+  html,body{width:100%;margin:0;padding:0;background-color:#101419;}
+  body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;min-height:max(884px,100dvh);}
+  .pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}
+  .pt-safe{padding-top:env(safe-area-inset-top,0px);}
+}
+::-webkit-scrollbar{display:none;}
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-lowest": "#0a0e13",
+        "inverse-primary": "#006b5f",
+        "tertiary-container": "#1eb0ea",
+        "surface": "#101419",
+        "primary-fixed-dim": "#4fdbc8",
+        "on-primary": "#003731",
+        "surface-variant": "#31353b",
+        "secondary": "#ffca45",
+        "surface-tint": "#4fdbc8",
+        "on-primary-container": "#00423b",
+        "on-tertiary-fixed": "#001e2c",
+        "surface-bright": "#36393f",
+        "background": "#101419",
+        "surface-dim": "#101419",
+        "surface-container-high": "#262a30",
+        "on-tertiary-fixed-variant": "#004c69",
+        "on-primary-fixed": "#00201c",
+        "on-tertiary": "#00354a",
+        "on-error": "#690005",
+        "error-container": "#93000a",
+        "surface-container": "#1c2025",
+        "on-secondary-fixed-variant": "#5a4300",
+        "on-error-container": "#ffdad6",
+        "primary-fixed": "#71f8e4",
+        "secondary-fixed-dim": "#f7be1d",
+        "tertiary": "#7bd0ff",
+        "primary-container": "#14b8a6",
+        "tertiary-fixed": "#c4e7ff",
+        "tertiary-fixed-dim": "#7bd0ff",
+        "primary": "#4fdbc8",
+        "surface-container-highest": "#31353b",
+        "on-background": "#e0e2ea",
+        "on-secondary-fixed": "#251a00",
+        "on-surface-variant": "#bbcac6",
+        "outline-variant": "#3c4947",
+        "on-secondary": "#3f2e00",
+        "on-surface": "#e0e2ea",
+        "inverse-on-surface": "#2d3136",
+        "secondary-fixed": "#ffdf9a",
+        "error": "#ffb4ab",
+        "surface-container-low": "#181c21",
+        "on-tertiary-container": "#003f58",
+        "on-primary-fixed-variant": "#005048",
+        "inverse-surface": "#e0e2ea",
+        "secondary-container": "#e4ae00",
+        "outline": "#859490",
+        "on-secondary-container": "#5b4400"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "space-lg": "1.25rem",
+        "gutter": "1rem",
+        "margin": "1.25rem",
+        "space-md": "0.75rem",
+        "space-xs": "0.25rem",
+        "space-xl": "1.75rem"
+      },
+      "fontFamily": {
+        "sacred-quote-lg": ["Amiri"],
+        "headline-md": ["Inter"],
+        "body-md": ["Inter"],
+        "metric-display": ["Inter"],
+        "headline-lg": ["Inter"],
+        "body-lg": ["Inter"],
+        "label-xs": ["Inter"],
+        "headline-xl": ["Inter"],
+        "title-sm": ["Inter"],
+        "label-md": ["Inter"],
+        "sacred-quote-md": ["Amiri"],
+        "body-sm": ["Inter"]
+      },
+      "fontSize": {
+        "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }],
+        "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }],
+        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+        "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }],
+        "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }],
+        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+        "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+        "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }],
+        "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+        "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }],
+        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl pt-safe shadow-[0_1px_10px_rgba(0,0,0,0.45)]">
+<div class="h-16 px-margin flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+<span class="material-symbols-outlined text-primary text-xl">spa</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md tracking-wider text-primary uppercase font-bold">PKN Healing</span>
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Executive Sanctuary</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex flex-col items-end">
+<span class="font-label-xs text-label-xs text-secondary font-medium tracking-tight">Ayah Qawwamun</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">Fitrah Seimbang</span>
+</div>
+</div>
+<button class="relative p-0.5 rounded-full bg-surface-container-high transition-transform active:scale-95 flex items-center justify-center min-w-[44px] min-h-[44px] border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-on-surface text-xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen">
+<div class="flex flex-col w-full text-on-surface">
+<!-- TOP CONTEXT HUD & PSYCHOLOGICAL METERS -->
+<section class="px-margin pt-space-md pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between gap-space-sm mb-space-sm">
+<!-- Persona Identity & Heart Tank -->
+<div class="flex items-center gap-space-sm">
+<div class="relative w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-primary text-2xl">shield_person</span>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-primary-container flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-semibold tracking-tight text-on-surface">Abu Zaid</span>
+<span class="font-label-xs text-[10px] px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-medium">Ayah</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-xs text-label-xs text-primary font-medium">Kalbu: 85%</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Thuma'ninah</span>
+</div>
+</div>
+</div>
+<!-- Kabinet Muhasabah Access Button -->
+<button class="relative flex items-center gap-1.5 px-space-sm py-1.5 rounded-xl bg-surface-container-high active:bg-surface-container-highest transition-all min-h-[40px] shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-lg">psychology</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">Muhasabah</span>
+<span class="w-4 h-4 rounded-full bg-error text-on-error font-label-xs text-[10px] flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+<!-- Kalbu Energy Bar (Tangki Cinta) -->
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 85%;"></div>
+</div>
+<!-- Location & Scene Time Pill -->
+<div class="mt-space-sm flex items-center justify-between px-space-sm py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">cottage</span>
+<span class="truncate">Rumah Zaid • Meja Makan</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-medium shrink-0">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<span>18:25 WIB • Menjelang Isya</span>
+</div>
+</div>
+</section>
+<!-- DRAMATIC SCENE CONTEXT CARD -->
+<section class="px-margin mt-space-md">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-md flex flex-col">
+<!-- Visual Scene View -->
+<div class="relative w-full h-44 bg-surface-container-high overflow-hidden">
+<img alt="Scene Zaid duduk menyendiri di ujung meja makan bermain game di senja hari" class="w-full h-full object-cover brightness-90 contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMvC7wsLTAi6KygwiSA7jUFfmMCs-sZ-0KG6thGhh48zJeIkEVrJ0E7DlXpNaIyt2WaWlHgEnbqM3iL_tZgGUySubi6-QM7iXlNp8AHm9EjTLx-1gnBnbLmzZE8fdAb2JoCMKhfv6ufTK-Zqj_Jq1xaLjtnA7nnn1YqYx3wjZzk2pxRoAM4sgwWpIMPpc2pUPZSH2eQBksZkRLJvxOZCUCxK_zUWr8lUxtm6BLAnRdSur9m8e-HcErQQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/30 to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-xs text-label-xs tracking-wider uppercase font-semibold">
+            Skenario 01
+          </span>
+</div>
+</div>
+<!-- Narrative Exposition -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-on-surface font-semibold">Senja di Ujung Meja Makan</h2>
+<span class="font-label-xs text-label-xs text-error font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            Krisis Waktu
+          </span>
+</div>
+<p class="font-sacred-quote-md text-sacred-quote-md text-on-surface-variant italic leading-relaxed">
+          “Zaid (9 tahun) memalingkan tubuhnya membelakangimu. Tangannya gemetar memegang remote game. Panggilan shalat maghrib sudah berlalu 20 menit lalu, dan adzan isya tinggal menghitung menit. Suasana ruang makan mencekam, hening yang menyiksa.”
+        </p>
+</div>
+</div>
+</section>
+<!-- THE VOICES OF SYAKILAH (DISCO ELYSIUM STYLE INNER FACULTIES) -->
+<section class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">forum</span>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">Dialektika Syakilah (Suara Jiwa)</h3>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">TB-40 Internal</span>
+</div>
+<!-- Inner Voice 1: Syajaa'ah (Courage / Leadership) -->
+<article class="p-space-md rounded-xl bg-surface-container-low relative overflow-hidden transition-all duration-200 shadow-sm">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-error"></div>
+<div class="flex items-center justify-between mb-space-xs pl-2">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-md bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-xs">local_fire_department</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-error tracking-wide">SYAJAA'AH</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">• Kluster Al-Qiyadah</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-error-container/20 text-error font-label-xs text-[10px] font-semibold">Tingkat 4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface pl-2 leading-relaxed font-serif italic">
+        “Ayah! Wibawamu sebagai Qawwam sedang diuji. Shalat adalah batasan syariat yang tidak bisa ditawar. Anak usia tamyiz harus paham disiplin waktu. Berdiri tegak dan ambil remotenya sekarang!”
+      </p>
+</article>
+<!-- Inner Voice 2: Ar-Rifq (Gentleness / Compassion) -->
+<article class="p-space-md rounded-xl bg-surface-container-low relative overflow-hidden transition-all duration-200 shadow-sm">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-center justify-between mb-space-xs pl-2">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-md bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xs">nature_people</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide">AR-RIFQ</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">• Kluster Al-Fashahah</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-xs text-[10px] font-semibold">Tingkat 3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface pl-2 leading-relaxed font-serif italic">
+        “Tahan langkahmu, Ayah. Lihat bahunya yang meringkuk. Dia baru saja menangis saat pulang sekolah tadi siang. Jika engkau bentak dia sekarang, shalat akan diasosiasikan dengan cambuk ketakutan, bukan ketenangan jiwa.”
+      </p>
+</article>
+<!-- Inner Voice 3: Al-Hikmah (Wisdom / Synthesizer) -->
+<article class="p-space-md rounded-xl bg-surface-container-low relative overflow-hidden transition-all duration-200 shadow-sm">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="flex items-center justify-between mb-space-xs pl-2">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-md bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xs">explore</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-tertiary tracking-wide">AL-HIKMAH</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">• Kluster Al-Fikriyyah</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-xs text-[10px] font-semibold">Tingkat 3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface pl-2 leading-relaxed font-serif italic">
+        “Keduanya benar. Tegaslah dalam tujuan, lembutlah dalam metode. Wudhu belum batal. Duduklah di sampingnya, sejajarkan matamu dengan matanya.”
+      </p>
+</article>
+</section>
+<!-- INTERACTIVE DECISION CHOICES -->
+<section class="px-margin mt-space-lg flex flex-col gap-space-sm" id="decision-group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">alt_route</span>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">Pilihan Ketetapan Sikap</h3>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Pilih 1 Respons</span>
+</div>
+<!-- Option 1: Syajaa'ah Force Action -->
+<div class="option-card cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container active:scale-[0.99] transition-all flex flex-col gap-space-xs" onclick="selectOption(this, 'opt1')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-xs text-label-xs font-bold text-error uppercase">Pendekatan Syajaa'ah</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container/30 text-error font-label-xs text-[10px]">
+<span class="material-symbols-outlined text-xs">casino</span>
+<span>Cek Dadu • Sulit (72%)</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Rebut remote game dari tangannya: <span class="font-medium text-error">“Zaid, cukup! Shalat tidak bisa dipermainkan. Berdiri sekarang juga ke kamar mandi!”</span>
+</p>
+</div>
+<!-- Option 2: Rifq & Hikmah (Default Selected / Nabawi Recommendation) -->
+<div class="option-card cursor-pointer p-space-md rounded-xl bg-surface-container-high transition-all flex flex-col gap-space-xs relative overflow-hidden shadow-lg" id="default-selected" onclick="selectOption(this, 'opt2')">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs font-bold text-primary uppercase">Rifq &amp; Hikmah • Rekomendasi Adab</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">verified</span>
+<span>Dipilih</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Duduk bersimpuh di karpet samping Zaid, sentuh jemarinya dengan lembut: <span class="font-medium text-primary">“Zaid, Ayah lihat kamu sedang gundah sekali hari ini. Boleh Ayah temani wudhu bersama?”</span>
+</p>
+<div class="flex items-center gap-2 pt-1">
+<span class="font-label-xs text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">volunteer_activism</span>
+          +15 Ikatan Fitrah
+        </span>
+<span class="font-label-xs text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">self_improvement</span>
+          Adab Diutamakan
+        </span>
+</div>
+</div>
+<!-- Option 3: Thought Cabinet Muhasabah Action -->
+<div class="option-card cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container active:scale-[0.99] transition-all flex flex-col gap-space-xs" onclick="selectOption(this, 'opt3')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-xs text-label-xs font-bold text-secondary uppercase">Kabinet Muhasabah</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-xs text-[10px]">
+<span class="material-symbols-outlined text-xs">psychology_alt</span>
+<span>Internalisasi Aktif</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Aktifkan Pemikiran: <span class="text-secondary font-semibold">‘Koneksi Sebelum Koreksi’</span> — Tarik napas, baca ta'awwudz di dalam hati, lalu beri pelukan jeda 30 detik tanpa sepatah kata pun.
+      </p>
+</div>
+</section>
+<!-- ACTION BAR CONTAINER -->
+<section class="px-margin mt-space-lg mb-space-md">
+<button class="w-full py-3.5 px-space-lg rounded-xl bg-primary text-on-primary font-title-sm text-title-sm font-bold flex items-center justify-center gap-2 shadow-lg active:scale-98 transition-transform" onclick="triggerDecisionOutcome()" type="button">
+<span>Lanjutkan Pilihan: Uji Adab Batin</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<div class="mt-space-xs flex items-center justify-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-xs text-primary">lock_clock</span>
+<span class="font-label-xs text-label-xs">Dilema ini memengaruhi skor Fitrah Iman dan Kepemimpinan Ayah</span>
+</div>
+</section>
+</div>
+<script>
+function selectOption(element, id) {
+  const cards = document.querySelectorAll('.option-card');
+  cards.forEach(card => {
+    card.classList.remove('bg-surface-container-high', 'shadow-lg');
+    card.classList.add('bg-surface-container-low');
+    const badge = card.querySelector('.selected-indicator');
+    if (badge) badge.remove();
+  });
+
+  element.classList.remove('bg-surface-container-low');
+  element.classList.add('bg-surface-container-high', 'shadow-lg');
+}
+
+function triggerDecisionOutcome() {
+  const btn = event.currentTarget;
+  btn.innerHTML = `<span class="material-symbols-outlined text-xl animate-spin">progress_activity</span><span>Memproses Dialektika Kalbu...</span>`;
+  setTimeout(() => {
+    btn.innerHTML = `<span>Langkah Terpilih: Melangkah Bersama Zaid</span><span class="material-symbols-outlined text-xl">done_all</span>`;
+    btn.classList.add('bg-secondary', 'text-on-secondary');
+    btn.classList.remove('bg-primary', 'text-on-primary');
+  }, 700);
+}
+</script>
+</main>
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_16px_rgba(0,0,0,0.5)]" data-active-classes="text-primary font-semibold">
+<div class="flex justify-around items-center h-16 px-space-xs">
+<a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-all duration-200 active:scale-95 hover:text-on-surface" data-path="beranda" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-xs text-label-xs">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-all duration-200 active:scale-95 hover:text-on-surface" data-path="khazanah" href="#">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+<span class="font-label-xs text-label-xs">Khazanah</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] transition-all duration-200 active:scale-95 text-primary font-semibold" data-path="ruang-batin" href="#">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-xs text-label-xs">Ruang Batin</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-all duration-200 active:scale-95 hover:text-on-surface" data-path="curhat-ai" href="#">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+<span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-label-xs text-label-xs">Curhat AI</span>
+</a>
+</div>
+</nav>
+</body></html>

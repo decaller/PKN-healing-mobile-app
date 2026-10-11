@@ -1,0 +1,324 @@
+<!DOCTYPE html><html class="dark" lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><title>PKN Healing</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#101419;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#0a0e13", "inverse-primary": "#006b5f", "tertiary-container": "#1eb0ea", "surface": "#101419", "primary-fixed-dim": "#4fdbc8", "on-primary": "#003731", "surface-variant": "#31353b", "secondary": "#ffca45", "surface-tint": "#4fdbc8", "on-primary-container": "#00423b", "on-tertiary-fixed": "#001e2c", "surface-bright": "#36393f", "background": "#101419", "surface-dim": "#101419", "surface-container-high": "#262a30", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed": "#00201c", "on-tertiary": "#00354a", "on-error": "#690005", "error-container": "#93000a", "surface-container": "#1c2025", "on-secondary-fixed-variant": "#5a4300", "on-error-container": "#ffdad6", "primary-fixed": "#71f8e4", "secondary-fixed-dim": "#f7be1d", "tertiary": "#7bd0ff", "primary-container": "#14b8a6", "tertiary-fixed": "#c4e7ff", "tertiary-fixed-dim": "#7bd0ff", "primary": "#4fdbc8", "surface-container-highest": "#31353b", "on-background": "#e0e2ea", "on-secondary-fixed": "#251a00", "on-surface-variant": "#bbcac6", "outline-variant": "#3c4947", "on-secondary": "#3f2e00", "on-surface": "#e0e2ea", "inverse-on-surface": "#2d3136", "secondary-fixed": "#ffdf9a", "error": "#ffb4ab", "surface-container-low": "#181c21", "on-tertiary-container": "#003f58", "on-primary-fixed-variant": "#005048", "inverse-surface": "#e0e2ea", "secondary-container": "#e4ae00", "outline": "#859490", "on-secondary-container": "#5b4400" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.25rem", "gutter": "1rem", "margin": "1.25rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "1.75rem" }, "fontFamily": { "sacred-quote-lg": ["Amiri"], "headline-md": ["Inter"], "body-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "label-xs": ["Inter"], "headline-xl": ["Inter"], "title-sm": ["Inter"], "label-md": ["Inter"], "sacred-quote-md": ["Amiri"], "body-sm": ["Inter"] }, "fontSize": { "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="PKN Healing Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-embedded-images/IMAGE_2"><div class="flex flex-col"><span class="font-label-md text-label-md tracking-wider text-primary uppercase">PKN Healing</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Beranda</span></div></div><div class="flex items-center gap-space-sm"><div class="flex flex-col items-end"><span class="font-label-xs text-label-xs text-secondary-fixed tracking-tight">Ayah Qawwamun</span><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span></div><button class="relative p-0.5 rounded-full bg-surface-container-high transition-transform active:scale-95 flex items-center justify-center min-w-[44px] min-h-[44px]" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-embedded-images/IMAGE_3"></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-lg select-none">
+<!-- Top Compact Executive Status & Deck Switcher Bar -->
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container-high px-3 py-1.5 rounded-full shadow-sm">
+<span class="text-secondary font-headline-md text-base leading-none">🔥</span>
+<span class="font-label-md text-label-md text-secondary font-semibold tracking-tight">7 Hari Beradab</span>
+</div>
+<!-- Deck Indicator & Switcher Tabs -->
+<div class="flex items-center bg-surface-container-high p-1 rounded-full gap-1 shadow-sm">
+<button class="deck-indicator-btn px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm" id="tab-card-1" onclick="switchDeckCard(1)" type="button">
+        1/3 Misi
+      </button>
+<button class="deck-indicator-btn px-2.5 py-1 rounded-full text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" id="tab-card-2" onclick="switchDeckCard(2)" type="button">
+        2/3 Majelis
+      </button>
+<button class="deck-indicator-btn px-2.5 py-1 rounded-full text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" id="tab-card-3" onclick="switchDeckCard(3)" type="button">
+        3/3 Hikmah
+      </button>
+</div>
+<button aria-label="Cari Khazanah" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[19px]">search</span>
+</button>
+</div>
+<!-- Interactive Card Deck Stack Container -->
+<div class="relative w-full">
+<!-- CARD 1: HERO QUEST (ACTIVE BY DEFAULT) -->
+<section class="deck-card transition-all duration-300 flex flex-col w-full rounded-xl bg-surface-container shadow-xl overflow-hidden relative" id="deck-card-1">
+<!-- Ambient Card Aura Glow -->
+<div class="absolute -top-16 -right-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Card Header Strip -->
+<div class="px-margin pt-space-lg pb-space-sm flex items-center justify-between z-10">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-xs text-label-xs font-semibold text-secondary tracking-wider uppercase">Tantangan Pengasuhan • Misi 01</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[15px] text-tertiary">schedule</span>
+<span>18.25 WIB</span>
+</div>
+</div>
+<!-- Dilemma Visual & Scenario Container -->
+<div class="px-margin flex flex-col gap-space-sm z-10">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-lowest shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Modern 3D isometric stylized warm render of an Indonesian living room during twilight dusk. A 9-year-old boy named Zaid sits cross-legged on a carpet sulking holding a TV remote while dusk orange Maghrib light pours through wooden blinds. Calming spiritual atmosphere with emerald and gold accents, gentle cinematic lighting, clean composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJp45qu-K2QG-fVLsK2mXroyNlFS5lbav4tTMwa_dplnQGmNBV0zEdDNXfviR3kK4Y3faroWYzTkTTgCnNKqB5qSjlvJ-cNVsWFYuvmTyHXa7_d-IxAo5VK5juCgpvCoXtvnnyKibhFzzHYTEBUNR9cRYEirysXvzf4MC2J8NNA_lK9lXm-0CVhnNRPcVF5hBX_zUoGK8R8q4BsHW9GOkOKL4qlV2zsPfuLn46LTiER_QFo8u_DoaOdg">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-xs text-label-xs text-tertiary font-medium backdrop-blur-sm shadow-sm">
+              Fase Tamyiz (7-10 Thn)
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest/90 font-label-xs text-label-xs text-on-surface-variant">
+              Toleransi: 10 Mnt
+            </span>
+</div>
+</div>
+<!-- Dilemma Statement -->
+<div class="p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<h2 class="font-title-sm text-title-sm text-on-surface leading-snug">
+            “Maghrib tinggal 10 menit, Zaid masih asyik terpaku layar dan enggan bangkit. Apa respon pertamamu, Ayah/Bunda?”
+          </h2>
+</div>
+</div>
+<!-- Interactive Decision Cards -->
+<div class="px-margin pt-space-sm flex flex-col gap-space-xs z-10">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider font-semibold">Tentukan Langkah Nabawiyah:</span>
+<!-- Option A (Dissonance Trigger) -->
+<button class="w-full text-left p-space-sm rounded-lg bg-surface-container-high transition-all active:scale-[0.99] flex items-start gap-space-sm shadow-sm" id="choice-a-btn" onclick="handleChoiceSelection('A')" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5 text-on-surface-variant font-label-md text-label-md font-semibold" id="choice-a-icon">
+            A
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-medium leading-tight">Bentak dari kejauhan: “Zaid, cepat matikan dan shalat!”</p>
+<span class="font-label-xs text-label-xs text-error font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+              Resiko disonansi emosi &amp; luka adab internal
+            </span>
+</div>
+</button>
+<!-- Option B (Pilihan Beradab / Nabawi) -->
+<button class="w-full text-left p-space-sm rounded-lg bg-surface-container-high transition-all active:scale-[0.99] flex items-start gap-space-sm shadow-sm" id="choice-b-btn" onclick="handleChoiceSelection('B')" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5 text-on-surface-variant font-label-md text-label-md font-semibold" id="choice-b-icon">
+            B
+          </div>
+<div class="flex flex-col min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Duduk bersimpuh sejajar matanya, sentuh jemarinya dengan teduh:</p>
+<p class="font-label-xs text-label-xs text-primary font-medium mt-0.5 italic">“Koneksi jiwa sebelum koreksi raga. Yuk basuh wajah bersama Ayah.”</p>
+</div>
+</button>
+</div>
+<!-- Instant Feedback Drawer / State Panel (Revealed on click) -->
+<div class="hidden px-margin pb-space-lg pt-space-xs z-10" id="quest-feedback-panel">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-md flex flex-col gap-2" id="feedback-mumtaz-box">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-md text-label-md font-bold tracking-tight">RESPON MUMTAZ [BK: Berkembang]</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-xs text-label-xs font-bold">+2 Poin Adab</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Metode Rasulullah ﷺ: Mengikis resistensi tanpa menabrak harga diri anak. Jiwa yang dihormati akan taat dengan ikhlas.
+          </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">lock_open</span>
+              Membuka Serial Kisah Fitrah Ep. 3
+            </span>
+<button class="px-3 py-1 rounded bg-primary-container text-on-primary font-label-xs text-label-xs font-semibold active:scale-95 transition-transform shadow-sm" onclick="celebrateNextQuest()" type="button">
+              Klaim Berkah
+            </button>
+</div>
+</div>
+</div>
+<!-- Bottom Card Metadata Pager Footer -->
+<div class="mt-auto px-margin py-3 bg-surface-container-lowest/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">psychology</span>
+<span>Pedagogi Nabawiyah Modern</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Geser atau ketuk menu atas</span>
+</div>
+</div>
+</section>
+<!-- CARD 2: MAJELIS ILMU SNEAK PEEK (HIDDEN IN DECK BY DEFAULT) -->
+<section class="deck-card hidden flex-col w-full rounded-xl bg-surface-container shadow-xl overflow-hidden relative" id="deck-card-2">
+<div class="px-margin pt-space-lg pb-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-xs text-label-xs font-semibold text-tertiary tracking-wider uppercase">Panggung Majelis Ilmu</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-bold">
+          Sisa 8 Kursi
+        </span>
+</div>
+<div class="px-margin flex flex-col gap-space-sm">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-lowest shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Dignified high-end Islamic auditorium symposium hall in Jakarta with slate grey stage and ambient warm teal and gold highlights. A respected character education mentor speaks peacefully on Nabawi parenting to an attentive audience of parents, high aesthetic architectural interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3KNT5fiKhu8nOVQB0AtfPvBRNjESacDAjkCqQyL0hIuUcxsSYNQnGMrn1bm-N_cchbedkTxzFZbMt1R_DEWpJAZj5vSuH1Tqhp2MdpG1VkLyZAmCLoTy3o5VpBq5BMNmAQlLFaSuSAqXeGfJ4v9urJVs5HQ2Dk9olN73TUm9O-9paR-YcZ-yGK5XRm-EfnG7milhU1f2yekgQL4NBO0HCNhpiYnMdTqrapdH5afQ0LuDNwQzY6y-NkQ">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Daurah Akbar Parenting</span>
+<span class="font-label-xs text-label-xs text-secondary font-medium">Sabtu, 28 Okt • 08.00 WIB</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-1.5">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">
+            “Memulihkan Kelekatan Ayah-Anak Lewat Logika Qawwamun”
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Bersama Ust. Dr. Fathurrahman &amp; Tim PKN Healing. Studi klinis rekonstruksi adab generasi alfa tanpa trauma otoriter.
+          </p>
+</div>
+<!-- Ticket Progress & Booking -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-2 shadow-sm">
+<div class="flex justify-between items-center text-label-xs font-label-xs">
+<span class="text-on-surface-variant">Kapasitas Kursi Terisi</span>
+<span class="text-primary font-bold">192 / 200 Peserta (96%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="w-[96%] h-full bg-primary-container rounded-full"></div>
+</div>
+<button class="mt-1 w-full py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold active:scale-[0.98] transition-transform text-center shadow-md" type="button">
+            Amankan Kursi Majelis Eksklusif
+          </button>
+</div>
+</div>
+<div class="mt-auto px-margin py-3 bg-surface-container-lowest/80 flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kajian Live Hybrid • Zoom &amp; Offline Jakarta</span>
+<button class="font-label-xs text-label-xs text-primary font-medium hover:underline" onclick="switchDeckCard(1)" type="button">
+          ← Balik ke Misi Harian
+        </button>
+</div>
+</section>
+<!-- CARD 3: KHAZANAH PENYEJUK BATIN (HIDDEN IN DECK BY DEFAULT) -->
+<section class="deck-card hidden flex-col w-full rounded-xl bg-surface-container shadow-xl overflow-hidden relative" id="deck-card-3">
+<div class="px-margin pt-space-lg pb-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-xs text-label-xs font-semibold text-secondary tracking-wider uppercase">Matan Emas Khazanah</span>
+</div>
+<span class="text-on-surface-variant font-label-xs text-label-xs">QS. Luqman: 17</span>
+</div>
+<div class="px-margin flex flex-col gap-space-md">
+<!-- Sacred Quote Card Box -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-md flex flex-col items-center text-center gap-space-sm">
+<span class="text-secondary text-2xl font-sacred-quote-lg">﷽</span>
+<p class="font-sacred-quote-md text-sacred-quote-md text-on-surface leading-loose text-center dir-rtl">
+            يَا بُنَيَّ أَقِمِ الصَّلَاةَ وَأْمُرْ بِالْمَعْرُوفِ وَانْهَ عَنِ الْمُنكَرِ وَاصْبِرْ عَلَىٰ مَا أَصَابَكَ
+          </p>
+<div class="w-16 h-0.5 bg-surface-variant rounded-full my-1"></div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+            “Wahai anakku! Laksanakanlah shalat dan suruhlah (manusia) berbuat yang makruf dan cegahlah dari yang mungkar serta bersabarlah terhadap apa yang menimpamu.”
+          </p>
+</div>
+<!-- Tadabbur Reflective Annotation -->
+<div class="p-space-sm rounded-lg bg-surface-container-high shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[17px]">lightbulb</span>
+<span class="font-label-md text-label-md font-semibold">Refleksi Pengasuhan Nabawi:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Panggilan ‘Yaa Bunayya’ adalah ungkapan kasih sayang terdalam, bukan intonasi perintah kaku. Anak yang merasa dicintai akan menyambut shalat bukan sebagai beban, melainkan tempat bersandar.
+          </p>
+</div>
+<!-- Audio Player Micro-Widget -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest shadow-inner">
+<div class="flex items-center gap-space-sm">
+<button class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center active:scale-95 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Murottal Tadabbur 3 Menit</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Syaikh Mishari Rashid Alafasy</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">graphic_eq</span>
+</div>
+</div>
+<div class="mt-auto px-margin py-3 bg-surface-container-lowest/80 flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Disimpan di Ruang Batin</span>
+<button class="font-label-xs text-label-xs text-primary font-medium hover:underline" onclick="switchDeckCard(1)" type="button">
+          ← Balik ke Misi Harian
+        </button>
+</div>
+</section>
+</div>
+<!-- Bottom Interactive Floating Action: Voice Curhat AI Banner -->
+<div class="w-full">
+<div class="p-space-sm rounded-xl bg-surface-container-high shadow-xl flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<!-- Pulse Microphone Wave -->
+<div class="relative w-11 h-11 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="absolute inset-0 rounded-full bg-primary/20 animate-ping"></span>
+<span class="material-symbols-outlined text-primary text-[22px]">mic</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Curhat Batin AI 🎙️</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-primary font-label-xs text-[10px] font-semibold uppercase">Aktif</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Tersedia Kapan Saja • Ketuk untuk Bicara</span>
+</div>
+</div>
+<!-- Action Trigger Button -->
+<button class="px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold shrink-0 shadow-md active:scale-95 transition-transform flex items-center gap-1" onclick="triggerVoiceAIModal()" type="button">
+<span>Mulai Curhat</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple Deck switcher micro-interaction
+  function switchDeckCard(cardIndex) {
+    const cards = [1, 2, 3];
+    cards.forEach(idx => {
+      const cardEl = document.getElementById('deck-card-' + idx);
+      const tabEl = document.getElementById('tab-card-' + idx);
+      if (idx === cardIndex) {
+        cardEl.classList.remove('hidden');
+        cardEl.classList.add('flex');
+        tabEl.className = "deck-indicator-btn px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm";
+      } else {
+        cardEl.classList.add('hidden');
+        cardEl.classList.remove('flex');
+        tabEl.className = "deck-indicator-btn px-2.5 py-1 rounded-full text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all";
+      }
+    });
+  }
+
+  // Interactive quest feedback trigger
+  function handleChoiceSelection(choice) {
+    const feedbackPanel = document.getElementById('quest-feedback-panel');
+    const choiceABtn = document.getElementById('choice-a-btn');
+    const choiceBBtn = document.getElementById('choice-b-btn');
+    const choiceAIcon = document.getElementById('choice-a-icon');
+    const choiceBIcon = document.getElementById('choice-b-icon');
+
+    if (choice === 'B') {
+      choiceBBtn.classList.remove('bg-surface-container-high');
+      choiceBBtn.classList.add('bg-surface-container-highest');
+      choiceBIcon.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+      choiceBIcon.classList.add('bg-primary-container', 'text-on-primary');
+      choiceBIcon.innerHTML = '<span class="material-symbols-outlined text-[15px]">check</span>';
+
+      // Reset Choice A styling
+      choiceABtn.classList.add('opacity-50');
+
+      // Reveal Mumtaz Drawer
+      feedbackPanel.classList.remove('hidden');
+    } else {
+      // Choice A triggers mild warning shake / flash
+      choiceABtn.classList.remove('bg-surface-container-high');
+      choiceABtn.classList.add('bg-error-container/20');
+      choiceAIcon.innerHTML = '<span class="material-symbols-outlined text-error text-[15px]">close</span>';
+      
+      // Auto prompt user toward Option B
+      setTimeout(() => {
+        choiceBBtn.classList.add('animate-pulse');
+      }, 300);
+    }
+  }
+
+  function celebrateNextQuest() {
+    alert('Alhamdulillah! +2 Poin Adab tercatat. Hikmah Episode 3 terbuka.');
+    switchDeckCard(3);
+  }
+
+  function triggerVoiceAIModal() {
+    alert('Menghubungkan ke Asisten Batin PKN AI... Silakan utarakan keresahan pengasuhan Anda.');
+  }
+</script></main><div class="fixed bottom-24 right-margin z-40"><a class="flex items-center justify-center w-14 h-14 rounded-full bg-primary-container text-on-primary shadow-[0_4px_20px_rgba(20,184,166,0.35)] transition-transform active:scale-95 group" data-path="curhat-ai" href="#"><span class="absolute inset-0 rounded-full bg-primary opacity-25 animate-ping pointer-events-none"></span><span class="material-symbols-outlined text-2xl">support_agent</span></a></div><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="beranda" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">home</span><span class="absolute -bottom-1 w-1 h-1 rounded-full bg-primary opacity-80"></span></div><span class="font-label-xs text-label-xs">Beranda</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="khazanah-wiki" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-xs text-label-xs">Khazanah</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="ruang-batin" href="#"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span><span class="font-label-xs text-label-xs">Ruang Batin</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="curhat-ai" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] text-primary">bubble_chart</span><span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-primary animate-pulse"></span></div><span class="font-label-xs text-label-xs">Curhat AI</span></a></div></nav></body></html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>PKN Healing - Curhat AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf6f0;color:#2e3230;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;font-family:'Nunito Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-tertiary-container": "#554020",
+        "tertiary": "#705c30",
+        "secondary-container": "#f0e8db",
+        "tertiary-fixed": "#f8e0a8",
+        "secondary-fixed-dim": "#d4ccbf",
+        "on-secondary-fixed": "#1e1a13",
+        "on-tertiary": "#ffffff",
+        "on-surface": "#2e3230",
+        "on-error-container": "#690005",
+        "on-primary-container": "#d8f0de",
+        "inverse-primary": "#8ecf9e",
+        "surface-container-highest": "#e4e0d8",
+        "tertiary-fixed-dim": "#dcc48e",
+        "on-surface-variant": "#4a4e4a",
+        "on-secondary-fixed-variant": "#4a4538",
+        "outline": "#74796e",
+        "surface-container-low": "#f5f1ea",
+        "surface-container-high": "#eae6de",
+        "secondary-fixed": "#f0e8db",
+        "on-primary": "#ffffff",
+        "on-primary-fixed": "#002110",
+        "primary-container": "#78a886",
+        "on-secondary": "#ffffff",
+        "surface-dim": "#dbd7cf",
+        "outline-variant": "#c4c8bc",
+        "on-tertiary-fixed": "#221a05",
+        "secondary": "#6b6358",
+        "surface-variant": "#e4e0d8",
+        "surface": "#faf6f0",
+        "primary": "#4a7c59",
+        "error-container": "#ffdad8",
+        "on-primary-fixed-variant": "#2a6038",
+        "background": "#faf6f0",
+        "surface-container-lowest": "#ffffff",
+        "primary-fixed": "#c8e8d0",
+        "inverse-on-surface": "#f5f0e8",
+        "on-background": "#2e3230",
+        "on-error": "#ffffff",
+        "surface-tint": "#4a7c59",
+        "inverse-surface": "#2e3230",
+        "surface-container": "#f0ece4",
+        "on-secondary-container": "#5e5548",
+        "tertiary-container": "#c4a66a",
+        "primary-fixed-dim": "#8ecf9e",
+        "on-tertiary-fixed-variant": "#554020",
+        "error": "#b83230",
+        "surface-bright": "#faf6f0"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.5rem",
+        "lg": "1rem",
+        "xl": "1.5rem",
+        "full": "9999px"
+      },
+      "fontFamily": {
+        "headline": ["Literata", "serif"],
+        "display": ["Literata", "serif"],
+        "body": ["Nunito Sans", "sans-serif"],
+        "label": ["Nunito Sans", "sans-serif"],
+        "sacred": ["Amiri", "serif"]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style></head><body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-fixed selection:text-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-md pt-safe border-b border-surface-container-high/60"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-2xl font-light">spa</span></div><div class="flex flex-col"><span class="font-bold text-xs tracking-wider text-primary uppercase">PKN Healing</span><span class="text-xs text-on-surface-variant font-medium">Curhat Ai</span></div></div><div class="flex items-center gap-2.5"><div class="flex flex-col items-end"><span class="text-[11px] font-semibold text-tertiary tracking-tight">Ayah Qawwamun</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="text-[10px] text-outline">Terkoneksi</span></div></div><button class="relative p-0.5 rounded-full ring-2 ring-primary/20 bg-surface-container-lowest transition-transform active:scale-95 flex items-center justify-center" type="button"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary font-bold text-xs">AQ</div></button></div></div></header><main class="flex flex-col relative w-full pt-20 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-4 pt-1 pb-6 flex flex-col gap-4">
+<!-- Header Tag & Security Banner -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-base font-bold text-on-surface font-headline tracking-tight">Teman Curhat Batin</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold flex items-center gap-1.5 border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Sanctuary AI
+        </span>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high flex items-start gap-3 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col gap-0.5">
+<span class="text-xs font-bold text-tertiary">Tazkiyatun Nafs On-Device Security</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">Kerahasiaan batin dilindungi enkripsi lokal &amp; sumpah amanah muallim. Suara dan curhat tidak disimpan di server luar.</p>
+</div>
+</div>
+</div>
+<!-- Nafs Barometer Card -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-surface-container-high flex flex-col gap-3.5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="text-xs font-bold text-on-surface uppercase tracking-wider">Nafs Barometer Status</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">Taraf 2: Lawwamah</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="relative w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-error/60 via-tertiary-container to-primary"></div>
+<div class="absolute inset-y-0 left-[48%] w-2.5 rounded-full bg-surface-container-lowest ring-2 ring-tertiary shadow-md -translate-x-1/2"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] pt-1 font-medium">
+<span class="text-error font-semibold">Ammarah (Amarah)</span>
+<span class="text-tertiary font-bold">Lawwamah (Insyaf)</span>
+<span class="text-primary font-semibold">Muthma'innah (Tenang)</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low border border-surface-container flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs font-bold text-on-surface">Nafs Lawwamah - Siap Menerima Nasihat</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Deteksi intonasi vokal menunjukkan keletihan fisik berpadu rasa bersalah terhadap ananda. Jiwa Anda sedang memanggil penyejukan.</p>
+</div>
+</div>
+<!-- Chat Flow -->
+<div class="flex flex-col gap-5 pt-1">
+<!-- User Message Bubble -->
+<div class="flex flex-col items-end gap-1.5 max-w-[92%] self-end">
+<div class="p-4 rounded-2xl rounded-tr-sm bg-primary-fixed/30 border border-primary/20 text-on-surface shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-3 pb-0.5">
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform shrink-0" id="user-audio-play-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="user-play-icon">play_arrow</span>
+</button>
+<div class="flex items-center gap-1 h-6 flex-1 px-1">
+<span class="w-1 h-3 rounded-full bg-primary"></span>
+<span class="w-1 h-5 rounded-full bg-primary"></span>
+<span class="w-1 h-2 rounded-full bg-primary/60"></span>
+<span class="w-1 h-6 rounded-full bg-primary animate-pulse"></span>
+<span class="w-1 h-4 rounded-full bg-primary"></span>
+<span class="w-1 h-5 rounded-full bg-primary"></span>
+<span class="w-1 h-3 rounded-full bg-primary/70"></span>
+<span class="w-1 h-6 rounded-full bg-primary"></span>
+<span class="w-1 h-2 rounded-full bg-primary/50"></span>
+<span class="w-1 h-4 rounded-full bg-primary"></span>
+<span class="w-1 h-5 rounded-full bg-primary/80"></span>
+<span class="w-1 h-2 rounded-full bg-primary/40"></span>
+</div>
+<span class="text-[11px] font-semibold text-primary tabular-nums">0:42</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-lowest/90 border border-primary/10 text-on-surface">
+<p class="text-xs leading-relaxed italic text-on-surface-variant">"Saya merasa kelelahan, pekerjaan kantor menumpuk dan di rumah anak-anak bertengkar terus... Saya hampir berteriak pada Zaid tadi sore."</p>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium pr-1">19.48 WIB • Terkirim &amp; Dianalisis</span>
+</div>
+<!-- AI Response Bubble -->
+<div class="flex flex-col items-start gap-1.5 max-w-[95%] self-start">
+<div class="p-4 rounded-2xl rounded-tl-sm bg-surface-container-lowest border border-surface-container-high text-on-surface shadow-sm flex flex-col gap-3.5">
+<div class="flex items-center justify-between pb-1 border-b border-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">nature_people</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Sahabat Batin Nabawiyah AI</span>
+<span class="text-[10px] text-primary font-semibold">Muallim Nafs Companion</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+            Istirahat sejenak, Ayah. Beban ganda yang Ayah pikul hari ini memang berat. Menjadi <span class="text-tertiary font-bold">qawwam</span> bukan berarti harus menjadi manusia tanpa lelah. Rasulullah ﷺ pun mengajarkan bahwa menahan diri saat marah adalah puncak kekuatan sejati seorang ksatria:
+          </p>
+<!-- Sacred Arabic Quote Box -->
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container flex flex-col gap-2">
+<p class="font-sacred text-xl text-right text-tertiary leading-loose" dir="rtl">
+              لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ
+            </p>
+<p class="text-[11px] text-on-surface-variant italic leading-relaxed">
+              "Bukanlah orang kuat itu yang menang bergulat, melainkan orang yang mampu menguasai dirinya saat amarah membakar." (HR. Bukhari)
+            </p>
+</div>
+<!-- Calming Recommendation -->
+<div class="p-3 rounded-xl bg-primary/10 border border-primary/20 flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">self_improvement</span>
+<span class="text-xs text-primary font-bold">Rekomendasi 5 Menit Penenang Nafs</span>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+              Mari luangkan waktu untuk berwudhu dengan air dingin dan dirikan shalat sunnah dua rakaat, atau pejamkan mata sejenak dengan 33x istighfar sebelum kembali menemui ananda dengan senyum fitrah.
+            </p>
+</div>
+<!-- Audio Guidance Button -->
+<button class="w-full py-2.5 px-3 rounded-xl bg-surface-container text-on-surface flex items-center justify-center gap-2 hover:bg-surface-container-high active:scale-[0.99] transition-all border border-surface-container-high" id="tts-audio-btn" type="button">
+<span class="material-symbols-outlined text-primary text-[20px]" id="tts-icon">volume_up</span>
+<span class="text-xs font-bold text-primary">Dengarkan Suara Ustadz Syarif (TTS Batin)</span>
+</button>
+</div>
+<span class="text-[11px] text-outline font-medium pl-1">19.49 WIB • Penyejuk Jiwa</span>
+</div>
+</div>
+<!-- Controls Area -->
+<div class="pt-2 flex flex-col items-center gap-3">
+<div class="w-full flex items-center justify-between px-3">
+<button aria-label="Ketik Pesan" class="w-12 h-12 rounded-full bg-surface-container-lowest text-on-surface-variant border border-surface-container-high flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="toggle-keyboard-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">keyboard</span>
+</button>
+<div class="relative flex items-center justify-center">
+<span class="hidden absolute w-20 h-20 rounded-full bg-primary/20 animate-ping pointer-events-none" id="record-ping"></span>
+<span class="hidden absolute w-16 h-16 rounded-full bg-primary/30 animate-pulse pointer-events-none" id="record-pulse"></span>
+<button aria-label="Tekan dan Tahan untuk Bicara" class="relative z-10 w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-transform" id="mic-record-btn" type="button">
+<span class="material-symbols-outlined text-[30px]" id="mic-icon">mic</span>
+</button>
+</div>
+<button aria-label="Hapus Percakapan Seketika" class="w-12 h-12 rounded-full bg-surface-container-lowest text-error border border-surface-container-high flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="purge-chat-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">delete_forever</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-center px-4">
+<span class="text-xs text-on-surface font-semibold" id="mic-instruction-label">Tahan tombol mikrofon untuk berbicara lisan</span>
+<span class="text-[11px] text-outline">Data lisan diproses real-time tanpa arsip pelacak (Zero Data Retention)</span>
+</div>
+<div class="hidden w-full flex items-center gap-2 pt-1 transition-all" id="text-input-drawer">
+<input class="flex-1 bg-surface-container-lowest border border-surface-container-high text-on-surface placeholder:text-outline text-xs px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Tuliskan isi batin atau kegundahan Ayah di sini..." type="text"/>
+<button class="p-3 rounded-xl bg-primary text-on-primary flex items-center justify-center active:scale-95 transition-transform shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+<div class="hidden w-full p-3 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-between text-on-surface shadow-md" id="purge-toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="text-xs font-semibold">Riwayat curhat telah dihapus tanpa jejak.</span>
+</div>
+<button class="p-1 text-outline hover:text-on-surface" id="close-toast-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const micBtn = document.getElementById('mic-record-btn');
+      const micIcon = document.getElementById('mic-icon');
+      const recordPing = document.getElementById('record-ping');
+      const recordPulse = document.getElementById('record-pulse');
+      const micLabel = document.getElementById('mic-instruction-label');
+      let isRecording = false;
+
+      function startRecording() {
+        isRecording = true;
+        recordPing.classList.remove('hidden');
+        recordPulse.classList.remove('hidden');
+        micBtn.classList.replace('bg-primary', 'bg-error');
+        micIcon.textContent = 'graphic_eq';
+        micLabel.textContent = 'Mendengarkan getaran suara batin Ayah... Lepas untuk kirim';
+        micLabel.classList.add('text-primary');
+      }
+
+      function stopRecording() {
+        if (!isRecording) return;
+        isRecording = false;
+        recordPing.classList.add('hidden');
+        recordPulse.classList.add('hidden');
+        micBtn.classList.replace('bg-error', 'bg-primary');
+        micIcon.textContent = 'mic';
+        micLabel.textContent = 'Menganalisis getaran nafs & menyiapkan panduan...';
+        setTimeout(() => {
+          micLabel.textContent = 'Tahan tombol mikrofon untuk berbicara lisan';
+          micLabel.classList.remove('text-primary');
+        }, 2200);
+      }
+
+      if (micBtn) {
+        micBtn.addEventListener('mousedown', startRecording);
+        micBtn.addEventListener('mouseup', stopRecording);
+        micBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startRecording(); });
+        micBtn.addEventListener('touchend', (e) => { e.preventDefault(); stopRecording(); });
+      }
+
+      const toggleKeyboardBtn = document.getElementById('toggle-keyboard-btn');
+      const textDrawer = document.getElementById('text-input-drawer');
+      if (toggleKeyboardBtn && textDrawer) {
+        toggleKeyboardBtn.addEventListener('click', () => {
+          textDrawer.classList.toggle('hidden');
+        });
+      }
+
+      const purgeBtn = document.getElementById('purge-chat-btn');
+      const purgeToast = document.getElementById('purge-toast');
+      const closeToastBtn = document.getElementById('close-toast-btn');
+      if (purgeBtn && purgeToast) {
+        purgeBtn.addEventListener('click', () => {
+          purgeToast.classList.remove('hidden');
+          setTimeout(() => {
+            purgeToast.classList.add('hidden');
+          }, 3500);
+        });
+      }
+      if (closeToastBtn && purgeToast) {
+        closeToastBtn.addEventListener('click', () => {
+          purgeToast.classList.add('hidden');
+        });
+      }
+
+      const ttsBtn = document.getElementById('tts-audio-btn');
+      const ttsIcon = document.getElementById('tts-icon');
+      let isPlayingTTS = false;
+      if (ttsBtn && ttsIcon) {
+        ttsBtn.addEventListener('click', () => {
+          isPlayingTTS = !isPlayingTTS;
+          if (isPlayingTTS) {
+            ttsIcon.textContent = 'pause_circle';
+            ttsBtn.querySelector('span:nth-child(2)').textContent = 'Memutar Suara Ustadz Syarif...';
+          } else {
+            ttsIcon.textContent = 'volume_up';
+            ttsBtn.querySelector('span:nth-child(2)').textContent = 'Dengarkan Suara Ustadz Syarif (TTS Batin)';
+          }
+        });
+      }
+
+      const userAudioBtn = document.getElementById('user-audio-play-btn');
+      const userPlayIcon = document.getElementById('user-play-icon');
+      let isPlayingUser = false;
+      if (userAudioBtn && userPlayIcon) {
+        userAudioBtn.addEventListener('click', () => {
+          isPlayingUser = !isPlayingUser;
+          userPlayIcon.textContent = isPlayingUser ? 'pause' : 'play_arrow';
+        });
+      }
+    })();
+  </script>
+</div></main><!-- Floating Action Button (Sanctuary Trigger) --><div class="fixed bottom-24 right-4 z-40"><a class="flex items-center justify-center w-13 h-13 p-3.5 rounded-full bg-primary text-on-primary shadow-lg shadow-primary/30 transition-transform active:scale-95 group" data-path="curhat-ai" href="#"><span class="absolute inset-0 rounded-full bg-primary/30 animate-ping pointer-events-none"></span><span class="material-symbols-outlined text-2xl">support_agent</span></a></div><!-- Bottom Tab Bar --><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-lg border-t border-surface-container-high" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center gap-1 flex-1 min-h-[44px] text-outline transition-colors hover:text-on-surface" data-path="beranda" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">home</span></div><span class="text-[11px] font-semibold">Beranda</span></a><a class="flex flex-col items-center justify-center gap-1 flex-1 min-h-[44px] text-outline transition-colors hover:text-on-surface" data-path="khazanah-wiki" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="text-[11px] font-semibold">Khazanah</span></a><a class="flex flex-col items-center justify-center gap-1 flex-1 min-h-[44px] text-outline transition-colors hover:text-on-surface" data-path="ruang-batin" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span></div><span class="text-[11px] font-semibold">Ruang Batin</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 flex-1 min-h-[44px] transition-colors text-primary font-bold" data-path="curhat-ai" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] text-primary" style="font-variation-settings: 'FILL' 1;">bubble_chart</span><span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-primary"></span></div><span class="text-[11px] font-bold">Curhat AI</span></a></div></nav></body></html>

@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
@@ -178,7 +179,7 @@ class _IdeaCardWidgetState extends State<IdeaCardWidget> {
           // Expandable Detailed Section: Core Thesis, Dalil, & Sirah Case Study
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: InkWell(
+            child: PknTap(
               onTap: () => setState(() => _isDetailsExpanded = !_isDetailsExpanded),
               borderRadius: PknRadius.roundedMd,
               child: Container(
@@ -407,7 +408,8 @@ class _IdeaCardWidgetState extends State<IdeaCardWidget> {
                 // Bookmark & Share Actions
                 Row(
                   children: [
-                    IconButton(
+                    PknIconButton(
+                      tooltip: 'Materi tersimpan',
                       icon: Icon(
                         card.isBookmarked
                             ? Icons.bookmark_rounded
@@ -418,7 +420,7 @@ class _IdeaCardWidgetState extends State<IdeaCardWidget> {
                       ),
                       onPressed: () {
                         widget.onBookmarkToggle();
-                        ScaffoldMessenger.of(context).showSnackBar(
+                        showPknFeedback(context,
                           SnackBar(
                             content: Text(
                               card.isBookmarked
@@ -431,14 +433,15 @@ class _IdeaCardWidgetState extends State<IdeaCardWidget> {
                         );
                       },
                     ),
-                    IconButton(
+                    PknIconButton(
+                      tooltip: 'Bagikan',
                       icon: Icon(
                         Icons.share_outlined,
                         size: 20,
                         color: isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted,
                       ),
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
+                        showPknFeedback(context,
                           const SnackBar(
                             content: Text('Tautan materi berhasil disalin!'),
                             duration: Duration(seconds: 1),

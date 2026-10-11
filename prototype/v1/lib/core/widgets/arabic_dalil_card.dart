@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
@@ -138,7 +139,7 @@ class _ArabicDalilCardState extends State<ArabicDalilCard> {
           // Progressive Disclosure: Collapsible Takhrij / Syarah
           if (widget.syarahHikmah != null || widget.narrator != null) ...[
             const SizedBox(height: PknSpacing.sm),
-            InkWell(
+            PknTap(
               onTap: () => setState(() => _isTakhrijExpanded = !_isTakhrijExpanded),
               borderRadius: PknRadius.roundedSm,
               child: Padding(

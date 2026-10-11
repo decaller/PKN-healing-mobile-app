@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
@@ -53,7 +54,7 @@ class MocPilarChip extends StatelessWidget {
       label: 'Pilar MOC ${pilar.code}: ${pilar.label}',
       child: Material(
         color: Colors.transparent,
-        child: InkWell(
+        child: PknTap(
           onTap: onSelected != null ? () => onSelected!(!isSelected) : null,
           borderRadius: PknRadius.roundedPill,
           child: AnimatedContainer(

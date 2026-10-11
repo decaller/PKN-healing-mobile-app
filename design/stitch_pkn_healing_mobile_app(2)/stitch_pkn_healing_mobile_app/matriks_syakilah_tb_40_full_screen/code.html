@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriks Syakilah (40 Bakat TB-40) - Full Screen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #080B0E;
+      color: #E2E8F0;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-amiri { font-family: 'Amiri', serif; }
+    
+    /* Subtle parchment texture overlay */
+    .texture-bg {
+      background-color: #080B0E;
+      background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.04) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(244, 63, 94, 0.04) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.03) 0%, transparent 50%);
+    }
+
+    .matrix-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .matrix-scroll::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="texture-bg w-full h-screen overflow-hidden flex flex-col text-slate-200">
+
+  <!-- TOP APP BAR / HEADER (FULL-SCREEN GAME HUD) -->
+  <header class="w-full px-4 pt-3 pb-2 bg-[#0C1015] border-b border-slate-800 flex items-center justify-between z-10">
+    <div class="flex items-center gap-2.5">
+      <button class="p-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+      </button>
+      <div>
+        <h1 class="text-xs sm:text-sm font-bold tracking-wider uppercase text-slate-100 font-cinzel flex items-center gap-1.5">
+          <span>Matriks Syakilah</span>
+          <span class="text-[9px] font-mono font-normal text-teal-400 bg-teal-950/60 px-1.5 py-0.2 rounded border border-teal-800/50">TB-40</span>
+        </h1>
+        <p class="text-[9px] text-slate-400 leading-tight">Bakat bawaan fitrah: Dibimbing Adab jadi Ihsan, dikuasai Nafsu jadi Afat</p>
+      </div>
+    </div>
+
+    <!-- Right Points Indicator -->
+    <div class="flex items-center gap-2">
+      <div class="px-2 py-0.5 rounded-full bg-teal-950/80 border border-teal-500/50 text-[10px] font-semibold text-teal-300 font-mono">
+        ★ 2 Poin Adab
+      </div>
+      <div class="text-[9px] text-slate-400 hidden xs:block">
+        Tingkat 4 (Murabbi)
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SCROLLABLE MATRIX AREA (4 CLUSTERS + DETAIL PANEL) -->
+  <main class="matrix-scroll flex-1 overflow-y-auto p-3.5 space-y-4">
+    
+    <!-- 4 CLUSTERS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      
+      <!-- CLUSTER 1: AL-FIKRIYYAH (Cyan) -->
+      <section class="rounded-xl bg-[#0D1218] border border-sky-900/40 p-2.5 relative overflow-hidden">
+        <div class="flex items-center justify-between pb-1.5 border-b border-sky-950 mb-2">
+          <div class="flex items-center gap-1.5 text-sky-400 text-xs font-bold uppercase tracking-wider">
+            <span>🧠 Al-Fikriyyah</span>
+            <span class="text-[9px] text-sky-500/70 font-normal">(Nalar & Hikmah)</span>
+          </div>
+          <span class="text-[9px] font-mono text-sky-300 bg-sky-950/60 px-1 rounded">Kluster 1</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+          <!-- Firaasah (Active Selection) -->
+          <div class="p-1.5 rounded-lg bg-sky-950/40 border border-sky-500/50 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-sky-200">Firaasah ★</span>
+              <span class="text-[9px] font-mono text-sky-300">4/6</span>
+            </div>
+            <div class="text-[9px] text-sky-400/80">Intuisi Batin</div>
+            <div class="text-[10px] tracking-tight text-sky-400 mt-1">●●●●○○</div>
+          </div>
+
+          <!-- Hikmah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Hikmah</span>
+              <span class="text-[9px] font-mono text-slate-400">3/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Takaran Momen</div>
+            <div class="text-[10px] tracking-tight text-sky-400 mt-1">●●●○○</div>
+          </div>
+
+          <!-- Dzakaa' -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Dzakaa'</span>
+              <span class="text-[9px] font-mono text-slate-400">2/4</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Analitis Cepat</div>
+            <div class="text-[10px] tracking-tight text-sky-400 mt-1">●●○○○</div>
+          </div>
+
+          <!-- Nubl -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Nubl</span>
+              <span class="text-[9px] font-mono text-slate-400">1/4</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Kecerdikan Mulia</div>
+            <div class="text-[10px] tracking-tight text-sky-400 mt-1">●○○○○</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLUSTER 2: AL-FASHAHAH (Violet) -->
+      <section class="rounded-xl bg-[#0D1218] border border-purple-900/40 p-2.5 relative overflow-hidden">
+        <div class="flex items-center justify-between pb-1.5 border-b border-purple-950 mb-2">
+          <div class="flex items-center gap-1.5 text-purple-400 text-xs font-bold uppercase tracking-wider">
+            <span>🕊️ Al-Fashahah</span>
+            <span class="text-[9px] text-purple-500/70 font-normal">(Bahasa Jiwa)</span>
+          </div>
+          <span class="text-[9px] font-mono text-purple-300 bg-purple-950/60 px-1 rounded">Kluster 2</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+          <!-- Rifq -->
+          <div class="p-1.5 rounded-lg bg-purple-950/30 border border-purple-800/50 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-purple-200">Ar-Rifq</span>
+              <span class="text-[9px] font-mono text-purple-300">3/5</span>
+            </div>
+            <div class="text-[9px] text-purple-400/80">Kelembutan</div>
+            <div class="text-[10px] tracking-tight text-purple-400 mt-1">●●●○○</div>
+          </div>
+
+          <!-- Rahmah -->
+          <div class="p-1.5 rounded-lg bg-purple-950/30 border border-purple-800/50 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-purple-200">Rahmah</span>
+              <span class="text-[9px] font-mono text-purple-300">4/6</span>
+            </div>
+            <div class="text-[9px] text-purple-400/80">Kasih Sayang</div>
+            <div class="text-[10px] tracking-tight text-purple-400 mt-1">●●●●○○</div>
+          </div>
+
+          <!-- Hilm -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Hilm</span>
+              <span class="text-[9px] font-mono text-slate-400">2/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Pemaaf Lapang</div>
+            <div class="text-[10px] tracking-tight text-purple-400 mt-1">●●○○○</div>
+          </div>
+
+          <!-- Muzaah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Muzaah</span>
+              <span class="text-[9px] font-mono text-slate-400">1/3</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Humor Santun</div>
+            <div class="text-[10px] tracking-tight text-purple-400 mt-1">●○○○○</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLUSTER 3: AL-QIYADAH (Crimson) -->
+      <section class="rounded-xl bg-[#0D1218] border border-rose-900/40 p-2.5 relative overflow-hidden">
+        <div class="flex items-center justify-between pb-1.5 border-b border-rose-950 mb-2">
+          <div class="flex items-center gap-1.5 text-rose-400 text-xs font-bold uppercase tracking-wider">
+            <span>⚡ Al-Qiyadah</span>
+            <span class="text-[9px] text-rose-500/70 font-normal">(Wibawa & Sikap)</span>
+          </div>
+          <span class="text-[9px] font-mono text-rose-300 bg-rose-950/60 px-1 rounded">Kluster 3</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+          <!-- Syajaa'ah (SELECTED) -->
+          <div class="p-1.5 rounded-lg bg-rose-950/50 border-2 border-rose-500 flex flex-col justify-between shadow-lg shadow-rose-950/50">
+            <div class="flex justify-between items-start">
+              <span class="font-bold text-rose-200">Syajaa'ah ★</span>
+              <span class="text-[9px] font-mono text-rose-300 font-bold">4/6</span>
+            </div>
+            <div class="text-[9px] text-rose-300 font-medium">Keberanian Syar'i</div>
+            <div class="text-[10px] tracking-tight text-rose-400 mt-1">●●●●○○</div>
+          </div>
+
+          <!-- Himmah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Himmah</span>
+              <span class="text-[9px] font-mono text-slate-400">3/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Cita Luhur</div>
+            <div class="text-[10px] tracking-tight text-rose-400 mt-1">●●●○○</div>
+          </div>
+
+          <!-- Izzah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Izzah</span>
+              <span class="text-[9px] font-mono text-slate-400">2/4</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Marwah Diri</div>
+            <div class="text-[10px] tracking-tight text-rose-400 mt-1">●●○○○</div>
+          </div>
+
+          <!-- Ghairah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Ghairah</span>
+              <span class="text-[9px] font-mono text-slate-400">3/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Proteksi Agama</div>
+            <div class="text-[10px] tracking-tight text-rose-400 mt-1">●●●○○</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLUSTER 4: AL-IDARAH (Amber) -->
+      <section class="rounded-xl bg-[#0D1218] border border-amber-900/40 p-2.5 relative overflow-hidden">
+        <div class="flex items-center justify-between pb-1.5 border-b border-amber-950 mb-2">
+          <div class="flex items-center gap-1.5 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <span>⚖️ Al-Idarah</span>
+            <span class="text-[9px] text-amber-500/70 font-normal">(Integritas & Adab)</span>
+          </div>
+          <span class="text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1 rounded">Kluster 4</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+          <!-- Amaanah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Amaanah</span>
+              <span class="text-[9px] font-mono text-slate-400">3/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Tanggung Jawab</div>
+            <div class="text-[10px] tracking-tight text-amber-400 mt-1">●●●○○</div>
+          </div>
+
+          <!-- Anaah -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Anaah</span>
+              <span class="text-[9px] font-mono text-slate-400">2/4</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Ketenangan Jiwa</div>
+            <div class="text-[10px] tracking-tight text-amber-400 mt-1">●●○○○</div>
+          </div>
+
+          <!-- Shamt -->
+          <div class="p-1.5 rounded-lg bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-slate-200">Shamt</span>
+              <span class="text-[9px] font-mono text-slate-400">3/5</span>
+            </div>
+            <div class="text-[9px] text-slate-400">Kendali Lisan</div>
+            <div class="text-[10px] tracking-tight text-amber-400 mt-1">●●●○○</div>
+          </div>
+
+          <!-- Shidq -->
+          <div class="p-1.5 rounded-lg bg-amber-950/30 border border-amber-800/50 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <span class="font-semibold text-amber-200">Shidq</span>
+              <span class="text-[9px] font-mono text-amber-300">4/5</span>
+            </div>
+            <div class="text-[9px] text-amber-400/80">Kejujuran Total</div>
+            <div class="text-[10px] tracking-tight text-amber-400 mt-1">●●●●○</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- SKILL DETAIL POPOUT PANEL (FOCUS: SYAJAA'AH) -->
+    <div class="rounded-xl bg-[#111720] border-2 border-rose-500/70 p-3 shadow-2xl relative">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-600 to-amber-700 flex items-center justify-center text-xl shadow-md border border-rose-400">
+            🦁
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white flex items-center gap-1.5">
+              <span>Syajaa'ah</span>
+              <span class="text-[10px] font-mono text-rose-300 px-1.5 py-0.2 rounded bg-rose-950 border border-rose-800">Tingkat 4 / 6</span>
+            </div>
+            <div class="text-[10px] text-rose-300/80">Kluster Al-Qiyadah • Keberanian Berprinsip</div>
+          </div>
+        </div>
+        <button class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-[11px] shadow-md transition flex items-center gap-1">
+          <span>+1 Tingkat</span>
+          <span class="text-[9px] opacity-80">(Biaya: 1 Poin)</span>
+        </button>
+      </div>
+
+      <p class="text-[11px] text-slate-300 mt-2 font-serif italic border-l-2 border-rose-500/60 pl-2">
+        "Dorongan fitrah untuk berdiri tegak melindungi kebenaran syariat tanpa gentar atau mengalah pada kelemahan diri."
+      </p>
+
+      <!-- Dialektika Tazkiyatun Nafs: Ihsan vs Afat -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2.5 pt-2 border-t border-slate-800 text-[10px]">
+        <!-- Sisi Ihsan -->
+        <div class="p-2 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-200">
+          <div class="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
+            <span>🍃 Sisi Ihsan (Nafs Muthma'innah)</span>
+          </div>
+          <p class="mt-1 text-slate-300 leading-normal">
+            Ketegasan yang lahir dari cinta syariat; pantang melukai anak dan haram memukul wajah. Tegas tujuan, lembut cara.
+          </p>
+        </div>
+
+        <!-- Sisi Afat -->
+        <div class="p-2 rounded-lg bg-rose-950/30 border border-rose-800/40 text-rose-200">
+          <div class="font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1">
+            <span>🔥 Sisi Afat (Nafs Ammarah)</span>
+          </div>
+          <p class="mt-1 text-slate-300 leading-normal">
+            Tirani amarah (Ghadhab); menganggap tangisan anak sebagai penghinaan wibawa kepala keluarga.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM RETURNING BAR -->
+  <footer class="w-full px-4 py-2.5 bg-[#090D11] border-t border-slate-800 flex items-center justify-between text-xs">
+    <span class="text-[10px] text-slate-400">Perubahan bakat memengaruhi peluang White & Red Check</span>
+    <button class="px-4 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-semibold text-[11px] transition shadow">
+      Kembali ke Skenario
+    </button>
+  </footer>
+
+</body>
+</html>

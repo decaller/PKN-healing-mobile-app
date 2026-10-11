@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101419;color:#e0e2ea;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#101419", "on-primary-fixed-variant": "#005048", "tertiary-container": "#1eb0ea", "surface-container-low": "#181c21", "secondary": "#ffca45", "on-primary": "#003731", "background": "#101419", "on-error-container": "#ffdad6", "secondary-container": "#e4ae00", "on-tertiary-fixed": "#001e2c", "error": "#ffb4ab", "surface-bright": "#36393f", "tertiary": "#7bd0ff", "surface-container-lowest": "#0a0e13", "surface-variant": "#31353b", "on-background": "#e0e2ea", "on-tertiary": "#00354a", "surface-container": "#1c2025", "surface-container-highest": "#31353b", "inverse-primary": "#006b5f", "on-primary-fixed": "#00201c", "outline-variant": "#3c4947", "primary-container": "#14b8a6", "on-surface": "#e0e2ea", "tertiary-fixed": "#c4e7ff", "on-secondary-fixed": "#251a00", "secondary-fixed-dim": "#f7be1d", "outline": "#859490", "primary-fixed": "#71f8e4", "secondary-fixed": "#ffdf9a", "primary-fixed-dim": "#4fdbc8", "on-surface-variant": "#bbcac6", "on-error": "#690005", "surface-container-high": "#262a30", "on-tertiary-fixed-variant": "#004c69", "primary": "#4fdbc8", "surface-tint": "#4fdbc8", "on-secondary": "#3f2e00", "surface-dim": "#101419", "error-container": "#93000a", "on-secondary-fixed-variant": "#5a4300", "on-secondary-container": "#5b4400", "inverse-on-surface": "#2d3136", "tertiary-fixed-dim": "#7bd0ff", "inverse-surface": "#e0e2ea", "on-primary-container": "#00423b", "on-tertiary-container": "#003f58" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "1.75rem", "margin": "1.25rem" }, "fontFamily": { "headline-xl": ["Inter"], "label-xs": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "sacred-quote-lg": ["Amiri"], "sacred-quote-md": ["Amiri"], "body-sm": ["Inter"], "title-sm": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Navigate back" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[200px]">Select Tier &amp; Checkout</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Event options" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin"><div class="flex flex-col w-full pb-10 space-y-space-lg">
+<!-- Stepper Progress Header -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between text-label-xs font-label-xs uppercase tracking-wider text-on-surface-variant mb-space-sm">
+<span class="flex items-center gap-1.5 opacity-60">
+<span class="w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant font-bold">1</span>
+        Data Diri
+      </span>
+<span class="w-6 h-0.5 bg-surface-container-highest"></span>
+<span class="flex items-center gap-1.5 opacity-60">
+<span class="w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant font-bold">2</span>
+        Sesi Healing
+      </span>
+<span class="w-6 h-0.5 bg-surface-container-highest"></span>
+<span class="flex items-center gap-1.5 text-primary font-bold">
+<span class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[10px] text-on-primary font-bold shadow-[0_0_8px_rgba(79,219,200,0.5)]">3</span>
+        Pembayaran
+      </span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary/60 to-primary h-full rounded-full w-full"></div>
+</div>
+</div>
+<!-- Status & Countdown Timer Section -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-lg shadow-md space-y-space-md relative overflow-hidden">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+<span>MENUNGGU PEMBAYARAN</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-xs text-label-xs shadow-inner">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span class="font-medium tracking-tight" id="countdown-timer">Sisa Waktu: 03:42:18</span>
+</div>
+</div>
+<!-- Huge Nominal Display -->
+<div class="flex flex-col items-center justify-center text-center py-space-sm bg-surface-container-lowest/70 rounded-xl px-space-md">
+<p class="text-body-sm font-body-sm text-on-surface-variant tracking-normal">Total yang Harus Ditransfer</p>
+<div class="flex items-baseline justify-center gap-1.5 my-1">
+<span class="text-headline-lg font-headline-lg text-secondary">Rp</span>
+<span class="text-headline-xl font-headline-xl text-secondary tracking-tight select-all font-metric-display">200.042</span>
+<button class="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all ml-1.5" id="copy-nominal-btn" onclick="copyValue('200042', 'Nominal Berhasil Disalin!')" title="Salin Nominal">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<span class="inline-flex items-center gap-1 text-label-xs font-label-xs text-secondary/90 bg-secondary/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        Kode Unik Otomatis: <strong class="text-secondary font-bold">042</strong>
+</span>
+</div>
+<!-- Critical Warning Callout -->
+<div class="flex items-start gap-space-sm bg-secondary/10 rounded-xl p-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-secondary tracking-wide">PENTING: TRANSFER HINGGA 3 DIGIT TERAKHIR</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mt-0.5">
+          Mohon transfer tepat hingga digit <strong class="text-secondary font-semibold">42</strong> agar algoritma PKN Digital memverifikasi akad secara instan tanpa antrean validasi manual.
+        </p>
+</div>
+</div>
+</div>
+<!-- Official Central Treasury Card (Rekening Terkunci PKN Digital) -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-lg shadow-md space-y-space-md relative">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Bank Syariah Indonesia</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary/20 text-primary">BSI</span>
+</div>
+<span class="text-label-xs font-label-xs text-on-surface-variant">Layanan Rekening Terpusat</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-primary bg-primary/10 px-2 py-0.5 rounded-full font-label-xs font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Terkunci
+      </span>
+</div>
+<!-- Rekening Number Box -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md space-y-space-xs">
+<span class="text-label-xs font-label-xs text-on-surface-variant tracking-wider uppercase">Nomor Rekening Tujuan</span>
+<div class="flex items-center justify-between">
+<span class="font-metric-display text-[22px] tracking-widest text-on-surface font-bold select-all">816-544-9990</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold active:scale-95 transition-all shadow-sm" id="copy-rek-btn" onclick="copyValue('8165449990', 'No. Rekening BSI Berhasil Disalin!')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="copy-rek-text">Salin</span>
+</button>
+</div>
+</div>
+<!-- Beneficiary Details -->
+<div class="flex items-center justify-between px-space-xs text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Nama Pemilik Rekening:</span>
+<span class="text-on-surface font-semibold text-right">a.n. Yayasan Pendidikan Tunas Qur'an</span>
+</div>
+<!-- Official Security Seal Module -->
+<div class="flex items-center gap-space-sm bg-surface-container-high/60 rounded-xl p-space-md text-label-xs font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="leading-relaxed">
+<strong class="text-primary font-medium">Rekening Resmi Terpusat PKN Digital.</strong> Seluruh transaksi dijamin amanah &amp; disalurkan langsung untuk keberlanjutan dakwah karakter nabawiyah.
+      </p>
+</div>
+</div>
+<!-- Proof of Payment Upload Box -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-lg shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">cloud_upload</span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Konfirmasi &amp; Unggah Bukti</h2>
+</div>
+<span class="text-label-xs font-label-xs text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">Wajib</span>
+</div>
+<!-- Dashed Upload Dropzone Container -->
+<div class="flex flex-col items-center justify-center p-space-lg rounded-xl bg-surface-container-lowest/80 text-center cursor-pointer transition-all hover:bg-surface-container-high/40 active:scale-[0.99] group shadow-inner" id="dropzone" onclick="triggerFileInput()">
+<input accept=".jpg,.jpeg,.png,.pdf" class="hidden" id="proof-file-input" onchange="handleFileSelected(event)" type="file"/>
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-space-sm group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(79,219,200,0.15)]">
+<span class="material-symbols-outlined text-[30px]">add_photo_alternate</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium max-w-[240px]">
+        Ketuk untuk mengunggah struk ATM / tangkapan layar m-Banking BSI
+      </p>
+<span class="text-label-xs font-label-xs text-on-surface-variant mt-1">
+        Format: JPG, PNG, atau PDF (Maks. 5 MB)
+      </span>
+</div>
+<!-- Uploaded File Preview Card (Active State) -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md space-y-space-xs shadow-sm" id="file-preview-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-body-sm font-body-sm text-on-surface font-medium truncate max-w-[180px]" id="preview-filename">transfer_bsi_abuakbar.jpg</span>
+<span class="text-label-xs font-label-xs text-on-surface-variant" id="preview-filesize">1.4 MB</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0">
+<button class="min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface text-label-xs font-label-xs px-2" onclick="triggerFileInput()" title="Ganti File">
+            Ganti
+          </button>
+<button class="min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg bg-surface-container-high text-error hover:bg-error/20" onclick="removeFile()" title="Hapus Berkas">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="inline-flex items-center gap-1.5 text-label-xs font-label-xs text-primary font-medium">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Berkas Siap Diunggah
+        </span>
+<span class="text-label-xs font-label-xs text-on-surface-variant opacity-80">Terverifikasi sistem</span>
+</div>
+</div>
+</div>
+<!-- Verification Note Module -->
+<div class="flex items-start gap-space-sm bg-surface-container rounded-xl p-space-md">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">verified</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+      Verifikasi otomatis membutuhkan waktu <strong class="text-on-surface font-medium">5–15 menit</strong> setelah bukti dikirim. E-Ticket &amp; jadwal ruang refleksi akan otomatis terbit di aplikasi serta dikirimkan langsung via WhatsApp.
+    </p>
+</div>
+<!-- Sacred Hikmah Quote -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-lg text-center space-y-space-xs shadow-inner">
+<p class="font-sacred-quote-md text-sacred-quote-md text-secondary" dir="rtl">
+      إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ
+    </p>
+<div class="w-12 h-0.5 bg-surface-container-highest mx-auto my-1"></div>
+<p class="text-body-sm font-body-sm text-on-surface-variant italic">
+      "Sesungguhnya Allah mencintai seseorang yang apabila beramal, ia melakukannya dengan itqan (tertib &amp; bersungguh-sungguh)."
+    </p>
+<span class="text-label-xs font-label-xs text-outline tracking-wider uppercase">— HR. Al-Baihaqi</span>
+</div>
+<!-- Sticky Bottom Actions Section -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<button class="w-full h-13 py-3.5 px-space-md rounded-xl bg-primary text-on-primary font-title-sm text-title-sm font-bold flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(79,219,200,0.25)] hover:brightness-105 active:scale-[0.98] transition-all" id="submit-transfer-btn" onclick="submitProof()">
+<span>Kirim Bukti Pembayaran</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<a class="w-full h-11 py-2.5 px-space-md rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-bright active:scale-[0.98] transition-all text-center" href="https://wa.me/6281234567890?text=Halo%20Admin%20PKN,%20saya%20butuh%20bantuan%20konfirmasi%20transfer%20BSI%20200.042" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">support_agent</span>
+<span>Butuh Bantuan? Hubungi Admin BSI PKN</span>
+</a>
+</div>
+<!-- Toast Notification element -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-surface-bright text-on-surface px-4 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 shadow-2xl transition-all duration-300 opacity-0 pointer-events-none translate-y-3 z-50" id="toast-message">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span id="toast-text">Tersalin ke clipboard</span>
+</div>
+</div>
+<script>
+  function showToast(message) {
+    const toast = document.getElementById('toast-message');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+    toastText.innerText = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+    }, 2400);
+  }
+
+  function copyValue(val, msg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(val).then(() => showToast(msg)).catch(() => fallbackCopy(val, msg));
+    } else {
+      fallbackCopy(val, msg);
+    }
+  }
+
+  function fallbackCopy(text, msg) {
+    const tempInput = document.createElement("input");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand("copy");
+      showToast(msg);
+    } catch (e) {
+      showToast("Berhasil disalin: " + text);
+    }
+    document.body.removeChild(tempInput);
+  }
+
+  function triggerFileInput() {
+    const fileInput = document.getElementById('proof-file-input');
+    if (fileInput) fileInput.click();
+  }
+
+  function handleFileSelected(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const previewCard = document.getElementById('file-preview-card');
+      const filenameEl = document.getElementById('preview-filename');
+      const filesizeEl = document.getElementById('preview-filesize');
+      if (filenameEl) filenameEl.innerText = file.name;
+      if (filesizeEl) filesizeEl.innerText = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+      if (previewCard) previewCard.classList.remove('hidden');
+      showToast('Berkas terpilih: ' + file.name);
+    }
+  }
+
+  function removeFile() {
+    const fileInput = document.getElementById('proof-file-input');
+    const previewCard = document.getElementById('file-preview-card');
+    if (fileInput) fileInput.value = "";
+    if (previewCard) previewCard.classList.add('hidden');
+    showToast('Berkas dibatalkan');
+  }
+
+  function submitProof() {
+    const previewCard = document.getElementById('file-preview-card');
+    if (previewCard && previewCard.classList.contains('hidden')) {
+      showToast('Mohon unggah struk bukti transfer terlebih dahulu');
+      triggerFileInput();
+      return;
+    }
+    const btn = document.getElementById('submit-transfer-btn');
+    if (btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Memverifikasi Akad...</span>';
+      btn.disabled = true;
+      setTimeout(() => {
+        showToast('Bukti berhasil dikirim! Menunggu verifikasi otomatis.');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Bukti Terkirim</span>';
+      }, 1500);
+    }
+  }
+
+  // Realistic countdown ticker
+  (function initCountdown() {
+    let totalSeconds = (3 * 3600) + (42 * 60) + 18;
+    const timerEl = document.getElementById('countdown-timer');
+    if (!timerEl) return;
+    setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+        const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        const secs = String(totalSeconds % 60).padStart(2, '0');
+        timerEl.innerText = 'Sisa Waktu: ' + hrs + ':' + mins + ':' + secs;
+      }
+    }, 1000);
+  })();
+</script></main></body></html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#4fdbc8", "surface-container-highest": "#31353b", "surface-dim": "#101419", "tertiary": "#7bd0ff", "on-secondary": "#3f2e00", "on-secondary-container": "#5b4400", "primary-container": "#14b8a6", "tertiary-container": "#1eb0ea", "on-tertiary-fixed": "#001e2c", "surface-container-lowest": "#0a0e13", "outline-variant": "#3c4947", "error": "#ffb4ab", "surface-container-low": "#181c21", "surface": "#101419", "secondary-fixed-dim": "#f7be1d", "primary": "#4fdbc8", "on-secondary-fixed-variant": "#5a4300", "secondary": "#ffca45", "on-primary": "#003731", "outline": "#859490", "on-error": "#690005", "background": "#101419", "inverse-surface": "#e0e2ea", "surface-variant": "#31353b", "on-primary-fixed-variant": "#005048", "inverse-primary": "#006b5f", "surface-container": "#1c2025", "tertiary-fixed": "#c4e7ff", "on-primary-container": "#00423b", "tertiary-fixed-dim": "#7bd0ff", "surface-container-high": "#262a30", "on-background": "#e0e2ea", "on-tertiary-fixed-variant": "#004c69", "on-secondary-fixed": "#251a00", "on-surface": "#e0e2ea", "primary-fixed": "#71f8e4", "on-tertiary-container": "#003f58", "surface-bright": "#36393f", "error-container": "#93000a", "secondary-fixed": "#ffdf9a", "primary-fixed-dim": "#4fdbc8", "on-surface-variant": "#bbcac6", "on-primary-fixed": "#00201c", "on-tertiary": "#00354a", "on-error-container": "#ffdad6", "inverse-on-surface": "#2d3136", "secondary-container": "#e4ae00" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1.25rem", "space-xl": "1.75rem", "space-xs": "0.25rem", "space-md": "0.75rem" }, fontFamily: { "label-xs": ["Inter"], "body-sm": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "title-sm": ["Inter"], "body-md": ["Inter"], "sacred-quote-lg": ["Amiri"], "sacred-quote-md": ["Amiri"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "label-xs": ["11px", { lineHeight: "14px", fontWeight: "500" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "metric-display": ["28px", { lineHeight: "32px", fontWeight: "700" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "600" }], "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "sacred-quote-lg": ["26px", { lineHeight: "48px", fontWeight: "700" }], "sacred-quote-md": ["20px", { lineHeight: "38px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }], "headline-xl": ["30px", { lineHeight: "36px", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[22px]">balance</span></div><div class="flex flex-col"><span class="font-label-xs text-secondary tracking-widest uppercase">PKN Nabawi</span><span class="font-title-sm text-title-sm text-on-surface">Learning Path</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1 rounded-full"><span class="material-symbols-outlined text-secondary text-[16px]">electric_bolt</span><span class="font-label-md text-secondary">420</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Top Gamified Status Bar -->
+<div class="w-full bg-surface-container rounded-xl p-space-md mb-space-lg shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]">local_fire_department</span>
+<span class="font-label-md text-secondary">7 Hari Istiqomah</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-[16px]">favorite</span>
+<span class="font-label-md text-primary">5/5 Sabar</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]">stars</span>
+<span class="font-label-md text-secondary">350 Adab</span>
+</div>
+</div>
+<!-- Unit Card -->
+<div class="mt-1 bg-surface-container-lowest rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-xs text-primary uppercase tracking-wider">Unit 2 • Fase Tamyiz (7-10 Thn)</span>
+<span class="font-label-xs text-on-surface-variant">60% Tuntas</span>
+</div>
+<span class="font-title-sm text-on-surface">Seni Berbicara Saat Anak Marah</span>
+<!-- Progress Bar Track -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mt-1">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-3/5"></div>
+</div>
+</div>
+</div>
+<!-- SECTION 1: WINDING PROGRESSION PATH (DUOLINGO-INSPIRED) -->
+<div class="relative w-full py-4 flex flex-col items-center">
+<!-- SVG Winding Curved Road Track (Background connector) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-surface-container-high" fill="none" viewBox="0 0 320 620">
+<path class="text-surface-container-highest opacity-40" d="M 160 50 C 90 100, 70 170, 160 210 C 250 250, 260 330, 160 380 C 60 430, 80 500, 160 550" stroke-dasharray="1 8" stroke-linecap="round" stroke-width="14"></path>
+<path class="text-primary-container opacity-60" d="M 160 50 C 90 100, 70 170, 160 210 C 250 250, 260 330, 160 380" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+<!-- Node 1: Completed Step (Left skewed) -->
+<div class="relative z-10 self-center translate-x-[-48px] my-3 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center shadow-lg relative transform transition active:scale-95">
+<div class="w-13 h-13 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">check_circle</span>
+</div>
+<!-- 3D Bevel ring underneath -->
+<span class="absolute -bottom-1.5 inset-x-2 h-2 bg-primary rounded-full -z-10 opacity-70"></span>
+</div>
+<div class="mt-2 bg-surface-container-high/90 px-space-sm py-0.5 rounded-full shadow-sm">
+<span class="font-label-xs text-on-surface">Sentuhan Pertama</span>
+</div>
+</div>
+<!-- Node 2: Completed Quran / Hikmah Step (Right skewed) -->
+<div class="relative z-10 self-center translate-x-[48px] my-4 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center shadow-lg relative transform transition active:scale-95">
+<div class="w-13 h-13 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[26px]">menu_book</span>
+</div>
+<!-- Bottom tactile lip -->
+<span class="absolute -bottom-1.5 inset-x-2 h-2 bg-secondary rounded-full -z-10 opacity-80"></span>
+</div>
+<div class="mt-2 bg-surface-container-high/90 px-space-sm py-0.5 rounded-full shadow-sm">
+<span class="font-label-xs text-secondary">Tadabbur Luqman: 17</span>
+</div>
+</div>
+<!-- Node 3: ACTIVE & FOCUSED (Center with Popover) -->
+<div class="relative z-20 self-center my-5 flex flex-col items-center">
+<!-- Radiant Pulsing Ring Animation -->
+<div class="absolute -inset-3 rounded-full bg-primary/20 animate-ping pointer-events-none"></div>
+<div class="absolute -inset-1.5 rounded-full bg-secondary/30 pointer-events-none"></div>
+<!-- Main Glowing 3D Button -->
+<button class="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-xl relative transform active:translate-y-1 transition-all z-10" id="active-node-btn">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[34px]">record_voice_over</span>
+</div>
+<!-- 3D base lip -->
+<span class="absolute -bottom-2 inset-x-2 h-3 bg-on-primary-fixed-variant rounded-full -z-10"></span>
+</button>
+<!-- Active Floating Banner / Tooltip Bubble -->
+<div class="mt-4 w-72 bg-surface-container-high rounded-xl p-space-md shadow-xl flex flex-col items-center text-center relative">
+<div class="absolute -top-2 w-4 h-4 bg-surface-container-high rotate-45"></div>
+<span class="font-label-xs text-primary uppercase font-bold tracking-wider">Langkah Aktif</span>
+<h4 class="font-title-sm text-on-surface mt-1">Tiga Bahasa Mendidik</h4>
+<p class="font-body-sm text-on-surface-variant mt-1">Koneksi sebelum koreksi: Satukan lutut, kontak mata, dan sentuhan hati.</p>
+<button class="mt-3 w-full bg-primary-container text-on-primary font-label-md py-2.5 rounded-lg flex items-center justify-center gap-2 shadow hover:bg-primary transition" id="open-challenge-btn">
+<span>Mulai Latihan (5 Menit)</span>
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Node 4: Locked Lesson (Left Skewed) -->
+<div class="relative z-10 self-center translate-x-[-44px] my-5 flex flex-col items-center opacity-60">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center shadow-sm relative">
+<div class="w-13 h-13 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[24px]">lock</span>
+</div>
+<span class="absolute -bottom-1 inset-x-2 h-2 bg-surface-container-lowest rounded-full -z-10"></span>
+</div>
+<div class="mt-2 bg-surface-container-low px-space-sm py-0.5 rounded-full">
+<span class="font-label-xs text-outline">Seni Menahan Lisan</span>
+</div>
+</div>
+<!-- Node 5: Milestone Treasure Chest (Right Skewed) -->
+<div class="relative z-10 self-center translate-x-[40px] my-4 flex flex-col items-center cursor-pointer group">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center shadow-md relative">
+<span class="material-symbols-outlined text-secondary text-[32px]">inventory_2</span>
+<span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<div class="mt-2 bg-surface-container-high px-space-sm py-0.5 rounded-full">
+<span class="font-label-xs text-secondary font-semibold">Peti: Hadits Anas</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2: INTERACTIVE BITE-SIZED LESSON OVERLAY / DRAWER -->
+<div class="mt-space-lg w-full bg-surface-container-low rounded-xl p-space-md shadow-2xl flex flex-col gap-space-md" id="lesson-overlay">
+<!-- Lesson Header -->
+<div class="flex items-center justify-between pb-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Segmented Micro Progress Bar -->
+<div class="flex-1 mx-space-md flex items-center gap-1">
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-primary"></span>
+<span class="h-2 flex-1 rounded-full bg-surface-container-highest"></span>
+<span class="h-2 flex-1 rounded-full bg-surface-container-highest"></span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="font-label-md">4</span>
+</div>
+</div>
+<!-- Reactive Mentor/Murabbi Mascot Card -->
+<div class="w-full bg-surface-container rounded-xl p-space-sm flex items-center gap-space-md shadow-sm">
+<div class="relative w-14 h-14 rounded-full bg-surface-container-highest flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Dignified friendly young Indonesian Islamic male mentor wearing neat modern teal koko shirt and black peci smiling warmly with approving nod expression digital portrait icon style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaGHKDdizCjNozC606sv7EBLAx8vM183IHXjmcGHvAxXnwdmTIvZx5ZuHx7rADyt4M1RnI7VPwDSX9i5_YqKNOxP-Zgyzv3A7LY7rVIoPi22QWxY9ywLFc8cW1WylQJY-1dfJjpikHXvU8Rdmc23v3Qo-x-y8ZHqhgBioEfcguntzjwJoocbV0n0n5g6TOwApKRuRxdFXVLjVKDEtGrqqhw7o1ZUFa-PisdKJMavYmM2BbB986JrgJ9g">
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-xs text-secondary font-semibold">Murabbi Companion</span>
+<span class="font-label-xs text-on-surface-variant">• Reaksi Adab</span>
+</div>
+<p class="font-body-sm text-on-surface mt-0.5 truncate">"Bagus sekali! Selaraskan bahasa tubuh dahulu..."</p>
+</div>
+</div>
+<!-- Drag & Drop Challenge Instructions -->
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-xs text-tertiary uppercase font-bold tracking-wide">Tantangan Susun Urutan</span>
+<h3 class="font-title-sm text-on-surface">Ketika Anak Mogok Belajar, Mulai Dari Mana?</h3>
+<p class="font-body-sm text-on-surface-variant">Ketuk kartu di bawah untuk menempatkan adab sesuai urutan Nabawiyah.</p>
+</div>
+<!-- Assembly Slots (Target Droppable Area) -->
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- Slot 1 (Filled) -->
+<div class="w-full bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-xs flex items-center justify-center">1</span>
+<span class="font-body-sm text-on-surface">Dekati Fisik (&lt; 1 meter)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+</div>
+<!-- Slot 2 (Filled) -->
+<div class="w-full bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-xs flex items-center justify-center">2</span>
+<span class="font-body-sm text-on-surface">Sejajarkan Kontak Mata (Merendah)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+</div>
+<!-- Slot 3 (Filled) -->
+<div class="w-full bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-xs flex items-center justify-center">3</span>
+<span class="font-body-sm text-on-surface">Sentuh Pundak dengan Lembut</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+</div>
+<!-- Slot 4 (Active Empty Slot) -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-center min-h-[44px]">
+<span class="font-label-xs text-outline italic">Pilih tindakan terakhir di bawah...</span>
+</div>
+</div>
+<!-- Bank of Action Tiles -->
+<div class="flex flex-wrap gap-space-xs mt-2">
+<button class="bg-surface-container-highest hover:bg-surface-bright active:scale-95 text-on-surface px-space-md py-2 rounded-lg font-body-sm shadow-sm transition">
+        Jelaskan Aturan Shalat
+      </button>
+<button class="bg-primary/20 hover:bg-primary/30 active:scale-95 text-primary font-medium px-space-md py-2 rounded-lg font-body-sm shadow-sm transition">
+        Ajak Wudhu Bersama
+      </button>
+<button class="bg-surface-container-highest hover:bg-surface-bright active:scale-95 text-on-surface px-space-md py-2 rounded-lg font-body-sm shadow-sm transition">
+        Beri Waktu Jeda 2 Menit
+      </button>
+</div>
+<!-- Motivational Sacred Hikmah Reference Box -->
+<div class="w-full bg-surface-container rounded-xl p-space-md mt-2 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">auto_stories</span>
+<span class="font-label-xs text-secondary uppercase font-bold tracking-wider">Hikmah Mendidik</span>
+</div>
+<p class="font-sacred-quote-md text-sacred-quote-md text-on-surface text-right leading-loose">
+        إِنَّ الرِّفْقَ لَا يَكُونُ فِي شَيْءٍ إِلَّا زَانَهُ
+      </p>
+<p class="font-body-sm text-on-surface-variant italic">
+        "Sesungguhnya kelembutan itu tidaklah ada pada sesuatu melainkan ia akan menghiasinya." (HR. Muslim)
+      </p>
+</div>
+<!-- Bottom Sheet Feedback Card: Mumtaz State -->
+<div class="w-full bg-surface-container-high rounded-xl p-space-md shadow-lg flex flex-col gap-space-sm mt-1">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-title-sm text-primary">Alhamdulillah, Mumtaz! (+15 Adab)</h4>
+<p class="font-body-sm text-on-surface mt-1 leading-snug">
+            Kaidah Nabawi: <span class="font-medium text-secondary">Tarbiyah Bil-Hal</span> (teladan perbuatan) selalu mendahului seruan kata-kata. Hati anak terbuka ketika merasa dipahami.
+          </p>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full mt-2 bg-primary text-on-primary font-title-sm py-3 rounded-lg flex items-center justify-center gap-2 shadow-md active:scale-98 transition">
+<span>Lanjutkan Pelajaran Berikutnya</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction for smooth active node navigation toggle
+  document.getElementById('open-challenge-btn')?.addEventListener('click', () => {
+    const overlay = document.getElementById('lesson-overlay');
+    if (overlay) {
+      overlay.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  document.getElementById('active-node-btn')?.addEventListener('click', () => {
+    const overlay = document.getElementById('lesson-overlay');
+    if (overlay) {
+      overlay.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.35)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-sm"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] transition-colors text-primary font-bold" data-path="learning-path" href="#"><span class="material-symbols-outlined text-[22px]">route</span><span class="font-label-xs text-label-xs">Tarbiyah</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="physics-labs" href="#"><span class="material-symbols-outlined text-[22px]">science</span><span class="font-label-xs text-label-xs">Simulasi</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="contemplative-hikmah" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-xs text-label-xs">Hikmah</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="parental-diagnostics" href="#"><span class="material-symbols-outlined text-[22px]">monitoring</span><span class="font-label-xs text-label-xs">Diagnostik</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="executive-profile" href="#"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-xs text-label-xs">Mandat</span></a></div></nav></body></html>

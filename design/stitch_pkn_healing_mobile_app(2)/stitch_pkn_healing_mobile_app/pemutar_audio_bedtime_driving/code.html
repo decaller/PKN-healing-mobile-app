@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#bbcac6", "surface-dim": "#101419", "error-container": "#93000a", "on-tertiary": "#00354a", "on-background": "#e0e2ea", "tertiary-fixed": "#c4e7ff", "secondary-fixed": "#ffdf9a", "secondary": "#ffca45", "tertiary-fixed-dim": "#7bd0ff", "on-primary": "#003731", "inverse-primary": "#006b5f", "primary": "#4fdbc8", "inverse-on-surface": "#2d3136", "outline-variant": "#3c4947", "on-secondary-fixed": "#251a00", "on-secondary-container": "#5b4400", "surface-container-lowest": "#0a0e13", "primary-fixed": "#71f8e4", "surface-container": "#1c2025", "outline": "#859490", "tertiary-container": "#1eb0ea", "on-secondary": "#3f2e00", "inverse-surface": "#e0e2ea", "on-secondary-fixed-variant": "#5a4300", "surface-variant": "#31353b", "surface-tint": "#4fdbc8", "surface": "#101419", "primary-container": "#14b8a6", "surface-container-highest": "#31353b", "on-surface": "#e0e2ea", "surface-container-low": "#181c21", "on-primary-fixed": "#00201c", "on-error-container": "#ffdad6", "on-tertiary-container": "#003f58", "on-primary-container": "#00423b", "tertiary": "#7bd0ff", "on-tertiary-fixed-variant": "#004c69", "surface-container-high": "#262a30", "surface-bright": "#36393f", "background": "#101419", "on-primary-fixed-variant": "#005048", "primary-fixed-dim": "#4fdbc8", "secondary-fixed-dim": "#f7be1d", "on-tertiary-fixed": "#001e2c", "secondary-container": "#e4ae00", "error": "#ffb4ab", "on-error": "#690005" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "space-md": "0.75rem", "margin": "1.25rem", "space-xl": "1.75rem", "gutter": "1rem" }, fontFamily: { "title-sm": ["Inter"], "body-md": ["Inter"], "sacred-quote-lg": ["Amiri"], "label-md": ["Inter"], "metric-display": ["Inter"], "headline-md": ["Inter"], "label-xs": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "sacred-quote-md": ["Amiri"], "headline-xl": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "sacred-quote-lg": ["26px", { lineHeight: "48px", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }], "metric-display": ["28px", { lineHeight: "32px", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "label-xs": ["11px", { lineHeight: "14px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "sacred-quote-md": ["20px", { lineHeight: "38px", fontWeight: "400" }], "headline-xl": ["30px", { lineHeight: "36px", fontWeight: "700" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">spa</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md font-semibold text-on-surface tracking-tight leading-none">Bedtime Audio Room</span><div class="flex items-center gap-1.5 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-xs text-label-xs text-primary font-medium tracking-wide uppercase">Nabawi Sanctuary</span></div></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(79,219,200,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- Top Distraction-Free Bar: Modes & Audio Output Device -->
+<div class="w-full flex items-center justify-between py-space-xs">
+<button aria-label="Minimize player" class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">keyboard_arrow_down</span>
+</button>
+<!-- Context Switcher: Bedtime vs Car Driving Mode -->
+<div class="inline-flex items-center bg-surface-container-low p-1 rounded-full">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold shadow-sm transition-all" id="mode-bedtime" type="button">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span>Malam Khusyuk</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs font-semibold transition-all" id="mode-car" type="button">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span>Hands-Free Mobil</span>
+</button>
+</div>
+<!-- Output Selector (Bluetooth / Car / Phone Speaker) -->
+<button aria-label="Device audio output" class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-primary shadow-[0_0_12px_rgba(79,219,200,0.15)] hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">bluetooth_audio</span>
+</button>
+</div>
+<!-- Center Episode Card: Hero & Metadata -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col relative overflow-hidden">
+<!-- Ambient Golden Wash Backlight -->
+<div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs relative z-10">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+<span class="font-label-xs text-label-xs tracking-wide uppercase font-semibold">Tazkiyah Batin • HR. Ahmad</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-xs text-label-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Live Audio</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight leading-snug my-1 relative z-10">
+      Mengobati Kerasnya Hati dengan Mengusap Kepala Anak Yatim
+    </h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm relative z-10">
+<span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span>
+<span class="font-medium text-on-surface">Ustadz Dr. Abdul Kholiq</span>
+<span>•</span>
+<span>Durasi 18 Menit</span>
+</div>
+<!-- Waveform Tactile Scrubber -->
+<div class="mt-space-md pt-space-xs relative z-10">
+<div class="flex justify-between items-center text-on-surface-variant font-label-xs text-label-xs mb-1.5 tabular-nums">
+<span class="text-primary font-semibold" id="current-time">08:15</span>
+<span class="text-secondary font-medium">Sisa 09:45</span>
+<span>18:00</span>
+</div>
+<!-- Interactive Waveform Graphic Bar -->
+<div class="relative w-full h-10 flex items-center cursor-pointer select-none" id="waveform-scrubber">
+<div class="w-full h-8 bg-surface-container rounded-lg px-2 flex items-center justify-between gap-0.5 overflow-hidden">
+<!-- 32 Bar Dynamic Waveform Graphic -->
+<div class="w-1 h-3 rounded-full bg-primary"></div>
+<div class="w-1 h-4 rounded-full bg-primary"></div>
+<div class="w-1 h-6 rounded-full bg-primary"></div>
+<div class="w-1 h-5 rounded-full bg-primary"></div>
+<div class="w-1 h-7 rounded-full bg-primary"></div>
+<div class="w-1 h-6 rounded-full bg-primary"></div>
+<div class="w-1 h-4 rounded-full bg-primary"></div>
+<div class="w-1 h-5 rounded-full bg-primary"></div>
+<div class="w-1 h-7 rounded-full bg-primary"></div>
+<div class="w-1 h-8 rounded-full bg-primary"></div>
+<div class="w-1 h-6 rounded-full bg-primary"></div>
+<div class="w-1 h-5 rounded-full bg-primary"></div>
+<div class="w-1 h-7 rounded-full bg-primary"></div>
+<div class="w-1 h-6 rounded-full bg-primary"></div>
+<div class="w-1 h-4 rounded-full bg-primary"></div>
+<!-- Scrubber indicator knot -->
+<div class="w-1.5 h-8 rounded-full bg-secondary shadow-[0_0_10px_rgba(255,202,69,0.8)]"></div>
+<!-- Inactive / Ahead waveform -->
+<div class="w-1 h-5 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-6 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-4 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-7 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-5 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-4 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-6 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-5 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-4 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-1 h-2 rounded-full bg-surface-variant"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Synchronized Arabic & Indonesian Transcript (Auto-Scrolling Glow Container) -->
+<div class="w-full bg-surface-container-high rounded-xl p-space-md shadow-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">sync_saved_locally</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">Matan &amp; Terjemahan Sinkron</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Ayat/Matan #4</span>
+</div>
+<!-- Arabic Matan in Sacred Amiri Typography -->
+<div class="w-full text-right py-1">
+<p class="font-sacred-quote-md text-sacred-quote-md text-secondary leading-loose tracking-wide font-normal" dir="rtl">
+        إِنْ أَرَدْتَ تَلْيِينَ قَلْبِكَ فَأَطْعِمِ الْمِسْكِينَ وَامْسَحْ رَأْسَ الْيَتِيمِ
+      </p>
+</div>
+<!-- Ornamental Soft Divider -->
+<div class="w-full h-px bg-surface-variant my-2 opacity-60"></div>
+<!-- Active Synchronized Indonesian Line with Ambient Radiant Backlight -->
+<div class="relative p-2.5 rounded-lg bg-surface-container/70 shadow-[inset_0_0_20px_rgba(255,202,69,0.06)]">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5 flex-shrink-0 animate-pulse">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<span class="text-secondary font-medium">"Barangsiapa yang mengusap kepala anak yatim</span> semata-mata karena Allah, maka setiap helai rambut yang tersentuh tangannya akan mendatangkan kebaikan baginya..."
+        </p>
+</div>
+</div>
+</div>
+<!-- Giant Tactile Playback Controls (Optimized for Night Bed & Driving Safety 64-76dp) -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col items-center justify-center gap-space-md shadow-md">
+<div class="w-full flex items-center justify-around">
+<!-- Speed selector pill -->
+<button class="px-3 py-2 rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-variant transition-colors min-w-[52px] text-center" id="playback-speed" type="button">
+        1.0x
+      </button>
+<!-- Replay 15s (56x56 touch target) -->
+<button aria-label="Mundur 15 detik" class="w-14 h-14 rounded-full bg-surface-container flex flex-col items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[28px]">export_notes</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant -mt-1 font-semibold">15s</span>
+</button>
+<!-- Giant Play/Pause Primary Action Button (76x76dp emerald glowing aura) -->
+<button aria-label="Putar atau jeda audio" class="w-20 h-20 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_24px_rgba(20,184,166,0.45)] hover:shadow-[0_0_32px_rgba(20,184,166,0.6)] active:scale-95 transition-all" id="main-play-btn" type="button">
+<span class="material-symbols-outlined text-[42px]" id="play-icon" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Forward 15s (56x56 touch target) -->
+<button aria-label="Maju 15 detik" class="w-14 h-14 rounded-full bg-surface-container flex flex-col items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[28px]">apps</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant -mt-1 font-semibold">15s</span>
+</button>
+<!-- Quick Bookmark/Favorite Hikmah -->
+<button aria-label="Simpan intisari hikmah" class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-secondary active:scale-95 transition-colors" id="bookmark-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">bookmark</span>
+</button>
+</div>
+<!-- Audio Progress Marker Bar for Thumb Control -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px] text-primary">volume_up</span>
+<span>Volume diatur melalui sensor volume fisik perangkat</span>
+</div>
+</div>
+<!-- Sleep Timer Preset Pills Row -->
+<div class="w-full flex flex-col space-y-2 pb-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span class="font-label-xs text-label-xs font-semibold uppercase tracking-wider">Pengatur Waktu Tidur (Sleep Timer)</span>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-semibold">Aktif • 21:45 tersisa</span>
+</div>
+<!-- Sleep Timer Button Strip -->
+<div class="grid grid-cols-4 gap-2 w-full">
+<button class="timer-chip py-2 px-1 text-center rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-medium transition-all" type="button">
+        15 Menit
+      </button>
+<!-- Active Preset: 30 Menit with Glowing Accent -->
+<button class="timer-chip py-2 px-1 text-center rounded-lg bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold shadow-[0_0_12px_rgba(20,184,166,0.25)] transition-all" type="button">
+        30 Menit
+      </button>
+<button class="timer-chip py-2 px-1 text-center rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-medium transition-all" type="button">
+        Akhir Kajian
+      </button>
+<button class="timer-chip py-2 px-1 text-center rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs font-medium transition-all" type="button">
+        Mati Otomatis
+      </button>
+</div>
+</div>
+</div>
+<!-- Client-side Micro-interactions Script -->
+<script>
+  (function () {
+    // Play/Pause State Toggle
+    const playBtn = document.getElementById('main-play-btn');
+    const playIcon = document.getElementById('play-icon');
+    let isPlaying = true;
+
+    if (playBtn && playIcon) {
+      playBtn.addEventListener('click', function () {
+        isPlaying = !isPlaying;
+        playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      });
+    }
+
+    // Playback Speed Cycling Toggle (1.0x -> 1.2x -> 0.8x -> 1.0x)
+    const speedBtn = document.getElementById('playback-speed');
+    const speeds = ['1.0x', '1.2x', '0.8x'];
+    let currentSpeedIndex = 0;
+
+    if (speedBtn) {
+      speedBtn.addEventListener('click', function () {
+        currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+        speedBtn.textContent = speeds[currentSpeedIndex];
+      });
+    }
+
+    // Driving vs Bedtime Mode Switcher
+    const modeBedtime = document.getElementById('mode-bedtime');
+    const modeCar = document.getElementById('mode-car');
+
+    if (modeBedtime && modeCar) {
+      modeBedtime.addEventListener('click', function () {
+        modeBedtime.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold shadow-sm transition-all';
+        modeCar.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs font-semibold transition-all';
+      });
+
+      modeCar.addEventListener('click', function () {
+        modeCar.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold shadow-sm transition-all';
+        modeBedtime.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs font-semibold transition-all';
+      });
+    }
+
+    // Bookmark Toggle State
+    const bookmarkBtn = document.getElementById('bookmark-btn');
+    if (bookmarkBtn) {
+      bookmarkBtn.addEventListener('click', function () {
+        const icon = bookmarkBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          const isFilled = icon.getAttribute('style')?.includes("'FILL' 1");
+          if (isFilled) {
+            icon.removeAttribute('style');
+            bookmarkBtn.classList.remove('text-secondary');
+            bookmarkBtn.classList.add('text-on-surface');
+          } else {
+            icon.setAttribute('style', "font-variation-settings: 'FILL' 1;");
+            bookmarkBtn.classList.remove('text-on-surface');
+            bookmarkBtn.classList.add('text-secondary');
+          }
+        }
+      });
+    }
+
+    // Sleep Timer Preset Buttons Selection
+    const timerChips = document.querySelectorAll('.timer-chip');
+    timerChips.forEach(chip => {
+      chip.addEventListener('click', function () {
+        timerChips.forEach(c => {
+          c.className = 'timer-chip py-2 px-1 text-center rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-medium transition-all';
+        });
+        this.className = 'timer-chip py-2 px-1 text-center rounded-lg bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold shadow-[0_0_12px_rgba(20,184,166,0.25)] transition-all';
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.35)]" data-active-classes="text-primary [&amp;&gt;div]:bg-primary-container/20 [&amp;&gt;div&gt;span]:text-primary"><div class="flex justify-around items-center h-16 px-space-sm"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface" data-path="executive-dashboard" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">shield_with_heart</span></div><span class="font-label-xs text-label-xs font-medium tracking-tight">Tazkiyah</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface" data-path="character-evaluations" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">vital_signs</span></div><span class="font-label-xs text-label-xs font-medium tracking-tight">Evaluasi</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] transition-all text-primary [&amp;&gt;div]:bg-primary-container/20 [&amp;&gt;div&gt;span]:text-primary" data-path="bedtime-audio-room" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">bedtime</span></div><span class="font-label-xs text-label-xs font-medium tracking-tight">Ruang Tidur</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface" data-path="curhat-sanctuary" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">psychology_alt</span></div><span class="font-label-xs text-label-xs font-medium tracking-tight">Curhat</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface" data-path="mentor-profile" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">account_balance</span></div><span class="font-label-xs text-label-xs font-medium tracking-tight">Institusi</span></a></div></nav></body></html>

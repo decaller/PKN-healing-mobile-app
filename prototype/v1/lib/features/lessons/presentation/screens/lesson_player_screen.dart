@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -29,9 +31,10 @@ class LessonPlayerScreen extends ConsumerWidget {
     final totalSteps = lesson.cards.length;
     final currentStep = state.currentStepIndex + 1;
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
+    return PknScaffold(
+      appBar: PknAppBar(
+        leading: PknIconButton(
+          tooltip: 'Tutup',
           icon: const Icon(Icons.close_rounded),
           onPressed: () => context.pop(),
         ),
@@ -136,7 +139,7 @@ class LessonPlayerScreen extends ConsumerWidget {
     if (card is MultipleChoiceCard) {
       if (!state.isAnswerChecked) {
         final canCheck = state.selectedOptionIndex != null;
-        return ElevatedButton(
+        return PknActionButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: canCheck ? AppColors.brandPrimary : Colors.grey.shade400,
             foregroundColor: Colors.white,
@@ -152,7 +155,7 @@ class LessonPlayerScreen extends ConsumerWidget {
     if (card is FillInBlankCard) {
       if (!state.isAnswerChecked) {
         final canCheck = state.selectedBlankWord != null;
-        return ElevatedButton(
+        return PknActionButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: canCheck ? AppColors.brandPrimary : Colors.grey.shade400,
             foregroundColor: Colors.white,
@@ -166,7 +169,7 @@ class LessonPlayerScreen extends ConsumerWidget {
 
     // Swipe Poll
     if (card is SwipePollCard && state.pollChoice == null) {
-      return OutlinedButton(
+      return PknActionButton.outlined(
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         ),
@@ -176,7 +179,7 @@ class LessonPlayerScreen extends ConsumerWidget {
     }
 
     // Default Continue / Finish Button
-    return ElevatedButton(
+    return PknActionButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: state.isLastStep ? AppColors.success : AppColors.brandPrimary,
         foregroundColor: Colors.white,
@@ -186,9 +189,9 @@ class LessonPlayerScreen extends ConsumerWidget {
         final isFinished = await controller.proceedNext();
         if (isFinished && context.mounted) {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (ctx) => AdabGrowthReportScreen(lesson: lesson),
-            ),
+            usesCupertino(context)
+                ? CupertinoPageRoute(builder: (ctx) => AdabGrowthReportScreen(lesson: lesson))
+                : MaterialPageRoute(builder: (ctx) => AdabGrowthReportScreen(lesson: lesson)),
           );
         }
       },

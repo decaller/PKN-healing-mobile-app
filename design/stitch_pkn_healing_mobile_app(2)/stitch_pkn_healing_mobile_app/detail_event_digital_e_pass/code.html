@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#bbcac6", "surface-dim": "#101419", "error-container": "#93000a", "on-tertiary": "#00354a", "on-background": "#e0e2ea", "tertiary-fixed": "#c4e7ff", "secondary-fixed": "#ffdf9a", "secondary": "#ffca45", "tertiary-fixed-dim": "#7bd0ff", "on-primary": "#003731", "inverse-primary": "#006b5f", "primary": "#4fdbc8", "inverse-on-surface": "#2d3136", "outline-variant": "#3c4947", "on-secondary-fixed": "#251a00", "on-secondary-container": "#5b4400", "surface-container-lowest": "#0a0e13", "primary-fixed": "#71f8e4", "surface-container": "#1c2025", "outline": "#859490", "tertiary-container": "#1eb0ea", "on-secondary": "#3f2e00", "inverse-surface": "#e0e2ea", "on-secondary-fixed-variant": "#5a4300", "surface-variant": "#31353b", "surface-tint": "#4fdbc8", "surface": "#101419", "primary-container": "#14b8a6", "surface-container-highest": "#31353b", "on-surface": "#e0e2ea", "surface-container-low": "#181c21", "on-primary-fixed": "#00201c", "on-error-container": "#ffdad6", "on-tertiary-container": "#003f58", "on-primary-container": "#00423b", "tertiary": "#7bd0ff", "on-tertiary-fixed-variant": "#004c69", "surface-container-high": "#262a30", "surface-bright": "#36393f", "background": "#101419", "on-primary-fixed-variant": "#005048", "primary-fixed-dim": "#4fdbc8", "secondary-fixed-dim": "#f7be1d", "on-tertiary-fixed": "#001e2c", "secondary-container": "#e4ae00", "error": "#ffb4ab", "on-error": "#690005" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "space-md": "0.75rem", "margin": "1.25rem", "space-xl": "1.75rem", "gutter": "1rem" }, fontFamily: { "title-sm": ["Inter"], "body-md": ["Inter"], "sacred-quote-lg": ["Amiri"], "label-md": ["Inter"], "metric-display": ["Inter"], "headline-md": ["Inter"], "label-xs": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "sacred-quote-md": ["Amiri"], "headline-xl": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "sacred-quote-lg": ["26px", { lineHeight: "48px", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }], "metric-display": ["28px", { lineHeight: "32px", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "label-xs": ["11px", { lineHeight: "14px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "sacred-quote-md": ["20px", { lineHeight: "38px", fontWeight: "400" }], "headline-xl": ["30px", { lineHeight: "36px", fontWeight: "700" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Kembali" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:text-primary hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><div class="flex flex-col"><h1 class="font-title-sm text-title-sm font-semibold text-on-surface truncate leading-tight">Hikmah Detail View</h1><span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>Sesi Terbimbing</span></div></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(79,219,200,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-10 space-y-space-lg px-margin">
+<!-- Interactive Utility Row -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      E-Pass Terbit Resmi
+    </div>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Bagikan Acara" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors active:scale-95" id="shareBtn">
+<span class="material-symbols-outlined text-[19px]">share</span>
+</button>
+<button aria-label="Simpan Agenda" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95" id="bookmarkBtn">
+<span class="material-symbols-outlined text-[19px]">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Hero Visual Card -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-low shadow-xl">
+<div class="w-full h-52 bg-cover bg-center relative flex flex-col justify-between p-space-md" data-alt="Cinematic wide-angle interior view of Masjid Raya Pondok Indah Jakarta with dramatic warm ambient illumination, polished marble reflecting soft lantern light, deep slate shadows, atmospheric tranquil Islamic architecture, high-end executive sanctuary aesthetic, shot on medium format, emerald and muted golden radiance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJcTNMwrEKb1x9A4nbKU6gY5n8gH1rsVrfLyWkaLJyIY3yK4PRPkO6lgCI3OECPxBttFiquC9STVUOhhLmKQKpD6Nt3KbrqVO8VovEMKNm_kR13L_fcWt9g-iJax4HIkj_AAg_1iIrY3hBN6qh-9r8AaCF_Yuc3T4hpad6kvb_ptsg3bUrV-Tp6EFHiU9Ve0fRCv7-TKprl1CSs4L2iW1Lu75gBzy45eLgMrSoC-313bh0V-KsOTha3A')">
+<!-- Atmospheric Gradient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent"></div>
+<!-- Top Badges inside Hero -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-xs text-label-xs shadow-md">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span>OFFLINE EVENT • SISA 18 KURSI</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary-container font-label-xs text-label-xs font-semibold uppercase tracking-wider">
+          Eksklusif
+        </span>
+</div>
+<!-- Hero Title on Media -->
+<div class="relative z-10 flex flex-col gap-1">
+<span class="text-secondary font-label-xs text-label-xs font-semibold tracking-wider uppercase">Majelis Tarbiyah Nabawiyah</span>
+<h2 class="text-on-surface font-headline-md text-headline-md font-semibold leading-tight drop-shadow-sm">
+          Daurah Akbar &amp; Workshop Parenting Nabawiyah 2026
+        </h2>
+</div>
+</div>
+<!-- Countdown Timer Bar -->
+<div class="bg-surface-container-lowest px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+<span>Mulai Dalam:</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-secondary">
+<div class="flex flex-col items-center bg-surface-container px-2 py-0.5 rounded">
+<span class="text-secondary tracking-tight" id="cd-days">04</span>
+<span class="text-[9px] font-normal text-on-surface-variant -mt-0.5">Hari</span>
+</div>
+<span class="text-outline-variant font-bold">:</span>
+<div class="flex flex-col items-center bg-surface-container px-2 py-0.5 rounded">
+<span class="text-secondary tracking-tight" id="cd-hours">08</span>
+<span class="text-[9px] font-normal text-on-surface-variant -mt-0.5">Jam</span>
+</div>
+<span class="text-outline-variant font-bold">:</span>
+<div class="flex flex-col items-center bg-surface-container px-2 py-0.5 rounded">
+<span class="text-secondary tracking-tight" id="cd-mins">20</span>
+<span class="text-[9px] font-normal text-on-surface-variant -mt-0.5">Mnt</span>
+</div>
+<span class="text-outline-variant font-bold">:</span>
+<div class="flex flex-col items-center bg-surface-container px-2 py-0.5 rounded">
+<span class="text-secondary tracking-tight" id="cd-secs">15</span>
+<span class="text-[9px] font-normal text-on-surface-variant -mt-0.5">Dtk</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Key Information Grid (2x2) -->
+<div class="grid grid-cols-2 gap-space-sm w-full">
+<!-- Box 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div>
+<p class="text-on-surface font-title-sm text-title-sm leading-snug">Ahad, 15 Nov 2026</p>
+<p class="text-on-surface-variant font-label-xs text-label-xs mt-0.5">08.30 – 15.30 WIB</p>
+</div>
+</div>
+<!-- Box 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div>
+<p class="text-on-surface font-title-sm text-title-sm leading-snug truncate">Masjid Raya Pondok Indah</p>
+<p class="text-on-surface-variant font-label-xs text-label-xs mt-0.5 truncate">Jakarta Selatan</p>
+</div>
+</div>
+<!-- Box 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">record_voice_over</span>
+</div>
+<div>
+<p class="text-on-surface font-title-sm text-title-sm leading-snug truncate">Ust. Dr. Abdul Kholiq</p>
+<p class="text-on-surface-variant font-label-xs text-label-xs mt-0.5 truncate">&amp; Tim Instruktur TB-40</p>
+</div>
+</div>
+<!-- Box 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-fixed mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div>
+<p class="text-on-surface font-title-sm text-title-sm leading-snug truncate">Fasilitas Lengkap</p>
+<p class="text-on-surface-variant font-label-xs text-label-xs mt-0.5 truncate">Kit Fisik, Konsul &amp; Lunch</p>
+</div>
+</div>
+</div>
+<!-- Interactive Digital E-Pass Card (The Sacred Executive Ticket) -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-high shadow-2xl">
+<!-- Subtle Background Ambient Geometry -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<!-- Ticket Top Segment -->
+<div class="p-space-lg relative flex flex-col space-y-space-md">
+<!-- Ticket Header Row -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[17px]">verified</span>
+</div>
+<div>
+<p class="text-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold leading-none">PKN HEALING PASS</p>
+<p class="text-on-surface font-label-md text-label-md font-semibold mt-0.5">Tiket Resmi Peserta</p>
+</div>
+</div>
+<div class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-xs text-label-xs">
+          VIP ACCESS
+        </div>
+</div>
+<!-- Participant Identity Block -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-xl shadow-inner">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of Abu Zaid, a respected Indonesian Muslim father in early 40s with a neat trimmed beard, warm confident gaze, wearing a minimalist dark olive collar shirt, serene studio lighting with soft obsidian slate backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYWQo6Ge0WWPADCqnpBRMQb0UVQMab7U3x2wOfstOCNRc6F-6osE4tjQP_qED4Zcvgw19XoOvTX6bS1rU79N-LQdbfW6NSfkZDT8vhTxlO8LVZUzsFlzqag_FcvTvSX8yrm3npxPjpWQzB4yL_PQ6bfyKrIhk9F1QV6F6DTlGUwEQBmCc7ZOfCgNp5Yuy1tDmAAeDWjI-XmBbhj_2Fm7VSME3AH0hBDqW2o6sABcE6WhAMGkJHTScSqA"/>
+</div>
+<div class="min-w-0 flex flex-col">
+<span class="text-on-surface-variant font-label-xs text-label-xs">Nama Terdaftar</span>
+<p class="text-on-surface font-title-sm text-title-sm font-bold truncate">Abu Zaid</p>
+<span class="text-secondary-fixed-dim font-label-xs text-label-xs truncate font-mono">#PKN-8842 • Angkatan IX</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="text-on-surface-variant font-label-xs text-label-xs">Penetapan Kursi</span>
+<span class="px-2 py-1 rounded bg-primary-container text-on-primary font-label-xs text-label-xs font-bold mt-1 shadow-sm">
+            Shaff Depan B-14
+          </span>
+</div>
+</div>
+</div>
+<!-- Ticket Perforation Tear-Line Simulation -->
+<div class="relative w-full h-6 flex items-center justify-between">
+<!-- Left Cutout Circle -->
+<div class="w-5 h-5 -ml-2.5 rounded-full bg-surface shadow-inner"></div>
+<!-- Dashed Perforation Line -->
+<div class="flex-1 h-0.5 mx-2 bg-gradient-to-r from-transparent via-outline-variant/60 to-transparent flex justify-center items-center gap-1.5 overflow-hidden">
+<div class="w-full flex justify-between px-2">
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+<span class="w-2 h-0.5 bg-outline-variant/50 rounded-full"></span>
+</div>
+</div>
+<!-- Right Cutout Circle -->
+<div class="w-5 h-5 -mr-2.5 rounded-full bg-surface shadow-inner"></div>
+</div>
+<!-- Ticket Bottom Scanning Segment -->
+<div class="p-space-lg bg-surface-container-low flex flex-col items-center text-center space-y-space-md">
+<!-- High Contrast Interactive QR Visual -->
+<div class="relative p-3 bg-on-surface rounded-xl shadow-lg group cursor-pointer" onclick="toggleQrZoom()">
+<!-- SVG Vector QR Code -->
+<svg class="w-36 h-36" fill="none" viewbox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Positioning Blocks -->
+<rect fill="#101419" height="36" rx="6" width="36" x="10" y="10"></rect>
+<rect fill="#FFFFFF" height="24" rx="3" width="24" x="16" y="16"></rect>
+<rect fill="#101419" height="12" rx="2" width="12" x="22" y="22"></rect>
+<rect fill="#101419" height="36" rx="6" width="36" x="94" y="10"></rect>
+<rect fill="#FFFFFF" height="24" rx="3" width="24" x="100" y="16"></rect>
+<rect fill="#101419" height="12" rx="2" width="12" x="106" y="22"></rect>
+<rect fill="#101419" height="36" rx="6" width="36" x="10" y="94"></rect>
+<rect fill="#FFFFFF" height="24" rx="3" width="24" x="16" y="100"></rect>
+<rect fill="#101419" height="12" rx="2" width="12" x="22" y="106"></rect>
+<!-- High Density Synthetic Matrix Modules -->
+<rect fill="#101419" height="6" width="6" x="54" y="14"></rect>
+<rect fill="#101419" height="6" width="6" x="66" y="14"></rect>
+<rect fill="#101419" height="6" width="6" x="78" y="14"></rect>
+<rect fill="#101419" height="18" width="6" x="54" y="26"></rect>
+<rect fill="#101419" height="6" width="18" x="66" y="32"></rect>
+<rect fill="#101419" height="12" width="6" x="78" y="44"></rect>
+<rect fill="#101419" height="6" width="18" x="14" y="54"></rect>
+<rect fill="#101419" height="18" width="6" x="26" y="66"></rect>
+<rect fill="#101419" height="6" width="6" x="38" y="60"></rect>
+<!-- Center Identity Emblem -->
+<circle cx="70" cy="70" fill="#14B8A6" r="16"></circle>
+<path d="M64 70.5L68 74.5L76 65.5" stroke="#003731" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<rect fill="#101419" height="6" width="12" x="94" y="54"></rect>
+<rect fill="#101419" height="6" width="18" x="112" y="60"></rect>
+<rect fill="#101419" height="14" width="6" x="100" y="72"></rect>
+<rect fill="#101419" height="6" width="12" x="118" y="80"></rect>
+<rect fill="#101419" height="12" width="6" x="54" y="94"></rect>
+<rect fill="#101419" height="6" width="12" x="66" y="100"></rect>
+<rect fill="#101419" height="6" width="18" x="54" y="118"></rect>
+<rect fill="#101419" height="18" width="6" x="78" y="112"></rect>
+<rect fill="#101419" height="6" width="6" x="94" y="94"></rect>
+<rect fill="#101419" height="6" width="18" x="106" y="94"></rect>
+<rect fill="#101419" height="18" width="6" x="100" y="106"></rect>
+<rect fill="#101419" height="6" width="18" x="112" y="118"></rect>
+</svg>
+<!-- Tap to zoom overlay indicator -->
+<span class="absolute bottom-1 right-1 text-[9px] font-bold text-surface-container-lowest bg-primary-fixed px-1.5 py-0.5 rounded shadow-sm">
+          TAP PERBESAR
+        </span>
+</div>
+<!-- Barcode Visual Strip -->
+<div class="w-full flex flex-col items-center gap-1">
+<div class="h-6 w-52 flex justify-between items-center opacity-80">
+<span class="w-1 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-2 h-full bg-on-surface"></span>
+<span class="w-1 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-1.5 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-2.5 h-full bg-on-surface"></span>
+<span class="w-1 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-1.5 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-2 h-full bg-on-surface"></span>
+<span class="w-1 h-full bg-on-surface"></span>
+<span class="w-3 h-full bg-on-surface"></span>
+<span class="w-0.5 h-full bg-on-surface"></span>
+<span class="w-1 h-full bg-on-surface"></span>
+<span class="w-2 h-full bg-on-surface"></span>
+</div>
+<span class="text-on-surface-variant font-label-xs text-label-xs font-mono tracking-widest text-[10px]">
+          8842 • 9021 • 4430 • GATE-A
+        </span>
+</div>
+<!-- Verification Status -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(20,184,166,0.6)]"></span>
+<span class="text-primary font-semibold">Lunas &amp; Terverifikasi</span>
+<span>• Gate Dibuka 07.45 WIB</span>
+</div>
+</div>
+</div>
+<!-- Sacred Hikmah Micro-Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between text-secondary">
+<span class="text-secondary font-label-xs text-label-xs font-semibold tracking-wider uppercase">Adab Menuntut Ilmu</span>
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</div>
+<p class="font-sacred-quote-md text-sacred-quote-md text-on-surface text-right pt-1 leading-relaxed">
+      مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ
+    </p>
+<div class="h-px w-full bg-outline-variant/30 my-1"></div>
+<p class="text-on-surface-variant font-label-xs text-label-xs italic leading-tight">
+      “Barangsiapa menempuh jalan untuk menuntut ilmu, maka Allah mudahkan baginya jalan menuju surga.” (HR. Muslim)
+    </p>
+</div>
+<!-- Venue Location Snippet -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-on-surface font-title-sm text-title-sm font-semibold">Lokasi Acara</h3>
+<span class="text-primary font-label-xs text-label-xs font-semibold">Ruang Sholat Utama &amp; Ballroom</span>
+</div>
+<div class="w-full h-32 bg-cover bg-center rounded-xl overflow-hidden relative shadow-md" data-location="Masjid Raya Pondok Indah, Jakarta Selatan" style="">
+<div class="absolute inset-0 bg-surface-dim/40 backdrop-blur-[1px] flex items-center justify-center">
+<div class="p-2.5 rounded-full bg-surface-container-highest/90 text-primary shadow-lg flex items-center gap-2 px-4">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Masjid Raya Pondok Indah</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Executive Action Controls -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<!-- Primary Wallet Button -->
+<button class="w-full py-3.5 px-space-md rounded-xl bg-primary-container text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-sm shadow-lg hover:brightness-110 active:scale-[0.98] transition-all" id="walletBtn">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+<span>Simpan ke Apple Wallet / Google Wallet</span>
+</button>
+<!-- Secondary Map Navigation -->
+<a class="w-full py-3 px-space-md rounded-xl bg-surface-container text-on-surface font-title-sm text-title-sm font-medium flex items-center justify-center gap-space-sm hover:bg-surface-container-high active:scale-[0.98] transition-all" href="https://maps.google.com/?q=Masjid+Raya+Pondok+Indah+Jakarta" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
+<span>Buka Rute Navigasi Google Maps</span>
+</a>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 inset-x-margin max-w-sm mx-auto bg-surface-container-highest text-on-surface px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none z-50" id="toast">
+<span class="material-symbols-outlined text-primary text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-body-sm text-body-sm flex-1" id="toastMessage">Tindakan berhasil</span>
+</div>
+</div>
+<script>
+  // Simple Countdown Timer simulation
+  (function initCountdown() {
+    let seconds = 15;
+    let minutes = 20;
+    let hours = 8;
+    let days = 4;
+
+    const elSecs = document.getElementById('cd-secs');
+    const elMins = document.getElementById('cd-mins');
+    const elHours = document.getElementById('cd-hours');
+
+    setInterval(() => {
+      if (seconds > 0) {
+        seconds--;
+      } else {
+        seconds = 59;
+        if (minutes > 0) {
+          minutes--;
+        } else {
+          minutes = 59;
+          if (hours > 0) hours--;
+        }
+      }
+      if (elSecs) elSecs.textContent = seconds < 10 ? '0' + seconds : seconds;
+      if (elMins) elMins.textContent = minutes < 10 ? '0' + minutes : minutes;
+      if (elHours) elHours.textContent = hours < 10 ? '0' + hours : hours;
+    }, 1000);
+  })();
+
+  // Toast notification helper
+  function showToast(message, iconName = 'check_circle') {
+    const toast = document.getElementById('toast');
+    const msg = document.getElementById('toastMessage');
+    const icon = document.getElementById('toastIcon');
+    if (!toast || !msg) return;
+
+    msg.textContent = message;
+    if (icon) icon.textContent = iconName;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 3200);
+  }
+
+  // Interactive buttons handler
+  document.getElementById('walletBtn')?.addEventListener('click', () => {
+    showToast('E-Pass PKN-8842 tersinkronisasi ke Dompet Digital', 'wallet');
+  });
+
+  document.getElementById('bookmarkBtn')?.addEventListener('click', function() {
+    const icon = this.querySelector('.material-symbols-outlined');
+    if (icon.textContent === 'bookmark_border') {
+      icon.textContent = 'bookmark';
+      this.classList.add('text-secondary');
+      showToast('Agenda disimpan ke jadwal favorit');
+    } else {
+      icon.textContent = 'bookmark_border';
+      this.classList.remove('text-secondary');
+      showToast('Agenda dihapus dari favorit');
+    }
+  });
+
+  document.getElementById('shareBtn')?.addEventListener('click', () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Daurah Akbar Parenting Nabawiyah 2026',
+        text: 'E-Pass Resmi Peserta: Abu Zaid (#PKN-8842)',
+        url: window.location.href,
+      }).catch(() => {});
+    } else {
+      showToast('Tautan E-Pass berhasil disalin ke clipboard', 'link');
+    }
+  });
+
+  function toggleQrZoom() {
+    showToast('Tunjukkan kode QR kepada panitia di Meja Registrasi A', 'qr_code_scanner');
+  }
+</script></main></body></html>

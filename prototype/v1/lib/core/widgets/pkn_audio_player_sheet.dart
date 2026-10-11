@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
@@ -72,7 +73,7 @@ class PknAudioPlayerSheet extends StatefulWidget {
       ),
     ];
 
-    showModalBottomSheet(
+    showPknSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
@@ -131,7 +132,8 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             child: Row(
               children: [
-                IconButton(
+                PknIconButton(
+                  tooltip: 'Tutup pemutar audio',
                   icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 28),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
@@ -144,7 +146,8 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
                         ),
                   ),
                 ),
-                IconButton(
+                PknIconButton(
+                  tooltip: 'Bagikan',
                   icon: const Icon(Icons.share_outlined, size: 20),
                   onPressed: () {},
                 ),
@@ -225,7 +228,7 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
                       inactiveTrackColor: Colors.white.withValues(alpha: 0.3),
                       thumbColor: AppColors.brandGold,
                     ),
-                    child: Slider(
+                    child: PknSlider(
                       value: _progress,
                       onChanged: (val) => setState(() => _progress = val),
                     ),
@@ -258,7 +261,8 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
+                      PknIconButton(
+                        tooltip: 'Audio sebelumnya',
                         icon: const Icon(Icons.skip_previous_rounded, color: Colors.white, size: 30),
                         onPressed: _currentIndex > 0
                             ? () => setState(() => _currentIndex--)
@@ -268,7 +272,7 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
                       Semantics(
                         button: true,
                         label: _isPlaying ? 'Jeda Audio' : 'Putar Audio',
-                        child: InkWell(
+                        child: PknTap(
                           onTap: () => setState(() => _isPlaying = !_isPlaying),
                           borderRadius: BorderRadius.circular(32),
                           child: Container(
@@ -287,7 +291,8 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
                         ),
                       ),
                       const SizedBox(width: 16),
-                      IconButton(
+                      PknIconButton(
+                        tooltip: 'Audio berikutnya',
                         icon: const Icon(Icons.skip_next_rounded, color: Colors.white, size: 30),
                         onPressed: _currentIndex < widget.playlist.length - 1
                             ? () => setState(() => _currentIndex++)
@@ -336,7 +341,7 @@ class _PknAudioPlayerSheetState extends State<PknAudioPlayerSheet> {
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: InkWell(
+                  child: PknTap(
                     onTap: () => setState(() {
                       _currentIndex = idx;
                       _isPlaying = true;

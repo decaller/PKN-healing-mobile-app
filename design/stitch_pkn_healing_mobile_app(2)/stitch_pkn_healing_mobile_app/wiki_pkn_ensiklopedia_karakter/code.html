@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>PKN Healing</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#101419;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#0a0e13", "inverse-primary": "#006b5f", "tertiary-container": "#1eb0ea", "surface": "#101419", "primary-fixed-dim": "#4fdbc8", "on-primary": "#003731", "surface-variant": "#31353b", "secondary": "#ffca45", "surface-tint": "#4fdbc8", "on-primary-container": "#00423b", "on-tertiary-fixed": "#001e2c", "surface-bright": "#36393f", "background": "#101419", "surface-dim": "#101419", "surface-container-high": "#262a30", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed": "#00201c", "on-tertiary": "#00354a", "on-error": "#690005", "error-container": "#93000a", "surface-container": "#1c2025", "on-secondary-fixed-variant": "#5a4300", "on-error-container": "#ffdad6", "primary-fixed": "#71f8e4", "secondary-fixed-dim": "#f7be1d", "tertiary": "#7bd0ff", "primary-container": "#14b8a6", "tertiary-fixed": "#c4e7ff", "tertiary-fixed-dim": "#7bd0ff", "primary": "#4fdbc8", "surface-container-highest": "#31353b", "on-background": "#e0e2ea", "on-secondary-fixed": "#251a00", "on-surface-variant": "#bbcac6", "outline-variant": "#3c4947", "on-secondary": "#3f2e00", "on-surface": "#e0e2ea", "inverse-on-surface": "#2d3136", "secondary-fixed": "#ffdf9a", "error": "#ffb4ab", "surface-container-low": "#181c21", "on-tertiary-container": "#003f58", "on-primary-fixed-variant": "#005048", "inverse-surface": "#e0e2ea", "secondary-container": "#e4ae00", "outline": "#859490", "on-secondary-container": "#5b4400" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.25rem", "gutter": "1rem", "margin": "1.25rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "1.75rem" }, "fontFamily": { "sacred-quote-lg": ["Amiri"], "headline-md": ["Inter"], "body-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "label-xs": ["Inter"], "headline-xl": ["Inter"], "title-sm": ["Inter"], "label-md": ["Inter"], "sacred-quote-md": ["Amiri"], "body-sm": ["Inter"] }, "fontSize": { "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="PKN Healing Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-embedded-images/IMAGE_2"/><div class="flex flex-col"><span class="font-label-md text-label-md tracking-wider text-primary uppercase">PKN Healing</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Khazanah Wiki</span></div></div><div class="flex items-center gap-space-sm"><div class="flex flex-col items-end"><span class="font-label-xs text-label-xs text-secondary-fixed tracking-tight">Ayah Qawwamun</span><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span></div><button class="relative p-0.5 rounded-full bg-surface-container-high transition-transform active:scale-95 flex items-center justify-center min-w-[44px] min-h-[44px]" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-embedded-images/IMAGE_3"/></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-lg">
+<!-- Wiki Header Banner -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<div class="inline-flex items-center gap-1.5 self-start px-2 py-0.5 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">Khazanah Manhaj Nabawi</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Ensiklopedia Karakter Nabawiyah</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Kompilasi Manhaj, Dalil &amp; Resep Lapangan 10 Detik</p>
+</div>
+<!-- Search & Deep Filter Bar Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Cari kata kunci, hadits, usia, atau masalah..." type="text"/>
+<button aria-label="Filter Lanjutan" class="absolute right-2.5 p-1 rounded-lg text-primary hover:bg-surface-container-highest transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Active Filter Badges Carousel -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary-fixed text-label-xs font-label-xs whitespace-nowrap shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Fase Usia: Tamyiz (7-10 Thn)</span>
+<button aria-label="Hapus filter usia" class="ml-1 text-on-surface-variant hover:text-on-surface flex items-center" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-xs font-label-xs whitespace-nowrap shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>Kluster Bakat: Al-Qiyadah</span>
+<button aria-label="Hapus filter kluster" class="ml-1 text-on-surface-variant hover:text-on-surface flex items-center" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-primary text-label-xs font-label-xs whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>Tambah Filter</span>
+</button>
+</div>
+</div>
+<!-- Deep Article Reader Container -->
+<article class="flex flex-col rounded-xl bg-surface-container p-space-lg gap-space-lg shadow-md">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs flex-wrap">
+<span class="hover:text-primary transition-colors cursor-pointer">Khazanah</span>
+<span class="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">P4: Praktik Keluarga</span>
+<span class="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
+<span class="text-primary font-medium">Resolusi Konflik</span>
+</nav>
+<!-- Article Header & Meta -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-xs text-label-xs font-semibold">Prosedur Lapangan</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">ID: RES-TMZ-04</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight leading-snug">
+        SOP Mengatasi Mogok Belajar Santri &amp; Anak di Rumah
+      </h2>
+<div class="flex items-start gap-2 pt-1">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Ditelaah oleh <span class="text-on-surface font-medium">Tim Asatidzah PKN &amp; Psikolog Anak Muslim</span> • Diperbarui 3 hari lalu
+        </p>
+</div>
+</div>
+<!-- Editorial Hero Illustration -->
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container-lowest shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A dignified Muslim father gently kneeling down at eye level to converse with his 8-year-old son in a calm warm wooden study room filled with classic Islamic literature books, soft golden hour sunlight filtering through an Islamic geometric window, cinematic documentary style, deep slate background and subtle emerald tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpDd2ybJW0WSmBFz7ZFimKZ8Jk5KHtU0vszpHGJ-P3iuKSr2GhZX7Kn_sONAPkeVBDvR_E-5eUNn6M9_JBWjeALtEOAg7VL96zmQ-sOLtAf7N7PWjf4CgHQZQttMNGCIyuLEHXHYJg_aioqwDH-F41iOaWwTrjFpRVzlpB1NZMWF6FVLgklektjmB7KlKsBgPkhbVFDr8tqZDLLXrafJQBb4cUkle2Yvyo7Cq4X9buFFDS2TlfndLUbA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-on-surface">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-secondary-fixed">
+          Tamyiz: Usia 7-10 Tahun
+        </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> Baca 3 mnt
+        </span>
+</div>
+</div>
+<!-- Lead TL;DR (<10 Detik) Module -->
+<div class="relative flex flex-col rounded-xl bg-surface-container-low p-space-md gap-space-sm shadow-sm overflow-hidden">
+<!-- Glow Accent Line -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-center justify-between pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold tracking-wide">Resep Cepat (<span class="text-primary font-bold">&lt;10 Detik</span>)</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+<span>SOP Darurat</span>
+</div>
+</div>
+<ol class="flex flex-col gap-2 pl-2 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-start gap-2.5">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-bold shrink-0 mt-0.5">1</span>
+<span class="text-on-surface leading-snug"><strong class="text-on-surface font-medium">Singkirkan gawai</strong> dari pandangan visual tanpa memicu bentakan verbal.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-bold shrink-0 mt-0.5">2</span>
+<span class="text-on-surface leading-snug"><strong class="text-on-surface font-medium">Ajak wudhu bersama</strong> untuk memadamkan bara gejolak emosi dan syahwat amarah.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-bold shrink-0 mt-0.5">3</span>
+<span class="text-on-surface leading-snug"><strong class="text-on-surface font-medium">Beri pilihan otonom:</strong> “Tugas mana yang ingin Abang tuntaskan lebih dulu?” (<em class="text-secondary-fixed not-italic">Al-Istiqlaaliyah</em>).</span>
+</li>
+</ol>
+</div>
+<!-- Sacred Matan Dalil Card (Amiri Font & Sacred Gold Frame) -->
+<div class="relative flex flex-col rounded-xl bg-surface-container-lowest p-space-md gap-space-sm shadow-md overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span class="font-label-md text-label-md font-semibold tracking-wider uppercase">Matan Dalil Pedoman</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary-fixed font-label-xs text-label-xs">
+          HR. Abu Dawud 495
+        </span>
+</div>
+<!-- Arabic Quranic/Hadith Typography -->
+<div class="py-2 px-1 text-right text-on-surface dir-rtl" dir="rtl">
+<p class="font-sacred-quote-md text-sacred-quote-md text-secondary-fixed leading-loose antialiased selection:bg-secondary/20">
+          مُرُوا أَوْلاَدَكُمْ بِالصَّلاَةِ وَهُمْ أَبْنَاءُ سَبْعِ سِنِينَ وَاضْرِبُوهُمْ عَلَيْهَا وَهُمْ أَبْنَاءُ عَشْرٍ وَفَرِّقُوا بَيْنَهُمْ فِي الْمَضَاجِعِ
+        </p>
+</div>
+<!-- Decorative Divider -->
+<div class="w-full h-px bg-surface-container-highest my-1"></div>
+<!-- Sanad & Status -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+<span class="font-medium text-on-surface">Sanad &amp; Status:</span>
+<span>Hadits Shahih Riwayat Abu Dawud no. 495 &amp; Ahmad</span>
+</div>
+<!-- Syarah Ringkas -->
+<div class="p-2.5 rounded-lg bg-surface-container-high mt-1 text-on-surface font-body-sm text-body-sm leading-relaxed">
+<p class="text-on-surface-variant">
+<span class="text-primary font-medium">Syarah Ringkas:</span> Pendekatan bertahap 3 tahun (fase tamyiz: rentang 7 hingga 10 tahun) mutlak mendahulukan pembiasaan, keteladanan cinta adab, dan kesabaran dialogis sebelum instrumen ketegasan disiplin.
+          </p>
+</div>
+</div>
+</div>
+<!-- Interactive Evaluation Scorecard: Checklist Observasi Adab -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist_rtl</span>
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Checklist Observasi Adab</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tandai capaian ananda hari ini: <strong class="text-secondary-fixed font-medium">Zaid (8 Thn)</strong></span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs">Harian</span>
+</div>
+<!-- Evaluation Levels Grid / Rows -->
+<div class="flex flex-col gap-2" id="observasi-adab-group">
+<!-- BT: Belum Terlihat -->
+<button class="score-option w-full flex items-start gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all text-left group" data-score="BT" onclick="selectScore(this)" type="button">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-title-sm text-title-sm font-bold shrink-0 score-badge transition-colors">
+            BT
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold score-label">Belum Terlihat</span>
+<span class="material-symbols-outlined text-[18px] text-outline opacity-0 score-check transition-opacity">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Anak menolak membuka buku sama sekali, menarik diri, atau merajuk.</p>
+</div>
+</button>
+<!-- MT: Mulai Terlihat (Active default) -->
+<button class="score-option active-score w-full flex items-start gap-3 p-3 rounded-xl bg-surface-container-high transition-all text-left group" data-score="MT" onclick="selectScore(this)" type="button">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-secondary text-on-secondary font-title-sm text-title-sm font-bold shrink-0 score-badge shadow-sm transition-colors">
+            MT
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary-fixed font-semibold score-label">Mulai Terlihat (Posisi Saat Ini)</span>
+<span class="material-symbols-outlined text-[18px] text-secondary score-check opacity-100 transition-opacity" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-2">Mau membuka buku dan duduk tenang setelah didampingi dan didengar keluhannya.</p>
+</div>
+</button>
+<!-- BK: Berkembang -->
+<button class="score-option w-full flex items-start gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all text-left group" data-score="BK" onclick="selectScore(this)" type="button">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-title-sm text-title-sm font-bold shrink-0 score-badge transition-colors">
+            BK
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold score-label">Berkembang</span>
+<span class="material-symbols-outlined text-[18px] text-outline opacity-0 score-check transition-opacity">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Menyelesaikan 1 bab hafalan / tugas harian secara mandiri tanpa dorongan berulang.</p>
+</div>
+</button>
+<!-- MM: Membudaya -->
+<button class="score-option w-full flex items-start gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all text-left group" data-score="MM" onclick="selectScore(this)" type="button">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-title-sm text-title-sm font-bold shrink-0 score-badge transition-colors">
+            MM
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold score-label">Membudaya</span>
+<span class="material-symbols-outlined text-[18px] text-outline opacity-0 score-check transition-opacity">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mengajak adiknya atau teman sebaya belajar bersama dengan riang tanpa perlu disuruh.</p>
+</div>
+</button>
+</div>
+<!-- Quick Action Save Metric -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">history</span>
+          Tersinkron ke Buku Induk Santri
+        </span>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold active:scale-95 transition-all shadow-sm" id="btn-catat-adab" onclick="saveObservation()" type="button">
+          Simpan ke Rapor Zaid
+        </button>
+</div>
+</div>
+</article>
+<!-- Interactive Mentoring Toolkit Card -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low gap-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Tanya Asisten AI Kasus Ini</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Simulasikan respon santri tipe Al-Qiyadah</span>
+</div>
+</div>
+<a class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-container text-on-primary shadow-sm hover:scale-105 active:scale-95 transition-transform shrink-0" data-path="curhat-ai" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Sticky In-Content Action Bar for Article Operations -->
+<div class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high shadow-lg">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container text-on-surface hover:text-primary active:scale-95 transition-all" id="btn-bookmark" onclick="toggleBookmark(this)" type="button">
+<span class="material-symbols-outlined text-[18px]" id="icon-bookmark">bookmark_border</span>
+<span class="font-label-md text-label-md font-semibold">Simpan</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container text-on-surface hover:text-secondary active:scale-95 transition-all" onclick="shareArticle()" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span class="font-label-md text-label-md font-semibold">Bagikan Umi</span>
+</button>
+<a class="flex-[1.4] flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-semibold active:scale-95 transition-all shadow-sm" data-path="curhat-ai" href="#">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="font-label-md text-label-md">Curhat AI</span>
+</a>
+</div>
+</div>
+<script>
+  function selectScore(el) {
+    const parent = document.getElementById('observasi-adab-group');
+    if (!parent) return;
+    const cards = parent.querySelectorAll('.score-option');
+    cards.forEach(c => {
+      c.classList.remove('active-score', 'bg-surface-container-high');
+      c.classList.add('bg-surface-container-low');
+      const badge = c.querySelector('.score-badge');
+      if (badge) {
+        badge.classList.remove('bg-secondary', 'text-on-secondary', 'bg-primary-container', 'text-on-primary');
+        badge.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+      }
+      const label = c.querySelector('.score-label');
+      if (label) {
+        label.classList.remove('text-secondary-fixed', 'text-primary');
+        label.classList.add('text-on-surface');
+      }
+      const check = c.querySelector('.score-check');
+      if (check) {
+        check.classList.add('opacity-0');
+        check.classList.remove('opacity-100', 'text-secondary', 'text-primary');
+        check.style.fontVariationSettings = "'FILL' 0";
+      }
+    });
+
+    el.classList.add('active-score', 'bg-surface-container-high');
+    el.classList.remove('bg-surface-container-low');
+    const badge = el.querySelector('.score-badge');
+    const check = el.querySelector('.score-check');
+    const label = el.querySelector('.score-label');
+    
+    if (badge && check && label) {
+      badge.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+      badge.classList.add('bg-primary-container', 'text-on-primary');
+      label.classList.add('text-primary');
+      check.classList.remove('opacity-0');
+      check.classList.add('opacity-100', 'text-primary');
+      check.style.fontVariationSettings = "'FILL' 1";
+    }
+  }
+
+  function saveObservation() {
+    const btn = document.getElementById('btn-catat-adab');
+    if (!btn) return;
+    const originalText = btn.textContent;
+    btn.textContent = 'Tersimpan ✓';
+    btn.classList.add('bg-secondary', 'text-on-secondary');
+    btn.classList.remove('bg-primary', 'text-on-primary');
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.classList.remove('bg-secondary', 'text-on-secondary');
+      btn.classList.add('bg-primary', 'text-on-primary');
+    }, 2000);
+  }
+
+  function toggleBookmark(btn) {
+    const icon = document.getElementById('icon-bookmark');
+    if (!icon) return;
+    if (icon.textContent === 'bookmark_border') {
+      icon.textContent = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      icon.classList.add('text-primary');
+    } else {
+      icon.textContent = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      icon.classList.remove('text-primary');
+    }
+  }
+
+  function shareArticle() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'SOP Mengatasi Mogok Belajar Santri - Wiki-PKN',
+        text: 'Resep Nabawi 10 Detik untuk menangani santri mogok belajar dengan pendekatan Tamyiz.',
+        url: window.location.href,
+      }).catch(() => {});
+    } else {
+      const copyNotice = document.createElement('div');
+      copyNotice.className = 'fixed bottom-28 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-surface-container-highest text-on-surface text-label-xs font-label-xs z-50 shadow-xl';
+      copyNotice.textContent = 'Tautan SOP telah disalin untuk Wali Santri!';
+      document.body.appendChild(copyNotice);
+      setTimeout(() => copyNotice.remove(), 2200);
+    }
+  }
+</script></main><div class="fixed bottom-24 right-margin z-40"><a class="flex items-center justify-center w-14 h-14 rounded-full bg-primary-container text-on-primary shadow-[0_4px_20px_rgba(20,184,166,0.35)] transition-transform active:scale-95 group" data-path="curhat-ai" href="#"><span class="absolute inset-0 rounded-full bg-primary opacity-25 animate-ping pointer-events-none"></span><span class="material-symbols-outlined text-2xl">support_agent</span></a></div><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="beranda" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">home</span><span class="absolute -bottom-1 w-1 h-1 rounded-full bg-primary opacity-80"></span></div><span class="font-label-xs text-label-xs">Beranda</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] transition-colors text-primary font-semibold" data-path="khazanah-wiki" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-xs text-label-xs">Khazanah</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="ruang-batin" href="#"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span><span class="font-label-xs text-label-xs">Ruang Batin</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 min-h-[44px] text-on-surface-variant transition-colors hover:text-on-surface" data-path="curhat-ai" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] text-primary">bubble_chart</span><span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-primary animate-pulse"></span></div><span class="font-label-xs text-label-xs">Curhat AI</span></a></div></nav></body></html>

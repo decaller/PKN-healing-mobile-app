@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:pkn_microlearning_app/app/theme/color_palette.dart';
 import 'package:pkn_microlearning_app/features/lessons/data/models/lesson_models.dart';
@@ -89,7 +90,7 @@ class SwipePollStepView extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton.icon(
+                      child: PknActionButton.icon(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: userAgreed == true
                               ? AppColors.brandPrimary
@@ -110,7 +111,7 @@ class SwipePollStepView extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: ElevatedButton.icon(
+                      child: PknActionButton.icon(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: userAgreed == false
                               ? AppColors.brandGold

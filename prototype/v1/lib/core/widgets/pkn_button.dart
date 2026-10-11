@@ -1,5 +1,5 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
-import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
 
 enum PknButtonVariant {
@@ -74,7 +74,7 @@ class PknButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final scheme = Theme.of(context).colorScheme;
 
     Color backgroundColor;
     Color foregroundColor;
@@ -82,39 +82,38 @@ class PknButton extends StatelessWidget {
 
     switch (variant) {
       case PknButtonVariant.primary:
-        backgroundColor = AppColors.brandPrimary;
-        foregroundColor = Colors.white;
+        backgroundColor = scheme.primary;
+        foregroundColor = scheme.onPrimary;
         break;
       case PknButtonVariant.secondary:
-        backgroundColor = AppColors.brandGold;
-        foregroundColor = Colors.black87;
+        backgroundColor = scheme.secondary;
+        foregroundColor = scheme.onSecondary;
         break;
       case PknButtonVariant.outline:
         backgroundColor = Colors.transparent;
-        foregroundColor = isDark ? AppColors.darkTextPrimary : AppColors.lightTextPrimary;
+        foregroundColor = scheme.onSurface;
         borderSide = BorderSide(
-          color: isDark ? AppColors.darkBorder : AppColors.lightBorder,
+          color: scheme.outlineVariant,
           width: 1.5,
         );
         break;
       case PknButtonVariant.ghost:
         backgroundColor = Colors.transparent;
-        foregroundColor = AppColors.brandPrimary;
+        foregroundColor = scheme.primary;
         break;
     }
 
     return SizedBox(
       width: width,
       height: height,
-      child: ElevatedButton(
+      child: PknActionButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           foregroundColor: foregroundColor,
-          elevation: variant == PknButtonVariant.primary ? 1 : 0,
-          shadowColor: Colors.black26,
+          elevation: 0,
           side: borderSide,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: PknRadius.roundedSm,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 20),
         ),
@@ -138,12 +137,7 @@ class PknButton extends StatelessWidget {
                   ],
                   Text(
                     text,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0.2,
-                      color: foregroundColor,
-                    ),
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(color: foregroundColor),
                   ),
                 ],
               ),

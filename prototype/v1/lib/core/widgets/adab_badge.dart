@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import '../../app/theme/color_palette.dart';
 import '../../app/theme/pkn_tokens.dart';
@@ -66,7 +67,7 @@ class AdabBadge extends StatelessWidget {
     return Semantics(
       label: 'Indikator Adab: ${level.code} - ${level.label}',
       button: onTap != null,
-      child: InkWell(
+      child: PknTap(
         onTap: onTap,
         borderRadius: PknRadius.roundedPill,
         child: Container(

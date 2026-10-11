@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#f7be1d", "primary-fixed": "#71f8e4", "surface-tint": "#4fdbc8", "tertiary-fixed-dim": "#7bd0ff", "inverse-primary": "#006b5f", "error": "#ffb4ab", "primary-fixed-dim": "#4fdbc8", "surface-container-lowest": "#0a0e13", "inverse-surface": "#e0e2ea", "on-primary-fixed": "#00201c", "inverse-on-surface": "#2d3136", "primary": "#4fdbc8", "on-secondary-fixed": "#251a00", "surface-variant": "#31353b", "on-surface": "#e0e2ea", "primary-container": "#14b8a6", "tertiary-container": "#1eb0ea", "on-tertiary": "#00354a", "tertiary-fixed": "#c4e7ff", "on-secondary-fixed-variant": "#5a4300", "surface-container-high": "#262a30", "surface": "#101419", "outline-variant": "#3c4947", "surface-container-highest": "#31353b", "secondary-fixed": "#ffdf9a", "on-secondary": "#3f2e00", "on-primary-fixed-variant": "#005048", "background": "#101419", "secondary": "#ffca45", "secondary-container": "#e4ae00", "surface-container": "#1c2025", "surface-dim": "#101419", "surface-container-low": "#181c21", "on-error-container": "#ffdad6", "on-tertiary-fixed-variant": "#004c69", "error-container": "#93000a", "on-surface-variant": "#bbcac6", "on-tertiary-fixed": "#001e2c", "on-error": "#690005", "on-background": "#e0e2ea", "outline": "#859490", "tertiary": "#7bd0ff", "on-tertiary-container": "#003f58", "on-primary-container": "#00423b", "on-primary": "#003731", "on-secondary-container": "#5b4400", "surface-bright": "#36393f" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "1.75rem", "gutter": "1rem", "margin": "1.25rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-lg": "1.25rem" }, fontFamily: { "title-sm": ["Inter"], "label-md": ["Inter"], "label-xs": ["Inter"], "body-lg": ["Inter"], "metric-display": ["Inter"], "body-sm": ["Inter"], "sacred-quote-lg": ["Amiri"], "headline-lg": ["Inter"], "sacred-quote-md": ["Amiri"], "headline-md": ["Inter"], "headline-xl": ["Inter"], "body-md": ["Inter"] }, fontSize: { "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;background-color:#101419;color:#e0e2ea;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(0,0,0,0.5)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><span class="font-label-xs text-label-xs text-secondary uppercase tracking-widest">Fitrah Rehearsal</span><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[130px]">Living Rehearsal Arena</h1></div></div><div class="flex items-center gap-space-xs"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shadow-inner"><span class="material-symbols-outlined text-primary text-[15px]">spa</span><span class="font-label-xs text-label-xs text-on-surface">Qalb</span><div class="w-10 h-1.5 rounded-full bg-surface-variant overflow-hidden"><div class="h-full w-4/5 bg-primary-container rounded-full"></div></div></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shadow-inner"><span class="material-symbols-outlined text-secondary text-[15px]">light_mode</span><span class="font-label-xs text-label-xs text-on-surface">Ruh</span><div class="w-10 h-1.5 rounded-full bg-surface-variant overflow-hidden"><div class="h-full w-2/3 bg-secondary rounded-full"></div></div></div><a aria-label="Koleksi &amp; Hikmah" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/40" data-path="scenario-inventory" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(79,219,200,0.35)] shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<div class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-sm bg-surface-container-low shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">MATRIKS SYAKILAH</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-label-xs font-semibold">TB-40</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Bakat bawaan fitrah: Dibimbing Adab jadi <span class="text-primary font-medium">Ihsan</span>, dikuasai Nafsu jadi <span class="text-error font-medium">Afat</span>.
+        </p>
+</div>
+<div class="flex flex-col items-end shrink-0 gap-1">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-xs text-label-xs shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold tracking-wide">2 Poin Adab</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tingkat 4 (Murabbi Pemula)</span>
+</div>
+</div>
+<!-- Cluster Horizontal Filters -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1 -mx-margin px-margin no-scrollbar">
+<button class="cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md transition-all shadow-sm" id="tab-fikriyyah" onclick="switchCluster('fikriyyah')">
+<span class="text-[14px]">🧠</span>
+<span>Al-Fikriyyah</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</button>
+<button class="cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all" id="tab-fashahah" onclick="switchCluster('fashahah')">
+<span class="text-[14px]">🕊️</span>
+<span>Al-Fashahah</span>
+</button>
+<button class="cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all" id="tab-qiyadah" onclick="switchCluster('qiyadah')">
+<span class="text-[14px]">⚡</span>
+<span>Al-Qiyadah</span>
+</button>
+<button class="cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all" id="tab-idarah" onclick="switchCluster('idarah')">
+<span class="text-[14px]">⚖️</span>
+<span>Al-Idarah</span>
+</button>
+</div>
+</div>
+<!-- Content Container -->
+<div class="px-margin py-space-md flex flex-col gap-space-lg">
+<!-- Cluster 1: Al-Fikriyyah -->
+<section class="flex flex-col gap-space-sm cluster-group" id="cluster-fikriyyah">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+<h2 class="font-title-sm text-title-sm text-tertiary uppercase tracking-wider">Al-Fikriyyah</h2>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Nalar &amp; Hikmah</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary bg-surface-container-high px-2 py-0.5 rounded-full">4 Talenta</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Firaasah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer relative overflow-hidden group shadow-sm" onclick="selectTalent('firaasah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-tertiary transition-colors">Firaasah</span>
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Intuisi Batin</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-tertiary">4/6</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_6px_rgba(123,208,255,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_6px_rgba(123,208,255,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_6px_rgba(123,208,255,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_6px_rgba(123,208,255,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+<div class="absolute right-0 bottom-0 text-[36px] font-sacred-quote-lg text-tertiary/10 select-none pr-1 leading-none pointer-events-none">فراسة</div>
+</div>
+<!-- Hikmah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('hikmah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-tertiary transition-colors">Hikmah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Takaran Momen</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Dzakaa' -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('dzakaa')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-tertiary transition-colors">Dzakaa'</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Analitis Cepat</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">2/4</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Nubl -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('nubl')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-tertiary transition-colors">Nubl</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kecerdikan Mulia</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">1/4</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cluster 2: Al-Fashahah -->
+<section class="flex flex-col gap-space-sm cluster-group" id="cluster-fashahah">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<h2 class="font-title-sm text-title-sm text-primary uppercase tracking-wider">Al-Fashahah</h2>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Bahasa Jiwa</span>
+</div>
+<span class="font-label-xs text-label-xs text-primary bg-surface-container-high px-2 py-0.5 rounded-full">3 Talenta</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Ar-Rifq -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('rifq')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Ar-Rifq</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kelembutan</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Rahmah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('rahmah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Rahmah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kasih Sayang</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-primary">4/6</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(79,219,200,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(79,219,200,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(79,219,200,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(79,219,200,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Hilm -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('hilm')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Hilm</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Pemaaf Lapang</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">2/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cluster 3: Al-Qiyadah -->
+<section class="flex flex-col gap-space-sm cluster-group" id="cluster-qiyadah">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error"></div>
+<h2 class="font-title-sm text-title-sm text-error uppercase tracking-wider">Al-Qiyadah</h2>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Wibawa &amp; Sikap</span>
+</div>
+<span class="font-label-xs text-label-xs text-error bg-surface-container-high px-2 py-0.5 rounded-full">4 Talenta</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Syajaa'ah (Active Selected) -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container-high shadow-md relative overflow-hidden group cursor-pointer" onclick="selectTalent('syajaah')">
+<div class="absolute inset-0 bg-error/5 pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Syajaa'ah</span>
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Keberanian Syar'i</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-error">4/6</span>
+</div>
+<div class="flex items-center gap-1 mt-3 relative z-10">
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_6px_rgba(255,180,171,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_6px_rgba(255,180,171,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_6px_rgba(255,180,171,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_6px_rgba(255,180,171,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+<div class="absolute -right-2 -bottom-2 w-7 h-7 rounded-full bg-error/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[16px]">check</span>
+</div>
+</div>
+<!-- Himmah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('himmah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-error transition-colors">Himmah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Cita Luhur</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Izzah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('izzah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-error transition-colors">Izzah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Marwah Diri</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">2/4</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Ghairah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('ghairah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-error transition-colors">Ghairah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Proteksi Agama</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cluster 4: Al-Idarah -->
+<section class="flex flex-col gap-space-sm cluster-group" id="cluster-idarah">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<h2 class="font-title-sm text-title-sm text-secondary uppercase tracking-wider">Al-Idarah</h2>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Integritas &amp; Adab</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">4 Talenta</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Amaanah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('amaanah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-secondary transition-colors">Amaanah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tanggung Jawab</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Anaah -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('anaah')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-secondary transition-colors">Anaah</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Ketenangan Jiwa</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">2/4</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Shamt -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('shamt')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-secondary transition-colors">Shamt</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kendali Lisan</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface-variant">3/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Shidq -->
+<div class="talent-card flex flex-col justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group shadow-sm" onclick="selectTalent('shidq')">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface group-hover:text-secondary transition-colors">Shidq</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kejujuran Total</span>
+</div>
+<span class="font-label-xs text-label-xs font-semibold text-secondary">4/5</span>
+</div>
+<div class="flex items-center gap-1 mt-3">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(255,202,69,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_69_rgba(255,202,69,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(255,202,69,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(255,202,69,0.7)]"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Selected Talent Card (Syajaa'ah) -->
+<section class="flex flex-col rounded-2xl bg-surface-container-high p-4 gap-space-md shadow-xl relative overflow-hidden">
+<!-- Ambient aura -->
+<div class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-error/10 blur-2xl pointer-events-none"></div>
+<!-- Header of detailed card -->
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-variant flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-error text-[26px]">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Syajaa'ah</h3>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-semibold">Tingkat 4/6</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bakat Wibawa &amp; Keberanian Syar'i</span>
+</div>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-xs text-label-xs font-semibold shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>Tingkat (1 Poin)</span>
+</button>
+</div>
+<!-- Sacred / Core Quote -->
+<div class="p-3.5 rounded-xl bg-surface-container relative">
+<p class="font-sacred-quote-md text-sacred-quote-md text-on-surface text-center italic leading-relaxed">
+          “Dorongan fitrah untuk berdiri tegak melindungi kebenaran syariat tanpa gentar atau mengalah pada kelemahan diri.”
+        </p>
+</div>
+<!-- Dialektika Nafs: Ihsan vs Afat -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Dialektika Nafs</span>
+<span class="font-label-xs text-label-xs text-secondary">Pengaruh Bimbingan Adab</span>
+</div>
+<!-- Sisi Ihsan -->
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="text-[14px]">🍃</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Sisi Ihsan (Nafs Muthma'innah)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-5">
+            Ketegasan yang lahir dari cinta syariat; pantang melukai anak dan haram memukul wajah. Tegas tujuan, lembut cara.
+          </p>
+</div>
+<!-- Sisi Afat -->
+<div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
+<div class="flex items-center gap-1.5 text-error">
+<span class="text-[14px]">🔥</span>
+<span class="font-label-md text-label-md font-semibold text-error">Sisi Afat (Nafs Ammarah)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-5">
+            Tirani amarah (Ghadhab); menganggap tangisan anak sebagai penghinaan wibawa kepala keluarga.
+          </p>
+</div>
+</div>
+</section>
+<!-- Bottom Sticky Action Section -->
+<div class="flex flex-col gap-space-sm pt-2 pb-space-lg">
+<div class="flex items-center justify-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-tertiary">info</span>
+<p class="font-body-sm text-body-sm text-center">
+          Perubahan bakat memengaruhi peluang <span class="text-on-surface font-medium">White &amp; Red Check</span>
+</p>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-all" onclick="history.back()">
+<span>Kembali ke Skenario</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchCluster(clusterId) {
+    // Scroll target into view
+    const section = document.getElementById('cluster-' + clusterId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Update Tab state styling
+    const tabs = ['fikriyyah', 'fashahah', 'qiyadah', 'idarah'];
+    tabs.forEach(tab => {
+      const el = document.getElementById('tab-' + tab);
+      if (el) {
+        if (tab === clusterId) {
+          el.className = 'cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md transition-all shadow-sm';
+        } else {
+          el.className = 'cluster-tab shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all';
+        }
+      }
+    });
+  }
+
+  function selectTalent(talentKey) {
+    // Micro-interaction: Provide tactile feedback
+    const cards = document.querySelectorAll('.talent-card');
+    cards.forEach(c => c.classList.remove('scale-[0.99]'));
+  }
+</script></main></body></html>

@@ -1,42 +1,53 @@
 import 'package:flutter/material.dart';
 
-/// PKN Color palette designed for high legibility, Nabawiyah executive elegance,
-/// qualitative adab indicators (BT, MT, BK, MM), and 6 Pilar MOC categorization.
+/// Earth-Tree palette shared by Material, Cupertino, and Forui.
 class AppColors {
   AppColors._();
 
-  // BEGIN GENERATED PKN COLORS
-  // Generated from PKN_Healing_App_Design.fig; run node design/sync-tokens.mjs.
-  static const Color lightBackground = Color(0xFFF8FAFC);
-  static const Color lightSurface = Color(0xFFFFFFFF);
-  static const Color lightTextPrimary = Color(0xFF0F172A);
-  static const Color lightTextSecondary = Color(0xFF475569);
-  static const Color lightBorder = Color(0xFFE2E8F0);
-  static const Color lightPrimary = Color(0xFF0F766E);
-  static const Color lightPrimarySoft = Color(0xFFE6F4F1);
-  static const Color lightPillar1 = Color(0xFF6366F1);
-  static const Color lightPillar2 = Color(0xFF0EA5E9);
-  static const Color lightPillar3 = Color(0xFF8B5CF6);
-  static const Color lightPillar4 = Color(0xFFF43F5E);
-  static const Color lightPillar5 = Color(0xFF10B981);
-  static const Color lightPillar6 = Color(0xFFD4AF37);
+  static const Color lightBackground = Color(0xFFFDF9F0);
+  static const Color lightSurface = Color(0xFFF7F3EA);
+  static const Color lightSurfaceElevated = Color(0xFFE6E2DA);
+  static const Color lightTextPrimary = Color(0xFF1C1C17);
+  static const Color lightTextSecondary = Color(0xFF3F4850);
+  static const Color lightTextMuted = Color(0xFF707881);
+  static const Color lightBorder = Color(0xFFBFC7D2);
+  static const Color lightPrimary = Color(0xFF006194);
+  static const Color lightPrimarySoft = Color(0xFFCCE5FF);
   static const Color lightOnPrimary = Color(0xFFFFFFFF);
-  static const Color darkBackground = Color(0xFF121417);
-  static const Color darkSurface = Color(0xFF1E2229);
-  static const Color darkTextPrimary = Color(0xFFFFFFFF);
-  static const Color darkTextSecondary = Color(0xFFCBD5E1);
-  static const Color darkBorder = Color(0xFF475569);
-  static const Color darkPrimary = Color(0xFF5EEAD4);
-  static const Color darkPrimarySoft = Color(0xFF163D38);
-  static const Color darkPillar1 = Color(0xFF6366F1);
-  static const Color darkPillar2 = Color(0xFF0EA5E9);
-  static const Color darkPillar3 = Color(0xFF8B5CF6);
-  static const Color darkPillar4 = Color(0xFFF43F5E);
-  static const Color darkPillar5 = Color(0xFF10B981);
-  static const Color darkPillar6 = Color(0xFFD4AF37);
-  static const Color darkOnPrimary = Color(0xFF0F172A);
+  static const Color lightSecondary = Color(0xFF006D30);
+  static const Color lightSecondaryContainer = Color(0xFF92F5A4);
+  static const Color lightOnSecondaryContainer = Color(0xFF007233);
+  static const Color lightTertiary = Color(0xFF7E5223);
+  static const Color lightError = Color(0xFFBA1A1A);
+  static const Color darkBackground = Color(0xFF161A1D);
+  static const Color darkSurface = Color(0xFF1E2328);
+  static const Color darkSurfaceElevated = Color(0xFF262D34);
+  static const Color darkTextPrimary = Color(0xFFEFECE6);
+  static const Color darkTextSecondary = Color(0xFFD3CEC4);
+  static const Color darkTextMuted = Color(0xFFD3CEC4);
+  static const Color darkBorder = Color(0xFF38404A);
+  static const Color darkPrimary = Color(0xFF93CCFF);
+  static const Color darkPrimarySoft = Color(0xFF004B73);
+  static const Color darkOnPrimary = Color(0xFF001D31);
+  static const Color darkSecondary = Color(0xFF79DB8D);
+  static const Color darkSecondaryContainer = Color(0xFF005323);
+  static const Color darkOnSecondaryContainer = Color(0xFF95F8A7);
+  static const Color darkTertiary = Color(0xFFF6BB81);
+  static const Color darkError = Color(0xFFFFB4AB);
 
-  // Existing mode-independent APIs retain the Light design value.
+  // Semantic category and rubric colors retain their existing meaning.
+  static const Color lightPillar1 = Color(0xFF006194);
+  static const Color lightPillar2 = Color(0xFF007BB9);
+  static const Color lightPillar3 = Color(0xFF7E5223);
+  static const Color lightPillar4 = Color(0xFF9A6A38);
+  static const Color lightPillar5 = Color(0xFF006D30);
+  static const Color lightPillar6 = Color(0xFF663E0F);
+  static const Color darkPillar1 = Color(0xFF93CCFF);
+  static const Color darkPillar2 = Color(0xFFCCE5FF);
+  static const Color darkPillar3 = Color(0xFFF6BB81);
+  static const Color darkPillar4 = Color(0xFFFFDCBE);
+  static const Color darkPillar5 = Color(0xFF79DB8D);
+  static const Color darkPillar6 = Color(0xFF9A6A38);
   static const Color brandPrimary = lightPrimary;
   static const Color pilarMulai = lightPillar1;
   static const Color pilarTumbuh = lightPillar2;
@@ -44,38 +55,21 @@ class AppColors {
   static const Color pilarKeluarga = lightPillar4;
   static const Color pilarLembaga = lightPillar5;
   static const Color pilarDalil = lightPillar6;
-  // END GENERATED PKN COLORS
-
-  // App-only extended neutrals (not present in the design token collection).
-  static const Color darkSurfaceElevated = Color(0xFF1C274C);
-  static const Color darkTextMuted = Color(0xFF64748B);
-
-  static const Color lightSurfaceElevated = Color(0xFFF1F5F9);
-  static const Color lightTextMuted = Color(0xFF94A3B8);
-
-  // Brand & Accent Colors (Nabawiyah Theme)
-  static const Color brandGold = Color(0xFFD4AF37); // Nabawi Gold
-  static const Color brandPrimaryDark = Color(0xFF0F766E);
-  static const Color brandAccent = Color(0xFF10B981); // Emerald Green
-  static const Color brandSecondary = Color(0xFF6366F1); // Indigo
-
-  // Qualitative Adab Rubric Colors (BT - MT - BK - MM)
-  static const Color adabBT = Color(0xFFEF4444); // 🔴 Belum Terlihat
-  static const Color adabMT = Color(0xFFF59E0B); // 🟡 Mulai Terlihat
-  static const Color adabBK = Color(0xFF10B981); // 🟢 Berkembang Konsisten
-  static const Color adabMM = Color(0xFF3B82F6); // 🔵 Membudaya Mandiri
-
-  // Callout Box Backgrounds & Accents
-  static const Color calloutTldr = Color(0xFF0D9488); // TL;DR 10 Detik
-  static const Color calloutWarning = Color(0xFFF59E0B); // Batas Toleransi Syar'i
-  static const Color calloutTip = Color(0xFF10B981); // Resep Praktis
-
-  // Status & Interactive Feedback
-  static const Color success = Color(0xFF10B981);
-  static const Color error = Color(0xFFEF4444);
-  static const Color warning = Color(0xFFF59E0B);
-  static const Color info = Color(0xFF3B82F6);
-
+  static const Color brandGold = Color(0xFF9A6A38);
+  static const Color brandPrimaryDark = Color(0xFF004B73);
+  static const Color brandAccent = lightSecondary;
+  static const Color brandSecondary = lightTertiary;
+  static const Color adabBT = lightError;
+  static const Color adabMT = lightTertiary;
+  static const Color adabBK = lightSecondary;
+  static const Color adabMM = lightPrimary;
+  static const Color calloutTldr = lightPrimary;
+  static const Color calloutWarning = lightTertiary;
+  static const Color calloutTip = lightSecondary;
+  static const Color success = lightSecondary;
+  static const Color error = lightError;
+  static const Color warning = lightTertiary;
+  static const Color info = lightPrimary;
 
   // Backward compatibility / Domain mapping
   static Color getDomainColor(String domain) {

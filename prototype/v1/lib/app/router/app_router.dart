@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 // ==============================================================================
 // CONCEPTING PHASE: ROUTING BLUEPRINT
 // ------------------------------------------------------------------------------
@@ -111,7 +113,17 @@ class _AppNavigationScaffold extends StatelessWidget {
 
     return Scaffold(
       body: child,
-      bottomNavigationBar: NavigationBar(
+      bottomNavigationBar: usesCupertino(context) ? CupertinoTabBar(
+        currentIndex: currentIndex,
+        onTap: (idx) => _onItemTapped(idx, context),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        activeColor: Theme.of(context).colorScheme.secondary,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.house), label: 'Beranda'),
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.book), label: 'Modul Primer'),
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.person), label: 'Profil & Adab'),
+        ],
+      ) : NavigationBar(
         selectedIndex: currentIndex,
         onDestinationSelected: (idx) => _onItemTapped(idx, context),
         destinations: const [

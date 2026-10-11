@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -19,8 +20,8 @@ class LessonsListScreen extends ConsumerWidget {
     final storageService = ref.watch(storageServiceProvider);
     final completedIds = storageService.getCompletedLessonIds();
 
-    return Scaffold(
-          appBar: AppBar(
+    return PknScaffold(
+          appBar: PknAppBar(
             title: Row(
               children: [
                 Container(
@@ -67,7 +68,7 @@ class LessonsListScreen extends ConsumerWidget {
                   ),
                   boxShadow: PknElevation.cardShadow,
                 ),
-                child: InkWell(
+                child: PknTap(
                   onTap: () {
                     context.push(RoutePaths.lessonDetails(lesson.lessonId));
                   },

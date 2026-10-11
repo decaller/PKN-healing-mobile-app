@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mode 1: Pemutar Animasi Sinematik Sirah (Theater Mode) - Full Screen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      color: #E2E8F0;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-amiri { font-family: 'Amiri', serif; }
+
+    /* Theater matte gradient overlay */
+    .theater-vignette {
+      background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.75) 100%);
+    }
+
+    /* Sound waveform animation */
+    @keyframes wave-bounce {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    .wave-bar:nth-child(1) { animation: wave-bounce 1.2s infinite ease-in-out; }
+    .wave-bar:nth-child(2) { animation: wave-bounce 0.9s infinite ease-in-out 0.2s; }
+    .wave-bar:nth-child(3) { animation: wave-bounce 1.4s infinite ease-in-out 0.4s; }
+    .wave-bar:nth-child(4) { animation: wave-bounce 1.1s infinite ease-in-out 0.1s; }
+    .wave-bar:nth-child(5) { animation: wave-bounce 1.3s infinite ease-in-out 0.3s; }
+  </style>
+</head>
+<body class="relative w-full h-screen bg-black overflow-hidden flex flex-col justify-between text-slate-100">
+
+  <!-- FULL-BLEED WATERCOLOR ANIMATION FRAME (MADINAH COURTYARD) -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuArAxM66SGY-maKBFBr6EBIrFtAN6DipjW7QNzheeqvRQhNfzefiIvX25CJQ4U28_xFXi4-eYiZdchnErhpb67F4OUVY5N4F6zEJLVSHUxH_UMPyRmwzK1stwGilHN6Q9OMGmaHuH-PQMez_8acqFEXeHFOPe3C1592xZMzSsLYs6Z3ObbhEDMTmQ-CmrdOphpu9zqvJEELaR0ZHZXJu1p4QWJxRwpj8j51V64W1-SBQMCkVST6WAvU3w" 
+      alt="Watercolor animated portrayal of ancient Madinah sun-dappled courtyard" 
+      class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
+    />
+    <div class="absolute inset-0 theater-vignette pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70 pointer-events-none"></div>
+  </div>
+
+  <!-- MINIMAL TOP HUD (AUTO-HIDING THEATER TOP) -->
+  <header class="relative z-20 w-full px-4 pt-3 pb-2 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <button class="p-1.5 rounded-full bg-black/60 hover:bg-black/80 border border-slate-700/60 text-slate-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+      </button>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-amber-300">Mode 1 • Animasi Sirah</span>
+        </div>
+        <h1 class="text-xs sm:text-sm font-bold text-white font-cinzel">
+          Keteladanan Nabi ﷺ: Anas bin Malik & Rahasia Kelembutan
+        </h1>
+      </div>
+    </div>
+
+    <!-- Right Faedah Icon Drawer -->
+    <button class="px-2.5 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/50 text-amber-300 text-[10px] font-semibold flex items-center gap-1 shadow-md">
+      <span>💡 Faedah Tarbiyah</span>
+    </button>
+  </header>
+
+  <!-- MID-VIEWPORT: SACRED CALLIGRAPHY & SYNCHRONIZED SUBTITLES -->
+  <main class="relative z-20 w-full max-w-2xl mx-auto px-4 text-center my-auto space-y-3">
+    
+    <!-- ARABIC MATAN IN GLOWING AMIRI CALLIGRAPHIC FONT -->
+    <div class="p-4 sm:p-5 rounded-2xl bg-black/75 border border-amber-500/40 backdrop-blur-md shadow-2xl">
+      <div class="font-amiri text-xl sm:text-2xl md:text-3xl text-amber-300 leading-loose drop-shadow-md" dir="rtl">
+        خَدَمْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَشْرَ سِنِينَ، فَوَاللَّهِ مَا قَالَ لِي أُفٍّ قَطُّ
+      </div>
+      
+      <!-- Citation badge -->
+      <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-950/80 border border-amber-600/50 text-amber-300 text-[9px] font-mono">
+        <span>📖 HR. Muslim no. 2309 • Takhrij Shahih</span>
+      </div>
+    </div>
+
+    <!-- SYNCHRONIZED INDONESIAN VOICEOVER SUBTITLE -->
+    <div class="max-w-xl mx-auto px-4 py-2 rounded-xl bg-black/60 border border-slate-800 text-[12px] sm:text-[13px] text-slate-200 leading-relaxed font-serif italic">
+      "Aku melayani Rasulullah ﷺ selama sepuluh tahun. Demi Allah, beliau tidak pernah sekalipun berkata kepadaku <span class="text-amber-300 font-bold">'Ah!'</span> (keluhan, bentakan, atau nada merendahkan)..."
+    </div>
+
+    <!-- VOICE AUDIO WAVEFORM STREAM INDICATOR -->
+    <div class="flex items-center justify-center gap-1 pt-1">
+      <div class="wave-bar w-1 bg-amber-400 rounded-full"></div>
+      <div class="wave-bar w-1 bg-amber-400 rounded-full"></div>
+      <div class="wave-bar w-1 bg-amber-400 rounded-full"></div>
+      <div class="wave-bar w-1 bg-amber-400 rounded-full"></div>
+      <div class="wave-bar w-1 bg-amber-400 rounded-full"></div>
+      <span class="text-[10px] font-mono text-amber-300/80 ml-2">Narasi Ustadz Syarif • Audio Spasial 3D</span>
+    </div>
+
+  </main>
+
+  <!-- MINIMAL FLOATING CONTROLLER HUD -->
+  <footer class="relative z-20 w-full px-4 pb-4 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col items-center gap-2 max-w-xl mx-auto">
+    <!-- Progress Bar -->
+    <div class="w-full flex items-center gap-2 text-[10px] font-mono text-slate-400">
+      <span>04:15</span>
+      <div class="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden relative cursor-pointer">
+        <div class="h-full bg-amber-400 rounded-full w-[57%]"></div>
+      </div>
+      <span>07:30</span>
+    </div>
+
+    <!-- Controls Row -->
+    <div class="flex items-center gap-4 text-slate-200">
+      <button class="p-2 rounded-full hover:bg-white/10 text-slate-300 transition text-xs">
+        ⏪ 10s
+      </button>
+      <button class="w-10 h-10 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center justify-center font-bold shadow-lg transition">
+        ⏸️
+      </button>
+      <button class="p-2 rounded-full hover:bg-white/10 text-slate-300 transition text-xs">
+        ⏩ 10s
+      </button>
+      <button class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 border border-slate-700 text-slate-300">
+        1.0x
+      </button>
+    </div>
+  </footer>
+
+</body>
+</html>

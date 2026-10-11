@@ -1,3 +1,4 @@
+import 'package:pkn_microlearning_app/core/widgets/pkn_adaptive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -43,10 +44,10 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final ideas = feedState.filteredIdeas;
 
-    return Scaffold(
-      appBar: AppBar(
+    return PknScaffold(
+      appBar: PknAppBar(
         title: _isSearching
-            ? TextField(
+            ? PknTextField(
                 controller: _searchController,
                 autofocus: true,
                 decoration: const InputDecoration(
@@ -80,12 +81,13 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
                 ],
               ),
         actions: [
-          IconButton(
+          PknIconButton(
             tooltip: 'Audio Sirah & Tazkiyah',
             icon: const Icon(Icons.headphones_rounded, color: AppColors.brandGold),
             onPressed: () => PknAudioPlayerSheet.show(context),
           ),
-          IconButton(
+          PknIconButton(
+            tooltip: 'Tutup',
             icon: Icon(_isSearching ? Icons.close_rounded : Icons.search_rounded),
             onPressed: () {
               setState(() {
@@ -99,7 +101,8 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
               });
             },
           ),
-          IconButton(
+          PknIconButton(
+            tooltip: 'Materi tersimpan',
             icon: const Icon(Icons.bookmark_border_rounded),
             onPressed: () => context.go(RoutePaths.profile),
           ),
@@ -119,7 +122,7 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
 
                 return Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: FilterChip(
+                  child: PknChoiceChip(
                     label: Text(cat),
                     selected: isSelected,
                     onSelected: (_) {
@@ -185,7 +188,7 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
                             title: '⚡ Respon Cepat Krisis Anak (10 Detik)',
                             content:
                                 'Anak sedang tantrum atau mogok shalat? Jangan mendebat logika di puncak amarah. Dekati, duduk sejajar mata, dan hadirkan pelukan penenteram jiwa.',
-                            trailing: TextButton(
+                            trailing: PknActionButton.text(
                               onPressed: () => _showCrisisModal(context),
                               child: const Text(
                                 'Buka Hub Krisis',
@@ -219,7 +222,7 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
   void _showCrisisModal(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    showModalBottomSheet(
+    showPknSheet(
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101419;color:#e0e2ea;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#101419", "on-primary-fixed-variant": "#005048", "tertiary-container": "#1eb0ea", "surface-container-low": "#181c21", "secondary": "#ffca45", "on-primary": "#003731", "background": "#101419", "on-error-container": "#ffdad6", "secondary-container": "#e4ae00", "on-tertiary-fixed": "#001e2c", "error": "#ffb4ab", "surface-bright": "#36393f", "tertiary": "#7bd0ff", "surface-container-lowest": "#0a0e13", "surface-variant": "#31353b", "on-background": "#e0e2ea", "on-tertiary": "#00354a", "surface-container": "#1c2025", "surface-container-highest": "#31353b", "inverse-primary": "#006b5f", "on-primary-fixed": "#00201c", "outline-variant": "#3c4947", "primary-container": "#14b8a6", "on-surface": "#e0e2ea", "tertiary-fixed": "#c4e7ff", "on-secondary-fixed": "#251a00", "secondary-fixed-dim": "#f7be1d", "outline": "#859490", "primary-fixed": "#71f8e4", "secondary-fixed": "#ffdf9a", "primary-fixed-dim": "#4fdbc8", "on-surface-variant": "#bbcac6", "on-error": "#690005", "surface-container-high": "#262a30", "on-tertiary-fixed-variant": "#004c69", "primary": "#4fdbc8", "surface-tint": "#4fdbc8", "on-secondary": "#3f2e00", "surface-dim": "#101419", "error-container": "#93000a", "on-secondary-fixed-variant": "#5a4300", "on-secondary-container": "#5b4400", "inverse-on-surface": "#2d3136", "tertiary-fixed-dim": "#7bd0ff", "inverse-surface": "#e0e2ea", "on-primary-container": "#00423b", "on-tertiary-container": "#003f58" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "1.75rem", "margin": "1.25rem" }, "fontFamily": { "headline-xl": ["Inter"], "label-xs": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "sacred-quote-lg": ["Amiri"], "sacred-quote-md": ["Amiri"], "body-sm": ["Inter"], "title-sm": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "36px", "fontWeight": "700" }], "label-xs": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "metric-display": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "30px", "fontWeight": "600" }], "sacred-quote-lg": ["26px", { "lineHeight": "48px", "fontWeight": "700" }], "sacred-quote-md": ["20px", { "lineHeight": "38px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "title-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Navigate back" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[200px]">Digital Pass Detail</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Event options" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin"><div class="flex flex-col w-full pb-10 space-y-space-lg">
+<!-- Status Indicator Banner -->
+<div class="w-full bg-surface-container-low px-space-md py-space-sm rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="relative flex h-2.5 w-2.5 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<p class="font-label-md text-label-md text-primary tracking-wide truncate uppercase">
+        Tiket Aktif • Siap Digunakan di Lokasi
+      </p>
+</div>
+<span class="bg-surface-variant text-on-surface-variant font-label-xs text-label-xs px-2 py-0.5 rounded-full flex-shrink-0">
+      Live Sync
+    </span>
+</div>
+<!-- Perspective Segment Controls -->
+<div class="w-full bg-surface-container-lowest p-1 rounded-xl flex items-center gap-1 shadow-inner">
+<button class="flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-high text-primary shadow-sm" id="tabParticipantBtn" onclick="switchView('participant')">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span>Pass Peserta</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface" id="tabScannerBtn" onclick="switchView('scanner')">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Simulator Panitia</span>
+</button>
+</div>
+<!-- SECTION 1: PARTICIPANT DIGITAL LUXURY PASS -->
+<div class="flex flex-col space-y-space-lg w-full transition-all" id="participantView">
+<!-- The Luxury Digital Pass Card -->
+<div class="relative w-full rounded-2xl bg-surface-container overflow-hidden shadow-xl">
+<!-- Decorative Top Aura -->
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-16 w-44 h-44 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<!-- Ticket Header Strip -->
+<div class="px-space-md pt-space-md pb-space-sm flex items-center justify-between relative z-10 bg-gradient-to-b from-surface-container-high/60 to-transparent">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-md bg-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-secondary tracking-widest uppercase block">PKN Digital Pass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dokumen Resmi Mandiri</span>
+</div>
+</div>
+<div class="bg-secondary-container/20 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">stars</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">AUTHENTIC</span>
+</div>
+</div>
+<!-- Main Event Label -->
+<div class="px-space-md py-space-xs relative z-10">
+<span class="inline-block px-2 py-0.5 rounded-md bg-surface-container-high text-tertiary font-label-xs text-label-xs tracking-wider uppercase mb-1">
+          Karakter Nabawiyah
+        </span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">
+          Manajemen Implementasi PKN
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Batch 1 • Transformasi Holistik Karakter Generasi
+        </p>
+</div>
+<!-- Arabesque Watermark Center Layer -->
+<div class="relative px-space-md py-space-sm z-10">
+<!-- Participant Metadata Card Grid -->
+<div class="rounded-xl bg-surface-container-lowest/80 p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between pb-2">
+<div>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Nama Peserta</p>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1">
+                Abu Akbar
+                <span class="material-symbols-outlined text-primary text-[16px]" title="Terverifikasi">check_circle</span>
+</p>
+</div>
+<div class="text-right">
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">ID Registrasi</p>
+<p class="font-label-md text-label-md text-secondary font-mono tracking-wider">PKN-261018-0042-A</p>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-variant/40"></div>
+<div class="grid grid-cols-2 gap-2 pt-1 text-left">
+<div>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Kategori &amp; Shaff</p>
+<p class="font-body-sm text-body-sm text-on-surface truncate">👨 Ikhwan (Depan Sesi Khusus)</p>
+</div>
+<div class="text-right">
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Lembaga Utusan</p>
+<p class="font-body-sm text-body-sm text-on-surface truncate">SD Islam An-Nuur</p>
+</div>
+<div>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Akses Tier</p>
+<p class="font-label-md text-label-md text-primary truncate">Earlybird Pass • Zona A</p>
+</div>
+<div class="text-right">
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Kursi Alokasi</p>
+<p class="font-label-md text-label-md text-on-surface">Baris 03 / A-14</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Ticket Cut Separation Design -->
+<div class="relative w-full flex items-center justify-between my-1 px-0">
+<div class="w-4 h-8 rounded-r-full bg-surface -ml-2 shadow-inner"></div>
+<div class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-surface-variant to-transparent mx-2"></div>
+<div class="w-4 h-8 rounded-l-full bg-surface -mr-2 shadow-inner"></div>
+</div>
+<!-- QR Code Stage -->
+<div class="px-space-md py-space-sm flex flex-col items-center text-center relative z-10">
+<!-- High Contrast QR Box -->
+<div class="relative cursor-pointer bg-white p-3.5 rounded-2xl shadow-lg transition-transform active:scale-95 group" id="dynamicQrWrapper" onclick="toggleQrZoom()">
+<div class="relative w-48 h-48 bg-white flex items-center justify-center">
+<!-- Simulated Crisp SVG QR with authentic matrix aesthetics -->
+<svg class="w-full h-full text-slate-950" fill="currentColor" viewbox="0 0 120 120">
+<!-- Finder pattern top-left -->
+<path d="M10,10 h30 v30 h-30 z M15,15 v20 h20 v-20 z M20,20 h10 v10 h-10 z"></path>
+<!-- Finder pattern top-right -->
+<path d="M80,10 h30 v30 h-30 z M85,15 v20 h20 v-20 z M90,20 h10 v10 h-10 z"></path>
+<!-- Finder pattern bottom-left -->
+<path d="M10,80 h30 v30 h-30 z M15,85 v20 h20 v-20 z M20,90 h10 v10 h-10 z"></path>
+<!-- Alignment patterns and data matrix simulation -->
+<rect height="5" width="5" x="50" y="15"></rect>
+<rect height="15" width="5" x="60" y="10"></rect>
+<rect height="10" width="5" x="70" y="20"></rect>
+<rect height="5" width="10" x="15" y="50"></rect>
+<rect height="10" width="5" x="30" y="55"></rect>
+<rect height="5" width="15" x="10" y="65"></rect>
+<rect height="5" width="10" x="45" y="45"></rect>
+<rect height="5" width="10" x="65" y="45"></rect>
+<rect height="10" width="10" x="45" y="65"></rect>
+<rect height="10" width="10" x="65" y="65"></rect>
+<rect height="5" width="15" x="80" y="50"></rect>
+<rect height="10" width="10" x="100" y="55"></rect>
+<rect height="5" width="10" x="85" y="65"></rect>
+<rect height="5" width="10" x="50" y="85"></rect>
+<rect height="15" width="5" x="65" y="80"></rect>
+<rect height="10" width="15" x="55" y="95"></rect>
+<rect height="10" width="15" x="80" y="85"></rect>
+<rect height="5" width="10" x="100" y="80"></rect>
+<rect height="10" width="10" x="85" y="100"></rect>
+<rect height="10" width="10" x="100" y="100"></rect>
+</svg>
+<!-- Center Emerald Security Badge -->
+<div class="absolute w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-primary text-[22px] font-bold">lock_open</span>
+</div>
+</div>
+<div class="absolute bottom-1 right-2 flex items-center gap-0.5 text-slate-600 group-hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined text-[13px]">zoom_in</span>
+<span class="font-label-xs text-[10px]">Ketuk</span>
+</div>
+</div>
+<!-- Serial Barcode Strip Representation -->
+<div class="mt-3 w-48 text-center">
+<div class="tracking-[0.35em] text-on-surface-variant font-mono text-label-xs uppercase">
+            |||| | ||| || |||||| | |||||
+          </div>
+<p class="font-label-xs text-[11px] text-on-surface-variant tracking-wider font-mono mt-0.5">
+            2610180042A • HASH-SHA256
+          </p>
+</div>
+<p class="font-label-xs text-label-xs text-primary mt-2 flex items-center gap-1 justify-center">
+<span class="material-symbols-outlined text-[14px]">touch_app</span>
+          Ketuk kode untuk memperbesar &amp; kecerahan maksimal
+        </p>
+</div>
+<!-- Event Schedule Snapshot Footer inside pass -->
+<div class="p-space-md bg-surface-container-high/40 mt-2 space-y-2">
+<div class="flex items-start gap-space-xs text-left">
+<span class="material-symbols-outlined text-secondary text-[18px] flex-shrink-0 mt-0.5">calendar_month</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Ahad, 18 Oktober 2026</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Registrasi fisik dibuka pukul 07.30 WIB</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs text-left">
+<span class="material-symbols-outlined text-tertiary text-[18px] flex-shrink-0 mt-0.5">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">SMK PKBM Teknologi Mustaqbal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aula Utama Lt. 2 • Koridor Sayap Kiri</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Onboarding / Practical Tip Card -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface font-medium">Petunjuk Kedatangan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+          Tunjukkan QR code ini secara langsung kepada panitia ikhwan di meja registrasi depan aula. Akses kit peserta dibuka setelah pemindaian valid.
+        </p>
+</div>
+</div>
+<!-- Action Buttons Group -->
+<div class="space-y-space-sm pt-1">
+<button class="w-full h-12 rounded-xl bg-surface-container-high hover:bg-surface-variant text-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-xs transition-colors shadow-sm active:scale-[0.99]" onclick="handleWalletSave()">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span>Simpan ke Google / Apple Wallet</span>
+</button>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.99]" onclick="handlePdfDownload()">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span>Unduh E-Ticket (PDF Resmi)</span>
+</button>
+</div>
+</div>
+<!-- SECTION 2: ORGANIZER ON-SITE SIMULATION SCANNER -->
+<div class="hidden flex-col space-y-space-lg w-full transition-all" id="scannerView">
+<!-- Scanner Master Panel -->
+<div class="rounded-2xl bg-surface-container p-space-md shadow-xl space-y-space-md relative overflow-hidden">
+<!-- Scanner Top Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Petugas Check-In Scanner</h3>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Meja Registrasi Ikhwan • Gate Utama</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-on-surface font-mono">CAM 01 ONLINE</span>
+</div>
+</div>
+<!-- Viewfinder Stage -->
+<div class="relative w-full h-64 bg-surface-container-lowest rounded-xl overflow-hidden flex items-center justify-center">
+<!-- Ambient grid pattern inside viewfinder -->
+<div class="absolute inset-0 opacity-15 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:14px_14px]"></div>
+<!-- Target QR Sample within Camera Sight -->
+<div class="relative p-2 bg-white/90 rounded-lg shadow-inner opacity-75">
+<svg class="w-32 h-32 text-slate-900" fill="currentColor" viewbox="0 0 100 100">
+<path d="M5,5 h25 v25 h-25 z M10,10 v15 h15 v-15 z M15,15 h5 v5 h-5 z"></path>
+<path d="M70,5 h25 v25 h-25 z M75,10 v15 h15 v-15 z M80,15 h5 v5 h-5 z"></path>
+<path d="M5,70 h25 v25 h-25 z M10,75 v15 h15 v-15 z M15,80 h5 v5 h-5 z"></path>
+<rect height="15" width="5" x="40" y="10"></rect>
+<rect height="5" width="10" x="50" y="20"></rect>
+<rect height="10" width="10" x="45" y="45"></rect>
+<rect height="10" width="15" x="70" y="55"></rect>
+<rect height="10" width="15" x="40" y="75"></rect>
+<rect height="5" width="10" x="70" y="80"></rect>
+</svg>
+</div>
+<!-- Four Corner Target Brackets -->
+<div class="absolute inset-8 pointer-events-none flex flex-col justify-between">
+<div class="flex justify-between">
+<div class="w-6 h-6 border-t-2 border-l-2 border-primary rounded-tl"></div>
+<div class="w-6 h-6 border-t-2 border-r-2 border-primary rounded-tr"></div>
+</div>
+<div class="flex justify-between">
+<div class="w-6 h-6 border-b-2 border-l-2 border-primary rounded-bl"></div>
+<div class="w-6 h-6 border-b-2 border-r-2 border-primary rounded-br"></div>
+</div>
+</div>
+<!-- Laser Scanning Line (CSS Animation) -->
+<div class="absolute inset-x-8 h-0.5 bg-primary shadow-[0_0_12px_#14b8a6] animate-[scan_2.4s_ease-in-out_infinite]"></div>
+<div class="absolute bottom-3 px-3 py-1 bg-surface-container-highest/90 backdrop-blur rounded-full text-center">
+<p class="font-label-xs text-label-xs text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary animate-spin">refresh</span>
+            Membaca barcode QR secara dinamis...
+          </p>
+</div>
+</div>
+<!-- Simulated Instant Verification Toast Card -->
+<div class="w-full bg-surface-container-high rounded-xl p-space-md space-y-space-sm shadow-md transition-all" id="verifiedResultCard">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-xs text-label-xs text-primary font-bold tracking-wider uppercase">Check-In Berhasil!</p>
+<p class="font-label-md text-label-md text-on-surface">Status: Terverifikasi Masuk</p>
+</div>
+</div>
+<span class="bg-surface-container-lowest font-label-xs text-label-xs text-on-surface-variant font-mono px-2 py-0.5 rounded">
+            07.48 WIB
+          </span>
+</div>
+<div class="p- space-sm rounded-lg bg-surface-container-lowest/90 space-y-1 text-left p-3">
+<div class="flex justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Peserta:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Abu Akbar</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kategori:</span>
+<span class="font-body-sm text-body-sm text-on-surface">Ikhwan (Shaff Depan)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant">ID Validasi:</span>
+<span class="font-label-md text-label-md text-secondary font-mono">PKN-0042-A</span>
+</div>
+</div>
+<!-- Kit Distribution Guide Section -->
+<div class="rounded-lg bg-secondary-container/15 p-2.5 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">inventory_2</span>
+<div>
+<p class="font-label-md text-label-md text-secondary font-semibold">Instruksi Alokasi Panitia:</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Berikan Paket Kit Fisik: Nametag Lanyard Merah, Map Modul Softfile, dan 1 Lembar Kupon Makan Siang.
+            </p>
+</div>
+</div>
+<!-- Organizer Next Action Button -->
+<button class="w-full h-11 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-95" onclick="triggerNextScanDemo()">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>Scan Peserta Berikutnya</span>
+</button>
+</div>
+</div>
+<!-- Organizer Audit Counter Snippet -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">groups</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Total Hadir di Meja 1</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Kapasitas Sesi: 42 / 120 Peserta</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold">35%</span>
+</div>
+</div>
+</div>
+<!-- Zoom QR Modal Overlay (Interactive Delight) -->
+<div class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-space-md" id="qrModal" onclick="toggleQrZoom()">
+<div class="bg-surface-container p-6 rounded-3xl max-w-sm w-full flex flex-col items-center text-center shadow-2xl relative" onclick="event.stopPropagation()">
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center" onclick="toggleQrZoom()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<span class="font-label-xs text-label-xs text-primary uppercase tracking-widest mb-1">Pindai dari Jarak 15-30 cm</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold mb-4">E-Ticket QR • Abu Akbar</h3>
+<div class="bg-white p-4 rounded-2xl shadow-inner mb-4">
+<svg class="w-64 h-64 text-black" fill="currentColor" viewbox="0 0 120 120">
+<path d="M10,10 h30 v30 h-30 z M15,15 v20 h20 v-20 z M20,20 h10 v10 h-10 z"></path>
+<path d="M80,10 h30 v30 h-30 z M85,15 v20 h20 v-20 z M90,20 h10 v10 h-10 z"></path>
+<path d="M10,80 h30 v30 h-30 z M15,85 v20 h20 v-20 z M20,90 h10 v10 h-10 z"></path>
+<rect height="5" width="5" x="50" y="15"></rect>
+<rect height="15" width="5" x="60" y="10"></rect>
+<rect height="10" width="5" x="70" y="20"></rect>
+<rect height="5" width="10" x="15" y="50"></rect>
+<rect height="10" width="5" x="30" y="55"></rect>
+<rect height="5" width="15" x="10" y="65"></rect>
+<rect height="5" width="10" x="45" y="45"></rect>
+<rect height="5" width="10" x="65" y="45"></rect>
+<rect height="10" width="10" x="45" y="65"></rect>
+<rect height="10" width="10" x="65" y="65"></rect>
+<rect height="5" width="15" x="80" y="50"></rect>
+<rect height="10" width="10" x="100" y="55"></rect>
+<rect height="5" width="10" x="85" y="65"></rect>
+<rect height="5" width="10" x="50" y="85"></rect>
+<rect height="15" width="5" x="65" y="80"></rect>
+<rect height="10" width="15" x="55" y="95"></rect>
+<rect height="10" width="15" x="80" y="85"></rect>
+<rect height="5" width="10" x="100" y="80"></rect>
+<rect height="10" width="10" x="85" y="100"></rect>
+<rect height="10" width="10" x="100" y="100"></rect>
+</svg>
+</div>
+<p class="font-mono text-label-md text-secondary">PKN-261018-0042-A</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-1">Kecerahan layar telah dioptimalkan otomatis</p>
+</div>
+</div>
+<!-- Notification Toast for feedback delight -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-surface-container-highest px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 transition-all opacity-0 pointer-events-none transform translate-y-3" id="toastNotification">
+<span class="material-symbols-outlined text-primary text-[18px]" id="toastIcon">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface" id="toastText">Pemberitahuan</span>
+</div>
+</div>
+<script>
+  function switchView(mode) {
+    const participantView = document.getElementById('participantView');
+    const scannerView = document.getElementById('scannerView');
+    const tabParticipantBtn = document.getElementById('tabParticipantBtn');
+    const tabScannerBtn = document.getElementById('tabScannerBtn');
+
+    if (mode === 'participant') {
+      participantView.classList.remove('hidden');
+      scannerView.classList.add('hidden');
+      tabParticipantBtn.className = "flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-high text-primary shadow-sm";
+      tabScannerBtn.className = "flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface";
+    } else {
+      scannerView.classList.remove('hidden');
+      participantView.classList.add('hidden');
+      tabScannerBtn.className = "flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-high text-primary shadow-sm";
+      tabParticipantBtn.className = "flex-1 py-2 px-3 rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface";
+    }
+  }
+
+  function toggleQrZoom() {
+    const modal = document.getElementById('qrModal');
+    if (modal.classList.contains('hidden')) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    } else {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function triggerToast(message, iconName = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastText = document.getElementById('toastText');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toastText.innerText = message;
+    toastIcon.innerText = iconName;
+
+    toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+    }, 2800);
+  }
+
+  function handleWalletSave() {
+    triggerToast("Tiket berhasil disimpan ke Smart Wallet!", "account_balance_wallet");
+  }
+
+  function handlePdfDownload() {
+    triggerToast("Mengunduh PKN-E-Ticket-Official.pdf...", "download_for_offline");
+  }
+
+  function triggerNextScanDemo() {
+    const card = document.getElementById('verifiedResultCard');
+    card.classList.add('opacity-40');
+    setTimeout(() => {
+      card.classList.remove('opacity-40');
+      triggerToast("Kamera siap untuk peserta registrasi berikutnya!", "qr_code_scanner");
+    }, 400);
+  }
+</script></main></body></html>
