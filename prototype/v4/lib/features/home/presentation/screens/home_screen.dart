@@ -7,6 +7,7 @@ import '../widgets/daily_activity_carousel.dart';
 import '../widgets/bento_features_grid.dart';
 import '../widgets/multi_serial_story_card.dart';
 import '../widgets/p3k_instrument_grid.dart';
+import '../widgets/recommendations_section.dart';
 
 class HomeScreen extends StatelessWidget {
   final VoidCallback? onSwitchTheme;
@@ -65,6 +66,12 @@ class HomeScreen extends StatelessWidget {
             // 7. Grid Practical Instruments (P3K SOP 10 Detik)
             const SliverToBoxAdapter(
               child: P3kInstrumentGrid(),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 20)),
+
+            // 8. Seksi Rekomendasi (Promotional Vertical Stack)
+            const SliverToBoxAdapter(
+              child: RecommendationsSection(),
             ),
 
             // Padding bottom agar tidak tertutup floating bottom bar
