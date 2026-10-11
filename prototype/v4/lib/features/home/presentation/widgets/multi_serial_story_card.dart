@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:forui/forui.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../core/theme/theme_extensions.dart';
+import '../../../stories/presentation/screens/serial_detail_episode_screen.dart';
 
 enum StepStatus { completed, inProgress, locked }
 
@@ -37,9 +39,8 @@ class SerialStoryData {
 }
 
 class MultiSerialStoriesSection extends StatefulWidget {
-  final ValueChanged<SerialStoryData>? onPlayTap;
 
-  const MultiSerialStoriesSection({super.key, this.onPlayTap});
+  const MultiSerialStoriesSection({super.key});
 
   @override
   State<MultiSerialStoriesSection> createState() => _MultiSerialStoriesSectionState();
@@ -51,8 +52,8 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
   static const List<SerialStoryData> _stories = [
     SerialStoryData(
       serialTag: "Serial 1: Kemarahan Zaid",
-      statusTag: "Sedang Berjalan • Ep 3/8",
-      episodeTitle: "Episode 3: Menempa Thuma'ninah di Meja Makan",
+      statusTag: "Sedang Berjalan • Ep 3/4",
+      episodeTitle: "Episode 3: Suara Hati di Balik Bentakan",
       synopsis:
           "Zaid menolak shalat dan membentak saat lelah sepulang TPA. Bangun koneksi fisik dan sejajarkan pandangan sebelum menuntut kepatuhan.",
       milestoneLabel: "3 dari 5 Selesai",
@@ -106,6 +107,12 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
     super.dispose();
   }
 
+  void _openSerial() {
+    Navigator.of(context).push<void>(MaterialPageRoute<void>(
+      builder: (_) => const SerialDetailEpisodeScreen(),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = context.earthTree;
@@ -154,7 +161,7 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
         ),
         const SizedBox(height: 12),
         SizedBox(
-          height: 345,
+          height: 380 + (MediaQuery.textScalerOf(context).scale(16) - 16).clamp(0, 24).toDouble() * 24,
           child: PageView.builder(
             controller: _pageController,
             padEnds: false,
@@ -336,30 +343,22 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
           Row(
             children: [
               Expanded(
-                child: Material(
-                  color: story.isStarted ? colors.celestialSky : colors.surfaceContainerHigh,
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(10),
-                    onTap: () => widget.onPlayTap?.call(story),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: FButton.raw(
+                    onPress: _openSerial,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          Flexible(child: Text(
                             story.ctaLabel,
-                            style: context.textTheme.labelMedium?.copyWith(
-                              color: story.isStarted ? Colors.white : colors.textPrimary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                            textAlign: TextAlign.center,
+                            style: context.textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
+                          )),
                           const SizedBox(width: 4),
-                          iconoir.Play(
-                            width: 14,
-                            height: 14,
-                            color: story.isStarted ? Colors.white : colors.textPrimary,
-                          ),
+                          iconoir.Play(width: 16, height: 16, color: colors.textPrimary),
                         ],
                       ),
                     ),
@@ -373,11 +372,16 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: colors.tactileBorder),
                 ),
-                child: IconButton(
-                  icon: iconoir.Menu(width: 16, height: 16, color: colors.textSecondary),
-                  onPressed: () {},
-                  constraints: const BoxConstraints(minWidth: 38, minHeight: 38),
-                  padding: EdgeInsets.zero,
+                child: SizedBox(
+                  width: 48,
+                  height: 48,
+                  child: Semantics(
+                    label: 'Lihat daftar episode serial',
+                    child: FButton.raw(
+                      onPress: _openSerial,
+                      child: iconoir.Menu(width: 20, height: 20, color: colors.textSecondary),
+                    ),
+                  ),
                 ),
               ),
             ],

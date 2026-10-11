@@ -19,6 +19,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
   final Color ancientBark;
   final Color onAncientBark;
   final Color ancientBarkContainer;
+  final Color nafsLawwamah;
   final Color textPrimary;
   final Color textSecondary;
   final Color textMuted;
@@ -43,6 +44,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     required this.ancientBark,
     required this.onAncientBark,
     required this.ancientBarkContainer,
+    required this.nafsLawwamah,
     required this.textPrimary,
     required this.textSecondary,
     required this.textMuted,
@@ -69,6 +71,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     ancientBark: Color(0xFF7E5223),
     onAncientBark: Color(0xFFFFFFFF),
     ancientBarkContainer: Color(0xFFFFDCBE),
+    nafsLawwamah: Color(0xFFA67C00),
     textPrimary: Color(0xFF1C1C17),
     textSecondary: Color(0xFF3F4850),
     textMuted: Color(0xFF707881),
@@ -95,6 +98,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     ancientBark: Color(0xFFF6BB81),
     onAncientBark: Color(0xFF2C1600),
     ancientBarkContainer: Color(0xFF663E0F),
+    nafsLawwamah: Color(0xFFE5C56C),
     textPrimary: Color(0xFFEFECE6),
     textSecondary: Color(0xFFD3CEC4),
     textMuted: Color(0xFF8C939A),
@@ -121,6 +125,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
     Color? ancientBark,
     Color? onAncientBark,
     Color? ancientBarkContainer,
+    Color? nafsLawwamah,
     Color? textPrimary,
     Color? textSecondary,
     Color? textMuted,
@@ -145,6 +150,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       ancientBark: ancientBark ?? this.ancientBark,
       onAncientBark: onAncientBark ?? this.onAncientBark,
       ancientBarkContainer: ancientBarkContainer ?? this.ancientBarkContainer,
+      nafsLawwamah: nafsLawwamah ?? this.nafsLawwamah,
       textPrimary: textPrimary ?? this.textPrimary,
       textSecondary: textSecondary ?? this.textSecondary,
       textMuted: textMuted ?? this.textMuted,
@@ -174,6 +180,7 @@ class EarthTreeColors extends ThemeExtension<EarthTreeColors> {
       ancientBark: Color.lerp(ancientBark, other.ancientBark, t)!,
       onAncientBark: Color.lerp(onAncientBark, other.onAncientBark, t)!,
       ancientBarkContainer: Color.lerp(ancientBarkContainer, other.ancientBarkContainer, t)!,
+      nafsLawwamah: Color.lerp(nafsLawwamah, other.nafsLawwamah, t)!,
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       textMuted: Color.lerp(textMuted, other.textMuted, t)!,

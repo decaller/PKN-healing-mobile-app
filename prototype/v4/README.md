@@ -54,6 +54,23 @@ Halaman beranda [`HomeScreen`](lib/features/home/presentation/screens/home_scree
 8. 🪟 **Floating Frosted Glass Bottom Dock ([`AppShell`](lib/app/shell.dart)):**
    - Dock navigasi mengambang berkaca (*acrylic frosted blur*) dengan 5 tab Iconoir: *Beranda*, *Agenda*, *Curhat AI*, *Khazanah*, dan *Akun*.
 
+
+### Ronde 1 — Jalur A dan B (Web)
+
+- `P3kCrisisScreen`: resep lapangan tiga poin, batasan perlindungan anak, tiga langkah SOP, penanda untuk sesi berjalan, salin SOP lengkap, dan tombol Selesai.
+- `AiSanctuaryScreen`: gauge tiga tingkatan nafs, mikrofon berdenyut dengan dukungan pengurangan animasi, dialog empati, chip refleksi, dan doa QS. Thaha: 25–26 dalam font Amiri beserta salin doa.
+- Navigasi aktif melalui Bento #1/#4, kartu P3K Tantrum, modal `Mulai Sesi Curhat PTT`, dan tab `Curhat AI` (index 2). Tombol kembali pada tab sanctuary mengembalikan pengguna ke beranda.
+- Sanctuary merupakan prototipe visual dengan panduan refleksi lokal tersusun, bukan mesin AI atau perekam suara. Label privasi merupakan tujuan desain; enkripsi dan mesin AI suara belum aktif. Tidak ada suara yang direkam atau curhat yang dikirim oleh layar ini.
+- Merriweather, Plus Jakarta Sans, dan Amiri dibundel di `assets/fonts` dengan lisensi OFL dari Google Fonts; tipografi tidak membutuhkan unduhan font saat berjalan. Warna fase Lawwamah menggunakan token semantik `nafsLawwamah`.
+- Clipboard Web memerlukan konteks aman (HTTPS atau localhost) dan izin browser. Kegagalan izin menampilkan umpan balik, bukan pesan sukses palsu.
+
+### Ronde 2 — Rujukan Dalil dan Pemilihan Episode
+
+- `DalilDetailScreen` dibuka dari **Detail Rujukan** pada SOP krisis: matan Amiri, terjemahan, takhrij, tiga kaidah pengasuhan, penanda, bagikan melalui clipboard, dan salin matan.
+- `SerialDetailEpisodeScreen` dibuka dari kartu serial beranda: rujukan Luqman, metadata, narasi keluarga, slot sesi, dan daftar empat episode dengan status selesai/berjalan/terkunci.
+- Bookmark dan slot serial hanya berlaku selama layar/sesi berjalan, belum persisten. Status empat episode merupakan contoh desain; aksi episode membuka pratinjau narasi lokal, bukan engine pilihan atau simulasi penyelesaian episode. Save baru membuat slot sesi dan membuka narasi Episode 1.
+- Tombol **Curhat Cepat** memakai interaksi tanpa `Material`/`InkWell`; tidak ada ripple bawaan Material.
+
 ---
 
 ## 3. Struktur Direktori
@@ -61,6 +78,7 @@ Halaman beranda [`HomeScreen`](lib/features/home/presentation/screens/home_scree
 ```
 prototype/v4/
 ├── assets/
+│   ├── fonts/                  # Merriweather, Plus Jakarta Sans, Amiri + OFL
 │   └── data/scenarios/skenario_krisis_shalat_rumah.json
 ├── lib/
 │   ├── app/
@@ -87,9 +105,13 @@ prototype/v4/
 │   │               └── search_ticker_bar.dart
 │   └── main.dart                 # Root entrypoint + Riverpod + Forui FTheme
 ├── test/
-│   └── widget_test.dart          # Smoke test widget rendering
+│   └── widget_test.dart          # Layout 320 px/1,5×, lifecycle, dan transisi clipboard
 └── pubspec.yaml
 ```
+
+Layar tambahan ronde 1:
+- `lib/features/crisis/presentation/screens/p3k_crisis_screen.dart`
+- `lib/features/sanctuary/presentation/screens/ai_sanctuary_screen.dart`
 
 ---
 
@@ -103,8 +125,9 @@ prototype/v4/
 cd prototype/v4
 flutter analyze
 flutter test
+flutter build web
 ```
-*Status saat ini: **0 lint issues**, **100% tests passed**.*
+Pengujian mencakup kedua tema pada viewport 320×640 dengan skala teks 1,5×, penyelesaian refleksi, buka/tutup ulang sanctuary, serta kegagalan dan retry clipboard.
 
 ### Menjalankan Aplikasi
 ```bash
@@ -114,3 +137,10 @@ flutter run -d chrome
 # Mobile Device / Emulator
 flutter run
 ```
+
+```bash
+./run_web.sh
+# Port alternatif; HOST default 0.0.0.0 untuk akses Tailscale Direct IP
+PORT=3002 ./run_web.sh
+```
+Launcher menampilkan URL localhost dan Tailscale. Proxy HTTPS v1 tetap menggunakan port 3001; port alternatif memakai Direct IP. Clipboard memerlukan localhost atau HTTPS.

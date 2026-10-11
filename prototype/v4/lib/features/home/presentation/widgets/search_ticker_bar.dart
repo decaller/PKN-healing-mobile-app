@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:forui/forui.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import '../../../../core/theme/theme_extensions.dart';
+import '../../../sanctuary/presentation/screens/ai_sanctuary_screen.dart';
 
 class SearchTickerBar extends StatefulWidget {
   final VoidCallback? onSearchTap;
@@ -44,11 +46,12 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
     super.dispose();
   }
 
-  void _showCurhatModal(BuildContext context) {
+  Future<void> _showCurhatModal(BuildContext context) async {
     HapticFeedback.mediumImpact();
     final colors = context.earthTree;
+    final navigator = Navigator.of(context);
 
-    showModalBottomSheet(
+    final startSession = await showModalBottomSheet<bool>(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
@@ -81,18 +84,22 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
                     color: colors.celestialSky,
                   ),
                   const SizedBox(width: 8),
-                  Text(
-                    "AI Sanctuary • Curhat Cepat",
-                    style: context.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: colors.textPrimary,
+                  Flexible(
+                    child: Text(
+                      "AI Sanctuary • Curhat Cepat",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: colors.textPrimary,
+                      ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 12),
               Text(
-                "Ruang aman dan hening untuk menyuarakan rasa lelah pengasuhan. Dilindungi etika kerahasiaan on-device tanpa pelacakan.",
+                "Ruang hening untuk refleksi pengasuhan. Buka panduan curhat dan latihan menenangkan diri; tombol ini tidak merekam suara.",
                 textAlign: TextAlign.center,
                 style: context.textTheme.bodySmall?.copyWith(
                   color: colors.textSecondary,
@@ -100,7 +107,7 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
                 ),
               ),
               const SizedBox(height: 24),
-              // Tombol Mic Pulsing
+              // Buka ruang curhat; tidak memulai perekaman.
               Container(
                 width: 72,
                 height: 72,
@@ -116,6 +123,7 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
                   ],
                 ),
                 child: IconButton(
+                  tooltip: 'Mulai Sesi Curhat PTT',
                   icon: const iconoir.Microphone(
                     width: 32,
                     height: 32,
@@ -123,13 +131,13 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
                   ),
                   onPressed: () {
                     HapticFeedback.selectionClick();
-                    Navigator.pop(ctx);
+                    Navigator.of(ctx).pop(true);
                   },
                 ),
               ),
               const SizedBox(height: 16),
               Text(
-                "Ketuk untuk mulai berbicara langsung",
+                "Mulai Sesi Curhat PTT",
                 style: context.textTheme.labelMedium?.copyWith(
                   color: colors.textMuted,
                 ),
@@ -140,6 +148,11 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
         ),
       ),
     );
+    if (startSession == true && mounted && navigator.mounted) {
+      navigator.push(
+        MaterialPageRoute<void>(builder: (_) => const AiSanctuaryScreen()),
+      );
+    }
   }
 
   @override
@@ -208,40 +221,54 @@ class _SearchTickerBarState extends State<SearchTickerBar> {
               ),
             ),
             const SizedBox(width: 8),
-            // Tombol Walkie-Talkie Curhat Cepat
-            Material(
-              color: colors.celestialSky,
-              borderRadius: BorderRadius.circular(10),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(10),
-                onTap: () {
-                  if (widget.onCurhatTap != null) {
-                    widget.onCurhatTap!();
-                  } else {
-                    _showCurhatModal(context);
-                  }
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const iconoir.Voice(
-                        width: 18,
-                        height: 18,
-                        color: Colors.white,
-                      ),
-                      if (!context.isCompactMobile) ...[
-                        const SizedBox(width: 6),
-                        Text(
-                          "Curhat Cepat",
-                          style: context.textTheme.labelSmall?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                          ),
+            // Forui keeps Curhat Cepat tactile and ripple-free.
+            Tooltip(
+              message: 'Curhat Cepat',
+              child: Semantics(
+                label: 'Curhat Cepat',
+                child: FButton.raw(
+                  style: FButtonStyle.ghost,
+                  onPress: () {
+                    if (widget.onCurhatTap != null) {
+                      widget.onCurhatTap!();
+                    } else {
+                      _showCurhatModal(context);
+                    }
+                  },
+                  child: Container(
+                    constraints: const BoxConstraints(
+                      minWidth: 48,
+                      minHeight: 48,
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: colors.celestialSky,
+                      border: Border.all(color: colors.tactileBorder),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        iconoir.Voice(
+                          width: 18,
+                          height: 18,
+                          color: colors.onCelestialSky,
                         ),
+                        if (!context.isCompactMobile) ...[
+                          const SizedBox(width: 6),
+                          Text(
+                            'Curhat Cepat',
+                            style: context.textTheme.labelSmall?.copyWith(
+                              color: colors.onCelestialSky,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
                 ),
               ),

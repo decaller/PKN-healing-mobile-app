@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import '../../../../core/theme/theme_extensions.dart';
+import '../../../crisis/presentation/screens/p3k_crisis_screen.dart';
 
 class InstrumentItem {
   final String title;
@@ -36,7 +37,15 @@ class P3kInstrumentGrid extends StatelessWidget {
         icon: iconoir.Flash(width: 20, height: 20, color: colors.error),
         iconBg: colors.errorContainer,
         iconColor: colors.error,
-        onTap: () => onInstrumentTap?.call("P3K Tantrum"),
+        onTap: () {
+          if (onInstrumentTap != null) {
+            onInstrumentTap!("P3K Tantrum");
+          } else {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(builder: (_) => const P3kCrisisScreen()),
+            );
+          }
+        },
       ),
       InstrumentItem(
         title: "Mizan Fitrah",

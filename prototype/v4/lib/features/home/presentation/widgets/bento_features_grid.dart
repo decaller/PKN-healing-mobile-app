@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import '../../../../core/theme/theme_extensions.dart';
+import '../../../crisis/presentation/screens/p3k_crisis_screen.dart';
+import '../../../sanctuary/presentation/screens/ai_sanctuary_screen.dart';
 
 class BentoFeaturesGrid extends StatelessWidget {
   final VoidCallback? onAiTap;
   final VoidCallback? onWikiTap;
   final VoidCallback? onAgendaTap;
-  final VoidCallback? onCeritaTap;
+  final VoidCallback? onP3kTap;
   final VoidCallback? onToolsTap;
 
   const BentoFeaturesGrid({
@@ -14,7 +16,7 @@ class BentoFeaturesGrid extends StatelessWidget {
     this.onAiTap,
     this.onWikiTap,
     this.onAgendaTap,
-    this.onCeritaTap,
+    this.onP3kTap,
     this.onToolsTap,
   });
 
@@ -53,7 +55,11 @@ class BentoFeaturesGrid extends StatelessWidget {
 
           // Bento 1: AI Sanctuary (Span 2 / Full Width)
           GestureDetector(
-            onTap: onAiTap,
+            onTap: onAiTap ?? () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const AiSanctuaryScreen()),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -223,16 +229,20 @@ class BentoFeaturesGrid extends StatelessWidget {
           const SizedBox(height: 10),
           Row(
             children: [
-              // Bento 4: Cerita Interaktif
+              // Bento 4: SOP Tantrum P3K
               Expanded(
                 child: _buildBentoCard(
                   context,
-                  title: "Cerita Interaktif",
-                  desc: "Living rehearsal tanpa frustasi 'game over'.",
-                  actionLabel: "Mainkan",
-                  accentColor: colors.celestialSky,
-                  icon: iconoir.Gamepad(width: 20, height: 20, color: colors.celestialSky),
-                  onTap: onCeritaTap,
+                  title: "SOP Tantrum P3K",
+                  desc: "Panduan 10 detik untuk mendampingi anak tantrum.",
+                  actionLabel: "Buka SOP",
+                  accentColor: colors.error,
+                  icon: iconoir.Flash(width: 20, height: 20, color: colors.error),
+                  onTap: onP3kTap ?? () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const P3kCrisisScreen()),
+                    );
+                  },
                 ),
               ),
               const SizedBox(width: 10),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconoir_flutter/iconoir_flutter.dart' as iconoir;
 import '../core/theme/theme_extensions.dart';
 import '../features/home/presentation/screens/home_screen.dart';
+import '../features/sanctuary/presentation/screens/ai_sanctuary_screen.dart';
 
 class AppShell extends StatefulWidget {
   final VoidCallback? onToggleTheme;
@@ -20,7 +21,14 @@ class _AppShellState extends State<AppShell> {
   Widget build(BuildContext context) {
     final colors = context.earthTree;
 
-    return Scaffold(
+    return PopScope<void>(
+      canPop: _currentIndex == 0,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && _currentIndex != 0) {
+          setState(() => _currentIndex = 0);
+        }
+      },
+      child: Scaffold(
       backgroundColor: colors.surface,
       body: Stack(
         children: [
@@ -30,7 +38,12 @@ class _AppShellState extends State<AppShell> {
             children: [
               HomeScreen(onSwitchTheme: widget.onToggleTheme),
               _buildPlaceholderScreen("Agenda & Acara", iconoir.Calendar(width: 48, height: 48, color: colors.ancientBark)),
-              _buildPlaceholderScreen("AI Sanctuary", iconoir.Voice(width: 48, height: 48, color: colors.celestialSky)),
+              Padding(
+                padding: EdgeInsets.only(bottom: 72 + MediaQuery.of(context).padding.bottom),
+                child: AiSanctuaryScreen(
+                  onBack: () => setState(() => _currentIndex = 0),
+                ),
+              ),
               _buildPlaceholderScreen("Wiki PKN", iconoir.Book(width: 48, height: 48, color: colors.meadowCanopy)),
               _buildPlaceholderScreen("Profil Pengasuhan", iconoir.User(width: 48, height: 48, color: colors.textSecondary)),
             ],
@@ -69,7 +82,7 @@ class _AppShellState extends State<AppShell> {
                     children: [
                       _buildNavItem(0, "Beranda", iconoir.Home(width: 22, height: 22, color: _getNavColor(0))),
                       _buildNavItem(1, "Agenda", iconoir.Calendar(width: 22, height: 22, color: _getNavColor(1))),
-                      _buildNavItem(2, "AI", iconoir.Voice(width: 22, height: 22, color: _getNavColor(2))),
+                      _buildNavItem(2, "Curhat AI", iconoir.Voice(width: 22, height: 22, color: _getNavColor(2))),
                       _buildNavItem(3, "Wiki", iconoir.Book(width: 22, height: 22, color: _getNavColor(3))),
                       _buildNavItem(4, "Profil", iconoir.User(width: 22, height: 22, color: _getNavColor(4)), badgeText: "3"),
                     ],
@@ -79,6 +92,7 @@ class _AppShellState extends State<AppShell> {
             ),
           ),
         ],
+      ),
       ),
     );
   }
@@ -92,10 +106,18 @@ class _AppShellState extends State<AppShell> {
     final colors = context.earthTree;
     final isSelected = _currentIndex == index;
 
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      label: label,
       onTap: () => setState(() => _currentIndex = index),
-      child: Column(
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => setState(() => _currentIndex = index),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+          child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Stack(
@@ -139,6 +161,8 @@ class _AppShellState extends State<AppShell> {
             ),
           ),
         ],
+      ),
+        ),
       ),
     );
   }
