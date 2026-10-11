@@ -153,47 +153,61 @@ bool _hasRawHexColor(String line) {
 List<LintViolation> _checkTokenMismatches(String filePath, List<String> lines, String content) {
   final violations = <LintViolation>[];
 
-  // Cari pasangan tagColor: *Container dan tagTextColor: on* (bukan on*Container)
   for (var i = 0; i < lines.length; i++) {
     final line = lines[i];
 
-    // Misal: tagColor: colors.meadowCanopyContainer dengan tagTextColor: colors.onMeadowCanopy
+    // Kasus 1: tagColor: colors.*Container
     if (line.contains('tagColor: colors.meadowCanopyContainer') ||
         line.contains('tagColor: colors.ancientBarkContainer') ||
         line.contains('tagColor: colors.celestialSkyContainer')) {
-      // Periksa 3 baris setelahnya
-      for (var j = 1; j <= 3 && (i + j) < lines.length; j++) {
+      for (var j = 1; j <= 4 && (i + j) < lines.length; j++) {
         final nextLine = lines[i + j];
-        if (nextLine.contains('tagTextColor: colors.onMeadowCanopy') &&
-            !nextLine.contains('Container')) {
+        if (nextLine.contains('tagTextColor: colors.onMeadowCanopy') && !nextLine.contains('Container')) {
           violations.add(LintViolation(
             rule: 'TOKEN_MISMATCH',
-            message: 'meadowCanopyContainer dipasangkan dengan onMeadowCanopy.',
-            suggestion: 'Gunakan colors.onMeadowCanopyContainer untuk kontras sempurna di kedua mode.',
+            message: 'tagColor meadowCanopyContainer dipasangkan dengan onMeadowCanopy.',
+            suggestion: 'Gunakan colors.onMeadowCanopyContainer.',
             file: filePath,
             line: i + j + 1,
             lineSnippet: nextLine.trim(),
           ));
-        } else if (nextLine.contains('tagTextColor: colors.onAncientBark') &&
-            !nextLine.contains('Container')) {
+        } else if (nextLine.contains('tagTextColor: colors.onAncientBark') && !nextLine.contains('Container')) {
           violations.add(LintViolation(
             rule: 'TOKEN_MISMATCH',
-            message: 'ancientBarkContainer dipasangkan dengan onAncientBark.',
-            suggestion: 'Gunakan colors.onAncientBarkContainer untuk kontras sempurna di kedua mode.',
+            message: 'tagColor ancientBarkContainer dipasangkan dengan onAncientBark.',
+            suggestion: 'Gunakan colors.onAncientBarkContainer.',
             file: filePath,
             line: i + j + 1,
             lineSnippet: nextLine.trim(),
           ));
-        } else if (nextLine.contains('tagTextColor: colors.onCelestialSky') &&
-            !nextLine.contains('Container')) {
+        } else if (nextLine.contains('tagTextColor: colors.onCelestialSky') && !nextLine.contains('Container')) {
           violations.add(LintViolation(
             rule: 'TOKEN_MISMATCH',
-            message: 'celestialSkyContainer dipasangkan dengan onCelestialSky.',
-            suggestion: 'Gunakan colors.onCelestialSkyContainer untuk kontras sempurna di kedua mode.',
+            message: 'tagColor celestialSkyContainer dipasangkan dengan onCelestialSky.',
+            suggestion: 'Gunakan colors.onCelestialSkyContainer.',
             file: filePath,
             line: i + j + 1,
             lineSnippet: nextLine.trim(),
           ));
+        }
+      }
+    }
+
+    // Kasus 2: BoxDecoration(color: colors.*Container) atau bg = colors.*Container
+    if (line.contains('color: colors.meadowCanopyContainer') ||
+        line.contains('bg = colors.meadowCanopyContainer')) {
+      for (var j = 1; j <= 8 && (i + j) < lines.length; j++) {
+        final nextLine = lines[i + j];
+        if (nextLine.contains('colors.onMeadowCanopy') && !nextLine.contains('Container')) {
+          violations.add(LintViolation(
+            rule: 'TOKEN_MISMATCH',
+            message: 'Latar meadowCanopyContainer dipasangkan dengan teks colors.onMeadowCanopy.',
+            suggestion: 'Gunakan colors.onMeadowCanopyContainer agar kontras di kedua mode.',
+            file: filePath,
+            line: i + j + 1,
+            lineSnippet: nextLine.trim(),
+          ));
+          break;
         }
       }
     }

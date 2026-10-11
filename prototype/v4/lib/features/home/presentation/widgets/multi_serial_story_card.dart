@@ -165,7 +165,7 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                 child: Text(
                   "Lihat Semua",
                   style: context.textTheme.labelSmall?.copyWith(
-                    color: colors.onMeadowCanopy,
+                    color: colors.onMeadowCanopyContainer,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -277,18 +277,18 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.55),
+                              color: colors.surface.withValues(alpha: 0.92),
                               borderRadius: BorderRadius.circular(999),
                               border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.25),
+                                color: colors.celestialSky.withValues(alpha: 0.35),
                               ),
                             ),
                             child: Text(
                               story.serialTag.toUpperCase(),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                color: Colors.white, // ignore_theme_linter: photo_scrim
+                              style: TextStyle(
+                                color: colors.celestialSky,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 10,
                               ),
@@ -302,13 +302,16 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                             decoration: BoxDecoration(
                               color: colors.meadowCanopyContainer.withValues(alpha: 0.92),
                               borderRadius: BorderRadius.circular(999),
+                              border: Border.all(
+                                color: colors.meadowCanopy.withValues(alpha: 0.3),
+                              ),
                             ),
                             child: Text(
                               story.statusTag,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                color: colors.onMeadowCanopy,
+                                color: colors.onMeadowCanopyContainer,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 10,
                               ),
@@ -421,6 +424,7 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                           child: ConstrainedBox(
                             constraints: const BoxConstraints(minHeight: 46),
                             child: FButton.raw(
+                              style: story.isStarted ? FButtonStyle.primary : FButtonStyle.secondary,
                               onPress: _openSerial,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 11, horizontal: 12),
@@ -432,11 +436,15 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
                                       textAlign: TextAlign.center,
                                       style: context.textTheme.labelMedium?.copyWith(
                                         fontWeight: FontWeight.bold,
-                                        color: colors.onCelestialSky,
+                                        color: story.isStarted ? colors.onCelestialSky : colors.textPrimary,
                                       ),
                                     )),
                                     const SizedBox(width: 4),
-                                    iconoir.Play(width: 16, height: 16, color: colors.onCelestialSky),
+                                    iconoir.Play(
+                                      width: 16,
+                                      height: 16,
+                                      color: story.isStarted ? colors.onCelestialSky : colors.textPrimary,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -486,7 +494,7 @@ class _MultiSerialStoriesSectionState extends State<MultiSerialStoriesSection> {
       case StepStatus.completed:
         bg = colors.meadowCanopyContainer.withValues(alpha: 0.3);
         border = colors.meadowCanopy.withValues(alpha: 0.3);
-        textCol = colors.onMeadowCanopy;
+        textCol = colors.meadowCanopy;
         icon = iconoir.CheckCircle(width: 13, height: 13, color: colors.meadowCanopy);
         break;
       case StepStatus.inProgress:
