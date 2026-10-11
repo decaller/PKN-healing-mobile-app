@@ -6,10 +6,30 @@ import 'package:pkn_prototype_v4/app/theme.dart';
 import 'package:pkn_prototype_v4/core/theme/earth_tree_forui.dart';
 import 'package:pkn_prototype_v4/features/crisis/presentation/screens/p3k_crisis_screen.dart';
 import 'package:pkn_prototype_v4/features/home/presentation/widgets/bento_features_grid.dart';
+import 'package:pkn_prototype_v4/features/home/presentation/widgets/multi_serial_story_card.dart';
 import 'package:pkn_prototype_v4/features/sanctuary/presentation/screens/ai_sanctuary_screen.dart';
 
 void main() {
   for (final brightness in Brightness.values) {
+    testWidgets(
+        'MultiSerialStoriesSection renders and fits viewport in $brightness',
+        (tester) async {
+      _narrowViewport(tester);
+      await tester.pumpWidget(_screenHarness(
+        const Scaffold(
+          body: SingleChildScrollView(
+            child: MultiSerialStoriesSection(),
+          ),
+        ),
+        brightness: brightness,
+      ));
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+      expect(find.text('Cerita Interaktif'), findsOneWidget);
+      expect(find.text('SERIAL 1: KEMARAHAN ZAID'), findsOneWidget);
+      expect(find.text('Lanjutkan Episode 3'), findsOneWidget);
+    });
+
     testWidgets('Crisis fits narrow large-text viewport in $brightness',
         (tester) async {
       _narrowViewport(tester);
