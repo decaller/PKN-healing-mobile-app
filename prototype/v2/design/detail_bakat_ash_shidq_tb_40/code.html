@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary': '#7e5223', 'on-secondary-fixed-variant': '#005323', 'on-tertiary-fixed-variant': '#663e0f', 'tertiary-fixed': '#ffdcbe', 'primary-fixed-dim': '#93ccff', 'inverse-surface': '#31302b', 'on-surface': '#1c1c17', 'surface-container-lowest': '#ffffff', 'on-surface-variant': '#3f4850', 'on-tertiary-fixed': '#2c1600', 'surface-container': '#f1ede5', 'primary': '#006194', 'on-primary-container': '#fdfcff', 'surface-container-highest': '#e6e2da', 'on-error': '#ffffff', 'on-primary-fixed': '#001d31', 'background': '#fdf9f0', 'on-error-container': '#93000a', 'outline': '#707881', 'inverse-primary': '#93ccff', 'secondary-fixed-dim': '#79db8d', 'inverse-on-surface': '#f4f0e8', 'surface-variant': '#e6e2da', 'on-background': '#1c1c17', 'on-tertiary-container': '#fffbff', 'on-primary': '#ffffff', 'secondary': '#006d30', 'surface-dim': '#dddad1', 'secondary-container': '#92f5a4', 'surface-bright': '#fdf9f0', 'on-secondary-fixed': '#00210a', 'on-primary-fixed-variant': '#004b73', 'error': '#ba1a1a', 'surface-tint': '#006398', 'primary-fixed': '#cce5ff', 'surface': '#fdf9f0', 'outline-variant': '#bfc7d2', 'surface-container-high': '#ece8df', 'on-secondary': '#ffffff', 'tertiary-fixed-dim': '#f6bb81', 'on-tertiary': '#ffffff', 'tertiary-container': '#9a6a38', 'surface-container-low': '#f7f3ea', 'on-secondary-container': '#007233', 'error-container': '#ffdad6', 'primary-container': '#007bb9', 'secondary-fixed': '#95f8a7' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'space-md': '1.25rem', 'space-lg': '2rem', 'space-xl': '3.5rem', 'margin': '3rem', 'space-xs': '0.375rem', 'gutter': '1.5rem', 'gutter-sm': '1rem', 'margin-sm': '1.25rem', 'space-sm': '0.75rem' }, fontFamily: { 'display-lg': ['Merriweather'], 'headline-md': ['Merriweather'], 'headline-xl-mobile': ['Merriweather'], 'headline-lg-mobile': ['Merriweather'], 'label-sm': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'title-sm': ['Plus Jakarta Sans'], 'display-lg-mobile': ['Merriweather'], 'title-md': ['Plus Jakarta Sans'], 'headline-xl': ['Merriweather'], 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Merriweather'], 'headline-sm': ['Merriweather'], 'body-lg': ['Plus Jakarta Sans'] }, fontSize: { 'display-lg': ['56px', { lineHeight: '68px', letterSpacing: '-0.02em', fontWeight: '700' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '700' }], 'headline-xl-mobile': ['30px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '700' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '400' }], 'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '400' }], 'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.02em', fontWeight: '500' }], 'title-sm': ['16px', { lineHeight: '24px', letterSpacing: '0', fontWeight: '600' }], 'display-lg-mobile': ['38px', { lineHeight: '48px', letterSpacing: '-0.015em', fontWeight: '700' }], 'title-md': ['18px', { lineHeight: '26px', letterSpacing: '-0.005em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '52px', letterSpacing: '-0.015em', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', letterSpacing: '0.005em', fontWeight: '400' }], 'headline-lg': ['32px', { lineHeight: '42px', letterSpacing: '-0.01em', fontWeight: '400' }], 'headline-sm': ['20px', { lineHeight: '28px', letterSpacing: '0.005em', fontWeight: '400' }], 'body-lg': ['18px', { lineHeight: '28px', letterSpacing: '0', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe"><div class="h-16 px-margin-sm flex items-center justify-between shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="flex items-center gap-space-xs"><button aria-label="Kembali ke Agenda" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="window.location.href='#agenda'"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate max-w-[200px]">Detail Majelis Daurah</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Bagikan Informasi Majelis" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[22px]">share</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 opacity-0 pointer-events-none translate-y-[-10px] w-[90%] max-w-sm" id="toast-notif">
+<div class="bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-body-sm text-body-sm text-inverse-on-surface font-medium flex-1" id="toast-text">Tersimpan ke Brankas Pengasuhan!</p>
+</div>
+</div>
+<div class="px-margin-sm py-space-md flex flex-col gap-space-md">
+<!-- Hero Identity Card (Layer 1 Masonry) -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm relative overflow-hidden">
+<div class="absolute -right-8 -bottom-10 opacity-5 pointer-events-none select-none text-on-surface">
+<span class="font-display-lg text-[130px] font-serif leading-none">صِدق</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-sm">
+<span class="bg-secondary text-on-secondary px-space-sm py-0.5 rounded-full font-label-sm text-label-sm inline-flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Bakat Utama / Asasi
+        </span>
+<span class="bg-surface-container-high text-on-surface-variant px-space-sm py-0.5 rounded-full font-label-sm text-label-sm">
+          TB-40 • Rumpun 01
+        </span>
+</div>
+<div class="flex flex-col gap-1 mb-space-md relative z-10">
+<div class="flex items-baseline justify-between gap-2">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-primary font-bold tracking-tight">
+            Ash-Shidq
+          </h2>
+<span class="font-display-lg-mobile text-headline-lg-mobile text-tertiary font-serif" dir="rtl">
+            الصِّدْق
+          </span>
+</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">
+          Kejujuran Autentik &amp; Ketulusan Batin
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Klaster Fitrah Keimanan, Ruhaniyah &amp; Keselarasan Hati-Lisan
+        </p>
+</div>
+<!-- Quick Archetype Metric -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs border-none">
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm shadow-sm flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">balance</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Kekuatan Inti</p>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Keberanian Moral</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm shadow-sm flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">heart_check</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Radar Batin</p>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Sensitivitas Tabir</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Grounding Banner: Mindful Parent Note -->
+<section class="bg-surface-container-low rounded-lg p-space-md shadow-sm flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex-shrink-0 flex items-center justify-center text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold mb-0.5">
+          Pesona Alami Anak Ash-Shidq
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Jiwa mereka adalah cermin telaga yang jernih. Begitu ada kepalsuan atau distorsi realitas di sekelilingnya, riak batinnya segera terusik. Mereka lahir bukan untuk bersandiwara.
+        </p>
+</div>
+</section>
+<!-- Manifestasi Karakteristik Anak -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Manifestasi &amp; Ciri Perilaku
+        </h3>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-sm text-title-sm flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</span>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold mb-1">
+                Radar Alami Mendeteksi Kepura-puraan
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Sangat peka saat orang dewasa berbohong demi kepraktisan (misal: "Bapak pergi sebentar ya" padahal lama). Inkonsistensi ucapan dan realitas membuat mereka gelisah secara psikologis.
+              </p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-sm text-title-sm flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</span>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold mb-1">
+                Lisan Lugas &amp; Berani Mengakui Fakta
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Saat melakukan kesalahan, anak dengan dominasi Ash-Shidq memiliki dorongan spontan untuk mengakui perbuatannya, meskipun ia tahu ada risiko teguran atau hukuman.
+              </p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-sm text-title-sm flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</span>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold mb-1">
+                Haus Teladan Autentik Tanpa Tabir
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Mereka menaruh rasa hormat tertinggi bukan kepada figur yang tampil sempurna, melainkan kepada orang tua dan pendidik yang mau mengakui kekeliruan dengan tulus.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Anchor: Ilustrasi Kejujuran Hati -->
+<section class="bg-surface-container-high rounded-xl p-space-md shadow-sm overflow-hidden">
+<div class="relative w-full h-44 rounded-lg overflow-hidden mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Warm serene editorial fine-art photograph of a young child holding a clear glass jar with a small green sprout under soft golden morning sunlight on a rustic wooden table with earthy tones of deep green, sky blue, and mineral paper, peaceful and intentional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChfWgvuq43CR-HCAlwWDn9Wl56K7fDRIGqcOxLdYow3A2rjZZ2XUEyps9Q0Ol0GU-P7kZxUFdsnqutx4DGYUfUZfQmJKjP8Cr1ZnKVsjrPolpHpJHgDwuQNYjrKORsg5WejYfBH8rmlBMP0xV4LXI3K8P0BORxkX_BmNpdvlo4gF6M3jylF4vcZPrjx0H216JS9KFCv8eA7uQuhAiqXjy_U62huY03dBXdd0Fb5MwMfrEoYbkebxfpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent flex items-end p-space-md">
+<p class="text-on-primary font-title-sm text-title-sm font-medium drop-shadow-sm">
+            "Kejujuran adalah benih ketenteraman batin yang tak tertandingi."
+          </p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-space-xs text-center">
+        Fitrah lisan yang teguh mengakar sejak usia dini membentuk benteng integritas masa depan.
+      </p>
+</section>
+<!-- Dalil & Fondasi Syar'i -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Dalil &amp; Fondasi Syar'i
+        </h3>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Ayat Al-Qur'an Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-space-sm py-0.5 rounded-full font-semibold">
+              Al-Qur'anul Karim
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+              QS. At-Taubah: 119
+            </span>
+</div>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-right text-on-surface font-serif leading-loose my-space-xs" dir="rtl">
+            يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوا اتَّقُوا اللّٰهَ وَكُوْنُوْا مَعَ الصّٰدِقِيْنَ
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface font-medium italic mt-space-sm mb-1">
+            "Wahai orang-orang yang beriman! Bertakwalah kepada Allah, dan bersamalah kamu dengan orang-orang yang benar (jujur)."
+          </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Tafsir Ibnu Katsir: Kebersamaan dengan kaum shiddiqin meneguhkan jiwa dan menjadi perisai dari kemunafikan.
+          </p>
+</div>
+<!-- Hadits Nabawi Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-secondary/10 text-secondary px-space-sm py-0.5 rounded-full font-semibold">
+              Hadits Nabawi
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+              Shahih Bukhari &amp; Muslim
+            </span>
+</div>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-right text-on-surface font-serif leading-loose my-space-xs" dir="rtl">
+            عَلَيْكُمْ بِالصِّدْقِ، فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface font-medium italic mt-space-sm mb-1">
+            "Hendaklah kalian senantiasa bersikap jujur, karena kejujuran menuntun kepada kebaikan, dan kebaikan menuntun menuju surga..."
+          </p>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">
+              Muttafaqun 'Alaih (HR. Bukhari no. 6094, Muslim no. 2607)
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tantangan Perkembangan (Blind Spot & Resiko) -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            Tantangan &amp; Blind Spot
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Area rentan yang perlu pengawalan adab</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-error-container text-error flex-shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold mb-0.5">
+              Risiko Cap "Kurang Ajar" atau Terlalu Vulgar
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Jika bakat kejujuran tidak dibungkus dengan hikmah dan adab bertutur, anak bisa menyampaikan kebenaran secara kasar di depan umum sehingga melukai perasaan orang lain.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-error-container text-error flex-shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[16px]">heart_broken</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold mb-0.5">
+              Kekecewaan Mendalam atas Janji Batal
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Ketika orang tua menyepelekan janji atau ingkar kesepakatan, anak Ash-Shidq rentan mengalami krisis kepercayaan mendalam dan menarik diri dari komunikasi intim.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Panduan Pengasuhan Orang Tua (SOP Praktis) -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">rule</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          SOP Pengasuhan Praktis
+        </h3>
+</div>
+<div class="space-y-space-md">
+<!-- DO Section -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-sm text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-title-sm text-title-sm font-bold tracking-wide uppercase">DO (Wajib Ditegakkan)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-semibold text-secondary">Akui &amp; puji keberanian jujurnya terlebih dahulu</strong> sebelum mengevaluasi dampak kesalahannya. Katakan: <em>"Terima kasih atas kejujuranmu yang mulia, Nak. Sekarang mari kita cari solusi bersama."</em>
+</p>
+</div>
+<!-- DON'T Section -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-sm text-error">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="font-title-sm text-title-sm font-bold tracking-wide uppercase">DON'T (Hindari Mutlak)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-semibold text-error">Jangan pernah menyuruhnya berbohong</strong> demi menjaga gengsi sosial (misal: "Bilang ke tamu kalau Ibu lagi tidur"). Sekali anak dipaksa berbohong, fondasi fitrah kepercayaannya retak.
+          </p>
+</div>
+<!-- Golden Phrase Card -->
+<div class="bg-primary/5 rounded-lg p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Kalimat Penguat Jiwa (Afirmasi)</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface italic font-medium">
+            "Ayah dan Ibu sangat bangga atas kejujuranmu hari ini. Kejujuran adalah mahkota kehormatanmu. Kesalahan bisa kita perbaiki bersama tanpa rasa takut."
+          </p>
+</div>
+</div>
+</section>
+<!-- Aktivitas & Latihan Harian -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">event_note</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+          Latihan &amp; Ritual Harian
+        </h3>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Activity Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">
+                  Jurnal Cermin Kejujuran
+                </h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Luangkan 5 menit sebelum tidur bagi anak untuk menuliskan atau bercerita tentang momen di mana ia merasa paling jujur dan lega hari ini, tanpa rasa takut dihakimi.
+              </p>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded font-label-sm text-label-sm whitespace-nowrap">
+              Malam Hari
+            </span>
+</div>
+</div>
+<!-- Activity Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">forum</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">
+                  Musyawarah Keterbukaan Keluarga
+                </h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Sesi pekanan santai di mana orang tua dan anak saling berbagi evaluasi dengan adab: meminta maaf atas janji yang terlewat dan saling memaafkan secara terbuka.
+              </p>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded font-label-sm text-label-sm whitespace-nowrap">
+              Pekanan
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Visual Inspiration: Parenting Moments -->
+<section class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">photo_library</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">
+          Refleksi Teladan Kehidupan
+        </h4>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="w-full h-24 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Intimate organic documentary photography of father and child talking warmly on a peaceful veranda during golden sunset with earthy wood architecture and green garden background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsOYe3WBcFl_IbsjbMtB4QCJUApVlqqUURfNyzBiRYjqlRuWf2dWS-YW5n9aR-qBPRY4FKkebDhoDpuI5MNopNUSQXwyrhQjVfdSRPdJMMDnUWcBokfp_BARn818C7EsHb9U6-tYx3vsfWW9Ok4_-jWJg8JDvD0rSge8VxwmtpIDLIkjKR0y9LlAAojdg7K9tLoa9a7RlhdbOX6_B6-WBaVPWmfWfR1530TQCrfhdqfzMUzmcDkhyvcg"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center">Bicara dari Hati ke Hati</p>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full h-24 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Serene fine art photo of open Islamic journal with handcrafted botanical paper and wooden pen on sand-washed linen, warm gentle ambient shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALB1PeXS3r8IqRd1C6IDz9TYAIznLDxIr1wrNM8luf_A5W71O4oQuc5Lc5BsTZbxYuAf9eqsbTxh7iV5tAfSFdT7dqDoAYlMUvTPxnXCtQwW-llRYST7tNhn-5fPPLH5zppTpNVM0U8C4uxxra16HsY9ipX9XdAZSIhWbAE2A52O75Pzv6X7p7TpuKSIinlEoRQYRq7bc68CAXGrzzkQU89J9mi78so7YUZJdKbPisFcWzT8vtWGSGQA"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center">Rekam Jejak Kejujuran</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Interactive Controls -->
+<div class="sticky bottom-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md p-margin-sm shadow-[0_-4px_24px_rgba(44,40,37,0.08)] flex items-center gap-space-sm">
+<button aria-label="Bagikan Lembar Bakat" class="flex-1 bg-surface-container text-on-surface hover:bg-surface-container-high py-space-sm px-space-md rounded-lg font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-xs transition-all active:scale-[0.98]" id="btn-share">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span>Bagikan</span>
+</button>
+<button aria-label="Simpan ke Brankas Pengasuhan Anak" class="flex-[2] bg-primary text-on-primary hover:bg-primary-container py-space-sm px-space-md rounded-lg font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.98]" id="btn-save-vault">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="truncate">Simpan ke Brankas</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    const saveBtn = document.getElementById('btn-save-vault');
+    const shareBtn = document.getElementById('btn-share');
+    const toast = document.getElementById('toast-notif');
+    const toastText = document.getElementById('toast-text');
+    let toastTimeout;
+
+    function showToast(message) {
+      if (!toast) return;
+      toastText.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2600);
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const isSaved = saveBtn.getAttribute('data-saved') === 'true';
+        if (!isSaved) {
+          saveBtn.setAttribute('data-saved', 'true');
+          saveBtn.classList.remove('bg-primary');
+          saveBtn.classList.add('bg-secondary');
+          saveBtn.querySelector('span:last-child').textContent = 'Tersimpan di Brankas';
+          showToast('Bakat Ash-Shidq tersimpan di Brankas Pengasuhan!');
+        } else {
+          saveBtn.setAttribute('data-saved', 'false');
+          saveBtn.classList.remove('bg-secondary');
+          saveBtn.classList.add('bg-primary');
+          saveBtn.querySelector('span:last-child').textContent = 'Simpan ke Brankas';
+          showToast('Dihapus dari Brankas Pengasuhan');
+        }
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Bakat Syakilah TB-40: Ash-Shidq',
+            text: 'Panduan mendalam bakat Ash-Shidq (Integritas & Keteguhan Lisan) untuk pengasuhan anak.',
+            url: window.location.href
+          }).catch(() => {});
+        } else {
+          showToast('Tautan lembar bakat disalin ke papan klip!');
+        }
+      });
+    }
+  })();
+</script></main><aside class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(44,40,37,0.06)] pb-safe"></aside>
+</body></html>

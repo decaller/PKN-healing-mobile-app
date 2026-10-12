@@ -1,0 +1,4 @@
+# OTA compression is required; no gzip fallback.
+zstandard>=0.25,<1
+# Used by test_backend_v2.py as a real stdio MCP client.
+mcp>=1,<2

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#707881", "on-secondary-fixed-variant": "#005323", "error": "#ba1a1a", "tertiary-fixed-dim": "#f6bb81", "tertiary-fixed": "#ffdcbe", "on-secondary-container": "#007233", "on-tertiary-fixed-variant": "#663e0f", "on-tertiary-fixed": "#2c1600", "background": "#fdf9f0", "on-primary": "#ffffff", "surface-container-high": "#ece8df", "on-primary-fixed": "#001d31", "surface-container-lowest": "#ffffff", "surface-bright": "#fdf9f0", "on-primary-container": "#fdfcff", "on-surface-variant": "#3f4850", "surface-container": "#f1ede5", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-container": "#fffbff", "surface-variant": "#e6e2da", "inverse-on-surface": "#f4f0e8", "on-primary-fixed-variant": "#004b73", "outline-variant": "#bfc7d2", "on-surface": "#1c1c17", "inverse-primary": "#93ccff", "surface": "#fdf9f0", "secondary": "#006d30", "primary-fixed": "#cce5ff", "primary-container": "#007bb9", "primary-fixed-dim": "#93ccff", "tertiary": "#7e5223", "secondary-fixed": "#95f8a7", "surface-tint": "#006398", "on-secondary": "#ffffff", "secondary-fixed-dim": "#79db8d", "error-container": "#ffdad6", "on-background": "#1c1c17", "surface-dim": "#dddad1", "surface-container-low": "#f7f3ea", "on-secondary-fixed": "#00210a", "inverse-surface": "#31302b", "primary": "#006194", "tertiary-container": "#9a6a38", "surface-container-highest": "#e6e2da", "secondary-container": "#92f5a4", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-xs": "0.375rem", "space-sm": "0.75rem", "gutter": "1.5rem", "margin-sm": "1.25rem", "space-md": "1.25rem", "space-lg": "2rem", "margin": "3rem", "space-xl": "3.5rem" }, "fontFamily": { "headline-lg-mobile": ["Merriweather"], "display-lg": ["Merriweather"], "label-sm": ["Plus Jakarta Sans"], "headline-lg": ["Merriweather"], "display-lg-mobile": ["Merriweather"], "headline-xl-mobile": ["Merriweather"], "title-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-md": ["Merriweather"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Merriweather"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Merriweather"] }, "fontSize": { "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "400"}], "display-lg": ["56px", {"lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "display-lg-mobile": ["38px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-xl-mobile": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "title-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "700"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}], "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}], "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.005em", "fontWeight": "400"}] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-on-surface-variant transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate">Detail Artikel Wiki</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Markah Buku" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">bookmark_border</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin-sm"><div class="flex flex-col w-full space-y-space-md pb-space-xl">
+<!-- Breadcrumb Navigation & Reading Context -->
+<nav aria-label="Jalur Navigasi" class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center flex-wrap gap-1 text-on-surface-variant font-label-md text-label-md">
+<span class="hover:text-primary transition-colors cursor-pointer">Wiki PKN</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Korpus Dalil &amp; Manhaj</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium truncate">Fase Perkembangan</span>
+</div>
+<div class="flex items-center justify-between flex-wrap gap-space-xs mt-1">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Hadits Shahih • Mu'tabar</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 8 Menit Baca
+        </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Tamyiz &amp; Murahaqah
+        </span>
+</div>
+</div>
+</nav>
+<!-- Article Headline Card -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm tracking-wider uppercase font-semibold">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Kajian Dalil &amp; Syarah Manhaj PKN</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-serif leading-tight">
+      Perintah Shalat Usia 7 dan 10 Tahun: Pentahapan Adab &amp; Pencegahan Kekerasan
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Rekonstruksi pedagogis Nabawiyah dalam membangkitkan kesadaran batiniah shalat melalui transisi Tiga Bahasa: meletakkan kasih sayang sebelum taklif dan wibawa tanpa tirani.
+    </p>
+</div>
+<!-- Primary Interactive Quick Bar -->
+<div class="grid grid-cols-3 gap-2">
+<button class="flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all active:scale-[0.98] shadow-sm text-center" id="btn-vault" onclick="toggleVaultState(this)">
+<span class="material-symbols-outlined text-[20px] text-primary mb-1" id="icon-vault">lock</span>
+<span class="font-label-sm text-label-sm font-semibold" id="label-vault">Simpan Brankas</span>
+</button>
+<button class="flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all active:scale-[0.98] shadow-sm text-center" id="btn-copy" onclick="copyHadithMatan()">
+<span class="material-symbols-outlined text-[20px] text-secondary mb-1" id="icon-copy">content_copy</span>
+<span class="font-label-sm text-label-sm font-semibold" id="label-copy">Salin Matan</span>
+</button>
+<a class="flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all active:scale-[0.98] shadow-sm text-center" href="https://openbayan.insanmustaqbal.or.id" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-tertiary mb-1">travel_explore</span>
+<span class="font-label-sm text-label-sm font-semibold">OpenBayan ↗</span>
+</a>
+</div>
+<!-- Hadith Nabawiyah Card (Authentic Arabic Calligraphy Framing) -->
+<section class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-md">
+<!-- Gentle Ambient Accent -->
+<div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-primary-fixed/30 pointer-events-none blur-2xl"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span>Nas Matan Al-Hadits</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">HR. Abu Dawud 495</span>
+</div>
+<!-- Arabic Matan with High-Readability Type -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-center">
+<p class="text-right leading-[2.6] text-[23px] text-on-surface font-serif selection:bg-primary-fixed select-text" dir="rtl" id="matan-arabic">
+        « مُرُوا أَوْلَادَكُمْ بِالصَّلَاةِ وَهُمْ أَبْنَاءُ سَبْعِ سِنِينَ، وَاضْرِبُوهُمْ عَلَيْهَا وَهُمْ أَبْنَاءُ عَشْرِ سِنِينَ، وَفَرِّقُوا بَيْنَهُمْ فِي الْمَضَاجِعِ »
+      </p>
+</div>
+<!-- Takhrij & Official Translation -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">fact_check</span>
+<span class="font-semibold text-on-surface">Takhrij Riwayat:</span>
+<span>HR. Abu Dawud No. 495 &amp; Ahmad No. 6689 (Isnad Hasan/Shahih)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high/60">
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+          “Perintahkan anak-anak kalian untuk mendirikan shalat ketika mereka berusia tujuh tahun, dan pukullah mereka (ta'dib terukur berwibawa) karena meninggalkannya ketika berusia sepuluh tahun, serta pisahkanlah tempat tidur di antara mereka.”
+        </p>
+</div>
+</div>
+</section>
+<!-- Grounding Banner: Safeguarding Against Abuse & Distortion -->
+<aside class="rounded-lg bg-surface-container-high p-space-md flex items-start gap-space-sm shadow-sm" role="note">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold mb-0.5">
+        Pencegahan Tafrith &amp; Ifrath: Menolak Segala Bentuk Kekerasan
+      </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+        Nas hadits ini <strong>bukanlah justifikasi kekerasan fisik</strong>, pemukulan yang mencederai, pelecehan martabat, atau sarana pelampiasan amarah pendidik. Kata <em>wa-dhribuhum</em> adalah instrumen wibawa penutup (<em>ta'dib</em>) yang hanya sah setelah melalui ribuan kali dialog persuasif tanpa luka.
+      </p>
+</div>
+</aside>
+<!-- Visual Metaphor Section -->
+<div class="rounded-xl overflow-hidden bg-surface-container relative shadow-sm">
+<div class="bg-cover bg-center w-full h-44 flex flex-col justify-end p-space-md" data-alt="A tranquil sunlit pathway between ancient olive trees and stone courtyard, morning light casting warm gentle shadows on sandstone pavers, symbol of gradual peaceful spiritual growth and tarbiyah, serene natural earth tones, fine art editorial photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTsbyBM3s104EFXhPky3LvGnxdr6uDFHhMYsABF63O_pGypEZ3kLmMFYcjUwH0y4FvuTwOtrfrg1XA-94kFhqlNGNliiae4p2fbb-7rTfLWTcPVms899JJjeUxZLLSVHMOccNC3Ec_k5uS3wp6UeGRmSSYFr40CkSbMq0Hc5UUyUECoJLwqIskEueuDLsD6p_pZp4CKVf0b7Y9CdZ1XtX9bJn0BMefm53X5JpXVR3OoSLFxYUXgXChkA')">
+<div class="bg-surface/90 backdrop-blur-md p-space-sm rounded-lg shadow-sm">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">park</span>
+          Prinsip Tadarruj: Menanam Pohon Sebelum Menuntut Buah Adab
+        </p>
+</div>
+</div>
+</div>
+<!-- Core Manhaj Implementation Analysis: The Structured Age Progression -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif">
+        Pentahapan Usia Terstruktur PKN
+      </h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-medium">
+        Metode Mendidik
+      </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Sistematika pengasuhan Nabawiyah memastikan anak tidak dipaksa menanggung beban taklif sebelum tangki jiwanya penuh dan nalarnya siap menerima hikmah hukum.
+    </p>
+<!-- Phase 1: 0-7 Years -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-label-sm">1</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Usia 0–7 Tahun: Fase Thufulah</h4>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+          Bahasa Hati Primer
+        </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mt-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">favorite</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong>Pengisian Penuh Tangki Cinta:</strong> Periode emas tanpa paksaan hukum taklif syariat. Anak menyerap keindahan shalat murni melalui keteladanan visual (<em>qudwah hasanah</em>) orang tua yang tenang dan menggembirakan. Tidak ada celaan atau hukuman.
+          </p>
+</div>
+</div>
+</div>
+<!-- Phase 2: 7-10 Years -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-label-sm">2</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Usia 7–10 Tahun: Fase Tamyiz</h4>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+          Bahasa Lisan Dialogis
+        </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mt-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">record_voice_over</span>
+<div class="flex flex-col gap-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong>Pembiasaan • Rentang 5.000 Kali Pengulangan:</strong> Selama rentang 3 tahun (365 hari × 5 waktu shalat = ~5.475 waktu), perintah disampaikan secara santun, konsisten, dan persuasif tanpa kekerasan fisik sama sekali.
+            </p>
+<div class="flex items-center gap-2 mt-1 pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+<span>Menyentuh nalar Lawwamah (sebab-akibat hikmah ketuhanan)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 3: 10-15 Years -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-sm">3</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Usia 10–15 Tahun: Fase Murahaqah</h4>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+          Bahasa Tangan Terukur
+        </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mt-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">front_hand</span>
+<div class="flex flex-col gap-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong>Penegakan Batas Syariat &amp; Ta'dib:</strong> Eksekusi ketegasan wibawa yang tidak meninggalkan bekas memar atau luka psikologis. Berbarengan dengan <em>pemisahan tempat tidur</em> demi memelihara kesucian fitrah seksualitas menyongsong fase akil-baligh (Syabab).
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Field Practice: Crisis Protocol & Muhasabah -->
+<section class="rounded-xl bg-surface-container-high p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">lightbulb</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+        Protokol Lapangan: Saat Anak 8 Tahun Menolak Shalat
+      </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Krisis penolakan pada fase Tamyiz adalah sinyal kalibrasi interaksi, bukan pembangkangan permanen. Gunakan kaidah <em>Koneksi Sebelum Koreksi</em>:
+    </p>
+<div class="space-y-2 mt-1">
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">visibility</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-medium">Hentikan Komando Lintas Ruangan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Jangan berteriak dari dapur atau ruang tamu. Dekati fisiknya, rendahkan posisi tubuh agar sejajar.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">handshake</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-medium">Tatap Mata Penuh Kehangatan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sentuh pundak dengan lembut, bangun resonansi batiniah: “Nak, Ayah rindu bermunajat bersamamu di hadapan Allah.”</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">search_insights</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-medium">Cek Volume Tangki Jiwa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bila anak menolak dengan emosi, periksa apakah ada luka pengasuhan atau kelelahan interaksi harian sebelum memberikan evaluasi adab.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Related Topic Cards (Mosaic Framing) -->
+<section class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif">
+      Khazanah &amp; Pembahasan Terkait
+    </h3>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Related 1 -->
+<div class="p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Bahasa Hati: Fondasi Primer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Keheningan doa dan ikatan jiwa sebelum lisaniyah</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">arrow_forward</span>
+</div>
+<!-- Related 2 -->
+<div class="p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Fase Tamyiz &amp; Pembiasaan Syariat</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Manajemen 5.000 kali amr tanpa intimidasi</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">arrow_forward</span>
+</div>
+<!-- Related 3 -->
+<div class="p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">fence</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Batas Toleransi &amp; Imunitas Sosial</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Menegakkan wibawa benteng rumah tangga</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Toast Notification Feedback Area -->
+<div class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md shadow-lg items-center gap-2 transition-all" id="action-toast">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed" id="toast-icon">check_circle</span>
+<span id="toast-message">Matan hadits berhasil disalin!</span>
+</div>
+</div>
+<script>
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('action-toast');
+    const toastMsg = document.getElementById('toast-message');
+    const toastIcon = document.getElementById('toast-icon');
+    if (!toast) return;
+    toastMsg.textContent = message;
+    toastIcon.textContent = icon;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 2800);
+  }
+
+  function copyHadithMatan() {
+    const textEl = document.getElementById('matan-arabic');
+    if (textEl) {
+      const text = textEl.innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Matan Arab Hadits berhasil disalin ke papan klip');
+        const label = document.getElementById('label-copy');
+        if (label) {
+          label.textContent = 'Tersalin!';
+          setTimeout(() => { label.textContent = 'Salin Matan'; }, 2000);
+        }
+      }).catch(() => {
+        showToast('Gagal menyalin otomatis', 'error');
+      });
+    }
+  }
+
+  let isVaultSaved = false;
+  function toggleVaultState(btn) {
+    isVaultSaved = !isVaultSaved;
+    const icon = document.getElementById('icon-vault');
+    const label = document.getElementById('label-vault');
+    if (isVaultSaved) {
+      if (icon) {
+        icon.textContent = 'task_alt';
+        icon.classList.remove('text-primary');
+        icon.classList.add('text-secondary');
+      }
+      if (label) label.textContent = 'Tersimpan';
+      showToast('Dalil diamankan di Brankas Offline PKN', 'inventory_2');
+    } else {
+      if (icon) {
+        icon.textContent = 'lock';
+        icon.classList.remove('text-secondary');
+        icon.classList.add('text-primary');
+      }
+      if (label) label.textContent = 'Simpan Brankas';
+      showToast('Dihapus dari Brankas Offline');
+    }
+  }
+</script></main></body></html>

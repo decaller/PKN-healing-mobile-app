@@ -1,0 +1,10 @@
+{
+  "name": "pkn-wiki-backend-v1",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only Git-backed Wiki PKN prototype server",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node --env-file-if-exists=.env server.mjs" },
+  "dependencies": { "marked": "^17.0.1", "sanitize-html": "^2.17.0", "yaml": "^2.8.2" }
+}

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary': '#7e5223', 'on-secondary-fixed-variant': '#005323', 'on-tertiary-fixed-variant': '#663e0f', 'tertiary-fixed': '#ffdcbe', 'primary-fixed-dim': '#93ccff', 'inverse-surface': '#31302b', 'on-surface': '#1c1c17', 'surface-container-lowest': '#ffffff', 'on-surface-variant': '#3f4850', 'on-tertiary-fixed': '#2c1600', 'surface-container': '#f1ede5', 'primary': '#006194', 'on-primary-container': '#fdfcff', 'surface-container-highest': '#e6e2da', 'on-error': '#ffffff', 'on-primary-fixed': '#001d31', 'background': '#fdf9f0', 'on-error-container': '#93000a', 'outline': '#707881', 'inverse-primary': '#93ccff', 'secondary-fixed-dim': '#79db8d', 'inverse-on-surface': '#f4f0e8', 'surface-variant': '#e6e2da', 'on-background': '#1c1c17', 'on-tertiary-container': '#fffbff', 'on-primary': '#ffffff', 'secondary': '#006d30', 'surface-dim': '#dddad1', 'secondary-container': '#92f5a4', 'surface-bright': '#fdf9f0', 'on-secondary-fixed': '#00210a', 'on-primary-fixed-variant': '#004b73', 'error': '#ba1a1a', 'surface-tint': '#006398', 'primary-fixed': '#cce5ff', 'surface': '#fdf9f0', 'outline-variant': '#bfc7d2', 'surface-container-high': '#ece8df', 'on-secondary': '#ffffff', 'tertiary-fixed-dim': '#f6bb81', 'on-tertiary': '#ffffff', 'tertiary-container': '#9a6a38', 'surface-container-low': '#f7f3ea', 'on-secondary-container': '#007233', 'error-container': '#ffdad6', 'primary-container': '#007bb9', 'secondary-fixed': '#95f8a7' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'space-md': '1.25rem', 'space-lg': '2rem', 'space-xl': '3.5rem', 'margin': '3rem', 'space-xs': '0.375rem', 'gutter': '1.5rem', 'gutter-sm': '1rem', 'margin-sm': '1.25rem', 'space-sm': '0.75rem' }, fontFamily: { 'display-lg': ['Merriweather'], 'headline-md': ['Merriweather'], 'headline-xl-mobile': ['Merriweather'], 'headline-lg-mobile': ['Merriweather'], 'label-sm': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'title-sm': ['Plus Jakarta Sans'], 'display-lg-mobile': ['Merriweather'], 'title-md': ['Plus Jakarta Sans'], 'headline-xl': ['Merriweather'], 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Merriweather'], 'headline-sm': ['Merriweather'], 'body-lg': ['Plus Jakarta Sans'] }, fontSize: { 'display-lg': ['56px', { lineHeight: '68px', letterSpacing: '-0.02em', fontWeight: '700' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '700' }], 'headline-xl-mobile': ['30px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '700' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '400' }], 'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '400' }], 'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.02em', fontWeight: '500' }], 'title-sm': ['16px', { lineHeight: '24px', letterSpacing: '0', fontWeight: '600' }], 'display-lg-mobile': ['38px', { lineHeight: '48px', letterSpacing: '-0.015em', fontWeight: '700' }], 'title-md': ['18px', { lineHeight: '26px', letterSpacing: '-0.005em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '52px', letterSpacing: '-0.015em', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', letterSpacing: '0.005em', fontWeight: '400' }], 'headline-lg': ['32px', { lineHeight: '42px', letterSpacing: '-0.01em', fontWeight: '400' }], 'headline-sm': ['20px', { lineHeight: '28px', letterSpacing: '0.005em', fontWeight: '400' }], 'body-lg': ['18px', { lineHeight: '28px', letterSpacing: '0', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe"><div class="h-16 px-margin-sm flex items-center justify-between shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="flex items-center gap-space-xs"><button aria-label="Kembali ke Agenda" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="window.location.href='#agenda'"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate max-w-[200px]">Detail Majelis Daurah</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Bagikan Informasi Majelis" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[22px]">share</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Book Hero & Spec Overview -->
+<section class="px-margin-sm pt-space-sm pb-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col items-center text-center">
+<!-- Book Mockup Representation -->
+<div class="relative w-44 aspect-[3/4] mb-space-md rounded-lg shadow-xl overflow-hidden bg-surface-container-highest group">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="An elegant physical book mockup titled Menempa Adab Usia Tamyiz with warm terracotta and sage green Islamic floral geometric motifs, subtle gold foiled embossing, resting gently on a textured cream linen background bathed in gentle natural morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu9Xf3yvUb4nTQQQkr3zG8hOgjXbmjH8pf7ch349b-FAc7qzfCO8yuVyMqw9CeQ3v4FyRgISYVYTnJVuP5rBPbPtl_Xl7d1PHT_ZMBHr9uc-paespTiBG5uDJXFG6ueU5fAmjGmrPZD62h7LXQEBakSSWeX9xu3JOgVeDsoiQvW51c_5F6_CR7VutWMuLJkByT-IHgfFrCLoSGOEZwJf-ecqC80BsVPQc3LXjcFol2tkhp5TuDGXH2nw"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm tracking-tight font-semibold">Cetakan ke-4</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/40 to-transparent p-2 text-left">
+<span class="font-label-sm text-label-sm text-inverse-on-surface uppercase tracking-wider block font-medium">Buku Pegangan Orang Tua</span>
+</div>
+</div>
+<!-- Meta Tag Badges -->
+<div class="flex flex-wrap items-center justify-center gap-space-xs mb-space-sm">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+            Best Seller Utama
+          </span>
+<span class="bg-surface-container text-on-surface-variant px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+            Fase Usia 7–10 Tahun
+          </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-space-xs">
+          Menempa Adab Usia Tamyiz
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+          Oleh <span class="text-on-surface font-semibold">Ustadz Dr. Abu Hafi, M.A.</span>
+</p>
+<p class="font-label-sm text-label-sm text-outline mb-space-sm">
+          Penerbit: Pustaka Karakter Nabawiyah (PKN Press)
+        </p>
+<!-- Social Proof Stats Pill -->
+<div class="inline-flex items-center gap-space-sm bg-surface-container px-space-md py-1.5 rounded-full">
+<div class="flex items-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-sm text-title-sm font-bold ml-1 text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm ml-0.5">/5.0</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">420+ Ulasan Ayah Bunda</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pilihan Edisi & Harga (Selection Matrix) -->
+<section class="px-margin-sm mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Format &amp; Edisi Tersedia</h2>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">security</span> Garansi Asli PKN
+      </span>
+</div>
+<div aria-label="Pilih format buku" class="flex flex-col gap-space-sm" id="edition-selector" role="radiogroup">
+<!-- Option 1: Softcover (Default Selected) -->
+<div aria-checked="true" class="edition-card relative p-space-md rounded-xl bg-surface-container-high transition-all cursor-pointer shadow-sm hover:shadow-md" id="card-fisik" onclick="selectEdition('fisik', 125000, 'Edisi Fisik Softcover')" role="radio" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Edisi Fisik Softcover</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">Paling Diminati</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+                Kertas Bookpaper 72gr Premium, Pembatas Buku Sutra &amp; Sampul Doff.
+              </p>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+<span class="font-label-sm text-label-sm font-medium">Bonus: Lembar RPP Cetak A4 Mandiri</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-title-sm text-title-sm text-primary font-bold block">Rp 125.000</span>
+<span class="font-label-sm text-label-sm text-outline line-through">Rp 145.000</span>
+</div>
+</div>
+</div>
+<!-- Option 2: Digital E-Book -->
+<div aria-checked="false" class="edition-card relative p-space-md rounded-xl bg-surface-container-low transition-all cursor-pointer shadow-sm hover:shadow-md" id="card-digital" onclick="selectEdition('digital', 65000, 'Edisi Digital E-Book')" role="radio" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">devices</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Edisi Digital E-Book</span>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">Instan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+                Format PDF Terenkripsi, Teks searchable &amp; Support Tablet / e-Reader.
+              </p>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">offline_pin</span>
+<span class="font-label-sm text-label-sm font-medium">Sinkronisasi Langsung ke Brankas Offline</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold block">Rp 65.000</span>
+</div>
+</div>
+</div>
+<!-- Option 3: Bundling Hemat -->
+<div aria-checked="false" class="edition-card relative p-space-md rounded-xl bg-surface-container-low transition-all cursor-pointer shadow-sm hover:shadow-md" id="card-bundling" onclick="selectEdition('bundling', 175000, 'Bundling Buku + 2 Workbook')" role="radio" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Paket Bundling Kurikulum</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">Hemat Rp 45.000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+                Buku Utama + 2 Modul Workbook Adab (Workbook Anak + Panduan Ayah).
+              </p>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-medium">Akses Rekaman Webminar Daurah Tamyiz</span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-title-sm text-title-sm text-primary font-bold block">Rp 175.000</span>
+<span class="font-label-sm text-label-sm text-outline line-through">Rp 220.000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Grounding Banner: Filosofi Usia Tamyiz -->
+<section class="px-margin-sm mb-space-lg">
+<div class="bg-surface-container-high rounded-xl p-space-md flex gap-space-sm items-start">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold mb-1">
+          Kaidah Pokok Pendidikan Nabawiyah
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Usia tamyiz adalah jembatan transisi saat akal anak mulai membedakan yang haq dan yang batil. Penanaman adab sebelum ilmu di fase ini akan menjadi benteng kokoh sebelum badai hormonal fase baligh tiba.
+        </p>
+</div>
+</div>
+</section>
+<!-- Sinopsis Komprehensif -->
+<section class="px-margin-sm mb-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 mb-space-sm text-primary">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Sinopsis Buku</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-space-sm leading-relaxed">
+        Mengapa Rasulullah ﷺ memberikan aba-aba ketat: <em class="font-display-lg-mobile text-body-md italic text-primary">"Perintahkan anak-anakmu mendirikan shalat ketika mereka berumur tujuh tahun..."</em>?
+      </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+        Fase usia 7 hingga 10 tahun bukanlah sekadar peralihan sekolah dasar biasa, melainkan jendela emas biologis dan spiritual yang dinamakan <strong class="text-on-surface">Marhalah Tamyiz</strong>. Di periode inilah amigdala emosional anak mulai berintegrasi secara terarah dengan korteks prefrontal mereka.
+      </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Buku ini memandu orang tua modern dengan pendekatan sains syar’i tanpa bentakan: membangun rutinitas shalat dengan cinta, mengajarkan konsep hak milik dan rasa malu (haya’), serta membiasakan tanggung jawab sosial mandiri di rumah tangga tanpa drama pertengkaran harian.
+      </p>
+</div>
+</section>
+<!-- Daftar Isi & Silabus Bab -->
+<section class="px-margin-sm mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">format_list_bulleted</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daftar Bab Pokok</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5 Bab Tematik</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Bab 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between transition-colors hover:bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center shrink-0">01</span>
+<div class="min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Titik Balik Tamyiz</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Anatomi Nalar, Kemandirian &amp; Amigdala Anak</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">chevron_right</span>
+</div>
+<!-- Bab 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between transition-colors hover:bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center shrink-0">02</span>
+<div class="min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Memerintahkan Shalat Tanpa Bentakan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Tafsir Pendidikan &amp; Fiqih HR. Abu Dawud</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">chevron_right</span>
+</div>
+<!-- Bab 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between transition-colors hover:bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center shrink-0">03</span>
+<div class="min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Tantrum dan Penolakan Anak Kritis</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Resolusi Konflik berbasis Welas Asih Nabawi</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">chevron_right</span>
+</div>
+<!-- Bab 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between transition-colors hover:bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center shrink-0">04</span>
+<div class="min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Matriks Syakilah TB-40</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Integrasi Penilaian Bakat dalam Domestik Rumah</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">chevron_right</span>
+</div>
+<!-- Bab 5 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between transition-colors hover:bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center shrink-0">05</span>
+<div class="min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">30 Hari Kurikulum Adab Thoyyibah</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Panduan Lembar Praktik Harian Ayah &amp; Ibu</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Cuplikan Singkat (Sample Chapter Preview) -->
+<section class="px-margin-sm mb-space-lg">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 mb-space-sm text-tertiary">
+<span class="material-symbols-outlined text-[22px]">format_quote</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Cuplikan Buku: Bab 2</h2>
+</div>
+<blockquote class="font-headline-lg-mobile text-headline-sm italic text-on-surface leading-relaxed pl-space-sm border-l-0 mb-space-sm bg-surface-container-high/60 p-space-sm rounded-lg">
+        “Di gang-gang sempit kota Madinah, Rasulullah ﷺ tidak pernah menunggu seorang anak kecil menyapanya lebih dahulu. Beliau yang menundukkan tubuhnya, menatap lurus ke dalam binar mata mereka, menepuk bahu mereka dengan kehangatan embun fajar. Perintah ketaatan tidak pernah lahir dari intimidasi suara, melainkan dari dada yang terlebih dahulu dipercaya sebagai naungan aman.”
+      </blockquote>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Halaman 47 • Paragraf Ke-3</span>
+<button class="text-primary font-label-md text-label-md font-semibold flex items-center gap-1 hover:underline">
+<span>Baca 15 Halaman Gratis</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Visual Pembina & Penulis -->
+<section class="px-margin-sm mb-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A dignified Muslim scholar and parenting educator in his late 40s with a neat trimmed beard and warm gentle smiling expression wearing a soft beige linen thobe in a scholarly library setting filled with classical leather-bound Arabic books." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ3q4GVBjqMHGkjX_xt2Xk_vZclIgGwjTsI62NoG0mlbDI9S08WPb0DdHmW8cTp5AkZVoORMamNhZDnSzXwFNpXCJ2TDJ_qEJ5MCiJoys4zFqCiWFB8vO6CVN57MkaKi-5GV-TjKD_E5Jde-qK2jmv4SjVjq3bweODmKmhJ3hwHTV7j5o_Objg3Op4CeDMThuICMFJ01Fr8VRWDfF1u9IaK0hZACwTPRKG1rbbGulCElphzdO3cGKRfQ"/>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Ustadz Dr. Abu Hafi, M.A.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Pakar Parenting Nabawiyah &amp; Dosen Tarbiyah Islamiyah</p>
+<span class="inline-flex items-center text-secondary font-label-sm text-label-sm font-semibold gap-1">
+<span class="material-symbols-outlined text-[14px]">school</span> Penulis 6 Buku Best Seller
+        </span>
+</div>
+</div>
+</section>
+<!-- Ulasan Pembaca & Testimoni -->
+<section class="px-margin-sm mb-space-xl">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">reviews</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Ulasan Ayah Bunda</h2>
+</div>
+<button class="text-primary font-label-sm text-label-sm font-semibold">Lihat Semua</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Testimoni 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-label-sm font-bold">
+              RA
+            </div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block leading-tight">Bunda Rania &amp; Ayah Arif</span>
+<span class="font-label-sm text-label-sm text-outline">Anak Usia 8 &amp; 9.5 Tahun • Surabaya</span>
+</div>
+</div>
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          “Bab 2 mengubah total cara kami membangunkan shalat Subuh. Tidak ada lagi ancaman atau nada tinggi. Lembar RPP cetak A4-nya sangat membantu anak sulung kami mencatat progress shalatnya dengan penuh sukacita.”
+        </p>
+</div>
+<!-- Testimoni 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
+              FH
+            </div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block leading-tight">Ayah Farhan Pratama</span>
+<span class="font-label-sm text-label-sm text-outline">Pengasuh Komunitas Homeschooling • Bandung</span>
+</div>
+</div>
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          “Sangat bernas dan sistematis. Bukan sekadar teori retoris, tetapi ada lembar checklist adab thoyyibah yang sangat grounded dan aplikatif di tengah tantangan gadget anak masa kini.”
+        </p>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Bar (Purchasing Action Deck) -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_24px_rgba(44,40,37,0.08)] px-margin-sm py-3 pb-safe">
+<div class="flex items-center justify-between gap-space-sm max-w-lg mx-auto">
+<!-- Live Summary Text -->
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate" id="selected-summary-label">Edisi Fisik Softcover</span>
+<div class="flex items-baseline gap-1">
+<span class="font-title-md text-title-md text-on-surface font-extrabold tracking-tight" id="selected-summary-price">Rp 125.000</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Bebas Ongkir</span>
+</div>
+</div>
+<!-- Main Action CTA Button -->
+<button class="bg-primary text-on-primary hover:bg-primary-container px-space-md py-3 rounded-lg font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all shrink-0" id="btn-pesan" onclick="triggerOrderSuccess()">
+<span>Pesan Sekarang</span>
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+<!-- Micro Reassurance Bar -->
+<div class="flex items-center justify-center gap-space-md mt-2 text-outline">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified_user</span>
+<span>Amanah 100%</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-secondary">local_shipping</span>
+<span>Kirim Seluruh RI</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-secondary">lock</span>
+<span>Pembayaran Aman</span>
+</div>
+</div>
+</div>
+<!-- Micro Interaction Toast Feedback Modal -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2" id="toast-notif">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-text">Format berhasil diperbarui!</span>
+</div>
+</div>
+<script>
+  let currentEdition = 'fisik';
+
+  function selectEdition(type, price, title) {
+    currentEdition = type;
+    const cards = document.querySelectorAll('.edition-card');
+    
+    // Reset all cards styling
+    cards.forEach(card => {
+      card.classList.remove('bg-surface-container-high', 'shadow-md');
+      card.classList.add('bg-surface-container-low');
+      card.setAttribute('aria-checked', 'false');
+    });
+
+    // Elevate the active selected card
+    const activeCard = document.getElementById('card-' + type);
+    if (activeCard) {
+      activeCard.classList.remove('bg-surface-container-low');
+      activeCard.classList.add('bg-surface-container-high', 'shadow-md');
+      activeCard.setAttribute('aria-checked', 'true');
+    }
+
+    // Update Sticky Purchase deck display
+    const labelElem = document.getElementById('selected-summary-label');
+    const priceElem = document.getElementById('selected-summary-price');
+    
+    if (labelElem && priceElem) {
+      labelElem.textContent = title;
+      priceElem.textContent = 'Rp ' + price.toLocaleString('id-ID');
+    }
+
+    // Play subtle haptic feedback toast
+    showToast('Dipilih: ' + title);
+  }
+
+  function triggerOrderSuccess() {
+    const btn = document.getElementById('btn-pesan');
+    const prevText = btn.innerHTML;
+    
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> <span>Memproses...</span>`;
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span> <span>Masuk Keranjang!</span>`;
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-secondary');
+      
+      showToast('Buku berhasil ditambahkan ke pesanan!');
+      
+      setTimeout(() => {
+        btn.innerHTML = prevText;
+        btn.classList.remove('bg-secondary');
+        btn.classList.add('bg-primary');
+        btn.disabled = false;
+      }, 2400);
+    }, 600);
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-notif');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+
+    toastText.textContent = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2200);
+  }
+</script></main><aside class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(44,40,37,0.06)] pb-safe"></aside>
+</body></html>

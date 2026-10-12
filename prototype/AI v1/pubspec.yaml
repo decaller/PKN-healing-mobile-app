@@ -1,0 +1,36 @@
+name: ai_v1
+description: Prototype Teman Curhat AI dan Simulasi Edge LLM (Gemma, LiteRT) dengan Tema Earth-Tree.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.7.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.3.0
+  iconoir_flutter: ^7.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-400.ttf
+        - asset: assets/fonts/PlusJakartaSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-600.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-700.ttf
+          weight: 700
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather-400.ttf
+        - asset: assets/fonts/Merriweather-700.ttf
+          weight: 700

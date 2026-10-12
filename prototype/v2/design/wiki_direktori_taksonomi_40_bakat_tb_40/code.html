@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#707881", "on-secondary-fixed-variant": "#005323", "error": "#ba1a1a", "tertiary-fixed-dim": "#f6bb81", "tertiary-fixed": "#ffdcbe", "on-secondary-container": "#007233", "on-tertiary-fixed-variant": "#663e0f", "on-tertiary-fixed": "#2c1600", "background": "#fdf9f0", "on-primary": "#ffffff", "surface-container-high": "#ece8df", "on-primary-fixed": "#001d31", "surface-container-lowest": "#ffffff", "surface-bright": "#fdf9f0", "on-primary-container": "#fdfcff", "on-surface-variant": "#3f4850", "surface-container": "#f1ede5", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-container": "#fffbff", "surface-variant": "#e6e2da", "inverse-on-surface": "#f4f0e8", "on-primary-fixed-variant": "#004b73", "outline-variant": "#bfc7d2", "on-surface": "#1c1c17", "inverse-primary": "#93ccff", "surface": "#fdf9f0", "secondary": "#006d30", "primary-fixed": "#cce5ff", "primary-container": "#007bb9", "primary-fixed-dim": "#93ccff", "tertiary": "#7e5223", "secondary-fixed": "#95f8a7", "surface-tint": "#006398", "on-secondary": "#ffffff", "secondary-fixed-dim": "#79db8d", "error-container": "#ffdad6", "on-background": "#1c1c17", "surface-dim": "#dddad1", "surface-container-low": "#f7f3ea", "on-secondary-fixed": "#00210a", "inverse-surface": "#31302b", "primary": "#006194", "tertiary-container": "#9a6a38", "surface-container-highest": "#e6e2da", "secondary-container": "#92f5a4", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-xs": "0.375rem", "space-sm": "0.75rem", "gutter": "1.5rem", "margin-sm": "1.25rem", "space-md": "1.25rem", "space-lg": "2rem", "margin": "3rem", "space-xl": "3.5rem" }, "fontFamily": { "headline-lg-mobile": ["Merriweather"], "display-lg": ["Merriweather"], "label-sm": ["Plus Jakarta Sans"], "headline-lg": ["Merriweather"], "display-lg-mobile": ["Merriweather"], "headline-xl-mobile": ["Merriweather"], "title-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-md": ["Merriweather"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Merriweather"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Merriweather"] }, "fontSize": { "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "400"}], "display-lg": ["56px", {"lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "display-lg-mobile": ["38px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-xl-mobile": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "title-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "700"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}], "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}], "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.005em", "fontWeight": "400"}] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-on-surface-variant transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate">Detail Artikel Wiki</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Markah Buku" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">bookmark_border</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin-sm"><div class="flex flex-col w-full space-y-space-md">
+<!-- Grounding Banner & Header Ayat -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[22px]">spa</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="inline-block px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider mb-1">
+          Katalog Induk Syakilah
+        </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pangkalan Data Bakat Nabawiyah (TB-40)</h2>
+</div>
+</div>
+<!-- Ayat Callout Card -->
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container-low shadow-sm">
+<p class="text-right font-headline-md text-headline-md text-primary leading-loose tracking-wide">
+        قُلْ كُلٌّ يَعْمَلُ عَلَىٰ شَاكِلَتِهِ
+      </p>
+<div class="mt-space-sm pt-space-xs flex flex-col gap-1">
+<p class="font-body-md text-body-md text-on-surface italic">
+          “Katakanlah: Setiap orang berbuat menurut keadaannya (syakilah / bakat bawaannya) masing-masing.”
+        </p>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">
+          QS. Al-Isra’: 84 • Tafsir Manhaj PKN
+        </span>
+</div>
+</div>
+</div>
+<!-- Formula Rukun 3A Card Mosaic -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology_alt</span>
+        Formula Rukun 3A Bakat
+      </h3>
+<span class="font-label-sm text-label-sm text-outline">Kaidah Pengasuhan</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- 1. Alami -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">1. Alami</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">Eksplorasi Murni</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Beri ruang interaksi dan eksplorasi seluas-luasnya pada berbagai aktivitas dunia nyata bermakna sejak dini tanpa restriksi prematur.
+            </p>
+</div>
+</div>
+</div>
+<!-- 2. Acuhkan -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed-dim flex items-center justify-center shrink-0 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">filter_alt_off</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">2. Acuhkan</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">Hemat Energi</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Abaikan kelemahan minor yang bukan fardhu ‘ain. Jangan menguras daya jiwa untuk memaksakan apa yang bukan fitrah aslinya.
+            </p>
+</div>
+</div>
+</div>
+<!-- 3. Asah -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">auto_fix_high</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">3. Asah</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">Al-Khidmah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Pertajam potensi kekuatan dominan melalui proyek autentik hingga berbuah karya peradaban yang melayani sesama umat.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Indeks Terbuka 6 Rumpun Bakat TB-40 -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">6 Rumpun Bakat TB-40</h3>
+<p class="font-body-sm text-body-sm text-outline">Taksonomi 40 pilar karakter fitrah nabawiyah</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">interests</span>
+</div>
+</div>
+<!-- Cluster 1: Bekerja Keras -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">🔨</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">1. Bekerja Keras</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Al-Hammasah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daya dorong tekad, standar mutu pengerjaan, dan kegigihan berkarya.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">01. Himmah (Cita Tinggi)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">02. Ihsaan (Perfeksionis)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">03. 'Izzah (Harga Diri)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">04. Waqaar (Wibawa)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">05. 'Aziimah (Tekad Baja)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">06. Nasyaath (Semangat)</span>
+</div>
+</div>
+<!-- Cluster 2: Berpikir -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">💡</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">2. Berpikir</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Al-Fikrah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kedalaman penalaran, ketajaman firasat, dan kejernihan pemecahan masalah.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">07. Firaasah (Intuisi Batin)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">08. Nubl (Cerdik Cekatan)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">09. Husnuzhan (Prasangka Baik)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">10. Dzakaa' (Cerdas Analitis)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">11. Hikmah (Akar Masalah)</span>
+</div>
+</div>
+<!-- Cluster 3: Berperasaan -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">💖</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">3. Berperasaan</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Al-Wijdaniyyah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sensitivitas hati nurani, integritas afektif, dan keteguhan pengendalian emosi.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">12. Shidq (Jujur Autentik)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">13. 'Iffah (Jaga Kesucian)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">14. Shamt (Tenang Pendiam)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">15. Hayaa' (Rasa Malu)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">16. Qanaa'ah (Kesederhanaan)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">17. Shabr (Daya Tahan Jiwa)</span>
+</div>
+</div>
+<!-- Cluster 4: Memerintah -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">👑</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">4. Memerintah</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">At-Ta'tsir</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kepemimpinan alamiah, daya persuasi kata, dan keberanian membela kebenaran.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">18. Syajaa'ah (Pemberani)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">19. Ghairah (Protektif)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">20. Munaafasah (Kompetitif)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">21. Nashiihah (Pengarah)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">22. Fashaahah (Retorika)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">23. Nushrah (Penolong)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">24. Juud (Dermawan Luhur)</span>
+</div>
+</div>
+<!-- Cluster 5: Bekerja Sama -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">🤝</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">5. Bekerja Sama</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">At-Ta'amul</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sinergi sosial, kehangatan hubungan, keadilan, dan kelenturan pergaulan.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">25. Ta'aawun (Kolaboratif)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">26. Ulfah (Perekat Jiwa)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">27. 'Adaalah (Adil Seimbang)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">28. Wafaa' (Tepati Janji)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">29. Muzaah (Ceria Humor)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">30. Basyaasyah (Wajah Ramah)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">31. Rifq (Lemah Lembut)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">32. Rahmah (Belas Kasih)</span>
+</div>
+</div>
+<!-- Cluster 6: Melayani -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">🤲</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">6. Melayani</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Al-Khidmah</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Puncak adab bakat melalui kepedulian tulus, amanah rahasia, dan kerendahan hati.</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">33. Mahabbah (Penuh Cinta)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">34. Itsaar (Mendahulukan Lain)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">35. Kitmaanus Sirr (Jaga Rahasia)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">36. Satr (Tutup Aib)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">37. Amaanah (Tanggung Jawab)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">38. Anaah (Teliti Tenang)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">39. Hilm (Santun Lapang)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm">40. Tawaadhu' (Rendah Hati)</span>
+</div>
+</div>
+</div>
+<!-- Tautan Instrumen & Asesmen Online (Aksi Nyata) -->
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-md space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Asesmen &amp; Peta Mandiri</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ukur potensi syakilah melalui instrumen baku Manhaj PKN</p>
+</div>
+</div>
+<!-- Link Kartu Digital -->
+<div class="grid grid-cols-1 gap-space-xs">
+<a class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between text-on-surface hover:bg-surface-container-low transition-colors shadow-sm" href="https://tafsirbakat.com/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]">open_in_new</span>
+<div class="min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate block">Tes Online Resmi TafsirBakat.com</span>
+<span class="font-label-sm text-label-sm text-outline truncate block">Asesmen mandiri berbasis 40 pilar</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between text-on-surface hover:bg-surface-container-low transition-colors shadow-sm" href="https://pub.insantaqwa.org/bakat/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+<div class="min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate block">Peta Visual Bakat (Insan Taqwa)</span>
+<span class="font-label-sm text-label-sm text-outline truncate block">Diagram jejaring fitrah interaktif</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">chevron_right</span>
+</a>
+</div>
+<!-- Tombol Unduh Kuisioner PDF -->
+<a class="w-full h-12 rounded-lg bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center gap-2 font-title-sm text-title-sm shadow-md transition-colors active:scale-[0.99]" href="https://wikipkn.insanmustaqbal.or.id">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Unduh Kuisioner 40 Bakat (PDF)</span>
+</a>
+</div>
+<!-- Catatan Kaki Manhaj -->
+<div class="p-space-sm text-center">
+<p class="font-label-sm text-label-sm text-outline">
+      Disintesis dari Riset Karakter Nabawiyah • Ustadz Abdul Kholiq • SOTAB HEBAT • Hak Cipta Terpelihara
+    </p>
+</div>
+</div></main></body></html>

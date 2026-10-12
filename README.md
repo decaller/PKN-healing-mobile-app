@@ -1,38 +1,29 @@
 # PKN Healing Mobile App (Pendidikan Karakter Nabawiyah & Tazkiyatun Nafs)
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.35+-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.9+-0175C2?logo=dart&logoColor=white)](https://dart.dev)
-[![Architecture](https://img.shields.io/badge/Architecture-Feature--First%20Clean-emerald)](prototype/v0/lib/)
-[![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen)](prototype/v0/test/)
-[![Linter](https://img.shields.io/badge/Linter-0%20Issues-blue)](prototype/v0/analysis_options.yaml)
-[![WCAG](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-gold)](DESIGN_SYSTEM.md)
-[![Design](https://img.shields.io/badge/Figma-OpenPencil%20v2-purple)](design/)
+[![Flutter](https://img.shields.io/badge/Flutter-3.29+-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.7+-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![Architecture](https://img.shields.io/badge/Architecture-Dual--Core%20(Wiki%20+%20RPG)-emerald)](docs/RISET_DUAL_CORE_WIKI_DAN_NARRATIVE_RPG.md)
+[![Design System](https://img.shields.io/badge/Design%20System-Earth--Tree%20(Forui%20+%20Iconoir)-8D5B28)](prototype/v2/design/earth_tree/DESIGN.md)
+[![Tests](https://img.shields.io/badge/Tests-All%20Passing-brightgreen)](prototype/v5/test/)
+[![Linter](https://img.shields.io/badge/Linter-0%20Issues-blue)](prototype/v5/analysis_options.yaml)
+[![WCAG](https://img.shields.io/badge/Accessibility-WCAG%202.2%20AAA-gold)](COMPLIANCE_AND_ARCHITECTURE.md)
 
-> **Aplikasi micro-learning dan penyembuhan jiwa (*Tazkiyatun Nafs*) berbasis Manhaj Pendidikan Karakter Nabawiyah (PKN).**  
-> Dirancang untuk mendampingi orang tua (Ayah & Bunda), pendidik/guru, pengelola lembaga pendidikan, serta generasi muda dalam menumbuhkan fitrah insan secara bertahap, tanpa bentakan, tanpa beban kognitif berlebih, dan tanpa jebakan gamifikasi adiktif.
+> **Aplikasi micro-learning, pendampingan keluarga, dan penyembuhan jiwa (*Tazkiyatun Nafs*) berbasis Manhaj Pendidikan Karakter Nabawiyah (PKN).**  
+> Dirancang dengan filosofi **Dual-Core Calm Technology** dan estetika **Earth-Tree**: menghadirkan panduan darurat < 10 detik, refleksi relasi qalbiyah, daily task amalan adab, konseling batin AI amanah luring, serta simulasi narasi interaktif tanpa bentakan dan tanpa beban kognitif berlebih.
 
 ---
 
 ## Daftar Isi
-1. [Konsep Inti Aplikasi](#1-konsep-inti-aplikasi)
+1. [Konsep Inti & Arsitektur Dual-Core](#1-konsep-inti--arsitektur-dual-core)
    - [Latar Belakang & Masalah Riil](#latar-belakang--masalah-riil)
    - [Pilar Filosofis Manhaj Nabawiyah](#pilar-filosofis-manhaj-nabawiyah)
    - [Prinsip Anti-Guilt UX & Non-Gamification](#prinsip-anti-guilt-ux--non-gamification)
-   - [Trio Format Micro-Learning](#trio-format-micro-learning)
-   - [Taksonomi 6 Pilar MOC (Maps of Content)](#taksonomi-6-pilar-moc-maps-of-content)
+   - [Arsitektur Dual-Core: Wiki-Tools Hub & Narrative RPG](#arsitektur-dual-core-wiki-tools-hub--narrative-rpg)
+   - [Design System Earth-Tree & Komponen Forui](#design-system-earth-tree--komponen-forui)
 2. [Ekosistem Persona & User Journeys](#2-ekosistem-persona--user-journeys)
 3. [Flowchart Aplikasi dari Perwakilan Persona](#3-flowchart-aplikasi-dari-perwakilan-persona)
-   - [Flowchart Global Arsitektur Aplikasi](#a-flowchart-global-arsitektur-aplikasi)
-   - [Flowchart 1: Persona Ayah (Qawwamun & Penegak Visi)](#b-flowchart-persona-ayah-qawwamun--penegak-visi)
-   - [Flowchart 2: Persona Bunda (Madrasah Utama & Pengasuh Harian)](#c-flowchart-persona-bunda-madrasah-utama--pengasuh-harian)
-   - [Flowchart 3: Persona Guru Fase Tamyiz (SD / Pendidik Adab KBM)](#d-flowchart-persona-guru-fase-tamyiz-sd--pendidik-adab-kbm)
-   - [Flowchart 4: Persona Santri & Pemuda (Penjelajah Bakat TB-40)](#e-flowchart-persona-santri--pemuda-penjelajah-bakat-tb-40)
-   - [Flowchart 5: Persona Pengelola Lembaga Formal / Mudir (KOSP & Maqashid)](#f-flowchart-persona-pengelola-lembaga-formal--mudir-kosp--maqashid)
-   - [Flowchart 6: Persona Pembelajar Mandiri (Tazkiyatun Nafs & Sakinah)](#g-flowchart-persona-pembelajar-mandiri-tazkiyatun-nafs--sakinah)
-4. [Showcase Desain Antarmuka (Figma & OpenPencil)](#4-showcase-desain-antarmuka-figma--openpencil)
-5. [Arsitektur Simulasi Virtual & Gamifikasi (Flame + Bonfire + Rive)](#5-arsitektur-simulasi-virtual--gamifikasi-flame--bonfire--rive)
-6. [Struktur Direktori Proyek](#6-struktur-direktori-proyek)
-7. [Panduan Instalasi & Pengujian](#7-panduan-instalasi--pengujian)
+4. [Peta Ekosistem Prototipe (v0 s.d. v5 & Backend)](#4-peta-ekosistem-prototipe-v0-sd-v5--backend)
+5. [Panduan Instalasi & Pengujian](#5-panduan-instalasi--pengujian)
 
 ---
 
@@ -351,83 +342,64 @@ Untuk menghadirkan modul gamifikasi simulasi kehidupan insan dan komunitas (*"Ba
 4. **Interaksi Multi-Venue (Bonfire)**: Menavigasi 7 lokasi (Rumah, Sekolah, Masjid, Taman, Pasar, Asrama, Tetangga) dengan pathfinding otomatis dan sistem dialog *Bahasa Hati*.
 5. **Simulasi Latar Belakang (Idle / AFK)**: Menggunakan algoritma *Timestamp Delta*—saat pemain kembali login, sistem menyajikan **"The Welcome Back Ledger"** berisi rekaman peristiwa adab dan krisis yang menunggu keputusan pemain tanpa menguras baterai saat ditinggal.
 
-> Dokumen pendukung arsitektur simulasi:
-> * ⚙️ **Kajian & Komparasi Engine Game**: [`docs/TECH_STACK_GAME_ANALYSIS.md`](docs/TECH_STACK_GAME_ANALYSIS.md)
-> * 🎮 **Konsep Naratif Baitul Fitrah**: [`docs/GAME_CONCEPT_VIRTUAL_FITRAH.md`](docs/GAME_CONCEPT_VIRTUAL_FITRAH.md)
-> * 📋 **Inventaris & Preparasi Elemen**: [`docs/PREPARASI_ELEMEN_SIMULASI.md`](docs/PREPARASI_ELEMEN_SIMULASI.md)
-> * 🗺️ **Roadmap & Milestone Lengkap (Phase 7 s.d. 12)**: [`TODO_HANDOFF.md`](TODO_HANDOFF.md)
+> **Evolusi Arsitektur & Riset:**
+> Berdasarkan evaluasi kritis [`docs/DOKUMENTASI_TEMUAN_DAN_ARAH_BARU.md`](docs/DOKUMENTASI_TEMUAN_DAN_ARAH_BARU.md) dan [`COMPLIANCE_AND_ARCHITECTURE.md`](COMPLIANCE_AND_ARCHITECTURE.md), modul simulasi 2D disimplifikasi menjadi **Narrative RPG Rehearsal (Telltale × Disco Elysium TB-40)** untuk memastikan pengalaman pengguna yang lebih intim, sastrawi, bebas beban memori berat, dan mematuhi batas etis non-klinis pengasuhan.
 
 ---
 
-## 6. Struktur Direktori Proyek
+## 4. Peta Ekosistem Prototipe (12 Testbeds Mandiri)
 
-Prototipe Flutter terbagi menjadi dua direktori:
-- **`prototype/v0/`**: Basis kode aplikasi mobile native kanonikal (Android & iOS).
-- **`prototype/v1/`**: Prototipe web interaktif dengan pratinjau bingkai perangkat seluler (`device_preview`).
+Repositori ini menerapkan pendekatan eksplorasi terukur (*incremental iterative testbeds*). Rincian dokumentasi dan arsitektur penggabungan dapat ditinjau di 👉 **[`prototype/README.md`](prototype/README.md)**:
 
-Dokumen riset dan desain tetap berada di root repositori.
-
-```text
-PKN-healing-mobile-app/
-├── prototype/
-│   ├── v0/                                         # Native Mobile Baseline (Android/iOS)
-│   │   ├── lib/
-│   │   ├── test/
-│   │   ├── assets/
-│   │   └── pubspec.yaml
-│   └── v1/                                         # Interactive Web Prototype & Device Preview
-│       ├── lib/
-│       │   ├── app/                                # Konfigurasi global & routing + DevicePreview
-│       │   ├── core/                               # Komponen dan utilitas bersama
-│       │   ├── features/                           # Feed, Lessons, Onboarding, Profile
-│       │   ├── demo/                               # hello_world_app.dart (isolated sandbox)
-│       │   └── main.dart                           # Entrypoint Web dengan DevicePreview wrapper
-│       ├── web/                                    # Target web scaffolding (manifest, index.html)
-│       ├── test/                                   # Rangkaian tes unit & widget (13/13 passing)
-│       ├── assets/                                 # Aset data luring & ikon
-│       └── pubspec.yaml                            # Dependensi Riverpod, GoRouter, DevicePreview
-├── docs/
-│   ├── USER_JOURNEYS.md                            # Peta komprehensif perjalanan 17 persona
-│   └── personas/                                   # 17 Berkas profil persona dari wiki-pkn
-├── design/
-│   ├── PKN_Healing_App_Design.fig                  # Berkas master Figma SceneGraph
-│   └── previews/                                   # Hasil render resolusi tinggi antarmuka
-└── DESIGN_SYSTEM.md                                # Spesifikasi token desain lengkap
-```
+| Direktori Prototipe | Platform / Stack | Fokus Fitur & Status Verifikasi |
+|---|---|---|
+| **[`prototype/v0/`](prototype/v0/)** | Flutter Native (M3) | **Fondasi Awal:** State machine Riverpod, Google Primer lesson player, feed microlearning (13/13 passing tests). |
+| **[`prototype/v1/`](prototype/v1/)** | Flutter Web | **Web Sandbox:** Integrasi `device_preview` browser dengan simulasi frame iPhone/Android. |
+| **[`prototype/v2/`](prototype/v2/)** | HTML Tailwind + Specs | **Arsip Desain Kanonikal Earth-Tree:** 32 layar matang, [`KATALOG_DAN_ARSITEKTUR_32_LAYAR.md`](prototype/v2/KATALOG_DAN_ARSITEKTUR_32_LAYAR.md), dan evaluasi kelayakan Flutter. |
+| **[`prototype/v3/`](prototype/v3/)** | Flutter + Forui UI | **Uji Coba Forui:** Penerapan komponen Forui (`forui: ^0.11.1`) dan adaptasi tema Earth-Tree. |
+| **[`prototype/v4/`](prototype/v4/)** | Flutter Native (Forui + Iconoir) | **Kanonikal Stabil (Ronde 1 & 2):** Beranda Earth-Tree, SOP Krisis 10 Detik, Ruang Curhat AI Sanctuary, Highlights, Bento Grid (12/12 passing tests, 0 lint issues). |
+| **[`prototype/v5/`](prototype/v5/)** | Flutter Native (Forui + fl_chart) | **Feature Testbed Terpadu:** Uji coba chart (Stacked Bar, TB-40 Radar, Mizan physics), Neraca Relasi Qalbiyah, Daily Task & Modal Review Adab BT-MT-BK-MM (23/23 passing tests). |
+| **[`prototype/AI v1/`](prototype/AI%20v1/)** | Flutter Native + LiteRT | **Teman Curhat AI & Voice:** Mode Pra-chat, Mode Walkie-Talkie Ruang Qalbu (PTT living waveform), Generator Dokumen RPP Adab (PDF A4), dan benchmark lokal model Gemma. |
+| **[`prototype/Event v1/`](prototype/Event%20v1/)** | Flutter Web & Mobile | **Agenda Karakter Nabawiyah:** Daurah & webinar parenting, filter kategori sumber, poster caching landscape, web launcher port 3011. |
+| **[`prototype/wiki v1/`](prototype/wiki%20v1/)** | Web HTML / CSS / JS | **Khazanah Fitrah Web:** Penjelajah direktori katalog artikel, daftar isi interaktif (TOC), dan sync card. |
+| **[`prototype/scene generator v1/`](prototype/scene%20generator%20v1/)** | OpenPencil CLI | **Generator Skenario Adab:** Panduan & otomasi SceneGraph 166 frame serta evaluasi naskah living RPG. |
+| **[`prototype/backend v1/`](prototype/backend%20v1/)** | Node.js / Python | **Backend Scraping v1:** Eksperimen awal parser WordPress dan mirror Markdown Git Wiki (diarsipkan). |
+| **[`prototype/backend v2/`](prototype/backend%20v2/)** | Python / LibSQL / Directus | **Master Dual-Database Engine:** Directus CMS + Alexandrie non-AI hub + SQLite LibSQL Vector Search 384-dim (`F32_BLOB(384)`), kompresi OTA Zstandard (`v4.0.0`, 7.69 MB), stdio MCP Server (6 tools), Outbox sync (7/7 passing acceptance tests). |
 
 ---
 
-## 7. Panduan Instalasi & Pengujian
+## 5. Panduan Instalasi & Pengujian
 
-### Prasyarat
-* Flutter SDK versi 3.24 atau lebih tinggi
-* Dart SDK versi 3.5 atau lebih tinggi
+### Prasyarat Sistem
+* **Flutter SDK:** versi 3.29.0+ (`/home/abuhafi/flutter/bin/flutter`)
+* **Dart SDK:** versi 3.7.0+
+* **OS:** Linux / macOS / Windows
 
-### Menjalankan Aplikasi
-
-#### A. Prototipe Web dengan Device Preview (`prototype/v1`)
-Untuk pratinjau browser instan dengan bingkai iPhone 13 dan simulasi perangkat seluler:
+### Menjalankan Prototipe v5 (Feature Testbed: Charts, Relations, Daily Tasks)
 ```bash
-cd prototype/v1
+cd prototype/v5
+
+# 1. Unduh dependensi
 flutter pub get
 
-# Jalankan via skrip Tailscale atau manual Flutter:
+# 2. Verifikasi analisis statis (wajib 0 issues)
+flutter analyze
+
+# 3. Jalankan pengujian otomatis (unit & widget tests)
+flutter test
+
+# 4. Jalankan aplikasi pada Web atau Simulator
+flutter run -d chrome
+# Atau jalankan via web runner:
 ./run_web.sh
-# Atau: flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8181
 ```
-Akses antarmuka:
-* 🔒 **Tailscale HTTPS (MagicDNS):** [**`https://cachyos-5600gt.tail0faa6b.ts.net/`**](https://cachyos-5600gt.tail0faa6b.ts.net/) *(dapat dibuka langsung dari HP / iPad yang terhubung Tailscale)*
-* 🌐 **Lokal:** `http://localhost:8181` atau `http://localhost:3001`
-* 📶 **Tailscale Direct IP:** `http://100.118.34.69:8181/`
 
-#### B. Basis Kode Native Mobile (`prototype/v0`)
-Untuk pengujian di emulator seluler atau perangkat fisik Android/iOS:
+### Menjalankan Prototipe v4 (Baseline Rilis Stabil)
 ```bash
-cd prototype/v0
-flutter pub get
+cd prototype/v4
 flutter analyze
 flutter test
-flutter run
+./run_web.sh
 ```
 
 ---

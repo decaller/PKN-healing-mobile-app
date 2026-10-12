@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fdf9f0">
+  <title>Wiki PKN — Khazanah Fitrah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="styles.css" rel="stylesheet">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Lewati ke konten</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand" aria-label="Wiki PKN, beranda"><span class="brand-mark" aria-hidden="true">♧</span><span><strong>Wiki PKN</strong><small>Khazanah Fitrah &amp; Manhaj Nabawiyah</small></span></a>
+      <button id="header-search" class="btn btn-ghost btn-circle" aria-label="Cari artikel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section id="directory-view">
+      <div id="welcome" class="card welcome">
+        <p class="eyebrow">Khazanah Fitrah &amp; Manhaj Nabawiyah</p>
+        <h1>Pendidikan Karakter Nabawiyah</h1>
+        <p>Jelajahi khazanah pendidikan, pengasuhan, dan fitrah. Temukan ilmu untuk menemani amanah mendidik.</p>
+        <a class="text-link" href="#directory">Jelajahi seluruh khazanah <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="directory-heading" id="directory-heading" hidden><p class="eyebrow">Katalog khazanah</p><h1>Direktori Wiki PKN</h1><p>Telusuri artikel menurut kategori atau kata kunci.</p></div>
+      <form id="search-form" role="search" class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <label class="sr-only" for="wiki-search">Cari artikel</label>
+        <input id="wiki-search" name="q" type="search" placeholder="Cari artikel, dalil, atau istilah fitrah…" autocomplete="off">
+        <button id="clear-search" class="btn btn-ghost btn-circle" type="button" aria-label="Hapus pencarian" hidden>×</button>
+        <button class="btn search-submit" type="submit">Cari</button>
+      </form>
+      <div id="categories" class="category-chips" aria-label="Filter kategori"></div>
+      <section id="category-map" class="category-map" aria-labelledby="map-title"><div class="section-heading"><h2 id="map-title">Peta khazanah</h2><span>Mulai dari kategori</span></div><div id="category-cards" class="category-grid"></div></section>
+      <section aria-labelledby="results-title"><div class="section-heading"><h2 id="results-title">Jelajahi artikel</h2><span id="result-count"></span></div><p id="filter-description" class="filter-description" hidden></p><div id="results" class="article-grid" aria-live="polite" aria-busy="true"></div></section>
+    </section>
+    <section id="article-view" hidden>
+      <button id="article-back" class="btn btn-ghost back-button" type="button">← Kembali ke khazanah</button>
+      <div id="article-state" aria-live="polite"></div>
+      <div id="article-layout" class="article-layout" hidden>
+        <article class="article-shell"><header class="article-header"><div id="article-tags" class="article-tags"></div><h1 id="article-title"></h1><p id="article-summary"></p><p id="article-source" class="source-label"></p></header><div id="article-body" class="prose-content"></div><a href="#directory" class="text-link article-end">Jelajahi artikel lainnya <span aria-hidden="true">→</span></a></article>
+        <aside id="toc" class="toc" aria-label="Daftar isi" hidden><details open><summary>Daftar isi</summary><nav id="toc-links"></nav></details></aside>
+      </div>
+    </section>
+    <footer class="sync-card"><span class="sync-dot" aria-hidden="true"></span><div><strong id="sync-title">Menghubungkan khazanah…</strong><p id="sync-detail">Memuat status sinkronisasi sumber.</p></div><button id="refresh-button" class="btn btn-ghost" type="button">Muat ulang</button></footer>
+  </main>
+  <nav class="bottom-nav" aria-label="Navigasi wiki"><a href="#home" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3Z"/></svg><span>Beranda</span></a><a href="#directory" data-nav="directory"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Direktori</span></a><button id="nav-search" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span>Pencarian</span></button></nav>
+</body>
+</html>

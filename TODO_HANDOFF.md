@@ -91,49 +91,57 @@
 
 ---
 
-### Phase 7: Fondasi Engine Simulasi, Dependensi & Skema Database Isar *(UPCOMING / READY FOR EXECUTION)*
-- [ ] **Task 7.1:** Tambahkan dependensi engine ke `prototype/v0/pubspec.yaml` (`flame: ^1.18.0`, `bonfire: ^3.11.1`, `rive: ^0.13.0`, `flame_rive: ^1.10.0`, `isar: ^3.1.0+1`, `isar_flutter_libs: ^3.1.0+1`, `workmanager: ^0.5.2`).
-- [ ] **Task 7.2:** Definisikan entitas database lokal Isar di `prototype/v0/lib/features/simulation/data/models/`:
-  - `CharacterEntity`: id, uuid, name, gender, agePhase (Thufulah..Syaikh), exactAgeYears, loveTankLevel (0–100), nafsState (0–2), currentVenueId, lastStateCalculatedAt, masteredAdabKeys, talentScores.
-  - `LedgerEventEntity`: id, characterUuid, eventTimestamp, venueId, category, title, narrativeText, isPendingDilemma, dilemmaScenarioId, isResolved, chosenResolutionKey, loveTankImpact, nafsImpact.
-  - `RealToVirtualMissionEntity`: id, missionKey, title, realWorldActionDescription, suggestedDurationMinutes, targetAgePhase, loveTankReward, virtualGardenSeedReward, isCompletedToday, lastCompletedAt.
-  - `ScenarioProgressEntity`: id, scenarioId, currentActiveNodeId, chosenChoiceHistory, isCompleted, lastPlayedAt, triggeredIslahPathway, acquiredSkillPoints.
-- [ ] **Task 7.3:** Bangun arsitektur jembatan Riverpod State Provider $\leftrightarrow$ Bonfire GameController (`SimulationController`, `LedgerNotifier`, `ScenarioPlayerNotifier`).
-- [ ] **Task 7.4:** Parser & Graph Loader luring untuk skrip skenario JSON di `prototype/v0/assets/data/scenarios/`.
-- [ ] **Task 7.5:** Unit test untuk skema entitas Isar, Riverpod state bridge, dan logika prerequisite choice gating.
+### Phase 7: Evaluasi Kritis & Transformasi Arsitektur Dual-Core *(Completed)*
+- [x] **Task 7.1:** De-scoping game engine 2D berat (Flame/Bonfire/Unity) setelah audit desain [`design/DESIGN_CRITIQUE.md`](design/DESIGN_CRITIQUE.md) dan [`design/IDEA_REFINEMENT.md`](design/IDEA_REFINEMENT.md).
+- [x] **Task 7.2:** Penetapan Arsitektur Baru: Dual-Core PKN Mobile ([`docs/RISET_DUAL_CORE_WIKI_DAN_NARRATIVE_RPG.md`](docs/RISET_DUAL_CORE_WIKI_DAN_NARRATIVE_RPG.md)) — Pilar 1: Wiki-Tools Hub, Pilar 2: Narrative RPG Rehearsal.
+- [x] **Task 7.3:** Audit Master Governance & Toko Aplikasi ([`COMPLIANCE_AND_ARCHITECTURE.md`](COMPLIANCE_AND_ARCHITECTURE.md)): Safeguarding anak, fiqih pengasuhan, privasi suara zero-retention, dan pemisahan non-klinis.
 
-### Phase 8: Pipeline Aset Vektor Rive & Rigging Manusia Virtual
-- [ ] **Task 8.1:** Integrasikan file vektor Rive (`.riv`) untuk 6 arketipe fitrah (Thufulah Boy/Girl, Tamyiz, Murahaqah, Baligh, Syabab, Syaikh).
-- [ ] **Task 8.2:** Implementasi State Machine Inputs standar (`loveTankLevel`, `nafsState`, `triggerCry`, `triggerHug`, `triggerShalat`, `triggerAdabMakan`, `triggerSleep`).
-- [ ] **Task 8.3:** Sinkronisasi ekspresi mikro wajah (mata, alis, tetesan air mata saat krisis) dan gesture tangan kanan secara anatomis.
-- [ ] **Task 8.4:** Rancang widget HUD Flutter dinamis: *Tangki Cinta Gauge* & *Nafs Barometer* (Ammarah, Lawwamah, Muthma'innah).
+### Phase 8: Riset Mekanik TB-40 & Validasi Empiris Gemma AI *(Completed)*
+- [x] **Task 8.1:** Transformasi 24 skill Disco Elysium menjadi 40 Bakat Syakilah TB-40 ([`docs/RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md`](docs/RISET_MEKANIK_SKILL_DISCO_ELYSIUM_TB40.md)).
+- [x] **Task 8.2:** Benchmark lokal model LLM Google Gemma 3 (1B) dan Gemma 4 (E2B) ([`docs/LAPORAN_PENGUJIAN_GEMMA3_TB40.md`](docs/LAPORAN_PENGUJIAN_GEMMA3_TB40.md)) untuk simulasi suara batin fitrah.
+- [x] **Task 8.3:** Ekstraksi korpus dalil & taksonomi lengkap Wiki PKN ([`prototype/v2/design/extracted_text_from_https_wikipkn.insanmustaqbal.or.id.md`](prototype/v2/design/extracted_text_from_https_wikipkn.insanmustaqbal.or.id.md)).
 
-### Phase 9: Lingkungan 2D Isometrik & Navigasi Bonfire (Baitul Fitrah & 7 Venue)
-- [ ] **Task 9.1:** Konversi dan integrasikan peta Tiled JSON untuk *Baitul Fitrah* (Ruang Tamu, Ruang Keluarga, Musholla Rumah, Dapur Barakah, Kamar Tidur Bersekat Usia 10 thn).
-- [ ] **Task 9.2:** Implementasi collision layers (`CollisionArea`), zona interaksi furnitur, dan pathfinding otonom Bonfire.
-- [ ] **Task 9.3:** Buat sistem pencahayaan siklus waktu 24 jam alami (Fajar, Siang Cerah, Lembayung Senja, Malam Temaram).
-- [ ] **Task 9.4:** Hubungkan navigasi ke 6 venue komunitas lainnya (*Kuttab*, *Masjid Jami'*, *Taman Fitrah*, *Pasar Barakah*, *Asrama Santri*, *Ruang Kerja Ayah*).
+### Phase 9: Desain Kanonikal Earth-Tree & Flutter Forui v3/v4 *(Completed)*
+- [x] **Task 9.1:** Adopsi sistem desain *Earth-Tree* (sand ecru, mineral basalt, meadow pine green, Merriweather, Plus Jakarta Sans, Amiri).
+- [x] **Task 9.2:** Evaluasi kelayakan Flutter di [`prototype/v2/FLUTTER_ANALISIS_DAN_REKOMENDASI.md`](prototype/v2/FLUTTER_ANALISIS_DAN_REKOMENDASI.md) (100% layak dengan Forui + Iconoir).
+- [x] **Task 9.3:** Scaffolding `prototype/v3` (eksplorasi Forui) dan pembangunan basis kode native kanonikal di `prototype/v4` (Ronde 1 & 2: Beranda Earth-Tree, P3K Tantrum 10 Detik, Ruang Curhat AI Sanctuary, Detail Dalil, Serial Zaid).
+- [x] **Task 9.4:** Pengujian widget test & theme contrast WCAG 2.2 di `prototype/v4` (12/12 passing tests, 0 lint issues).
 
-### Phase 10: Delta-Time AFK Simulation Engine & The Welcome Back Ledger
-- [ ] **Task 10.1:** Implementasi algoritma matematika luruh Tangki Cinta offline ($\Delta t = t_{\text{resume}} - t_{\text{last\_exit}}$ dengan koefisien $\lambda_{\text{fase}}$ usia).
-- [ ] **Task 10.2:** Evaluasi siklus waktu shalat astronomis & generator otomatis log kejadian background (zero battery consumption).
-- [ ] **Task 10.3:** Buat layar UI Flutter `WelcomeBackLedgerScreen` (animasi gulungan perkamen digital, render instan $< 100\text{ ms}$).
-- [ ] **Task 10.4:** Modal penyelesaian krisis emosional / dilema adab tertunda dengan pilihan respons *Bahasa Hati*.
+### Phase 10: Backend v2 Dual-Database Engine, LibSQL Vector & MCP Pipeline *(Completed)*
+- [x] **Task 10.1:** Docker Compose stack terpadu (PostgreSQL, Directus CMS port 8055, Alexandrie Hub port 8201) di `prototype/backend v2/compose.yaml`.
+- [x] **Task 10.2:** Compiler database offline `build_knowledge_db.py`: menghasilkan `knowledge_build.db` (FTS5 search + LibSQL 384-dim `F32_BLOB(384)` + DiskANN index `libsql_vector_idx`).
+- [x] **Task 10.3:** Kompresi Zstandard level 19: menghasilkan rilis semantik `v4.0.0` (`knowledge_v4.db.zst`, 7.69 MB dari 59.1 MB uncompressed) siap unduh OTA.
+- [x] **Task 10.4:** Arsitektur sinkronisasi outbox Drift SQLite lokal ke API server python dengan deteksi konflik timestamp (`stale_mutation` 409).
+- [x] **Task 10.5:** MCP Server stdio dengan 6 tools (`search_knowledge` [lexical/semantic/hybrid], `get_article`, `get_doa_penenang`, `get_skenario_adab`, `get_agenda_event`, `get_similar_articles`).
+- [x] **Task 10.6:** Acceptance test suite `test_backend_v2.py` (7/7 tests passing 100%).
 
-### Phase 11: Skenario Dilema Adab, Gating Prasyarat & Multi-Character POV Relay
-- [ ] **Task 11.1:** Susun katalog 50+ skenario interaktif berbasis format JSON Graph Node Tree di `prototype/v0/assets/data/scenarios/` untuk 6 fase usia (Thufulah s.d. Syaikh).
-- [ ] **Task 11.2:** Terapkan arsitektur kendali bergantian (POV Relay mode): pemain mengendalikan anak, orang tua, dan sesepuh/guru secara berestafet dalam satu krisis.
-- [ ] **Task 11.3:** Implementasikan widget UI pilihan berjenjang (Mumtaz s.d. Munkar) dengan *Prerequisite Gating* (dinonaktifkan jika syarat bakat TB-40, level adab BT-MM, atau nafs belum terpenuhi).
-- [ ] **Task 11.4:** Bangun modal interaktif *Educational Learning Tooltip*: membedah teks dalil syar'i dan analisis gap fitrah saat pemain mengetuk pilihan terkunci.
-- [ ] **Task 11.5:** Terapkan percabangan *Jalur Islah & Rekonsiliasi* (No Game Over): kesalahan respon memicu konsekuensi alami dan membuka jalur pemulihan tazkiyah.
-- [ ] **Task 11.6:** Bangun katalog misi dunia nyata *Real-to-Virtual Bridge* (peluk anak 3 menit, shalat berjamaah, sirah tidur) dan integrasikan tautan instan ke modul MOC/Dalil.
+### Phase 11: Prototype v5 Feature Testbed (Charts, Relations, Daily Tasks & 32 Screens) *(Completed)*
+- [x] **Task 11.1:** Setup `prototype/v5` dari fondasi bersih v4 dengan penambahan dependensi `fl_chart: ^1.1.0`.
+- [x] **Task 11.2:** Verifikasi integritas analisis statis (0 issues) dan pengujian otomatis (23/23 passing tests).
+- [x] **Task 11.3:** Uji coba kemampuan chart di Flutter untuk kasus PKN:
+  - Stacked Bar Activity Chart Sepekan (Senin–Ahad: Diri, Hati, Ilmu via `fl_chart`).
+  - TB-40 Radar / Spider Chart (6 Rumpun Bakat via `fl_chart`).
+  - Mizan Fitrah Dynamic Balance Scale (Interaktif physics tilt via `CustomPainter`).
+  - Multi-segment Horizon Progress Bar (Segmented pill native).
+- [x] **Task 11.4:** Implementasi Fitur Relasi Qalbiyah (`RelationsProgressScreen`):
+  - Laporan Neraca Jiwa & Relasi (Filter: Pekan Ini, Bulan Ini, Sepanjang Masa).
+  - Kartu Profil Relasi Multi-Persona (Ananda Zaid, Ananda Maryam, Ummu Zaid).
+  - Tadabbur Asisten AI dan Rekomendasi Hikmah Esok Hari yang dapat langsung disematkan ke Daily Task.
+- [x] **Task 11.5:** Implementasi Fitur Daily Task Amanah Harian (`DailyTaskScreen`):
+  - Daftar tugas terkelompok (Todo Relasi, Mujahadah Diri, Target Belajar).
+  - Integrasi **Modal Review Kualitas Amalan Adab** (Bottom sheet muhasabah non-gamified: Muthma'innah, Lawwamah, Ammarah).
+  - Sinkronisasi status selesai ke neraca pencapaian secara reaktif via Riverpod.
+- [x] **Task 11.6:** Pembuatan Feature Showcase Hub & Shell Dock 5-Tab di `prototype/v5` (`Beranda`, `Amanah Harian`, `Curhat AI`, `Lab Chart`, `Relasi Jiwa`).
 
+### Phase 12: Integrasi Komprehensif Data Offline OTA & On-Device AI *(Completed)*
+- [x] **Task 12.1:** Implementasi client service Flutter LibSQL Vector & Hybrid Search RRF (`prototype/backend v2/client_examples/libsql_vector_search_service.dart`).
+- [x] **Task 12.2:** Panduan & Service On-Device Embedding ONNX INT8 di background isolate Flutter (`prototype/backend v2/client_examples/on_device_embedder_service.dart`).
+- [x] **Task 12.3:** Verifikasi 12 sub-prototipe dan pembuatan master indeks [`prototype/README.md`](prototype/README.md).
 
-### Phase 12: Integrasi Komunitas Multi-Persona, Audio Soundscape & Polish Beta
-- [ ] **Task 12.1:** Integrasikan soundscape alami (kicau burung fajar, gemericik air wudhu, desau angin) & SFX adab nabawiyah yang menenangkan jiwa.
-- [ ] **Task 12.2:** Terapkan prinsip *Anti-Guilt UX* (tanpa penalti jika lama tidak buka aplikasi, sambutan welas asih saat kembali).
-- [ ] **Task 12.3:** Profiling performa memori (RAM $< 50\text{ MB}$, startup $< 1\text{ detik}$, 60–120 FPS di perangkat Android/iOS entry-level).
-- [ ] **Task 12.4:** Registrasikan rute navigasi tab *"Kampung Fitrah"* di `app_router.dart` dan jalankan pengujian integrasi E2E.
+### Phase 13: Modular Unified Flutter Prototype Compilation *(ACTIVE)*
+- [ ] **Task 13.1:** Bangun wadah kompilasi modular (`prototype/compile/`): satukan core UI (v4), relasi/daily task (v5), Teman Curhat (AI v1), Agenda (Event v1), dan Khazanah LibSQL (backend v2).
+- [ ] **Task 13.2:** Implementasi `FeatureFlagsConfig`: setiap fitur dapat diaktifkan/dinonaktifkan secara independen tanpa merusak navigasi atau modul lain.
+- [ ] **Task 13.3:** Verifikasi pengujian otomatis dan analisa statis (0 errors, 0 lints) pada prototipe modular.
 
 ---
 

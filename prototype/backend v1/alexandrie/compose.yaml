@@ -1,0 +1,91 @@
+name: pkn-alexandrie
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?required}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:?required}
+      MYSQL_USER: ${MYSQL_USER:?required}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?required}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysql -u$${MYSQL_USER} -p$${MYSQL_PASSWORD} -e 'SELECT 1' $${MYSQL_DATABASE}"]
+      timeout: 10s
+      retries: 5
+      interval: 10s
+      start_period: 30s
+  rustfs:
+    image: rustfs/rustfs:latest
+    restart: unless-stopped
+    environment:
+      RUSTFS_ACCESS_KEY: ${RUSTFS_ACCESS_KEY:?required}
+      RUSTFS_SECRET_KEY: ${RUSTFS_SECRET_KEY:?required}
+      RUSTFS_CONSOLE_ENABLE: "false"
+      RUSTFS_LOG_LEVEL: error
+    ports:
+      - "127.0.0.1:${RUSTFS_EXTERNAL_PORT}:9000"
+    volumes:
+      - rustfs_data:/data
+      - rustfs_logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 9000 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 6
+      start_period: 20s
+  backend:
+    image: ghcr.io/smaug6739/alexandrie-backend:latest
+    restart: unless-stopped
+    environment:
+      BACKEND_PORT: 8201
+      GIN_MODE: release
+      JWT_SECRET: ${JWT_SECRET:?required}
+      COOKIE_DOMAIN: localhost
+      FRONTEND_URL: ${FRONTEND_URL}
+      ALLOW_UNSECURE: "true"
+      CONFIG_DISABLE_SIGNUP: "false"
+      CONFIG_DISABLE_NATIVE_LOGIN: "false"
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: ${MYSQL_DATABASE}
+      DATABASE_USER: ${MYSQL_USER}
+      DATABASE_PASSWORD: ${MYSQL_PASSWORD}
+      MINIO_ENDPOINT: rustfs:9000
+      MINIO_PUBLIC_URL: ${CDN_URL}
+      MINIO_SECURE: "false"
+      MINIO_INSECURE_TLS: "false"
+      MINIO_ACCESSKEY: ${RUSTFS_ACCESS_KEY}
+      MINIO_SECRETKEY: ${RUSTFS_SECRET_KEY}
+      MINIO_BUCKET: alexandrie
+      SMTP_HOST: ""
+      SMTP_MAIL: ""
+      SMTP_MAIL_FROM: ""
+      SMTP_PASSWORD: ""
+    ports:
+      - "127.0.0.1:${BACKEND_EXTERNAL_PORT}:8201"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      rustfs:
+        condition: service_healthy
+  frontend:
+    image: ghcr.io/smaug6739/alexandrie-frontend:latest
+    restart: unless-stopped
+    environment:
+      PORT: 8200
+      NUXT_PUBLIC_CONFIG_DISABLE_SIGNUP_PAGE: "false"
+      NUXT_PUBLIC_CONFIG_DISABLE_LANDING_PAGE: "false"
+      NUXT_PUBLIC_BASE_API: ${API_URL}
+      NUXT_PUBLIC_BASE_CDN: ${CDN_URL}
+      NUXT_PUBLIC_CDN_ENDPOINT: /alexandrie/
+      NUXT_PUBLIC_BASE_URL: ${FRONTEND_URL}
+    ports:
+      - "127.0.0.1:${FRONTEND_EXTERNAL_PORT}:8200"
+    depends_on:
+      - backend
+volumes:
+  mysql_data:
+  rustfs_data:
+  rustfs_logs:

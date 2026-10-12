@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#006398", "secondary-fixed-dim": "#79db8d", "primary": "#006194", "on-tertiary-container": "#fffbff", "on-tertiary-fixed-variant": "#663e0f", "surface-bright": "#fdf9f0", "tertiary": "#7e5223", "tertiary-fixed": "#ffdcbe", "tertiary-fixed-dim": "#f6bb81", "error-container": "#ffdad6", "surface-container": "#f1ede5", "primary-fixed-dim": "#93ccff", "on-primary-fixed": "#001d31", "secondary": "#006d30", "on-primary-container": "#fdfcff", "secondary-fixed": "#95f8a7", "on-surface": "#1c1c17", "on-error-container": "#93000a", "surface-container-highest": "#e6e2da", "on-secondary-container": "#007233", "surface-variant": "#e6e2da", "surface-dim": "#dddad1", "inverse-on-surface": "#f4f0e8", "surface": "#fdf9f0", "surface-container-low": "#f7f3ea", "on-tertiary": "#ffffff", "outline-variant": "#bfc7d2", "on-background": "#1c1c17", "surface-container-high": "#ece8df", "secondary-container": "#92f5a4", "inverse-primary": "#93ccff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#005323", "error": "#ba1a1a", "on-secondary": "#ffffff", "background": "#fdf9f0", "on-primary": "#ffffff", "tertiary-container": "#9a6a38", "outline": "#707881", "on-primary-fixed-variant": "#004b73", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4850", "on-secondary-fixed": "#00210a", "primary-container": "#007bb9", "on-tertiary-fixed": "#2c1600", "on-error": "#ffffff", "inverse-surface": "#31302b" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "3rem", "space-sm": "0.75rem", "gutter-sm": "1rem", "margin-sm": "1.25rem", "space-xs": "0.375rem", "space-lg": "2rem", "space-md": "1.25rem", "space-xl": "3.5rem", "gutter": "1.5rem" }, fontFamily: { "headline-lg-mobile": ["Merriweather"], "headline-xl": ["Merriweather"], "headline-sm": ["Merriweather"], "headline-lg": ["Merriweather"], "label-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Merriweather"], "display-lg-mobile": ["Merriweather"], "title-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Merriweather"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Merriweather"] }, fontSize: { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }], "title-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg-mobile": ["38px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100%;}body{overscroll-behavior:none;background-color:#fdf9f0;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[24px]">spa</span><h1 class="font-headline-sm text-headline-sm text-on-surface">Profil</h1></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-sm space-y-space-md">
+<!-- Header Section with Title and Timeframe Filter -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary-container uppercase tracking-wider">Laporan Pengasuhan PKN</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Neraca Jiwa &amp; Relasi</h2>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</div>
+<!-- Time Filter Pills -->
+<div class="flex p-1 bg-surface-container rounded-full space-x-1 mt-2">
+<button class="flex-1 py-1.5 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all text-center">
+        Pekan Ini
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-full text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all text-center">
+        Bulan Ini
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-full text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all text-center">
+        Sepanjang Masa
+      </button>
+</div>
+</div>
+<!-- Ringkasan Neraca Jiwa & Amanah (Daily Task Completion) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Tingkat Ketercapaian Amanah</span>
+<div class="flex items-baseline space-x-2 mt-0.5">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-bold">88%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">28 dari 32 Ikhtiar Selesai</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+14% vs Pekan Lalu</span>
+</div>
+</div>
+<!-- Multi-tier Stacked Progress Overview -->
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 flex overflow-hidden">
+<div class="bg-secondary h-full" style="width: 48%;" title="Mujahadah Diri"></div>
+<div class="bg-primary h-full" style="width: 32%;" title="Relasi Hati"></div>
+<div class="bg-tertiary-container h-full" style="width: 8%;" title="Belajar &amp; Gamifikasi"></div>
+</div>
+<!-- Stacked Bar Chart (Senin - Ahad) -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Aktivitas Sepekan (Sen - Ahd)</span>
+<div class="flex items-center space-x-2">
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span>Diri</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span>Hati</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span>Ilmu</span>
+</div>
+</div>
+<!-- Chart Display -->
+<div class="h-32 w-full flex items-end justify-between gap-1.5 pt-4 pb-1">
+<!-- Senin -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 38px;"></div>
+<div class="bg-primary w-full" style="height: 24px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 12px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Sn</span>
+</div>
+<!-- Selasa -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 44px;"></div>
+<div class="bg-primary w-full" style="height: 28px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 10px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Sl</span>
+</div>
+<!-- Rabu -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 48px;"></div>
+<div class="bg-primary w-full" style="height: 32px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 14px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Rb</span>
+</div>
+<!-- Kamis -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 36px;"></div>
+<div class="bg-primary w-full" style="height: 30px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 8px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Km</span>
+</div>
+<!-- Jumat -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 52px;"></div>
+<div class="bg-primary w-full" style="height: 36px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 16px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Jm</span>
+</div>
+<!-- Sabtu -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 30px;"></div>
+<div class="bg-primary w-full" style="height: 48px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 20px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Sb</span>
+</div>
+<!-- Ahad -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="w-full max-w-[24px] flex flex-col-reverse rounded-t overflow-hidden bg-surface-container-highest">
+<div class="bg-secondary w-full" style="height: 32px;"></div>
+<div class="bg-primary w-full" style="height: 54px;"></div>
+<div class="bg-tertiary-container w-full" style="height: 18px;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Ah</span>
+</div>
+</div>
+</div>
+<!-- AI Brief Insight Grounding Box -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-start space-x-3">
+<div class="p-1.5 rounded-full bg-primary-fixed text-on-primary-fixed mt-0.5">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-primary font-semibold">Tadabbur Asisten AI PKN</p>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 leading-relaxed">
+          “Stabilitas emosi Ayah meningkat pesat di hari kerja. Interaksi senja dengan Zaid menunjukkan tren kelekatan yang sangat positif.”
+        </p>
+</div>
+</div>
+</div>
+<!-- Matriks Pertumbuhan Relasi (Relation Radar) -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">diversity_1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Matriks Relasi Qalbiyah</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Amanah Utama</span>
+</div>
+<!-- Relasi 1: Ananda Zaid -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Potret natural anak laki-laki usia 8 tahun mengenakan pakaian bersahaja katun krem, tersenyum tenang di bawah cahaya sore alami dengan latar belakang dedaunan hijau hangat gaya editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE5JFYK3ojdkHjJ5ltSfHG7G4wFLgCi4UPzbU8FnJfSavz3-KwHpGP6UHcD6s8Bt8ger05PS-byl1R97hqWCrBZO7DaO-0p8LYCPNBXUlsxgxBK2tGqnh9iO_rjd6kINWCGSG8xhkNLVDqrb1w8tYLiNfrCxAN3NzaX9zlFVY32Nat5qp6Wzf_XRQ2cqfHlg_NYlRxIfQ2oE9iZv7oTFyoOu9gePAZUZMQ0wJ5KBsi0Kmm2Um6ZcNToA"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Ananda Zaid</h4>
+<span class="font-label-sm text-label-sm text-tertiary">8 Thn • Fase Tamyiz</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">85%</span>
+<span class="block font-label-sm text-label-sm text-secondary">Amanah Terjaga</span>
+</div>
+</div>
+<!-- Detail Metrics Pill Cards -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Sholat Jamaah</span>
+<span class="font-title-sm text-title-sm text-on-surface font-bold">6/7 Hari</span>
+</div>
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Bebas Bentakan</span>
+<span class="font-title-sm text-title-sm text-secondary font-bold">92%</span>
+</div>
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Tangki Jiwa</span>
+<span class="font-title-sm text-title-sm text-primary font-bold">Penuh</span>
+</div>
+</div>
+<!-- Specific Insight Highlight -->
+<div class="bg-surface-container-high/60 rounded-lg p-2.5 flex items-center space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span class="font-body-sm text-body-sm leading-snug">Respon terhadap bentakan turun 80% sejak diterapkannya <strong>SOP 10 Detik Dekapan Senja</strong>.</span>
+</div>
+</div>
+<!-- Relasi 2: Ananda Maryam -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Potret wajah anak perempuan mungil 4 tahun dengan senyum riang ceria, mengenakan kerudung rumah katun lembut warna peach pasir di teras rumah bernuansa earthy tenang." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCyZCTRCp-1BKeqcifb0Qr68DGspH0DxkjIOXzbNHLCCVUBdJTOCZqnrdTmNuEAzRZ6QtQYCYsxHaB3tG7GmjBCKsVSVDiQcBEU7r9JmW0ZmnyVYRAxNX_HCT9s0iGno62dSF0448Wy3W9gVkjzDwYrjSBRCzdH9XHPtwLr09NpkpzlR_xKEW1JlearDPJMRESlKUJljp1sWxhkzZuY2JZyioDfBK63VvmyM1CIangEOZVFt7HzqX4yw"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Ananda Maryam</h4>
+<span class="font-label-sm text-label-sm text-tertiary">4 Thn • Fase Thufulah</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">95%</span>
+<span class="block font-label-sm text-label-sm text-primary">Berlimpah Kasih</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center space-x-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">toys</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Main Bersama</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">35 mnt/hari</span>
+</div>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Adab Tidur</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">5 Malam</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Relasi 3: Pasangan (Ummu Zaid) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center text-tertiary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Ummu Zaid</h4>
+<span class="font-label-sm text-label-sm text-tertiary">Mitra Tarbiyah • Istri</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-tertiary-container font-bold">78%</span>
+<span class="block font-label-sm text-label-sm text-tertiary-container">Harmonis</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center space-x-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">phonelink_erase</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Deep Talk No-Gadget</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">4 Sesi / Pekan</span>
+</div>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">nights_stay</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Munajat Sepertiga</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Tercapai Rutin</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pencapaian Gamifikasi & Pilar Bakat (TB-40) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Tazkiyatun Nafs • TB-40</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pilar Bakat Terbina</h3>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md font-bold text-primary">1.420 XP</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Poin Thuma'ninah</span>
+</div>
+</div>
+<!-- Peringkat Adab Badge Banner -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Maqam / Gelar Adab:</span>
+<span class="font-title-sm text-title-sm text-on-surface font-bold">“Ayah Penyejuk Qalbu”</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</div>
+<!-- Bakat Terasah List -->
+<div class="space-y-space-xs">
+<!-- Bakat 1: Shidq -->
+<div class="p-2.5 bg-surface-container rounded-lg space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Shidq (Kejujuran Autentik)</span>
+<span class="text-primary font-bold">Level 3</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Bakat 2: Rifq -->
+<div class="p-2.5 bg-surface-container rounded-lg space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Rifq (Kelemahlembutan Suara)</span>
+<span class="text-secondary font-bold">Level 4</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Bakat 3: Shabr -->
+<div class="p-2.5 bg-surface-container rounded-lg space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Shabr (Daya Tahan Jiwa)</span>
+<span class="text-tertiary-container font-bold">Level 2</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rekomendasi Terarah untuk Esok Hari (Grounding Action Banner) -->
+<div class="bg-surface-container-high rounded-xl p-space-md shadow-sm space-y-space-sm relative overflow-hidden">
+<div class="flex items-start space-x-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Rekomendasi Hikmah Esok Hari</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+          Berdasarkan tren sinkronisasi pekan ini, tingkatkan <strong>1 sesi apresiasi verbal khusus</strong> untuk Ummu Zaid saat sarapan pagi esok hari.
+        </p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-1">
+<button class="w-full py-2.5 px-space-md bg-secondary text-on-secondary rounded-lg font-label-md text-label-md flex items-center justify-center space-x-2 active:scale-[0.98] transition-all shadow-sm" id="btn-schedule-task">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>+ Jadwalkan ke Daily Task Besok</span>
+</button>
+<div class="hidden mt-2 p-2 bg-secondary-container text-on-secondary-container rounded-lg font-label-sm text-label-sm text-center" id="schedule-toast">
+        Ikhtiar berhasil disematkan ke agenda pagi besok!
+      </div>
+</div>
+</div>
+</div>
+<script>
+  document.getElementById('btn-schedule-task')?.addEventListener('click', function() {
+    const toast = document.getElementById('schedule-toast');
+    if (toast) {
+      toast.classList.remove('hidden');
+      this.classList.add('opacity-75');
+      this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Telah Dijadwalkan</span>';
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-low/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-title-sm"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 w-14 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">potted_plant</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="agenda" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-label-sm">Agenda</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="ai" href="#"><span class="material-symbols-outlined text-[22px]">psychology_alt</span><span class="font-label-sm text-label-sm">AI</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-12 text-on-surface-variant hover:text-on-surface transition-all" data-path="wiki" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm">Wiki</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-14 h-12 transition-all text-primary font-title-sm" data-path="profil" href="#"><span class="material-symbols-outlined text-[22px]">person_outline</span><span class="font-label-sm text-label-sm">Profil</span></a></div></nav></body></html>

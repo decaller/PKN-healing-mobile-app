@@ -1,0 +1,92 @@
+version: "3.8"
+
+services:
+  # ---------------------------------------------------------------------------
+  # 1. DATABASE UTAMA (PostgreSQL 16) - Menyimpan Directus & Sinkronisasi User
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: pkn_postgres_v2
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-directus_admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-SuperSecretSecurePassword123!}
+      POSTGRES_DB: ${DB_NAME:-pkn_knowledge_app}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-directus_admin} -d ${DB_NAME:-pkn_knowledge_app}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend_network
+
+  # ---------------------------------------------------------------------------
+  # 2. DIRECTUS HEADLESS CMS (Port 8055) - Auth & Outbox Sync Pengguna
+  # ---------------------------------------------------------------------------
+  directus:
+    image: directus/directus:latest
+    container_name: pkn_directus_v2
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8055}:8055"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - backend_network
+      - web_network
+    environment:
+      KEY: ${DIRECTUS_KEY:-73950c40-0ff5-4e78-953e-2fa07b274ff2}
+      SECRET: ${DIRECTUS_SECRET:-a5f3680e-4361-4fa3-9e4c-1d0d5718a245}
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8055}
+
+      # Database Wiring
+      DB_CLIENT: "pg"
+      DB_HOST: "postgres"
+      DB_PORT: "5432"
+      DB_DATABASE: ${DB_NAME:-pkn_knowledge_app}
+      DB_USER: ${DB_USER:-directus_admin}
+      DB_PASSWORD: ${DB_PASSWORD:-SuperSecretSecurePassword123!}
+
+      # Storage Backend
+      STORAGE_LOCATIONS: ${STORAGE_LOCATIONS:-local}
+      STORAGE_LOCAL_ROOT: "./uploads"
+
+      # Mobile Friendly CORS & Security
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "true"
+      RATE_LIMITER_ENABLED: "true"
+      RATE_LIMITER_POINTS: 100
+      RATE_LIMITER_DURATION: 1
+
+  # ---------------------------------------------------------------------------
+  # 3. ALEXANDRIE WIKI ENGINE (Port 8201) - Wiki Non-AI & Hub Konten Publik
+  #    Menampung tulisan pakar, doa, cerita adab, buku, dan event terverifikasi
+  # ---------------------------------------------------------------------------
+  alexandrie:
+    image: smaug6739/alexandrie:latest
+    container_name: pkn_alexandrie_v2
+    restart: unless-stopped
+    ports:
+      - "8201:8201"
+    environment:
+      - PORT=8201
+      - HOST=0.0.0.0
+      - DATABASE_URL=sqlite://data/alexandrie.db
+    volumes:
+      - alexandrie_data:/app/data
+    networks:
+      - backend_network
+      - web_network
+
+volumes:
+  postgres_data:
+  alexandrie_data:
+
+networks:
+  backend_network:
+    internal: false
+  web_network:

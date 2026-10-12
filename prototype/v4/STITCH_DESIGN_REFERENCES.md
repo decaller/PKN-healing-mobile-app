@@ -1,8 +1,9 @@
 # Katalog Desain Google Stitch & Pemetaan Referensi Prototipe v4
 
 > **Dokumen Audit & Pemetaan Referensi Desain**  
-> **Sumber Aset:** `design/stitch_pkn_healing_mobile_app(2)/stitch_pkn_healing_mobile_app/` (77 Layar + 3 Panduan Fondasi)  
-> **Target Implementasi:** `prototype/v4/` (Flutter Native — Forui + Iconoir + Earth-Tree)
+> **Sumber Aset:** `design/stitch_pkn_healing_mobile_app(2)/stitch_pkn_healing_mobile_app/` (77 Layar Eksplorasi)  
+> **Kurasi Matang (32 Layar Earth-Tree):** [`prototype/v2/design/`](../v2/design/) & [`prototype/v2/KATALOG_DAN_ARSITEKTUR_32_LAYAR.md`](../v2/KATALOG_DAN_ARSITEKTUR_32_LAYAR.md)  
+> **Target Implementasi:** `prototype/v4/` (Baseline Rilis) & `prototype/v5/` (Feature Testbed: Charts, Relations, Daily Tasks)
 
 ---
 

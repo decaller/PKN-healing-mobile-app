@@ -1,0 +1,14 @@
+# Compiled SQLite databases and OTA archives (build artifacts generated via build_knowledge_db.py)
+*.db
+*.db-wal
+*.db-shm
+*.zst
+*.gz
+
+# Python runtime cache
+__pycache__/
+*.pyc
+
+# Local environment & private keys
+.env
+auth.json

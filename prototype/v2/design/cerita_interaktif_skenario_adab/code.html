@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#92f5a4", "primary-fixed-dim": "#93ccff", "on-tertiary-container": "#fffbff", "on-background": "#1c1c17", "surface-container-low": "#f7f3ea", "on-secondary-fixed-variant": "#005323", "on-tertiary-fixed": "#2c1600", "surface-container": "#f1ede5", "on-error-container": "#93000a", "surface-bright": "#fdf9f0", "secondary-fixed-dim": "#79db8d", "surface-container-high": "#ece8df", "on-secondary": "#ffffff", "inverse-on-surface": "#f4f0e8", "on-primary-fixed-variant": "#004b73", "tertiary-container": "#9a6a38", "primary-fixed": "#cce5ff", "tertiary-fixed": "#ffdcbe", "on-tertiary": "#ffffff", "secondary": "#006d30", "primary-container": "#007bb9", "background": "#fdf9f0", "on-surface": "#1c1c17", "error-container": "#ffdad6", "surface-tint": "#006398", "surface-dim": "#dddad1", "on-primary-container": "#fdfcff", "on-secondary-container": "#007233", "on-tertiary-fixed-variant": "#663e0f", "outline": "#707881", "inverse-primary": "#93ccff", "on-primary": "#ffffff", "primary": "#006194", "secondary-fixed": "#95f8a7", "inverse-surface": "#31302b", "surface-container-lowest": "#ffffff", "surface": "#fdf9f0", "on-primary-fixed": "#001d31", "surface-container-highest": "#e6e2da", "tertiary-fixed-dim": "#f6bb81", "surface-variant": "#e6e2da", "on-secondary-fixed": "#00210a", "tertiary": "#7e5223", "on-surface-variant": "#3f4850", "on-error": "#ffffff", "error": "#ba1a1a", "outline-variant": "#bfc7d2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "margin": "3rem", "margin-sm": "1.25rem", "space-xl": "3.5rem", "space-sm": "0.75rem", "space-lg": "2rem", "space-xs": "0.375rem", "space-md": "1.25rem", "gutter": "1.5rem" }, "fontFamily": { "headline-xl-mobile": ["Merriweather"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Merriweather"], "display-lg-mobile": ["Merriweather"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Merriweather"], "title-sm": ["Plus Jakarta Sans"], "display-lg": ["Merriweather"], "headline-lg": ["Merriweather"], "body-sm": ["Plus Jakarta Sans"], "headline-xl": ["Merriweather"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Merriweather"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, "fontSize": { "headline-xl-mobile": ["30px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0", "fontWeight": "400" }], "display-lg-mobile": ["38px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.005em", "fontWeight": "400" }], "title-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0", "fontWeight": "700" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><span class="material-symbols-outlined text-secondary text-[24px] shrink-0">nature_people</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Home</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search and filter" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">tune</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Grounding Intro & Header Info -->
+<div class="px-margin-sm pt-space-xs pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Simulasi Respons Jiwa</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Cerita Interaktif &amp; Skenario Adab</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Latihan simulasi respon lisan pengasuh &amp; petualangan sirah interaktif berakar fitrah.</p>
+</div>
+<!-- Search Bar with Organic Depth -->
+<div class="px-margin-sm mb-space-md">
+<div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-outline text-[22px]">search</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="Cari judul cerita, serial, atau usia anak..." type="text">
+<button aria-label="Mic filter" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Carousel Category Filters (Pills) -->
+<div class="w-full overflow-x-auto no-scrollbar pl-margin-sm pr-space-xs mb-space-lg">
+<div class="flex items-center gap-space-xs min-w-max pr-margin-sm" id="categoryFilterContainer">
+<button class="category-chip flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md transition-all shadow-sm active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">eco</span>
+<span>Semua Serial</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">nature</span>
+<span>Tamyiz (7-10 Thn)</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">explore</span>
+<span>Murahaqah (Remaja)</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">child_care</span>
+<span>Shobiy (3-6 Thn)</span>
+</button>
+<button class="category-chip flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[17px]">diversity_1</span>
+<span>Keluarga &amp; Pasutri</span>
+</button>
+</div>
+</div>
+<!-- Featured Hero Serial Card (Living Rehearsal) -->
+<div class="px-margin-sm mb-space-lg">
+<div class="relative bg-surface-container rounded-xl overflow-hidden shadow-md flex flex-col">
+<!-- Media Header Illustration with Dusk Warmth -->
+<div class="relative w-full h-48 bg-cover bg-center overflow-hidden" data-alt="A warm organic illustration of a traditional dining room at gentle dusk sunset. Golden sunlight streams through wooden slats onto a woven straw mat with tea cups and dates. Earth tone ceramics in terracotta and amber, serene peaceful atmosphere, gentle painterly watercolor style with lush indoor plants." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYY7joDPSPZ4f4atI7hwjY2O1PXN_5PBN39xOmdk5MQoZPOF_o5gyyHhm6qI58OJjzij4cBPPvh5kHfTtYh3L-DzbLrGzsCuW5ne7mRFwxEbSiWtFMS28cd6YQUGGgBhxHRl3PFRQauklJj_rtQsEJ368Qw5-IEFlTXVF-46ATO8hP9fNfOgg73GSdAzlQOMuH6sH4JCCfu6PCBbRh_bNOFu6XfnS6rV_YeD0bWK_7zfHZDxwR0zcNvQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/85 via-on-background/35 to-transparent"></div>
+<!-- Badges on Photo -->
+<div class="absolute top-space-sm left-space-sm flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology_alt</span>
+            Living Rehearsal RPG
+          </span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface/90 text-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+            Tamyiz (7 Thn)
+          </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<button aria-label="Bookmark" class="w-8 h-8 rounded-full bg-surface/80 text-on-surface backdrop-blur-sm flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<!-- Overlaid Title Header -->
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-surface-bright">
+<div class="flex items-center gap-1.5 text-secondary-container text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Waktu Senja • Menjelang Adzan Maghrib</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm leading-snug drop-shadow-sm">
+            Serial 1: Menghadapi Kemarahan Zaid Menjelang Maghrib
+          </h3>
+</div>
+</div>
+<!-- Card Body Content -->
+<div class="p-space-md flex flex-col gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Zaid melempar sandalnya karena mainannya belum selesai dirapikan saat waktu Maghrib tiba. Pilih ujaran kata yang mengembalikan tenang tanpa mempermalukan fitrah amarahnya.
+        </p>
+<!-- Dynamic Progress Bar -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">play_circle</span>
+              Episode 3/5 Berjalan
+            </span>
+<span class="text-secondary font-medium">60% Tuntas</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 60%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-0.5">
+<span>Pilihan Terakhir: <em>Validasi Emosi Dingin</em></span>
+<span class="text-primary font-semibold">+15 Sakinah Point</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-1">
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-sm hover:opacity-95 active:scale-[0.99] transition-all" type="button">
+<span>Lanjutkan Skenario</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full py-space-xs px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs active:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-secondary text-[17px]">insights</span>
+<span>Lihat Capaian Adab &amp; Rekam Jejak</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Series Catalog Header Section -->
+<div class="px-margin-sm mb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">shelves</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Katalog Skenario Lengkap</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Skenario Siap Uji</span>
+</div>
+<!-- Series Catalog Cards List -->
+<div class="px-margin-sm flex flex-col gap-space-md mb-space-lg">
+<!-- Card 1: Serial 2 -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-sm flex flex-col transition-transform active:scale-[0.99]">
+<div class="relative h-36 bg-cover bg-center" data-alt="A quiet interior morning corner showing an old wooden board game on an untreated pine table, warm morning sunlight, handcrafted wooden pieces, earthy sage green walls and small ceramic vase with dried wheat stalks, serene and reflective ambiance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsiJSxZdnob52Ngv1Ruv6XGNY4sHvkoWtYCb2tzCk5C4vQQHxKZkSgwyTteR-x8AwF9svWwhkX05xY37nbh_kh1LNanEm5iLN8Uorn-v_-Y8Z8oq9DtuOVm89SlfchMhmjtN1lTbg9h4fkYn2qXRkhFB2JwjtX7u5Ium_T6pv3vL6a8Xxbe5UX9hviuVJYCgP_tTknhiW1LAdgVw-_pyG0qSgUjhnuMgJNSbLAQHEXNQEPUeooB1HrqQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+            Pilar 01 Fitrah Iman
+          </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 text-secondary font-label-sm text-label-sm font-semibold">
+            Infaq Bebas / Gratis
+          </span>
+</div>
+<div class="absolute bottom-space-xs left-space-sm right-space-sm text-surface-bright">
+<span class="font-label-sm text-label-sm text-surface-variant">Serial 02 • Usia 7-9 Thn</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">
+          Meluruskan Ular Tangga Amanah (Kejujuran Saat Kalah)
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Simulasi dialog ketika sang anak tergoda memindahkan bidak diam-diam saat lawan lengah. Merawat fitrah pengawasan Ilahi (Muraqabah) tanpa mempermalukan egonya di depan kawan bermain.
+        </p>
+<!-- Meta Info Row -->
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm py-space-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">layers</span>
+<span>4 Episode Interaktif</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock_open</span>
+<span class="text-secondary font-semibold">Status: Terbuka</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">timer</span>
+<span>~18 Menit</span>
+</div>
+</div>
+<button class="mt-space-xs w-full py-space-sm rounded-lg bg-surface-container-highest text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs hover:bg-primary hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Mulai Skenario</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Serial 3 -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-sm flex flex-col transition-transform active:scale-[0.99]">
+<div class="relative h-36 bg-cover bg-center" data-alt="An evocative rustic study room bathed in afternoon amber light. An open Arabic manuscript sits on a low wooden rehal desk, handwoven textiles in sand and indigo colors, a small brass inkpot, calm scholarly ambiance, soft focus on organic textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9FuFVPcDEPKH3-9L8bl7gNvKGT-UZuy-Mfsj5UUTv4Yil1syz0dr4LsAM2pGPiKDySsgT_IMY0Gsko0tUmH7mlIEG_6O4FporGxPfzIvZmtn8yKEhHjf2a5J6tduzZowB8dKczPsoKtUF-p0qck_TryEAxaQb-Td0-mNxbtuLe5HCW6xXDuyDzeQwtG_Nu66Ynx9ucSugmVy8vCz_iaZ_nZkno2CUw1SRL49jF7rV1b8IKTPBi9-mTQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+            Pilar 04 Fitrah Adab
+          </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm font-semibold">
+            Modul Pilihan
+          </span>
+</div>
+<div class="absolute bottom-space-xs left-space-sm right-space-sm text-surface-bright">
+<span class="font-label-sm text-label-sm text-surface-variant">Serial 03 • Usia 8-12 Thn</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">
+          Adab Menolak Perintah Tanpa Membentak (Zaid &amp; Abu Zaid)
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Bagaimana membimbing anak menyampaikan ketidaksetujuannya terhadap tugas rumah tangga secara santun, berlandaskan kaidah adab berbicara dengan orang tua yang diajarkan Rasulullah.
+        </p>
+<!-- Meta Info Row -->
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm py-space-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">layers</span>
+<span>6 Episode Mandiri</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock_open</span>
+<span class="text-secondary font-semibold">Status: Terbuka</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">record_voice_over</span>
+<span>Simulasi Suara</span>
+</div>
+</div>
+<button class="mt-space-xs w-full py-space-sm rounded-lg bg-surface-container-highest text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs hover:bg-primary hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Mulai Skenario</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Serial 4 (Audio Spasial Sirah) -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-sm flex flex-col transition-transform active:scale-[0.99]">
+<div class="relative h-40 bg-cover bg-center" data-alt="A majestic night desert landscape under deep indigo sky studded with billions of bright milky way stars. Silhouette of an ancient acacia tree beside a solitary traveler figure looking toward distant glowing horizon, poetic quiet majesty, contemplative spiritual feel, high detailed fine art oil aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa5nwhog2dOr-HvJ6NGj9d2TB799Yh_gtHEZgT3ZYJQkliODdmMTpRWru6aZznzcjYktIfc9AfBc7BSy2ZmOBGiGtQKaxJiRxMpXZnacSEGFDf9eP_JJlAOFSDv6T12CFd0qOmJ48-nVaZS7V1x-qVKHDkrVrK5Q0WqZVtmwHCXsv34cftCwAke5STehfp9k8rp1GzbYsr_95XgMghI7_7QL7f3_cyJ04mskRy7gXZujb2y2dJam00Gg')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/40 to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+            Audio Spasial 3D
+          </span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-bright/80 text-on-surface font-label-sm text-label-sm">
+            Mode Sinematik
+          </span>
+</div>
+<div class="absolute bottom-space-xs left-space-sm right-space-sm text-surface-bright">
+<span class="font-label-sm text-label-sm text-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+            Sirah Naratif Khusyuk • Durasi 25 Menit
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold leading-snug">
+          Serial 4: Kisah Uwais &amp; Bakti Menembus Langit
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Petualangan audio mendalam menyusuri padang pasir Yaman hingga debu Madinah. Menanamkan mutiara fitrah birrul walidain melalui pengorbanan tanpa tepuk tangan makhluk.
+        </p>
+<!-- Audio Interactive Preview Bar -->
+<div class="my-space-xs p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Play sound snippet" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Pratinjau Suara Gurun</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Binaural Ambient Soundscape</span>
+</div>
+</div>
+<!-- Waveform SVG Minimal -->
+<div class="flex items-end gap-1 h-6 pr-1">
+<div class="w-1 bg-secondary rounded-full h-3"></div>
+<div class="w-1 bg-secondary rounded-full h-5 animate-pulse"></div>
+<div class="w-1 bg-secondary rounded-full h-2"></div>
+<div class="w-1 bg-secondary rounded-full h-6 animate-pulse"></div>
+<div class="w-1 bg-secondary rounded-full h-4"></div>
+</div>
+</div>
+<button class="w-full py-space-sm rounded-lg bg-secondary text-on-secondary font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-sm hover:opacity-95 active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">spatial_audio_off</span>
+<span>Dengarkan &amp; Simak</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Save & Kabinet Muhasabah Footer Card -->
+<div class="px-margin-sm mb-space-xl">
+<div class="p-space-md bg-surface-container-high rounded-xl flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Kabinet Muhasabah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sinkronisasi Jurnal Fitrah Terkini</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+          Aktif
+        </span>
+</div>
+<div class="p-space-sm bg-surface rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface">Penyimpanan Terakhir:</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Respons Sabar • Bab Kemarahan (17:42 WIB)</span>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Sinkron</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant italic leading-normal">
+        “Skenario adab bukan hafalan ucapan kaku, melainkan aliran fitrah kasih sayang dari hati pengasuh yang tenteram.”
+      </p>
+</div>
+</div>
+<!-- Local Script for Micro-interactions (Filter Selection) -->
+<script>
+    (function() {
+      const container = document.getElementById('categoryFilterContainer');
+      if (!container) return;
+      const chips = container.querySelectorAll('.category-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-secondary', 'text-on-secondary', 'shadow-sm');
+            c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+          chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          chip.classList.add('bg-secondary', 'text-on-secondary', 'shadow-sm');
+        });
+      });
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.04)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center flex-1 min-w-[44px] h-[48px] transition-colors text-secondary font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">yard</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] h-[48px] text-on-surface-variant transition-colors" data-path="agenda" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-label-sm mt-0.5">Agenda</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] h-[48px] text-on-surface-variant transition-colors" data-path="ai" href="#"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm mt-0.5">AI</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] h-[48px] text-on-surface-variant transition-colors" data-path="wiki" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm mt-0.5">Wiki</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] h-[48px] text-on-surface-variant transition-colors" data-path="profil" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">Profil</span></a></div></nav></body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fdf9f0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#fdfcff", "surface": "#fdf9f0", "error": "#ba1a1a", "secondary-fixed-dim": "#79db8d", "on-tertiary-fixed-variant": "#663e0f", "tertiary-container": "#9a6a38", "surface-container-lowest": "#ffffff", "outline-variant": "#bfc7d2", "background": "#fdf9f0", "on-tertiary-container": "#fffbff", "surface-container-highest": "#e6e2da", "surface-bright": "#fdf9f0", "primary-container": "#007bb9", "on-surface": "#1c1c17", "error-container": "#ffdad6", "secondary-fixed": "#95f8a7", "on-background": "#1c1c17", "tertiary": "#7e5223", "on-error": "#ffffff", "tertiary-fixed-dim": "#f6bb81", "on-primary-fixed": "#001d31", "surface-container-low": "#f7f3ea", "on-secondary-fixed": "#00210a", "primary": "#006194", "inverse-on-surface": "#f4f0e8", "primary-fixed": "#cce5ff", "on-secondary": "#ffffff", "surface-tint": "#006398", "on-secondary-container": "#007233", "on-primary": "#ffffff", "inverse-surface": "#31302b", "tertiary-fixed": "#ffdcbe", "on-primary-fixed-variant": "#004b73", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#005323", "secondary-container": "#92f5a4", "secondary": "#006d30", "surface-variant": "#e6e2da", "surface-container-high": "#ece8df", "primary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "surface-container": "#f1ede5", "on-tertiary-fixed": "#2c1600", "outline": "#707881", "inverse-primary": "#93ccff", "on-surface-variant": "#3f4850", "surface-dim": "#dddad1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1.25rem", "space-sm": "0.75rem", "space-xl": "3.5rem", "margin": "3rem", "space-xs": "0.375rem", "space-md": "1.25rem", "space-lg": "2rem", "gutter-sm": "1rem", "gutter": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Merriweather"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Merriweather"], "headline-xl-mobile": ["Merriweather"], "headline-sm": ["Merriweather"], "display-lg-mobile": ["Merriweather"], "headline-lg": ["Merriweather"], "headline-md": ["Merriweather"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Merriweather"], "title-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}], "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}], "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-xl-mobile": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.005em", "fontWeight": "400"}], "display-lg-mobile": ["38px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-lg": ["32px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "700"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}], "display-lg": ["56px", {"lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "title-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}], "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Kembali" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors -ml-1" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider truncate">Pendidikan Karakter Nabawiyah</span><span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Orientasi Awal</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><a class="h-11 px-space-sm rounded-lg flex items-center justify-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="lewati" href="#">Lewati</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_2px_6px_rgba(0,97,148,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<div class="w-full max-w-xl mx-auto px-margin-sm flex flex-col gap-space-lg">
+<!-- Progress Indicator -->
+<section class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase tracking-wider">
+          Langkah 1 dari 3: Identifikasi Amanah Diri
+        </span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">
+          33% Selesai
+        </span>
+</div>
+<!-- 3 Segment Progress Bar -->
+<div class="flex items-center gap-2 w-full h-2">
+<div class="h-full flex-1 rounded-full bg-secondary transition-all duration-300"></div>
+<div class="h-full flex-1 rounded-full bg-surface-container-high transition-all duration-300"></div>
+<div class="h-full flex-1 rounded-full bg-surface-container-high transition-all duration-300"></div>
+</div>
+</section>
+<!-- Warm Hero Header -->
+<header class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-low w-fit">
+<span class="material-symbols-outlined text-secondary text-[16px]">nature</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Fitrah &amp; Peran Jiwa</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight leading-snug">
+        Assalamu’alaykum. Apa Amanah Terbesar Anda Hari Ini?
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Pendidikan Karakter Nabawiyah menyelaraskan kurikulum adab, panduan harian, dan rekomendasi instrumen sesuai dengan peran spesifik jiwa Anda.
+      </p>
+</header>
+<!-- Grounding Banner for Mindful Pacing -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[18px]">spa</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="font-title-sm text-title-sm text-on-surface">Pilihlah dengan Keheningan Qalbu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+          Peran ini menentukan instrumen riyadhah harian. Anda tetap dapat mengaktifkan modul peran lain kapan saja di pengaturan profil.
+        </p>
+</div>
+</div>
+<!-- Role Selection Interactive Cards -->
+<section aria-label="Pilihan Peran dan Amanah" class="flex flex-col gap-space-sm" id="role-container" role="radiogroup">
+<!-- Role A: Nakhoda Ayah (Default Selected) -->
+<div aria-checked="true" class="role-card relative w-full p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container shadow-sm select-none" data-role-card="ayah" role="radio" tabindex="0">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wide">Qawwamun Rumah Tangga</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Nakhoda Ayah</h3>
+</div>
+</div>
+<!-- Selection Radio Pip -->
+<div class="radio-indicator w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Menetapkan arah peradaban keluarga, mengawal batas toleransi syariat, dan melatih ketegasan berwibawa tanpa amarah (Bahasa Tangan &amp; Lisan).
+        </p>
+<!-- Module Badges -->
+<div class="flex flex-wrap gap-1.5 pt-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Wibawa Syariat
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Adab Senja Maghrib
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Komunikasi Pasangan
+          </span>
+</div>
+</div>
+<!-- Role B: Madrasah Bunda -->
+<div aria-checked="false" class="role-card relative w-full p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-low shadow-sm select-none" data-role-card="bunda" role="radio" tabindex="0">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">volunteer_activism</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wide">Pusat Sentuhan Batin</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Madrasah Bunda</h3>
+</div>
+</div>
+<!-- Selection Radio Pip -->
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-container-highest text-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Pengisian penuh Tangki Cinta (0–7 thn), penjaga kehangatan kalbu lewat doa hening malam, empati qalbiyah, dan manajemen ketenangan rumah.
+        </p>
+<!-- Module Badges -->
+<div class="flex flex-wrap gap-1.5 pt-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Tangki Cinta Thufulah
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Doa Penenang Kalbu
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Resep Krisis 10 Detik
+          </span>
+</div>
+</div>
+<!-- Role C: Pemuda & Penuntut Ilmu -->
+<div aria-checked="false" class="role-card relative w-full p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-low shadow-sm select-none" data-role-card="syabab" role="radio" tabindex="0">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wide">Fase Mandiri &amp; Akil-Baligh</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Pemuda &amp; Penuntut Ilmu</h3>
+</div>
+</div>
+<!-- Selection Radio Pip -->
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-container-highest text-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Mengenali peta 40 bakat fitrah (TB-40), menundukkan ego &amp; nafs ammarah, membentengi iffah &amp; izzah diri, serta persiapan memikul amanah umat.
+        </p>
+<!-- Module Badges -->
+<div class="flex flex-wrap gap-1.5 pt-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Peta Bakat TB-40
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Manajemen Nafs &amp; Syahwat
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Karakter Ash-Shidq
+          </span>
+</div>
+</div>
+<!-- Role D: Guru & Murabbi -->
+<div aria-checked="false" class="role-card relative w-full p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-low shadow-sm select-none" data-role-card="guru" role="radio" tabindex="0">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">history_edu</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wide">Pendidik Tanpa Kekerasan</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Guru &amp; Murabbi</h3>
+</div>
+</div>
+<!-- Selection Radio Pip -->
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-container-highest text-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Menerapkan pembelajaran alamiah berbasis peristiwa nyata, observasi adab 19 butir, dan merancang RPP karakter 1 lembar tanpa ranking komparatif.
+        </p>
+<!-- Module Badges -->
+<div class="flex flex-wrap gap-1.5 pt-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Pembelajaran Alamiah
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            RPP Adab 1 Lembar
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Instrumen Rukun 3A
+          </span>
+</div>
+</div>
+<!-- Role E: Pengelola Lembaga -->
+<div aria-checked="false" class="role-card relative w-full p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-low shadow-sm select-none" data-role-card="pesantren" role="radio" tabindex="0">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wide">Arsitektur Ekosistem</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Pengelola / Pimpinan</h3>
+</div>
+</div>
+<!-- Selection Radio Pip -->
+<div class="radio-indicator w-6 h-6 rounded-full bg-surface-container-highest text-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Standardisasi 8 Klausul PKN, akreditasi ramah fitrah, pembinaan musyrif asrama tanpa bentakan fisik, dan penataan iklim adab institusi.
+        </p>
+<!-- Module Badges -->
+<div class="flex flex-wrap gap-1.5 pt-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Standar PKN 11/2024
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Audit Ekosistem Asrama
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Visitasi Lapangan
+          </span>
+</div>
+</div>
+</section>
+<!-- Dynamic Customization Hint Box -->
+<section class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-xs shadow-sm" id="impact-preview-box">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold" id="impact-title">
+          Dampak Personalisasi: Nakhoda Ayah
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="impact-desc">
+        Beranda aplikasi akan otomatis menampilkan: <span class="font-semibold text-on-surface">Protokol Krisis Senja</span>, <span class="font-semibold text-on-surface">Evaluasi Hubungan Jiwa Istri &amp; Anak</span>, dan <span class="font-semibold text-on-surface">Widget Daily Task Mujahadah</span>.
+      </p>
+</section>
+<!-- Privacy Guard Pledge -->
+<section class="flex items-center gap-space-sm px-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[18px]">verified_user</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-normal">
+<strong class="font-semibold text-secondary">Amanah Guard:</strong> 100% On-Device &amp; Zero-Cloud Leak — Seluruh rekaman jurnal batin dan profil keluarga tersimpan luring di perangkat Anda.
+      </p>
+</section>
+<!-- Visual Anchor / Nature Metaphor Card -->
+<div class="w-full rounded-xl overflow-hidden relative shadow-sm h-36">
+<div class="bg-cover bg-center w-full h-full flex flex-col justify-end p-space-md" data-alt="Close up warm photography of a flourishing young fig sapling rooted in mineral rich earth under soft morning sunrise golden hour light, peaceful contemplative aesthetic with deep natural green foliage and warm limestone textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB3Tm68dIMnWLqCZuVRhWfruwiGfJh0HgIGp9s4WK882CN5O0JuTQrtYi8mYBlDHfsHx2PfNoVgqjmViEbPYsnCmzqNHs0zewdk9d3j_-HWRAj8rx_i_fVRqiSKAX7lFa3ABaFXMi--z-GZ_dpgoxzwdiCjZziNGY4hKY8Eq7FBFgvvgM7JM48MnSpjdQdz4DW58LJHODf3ux2aJeQ2kYY9jRKMZGcQloCGAXRZzhilTJ1DhD29ZH3Zw')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/30 to-transparent"></div>
+<p class="relative z-10 font-label-sm text-label-sm text-inverse-on-surface italic">
+          “Setiap kalian adalah ra’in (pemimpin), dan setiap kalian dimintai pertanggungjawaban atas apa yang dipimpinnya.”
+        </p>
+</div>
+</div>
+<!-- Sticky Bottom Continue Button Container -->
+<div class="sticky bottom-0 left-0 right-0 py-space-sm bg-surface/90 backdrop-blur-md pt-space-xs">
+<a class="w-full h-14 rounded-lg bg-secondary text-on-secondary font-title-sm text-title-sm flex items-center justify-center gap-space-xs font-semibold shadow-md hover:bg-secondary/95 active:scale-[0.99] transition-all" href="#" id="continue-button">
+<span>Lanjutkan ke Penetapan Fokus</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const rolesData = {
+      ayah: {
+        title: "Dampak Personalisasi: Nakhoda Ayah",
+        desc: "Beranda aplikasi akan otomatis menampilkan: <span class='font-semibold text-on-surface'>Protokol Krisis Senja</span>, <span class='font-semibold text-on-surface'>Evaluasi Hubungan Jiwa Istri & Anak</span>, dan <span class='font-semibold text-on-surface'>Widget Daily Task Mujahadah</span>."
+      },
+      bunda: {
+        title: "Dampak Personalisasi: Madrasah Bunda",
+        desc: "Beranda aplikasi akan otomatis menampilkan: <span class='font-semibold text-on-surface'>Tracker Tangki Cinta Balita & Anak</span>, <span class='font-semibold text-on-surface'>Audio Munajat Hening Malam</span>, dan <span class='font-semibold text-on-surface'>Protokol Darurat Emosi Rumah</span>."
+      },
+      syabab: {
+        title: "Dampak Personalisasi: Pemuda & Penuntut Ilmu",
+        desc: "Beranda aplikasi akan otomatis menampilkan: <span class='font-semibold text-on-surface'>Asesmen 40 Bakat Fitrah (TB-40)</span>, <span class='font-semibold text-on-surface'>Pengawal Adab Mata & Telinga</span>, dan <span class='font-semibold text-on-surface'>Jadwal Halaqah Ilmu</span>."
+      },
+      guru: {
+        title: "Dampak Personalisasi: Guru & Murabbi",
+        desc: "Beranda aplikasi akan otomatis menampilkan: <span class='font-semibold text-on-surface'>Generator RPP Adab 1 Lembar</span>, <span class='font-semibold text-on-surface'>Jurnal Observasi Butir Fitrah Santri</span>, dan <span class='font-semibold text-on-surface'>Rubrik Observasi Rukun 3A</span>."
+      },
+      pesantren: {
+        title: "Dampak Personalisasi: Pengelola Lembaga",
+        desc: "Beranda aplikasi akan otomatis menampilkan: <span class='font-semibold text-on-surface'>Matriks Evaluasi 8 Klausul PKN</span>, <span class='font-semibold text-on-surface'>Sistem Pantau Budaya Asrama</span>, dan <span class='font-semibold text-on-surface'>Dokumen Audit Ramah Fitrah</span>."
+      }
+    };
+
+    const cards = document.querySelectorAll('[data-role-card]');
+    const impactTitle = document.getElementById('impact-title');
+    const impactDesc = document.getElementById('impact-desc');
+
+    function selectCard(selectedCard) {
+      const selectedKey = selectedCard.getAttribute('data-role-card');
+      
+      cards.forEach(card => {
+        const isTarget = card === selectedCard;
+        card.setAttribute('aria-checked', isTarget ? 'true' : 'false');
+        
+        const radioIconContainer = card.querySelector('.radio-indicator');
+        const checkIcon = radioIconContainer ? radioIconContainer.querySelector('.material-symbols-outlined') : null;
+        const iconBadge = card.querySelector('.w-11.h-11');
+
+        if (isTarget) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-container');
+          
+          if (radioIconContainer) {
+            radioIconContainer.classList.remove('bg-surface-container-highest', 'text-surface-container-highest');
+            radioIconContainer.classList.add('bg-secondary', 'text-on-secondary');
+          }
+          if (checkIcon) {
+            checkIcon.classList.remove('opacity-0');
+          }
+          if (iconBadge) {
+            iconBadge.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+            iconBadge.classList.add('bg-secondary', 'text-on-secondary');
+          }
+        } else {
+          card.classList.remove('bg-surface-container');
+          card.classList.add('bg-surface-container-low');
+          
+          if (radioIconContainer) {
+            radioIconContainer.classList.remove('bg-secondary', 'text-on-secondary');
+            radioIconContainer.classList.add('bg-surface-container-highest', 'text-surface-container-highest');
+          }
+          if (checkIcon) {
+            checkIcon.classList.add('opacity-0');
+          }
+          if (iconBadge) {
+            iconBadge.classList.remove('bg-secondary', 'text-on-secondary');
+            iconBadge.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+          }
+        }
+      });
+
+      if (rolesData[selectedKey]) {
+        impactTitle.innerHTML = rolesData[selectedKey].title;
+        impactDesc.innerHTML = rolesData[selectedKey].desc;
+      }
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => selectCard(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectCard(card);
+        }
+      });
+    });
+  })();
+</script></main></body></html>

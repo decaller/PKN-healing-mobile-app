@@ -1,0 +1,405 @@
+<!DOCTYPE html><html class="h-full" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary': '#7e5223', 'on-secondary-fixed-variant': '#005323', 'on-tertiary-fixed-variant': '#663e0f', 'tertiary-fixed': '#ffdcbe', 'primary-fixed-dim': '#93ccff', 'inverse-surface': '#31302b', 'on-surface': '#1c1c17', 'surface-container-lowest': '#ffffff', 'on-surface-variant': '#3f4850', 'on-tertiary-fixed': '#2c1600', 'surface-container': '#f1ede5', 'primary': '#006194', 'on-primary-container': '#fdfcff', 'surface-container-highest': '#e6e2da', 'on-error': '#ffffff', 'on-primary-fixed': '#001d31', 'background': '#fdf9f0', 'on-error-container': '#93000a', 'outline': '#707881', 'inverse-primary': '#93ccff', 'secondary-fixed-dim': '#79db8d', 'inverse-on-surface': '#f4f0e8', 'surface-variant': '#e6e2da', 'on-background': '#1c1c17', 'on-tertiary-container': '#fffbff', 'on-primary': '#ffffff', 'secondary': '#006d30', 'surface-dim': '#dddad1', 'secondary-container': '#92f5a4', 'surface-bright': '#fdf9f0', 'on-secondary-fixed': '#00210a', 'on-primary-fixed-variant': '#004b73', 'error': '#ba1a1a', 'surface-tint': '#006398', 'primary-fixed': '#cce5ff', 'surface': '#fdf9f0', 'outline-variant': '#bfc7d2', 'surface-container-high': '#ece8df', 'on-secondary': '#ffffff', 'tertiary-fixed-dim': '#f6bb81', 'on-tertiary': '#ffffff', 'tertiary-container': '#9a6a38', 'surface-container-low': '#f7f3ea', 'on-secondary-container': '#007233', 'error-container': '#ffdad6', 'primary-container': '#007bb9', 'secondary-fixed': '#95f8a7' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'space-md': '1.25rem', 'space-lg': '2rem', 'space-xl': '3.5rem', 'margin': '3rem', 'space-xs': '0.375rem', 'gutter': '1.5rem', 'gutter-sm': '1rem', 'margin-sm': '1.25rem', 'space-sm': '0.75rem' }, fontFamily: { 'display-lg': ['Merriweather'], 'headline-md': ['Merriweather'], 'headline-xl-mobile': ['Merriweather'], 'headline-lg-mobile': ['Merriweather'], 'label-sm': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'title-sm': ['Plus Jakarta Sans'], 'display-lg-mobile': ['Merriweather'], 'title-md': ['Plus Jakarta Sans'], 'headline-xl': ['Merriweather'], 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Merriweather'], 'headline-sm': ['Merriweather'], 'body-lg': ['Plus Jakarta Sans'] }, fontSize: { 'display-lg': ['56px', { lineHeight: '68px', letterSpacing: '-0.02em', fontWeight: '700' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '700' }], 'headline-xl-mobile': ['30px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '700' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '0', fontWeight: '400' }], 'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '400' }], 'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.02em', fontWeight: '500' }], 'title-sm': ['16px', { lineHeight: '24px', letterSpacing: '0', fontWeight: '600' }], 'display-lg-mobile': ['38px', { lineHeight: '48px', letterSpacing: '-0.015em', fontWeight: '700' }], 'title-md': ['18px', { lineHeight: '26px', letterSpacing: '-0.005em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '52px', letterSpacing: '-0.015em', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', letterSpacing: '0.005em', fontWeight: '400' }], 'headline-lg': ['32px', { lineHeight: '42px', letterSpacing: '-0.01em', fontWeight: '400' }], 'headline-sm': ['20px', { lineHeight: '28px', letterSpacing: '0.005em', fontWeight: '400' }], 'body-lg': ['18px', { lineHeight: '28px', letterSpacing: '0', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe"><div class="h-16 px-margin-sm flex items-center justify-between shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="flex items-center gap-space-xs"><button aria-label="Kembali ke Agenda" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="window.location.href='#agenda'"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate max-w-[200px]">Detail Majelis Daurah</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Bagikan Informasi Majelis" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[22px]">share</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Visual Banner Landscape with Ambient Courtyard Backdrop -->
+<div class="relative w-full overflow-hidden bg-surface-container-high">
+<div class="w-full h-72 bg-cover bg-center flex flex-col justify-end p-margin-sm relative" data-alt="A serene open-air traditional sandstone courtyard with arched colonnades under a warm morning sky, olive and cypress trees casting soft morning shadows, sunlit warm natural stone pavers, quiet dignified atmosphere with muted earthy terracotta tones and soft sky blue highlights, editorial architectural photography." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAYxXSqxw8h8m5QgsVm3tBUK-mjiaUA5pydf8IDGQyPWF9oRDNfmm3IfFFEoEYHY595FA5JCBeL49H90OwOLcnrCIN_2Aed-mm7cobjvO6tp6IVo7OuhPHjDevk-rskNhQveEQzy2fKc4ATjVXzgyFl9eEIYvaLDEJGWGX4ySyyMSlhgJ8ef_uEnqjSdbQeZdYrkfKD3e0Vmj54uTysMLeETMuMkh7wAw9spyCZI7maNHW3fhylMwWLpg&quot;);">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="relative z-10 flex flex-wrap gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Tatap Muka Eksklusif • 18 Okt 2025
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+          Sisa Kuota: 12 Ikhwan • 6 Akhwat
+        </span>
+</div>
+</div>
+</div>
+<!-- Main Information Container -->
+<div class="px-margin-sm pt-space-xs flex flex-col gap-space-lg">
+<!-- Title & Theme Statement -->
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Majelis Ilmu Bersanad</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface leading-snug">
+        Daurah Akbar Parenting Nabawiyah: Menempa Adab Usia Tamyiz (7–10 Thn)
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic">
+        "Membangun Keteguhan Karakter, Sholat Khusyu', dan Dialog Fitrah Tanpa Bentakan"
+      </p>
+</div>
+<!-- Grounding Banner: Mindful Adab Notice -->
+<div class="rounded-xl bg-surface-container p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">spa</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Prinsip Kehadiran Ruhani</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Majelis ini disusun intensif dan mendalam. Disarankan hadir dalam keadaan berwudhu dan membawa komitmen muhasabah hati bersama pasangan.
+        </p>
+</div>
+</div>
+<!-- Key Metadata Quick Bar -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Waktu Pelaksanaan</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Sabtu, 18 Oktober 2025</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">08.00 – 15.30 WIB (Full Day Majelis Terarah)</span>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex flex-col min-w-0 w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Lokasi Majelis</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Masjid Agung Nurul Izzah</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Ruang Utama Lt. 2, Cikarang Timur, Kab. Bekasi</span>
+<a class="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">explore</span>
+<span>Buka Google Maps 📍</span>
+</a>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Segmentasi Jamaah</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Pasutri (Ayah &amp; Bunda) / Ayah / Bunda Mandiri</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fasilitas ramah anak usia 3–6 tahun tersedia</span>
+</div>
+</div>
+</div>
+<!-- Profil Pemateri Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">record_voice_over</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Asatidz &amp; Praktisi</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Pemateri Utama</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Menghadirkan sinergi panduan nash syar'i orisinal dan pendampingan psikologis aplikatif.
+      </p>
+<!-- Asatidz Cards -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Ust Dr. Abu Hafi -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-16 h-16 rounded-full object-cover shrink-0 shadow-sm" data-alt="Dignified Indonesian male Islamic scholar in his late 40s wearing a modest soft sand-colored thobe and neat traditional head covering, gentle wise expression, natural soft library lighting, high-end editorial portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEfmsN86BmRjn2GObRes3cX7E3RCueKhln2iYFgMpyVCiaawHBfAhzblM6fuWGI7LCZo5khzoJERqlPkHOVcps4Y9lCzzExU5_ShDLKoFTka5v7tv7kmKELQ3a6Li4O4bqJ_OpyNCRDvh5uIUY4xBKIMF4rZezgxSwrgydyB29HkV6c6htlDReCANb-1hQt_x-pCw0JkVqjg9EYbOlQSPJa5R26AJ3Ykp0_5fQU3d2wlV7pAY2eBReg">
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Ustadz Dr. Abu Hafi, M.A.</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Dewan Pakar Karakter Nabawiyah</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Penulis Buku "Menempa Tamyiz"</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">Fokus Pembahasan:</span> Pondasi Manhaj Nubuwwah dalam fase Tamyiz, adab birrul walidain berkesinambungan, dan transfer otoritas ayah tanpa otoritarianisme.
+          </div>
+</div>
+<!-- Ummu Sulaym -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-16 h-16 rounded-full object-cover shrink-0 shadow-sm" data-alt="Respectful modest Indonesian Muslim female parenting counselor wearing deep stone olive green khimar with a warm welcoming compassionate gaze, soft natural morning ambient room lighting, serene professional portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALoeHvucaO-hAjwolh-CfzyGgMtmN1RScIaDmKVQyJuhiOYdy6oosZ2sDW8YzkizCVHr4bt4HaO_EsqcG-RUTgexJbyn9DDs3zjAQxpm9jZ4EH32qjpuj9SQU6Ov58JDKbBg_U6DAWfry6CtNwO86ZRtPBSe_L--dEJoKHP0dF8Wnr6Y5gUm2hGSXG9yneems2kkhg9n8e--iSZsjVNze67bd-2dR6ZqZe7UlgUki37379cs5mk0i8vQ">
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Ummu Sulaym, S.Psi.</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Konselor Pengasuhan Fitrah</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Praktisi Terapi Batin Keluarga</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">Fokus Pembahasan:</span> Regulasi emosi orang tua saat amigdala anak membuncah, teknik decoding bahasa tubuh anak, dan latihan mindful parenting Islam.
+          </div>
+</div>
+</div>
+</div>
+<!-- Silabus & Pokok Bahasan Utama (What You Will Learn) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">menu_book</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Silabus &amp; Pokok Bahasan</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Kurikulum aplikatif yang dirancang untuk mengatasi problematika nyata orang tua masa kini.
+      </p>
+<div class="grid grid-cols-1 gap-space-sm mt-space-xs">
+<!-- Sesi 1 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-title-sm text-title-sm font-bold shrink-0">
+            1
+          </div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Anatomi Amigdala vs Qolbun Salim</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+              Membedah respon neurobiologis saat anak berkata kasar atau membanting pintu, serta langkah taktis meredakan badai ego anak dengan tenang.
+            </p>
+</div>
+</div>
+<!-- Sesi 2 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-title-sm text-title-sm font-bold shrink-0">
+            2
+          </div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">SOP 10 Detik: Koneksi Sebelum Koreksi</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+              Metode Rasulullah ﷺ dalam mendekap jiwa anak sebelum memerintahkan sholat 5 waktu di usia 7 tahun tanpa ancaman maupun sogokan hadiah fana.
+            </p>
+</div>
+</div>
+<!-- Sesi 3 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-title-sm text-title-sm font-bold shrink-0">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Matriks Syakilah TB-40</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+              Alat identifikasi 40 spektrum fitrah bakat dan kepribadian anak tamyiz untuk memetakan peran dakwah &amp; kecenderungan profesi masa depannya.
+            </p>
+</div>
+</div>
+<!-- Sesi 4 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-title-sm text-title-sm font-bold shrink-0">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Workshop Living Rehearsal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+              Simulasi interaktif langsung antar pasutri memainkan skenario anak kecanduan gawai, menolak disuruh mandi, dan kebohongan defensif pertama.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Rundown Majelis Lengkap -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">schedule</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Rundown Majelis</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Jadwal terstruktur guna memastikan kenyamanan istirahat, ibadah, dan asimilasi materi.
+      </p>
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-md shadow-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm font-bold text-primary whitespace-nowrap">08.00 - 08.30</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div class="w-0.5 h-12 bg-outline-variant/30 mt-1"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Registrasi &amp; Ta'aruf Kitab</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Check-in barcode, penyerahan buku modul fisik hardcover, dan sajian kopi rempah pembuka.</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm font-bold text-primary whitespace-nowrap">08.30 - 11.45</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div class="w-0.5 h-12 bg-outline-variant/30 mt-1"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Sesi 1 &amp; Sesi 2 (Intensif Pagi)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pematerian Dr. Abu Hafi &amp; Ummu Sulaym: Pondasi Manhaj dan Latihan 10 Detik Koneksi.</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm font-bold text-secondary whitespace-nowrap">11.45 - 13.00</span>
+<div class="w-2 h-2 rounded-full bg-secondary mt-2"></div>
+<div class="w-0.5 h-12 bg-outline-variant/30 mt-1"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Dzuhur &amp; Santap Prasmanan Thoyyib</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sholat berjamaah di Ruang Utama dan makan siang menu gizi seimbang organik.</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm font-bold text-primary whitespace-nowrap">13.00 - 14.45</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div class="w-0.5 h-12 bg-outline-variant/30 mt-1"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Sesi 3 &amp; Workshop Simulasi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pembedahan matriks 40 bakat dan praktik interaktif skenario pengasuhan hidup.</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm font-bold text-primary whitespace-nowrap">14.45 - 15.30</span>
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Tanya Jawab Khusus &amp; Doa Khidmat</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Konsultasi kasus keluarga terpilih, pembagian sertifikat, dan munajat penutup.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fasilitas & Adab Majelis (Amanah & Syar'i) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fasilitas &amp; Adab Majelis</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Standar kenyamanan thalabul 'ilmi dengan menjunjung tinggi batasan syariat yang mulia.
+      </p>
+<div class="grid grid-cols-1 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Pemisahan Sempurna Ikhwan &amp; Akhwat (Hijab Partisi Solid + Layar HD)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Ruang Laktasi Nyaman &amp; Kids Corner Edukatif (Pendamping Anak 3–6 Thn)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Buku Panduan Hardcover Eksklusif + Lembar Kerja Muhasabah A4</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Konsumsi Prasmanan Halal Thoyyib &amp; Coffee Break Berkala</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Akses Rekaman Video &amp; E-Sertifikat Seumur Hidup di Akun Aplikasi</span>
+</div>
+</div>
+</div>
+<!-- Pilihan Biaya / Infaq Investasi Acara (Pricing Packages) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">payments</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Infaq Investasi Majelis</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Pilih paket kehadiran yang paling sesuai dengan kesiapan Anda dan keluarga.
+      </p>
+<div class="flex flex-col gap-space-md mt-space-xs">
+<!-- Opsi A: Paket Pasutri (Highlight) -->
+<div class="relative rounded-2xl bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary px-3 py-1 rounded-bl-xl font-label-sm text-label-sm font-bold tracking-wide">
+            PALING DISARANKAN
+          </div>
+<div class="flex flex-col mt-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Paket Pasutri (Ayah + Bunda)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Menyelaraskan frekuensi pengasuhan berdua tanpa celah</span>
+</div>
+<div class="flex items-baseline gap-2 my-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">Rp 250.000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">Rp 300.000</span>
+</div>
+<div class="flex flex-col gap-1.5 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>2 Kursi Peserta Majelis (Sesuai Hijab Syar'i)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>2 Paket Kitab Hardcover &amp; Lembar Kerja</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>2 Porsi Prasmanan Makan Siang &amp; Rehat Kopi</span>
+</div>
+</div>
+</div>
+<!-- Opsi B: Paket Individu -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Paket Individu (Ayah atau Bunda)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bagi orang tua yang berhalangan hadir bersama</span>
+</div>
+<div class="flex items-baseline gap-2 my-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Rp 150.000</span>
+</div>
+<div class="flex flex-col gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>1 Kursi Peserta Majelis</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>1 Paket Kitab Hardcover Lengkap</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">done</span>
+<span>1 Porsi Prasmanan &amp; Snack Pagi</span>
+</div>
+</div>
+</div>
+<!-- Opsi C: Paket Infaq Peduli / Beasiswa Guru -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">volunteer_activism</span>
+<span>AMAL JARIYAH PENGETAHUAN</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Paket Infaq Peduli Guru &amp; Duafa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 Tiket Pribadi + Subsidi Penuh 1 Guru TPQ / Madrasah</span>
+</div>
+<div class="flex items-baseline gap-2 my-1">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Rp 350.000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pahala jariyah menyebarkan adab nabawiyah kepada para pendidik generasi Qur'an di pelosok.
+          </p>
+</div>
+</div>
+</div>
+<!-- Catatan & Kebijakan Pendaftaran -->
+<div class="rounded-xl bg-surface-container-high p-space-md flex flex-col gap-space-xs text-on-surface-variant font-body-sm text-body-sm shadow-sm mb-4">
+<div class="flex items-center gap-2 text-on-surface font-title-sm text-title-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span>Mekanisme Pendaftaran Amanah</span>
+</div>
+<p class="mt-1">
+        1. Pendaftaran resmi disalurkan via <strong>Google Form</strong> terpusat untuk verifikasi identitas, preferensi konsumsi, serta pendataan penitipan anak (Kids Corner).
+      </p>
+<p>
+        2. Konfirmasi barcode tiket masuk dan instruksi transfer infaq akan dikirimkan otomatis melalui WhatsApp Admin dalam 1x24 jam kerja.
+      </p>
+<p>
+        3. Demi ketenangan majelis, kuota ditutup sewaktu-waktu saat kapasitas gedung terpenuhi.
+      </p>
+</div><div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm mb-4"><div class="flex items-center gap-2 text-on-surface font-title-sm text-title-sm font-semibold"><span class="material-symbols-outlined text-secondary text-[20px]">support_agent</span><span class="">Pusat Informasi &amp; Kontak Panitia</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Membutuhkan konfirmasi terkait penitipan anak, teknis majelis, atau panduan transfer infaq? Hubungi narahubung resmi:</p><div class="flex flex-col gap-space-xs"><a href="https://wa.me/6281234567890?text=Bismillah,%20saya%20ingin%20bertanya%20seputar%20Daurah%20Parenting%20(Ikhwan)" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">chat</span></div><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface font-semibold">Narahubung Ikhwan</span><span class="font-body-sm text-body-sm text-on-surface-variant">Ust. Salman • 0812-3456-7890</span></div></div><span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">open_in_new</span></span></a><a href="https://wa.me/6281398765432?text=Bismillah,%20saya%20ingin%20bertanya%20seputar%20Daurah%20Parenting%20(Akhwat)" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">chat</span></div><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface font-semibold">Narahubung Akhwat</span><span class="font-body-sm text-body-sm text-on-surface-variant">Ummu Rayyan • 0813-9876-5432</span></div></div><span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">open_in_new</span></span></a><div class="flex items-center gap-space-sm px-space-sm py-1.5 text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-primary">mail</span><span class="">Email resmi: <a href="mailto:majelis@pkn-healing.id" class="font-medium text-primary hover:underline">majelis@pkn-healing.id</a></span></div></div></div>
+</div>
+<!-- Persistent Floating Registration Interaction Anchor -->
+<div class="sticky bottom-0 inset-x-0 bg-surface-container-lowest/95 backdrop-blur-md p-margin-sm shadow-lg flex flex-col gap-space-xs z-30"><div class="flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Investasi Majelis</span><div class="flex items-center gap-1.5"><span class="font-title-md text-title-md text-on-surface font-bold">Mulai Rp 150.000</span><span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-container px-2 py-0.5 rounded-full">Sisa 18 Kursi</span></div></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">verified</span> Kuota Terbatas</span></div><div class="flex items-center gap-space-xs w-full"><a class="flex-1 h-12 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" href="https://forms.gle/daurahparenting2025" rel="noopener noreferrer" target="_blank"><span class="">Daftar via Google Form</span><span class="material-symbols-outlined text-[18px]">open_in_new</span></a></div></div>
+<!-- Client Micro-Interaction Script -->
+<script>
+    // Smooth interaction ripple feedback for interactive anchors
+    document.querySelectorAll('a[href^="http"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if ('vibrate' in navigator) {
+          navigator.vibrate(15);
+        }
+      });
+    });
+  </script>
+</div></main><aside class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(44,40,37,0.06)] pb-safe"></aside>
+
+</body></html>

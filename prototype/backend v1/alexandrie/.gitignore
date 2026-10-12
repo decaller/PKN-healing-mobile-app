@@ -1,0 +1,5 @@
+.env
+.env.*
+!.env.example
+.seed-account.json
+__pycache__/

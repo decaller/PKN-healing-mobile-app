@@ -1,0 +1,17 @@
+{
+  "version_code": 4,
+  "release_tag": "v4.0.0",
+  "file_name": "knowledge_v4.db-e764fd8f4b2c3e90d015904fb66bb0f1175411a6042080565b87ebccd53859ff.zst",
+  "uncompressed_bytes": 59170816,
+  "compressed_bytes": 7698726,
+  "sha256": "e764fd8f4b2c3e90d015904fb66bb0f1175411a6042080565b87ebccd53859ff",
+  "total_articles": 741,
+  "total_chunks": 10806,
+  "provenance_stats": {
+    "ai_assisted": 643,
+    "expert_verified": 98
+  },
+  "embedding_mode": "semantic",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "embedding_dimensions": 384
+}
