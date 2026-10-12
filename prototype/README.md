@@ -13,6 +13,7 @@ Repositori ini telah mengeksplorasi dan memvalidasi seluruh pilar aplikasi melal
 
 ```
 prototype/
+├── compile/                # [Master Unified App] Aplikasi Flutter modular gabungan seluruh prototipe (14/14 tests)
 ├── v0/                     # [Flutter] Fondasi awal state machine Riverpod & Lesson Player
 ├── v1/                     # [Flutter Web] Sandbox pratinjau browser dengan device_preview
 ├── v2/                     # [Design & Specs] Arsip kanonikal 32 Layar Earth-Tree, evaluasi UX & data Wiki
@@ -33,6 +34,7 @@ prototype/
 
 | Folder Prototipe | Stack Teknologi | Fokus Fitur & Tanggung Jawab Utama | Aset / Hasil Kunci | Status Kesiapan |
 | :--- | :--- | :--- | :--- | :--- |
+| **[`compile`](./compile/)** | Flutter 3.29, Riverpod, Forui, fl_chart | **Master Unified Modular Container**: Menggabungkan seluruh 12 prototipe dengan Feature Flags independen, dock adaptif, dan kontrol panel developer. | 14/14 passing tests, 0 lint errors, [`MODULAR_CHECKLIST_OMP.md`](./compile/MODULAR_CHECKLIST_OMP.md). | **Master Produksi (Siap Pakai)** |
 | **[`v0`](./v0/)** | Flutter 3.29, Riverpod | Fondasi arsitektur micro-learning (Google Primer model), kuis skenario, dan rubrik kualitatif adab. | 13/13 passing tests, model polimorfik kartu modul. | **Teruji (Fondasi)** |
 | **[`v1`](./v1/)** | Flutter Web | Uji coba responsivitas layout mobile di browser dengan simulator iPhone/Android frame. | Port web runner, layout emulator browser. | **Arsip Eksperimen** |
 | **[`v2`](./v2/)** | HTML Tailwind, SVG, MD | Master konsep visual 32 layar lengkap, dokumen evaluasi Flutter, dan teks korpus ekstraksi Wiki PKN. | [`KATALOG_DAN_ARSITEKTUR_32_LAYAR.md`](./v2/KATALOG_DAN_ARSITEKTUR_32_LAYAR.md), [`FLUTTER_ANALISIS_DAN_REKOMENDASI.md`](./v2/FLUTTER_ANALISIS_DAN_REKOMENDASI.md), 32 desain HTML/PNG. | **Master Rujukan Desain** |
@@ -105,7 +107,10 @@ class FeatureFlagsConfig {
 Untuk memverifikasi setiap prototipe yang siap diuji:
 
 ```bash
-# 1. Uji Fitur Chart & Relasi (v5)
+# 1. Uji Master Unified Modular App (compile) - 14 passing tests
+cd prototype/compile && flutter test
+
+# 2. Uji Fitur Chart & Relasi (v5)
 cd prototype/v5 && flutter test
 
 # 2. Uji Beranda & UI Kanonikal (v4)

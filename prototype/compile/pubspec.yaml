@@ -1,0 +1,62 @@
+name: pkn_prototype_compile
+description: "PKN Prototype Compile - Modular Unified Architecture with Dynamic Feature Flags"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  forui: ^0.11.1
+  iconoir_flutter: ^7.11.0
+  flutter_riverpod: ^2.6.1
+  go_router: ^17.0.0
+  smooth_page_indicator: ^1.2.0+3
+  flutter_animate: ^4.5.2
+  shared_preferences: ^2.5.3
+  carousel_slider: ^5.1.2
+  fl_chart: ^1.1.0
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/scenarios/
+    - assets/data/lessons/
+    - assets/fonts/Merriweather-OFL.txt
+    - assets/fonts/PlusJakartaSans-OFL.txt
+    - assets/fonts/Amiri-OFL.txt
+
+  fonts:
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather-400.ttf
+          weight: 400
+        - asset: assets/fonts/Merriweather-700.ttf
+          weight: 700
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-600.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-700.ttf
+          weight: 700
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Amiri-Bold.ttf
+          weight: 700

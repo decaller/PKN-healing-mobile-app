@@ -138,10 +138,10 @@
 - [x] **Task 12.2:** Panduan & Service On-Device Embedding ONNX INT8 di background isolate Flutter (`prototype/backend v2/client_examples/on_device_embedder_service.dart`).
 - [x] **Task 12.3:** Verifikasi 12 sub-prototipe dan pembuatan master indeks [`prototype/README.md`](prototype/README.md).
 
-### Phase 13: Modular Unified Flutter Prototype Compilation *(ACTIVE)*
-- [ ] **Task 13.1:** Bangun wadah kompilasi modular (`prototype/compile/`): satukan core UI (v4), relasi/daily task (v5), Teman Curhat (AI v1), Agenda (Event v1), dan Khazanah LibSQL (backend v2).
-- [ ] **Task 13.2:** Implementasi `FeatureFlagsConfig`: setiap fitur dapat diaktifkan/dinonaktifkan secara independen tanpa merusak navigasi atau modul lain.
-- [ ] **Task 13.3:** Verifikasi pengujian otomatis dan analisa statis (0 errors, 0 lints) pada prototipe modular.
+### Phase 13: Modular Unified Flutter Prototype Compilation *(Completed)*
+- [x] **Task 13.1:** Bangun wadah kompilasi modular (`prototype/compile/`): satukan core UI (v4), relasi/daily task (v5), Teman Curhat (AI v1), Agenda (Event v1), Micro-learning (v0), dan Khazanah LibSQL (backend v2).
+- [x] **Task 13.2:** Implementasi `FeatureFlagsConfig`: setiap fitur dapat diaktifkan/dinonaktifkan secara independen tanpa merusak navigasi atau modul lain, dilengkapi control panel interaktif dan dock adaptif.
+- [x] **Task 13.3:** Verifikasi pengujian otomatis dan analisa statis (0 errors, 0 warnings, 14/14 tests passing) pada prototipe modular `prototype/compile/`.
 
 ---
 
