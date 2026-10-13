@@ -122,14 +122,39 @@ Berdasarkan kekayaan materi di atas, berikut adalah 4 alternatif pendekatan desa
 
 ---
 
-## 4. Rekomendasi Solusi Terbaik: "Hybrid Smart Emergency SOP"
+## 4. Rekomendasi Solusi Resmi: "2-Phase Emergency Architecture"
+*(Memisahkan Secara Tegas Fase Genting vs Fase Stabil)*
 
-Kombinasi terbaik yang direkomendasikan untuk PKN Mobile adalah **Sintesis Alternatif 1 + Alternatif 3 + Alternatif 4**:
+Berdasarkan tinjauan psikologi kognitif darurat (*Cognitive Tunnel Vision during High-Arousal Crisis*), orang tua yang sedang menghadapi anak mengamuk **tidak mampu dan tidak boleh dipaksa membaca penjelasan teoritis atau paragraf panjang**. Seluruh penjelasan manhaj dan dalil harus **diakhirkan sampai kondisi anak dan orang tua sudah benar-benar stabil**.
 
-1. **Header Emergency Bar:** Pilihan konteks instan: `[ 🏠 Di Rumah | 🏬 Di Ruang Publik ]`.
-2. **Micro-Calm Anchor (Detik 0–3):** Teks penenang orang tua: *"Tarik nafas, tahan lisan. Anak belum mukallaf."*
-3. **Triase 3 Opsi Aksi Cepat SOTAB:**
-   - 🟢 **Opsi 1: Mampu & Aman** ➔ Turuti seketika (Penuntasan egosentris).
-   - 🟡 **Opsi 2: Cari Alternatif** ➔ Barter cerdas sepadan (Siasat - Sepakat - Sabar).
-   - 🔴 **Opsi 3: Tidak Bisa / Bahaya** ➔ Amankan fisik, diamkan lisan, dekap tanpa ceramah (Sabar - Sabar - Sabar).
-4. **Pasca-Tantrum:** Tampilkan Doa Fudhail bin 'Iyadh dengan audio tilawah penyejuk batin.
+### Fase 1: Situasi Genting (Active Crisis / Tunnel-Vision Mode)
+* **Karakteristik UI:** Bersih, lapang, font besar, kontras tegas, kata imperatif ringkas (&le; 6 kata per aksi), tanpa paragraf teori.
+* **Komponen:**
+  1. **Visual Calm Anchor:**  
+     *“Tahan Lisan. Jangan Membentak. Tarik nafas 4 detik. Anak belum mukallaf (HR. Muslim 3009).”*
+  2. **3 Langkah Eksekutif Super Ringkas:**
+     - 1️⃣ **Duduk Sejajar Mata Anak:** Rendahkan tubuh, jangan berdiri menjulang.
+     - 2️⃣ **Dekap Hangat & Diamkan Kata:** Peluk dadanya, jangan mendebat logika.
+     - 3️⃣ **Amankan Radius Bahaya:** Singkirkan benda keras / geser ke tempat sepi.
+  3. **Dua Tombol Pilihan Sikap SOTAB:**
+     - [ 🟢 **Bisa Dituruti? Penuhi Sekarang** ]
+     - [ 🛡️ **Bahaya / Tak Bisa? Peluk Sampai Reda** ]
+  4. **Primary Action CTA:**  
+     **[ 🕊️ ALHAMDULILLAH, ANAK SUDAH TENANG ➔ ]**  
+     *(Mengarahkan orang tua untuk berfokus mendampingi anak terlebih dahulu sebelum menyentuh aplikasi lagi)*.
+
+---
+
+### Fase 2: Kondisi Stabil (Post-Crisis Debrief, Hikmah & Tazkiyah)
+* **Karakteristik UI:** Hening, menyejukkan, reflektif. Muncul hanya setelah tombol *"Alhamdulillah, Anak Sudah Tenang"* diklik.
+* **Komponen:**
+  1. **Apresiasi Batin:**  
+     *“Masya Allah, Anda telah menjaga fitrah anak tanpa bentakan dan memenangkan pahala Kazhmul Ghaizh.”*
+  2. **Kaidah Emas SOTAB:**  
+     ⚠️ **JANGAN DIBAHAS LAGI!**  
+     *“Setelah badai reda: jangan diceramahi, jangan dihakimi, jangan diungkit lagi. Cukup senyumi, beri air putih hangat, dan dekap kembali.”*
+  3. **Munajat Penyerahan Didik (Imam Fudhail bin 'Iyadh):**  
+     Teks Arab, latin, dan terjemahan munajat penyerahan taufiq mendidik anak kepada Allah Ta'ala.
+  4. **Edukasi Santai (Bisa Dibaca dengan Lapang Dada):**  
+     Penjelasan mengapa tantrum disebut indah (masa emas egosentrisme fitrah & pencegahan hutang pengasuhan masa pubertas).
+
