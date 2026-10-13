@@ -141,10 +141,10 @@
           </p>
         </div>
 
-        <!-- SEARCH BAR TERPADU (FTS5 / TICKER) -->
+        <!-- SEARCH BAR TERPADU (FTS5 / ROTATING TICKER) -->
         <div class="relative flex items-center">
           <span class="material-symbols-outlined absolute left-3.5 text-basalt-400 dark:text-sand-400 text-[20px]">search</span>
-          <input type="text" placeholder="Cari panduan adab, dalil, atau tips..." 
+          <input type="text" id="beranda-search" placeholder="Cari panduan adab, dalil, atau tips..." 
             class="w-full pl-10 pr-12 py-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-xs font-medium text-basalt-900 dark:text-sand-50 placeholder-basalt-400 dark:placeholder-sand-400 focus:outline-none focus:ring-2 focus:ring-pine-500 shadow-sm transition">
           <button onclick="openCurhatModal()" class="absolute right-2 px-2.5 py-1.5 rounded-xl bg-pine-50 dark:bg-pine-950 text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center gap-1 active:scale-95 transition">
             <span class="material-symbols-outlined text-[16px]">mic</span>
@@ -275,126 +275,236 @@
         </section>
 
         <!-- ============================================== -->
-        <!-- 🎨 DISCOVERY HUB: CAROUSEL & GRID KOMBINASI -->
         <!-- ============================================== -->
-        <section class="space-y-3">
+        <!-- 🎯 REKOMENDASI AKTIVITAS (CONTINUE / RECOMMENDED ACTIONS) -->
+        <!-- ============================================== -->
+        <section class="space-y-2.5">
           <div class="flex items-center justify-between">
-            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
-              Khazanah & Simulasi Interaktif
-            </h2>
-            <span class="text-[10px] text-basalt-400">Geser ➔</span>
+            <div>
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Rekomendasi Aktivitas
+              </h2>
+              <p class="text-[10px] text-basalt-400 dark:text-sand-500">Disarankan untuk dilakukan atau dilanjutkan</p>
+            </div>
+            <span class="text-[10px] text-pine-600 dark:text-pine-400 font-semibold">Geser ➔</span>
           </div>
 
-          <!-- 1. Horizontal Carousel (Narasi & Buku) -->
+          <!-- 1. Horizontal Carousel (Rekomendasi & In-Progress) -->
           <div class="flex gap-3 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1 snap-x">
             
-            <!-- Slide 1: Serial Zaid Rehearsal -->
-            <div onclick="openSerialModal()" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
+            <!-- Slide 1: In-Progress Modul Adab Lanjutan -->
+            <div onclick="openModulModal()" class="snap-start shrink-0 w-[250px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
               <div class="space-y-1.5">
-                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sand-100 dark:bg-basalt-800 text-terracotta-600 dark:text-terracotta-400">
-                  🎬 Serial Zaid • Ep. 4
-                </span>
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pine-50 dark:bg-pine-950 text-pine-600 dark:text-pine-400">
+                    📖 Lanjutkan Modul • Bab 3/5
+                  </span>
+                  <span class="text-[10px] font-bold text-pine-600 dark:text-pine-400">65%</span>
+                </div>
                 <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
-                  Ketika Anak Menolak Shalat Karena Asyik Bermain
+                  Membangun Kedekatan Kalbu Sebelum Koreksi (Tamyiz)
                 </h4>
-                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
-                  Latihan 3 respon: Muthma'innah vs Ammarah dengan dialektika bakat.
+                <!-- Mini Progress Bar -->
+                <div class="w-full bg-sand-200 dark:bg-basalt-800 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-pine-600 h-full rounded-full" style="width: 65%;"></div>
+                </div>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500 line-clamp-1">
+                  Tersisa 8 menit • Sentuhan rahmat & kontak mata teduh
                 </p>
               </div>
-              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center justify-center gap-1">
-                Latih Respon ➔
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-pine-600 hover:bg-pine-700 text-white text-xs font-bold flex items-center justify-center gap-1 shadow-sm">
+                <span>Lanjutkan Belajar</span>
+                <span class="material-symbols-outlined text-[16px]">play_circle</span>
               </button>
             </div>
 
-            <!-- Slide 2: Buku Pilihan Bulan Ini -->
-            <div onclick="switchTab('materi')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
+            <!-- Slide 2: Serial Zaid Rehearsal dengan 4 Milestone Tracker -->
+            <div onclick="openSerialModal()" class="snap-start shrink-0 w-[250px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
               <div class="space-y-1.5">
-                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sand-100 dark:bg-basalt-800 text-pine-600 dark:text-pine-400">
-                  📚 Pustaka Nabawiyah
-                </span>
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600 dark:text-terracotta-400">
+                    🎬 Serial Zaid • Ep. 3
+                  </span>
+                  <span class="text-[10px] font-bold text-terracotta-600">Milestone 3/4</span>
+                </div>
                 <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
-                  Seni Berbicara Nabawiyah: Menembus Hati Tanpa Melukai
+                  Menemani Wudhu & Menangani Mogok Shalat Anak
                 </h4>
-                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
-                  Ulasan 6 kaidah Al-Qur'an dalam komunikasi dialogis keluarga.
+                <!-- 4 Step Dots Milestone Tracker -->
+                <div class="flex items-center gap-1 py-0.5">
+                  <div class="flex-1 flex items-center justify-center py-0.5 rounded bg-pine-50 dark:bg-pine-950 text-pine-600 text-[9px] font-bold">
+                    ✓ Ep 1
+                  </div>
+                  <div class="flex-1 flex items-center justify-center py-0.5 rounded bg-pine-50 dark:bg-pine-950 text-pine-600 text-[9px] font-bold">
+                    ✓ Ep 2
+                  </div>
+                  <div class="flex-1 flex items-center justify-center py-0.5 rounded bg-terracotta-500 text-white text-[9px] font-bold animate-pulse">
+                    ● Ep 3
+                  </div>
+                  <div class="flex-1 flex items-center justify-center py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-basalt-400 text-[9px]">
+                    🔒 Ep 4
+                  </div>
+                </div>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500 line-clamp-1">
+                  Simulasi respon: Muthma'innah vs Ammarah
                 </p>
               </div>
-              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center justify-center gap-1">
-                Buka Pustaka ➔
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-bold flex items-center justify-center gap-1 shadow-sm">
+                <span>Latih Respon Sekarang</span>
+                <span class="material-symbols-outlined text-[16px]">sports_esports</span>
               </button>
             </div>
 
-            <!-- Slide 3: Munajat & Doa Penenang Hati -->
-            <div onclick="openDoaModal()" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
+            <!-- Slide 3: Latihan Hening Qalbu (3 Menit Sebelum Menegur) -->
+            <div onclick="openHeningModal()" class="snap-start shrink-0 w-[250px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
               <div class="space-y-1.5">
-                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sand-100 dark:bg-basalt-800 text-ambercustom-600 dark:text-ambercustom-400">
-                  🤲 Doa Penenang Batin
-                </span>
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600 dark:text-ambercustom-400">
+                    🧘 Hening Qalbu • 3 Menit
+                  </span>
+                  <span class="text-[10px] font-bold text-ambercustom-600">SOP Kazhm</span>
+                </div>
                 <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
-                  Doa Menundukkan Amarah & Kelembutan Anak
+                  Latihan Resonansi Suara Rendah Sebelum Menegur
                 </h4>
-                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2 font-arabic">
-                  رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ
+                <div class="p-1.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-ambercustom-600 text-[16px]">self_improvement</span>
+                  <span class="text-[10px] text-basalt-600 dark:text-sand-300">Tarik nafas 4 dtk, istighfar & jeda</span>
+                </div>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500 line-clamp-1">
+                  Meredam respon reaktif amigdala orang tua
                 </p>
               </div>
-              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-ambercustom-600 dark:text-ambercustom-400 text-xs font-bold flex items-center justify-center gap-1">
-                Baca Dalil ➔
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-ambercustom-600 hover:bg-ambercustom-700 text-white text-xs font-bold flex items-center justify-center gap-1 shadow-sm">
+                <span>Mulai Latihan Hening</span>
+                <span class="material-symbols-outlined text-[16px]">timer</span>
+              </button>
+            </div>
+
+            <!-- Slide 4: Observasi Bakat TB-40 Harian -->
+            <div onclick="openObservasiModal()" class="snap-start shrink-0 w-[250px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition">
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
+                    🎯 Radar Bakat • TB-40
+                  </span>
+                  <span class="text-[10px] font-bold text-blue-600">3 Catatan</span>
+                </div>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
+                  Observasi Gaya Nalar & Respon Spontan Hari Ini
+                </h4>
+                <div class="p-1.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 text-[10px] text-basalt-600 dark:text-sand-300 flex items-center justify-between">
+                  <span>Fokus merakit & respon saat kalah</span>
+                  <span class="font-bold text-blue-600">Al-Qiyadah</span>
+                </div>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500 line-clamp-1">
+                  Pencatatan radar fitrah tanpa pelabelan prematur
+                </p>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center justify-center gap-1 shadow-sm">
+                <span>Catat Observasi</span>
+                <span class="material-symbols-outlined text-[16px]">edit_note</span>
               </button>
             </div>
 
           </div>
 
-          <!-- 2. Grid 2x2 Action Tiles (Utilitas & Ekosistem) -->
-          <div class="grid grid-cols-2 gap-3 pt-1">
-            
-            <!-- Tile 1: Tafsir Bakat 40 -->
-            <div onclick="switchTab('profil')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px]">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-pine-600 dark:text-pine-400 text-[20px]">psychology</span>
-                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-pine-600">TB-40</span>
-              </div>
-              <div>
-                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">Tafsir Bakat 40</h4>
-                <p class="text-[10px] text-basalt-400 dark:text-sand-400">Peta fitrah & radar batin</p>
-              </div>
+          <!-- 2. Grid Utilitas & Instrumen Lapangan (6 Tombol Lengkap) -->
+          <div class="space-y-2 pt-1">
+            <div class="flex items-center justify-between">
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Instrumen & Utilitas Praktis
+              </h2>
+              <span class="text-[10px] text-basalt-400">6 Fasilitas Siap Pakai</span>
             </div>
 
-            <!-- Tile 2: Kemitraan Lembaga -->
-            <div onclick="switchTab('event')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px]">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-ambercustom-600 dark:text-ambercustom-400 text-[20px]">corporate_fare</span>
-                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-ambercustom-600">Mitra</span>
+            <div class="grid grid-cols-2 gap-2.5">
+              
+              <!-- Tombol 1: Generator RPP 1 Lembar -->
+              <div onclick="openRppModal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-pine-50 dark:bg-pine-950 text-pine-600 dark:text-pine-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">edit_document</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-pine-600">KBM Adab</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Generator RPP</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Rencana aksi 1 lembar</p>
+                </div>
               </div>
-              <div>
-                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">Kemitraan</h4>
-                <p class="text-[10px] text-basalt-400 dark:text-sand-400">Coaching, daurah, visitasi</p>
-              </div>
-            </div>
 
-            <!-- Tile 3: Direktori Tokoh -->
-            <div onclick="switchTab('materi')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px]">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-terracotta-600 dark:text-terracotta-400 text-[20px]">groups</span>
-                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-terracotta-600">Pakar</span>
+              <!-- Tombol 2: Modul Adab Harian -->
+              <div onclick="openModulModal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">menu_book</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-blue-600">Kurikulum</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Modul Harian</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Panduan mikro per fase</p>
+                </div>
               </div>
-              <div>
-                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">Tokoh Asatidzah</h4>
-                <p class="text-[10px] text-basalt-400 dark:text-sand-400">Ust. Abdul Kholiq, Ust. Bayu</p>
-              </div>
-            </div>
 
-            <!-- Tile 4: Jaringan Lembaga -->
-            <div onclick="switchTab('materi')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px]">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-[20px]">account_balance</span>
-                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-blue-600">Jaringan</span>
+              <!-- Tombol 3: Doa Penenang Hati & Amarah -->
+              <div onclick="openDoaModal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600 dark:text-ambercustom-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-ambercustom-600">Munajat</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Doa Penenang</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Takhrij doa & wirid syar'i</p>
+                </div>
               </div>
-              <div>
-                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">Lembaga Mitra</h4>
-                <p class="text-[10px] text-basalt-400 dark:text-sand-400">SKIS, SOTAB, HU, Darul Atsar</p>
-              </div>
-            </div>
 
+              <!-- Tombol 4: Tafsir Bakat 40 (TB-40) -->
+              <div onclick="openTb40Modal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600 dark:text-terracotta-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">psychology</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-terracotta-600">TB-40</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Tafsir Bakat 40</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Peta fitrah & 6 rumpun</p>
+                </div>
+              </div>
+
+              <!-- Tombol 5: Pustaka & Toko Buku Nabawi -->
+              <div onclick="openPustakaModal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-emerald-600">Pustaka</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Pustaka Buku</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Buku fisik & e-book</p>
+                </div>
+              </div>
+
+              <!-- Tombol 6: Kemitraan Lembaga & Sekolah -->
+              <div onclick="openKemitraanModal()" class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition active:scale-98 flex flex-col justify-between h-[96px] group">
+                <div class="flex items-center justify-between">
+                  <div class="w-7 h-7 rounded-lg bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-purple-600">Mitra</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-pine-600 transition">Kemitraan</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Coaching & visitasi</p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -457,52 +567,448 @@
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- TAB 3: MATERI (WIKI & PUSTAKA NABAWIYAH) -->
-      <!-- ========================================== -->
-      <div id="view-materi" class="tab-view hidden px-5 space-y-4 pt-2">
+      <!-- ============================================================== -->
+      <!-- TAB 3: MATERI & WIKI (BENTO GRID & CAROUSEL DIRECTORY) -->
+      <!-- ============================================================== -->
+      <div id="view-materi" class="tab-view hidden px-5 space-y-5 pt-2">
         <header class="flex items-center justify-between pt-1">
           <div>
-            <span class="text-xs font-bold text-pine-600 uppercase tracking-wide">Pustaka & Dalil</span>
-            <h1 class="text-2xl font-bold font-serif text-basalt-900 dark:text-sand-50">Khazanah Ilmu</h1>
+            <span class="text-xs font-bold text-pine-600 dark:text-pine-400 uppercase tracking-wide">Pusat Khazanah & Direktori</span>
+            <h1 class="text-2xl font-bold font-serif text-basalt-900 dark:text-sand-50">Wiki & Direktori</h1>
           </div>
-          <span class="material-symbols-outlined text-basalt-400 text-[24px]">menu_book</span>
+          <div class="w-9 h-9 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-pine-600 dark:text-pine-400 shadow-sm">
+            <span class="material-symbols-outlined text-[20px]">account_tree</span>
+          </div>
         </header>
 
-        <!-- Search Wiki -->
-        <input type="text" placeholder="Cari artikel, dalil hadits, takhrij..." 
-          class="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-xs">
-
-        <!-- 6 Format Media Wiki -->
-        <div class="grid grid-cols-3 gap-2 text-center text-xs">
-          <div class="p-3 rounded-xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition">
-            <span class="material-symbols-outlined text-pine-600 text-[24px]">article</span>
-            <p class="font-bold mt-1 text-[11px]">Artikel</p>
-          </div>
-          <div class="p-3 rounded-xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition">
-            <span class="material-symbols-outlined text-ambercustom-600 text-[24px]">headphones</span>
-            <p class="font-bold mt-1 text-[11px]">Kajian Audio</p>
-          </div>
-          <div class="p-3 rounded-xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-pine-500 transition">
-            <span class="material-symbols-outlined text-blue-600 text-[24px]">slideshow</span>
-            <p class="font-bold mt-1 text-[11px]">Presentasi</p>
-          </div>
-        </div>
-
-        <!-- Featured Articles -->
+        <!-- Search Wiki & Filter Quick Pills -->
         <div class="space-y-2">
-          <h3 class="text-xs font-extrabold uppercase tracking-wider text-basalt-400">Artikel Pilihan</h3>
-          <div class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm space-y-1">
-            <span class="text-[10px] font-bold text-pine-600">Manhaj PKN • 4 Menit Baca</span>
-            <h4 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Tiga Bahasa Mendidik: Hati, Lisan, dan Tangan Terukur</h4>
-            <p class="text-xs text-basalt-500 dark:text-sand-400 line-clamp-2">Hirarki penerapan nabawiyah dari 0-7 tahun (Thufulah) hingga 10-14 tahun (Murahaqah).</p>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-basalt-400 dark:text-sand-400 text-[18px]">search</span>
+            <input type="text" id="wiki-search" placeholder="Cari 6 pilar, asatidzah, lembaga, istilah..." 
+              class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-xs font-medium text-basalt-900 dark:text-sand-50 placeholder-basalt-400 dark:placeholder-sand-400 focus:outline-none focus:ring-2 focus:ring-pine-500 shadow-sm transition">
           </div>
-          <div class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm space-y-1">
-            <span class="text-[10px] font-bold text-terracotta-600">Tazkiyatun Nafs • 6 Menit Baca</span>
-            <h4 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Membasuh Luka Pengasuhan: Pendidik atau Luka yang Mengajar?</h4>
-            <p class="text-xs text-basalt-500 dark:text-sand-400 line-clamp-2">Muhasabah bejana batin orang tua agar tidak menumpahkan amarah masa lalu kepada anak.</p>
+
+          <!-- Micro Filter Pills -->
+          <div class="flex gap-1.5 overflow-x-auto no-scrollbar -mx-5 px-5 py-0.5">
+            <button class="px-3 py-1 rounded-full bg-pine-600 text-white text-[11px] font-bold shrink-0 shadow-sm">Semua</button>
+            <button onclick="scrollToWikiSection('section-6pilar')" class="px-3 py-1 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-600 dark:text-sand-300 text-[11px] font-semibold shrink-0 hover:bg-sand-200">6 Pilar Fitrah</button>
+            <button onclick="scrollToWikiSection('section-asatidzah')" class="px-3 py-1 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-600 dark:text-sand-300 text-[11px] font-semibold shrink-0 hover:bg-sand-200">Tokoh Asatidzah</button>
+            <button onclick="scrollToWikiSection('section-lembaga')" class="px-3 py-1 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-600 dark:text-sand-300 text-[11px] font-semibold shrink-0 hover:bg-sand-200">Lembaga Mitra</button>
+            <button onclick="scrollToWikiSection('section-pustaka')" class="px-3 py-1 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-600 dark:text-sand-300 text-[11px] font-semibold shrink-0 hover:bg-sand-200">Pustaka Buku</button>
+            <button onclick="openGlosariumModal()" class="px-3 py-1 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-600 dark:text-sand-300 text-[11px] font-semibold shrink-0 hover:bg-sand-200">Glosarium Syakilah</button>
           </div>
         </div>
+
+        <!-- ============================================== -->
+        <!-- 🍱 1. BENTO BOX GRID: KHAZANAH UTAMA -->
+        <!-- ============================================== -->
+        <section id="section-6pilar" class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+              Peta Khazanah Manhaj Nabawiyah
+            </h2>
+            <span class="text-[10px] text-pine-600 dark:text-pine-400 font-bold">Bento Explorer</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            
+            <!-- Bento 1: Hero Large Tile (6 Pilar Fitrah) - Col Span 2 -->
+            <div onclick="openPilarModal()" class="col-span-2 p-4 rounded-3xl bg-gradient-to-br from-pine-900 via-pine-800 to-basalt-900 text-white shadow-md cursor-pointer active:scale-98 transition flex flex-col justify-between relative overflow-hidden group">
+              <div class="relative z-10 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold uppercase tracking-wider bg-white/20 px-2.5 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-pine-400 animate-pulse"></span>
+                    Fondasi Utama PKN
+                  </span>
+                  <span class="text-[10px] font-bold bg-pine-500/30 text-pine-200 px-2 py-0.5 rounded-lg border border-pine-400/20">110 Rujukan</span>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold font-serif leading-tight">Indeks 6 Pilar Fitrah Nabawiyah</h3>
+                  <p class="text-[11px] text-white/80 mt-1 line-clamp-2">
+                    Hierarki pengasuhan: Iman & Rububiyyah, Belajar & Nalar, Bakat & Kepemimpinan, Jasmani, Perkembangan Usia, dan Seksualitas Syar'i.
+                  </p>
+                </div>
+              </div>
+              <div class="relative z-10 pt-3 flex items-center justify-between border-t border-white/15 text-xs mt-2">
+                <div class="flex gap-1.5 text-[10px] text-white/70">
+                  <span class="bg-black/30 px-2 py-0.5 rounded">Tauhid</span>
+                  <span class="bg-black/30 px-2 py-0.5 rounded">TB-40</span>
+                  <span class="bg-black/30 px-2 py-0.5 rounded">Tamyiz</span>
+                </div>
+                <span class="font-bold text-pine-200 flex items-center gap-0.5 group-hover:translate-x-1 transition">Telusuri Pilar ➔</span>
+              </div>
+              <span class="material-symbols-outlined absolute -right-3 -bottom-3 text-white/10 text-[96px] pointer-events-none group-hover:scale-105 transition">account_tree</span>
+            </div>
+
+            <!-- Bento 2: Glosarium Istilah Syakilah (Medium Tile) -->
+            <div onclick="openGlosariumModal()" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-ambercustom-500 transition active:scale-98 flex flex-col justify-between h-[120px] group">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-xl bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600 dark:text-ambercustom-400 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">translate</span>
+                </div>
+                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-ambercustom-600">42 Istilah</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-ambercustom-600 transition">Glosarium Syakilah</h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Kamus terminologi syar'i</p>
+              </div>
+            </div>
+
+            <!-- Bento 3: Multi-Format Media Riset (Medium Tile) -->
+            <div onclick="openMediaModal()" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm cursor-pointer hover:border-blue-500 transition active:scale-98 flex flex-col justify-between h-[120px] group">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">perm_media</span>
+                </div>
+                <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-sand-100 dark:bg-basalt-800 text-blue-600">4 Format</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 group-hover:text-blue-600 transition">Media & Riset</h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-400 line-clamp-1">Artikel, audio, RPP, video</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 👥 2. CAROUSEL DIREKTORI: TOKOH ASATIDZAH PKN -->
+        <!-- ============================================== -->
+        <section id="section-asatidzah" class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Tokoh Asatidzah & Pakar Pembina
+              </h2>
+              <p class="text-[10px] text-basalt-400 dark:text-sand-500">Dewan pembina & narasumber manhaj</p>
+            </div>
+            <span class="text-[10px] text-pine-600 dark:text-pine-400 font-semibold">Geser ➔</span>
+          </div>
+
+          <!-- Carousel Kartu Profil Asatidzah -->
+          <div class="flex gap-3 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1 snap-x">
+            
+            <!-- Tokoh 1: Ust. Abdul Kholiq, Lc., M.P.I. -->
+            <div onclick="openProfilTokohModal('abdul-kholiq')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-pine-600 shrink-0 bg-sand-200">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80" alt="Ust Abdul Kholiq" class="w-full h-full object-cover">
+                  </div>
+                  <div class="min-w-0">
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-pine-50 dark:bg-pine-950 text-pine-600">Dewan Pembina</span>
+                    <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 truncate mt-0.5">Ust. Abdul Kholiq, Lc.</h4>
+                    <p class="text-[10px] text-basalt-400 dark:text-sand-500 truncate">Pengasuh Kuttab & SKIS</p>
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-sand-50 dark:bg-basalt-950 text-[10px] text-basalt-600 dark:text-sand-300 space-y-0.5 border border-sand-100 dark:border-basalt-800">
+                  <p><strong>Fokus:</strong> Fitrah Iman & Manhaj Tarbiyah</p>
+                  <p><strong>Karya:</strong> Buku "Tiga Bahasa Mendidik"</p>
+                </div>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-pine-600 hover:text-white text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Lihat Profil & Karya</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Tokoh 2: Ust. Bayu, S.Pd., M.Ed. -->
+            <div onclick="openProfilTokohModal('bayu')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-terracotta-600 shrink-0 bg-sand-200">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="Ust Bayu" class="w-full h-full object-cover">
+                  </div>
+                  <div class="min-w-0">
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600">Litbang Kurikulum</span>
+                    <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 truncate mt-0.5">Ust. Bayu, S.Pd., M.Ed.</h4>
+                    <p class="text-[10px] text-basalt-400 dark:text-sand-500 truncate">Kepala Riset SOTAB</p>
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-sand-50 dark:bg-basalt-950 text-[10px] text-basalt-600 dark:text-sand-300 space-y-0.5 border border-sand-100 dark:border-basalt-800">
+                  <p><strong>Fokus:</strong> Living Rehearsal KBM Adab</p>
+                  <p><strong>Karya:</strong> 19 Butir Observasi & RPP 1 Lembar</p>
+                </div>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-terracotta-600 hover:text-white text-terracotta-600 dark:text-terracotta-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Lihat Profil & Karya</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Tokoh 3: Ust. Ahmad Ridwan, M.Ag. -->
+            <div onclick="openProfilTokohModal('ahmad-ridwan')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-ambercustom-600 shrink-0 bg-sand-200">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80" alt="Ust Ahmad Ridwan" class="w-full h-full object-cover">
+                  </div>
+                  <div class="min-w-0">
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600">Tazkiyatun Nafs</span>
+                    <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 truncate mt-0.5">Ust. Ahmad Ridwan</h4>
+                    <p class="text-[10px] text-basalt-400 dark:text-sand-500 truncate">Pakar Syakilah TB-40</p>
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-sand-50 dark:bg-basalt-950 text-[10px] text-basalt-600 dark:text-sand-300 space-y-0.5 border border-sand-100 dark:border-basalt-800">
+                  <p><strong>Fokus:</strong> Pemulihan Batin & Bakat</p>
+                  <p><strong>Karya:</strong> 9 Serial Menghapus Noda Hati</p>
+                </div>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-ambercustom-600 hover:text-white text-ambercustom-600 dark:text-ambercustom-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Lihat Profil & Karya</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Tokoh 4: Ummu Khusna, M.Psi. -->
+            <div onclick="openProfilTokohModal('ummu-khusna')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-600 shrink-0 bg-sand-200">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80" alt="Ummu Khusna" class="w-full h-full object-cover">
+                  </div>
+                  <div class="min-w-0">
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950 text-purple-600">Psikolog Fitrah</span>
+                    <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 truncate mt-0.5">Ummu Khusna, M.Psi.</h4>
+                    <p class="text-[10px] text-basalt-400 dark:text-sand-500 truncate">Konsultan Ibu & Balita</p>
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-sand-50 dark:bg-basalt-950 text-[10px] text-basalt-600 dark:text-sand-300 space-y-0.5 border border-sand-100 dark:border-basalt-800">
+                  <p><strong>Fokus:</strong> Tantrum & Sinergi Pasutri</p>
+                  <p><strong>Karya:</strong> Panduan "Tantrum Itu Indah"</p>
+                </div>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-purple-600 hover:text-white text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Lihat Profil & Karya</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 🏛️ 3. CAROUSEL DIREKTORI: LEMBAGA MITRA PKN -->
+        <!-- ============================================== -->
+        <section id="section-lembaga" class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Jaringan Lembaga Mitra
+              </h2>
+              <p class="text-[10px] text-basalt-400 dark:text-sand-500">Sekolah, kuttab, & pusat riset aliansi</p>
+            </div>
+            <span class="text-[10px] text-pine-600 dark:text-pine-400 font-semibold">Geser ➔</span>
+          </div>
+
+          <!-- Carousel Kartu Lembaga Mitra -->
+          <div class="flex gap-3 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1 snap-x">
+            
+            <!-- Lembaga 1: SKIS Cikarang -->
+            <div onclick="openProfilLembagaModal('skis')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-9 h-9 rounded-xl bg-pine-50 dark:bg-pine-950 text-pine-600 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[22px]">school</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-pine-50 dark:bg-pine-950 text-pine-600">Model Full-Day</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">SKIS (Karakter Insan Sholih)</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400">Cikarang & Bekasi • 450+ Santri</p>
+                </div>
+                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
+                  Laboratorium implementasi penuh adab & fitrah iman pada jenjang TK & Kuttab.
+                </p>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-pine-600 hover:text-white text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Profil Lembaga</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Lembaga 2: SOTAB Depok -->
+            <div onclick="openProfilLembagaModal('sotab')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-9 h-9 rounded-xl bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600">Litbang KBM</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">SOTAB (Talent & Adab Based)</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400">Depok & Bogor • 28 Sekolah</p>
+                </div>
+                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
+                  Pusat desain kurikulum RPP 1 lembar, bank simulasi kasus RPG, & bank prompt AI guru.
+                </p>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-terracotta-600 hover:text-white text-terracotta-600 dark:text-terracotta-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Profil Lembaga</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Lembaga 3: HU (Homeschooling Ummah) -->
+            <div onclick="openProfilLembagaModal('hu')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-9 h-9 rounded-xl bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[22px]">family_restroom</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600">Homeschooling</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">HU (Homeschooling Ummah)</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400">Nasional • 1.200+ Keluarga</p>
+                </div>
+                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
+                  Komunitas pendampingan kurikulum fitrah mandiri berbasis keluarga dan rumah tangga.
+                </p>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-ambercustom-600 hover:text-white text-ambercustom-600 dark:text-ambercustom-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Profil Lembaga</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Lembaga 4: Darul Atsar Research Center -->
+            <div onclick="openProfilLembagaModal('darul-atsar')" class="snap-start shrink-0 w-[240px] p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[22px]">history_edu</span>
+                  </div>
+                  <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-blue-600">Takhrij Dalil</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50">Darul Atsar Research Center</h4>
+                  <p class="text-[10px] text-basalt-400 dark:text-sand-400">Surakarta • 80+ Riset</p>
+                </div>
+                <p class="text-[10px] text-basalt-500 dark:text-sand-400 line-clamp-2">
+                  Lembaga riset sanad hadits tarbiyah nabawiyah, takhrij atsar shahabah, dan fikih adab.
+                </p>
+              </div>
+              <button class="mt-2.5 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center gap-1 transition">
+                <span>Profil Lembaga</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 📚 4. CAROUSEL PUSTAKA: BUKU RUJUKAN NABAWIYAH -->
+        <!-- ============================================== -->
+        <section id="section-pustaka" class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Pustaka Buku & Kitab Pilihan
+              </h2>
+              <p class="text-[10px] text-basalt-400 dark:text-sand-500">Buku fisik & e-book pegangan</p>
+            </div>
+            <span class="text-[10px] text-pine-600 dark:text-pine-400 font-semibold">Geser ➔</span>
+          </div>
+
+          <!-- Carousel Pustaka Buku -->
+          <div class="flex gap-3 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1 snap-x">
+            
+            <!-- Buku 1 -->
+            <div onclick="openDetailBukuModal('tiga-bahasa')" class="snap-start shrink-0 w-[220px] p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-pine-50 dark:bg-pine-950 text-pine-600">Manhaj Utama</span>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
+                  Tiga Bahasa Mendidik: Hati, Lisan, Tangan Terukur
+                </h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500">Ust. Abdul Kholiq • 240 Hal</p>
+              </div>
+              <button class="mt-2 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-pine-600 dark:text-pine-400 text-[11px] font-bold flex items-center justify-center gap-1">
+                <span>Detail Buku</span>
+                <span class="material-symbols-outlined text-[14px]">menu_book</span>
+              </button>
+            </div>
+
+            <!-- Buku 2 -->
+            <div onclick="openDetailBukuModal('tantrum')" class="snap-start shrink-0 w-[220px] p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600">SOP Krisis</span>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
+                  Tantrum Itu Indah: Redam Amarah Tanpa Bentak
+                </h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500">Ummu Khusna • 180 Hal</p>
+              </div>
+              <button class="mt-2 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-terracotta-600 dark:text-terracotta-400 text-[11px] font-bold flex items-center justify-center gap-1">
+                <span>Detail Buku</span>
+                <span class="material-symbols-outlined text-[14px]">menu_book</span>
+              </button>
+            </div>
+
+            <!-- Buku 3 -->
+            <div onclick="openDetailBukuModal('seni-bicara')" class="snap-start shrink-0 w-[220px] p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600">Komunikasi</span>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
+                  Seni Berbicara Nabawiyah: 6 Kaidah Qur'an
+                </h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500">Ust. Bayu • 210 Hal</p>
+              </div>
+              <button class="mt-2 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-ambercustom-600 dark:text-ambercustom-400 text-[11px] font-bold flex items-center justify-center gap-1">
+                <span>Detail Buku</span>
+                <span class="material-symbols-outlined text-[14px]">menu_book</span>
+              </button>
+            </div>
+
+            <!-- Buku 4 -->
+            <div onclick="openDetailBukuModal('noda-hati')" class="snap-start shrink-0 w-[220px] p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm flex flex-col justify-between cursor-pointer active:scale-98 transition group">
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600">Tazkiyah</span>
+                <h4 class="text-xs font-bold text-basalt-900 dark:text-sand-50 line-clamp-2">
+                  Menghapus Noda Hati: 9 Serial Terapi Batin
+                </h4>
+                <p class="text-[10px] text-basalt-400 dark:text-sand-500">Ust. Ahmad Ridwan • 195 Hal</p>
+              </div>
+              <button class="mt-2 w-full py-1.5 rounded-xl bg-sand-100 dark:bg-basalt-800 text-blue-600 dark:text-blue-400 text-[11px] font-bold flex items-center justify-center gap-1">
+                <span>Detail Buku</span>
+                <span class="material-symbols-outlined text-[14px]">menu_book</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 📰 5. ARTIKEL PILIHAN (FEATURED READINGS) -->
+        <!-- ============================================== -->
+        <section class="space-y-2.5">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-basalt-400">Artikel & Riset Terkini</h3>
+          
+          <div onclick="openArticleModal('tiga-bahasa')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm space-y-1 cursor-pointer hover:border-pine-500 transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold text-pine-600">Manhaj PKN • 4 Menit Baca</span>
+              <span class="text-[10px] text-basalt-400">Ust. Abdul Kholiq</span>
+            </div>
+            <h4 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Tiga Bahasa Mendidik: Hati, Lisan, dan Tangan Terukur</h4>
+            <p class="text-xs text-basalt-500 dark:text-sand-400 line-clamp-2">
+              Hirarki penerapan nabawiyah dari usia 0–7 tahun (Thufulah) hingga 10–14 tahun (Murahaqah). Menghindari kekerasan fisik sebelum taklif.
+            </p>
+          </div>
+
+          <div onclick="openArticleModal('noda-hati')" class="p-3.5 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 shadow-sm space-y-1 cursor-pointer hover:border-terracotta-500 transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold text-terracotta-600">Tazkiyatun Nafs • 6 Menit Baca</span>
+              <span class="text-[10px] text-basalt-400">Ust. Ahmad Ridwan</span>
+            </div>
+            <h4 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Membasuh Luka Pengasuhan: Pendidik atau Luka yang Mengajar?</h4>
+            <p class="text-xs text-basalt-500 dark:text-sand-400 line-clamp-2">
+              Muhasabah bejana batin orang tua agar tidak menumpahkan amarah masa kecil yang belum selesai kepada anak tercinta.
+            </p>
+          </div>
+        </section>
+
       </div>
 
       <!-- ========================================== -->
@@ -742,11 +1248,358 @@
       </div>
     </div>
 
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: PROFIL TOKOH ASATIDZAH -->
+    <!-- ============================================================== -->
+    <div id="modal-profil-tokoh" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-pine-600 text-[22px]">person_pin</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50" id="tokoh-modal-title">Profil Tokoh Asatidzah</h3>
+          </div>
+          <button onclick="closeModal('modal-profil-tokoh')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3.5 text-xs" id="tokoh-modal-content">
+          <!-- Diisi dinamis lewat JS -->
+        </div>
+
+        <button onclick="closeModal('modal-profil-tokoh')" class="w-full py-3 rounded-xl bg-pine-600 text-white font-bold text-xs shadow">
+          Tutup Profil
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: PROFIL LEMBAGA MITRA -->
+    <!-- ============================================================== -->
+    <div id="modal-profil-lembaga" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-purple-600 text-[22px]">corporate_fare</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50" id="lembaga-modal-title">Profil Lembaga Mitra</h3>
+          </div>
+          <button onclick="closeModal('modal-profil-lembaga')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3.5 text-xs" id="lembaga-modal-content">
+          <!-- Diisi dinamis lewat JS -->
+        </div>
+
+        <button onclick="closeModal('modal-profil-lembaga')" class="w-full py-3 rounded-xl bg-purple-600 text-white font-bold text-xs shadow">
+          Tutup Lembaga
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: GENERATOR RPP 1 LEMBAR -->
+    <!-- ============================================================== -->
+    <div id="modal-rpp" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-pine-600 text-[22px]">edit_document</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Generator RPP Adab 1 Lembar</h3>
+          </div>
+          <button onclick="closeModal('modal-rpp')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <div class="p-3 rounded-2xl bg-pine-50 dark:bg-pine-950/60 border border-pine-200 dark:border-pine-900 space-y-1">
+            <span class="font-bold text-pine-700 dark:text-pine-300 text-[11px] uppercase tracking-wider">Format Standar Litbang SOTAB:</span>
+            <p class="text-basalt-700 dark:text-sand-200">Menyusun respon KBM adab mikro & terukur per situasi nyata di kelas atau di rumah.</p>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="font-bold text-basalt-800 dark:text-sand-200">Fase Usia Target:</label>
+            <select class="w-full p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 text-xs">
+              <option>Fase Tamyiz (7–10 Tahun) • Usia 8 Th Zaid</option>
+              <option>Fase Thufulah (0–7 Tahun)</option>
+              <option>Fase Murahaqah (10–14 Tahun)</option>
+            </select>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="font-bold text-basalt-800 dark:text-sand-200">Situasi Lapangan / Masalah Adab:</label>
+            <input type="text" value="Anak mogok shalat maghrib karena bermain rakitan lego" 
+              class="w-full p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 text-xs">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="font-bold text-basalt-800 dark:text-sand-200">Fokus Indikator Karakter (19 Butir):</label>
+            <div class="p-2 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 text-[11px] text-basalt-700 dark:text-sand-300">
+              ✓ Butir 04: Kepatuhan adab tanpa amarah (Kazhmul Ghaizh)<br>
+              ✓ Butir 08: Penghormatan waktu ibadah syar'i
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="font-bold text-basalt-800 dark:text-sand-200">3 Langkah Intervensi:</label>
+            <div class="space-y-1 text-[11px] text-basalt-600 dark:text-sand-300">
+              <p>1. <strong>Dekati raga:</strong> Usap kepala, sentuhan rahmat &lt; 1 m.</p>
+              <p>2. <strong>Validasi minat:</strong> "Bagus sekali rakitanmu, simpan dulu 15 menit ya."</p>
+              <p>3. <strong>Tautkan tauhid:</strong> "Allah mencintai ksatria yang shalat tepat waktu."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <button onclick="alert('RPP 1 Lembar berhasil dibuat dan disimpan ke Brankas Catatan Pribadi.'); closeModal('modal-rpp');" class="flex-1 py-3 rounded-xl bg-pine-600 text-white font-bold text-xs shadow">
+            Simpan RPP 1 Lembar
+          </button>
+          <button onclick="alert('Mencetak PDF RPP 1 Lembar...');" class="px-4 py-3 rounded-xl bg-sand-100 dark:bg-basalt-800 text-basalt-700 dark:text-sand-100 font-bold text-xs">
+            Cetak PDF
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: MODUL ADAB HARIAN -->
+    <!-- ============================================================== -->
+    <div id="modal-modul" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-blue-600 text-[22px]">menu_book</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Modul Adab Harian Mikro</h3>
+          </div>
+          <button onclick="closeModal('modal-modul')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <div class="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 space-y-1">
+            <span class="font-bold text-blue-700 dark:text-blue-300 text-[11px] uppercase tracking-wider">Modul Sedang Berjalan:</span>
+            <h4 class="font-bold text-basalt-900 dark:text-sand-100 text-xs">Membangun Kedekatan Kalbu Sebelum Koreksi (Bab 3 dari 5)</h4>
+            <div class="w-full bg-sand-200 dark:bg-basalt-800 h-1.5 rounded-full overflow-hidden mt-1.5">
+              <div class="bg-blue-600 h-full rounded-full" style="width: 65%;"></div>
+            </div>
+            <span class="text-[10px] text-blue-600 dark:text-blue-400 font-bold block pt-0.5">Progress: 65% • Tersisa 8 Menit</span>
+          </div>
+
+          <div class="space-y-2">
+            <h5 class="font-bold text-basalt-800 dark:text-sand-200">Daftar Bab:</h5>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800 flex justify-between items-center">
+              <span>Bab 1: Hakikat Hubungan Sebelum Aturan</span>
+              <span class="text-pine-600 font-bold text-[10px]">Selesai ✓</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800 flex justify-between items-center">
+              <span>Bab 2: Anatomi Amigdala Anak Tamyiz</span>
+              <span class="text-pine-600 font-bold text-[10px]">Selesai ✓</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 flex justify-between items-center">
+              <span class="font-bold text-blue-700 dark:text-blue-300">Bab 3: Teknik Resonansi Suara Rendah</span>
+              <span class="text-blue-600 font-bold text-[10px]">Sedang Aktif ●</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800 flex justify-between items-center opacity-60">
+              <span>Bab 4: SOP Dialog Pasca Badai Marah</span>
+              <span class="text-basalt-400 text-[10px]">Terkunci 🔒</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800 flex justify-between items-center opacity-60">
+              <span>Bab 5: Ikrar Ketaatan Tanpa Rasa Terpaksa</span>
+              <span class="text-basalt-400 text-[10px]">Terkunci 🔒</span>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="alert('Melanjutkan pemutaran audio modul Bab 3...'); closeModal('modal-modul');" class="w-full py-3 rounded-xl bg-blue-600 text-white font-bold text-xs shadow flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">play_circle</span>
+          Lanjutkan Bab 3 Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: DOA PENENANG HATI & AMARAH -->
+    <!-- ============================================================== -->
+    <div id="modal-doa" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-ambercustom-600 text-[22px]">volunteer_activism</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Kumpulan Doa Penenang Hati</h3>
+          </div>
+          <button onclick="closeModal('modal-doa')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3.5 text-xs">
+          <!-- Doa 1 -->
+          <div class="p-3.5 rounded-2xl bg-ambercustom-50/50 dark:bg-ambercustom-950/40 border border-ambercustom-200 dark:border-ambercustom-900 space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-[10px] font-bold text-ambercustom-700 dark:text-ambercustom-300 uppercase">Doa Kelembutan Hati Keluarga</span>
+              <span class="text-[9px] bg-white dark:bg-basalt-800 px-2 py-0.5 rounded text-basalt-500">QS. Al-Furqan: 74</span>
+            </div>
+            <p class="font-arabic text-base text-right leading-loose text-basalt-900 dark:text-sand-50">
+              رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+            </p>
+            <p class="text-[11px] text-basalt-600 dark:text-sand-300 italic">
+              "Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa."
+            </p>
+          </div>
+
+          <!-- Doa 2 -->
+          <div class="p-3.5 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-[10px] font-bold text-pine-600 uppercase">Doa Meredakan Gejolak Marah</span>
+              <span class="text-[9px] bg-white dark:bg-basalt-800 px-2 py-0.5 rounded text-basalt-500">HR. Bukhari & Muslim</span>
+            </div>
+            <p class="font-arabic text-base text-right leading-loose text-basalt-900 dark:text-sand-50">
+              أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ
+            </p>
+            <p class="text-[11px] text-basalt-600 dark:text-sand-300 italic">
+              "Aku berlindung kepada Allah dari godaan setan yang terkutuk."
+            </p>
+            <p class="text-[10px] text-basalt-400">Sunnah: Ucapkan saat amarah mulai memuncak, lalu ubah posisi duduk/berwudhu.</p>
+          </div>
+        </div>
+
+        <button onclick="alert('Doa disematkan ke daftar dzikir harian Anda.'); closeModal('modal-doa');" class="w-full py-3 rounded-xl bg-ambercustom-600 text-white font-bold text-xs shadow">
+          Sematkan ke Amalan Harian
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: TAFSIR BAKAT 40 (TB-40) -->
+    <!-- ============================================================== -->
+    <div id="modal-tb40" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-terracotta-600 text-[22px]">psychology</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">Cermin Bakat Fitrah (TB-40)</h3>
+          </div>
+          <button onclick="closeModal('modal-tb40')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <p class="text-basalt-600 dark:text-sand-300 leading-relaxed">
+            TB-40 adalah pemetaan 40 potensi fitrah bawaan (syakilah) yang terbagi dalam 6 rumpun kenabian:
+          </p>
+
+          <div class="grid grid-cols-2 gap-2 text-[11px]">
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-terracotta-600 block">1. Al-Qiyadah</span>
+              <span class="text-basalt-500 dark:text-sand-400">Kepemimpinan & inisiatif</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-pine-600 block">2. Al-Fikr</span>
+              <span class="text-basalt-500 dark:text-sand-400">Gaya nalar & analisa</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-ambercustom-600 block">3. Al-Idarah</span>
+              <span class="text-basalt-500 dark:text-sand-400">Keteraturan & kedisiplinan</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-blue-600 block">4. Al-Ijtima'i</span>
+              <span class="text-basalt-500 dark:text-sand-400">Empati & hubungan sosial</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-purple-600 block">5. Ash-Shina'ah</span>
+              <span class="text-basalt-500 dark:text-sand-400">Kriya, fisik & ketekunan</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-sand-50 dark:bg-basalt-950 border border-sand-100 dark:border-basalt-800">
+              <span class="font-bold text-emerald-600 block">6. Al-Hifzh</span>
+              <span class="text-basalt-500 dark:text-sand-400">Daya simpan & penjagaan</span>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-sand-100/60 dark:bg-basalt-950 text-[11px] text-basalt-600 dark:text-sand-300">
+            <strong>Catatan Manhaj:</strong> Bakat dominan anak adalah sarana amal sholih. Jangan memaksakan anak menjadi seragam dengan standar tunggal.
+          </div>
+        </div>
+
+        <button onclick="switchTab('profil'); closeModal('modal-tb40');" class="w-full py-3 rounded-xl bg-terracotta-600 text-white font-bold text-xs shadow">
+          Lihat Profil TB-40 Ananda Zaid
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: LATIHAN HENING QALBU (3 MENIT TIMER) -->
+    <!-- ============================================================== -->
+    <div id="modal-hening" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-6 space-y-5 shadow-2xl text-center">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold text-ambercustom-600 uppercase tracking-wide">SOP Kazhmul Ghaizh</span>
+          <button onclick="closeModal('modal-hening')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="py-2 space-y-2">
+          <div class="w-20 h-20 rounded-full bg-ambercustom-50 dark:bg-ambercustom-950 text-ambercustom-600 flex items-center justify-center mx-auto shadow-inner text-2xl font-bold font-serif" id="hening-timer">
+            03:00
+          </div>
+          <h3 class="font-serif font-bold text-base text-basalt-900 dark:text-sand-50">Hening Sebelum Menegur</h3>
+          <p class="text-xs text-basalt-500 dark:text-sand-400 px-4">
+            Tarik nafas 4 detik, tahan 4 detik dalam zikir istighfar, hembuskan perlahan 6 detik. Tenangkan detak jantung Anda sebelum berbicara.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <button id="hening-btn" onclick="toggleHeningTimer()" class="w-full py-3.5 rounded-2xl bg-ambercustom-600 text-white font-bold text-xs shadow-md">
+            Mulai 3 Menit Hening
+          </button>
+          <button onclick="closeModal('modal-hening')" class="text-xs text-basalt-400 hover:text-basalt-600 block w-full py-1">
+            Selesai & Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MODAL POPUP: INDEKS 6 PILAR FITRAH DETAIL -->
+    <!-- ============================================================== -->
+    <div id="modal-pilar" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
+      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-pine-600 text-[22px]">account_tree</span>
+            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">6 Pilar Fitrah Nabawiyah</h3>
+          </div>
+          <button onclick="closeModal('modal-pilar')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+          <div class="p-3 rounded-2xl bg-pine-50 dark:bg-pine-950 border border-pine-200 dark:border-pine-900 space-y-1">
+            <span class="font-bold text-pine-700 dark:text-pine-300">1. Fitrah Keimanan (Tauhid & Rububiyyah)</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Keterikatan kalbu dengan Allah Ta'ala tanpa paksaan sejak usia dini (QS. Ar-Rum: 30).</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+            <span class="font-bold text-basalt-800 dark:text-sand-100">2. Fitrah Belajar & Nalar</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Memelihara rasa ingin tahu, kecintaan pada kebenaran & adab sebelum ilmu.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+            <span class="font-bold text-basalt-800 dark:text-sand-100">3. Fitrah Bakat & Kepemimpinan</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Syakilah TB-40, peran khalifah fil ardh, dan spesialisasi amal sholih.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+            <span class="font-bold text-basalt-800 dark:text-sand-100">4. Fitrah Jasmani & Ketahanan</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Thaharah, gizi halal & thayyib, serta kebugaran fisik memikul beban ibadah.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+            <span class="font-bold text-basalt-800 dark:text-sand-100">5. Fitrah Perkembangan Usia</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Thufulah (0–7), Tamyiz (7–10), Murahaqah (10–14), hingga Baligh penuh taklif.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+            <span class="font-bold text-basalt-800 dark:text-sand-100">6. Fitrah Seksualitas & Peran Gender</span>
+            <p class="text-basalt-600 dark:text-sand-300 text-[11px]">Kesiapan qawwamah untuk anak laki-laki & keibuan (ummu madrasah) untuk perempuan.</p>
+          </div>
+        </div>
+
+        <button onclick="closeModal('modal-pilar')" class="w-full py-3 rounded-xl bg-pine-600 text-white font-bold text-xs shadow">
+          Tutup Panduan Pilar
+        </button>
+      </div>
+    </div>
+
   </div>
 
-  <!-- SCRIPT INTERAKSI -->
+  <!-- SCRIPT INTERAKSI LENGKAP -->
   <script>
-    // Theme Switcher Logic
+    // 1. THEME SWITCHER
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const htmlElement = document.documentElement;
@@ -761,7 +1614,7 @@
       }
     });
 
-    // Tab Navigation Logic
+    // 2. TAB ROUTER (5 TABS JAKOB'S LAW)
     const tabs = ['beranda', 'event', 'materi', 'curhat', 'profil'];
     function switchTab(targetTab) {
       tabs.forEach(tab => {
@@ -777,16 +1630,190 @@
           btn.classList.add('text-basalt-400', 'dark:text-sand-400');
         }
       });
-      // Scroll to top
       document.getElementById('content-container').scrollTop = 0;
     }
 
-    // Modal Control
+    // 3. DYNAMIC ROTATING TICKER FOR SEARCH BAR
+    const tickerQuestions = [
+      "Bagaimana respon saat anak 8 th menolak shalat?",
+      "SOP 10 detik redam amarah sebelum menegur anak...",
+      "Arti syakilah dalam QS. Al-Isra' ayat 84?",
+      "Doa menundukkan amarah & melembutkan hati anak...",
+      "Tafsir bakat Al-Qiyadah pada usia tamyiz...",
+      "Cari panduan adab, dalil hadits shahih, atau tips..."
+    ];
+    let tickerIndex = 0;
+    const berandaSearchInput = document.getElementById('beranda-search');
+    if (berandaSearchInput) {
+      setInterval(() => {
+        tickerIndex = (tickerIndex + 1) % tickerQuestions.length;
+        berandaSearchInput.setAttribute('placeholder', tickerQuestions[tickerIndex]);
+      }, 3500);
+    }
+
+    // 4. MODALS CONTROLLER
     function openP3kModal() { document.getElementById('modal-p3k').classList.remove('hidden'); }
     function openCurhatModal() { document.getElementById('modal-curhat').classList.remove('hidden'); }
+    function openRppModal() { document.getElementById('modal-rpp').classList.remove('hidden'); }
+    function openModulModal() { document.getElementById('modal-modul').classList.remove('hidden'); }
+    function openDoaModal() { document.getElementById('modal-doa').classList.remove('hidden'); }
+    function openTb40Modal() { document.getElementById('modal-tb40').classList.remove('hidden'); }
+    function openHeningModal() { document.getElementById('modal-hening').classList.remove('hidden'); }
+    function openPilarModal() { document.getElementById('modal-pilar').classList.remove('hidden'); }
     function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
 
-    // Task Checklist Progress Logic
+    function openPustakaModal() {
+      switchTab('materi');
+      scrollToWikiSection('section-pustaka');
+    }
+    function openKemitraanModal() {
+      switchTab('materi');
+      scrollToWikiSection('section-lembaga');
+    }
+    function openObservasiModal() {
+      alert('Membuka Lembar Observasi 19 Butir Adab SOTAB: Catat respon spontan Ananda Zaid hari ini.');
+    }
+    function openSerialModal() {
+      alert('Membuka Latihan Rehearsal Adab: Serial Zaid Episode 3 (Pilihan Respon: Muthma\'innah vs Ammarah)');
+    }
+    function openGlosariumModal() {
+      alert('Glosarium Syakilah: 42 Istilah Kunci Manhaj Karakter Nabawiyah (Syakilah, Kazhmul Ghaizh, Tamyiz, Murahaqah, Nafs Muthma\'innah)');
+    }
+    function openMediaModal() {
+      alert('Pustaka Media: 56 Artikel Riset, 32 Rekaman Audio Daurah, 18 RPP 1 Lembar, dan 14 Video Sirah.');
+    }
+    function openArticleModal(slug) {
+      alert('Membaca Artikel Lengkap: ' + slug);
+    }
+    function openDetailBukuModal(slug) {
+      alert('Detail Buku & Pemesanan Pustaka: ' + slug);
+    }
+
+    function scrollToWikiSection(sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 5. DATA DAN DETAIL PROFIL TOKOH
+    const dataTokoh = {
+      'abdul-kholiq': {
+        name: 'Ust. Abdul Kholiq, Lc., M.P.I.',
+        title: 'Dewan Pembina PKN & Pengasuh SKIS',
+        fokus: 'Manhaj Tarbiyah Nabawiyah, Fitrah Iman, & Pendidikan Kuttab',
+        karya: 'Buku "Tiga Bahasa Mendidik (Hati, Lisan, Tangan Terukur)", Pengasuh 12 Pesantren & Kuttab',
+        kutipan: '"Koneksi sebelum koreksi. Penuhi bejana cinta anak sebelum menegakkan aturan ibadah."',
+        audio: 'Daurah Fitrah Iman (8 Sesi Audio)',
+        img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80'
+      },
+      'bayu': {
+        name: 'Ust. Bayu, S.Pd., M.Ed.',
+        title: 'Kepala Litbang SOTAB & Kurikulum Karakter',
+        fokus: 'Living Rehearsal KBM, 19 Indikator Observasi Adab, Simulasi Kasus Nyata',
+        karya: 'RPP Adab 1 Lembar, Modul Simulasi RPG Zaid, Bank Prompt AI Guru',
+        kutipan: '"Adab tidak diajarkan dengan hafalan teks, melainkan dilatihkan lewat dialektika respon batin."',
+        audio: 'Workshop KBM Berbasis Syakilah (6 Sesi)',
+        img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80'
+      },
+      'ahmad-ridwan': {
+        name: 'Ust. Ahmad Ridwan, M.Ag.',
+        title: 'Pakar Tazkiyatun Nafs & Syakilah TB-40',
+        fokus: 'Pemulihan Luka Pengasuhan, Terapi Batin Orang Tua, Tafsir Bakat 40',
+        karya: '9 Serial "Menghapus Noda Hati", Instrumen Matriks 6 Rumpun Bakat',
+        kutipan: '"Orang tua yang belum membasuh luka masa lalunya akan mudah menumpahkan amarah pada anaknya."',
+        audio: 'Serial Tazkiyah Hati Pendidik (9 Audio Eksklusif)',
+        img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80'
+      },
+      'ummu-khusna': {
+        name: 'Ummu Khusna, M.Psi.',
+        title: 'Psikolog Anak Fitrah & Konsultan Keibuan',
+        fokus: 'Fase Balita (Thufulah), Penanganan Tantrum Syar\'i, Sinergi Ayah Bunda',
+        karya: 'Buku "Tantrum Itu Indah", SOP Komunikasi 10 Detik Ayah-Ibu',
+        kutipan: '"Tantrum anak adalah panggilan jiwa untuk didekap, bukan ancaman yang harus ditaklukkan dengan bentakan."',
+        audio: 'Sesi Pendampingan Ibu Tangguh (5 Rekaman)',
+        img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80'
+      }
+    };
+
+    function openProfilTokohModal(key) {
+      const t = dataTokoh[key];
+      if (!t) return;
+      document.getElementById('tokoh-modal-title').innerText = t.name;
+      document.getElementById('tokoh-modal-content').innerHTML = `
+        <div class="flex items-center gap-3">
+          <img src="${t.img}" class="w-16 h-16 rounded-2xl object-cover border-2 border-pine-600 shadow">
+          <div>
+            <h4 class="font-bold text-sm text-basalt-900 dark:text-sand-50">${t.name}</h4>
+            <p class="text-[11px] text-pine-600 dark:text-pine-400 font-semibold">${t.title}</p>
+          </div>
+        </div>
+        <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1.5">
+          <p><strong>Fokus Keahlian:</strong> ${t.fokus}</p>
+          <p><strong>Karya & Kontribusi:</strong> ${t.karya}</p>
+          <p><strong>Arsip Audio:</strong> ${t.audio}</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pine-50 dark:bg-pine-950/60 border border-pine-200 dark:border-pine-900 italic text-pine-800 dark:text-pine-200">
+          ${t.kutipan}
+        </div>
+      `;
+      document.getElementById('modal-profil-tokoh').classList.remove('hidden');
+    }
+
+    // 6. DATA DAN DETAIL PROFIL LEMBAGA
+    const dataLembaga = {
+      'skis': {
+        name: 'SKIS (Sekolah Karakter Insan Sholih)',
+        tag: 'Sekolah Model Full-Day Adab',
+        lokasi: 'Cikarang & Bekasi, Jawa Barat',
+        profil: 'Lembaga percontohan pendidikan adab berbasis fitrah kenabian untuk jenjang TK & Kuttab. Memadukan tahsin al-qur\'an, hafalan hadits adab, dan pembiasaan akhlak harian tanpa pemaksaan nilai akademis kering.',
+        program: 'Kuttab Full-Day, Daurah Guru Nasional, Magang Pendidik Adab',
+        kontak: 'admin@skis-cikarang.sch.id'
+      },
+      'sotab': {
+        name: 'SOTAB (School of Talent and Adab Based)',
+        tag: 'Pusat Litbang Kurikulum & Toolkit Guru',
+        lokasi: 'Depok & Bogor, Jawa Barat',
+        profil: 'Aliansi riset kurikulum yang merancang RPP 1 Lembar, rubrik 19 butir observasi karakter, dan bank simulasi living rehearsal untuk 28 sekolah jejaring di Indonesia.',
+        program: 'Inkubasi Kurikulum RPP 1 Lembar, Pelatihan Living Rehearsal KBM, Sertifikasi Guru Fitrah',
+        kontak: 'litbang@sotab.org'
+      },
+      'hu': {
+        name: 'HU (Homeschooling Ummah)',
+        tag: 'Jaringan Pendidikan Berbasis Rumah Tangga',
+        lokasi: 'Nasional (Hybrid Luring & Daring)',
+        profil: 'Wadah silaturahmi dan pendampingan 1.200+ keluarga yang memilih mendidik anak secara mandiri di rumah dengan kurikulum fitrah nabawiyah.',
+        program: 'Mentoring Ayah Qawwamun, Modul Belajar Rumah, Temu Akbar Tahunan',
+        kontak: 'halo@homeschoolingummah.id'
+      },
+      'darul-atsar': {
+        name: 'Darul Atsar Research Center',
+        tag: 'Pusat Takhrij & Studi Manhaj Tarbiyah',
+        lokasi: 'Surakarta, Jawa Tengah',
+        profil: 'Lembaga telaah ilmiah sanad hadits-hadits pendidikan, takhrij atsar para shahabah radhiyallahu \'anhum, dan verifikasi dalil syar\'i dalam kurikulum PKN.',
+        program: 'Penerbitan Buku Manhaj, Takhrij Dalil On-Demand, Bahtsul Masail Parenting',
+        kontak: 'riset@darulatsar.or.id'
+      }
+    };
+
+    function openProfilLembagaModal(key) {
+      const l = dataLembaga[key];
+      if (!l) return;
+      document.getElementById('lembaga-modal-title').innerText = l.name;
+      document.getElementById('lembaga-modal-content').innerHTML = `
+        <div class="space-y-1">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-50 dark:bg-purple-950 text-purple-600">${l.tag}</span>
+          <h4 class="font-bold text-sm text-basalt-900 dark:text-sand-50">${l.name}</h4>
+          <p class="text-[11px] text-basalt-400">📍 ${l.lokasi}</p>
+        </div>
+        <p class="text-basalt-600 dark:text-sand-300 leading-relaxed">${l.profil}</p>
+        <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
+          <p><strong>Program Kemitraan:</strong> ${l.program}</p>
+          <p><strong>Kontak Sinergi:</strong> ${l.kontak}</p>
+        </div>
+      `;
+      document.getElementById('modal-profil-lembaga').classList.remove('hidden');
+    }
+
+    // 7. TASK CHECKLIST PROGRESS
     function updateTaskProgress() {
       const checkboxes = document.querySelectorAll('.task-checkbox');
       let checkedCount = 0;
@@ -794,7 +1821,7 @@
       document.getElementById('task-progress-badge').innerText = `${checkedCount} dari ${checkboxes.length} Selesai`;
     }
 
-    // PTT Recording Demo
+    // 8. PTT RECORDING DEMO
     let isRecording = false;
     function startRecording() {
       isRecording = true;
@@ -810,15 +1837,38 @@
       document.getElementById('ptt-label').innerText = 'Tahan untuk Bicara';
       document.getElementById('waveform-box').classList.add('opacity-30');
       document.getElementById('waveform-box').classList.remove('opacity-100');
-      alert('Transkrip teks diproses secara lokal. File suara fisik langsung dihancurkan sesuai standar privasi syar\'i.');
+      alert('Transkrip teks diproses secara lokal. File suara fisik langsung dihancurkan seketika sesuai standar privasi syar\'i.');
       closeModal('modal-curhat');
     }
 
-    function openSerialModal() {
-      alert('Membuka Latihan Rehearsal Adab: Serial Zaid Episode 4 (Pilihan Respon: Muthma\'innah vs Ammarah)');
-    }
-    function openDoaModal() {
-      alert('Membuka Doa Kelembutan Hati Anak (QS. Al-Furqan: 74) dengan Syarah & Takhrij Dalil');
+    // 9. TIMER HENING QALBU (3 MENIT)
+    let heningTimerInterval = null;
+    let heningSecondsLeft = 180;
+    function toggleHeningTimer() {
+      const btn = document.getElementById('hening-btn');
+      const timerDisplay = document.getElementById('hening-timer');
+      if (heningTimerInterval) {
+        clearInterval(heningTimerInterval);
+        heningTimerInterval = null;
+        btn.innerText = 'Lanjutkan Timer';
+      } else {
+        btn.innerText = 'Jeda Timer';
+        heningTimerInterval = setInterval(() => {
+          heningSecondsLeft--;
+          if (heningSecondsLeft <= 0) {
+            clearInterval(heningTimerInterval);
+            heningTimerInterval = null;
+            heningSecondsLeft = 180;
+            timerDisplay.innerText = '03:00';
+            btn.innerText = 'Mulai 3 Menit Hening';
+            alert('Alhamdulillah 3 menit hening selesai. Hati Anda kini lebih lapang untuk mendidik anak.');
+            return;
+          }
+          const m = String(Math.floor(heningSecondsLeft / 60)).padStart(2, '0');
+          const s = String(heningSecondsLeft % 60).padStart(2, '0');
+          timerDisplay.innerText = `${m}:${s}`;
+        }, 1000);
+      }
     }
   </script>
 </body>

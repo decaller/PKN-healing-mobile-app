@@ -148,16 +148,56 @@ Beranda memadukan ketegasan **Goal-Directed Actions** (untuk kebutuhan mendesak 
 | :--- | :--- | :--- | :--- |
 | **Fokus Homescreen** | Menampilkan 12 modul dalam 6 widget berbeda tanpa prioritas yang jelas. | **Hirarki Terpadu:** Goal Cepat ➔ Amalan Harian ➔ Highlight Event ➔ Carousel Narasi ➔ Grid Utilitas. | Menghilangkan kebingungan visual seraya tetap memberi panggung proporsional bagi seluruh 12 modul. |
 | **Promosi Event** | Tercecer sebagai kartu biasa di antara bento grid. | **Dedicated Highlight Banner:** Kartu H-countdown dengan visibilitas tinggi di tengah Beranda. | Konversi pendaftaran daurah dan kehadiran majelis meningkat drastis. |
-| **Modul Pelengkap** | Menumpuk tanpa struktur pola yang harmonis. | **Harmoni Carousel + Grid:** Carousel untuk narasi (Buku & Serial Zaid), Grid 2x2 untuk utilitas (TB-40, Mitra, Tokoh). | Pengguna dapat menikmati konten santai secara horizontal dan mengakses alat teknis via grid cepat. |
+| **Carousel Beranda** | Menampilkan khazanah bacaan pasif acak. | **Rekomendasi Aktivitas (Continue & In-Progress):** Modul Lanjutan (65%), Serial Zaid (Milestone 3/4), Latihan Hening Qalbu (3 mnt), Observasi TB-40. | Memandu aksi harian nyata (*momentum learning*) tanpa beban kognitif berlebih. |
+| **Grid Beranda Bawah** | Terbatas 4 kartu bercampur direktori tokoh. | **6 Utilitas & Instrumen Praktis:** Generator RPP 1 Lembar, Modul Harian, Doa Penenang, Tafsir Bakat 40, Pustaka Buku, Kemitraan. | Seluruh fasilitas siap pakai di lapangan terkumpul rapi di Beranda. |
+| **Tab Materi / Wiki** | Direktori statis tanpa visualisasi tokoh/lembaga. | **Bento Grid & Multi-Carousel:** Bento 6 Pilar + Glosarium + Media, ditambah Carousel Tokoh Asatidzah & Lembaga Mitra. | Eksplorasi ekosistem PKN menjadi hidup, interaktif, dan mudah dijelajahi. |
 | **Waktu Menemukan Solusi** | > 30 detik (harus mencari di antara tumpukan kartu). | **< 10 detik** (P3K Tantrum & Curhat diletakkan di slot aksi tercepat teratas). | Memenuhi janji inti produk untuk krisis pengasuhan nyata di lapangan. |
 | **Label Navigasi Bawah** | Terancam dipindah ke label puitis/asing yang membingungkan. | Menggunakan 5 label standar industri: `Beranda, Event, Materi, Curhat, Profil`. | Mematuhi *Jakob's Law*; pengguna langsung paham tanpa perlu petunjuk manual. |
 | **Status Tangki Cinta** | Menampilkan persentase angka mati `Zaid (95%)`. | Menampilkan status kualitatif reflektif *"Penuh Kehangatan"*. | Mencegah kecemasan dan rasa bersalah semu (*anti-spiritual guilt*). |
 
 ---
 
-## 6. Kesimpulan & Status Persetujuan
+## 6. Spesifikasi Pembaruan Desain Preview (Revisi Terkini)
 
-Arsitektur **Goal-Directed UX** ini resmi disepakati sebagai acuan antarmuka utama PKN Mobile:
+Berdasarkan iterasi terbaru, struktur antarmuka disempurnakan dengan pemisahan peran yang tegas antara **Launchpad Harian (Beranda)** dan **Pusat Khazanah & Direktori (Wiki)**:
+
+### A. Beranda (Home Screen)
+1. **Bilah Pencarian Interaktif:** Dilengkapi *dynamic rotating ticker questions* (contoh: *"Bagaimana respon saat anak 8 th menolak shalat?"*, *"SOP 10 detik redam amarah..."*, *"Tafsir bakat Al-Qiyadah pada usia tamyiz..."*) yang berputar otomatis setiap 3.5 detik untuk memicu dorongan informasi (*information scent*).
+2. **Goal 1 (P3K < 10 Detik):** Akses instan kartu *P3K Tantrum* & *Curhat AI*.
+3. **Goal 2 (Amalan Hari Ini):** 3 Checklist interaktif amalan harian dengan counter dinamis.
+4. **Highlight Majelis H-3:** Banner promosi acara terdekat dengan visibilitas tinggi.
+5. **Rekomendasi Aktivitas (Horizontal Carousel):**
+   - *Lanjutkan Modul Adab:* Bab 3/5 (Progress bar 65%, sisa 8 menit).
+   - *Serial Zaid Rehearsal:* Episode 3 dengan 4-step milestone tracker (Ep 1 ✓, Ep 2 ✓, Ep 3 ●, Ep 4 🔒).
+   - *Latihan Hening Qalbu:* Latihan pernapasan 3 menit & resonansi suara rendah sebelum menegur anak.
+   - *Observasi Bakat TB-40:* Pencatatan respon spontan hari ini.
+6. **Instrumen & Utilitas Praktis (Grid 2x3 - 6 Tombol):**
+   - 📄 **Generator RPP:** Rencana aksi KBM adab 1 lembar berbasis situasi nyata.
+   - 📖 **Modul Harian:** Kurikulum mikro bertahap per fase usia anak.
+   - 🤲 **Doa Penenang:** Takhrij dalil doa shahih & wirid penyejuk amarah.
+   - 🧠 **Tafsir Bakat 40:** Peta fitrah 6 rumpun bakat kenabian.
+   - 📚 **Pustaka Buku:** Katalog buku fisik & literatur parenting nabawi.
+   - 🏛️ **Kemitraan:** Program daurah, coaching, dan visitasi sekolah/keluarga.
+
+### B. Tab Materi / Wiki (Pusat Khazanah & Direktori)
+Profil tokoh asatidzah dan profil lembaga mitra resmi dipusatkan di sini untuk memisahkan antara *daily action* di Beranda dengan *deep discovery* di Wiki:
+1. **Bento Box Grid Khazanah:**
+   - *Hero Bento (Col-span 2):* Indeks 6 Pilar Fitrah Nabawiyah (110 rujukan terverifikasi).
+   - *Medium Bento 1:* Glosarium Istilah Syakilah (42 istilah kunci syar'i).
+   - *Medium Bento 2:* Multi-Format Media Riset (56 artikel, 32 audio daurah, 18 RPP, 14 video).
+2. **Carousel Tokoh Asatidzah & Pakar Pembina:**
+   - Profil interaktif: *Ust. Abdul Kholiq, Lc., M.P.I.*, *Ust. Bayu, S.Pd., M.Ed.*, *Ust. Ahmad Ridwan, M.Ag.*, dan *Ummu Khusna, M.Psi.* lengkap dengan foto, karya, arsip kajian, dan popup modal bio detail.
+3. **Carousel Jaringan Lembaga Mitra:**
+   - Direktori lembaga aliansi: *SKIS (Sekolah Karakter Insan Sholih)*, *SOTAB (Talent & Adab Based)*, *HU (Homeschooling Ummah)*, dan *Darul Atsar Research Center* lengkap dengan program sinergi dan kontak kemitraan.
+4. **Carousel Pustaka Buku Rujukan:**
+   - Buku-buku pegangan: *Tiga Bahasa Mendidik*, *Tantrum Itu Indah*, *Seni Berbicara Nabawiyah*, dan *Menghapus Noda Hati*.
+5. **Artikel & Riset Terkini:** Pembahasan mendalam manhaj PKN & Tazkiyatun Nafs.
+
+---
+
+## 7. Kesimpulan & Status Persetujuan
+
+Arsitektur **Goal-Directed UX + Bento & Carousel Discovery** ini resmi disepakati sebagai acuan antarmuka utama PKN Mobile:
 1. Menjaga semua fasilitas tetap pada tempatnya yang stabil dan konsisten.
-2. Membebaskan pengguna dari kebingungan navigasi.
+2. Membebaskan pengguna dari kebingungan navigasi (*zero cognitive drift*).
 3. Menjamin aplikasi benar-benar menjadi **alat penenteram jiwa saku (*pocket calming companion*)**, bukan sumber kepenatan digital baru.
