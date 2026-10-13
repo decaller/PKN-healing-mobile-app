@@ -165,7 +165,7 @@ Berdasarkan iterasi terbaru, struktur antarmuka disempurnakan dengan pemisahan p
 1. **Bilah Pencarian Interaktif:** Dilengkapi *dynamic rotating ticker questions* (contoh: *"Bagaimana respon saat anak 8 th menolak shalat?"*, *"SOP 10 detik redam amarah..."*, *"Tafsir bakat Al-Qiyadah pada usia tamyiz..."*) yang berputar otomatis setiap 3.5 detik untuk memicu dorongan informasi (*information scent*).
 2. **Goal 1 (P3K < 10 Detik):** Akses instan kartu *P3K Tantrum* & *Curhat AI*.
 3. **Goal 2 (Amalan Hari Ini):** 3 Checklist interaktif amalan harian dengan counter dinamis.
-4. **Highlight Majelis H-3:** Banner promosi acara terdekat dengan visibilitas tinggi.
+4. **Highlight Agenda Majelis Terdekat (Vertikal Atas-Bawah):** Maksimal 2 agenda prioritas yang ditumpuk secara vertikal atas-bawah (bukan carousel samping). Dirancang untuk menampung agenda akbar terdekat (misal: H-3 Daurah Fitrah Tamyiz luring) dan kajian tematik pasangan/online (misal: Kajian Pasutri Ahad depan).
 5. **Rekomendasi Aktivitas (Horizontal Carousel):**
    - *Lanjutkan Modul Adab:* Bab 3/5 (Progress bar 65%, sisa 8 menit).
    - *Serial Zaid Rehearsal:* Episode 3 dengan 4-step milestone tracker (Ep 1 ✓, Ep 2 ✓, Ep 3 ●, Ep 4 🔒).

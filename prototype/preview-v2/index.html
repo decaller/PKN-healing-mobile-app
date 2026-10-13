@@ -238,39 +238,82 @@
         </section>
 
         <!-- ============================================== -->
-        <!-- 📢 HIGHLIGHT PROMOSI EVENT TERDEKAT (HIGH-VISIBILITY) -->
+        <!-- 📢 HIGHLIGHT PROMOSI EVENT TERDEKAT (2 AGENDA ATAS-BAWAH) -->
         <!-- ============================================== -->
-        <section class="space-y-2">
+        <section class="space-y-2.5">
           <div class="flex items-center justify-between">
-            <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
-              Agenda Majelis Terdekat
-            </h2>
+            <div class="flex items-center gap-1.5">
+              <h2 class="text-[11px] font-extrabold uppercase tracking-wider text-basalt-400 dark:text-sand-400">
+                Agenda Majelis Terdekat
+              </h2>
+              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-sand-100 dark:bg-basalt-800 text-pine-600 dark:text-pine-400">2 Agenda</span>
+            </div>
             <span onclick="switchTab('event')" class="text-[11px] font-bold text-pine-600 dark:text-pine-400 cursor-pointer hover:underline">Lihat Semua ➔</span>
           </div>
 
-          <div onclick="switchTab('event')" class="cursor-pointer p-4 rounded-3xl bg-gradient-to-r from-ambercustom-600 via-ambercustom-500 to-terracotta-500 text-white shadow-md active:scale-98 transition flex flex-col gap-2 relative overflow-hidden">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-black/25 px-2.5 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
-                H-3 Menuju Majelis Akbar
-              </span>
-              <span class="text-xs font-bold bg-white/20 px-2 py-0.5 rounded-lg">Sabtu Ini</span>
-            </div>
+          <!-- Vertical Stack (Atas - Bawah) Maksimal 2 Agenda -->
+          <div class="flex flex-col gap-2.5">
             
-            <div>
-              <h3 class="text-base font-bold font-serif leading-snug">
-                Daurah Akbar: Menumbuhkan Fitrah Keimanan Usia Tamyiz
-              </h3>
-              <p class="text-xs text-white/90 mt-1 flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px]">record_voice_over</span>
-                Bersama Ust. Abdul Kholiq & Tim Litbang SKIS
-              </p>
+            <!-- Agenda 1: Daurah Akbar Terdekat (H-3) -->
+            <div onclick="switchTab('event')" class="cursor-pointer p-4 rounded-3xl bg-gradient-to-r from-ambercustom-600 via-ambercustom-500 to-terracotta-500 text-white shadow-md active:scale-98 transition flex flex-col gap-2 relative overflow-hidden group">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold uppercase tracking-wider bg-black/25 px-2.5 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
+                  H-3 Menuju Majelis Akbar
+                </span>
+                <span class="text-[11px] font-bold bg-white/20 px-2 py-0.5 rounded-lg">Sabtu, 18 Okt</span>
+              </div>
+              
+              <div>
+                <h3 class="text-sm md:text-base font-bold font-serif leading-snug">
+                  Daurah Akbar: Menumbuhkan Fitrah Keimanan Usia Tamyiz
+                </h3>
+                <p class="text-xs text-white/90 mt-1 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">record_voice_over</span>
+                  Ust. Abdul Kholiq, Lc. & Tim Litbang SKIS
+                </p>
+              </div>
+
+              <div class="pt-2 flex items-center justify-between text-xs border-t border-white/20 mt-0.5">
+                <span class="text-[10px] opacity-90 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[12px]">location_on</span>
+                  Masjid SKIS Cikarang & Live Zoom • 520 Peserta
+                </span>
+                <span class="font-bold underline flex items-center gap-0.5 text-[11px]">Daftar ➔</span>
+              </div>
+              <span class="material-symbols-outlined absolute -right-3 -bottom-3 text-white/10 text-[72px] pointer-events-none group-hover:scale-105 transition">campaign</span>
             </div>
 
-            <div class="pt-2 flex items-center justify-between text-xs border-t border-white/20 mt-1">
-              <span class="text-[11px] opacity-90">📍 Masjid SKIS & Live Zoom • 520 Peserta</span>
-              <span class="font-bold underline flex items-center gap-0.5">Daftar Sekarang ➔</span>
+            <!-- Agenda 2: Kajian Khusus Pasutri (Ahad Depan) -->
+            <div onclick="switchTab('event')" class="cursor-pointer p-4 rounded-3xl bg-gradient-to-r from-pine-700 via-pine-600 to-emerald-700 text-white shadow-md active:scale-98 transition flex flex-col gap-2 relative overflow-hidden group">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold uppercase tracking-wider bg-black/25 px-2.5 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                  Kajian Khusus Pasutri
+                </span>
+                <span class="text-[11px] font-bold bg-white/20 px-2 py-0.5 rounded-lg">Ahad, 26 Okt</span>
+              </div>
+              
+              <div>
+                <h3 class="text-sm md:text-base font-bold font-serif leading-snug">
+                  Memulihkan Hutang Pengasuhan & Menyelaraskan Visi Ayah Bunda
+                </h3>
+                <p class="text-xs text-white/90 mt-1 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">record_voice_over</span>
+                  Ust. Bayu, S.Pd. & Ummu Khusna, M.Psi.
+                </p>
+              </div>
+
+              <div class="pt-2 flex items-center justify-between text-xs border-t border-white/20 mt-0.5">
+                <span class="text-[10px] opacity-90 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[12px]">videocam</span>
+                  Online Zoom Interaktif • Eksklusif Pasutri
+                </span>
+                <span class="font-bold underline flex items-center gap-0.5 text-[11px]">Daftar ➔</span>
+              </div>
+              <span class="material-symbols-outlined absolute -right-3 -bottom-3 text-white/10 text-[72px] pointer-events-none group-hover:scale-105 transition">diversity_1</span>
             </div>
+
           </div>
         </section>
 
