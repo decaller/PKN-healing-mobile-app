@@ -145,16 +145,71 @@ Berdasarkan tinjauan psikologi kognitif darurat (*Cognitive Tunnel Vision during
 
 ---
 
-### Fase 2: Kondisi Stabil (Post-Crisis Debrief, Hikmah & Tazkiyah)
-* **Karakteristik UI:** Hening, menyejukkan, reflektif. Muncul hanya setelah tombol *"Alhamdulillah, Anak Sudah Tenang"* diklik.
-* **Komponen:**
-  1. **Apresiasi Batin:**  
-     *“Masya Allah, Anda telah menjaga fitrah anak tanpa bentakan dan memenangkan pahala Kazhmul Ghaizh.”*
-  2. **Kaidah Emas SOTAB:**  
-     ⚠️ **JANGAN DIBAHAS LAGI!**  
-     *“Setelah badai reda: jangan diceramahi, jangan dihakimi, jangan diungkit lagi. Cukup senyumi, beri air putih hangat, dan dekap kembali.”*
-  3. **Munajat Penyerahan Didik (Imam Fudhail bin 'Iyadh):**  
-     Teks Arab, latin, dan terjemahan munajat penyerahan taufiq mendidik anak kepada Allah Ta'ala.
-  4. **Edukasi Santai (Bisa Dibaca dengan Lapang Dada):**  
-     Penjelasan mengapa tantrum disebut indah (masa emas egosentrisme fitrah & pencegahan hutang pengasuhan masa pubertas).
+## 5. Pengembangan Lanjutan: "P3K Universal Seluruh Kondisi Genting Keluarga"
+*(Mengakomodasi Krisis Ekstrem Sisi Orang Tua: Emergency Self-Regulation & Burnout)*
+
+Dalam realitas pengasuhan sehari-hari, **kepanikan dan stres sering kali justru lebih berat berada di sisi orang tua**. Orang tua yang mengalami kelelahan kronis (*parental burnout*), kurang tidur, tekanan ekonomi, atau masalah relasi rumah tangga berada pada ambang batas toleransi stres yang sangat tipis (*fragile emotional threshold*).
+
+Ketika anak mulai merengek atau menolak aturan, amigdala orang tua dapat terpicu (*amygdala hijack*) hingga memunculkan dorongan kuat untuk membentak, melempar barang, atau melakukan kekerasan fisik.
+
+Oleh karena itu, modul P3K ditingkatkan dari sekadar "SOP Tantrum Anak" menjadi **"P3K Universal Krisis Genting Pengasuhan"** dengan sistem **Dual-Crisis Triage**:
+
+```
+                              [ P3K KRISIS GENTING ]
+                                         │
+                 ┌───────────────────────┴───────────────────────┐
+                 ▼                                               ▼
+      [ 👶 ANAK MENGAMUK ]                           [ 🧘 SAYA MAU MELEDAK ]
+    (Tantrum / Agresi Anak)                     (Parent Burnout & Rage Emergency)
+                 │                                               │
+       1. Duduk Sejajar Mata                           1. Puasa Lisan & Mundur 2 Langkah
+       2. Dekap Hangat & Diam                          2. Segera Duduk / Berbaring
+       3. Amankan Radius Bahaya                        3. Basuh Wajah/Tengkuk Air Dingin
+       4. Pilihan Aksi: Turuti / Dampingi              4. Kalibrasi Nafas 60s & Ta'awwudz
+                 │                                               │
+                 ▼                                               ▼
+      [ KONDISI STABIL ANAK ]                         [ PEMULIHAN JIWA ORANG TUA ]
+    - Kazhmul Ghaizh                                - Menang Lawan Nafsu (HR. Bukhari)
+    - Kaidah: Jangan Dibahas Lagi!                  - Checklist HALT & Self-Care
+    - Munajat Fudhail bin 'Iyadh                    - Doa Lapang Dada (QS. Thaha 25-26)
+    - Edukasi Tantrum Indah                         - Dekap Anak Kembali Tanpa Dendam
+```
+
+---
+
+### A. Protokol Darurat Orang Tua (< 5 Detik / Self-Rescue Mode)
+
+Ketika tombol `[ 🧘 Saya Mau Meledak ]` ditekan, seluruh instruksi teoritis dieliminasi, digantikan oleh 3 intervensi fisiologis-nabawiyah seketika:
+
+1. **🛑 Puasa Lisan Mutlak & Mundur Sekejap (HR. Ahmad)**
+   - *Hadits:* *"Bila salah seorang di antara kalian marah, hendaklah ia diam."* (HR. Ahmad).
+   - *Aksi:* Kunci mulut rapat-rapat. Satu kata bentakan saat marah dapat menghancurkan harga diri anak dan melahirkan trauma seumur hidup. Pastikan anak berada di lantai/ruang yang aman, lalu ambil jarak fisik 2–3 langkah.
+2. **🪑 Ubah Posisi Fisik Segera: Duduk atau Berbaring (HR. Abu Dawud 4782)**
+   - *Hadits:* *"Bila salah seorang di antara kalian marah dalam keadaan berdiri, hendaklah ia duduk. Jika amarahnya belum reda, hendaklah ia berbaring."* (HR. Abu Dawud no. 4782).
+   - *Fisiologi:* Perubahan posisi dari berdiri ke duduk menurunkan frekuensi denyut jantung, meredakan tekanan darah sistolik, dan mematikan dorongan motorik untuk melakukan serangan agresi.
+3. **💧 Basuh Wajah & Tengkuk dengan Air Dingin / Wudhu (HR. Abu Dawud 4784)**
+   - *Hadits:* *"Sesungguhnya amarah itu dari setan, dan setan diciptakan dari api, dan api itu dipadamkan dengan air. Maka jika salah seorang di antara kalian marah, berwudhulah."* (HR. Abu Dawud no. 4784).
+   - *Fisiologi Vagus Nerve:* Membasuh air dingin ke wajah dan bagian belakang leher (*mammalian dive reflex*) merangsang saraf vagus parasimpatik untuk menghentikan respon *fight-or-flight* seketika.
+4. **⏱️ Interaktif Kalibrasi Nafas Nabawi 60 Detik (Box Breathing 4-4-4):**
+   - Panduan nafas visual: Tarik nafas (4 detik) ➔ Tahan nafas (4 detik) ➔ Hembuskan nafas perlahan (4 detik).
+   - Disertai bacaan Isti'adzah: *A'udzu billahi minasy-syaithanir-rajim* (HR. Bukhari no. 6115).
+
+---
+
+### B. Fase Pemulihan Jiwa Orang Tua (Post-Crisis Self-Care)
+
+Setelah tombol `[ 🕊️ Alhamdulillah, Hati Saya Sudah Tenang ➔ ]` ditekan:
+
+1. **Apresiasi Kemenangan Menahan Amarah:**  
+   Mengingatkan sabda Rasulullah ﷺ: *"Bukanlah orang yang kuat itu yang pandai bergulat, tetapi orang yang kuat adalah yang mampu menahan dirinya ketika sedang marah."* (HR. Bukhari no. 6114 & Muslim no. 2609).
+2. **Triage Kebutuhan Fisik (Prinsip HALT - Hungry, Angry, Lonely, Tired):**  
+   - Amarah meledak biasanya bukan karena anak, melainkan sinyal tubuh orang tua yang kelelahan:
+     - 💧 Rehidrasi dengan 1 gelas air putih hangat.
+     - 🛌 Istirahat dan tidur cukup (tidur adalah kebutuhan syar'i).
+     - 🤝 Minta pertolongan pasangan/keluarga untuk bergantian mengawasi anak selama 15–30 menit tanpa rasa bersalah.
+3. **Doa Kelapangan Dada Nabi Musa ‘alaihissalam (QS. Thaha: 25-26):**  
+   *“Rabbi syrahli shadri wa yassirli amri”* (Ya Rabbku, lapangkanlah untukku dadaku, dan mudahkanlah untukku urusanku).
+4. **Tazkiyah & Rekonsiliasi:**  
+   Menyadari bahwa orang tua bukan malaikat, beristighfar, lalu memeluk kembali anak dengan kehangatan tanpa mengungkit kemarahan tadi.
+
 
