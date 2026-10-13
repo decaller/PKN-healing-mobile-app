@@ -1206,42 +1206,85 @@
     </nav>
 
     <!-- ============================================================== -->
-    <!-- MODAL POPUP: P3K SOP TANTRUM < 10 DETIK -->
+    <!-- MODAL POPUP: SMART P3K SOP TANTRUM (< 10 DETIK - SOTAB HYBRID) -->
     <!-- ============================================================== -->
     <div id="modal-p3k" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-0 md:p-4 transition-all">
-      <div class="w-full max-w-[400px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
-        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-3">
+      <div class="w-full max-w-[420px] bg-white dark:bg-basalt-900 rounded-t-[32px] md:rounded-3xl p-5 space-y-4 shadow-2xl max-h-[88vh] overflow-y-auto no-scrollbar animate-in slide-in-from-bottom">
+        
+        <!-- Header SOP -->
+        <div class="flex justify-between items-center border-b border-sand-100 dark:border-basalt-800 pb-2.5">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-terracotta-600 text-[24px]">crisis_alert</span>
-            <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">SOP Tantrum &lt; 10 Detik</h3>
+            <div class="w-8 h-8 rounded-xl bg-terracotta-50 dark:bg-terracotta-950 text-terracotta-600 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-sm text-basalt-900 dark:text-sand-50">SOP Tantrum Itu Indah</h3>
+              <p class="text-[10px] text-pine-600 dark:text-pine-400 font-semibold">Manhaj SOTAB • Ust. Abdul Kholiq</p>
+            </div>
           </div>
           <button onclick="closeModal('modal-p3k')" class="w-8 h-8 rounded-full bg-sand-100 dark:bg-basalt-800 flex items-center justify-center text-basalt-500">✕</button>
         </div>
 
-        <div class="space-y-3 text-xs">
-          <!-- Step 1 -->
-          <div class="p-3 rounded-2xl bg-pine-50 dark:bg-pine-950/60 border border-pine-200 dark:border-pine-900 space-y-1">
-            <span class="font-bold text-pine-700 dark:text-pine-300 text-[11px] uppercase tracking-wider">1. Lakukan Sekarang:</span>
-            <p class="text-basalt-800 dark:text-sand-100 font-semibold">Tarik nafas, dekap anak setinggi matanya, diamkan kata-kata.</p>
-            <p class="text-[10px] text-basalt-500 dark:text-sand-400">Validasi emosinya: "Ayah di sini, kamu aman." Jangan mendebat logika.</p>
-          </div>
+        <!-- Calm Anchor Diri Orang Tua (Detik 0-3) -->
+        <div class="p-2.5 rounded-2xl bg-ambercustom-50/70 dark:bg-ambercustom-950/40 border border-ambercustom-200 dark:border-ambercustom-900 flex items-center gap-2.5 text-xs text-ambercustom-900 dark:text-ambercustom-200">
+          <span class="material-symbols-outlined text-ambercustom-600 text-[20px] shrink-0">self_improvement</span>
+          <p class="text-[11px] leading-snug">
+            <strong>Tarik nafas 4 detik, tahan lisan.</strong> Anak belum mukallaf; jangan pernah mendoakan buruk saat marah (HR. Muslim 3009).
+          </p>
+        </div>
 
-          <!-- Step 2 -->
-          <div class="p-3 rounded-2xl bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900 space-y-1">
-            <span class="font-bold text-red-700 dark:text-red-300 text-[11px] uppercase tracking-wider">2. Dilarang Keras:</span>
-            <p class="text-basalt-800 dark:text-sand-100 font-semibold">Haram membentak, menyindir, atau memukul wajah.</p>
-            <p class="text-[10px] text-basalt-500 dark:text-sand-400">Anak di bawah 10 tahun belum memikul taklif sanksi fisik (HR. Abu Dawud 495).</p>
-          </div>
+        <!-- Segmented Tab Lokasi / Konteks Situasi -->
+        <div class="flex gap-1.5 p-1 bg-sand-100 dark:bg-basalt-950 rounded-xl text-xs font-bold">
+          <button id="p3k-tab-rumah" onclick="switchP3kContext('rumah')" class="flex-1 py-1.5 rounded-lg bg-white dark:bg-basalt-800 text-pine-600 dark:text-sand-50 shadow-sm flex items-center justify-center gap-1 transition">
+            <span class="material-symbols-outlined text-[16px]">home</span>
+            <span>Di Rumah</span>
+          </button>
+          <button id="p3k-tab-publik" onclick="switchP3kContext('publik')" class="flex-1 py-1.5 rounded-lg text-basalt-500 dark:text-sand-400 flex items-center justify-center gap-1 transition">
+            <span class="material-symbols-outlined text-[16px]">storefront</span>
+            <span>Ruang Publik / Mall</span>
+          </button>
+        </div>
 
-          <!-- Step 3 -->
-          <div class="p-3 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 space-y-1">
-            <span class="font-bold text-ambercustom-600 text-[11px] uppercase tracking-wider">3. Langkah Berikutnya:</span>
-            <p class="text-basalt-800 dark:text-sand-100">Beri segelas air putih setelah tangis reda, baru masuk ke dialog hikmah.</p>
+        <!-- Triase 3 Opsi Aksi Cepat SOTAB (Pilihan Langkah) -->
+        <div class="space-y-1.5">
+          <label class="text-[10px] font-extrabold uppercase tracking-wider text-basalt-400">Pilih Triase Keputusan Lapangan:</label>
+          <div class="grid grid-cols-3 gap-1.5">
+            <button id="triase-btn-1" onclick="selectP3kTriage(1)" class="p-2 rounded-xl border border-pine-500 bg-pine-50 dark:bg-pine-950 text-pine-700 dark:text-pine-300 font-bold text-[10px] flex flex-col items-center gap-0.5 text-center">
+              <span>Level 1</span>
+              <span class="font-normal text-[9px]">Turuti (Mampu)</span>
+            </button>
+            <button id="triase-btn-2" onclick="selectP3kTriage(2)" class="p-2 rounded-xl border border-sand-200 dark:border-basalt-800 bg-white dark:bg-basalt-900 text-basalt-600 dark:text-sand-300 font-bold text-[10px] flex flex-col items-center gap-0.5 text-center">
+              <span>Level 2</span>
+              <span class="font-normal text-[9px]">Siasat (Alihkan)</span>
+            </button>
+            <button id="triase-btn-3" onclick="selectP3kTriage(3)" class="p-2 rounded-xl border border-sand-200 dark:border-basalt-800 bg-white dark:bg-basalt-900 text-basalt-600 dark:text-sand-300 font-bold text-[10px] flex flex-col items-center gap-0.5 text-center">
+              <span>Level 3</span>
+              <span class="font-normal text-[9px]">Sabar (Dampingi)</span>
+            </button>
           </div>
         </div>
 
-        <button onclick="closeModal('modal-p3k')" class="w-full py-3 rounded-xl bg-terracotta-600 text-white font-bold text-xs shadow">
-          Saya Paham, Terapkan Sekarang
+        <!-- Dynamic Content Box per Pilihan Triase & Konteks -->
+        <div id="p3k-dynamic-guide" class="p-3.5 rounded-2xl bg-sand-50 dark:bg-basalt-950 border border-sand-200 dark:border-basalt-800 text-xs space-y-2">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+
+        <!-- Doa Penenang Hati Imam Fudhail bin 'Iyadh (Collapsible / Pasca Badai) -->
+        <div class="p-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold text-ambercustom-600 uppercase">Munajat Penyerahan Didik (Imam Fudhail)</span>
+            <span class="text-[9px] text-basalt-400">Siyaru A'lamin Nubala</span>
+          </div>
+          <p class="font-arabic text-sm text-right leading-loose text-basalt-900 dark:text-sand-50">
+            اللَّهُمَّ إِنِّيْ اجْتَهَدْتُ أَنْ أَؤدِّبَهُ فَلَمْ أَقْدِرْ عَلَى تَأَدِيْبِهِ فَأَدِّبْهُ أَنْتَ لِي
+          </p>
+          <p class="text-[10px] text-basalt-500 dark:text-sand-400 italic">
+            "Ya Allah, aku telah berusaha mendidik anakku namun tak sanggup, maka didiklah dia untukku."
+          </p>
+        </div>
+
+        <button onclick="closeModal('modal-p3k')" class="w-full py-3 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs shadow">
+          Selesai & Lanjutkan Pengasuhan
         </button>
       </div>
     </div>
@@ -1695,7 +1738,99 @@
     }
 
     // 4. MODALS CONTROLLER
-    function openP3kModal() { document.getElementById('modal-p3k').classList.remove('hidden'); }
+    let p3kContext = 'rumah';
+    let p3kTriage = 1;
+
+    function openP3kModal() {
+      document.getElementById('modal-p3k').classList.remove('hidden');
+      renderP3kGuide();
+    }
+    function switchP3kContext(ctx) {
+      p3kContext = ctx;
+      const tabRumah = document.getElementById('p3k-tab-rumah');
+      const tabPublik = document.getElementById('p3k-tab-publik');
+      if (ctx === 'rumah') {
+        tabRumah.className = 'flex-1 py-1.5 rounded-lg bg-white dark:bg-basalt-800 text-pine-600 dark:text-sand-50 shadow-sm flex items-center justify-center gap-1 transition';
+        tabPublik.className = 'flex-1 py-1.5 rounded-lg text-basalt-500 dark:text-sand-400 flex items-center justify-center gap-1 transition';
+      } else {
+        tabPublik.className = 'flex-1 py-1.5 rounded-lg bg-white dark:bg-basalt-800 text-pine-600 dark:text-sand-50 shadow-sm flex items-center justify-center gap-1 transition';
+        tabRumah.className = 'flex-1 py-1.5 rounded-lg text-basalt-500 dark:text-sand-400 flex items-center justify-center gap-1 transition';
+      }
+      renderP3kGuide();
+    }
+
+    function selectP3kTriage(level) {
+      p3kTriage = level;
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`triase-btn-${i}`);
+        if (i === level) {
+          btn.className = 'p-2 rounded-xl border border-pine-500 bg-pine-50 dark:bg-pine-950 text-pine-700 dark:text-pine-300 font-bold text-[10px] flex flex-col items-center gap-0.5 text-center shadow-sm';
+        } else {
+          btn.className = 'p-2 rounded-xl border border-sand-200 dark:border-basalt-800 bg-white dark:bg-basalt-900 text-basalt-600 dark:text-sand-300 font-bold text-[10px] flex flex-col items-center gap-0.5 text-center';
+        }
+      }
+      renderP3kGuide();
+    }
+
+    function renderP3kGuide() {
+      const box = document.getElementById('p3k-dynamic-guide');
+      if (!box) return;
+
+      if (p3kTriage === 1) {
+        box.innerHTML = `
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pine-100 dark:bg-pine-900 text-pine-700 dark:text-pine-300 uppercase">Level 1: Dituruti Seketika (Tuntaskan Egosentris)</span>
+            <h4 class="font-bold text-basalt-900 dark:text-sand-100 text-xs">Penuhi Keinginan Anak Tanpa Syarat Kering</h4>
+            <div class="space-y-1 text-basalt-700 dark:text-sand-200 text-[11px]">
+              <p>✓ <strong>3 Syarat Terpenuhi:</strong> Mampu, tidak bahaya bagi anak, tidak bahaya bagi lingkungan.</p>
+              <p>✓ <strong>Sikap Lapangan:</strong> Dekap dan penuhi dengan wajah berseri: <em>"Iya sayang, ini Ayah penuhi ya."</em> Jangan menyindir atau mengungkit!</p>
+              <p>✓ <strong>Hikmah Manhaj:</strong> Mencegah terbentuknya 'Hutang Pengasuhan' di masa pubertas.</p>
+            </div>
+          </div>
+        `;
+      } else if (p3kTriage === 2) {
+        box.innerHTML = `
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-ambercustom-100 dark:bg-ambercustom-900 text-ambercustom-800 dark:text-ambercustom-200 uppercase">Level 2: Dialihkan (Siasat, Sepakat, Sabar)</span>
+            <h4 class="font-bold text-basalt-900 dark:text-sand-100 text-xs">Tawarkan Alternatif Sefrekuensi Minat</h4>
+            <div class="space-y-1 text-basalt-700 dark:text-sand-200 text-[11px]">
+              <p>✓ <strong>Strategi Barter:</strong> Tawarkan benda/aktivitas alternatif yang disukai sampai tercapai kesepakatan.</p>
+              <p>✓ <strong>Contoh:</strong> <em>"Mainan ini belum bisa, tapi bagaimana kalau kita balapan sepeda mini atau minum es jus buah favoritmu?"</em></p>
+              <p>✓ <strong>Sabar:</strong> Jangan memaksa anak langsung menerima tawaran pertama.</p>
+            </div>
+          </div>
+        `;
+      } else {
+        if (p3kContext === 'publik') {
+          box.innerHTML = `
+            <div class="space-y-1.5">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-100 dark:bg-terracotta-900 text-terracotta-700 dark:text-terracotta-200 uppercase">Level 3 (Publik): Teguh Batas Tanpa Bentakan</span>
+              <h4 class="font-bold text-basalt-900 dark:text-sand-100 text-xs">Singkirkan Rasa Malu Sosial dari Orang Lain!</h4>
+              <div class="space-y-1 text-basalt-700 dark:text-sand-200 text-[11px]">
+                <p>1. <strong>Pindahkan Lokasi:</strong> Gendong/bawa anak tenang ke tempat sepi (mobil, toilet, pojok sepi).</p>
+                <p>2. <strong>Jangan Mengalah Demi Gengsi:</strong> Jangan belikan mainan hanya karena malu anak menjerit di kasir!</p>
+                <p>3. <strong>Katakan Tenang:</strong> <em>"Ayah tahu kamu sangat mau mainan ini, tapi kesepakatan kita hari ini bukan beli mainan. Kita pulang sekarang."</em></p>
+                <p>4. <strong>Setelah Reda:</strong> Peluk erat, jangan diceramahi!</p>
+              </div>
+            </div>
+          `;
+        } else {
+          box.innerHTML = `
+            <div class="space-y-1.5">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-100 dark:bg-terracotta-900 text-terracotta-700 dark:text-terracotta-200 uppercase">Level 3 (Di Rumah): Sabar, Sabar, dan Sabar</span>
+              <h4 class="font-bold text-basalt-900 dark:text-sand-100 text-xs">Jaga Keselamatan Fisik Hingga Badai Mereda</h4>
+              <div class="space-y-1 text-basalt-700 dark:text-sand-200 text-[11px]">
+                <p>1. <strong>Amankan Radius:</strong> Singkirkan benda keras/pecah belah.</p>
+                <p>2. <strong>Diamkan Lisan:</strong> Jangan mendebat logika anak yang sedang dikuasai amigdala.</p>
+                <p>3. <strong>Hadirkan Raga:</strong> Duduk sejajar tanah di sampingnya, tatap dengan teduh.</p>
+                <p>4. <strong>Kaidah Emas:</strong> Setelah tantrum selesai, JANGAN DIBAHAS LAGI. Senyumi, peluk, beri air putih. Selesai!</p>
+              </div>
+            </div>
+          `;
+        }
+      }
+    }
+
     function openCurhatModal() { document.getElementById('modal-curhat').classList.remove('hidden'); }
     function openRppModal() { document.getElementById('modal-rpp').classList.remove('hidden'); }
     function openModulModal() { document.getElementById('modal-modul').classList.remove('hidden'); }
