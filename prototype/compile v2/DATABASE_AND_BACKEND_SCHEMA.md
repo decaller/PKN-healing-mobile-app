@@ -54,16 +54,17 @@ CREATE TABLE user_job_profiles (
 );
 ```
 
-### B. Tabel `relations` (Relasi Qalbiyah)
+### B. Tabel `relations` (Relasi Keluarga & Teman Dekat)
 ```sql
 CREATE TABLE relations (
     id TEXT PRIMARY KEY,
     user_id TEXT NOT NULL REFERENCES users(id),
     name TEXT NOT NULL,
-    relation_type TEXT NOT NULL, -- 'anak', 'pasangan', 'santri', 'murid'
+    relation_type TEXT NOT NULL, -- 'anak', 'pasangan', 'orang_tua', 'mertua', 'teman_dekat', 'sahabat_dakwah', 'santri', 'murid'
+    circle_group TEXT NOT NULL DEFAULT 'keluarga', -- 'keluarga', 'teman_dekat'
     gender TEXT, -- 'L', 'P'
     birth_date INTEGER,
-    fitrah_phase TEXT NOT NULL, -- 'thufulah', 'tamyiz', 'murahaqah', 'syabab'
+    fitrah_phase TEXT, -- 'thufulah', 'tamyiz', 'murahaqah', 'syabab', 'dewasa'
     love_tank_score INTEGER DEFAULT 80, -- skala 0 - 100
     last_dialog_at INTEGER,
     created_at INTEGER NOT NULL,
@@ -71,14 +72,15 @@ CREATE TABLE relations (
 );
 ```
 
-### C. Tabel `daily_tasks` & `daily_task_reviews`
+### C. Tabel `daily_tasks` & `daily_task_reviews` (Wirid Amalan Adab & Tazkiyah)
 ```sql
 CREATE TABLE daily_tasks (
     id TEXT PRIMARY KEY,
     user_id TEXT NOT NULL REFERENCES users(id),
     relation_id TEXT REFERENCES relations(id),
     title TEXT NOT NULL,
-    category TEXT NOT NULL, -- 'diri', 'relasi', 'belajar', 'ibadah'
+    category TEXT NOT NULL, -- 'takhalli' (pembersihan nafsu), 'tahalli' (penghiasan amal), 'diri', 'keluarga', 'teman_dekat', 'ibadah'
+    tazkiyah_dimension TEXT, -- 'kazhmul_ghaizh', 'puasa_lisan', 'qiyamullail', 'istiqamah', 'halal_thayyib'
     is_completed INTEGER DEFAULT 0,
     scheduled_date TEXT NOT NULL, -- YYYY-MM-DD
     order_index INTEGER DEFAULT 0,
@@ -88,8 +90,8 @@ CREATE TABLE daily_tasks (
 CREATE TABLE daily_task_reviews (
     id TEXT PRIMARY KEY,
     task_id TEXT NOT NULL REFERENCES daily_tasks(id),
-    nafs_quality TEXT NOT NULL, -- 'muthmainnah', 'lawwamah', 'ammarah'
-    rubric_score TEXT, -- 'BT', 'MT', 'BK', 'MM'
+    nafs_quality TEXT NOT NULL, -- 'muthmainnah' (ikhlas & lapang), 'lawwamah' (evaluatif), 'ammarah' (tergesa/lalai)
+    rubric_score TEXT, -- 'BT' (Belum Tampak), 'MT' (Mulai Tampak), 'BK' (Berkembang), 'MM' (Membudaya)
     notes TEXT,
     reviewed_at INTEGER NOT NULL
 );

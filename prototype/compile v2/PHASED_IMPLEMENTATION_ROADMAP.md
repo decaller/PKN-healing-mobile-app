@@ -102,20 +102,21 @@
   - Buat `Tb40ListPage` (Katalog 40 bakat fitrah).
   - Buat `Tb40DetailPage` (Ulasan makna, sisi Ihsan vs sisi Afat/over-investment, peran peradaban syakilah).
   - Buat `Tb40UserWidget` (Radar chart bakat di Profil User).
-- [ ] **Task 3.3 — Modul 8 (Ceklist Harian & Review Kualitas Amalan):**
-  - Buat `CeklistHomeWidget` (Progress bar amanah hari ini).
-  - Buat `CeklistToolPage` dan `CeklistListPage` (Amanah Diri, Keluarga, Belajar, Ibadah).
-  - Buat `CeklistReviewModal` (Muhasabah non-gamified: Muthma'innah, Lawwamah, Ammarah).
-  - Buat `CeklistUserWidget` (Neraca istiqomah sepekan di Profil User).
-- [ ] **Task 3.4 — Modul 9 (Relasi Qalbiyah):**
-  - Buat `RelasiHomeWidget` (Status Tangki Cinta relasi aktif).
-  - Buat `RelasiToolPage` (Neraca qalbiyah & tadabbur AI).
-  - Buat `RelasiListPage` dan `RelasiDetailPage` (Profil anggota keluarga, fase fitrah usia, catatan adab, dan rekomendasi hikmah).
+- [ ] **Task 3.3 — Modul 8 (Ceklist Harian Wirid Adab & Tazkiyatun Nafs):**
+  - Buat `CeklistHomeWidget` (`Collapsible List Section` dengan status progress pill).
+  - Buat `CeklistToolPage` dan `CeklistListPage` terbagi dimensi: Takhalli (tahan amarah *kazhmul ghaizh*, puasa lisan, cek nafkah halal) & Tahalli (qiyamullail, zikir pagi-petang, shalat awal waktu, dekap anak).
+  - Buat `CeklistReviewModal` (Muhasabah 3 derajat jiwa: *Nafs Muthma'innah*, *Nafs Lawwamah*, *Nafs Ammarah* dengan rubrik fitrah BT-MT-BK-MM).
+  - Buat `CeklistUserWidget` (Mizan balance scale / grafik stacked bar istiqomah sepekan di Profil User).
+- [ ] **Task 3.4 — Modul 9 (Relasi Keluarga dan Teman Dekat):**
+  - Buat `RelasiHomeWidget` (`Carousel` status Tangki Cinta & kehangatan ukhuwah).
+  - Buat `RelasiToolPage` (Neraca qalbiyah & tadabbur AI esok hari).
+  - Buat `RelasiListPage` dan `RelasiDetailPage` (Profil anggota keluarga & sahabat seperjuangan dakwah, catatan adab, dan rekomendasi hikmah).
   - Buat `RelasiUserWidget` di Profil User.
-- [ ] **Task 3.5 — Modul 10 (Onboarding 4 Langkah):**
+- [ ] **Task 3.5 — Modul 10 (Onboarding 4 Langkah + Jalan Pintas TB-40):**
   - Bangun Wizard interaktif 4 langkah: Data Diri -> Data Pekerjaan -> Data Relasi -> Data Ceklist Harian.
-  - Sediakan tombol "Lewati / Nanti Saja".
-  - Pastikan pengisian onboarding langsung menginisialisasi Profil User, relasi pertama, dan ceklist default.
+  - Sediakan tombol pintas langsung di layar pembuka: **"Akses Langsung Tools Tafsir Bakat 40"** untuk mencoba asesmen tanpa wajib menyelesaikan seluruh wizard.
+  - Sediakan tombol "Lewati / Nanti Saja" di tiap tahapan.
+  - Inisialisasi otomatis data User, relasi pertama, dan ceklist default.
   - Sediakan opsi edit ulang onboarding di Pengaturan Profil User.
 
 ---
@@ -127,14 +128,17 @@
 ### Task List Fase 4:
 - [ ] **Task 4.1 — Modul 11 (Curhat AI & Ruang Qalbu):**
   - Hubungkan `CurhatBottomBarButton` (Tab 4).
-  - Buat `CurhatHomeWidget` (Kartu ajakan kontemplasi).
+  - Buat `CurhatHomeWidget` (Banner pemicu kontemplasi).
   - Buat `CurhatToolPage` (Pijakan topik, tombol Walkie-Talkie Push-to-Talk dengan animasi living waveform).
   - Buat `CurhatListPage` (Riwayat percakapan tersimpan aman secara luring).
-  - Buat `CurhatDetailPage` (Dialog tenang, doa penenang, ekspor RPP Adab).
-- [ ] **Task 4.2 — Modul 12 (Cerita Interaktif & Serial Zaid):**
-  - Buat `CeritaHomeWidget` (Kartu episode aktif).
-  - Buat `CeritaToolPage` (Katalog skenario krisis pengasuhan per fase usia anak).
-  - Buat `CeritaListPage` dan `CeritaDetailPage` (Simulasi dialog bercabang, monolog cermin batin bakat TB-40, ulasan adab nabawiyah).
+  - Buat `CurhatDetailPage` (Dialog tenang, doa penenang jiwa, ekspor RPP Adab).
+- [ ] **Task 4.2 — Modul 12 (Cerita Interaktif & Rehearsal Tazkiyatun Nafs):**
+  - Buat `CeritaHomeWidget` (`MultiSerialStoryCard` carousel episode aktif Serial Zaid).
+  - Buat `CeritaToolPage` (Katalog skenario krisis pengasuhan per fase fitrah usia anak: Thufulah, Tamyiz, Murahaqah, Syabab).
+  - Buat `CeritaListPage` dan `CeritaDetailPage`:
+    - Simulasi dialog krisis dengan respon 3 derajat jiwa (*Nafs Muthma'innah / Mumtaz*, *Nafs Lawwamah*, *Nafs Ammarah / Munkar-Ego*).
+    - Monolog dialektika batin bakat TB-40 (*Al-Qiyadah* vs *Al-Fashahah* vs *Al-Fikriyyah*).
+    - Ulasan hikmah syar'i, atsar salaf, muhasabah pemulihan hutang pengasuhan (*debt of parenting recovery*), dan doa penenang.
 - [ ] **Task 4.3 — Standalone Web Release & Android Validation:**
   - Build produksi rilis Web (`flutter build web --release`).
   - Verifikasi akses lokal (`localhost:3010`) dan remote Tailscale.

@@ -1,7 +1,7 @@
 # Dekomposisi 12 Modul Terstandar PKN Mobile v2
 
 > **Dokumen Spesifikasi Teknis Komponen Modular**  
-> Menguraikan antarmuka, model data, dan penyebaran surface untuk setiap modul dari yang paling mudah/krusial.
+> Menguraikan antarmuka, ragam surface widget, model data, dan penyebaran komponen untuk setiap modul berdasarkan naskah autentik **Wiki PKN** dan **Tazkiyatun Nafs Syar'i**.
 
 ---
 
@@ -10,7 +10,9 @@
 
 - **Peran:** Menyajikan informasi daurah, seminar parenting, kajian rutin, dan temu lembaga resmi PKN.
 - **Surface Komponen:**
-  1. `EventHomeWidget`: Bento card di Beranda yang menampilkan event terdekat ("H-3 Daurah Parenting Nabawiyah") dengan tombol aksi "Lihat Jadwal".
+  1. `EventHomeWidget`: 
+     - *Bentuk Representasi:* Bento card atau Banner countdown di Beranda ("H-3 Daurah Parenting Nabawiyah") dengan tombol aksi "Lihat Jadwal".
+     - *Alternatif:* Item kartu dalam `HighlightsCarousel`.
   2. `EventBottomBarButton`: Tab ke-2 di Bottom Navigation Dock dengan ikon kalender/agenda.
   3. `EventListPage`: Halaman daftar event terkelompok (Akan Datang, Berlangsung, Arsip Selesai), dilengkapi filter kategori (`Semua`, `Daurah`, `Seminar`, `Temu Lembaga`, `Kajian Pasutri`).
   4. `EventDetailPage`: Halaman detail event lengkap dengan banner landscape, pemateri terkait (link ke Modul Tokoh), lokasi/link Zoom aman, waktu pelaksanaan, kapasitas peserta, dan tombol pendaftaran / "Simpan ke Kalender".
@@ -24,7 +26,8 @@
 
 - **Peran:** Memperkenalkan karya tulis asatidzah dan tim litbang PKN untuk rujukan belajar orang tua dan pendidik.
 - **Surface Komponen:**
-  1. `BukuHomeWidget`: Carousel horizontal kartu buku pilihan ("Buku Wajib Bulan Ini") di Beranda dengan preview sampul artistik.
+  1. `BukuHomeWidget`: 
+     - *Bentuk Representasi:* `Horizontal Carousel` kartu buku pilihan ("Buku Wajib Bulan Ini") di Beranda dengan preview sampul artistik.
   2. `BukuListPage`: Grid/daftar buku dengan filter tema (`Keluarga`, `Adab Anak`, `Tafsir Bakat`, `Manajemen Sekolah`), pencarian judul/penulis, dan penanda format (Cetak / E-book / PDF).
   3. `BukuDetailPage`: Sinopsis lengkap, daftar isi terstruktur, preview kutipan emas, profil penulis terkait, serta tombol pemesanan fisik / akses digital.
 - **Model Data Utama:** `BookItem(id, title, authorId, coverUrl, synopsis, tableOfContents, isbn, publicationYear, pageCount, purchaseUrl, pdfAssetPath)`.
@@ -37,7 +40,7 @@
 - **Peran:** Menghubungkan pengguna dengan para pengasuh manhaj dan institusi pendidikan rujukan.
 - **Sub-Entitas:**
   - **Person (Tokoh Asatidzah):**
-    - Ust. Abdul Kholiq
+    - Ust. Abdul Kholiq (SOTAB / Himmatul Ummah)
     - Ust. Bayu
     - Prof Iman
     - Ummu Khusna
@@ -49,7 +52,8 @@
     - Yayasan Bina Insan Taqwa (YBIT)
     - Yayasan Bina Insan Mustaqbal (YBIM)
 - **Surface Komponen:**
-  1. `TokohLembagaHomeWidget`: Avatar strip horizontal di Beranda dengan badge tokoh utama dan lembaga rujukan.
+  1. `TokohLembagaHomeWidget`: 
+     - *Bentuk Representasi:* `Avatar Strip` horizontal di Beranda dengan foto/avatar tokoh pakar dan logo lembaga mitra rujukan.
   2. `TokohLembagaListPage`: Halaman direktori dengan segmented tab switcher `[Tokoh Pakar | Lembaga Mitra]`, pencarian, dan filter jenjang pendidikan/wilayah.
   3. `TokohDetailPage`: Biografi ringkas, peranan manhaj, buku yang ditulis (relasi ke Modul 2), rekaman kajian (relasi ke Modul 6), dan event mendatang (relasi ke Modul 1).
   4. `LembagaDetailPage`: Profil yayasan/sekolah, visi misi fitrah, jenjang binaan (TK/SD/Kuttab/SMP/SMA), alamat & kontak, serta sertifikasi adopsi standar PKN.
@@ -66,7 +70,8 @@
   3. **Coaching (Pendampingan Guru):** Pelatihan intensif asatidzah/guru dalam menguasai Tiga Bahasa Mendidik dan rubrik 19 butir adab.
   4. **Pengadaan Acara (Daurah & Seminar):** Penyelenggaraan seminar akbar bersama pakar PKN di kota/lembaga mitra.
 - **Surface Komponen:**
-  1. `KemitraanHomeWidget`: Grid 2x2 ikonik di Beranda (Konsultasi, Visitasi, Coaching, Daurah) dengan tombol cepat.
+  1. `KemitraanHomeWidget`: 
+     - *Bentuk Representasi:* `Grid 2x2 Action Tiles` di Beranda (Konsultasi, Visitasi, Coaching, Daurah) dengan ikon tematik dan label jelas.
   2. `KemitraanListPage`: Katalog komprehensif 4 program dengan spesifikasi teknis, durasi, target peserta, dan output dokumen resmi.
   3. `KemitraanDetailPage`: Detail spesifik satu program kemitraan + formulir pengajuan kerjasama in-app terintegrasi.
 
@@ -77,15 +82,16 @@
 
 - **Peran:** Menyimpan data diri, riwayat perjalanan fitrah, dan menjadi wadah penampil seluruh widget ringkasan modul lain.
 - **Surface Komponen:**
-  1. `UserHomeWidget`: Header sambutan di bagian paling atas Beranda ("Ahlan wa Sahlan, Abu Zaid", avatar, indikator ketenangan batin).
+  1. `UserHomeWidget`: 
+     - *Bentuk Representasi:* `Top Header Greeting` di bagian paling atas Beranda ("Ahlan wa Sahlan, Abu Zaid", avatar, indikator ketenangan jiwa, tombol toggle mode/tema).
   2. `UserBottomBarButton`: Tab ke-5 di Bottom Navigation Dock dengan ikon profil.
   3. `UserDetailPage`: Halaman profil lengkap yang memuat:
      - Kartu identitas utama & peran keluarga/sekolah (hasil Onboarding).
      - Rak **Event Badges** (koleksi lencana keikutsertaan daurah/acara).
-     - **TB-40 User Widget** (Radar chart bakat dominan).
-     - **Relasi User Widget** (Daftar ringkas anggota keluarga & status cinta).
-     - **Ceklist User Widget** (Neraca istiqomah amalan sepekan).
-     - Pengaturan akun, preferensi tema, sinkronisasi offline, dan tombol keluar.
+     - **TB-40 User Widget** (Radar chart 4 rumpun bakat dominan).
+     - **Relasi User Widget** (Lingkaran keluarga dan sahabat dekat terhubung).
+     - **Ceklist User Widget** (Mizan neraca istiqomah amalan sepekan).
+     - Pengaturan akun, preferensi tema Earth-Tree, sinkronisasi offline, dan tombol keluar.
 
 ---
 
@@ -116,7 +122,8 @@
        - **Tafsirweb.com:** Kompilasi tafsir mu'tabar (Ibnu Katsir, As-Sa'di, Al-Muyassar).
        - **yufid.com:** Mesin pencari fatwa dan artikel ulama ahlus sunnah.
 - **Surface Komponen:**
-  1. `WikiHomeWidget`: Ticker mutiara dalil hari ini & bilah pencarian FTS5/Vector di Beranda.
+  1. `WikiHomeWidget`: 
+     - *Bentuk Representasi:* `SearchTickerBar` (bilah pencarian FTS5/Vector dengan running text kutipan dalil hari ini) + kartu artikel pilihan di `HighlightsCarousel`.
   2. `WikiBottomBarButton`: Tab ke-3 di Bottom Navigation Dock.
   3. `WikiExplorePage`: Halaman penjelajah khazanah dengan segmented switcher `[Penulis & Media | Paradigma & AI | Software Bantuan]`.
   4. `WikiDetailPage`: Layar baca artikel nyaman (font Merriweather & Amiri Arabic, floating audio bar, salin dalil, bookmark offline).
@@ -137,7 +144,8 @@
   - *Sisi Ihsan:* Ketika dibimbing Nafs Muthma'innah.
   - *Sisi Afat:* Ketika jatuh ke over-investment atau dikuasai Nafs Ammarah.
 - **Surface Komponen:**
-  1. `Tb40HomeWidget`: Kartu "Bakat Pekan Ini" atau radar preview di Beranda.
+  1. `Tb40HomeWidget`: 
+     - *Bentuk Representasi:* Mini spider radar chart preview atau Kartu Bento "Bakat Dominan Anda" di Beranda.
   2. `Tb40ToolPage`: Dashboard asesmen mandiri, visualisasi spider/radar 4 rumpun via `fl_chart`, dan filter bakat dominan.
   3. `Tb40ListPage`: Katalog 40 kartu bakat dengan badge rumpun, nama Arab, dan pencarian.
   4. `Tb40DetailPage`: Ulasan mendalam satu bakat: hakikat penciptaan, dalil Al-Qur'an/Hadits, sisi Ihsan vs Afat, serta peran peradaban (*syakilah*).
@@ -145,43 +153,65 @@
 
 ---
 
-## 8. Modul 8: Ceklist Harian (Amanah & Amalan Adab)
-*Manajemen amalan harian anti-guilt dengan modal review kualitatif.*
+## 8. Modul 8: Ceklist Harian (Wirid Amalan Adab & Riyadhotun Nafs)
+*Manajemen amalan harian anti-guilt berbasis Tazkiyatun Nafs dan Dawamul 'Amal.*
 
-- **Peran:** Membimbing muhasabah harian tanpa memanfaatkan adiksi streak harian.
+- **Peran:** Membimbing muhasabah harian tanpa memanfaatkan adiksi streak harian, berfokus pada keistiqamahan amalan sunnah (*Dawamul 'Amal*, HR. Bukhari 6464).
+- **Pembagian Amalan Tazkiyatun Nafs:**
+  - **Dimensi Takhalli (Detoksifikasi Hati):**
+    - Menahan amarah ego (*kazhmul ghaizh*, QS. Ali 'Imran: 134) saat anak berulah.
+    - Menjaga lisan dari celaan, sindiran sarkas, dan keluhan (puasa lisan).
+    - Memeriksa kehalalan nafkah dan asupan keluarga dari syubhat.
+    - Mengikis riya' pengasuhan dan gengsi sosial.
+  - **Dimensi Tahalli (Penghiasan Akhlak):**
+    - Shalat berjamaah awal waktu.
+    - Qiyamullail / munajat malam (generator spiritualitas pengasuhan, QS. Al-Muzzammil: 1-6).
+    - Zikir pagi-petang & istighfar harian minimal 100 kali.
+    - Tilawah Al-Qur'an dan tadabbur dalil.
+    - Memeluk anak / memberikan hak *Bahasa Tubuh & Mata* tanpa distraksi layar HP.
 - **Surface Komponen:**
-  1. `CeklistHomeWidget`: Ringkasan amanah hari ini ("3 dari 5 amanah telah ditunaikan") dengan indikator ketenteraman.
-  2. `CeklistToolPage`: Halaman manajemen ceklist terkelompok (*Amanah Diri*, *Amanah Keluarga*, *Target Belajar*, *Ibadah Sunnah*).
+  1. `CeklistHomeWidget`: 
+     - *Bentuk Representasi:* `Collapsible List Section` atau `DailyActivityCarousel` di Beranda dengan status progress pill ("3 dari 5 amalan tertunaikan").
+  2. `CeklistToolPage`: Halaman manajemen amalan harian terkelompok (*Amanah Diri*, *Amanah Keluarga*, *Target Belajar*, *Ibadah Sunnah*).
   3. `CeklistListPage`: Daftar ceklist aktif dengan tombol centang cepat.
-  4. `CeklistReviewModal (Detail)`: Bottom sheet muhasabah non-gamified untuk menilai kualitas batin amalan (*Muthma'innah*, *Lawwamah*, *Ammarah*).
+  4. `CeklistReviewModal (Detail)`: Bottom sheet muhasabah non-gamified untuk menilai kualitas batin amalan:
+     - **Nafs Muthma'innah:** Amalan ditunaikan dengan keikhlasan, ketenangan, dan kelapangan dada.
+     - **Nafs Lawwamah:** Amalan tertunaikan namun diiringi penyesalan atas kekurangan khusyuk atau bisikan ego.
+     - **Nafs Ammarah:** Tertunda, lalai, atau dikuasai hawa nafsu (langsung diarahkan ke istighfar dan doa pemulihan).
+     - Metrik Adab: **BT** (*Belum Tampak*), **MT** (*Mulai Tampak*), **BK** (*Berkembang*), **MM** (*Membudaya*).
   5. `CeklistUserWidget`: Mizan balance scale / grafik stacked bar istiqomah sepekan di Profil User.
 
 ---
 
-## 9. Modul 9: Relasi Qalbiyah (Keluarga & Santri)
-*Pemantauan ikatan jiwa, dinamika Tangki Cinta, dan rekomendasi hikmah.*
+## 9. Modul 9: Relasi Keluarga dan Teman Dekat
+*Pemantauan ikatan jiwa, dinamika Tangki Cinta, ukhuwah, dan rekomendasi hikmah.*
 
-- **Peran:** Mengelola hubungan emosional dan spiritual orang tua terhadap pasangan, anak-anak, maupun santri asuhan.
+- **Peran:** Mengelola hubungan emosional dan spiritual pengguna terhadap keluarga inti maupun rekan seperjuangan dakwah/sahabat dekat.
+- **Cakupan Lingkaran Relasi:**
+  1. **Keluarga:** Pasangan, Anak per fase fitrah (*Thufulah, Tamyiz, Murahaqah, Syabab*), Orang Tua / Mertua.
+  2. **Teman Dekat:** Sahabat hijrah, rekan kerja/guru seperjuangan, teman belajar santri/murid.
 - **Surface Komponen:**
-  1. `RelasiHomeWidget`: Kartu relasi aktif di Beranda yang menampilkan status Tangki Cinta anggota keluarga (misal "Ananda Zaid: Penuh Kehangatan").
+  1. `RelasiHomeWidget`: 
+     - *Bentuk Representasi:* Carousel horizontal status cinta keluarga dan teman dekat di Beranda (misal "Ananda Zaid: Penuh Kehangatan", "Sahabat Abu Bakar: Ukhuwah Terjaga").
   2. `RelasiToolPage`: Dashboard neraca qalbiyah, filter periode (Pekan Ini, Bulan Ini, Sepanjang Masa), dan kartu tadabbur asisten batin.
-  3. `RelasiListPage`: Daftar profil relasi keluarga/santri yang terdaftar.
-  4. `RelasiDetailPage`: Profil individu anak/santri: usia fitrah (Thufulah/Tamyiz/Murahaqah/Syabab), riwayat dialog hati, catatan adab, dan rekomendasi hikmah esok hari yang bisa disematkan langsung ke Ceklist Harian.
-  5. `RelasiUserWidget`: Ringkasan lingkaran keluarga terhubung di Profil User.
+  3. `RelasiListPage`: Daftar profil relasi keluarga dan teman dekat yang terdaftar.
+  4. `RelasiDetailPage`: Profil individu: usia fitrah, catatan adab, riwayat dialog hati, dinamika *Tangki Cinta*, dan rekomendasi hikmah esok hari yang bisa disematkan langsung ke Ceklist Harian.
+  5. `RelasiUserWidget`: Ringkasan lingkaran relasi keluarga & teman dekat di Profil User.
 
 ---
 
-## 10. Modul 10: Onboarding 4 Langkah (Setup Awal Terpandu)
-*Personalisasi awal tenang dan bermartabat.*
+## 10. Modul 10: Onboarding 4 Langkah (Setup Awal Terpandu + Jalan Pintas TB-40)
+*Personalisasi awal tenang, bermartabat, dan tanpa paksaan.*
 
 - **Peran:** Mengumpulkan data penting agar seluruh modul memiliki konteks relevan sejak hari pertama.
 - **Alur 4 Langkah Wizard:**
   1. **Langkah 1 — Data Diri:** Nama/Kunyah, panggilan, peran utama (Ayah / Bunda / Guru / Santri / Mandiri), avatar fitrah.
   2. **Langkah 2 — Data Pekerjaan:** Profesi/aktivitas, instansi/sekolah (opsional, bisa memilih dari daftar Modul 3 Lembaga Mitra), zona waktu.
-  3. **Langkah 3 — Data Relasi:** Input relasi pertama (misal: nama anak pertama, tanggal lahir/rentang usia fitrah Thufulah/Tamyiz/Murahaqah/Syabab).
+  3. **Langkah 3 — Data Relasi:** Input relasi pertama (keluarga: anak/pasangan, atau sahabat dekat).
   4. **Langkah 4 — Data Ceklist Harian:** Pemilihan 3–5 amanah adab awal yang ingin dibiasakan sesuai peran yang dipilih.
-- **Karakteristik Interaksi:**
-  - Terdapat tombol **"Lewati / Nanti Saja"** di setiap langkah untuk pengguna yang ingin langsung melihat Beranda.
+- **Fitur Khusus Onboarding:**
+  - **Tombol Akses Langsung TB-40:** Disediakan tombol aksi cepat *"Akses Langsung Tools Tafsir Bakat 40"* di layar onboarding agar pengguna yang hanya ingin menguji asesmen bakat fitrah bisa langsung masuk ke Modul 7 tanpa wajib menuntaskan wizard data diri.
+  - Tombol **"Lewati / Nanti Saja"** di setiap langkah untuk pengguna yang ingin langsung melihat Beranda.
   - Data yang diisi otomatis mengisi Modul 5 (User), Modul 8 (Ceklist), dan Modul 9 (Relasi).
   - Dapat diakses dan disunting ulang kapan saja melalui Pengaturan Profil User.
 
@@ -192,7 +222,8 @@
 
 - **Peran:** Ruang aman berkeluh kesah saat mengalami kepenatan pengasuhan tanpa takut dihakimi manusia lain, dilengkapi doa penenang jiwa.
 - **Surface Komponen:**
-  1. `CurhatHomeWidget`: Banner kontemplatif di Beranda ("Hati sedang gundah? Masuki Ruang Qalbu") dengan tombol pemicu satu ketukan.
+  1. `CurhatHomeWidget`: 
+     - *Bentuk Representasi:* Promotional banner di Beranda ("Hati sedang gundah? Masuki Ruang Qalbu") dengan tombol pemicu satu ketukan.
   2. `CurhatBottomBarButton`: Tab ke-4 di Bottom Navigation Dock dengan ikon dialog hati.
   3. `CurhatToolPage`: Pijakan permulaan (pilihan topik: *Lelah Emosi*, *Bingung Menghadapi Anak*, *Konflik Pasutri*, *Keraguan Jiwa*), tombol Walkie-Talkie Ruang Qalbu (Push-to-Talk) dengan living audio waveform.
   4. `CurhatListPage`: Riwayat sesi dialog batin tersimpan rapi secara lokal (*zero-cloud-retention*).
@@ -200,16 +231,17 @@
 
 ---
 
-## 12. Modul 12: Cerita Interaktif (Simulasi Narasi Adab & Serial Zaid)
-*Latihan simulasi pengasuhan tanpa risiko nyata.*
+## 12. Modul 12: Cerita Interaktif (Simulasi Rehearsal Adab & Serial Zaid)
+*Latihan simulasi pengasuhan berbasis Tazkiyatun Nafs dan dialektika bakat.*
 
-- **Peran:** Melatih respon spontan orang tua menghadapi krisis nyata (anak tantrum, menolak shalat, membangkang) menggunakan dialog bercabang dan umpan balik syar'i.
+- **Peran:** Melatih respon spontan orang tua menghadapi krisis nyata (anak tantrum, menolak shalat, benturan ego remaja) menggunakan dialog bercabang dan umpan balik syar'i.
+- **Karakteristik Narasi Berbasis Manhaj:**
+  - **Respon 3 Derajat Jiwa:** Pilihan dialog mencerminkan *Nafs Muthma'innah* (Mumtaz, adab nabawiyah, koneksi sebelum koreksi), *Nafs Lawwamah* (Wajar/evaluatif), dan *Nafs Ammarah* (Munkar, amarah ego/ghadhab).
+  - **Dialektika Batin Bakat TB-40:** Bakat-bakat dalam diri orang tua bersuara di monolog batin (Ketegasan *Al-Qiyadah* vs Kasih Sayang *Al-Fashahah* vs Kebijaksanaan *Al-Fikriyyah*).
+  - **Ulasan Takhrij & Pemulihan Hutang Pengasuhan:** Telaah dalil shahih, atsar salaf, dan muhasabah pemulihan luka batin masa lalu orang tua (*debt of parenting recovery*).
 - **Surface Komponen:**
-  1. `CeritaHomeWidget`: Kartu episode aktif Serial Zaid di Beranda dengan penanda progres langkah.
-  2. `CeritaToolPage`: Katalog skenario narasi terkelompok berdasarkan fase usia anak (Fase 2-7 th, 7-10 th, 10-14 th, 14-18 th).
+  1. `CeritaHomeWidget`: 
+     - *Bentuk Representasi:* `MultiSerialStoryCard` (carousel episode aktif Serial Zaid di Beranda dengan penanda progres langkah).
+  2. `CeritaToolPage`: Katalog skenario narasi terkelompok berdasarkan fase usia fitrah anak (Thufulah 2-7 th, Tamyiz 7-10 th, Murahaqah 10-14 th, Syabab 14-18 th).
   3. `CeritaListPage`: Daftar bab cerita interaktif dengan status eksplorasi (*Belum Dicoba*, *Sedang Berjalan*, *Selesai Muhasabah*).
-  4. `CeritaDetailPage`: Layar interaksi cerita:
-     - Narasi situasi krisis.
-     - Pilihan respon dialog orang tua berjenjang (*Mumtaz* adab nabawiyah, *Hasan* wajar, *Munkar* bentakan/amarah).
-     - Monolog cermin batin bakat TB-40 yang bersuara memberikan pertimbangan.
-     - Ulasan hikmah syar'i setelah pilihan diambil.
+  4. `CeritaDetailPage`: Layar interaksi cerita: narasi krisis, pilihan respon dialog, monolog cermin batin TB-40, ulasan hikmah syar'i, dan doa penenang.
