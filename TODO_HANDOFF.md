@@ -151,6 +151,13 @@
 - [x] **Task 14.5:** Validasi akses lintas perangkat via Tailscale VPN (`http://100.118.34.69:3010` & `http://cachyos-5600gt.tail0faa6b.ts.net:3010`), verifikasi respons HTTP 200 OK di semua endpoint aset.
 - [x] **Task 14.6:** Penyusunan master checklist modularitas OMP ([`prototype/compile/MODULAR_CHECKLIST_OMP.md`](prototype/compile/MODULAR_CHECKLIST_OMP.md)) dengan status 15/15 terverifikasi.
 
+### Phase 15: Perencanaan Ulang Arsitektur Modular v2 (12 Modul Terstandar) *(Completed)*
+- [x] **Task 15.1:** Analisis komprehensif kondisi repo dan pemetaan terhadap 12 modul prioritas (*Event, Buku, Tokoh/Lembaga, Kemitraan, User, Wiki, TB-40, Ceklist, Relasi, Onboarding, Curhat AI, Cerita Interaktif*).
+- [x] **Task 15.2:** Penyusunan Cetak Biru Master PKN Mobile v2 di [`prototype/compile v2/README.md`](prototype/compile%20v2/README.md).
+- [x] **Task 15.3:** Dekomposisi 6 Surface Komponen untuk seluruh 12 modul di [`prototype/compile v2/MODULAR_MODULES_DECOMPOSITION.md`](prototype/compile%20v2/MODULAR_MODULES_DECOMPOSITION.md).
+- [x] **Task 15.4:** Perumusan Skema Database Dual-Engine (Drift lokal + LibSQL Vector OTA) di [`prototype/compile v2/DATABASE_AND_BACKEND_SCHEMA.md`](prototype/compile%20v2/DATABASE_AND_BACKEND_SCHEMA.md).
+- [x] **Task 15.5:** Penyusunan Roadmap Implementasi 4 Fase menuju proyek baru [`/home/abuhafi/Project/pkn-mobile`](file:///home/abuhafi/Project/pkn-mobile) di [`prototype/compile v2/PHASED_IMPLEMENTATION_ROADMAP.md`](prototype/compile%20v2/PHASED_IMPLEMENTATION_ROADMAP.md).
+
 ---
 
 ## 4. Developer Quick Reference & Commands
