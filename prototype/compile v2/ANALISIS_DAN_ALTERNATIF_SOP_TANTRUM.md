@@ -132,13 +132,13 @@ Berdasarkan tinjauan psikologi kognitif darurat (*Cognitive Tunnel Vision during
 * **Komponen:**
   1. **Visual Calm Anchor:**  
      *“Tahan Lisan. Jangan Membentak. Tarik nafas 4 detik. Anak belum mukallaf (HR. Muslim 3009).”*
-  2. **3 Langkah Eksekutif Super Ringkas:**
-     - 1️⃣ **Duduk Sejajar Mata Anak:** Rendahkan tubuh, jangan berdiri menjulang.
-     - 2️⃣ **Dekap Hangat & Diamkan Kata:** Peluk dadanya, jangan mendebat logika.
-     - 3️⃣ **Amankan Radius Bahaya:** Singkirkan benda keras / geser ke tempat sepi.
+  2. **3 Langkah Eksekutif Berbasis Maqashid Syariah (Hifzhun Nafs No. 1):**
+     - 1️⃣ **Amankan Radius Bahaya Fisik (Wajib Awal / Hifzhun Nafs):** Singkirkan benda tajam/keras, jauhkan dari tangga, listrik, atau jalan raya seketika (*Adh-Dhararu Yuzal*).
+     - 2️⃣ **Duduk Rendah Sejajar Mata:** Rendahkan tubuh di lantai, hilangkan gestur intimidasi visual yang memicu respon perlawanan.
+     - 3️⃣ **Dekap Hangat & Diamkan Kata:** Peluk dadanya erat, puasa ceramah/debat sampai nafas teratur (*Ta'khirul Bayan*).
   3. **Dua Tombol Pilihan Sikap SOTAB:**
-     - [ 🟢 **Bisa Dituruti? Penuhi Sekarang** ]
-     - [ 🛡️ **Bahaya / Tak Bisa? Peluk Sampai Reda** ]
+     - [ 🟢 **Aman & Mampu? Penuhi Sekarang** ]
+     - [ 🛡️ **Bahaya / Tak Aman? Amankan & Dekap** ]
   4. **Primary Action CTA:**  
      **[ 🕊️ ALHAMDULILLAH, ANAK SUDAH TENANG ➔ ]**  
      *(Mengarahkan orang tua untuk berfokus mendampingi anak terlebih dahulu sebelum menyentuh aplikasi lagi)*.
@@ -152,7 +152,7 @@ Dalam realitas pengasuhan sehari-hari, **kepanikan dan stres sering kali justru 
 
 Ketika anak mulai merengek atau menolak aturan, amigdala orang tua dapat terpicu (*amygdala hijack*) hingga memunculkan dorongan kuat untuk membentak, melempar barang, atau melakukan kekerasan fisik.
 
-Oleh karena itu, modul P3K ditingkatkan dari sekadar "SOP Tantrum Anak" menjadi **"P3K Universal Krisis Genting Pengasuhan"** dengan sistem **Dual-Crisis Triage**:
+Oleh karena itu, modul P3K ditingkatkan dari sekadar "SOP Tantrum Anak" menjadi **"P3K Universal Krisis Genting Pengasuhan"** dengan sistem **Dual-Crisis Triage** yang berlandaskan **Maqashid Syariah**:
 
 ```
                               [ P3K KRISIS GENTING ]
@@ -162,10 +162,10 @@ Oleh karena itu, modul P3K ditingkatkan dari sekadar "SOP Tantrum Anak" menjadi 
       [ 👶 ANAK MENGAMUK ]                           [ 🧘 SAYA MAU MELEDAK ]
     (Tantrum / Agresi Anak)                     (Parent Burnout & Rage Emergency)
                  │                                               │
-       1. Duduk Sejajar Mata                           1. Puasa Lisan & Mundur 2 Langkah
-       2. Dekap Hangat & Diam                          2. Segera Duduk / Berbaring
-       3. Amankan Radius Bahaya                        3. Basuh Wajah/Tengkuk Air Dingin
-       4. Pilihan Aksi: Turuti / Dampingi              4. Kalibrasi Nafas 60s & Ta'awwudz
+       1. Amankan Bahaya Fisik (Hifzhun Nafs)          1. Amankan Anak & Lepas Kontak Fisik
+       2. Duduk Rendah Sejajar Mata                    2. Puasa Lisan Mutlak (HR. Ahmad)
+       3. Dekap Hangat & Diamkan Kata                  3. Ubah Posisi & Wudhu Air Dingin
+       4. Pilihan: Aman (Penuhi) / Bahaya (Dekap)      4. Kalibrasi Nafas 60s & Ta'awwudz
                  │                                               │
                  ▼                                               ▼
       [ KONDISI STABIL ANAK ]                         [ PEMULIHAN JIWA ORANG TUA ]
@@ -181,15 +181,15 @@ Oleh karena itu, modul P3K ditingkatkan dari sekadar "SOP Tantrum Anak" menjadi 
 
 Ketika tombol `[ 🧘 Saya Mau Meledak ]` ditekan, seluruh instruksi teoritis dieliminasi, digantikan oleh 3 intervensi fisiologis-nabawiyah seketika:
 
-1. **🛑 Puasa Lisan Mutlak & Mundur Sekejap (HR. Ahmad)**
+1. **🛑 Amankan Anak & Lepaskan Kontak Fisik (Prioritas Hifzhun Nafs / Dar'ul Mafasid):**
+   - *Prinsip:* Saat marah memuncak, tangan orang tua berada di ambang refleks fisik berbahaya (*shaken baby*, memukul, melempar).
+   - *Aksi:* Letakkan anak di kasur/lantai aman seketika, lalu segera ambil jarak mundur 2–3 langkah. Jauhkan tangan dari fisik anak!
+2. **🤐 Puasa Lisan Mutlak & Kunci Mulut (HR. Ahmad):**
    - *Hadits:* *"Bila salah seorang di antara kalian marah, hendaklah ia diam."* (HR. Ahmad).
-   - *Aksi:* Kunci mulut rapat-rapat. Satu kata bentakan saat marah dapat menghancurkan harga diri anak dan melahirkan trauma seumur hidup. Pastikan anak berada di lantai/ruang yang aman, lalu ambil jarak fisik 2–3 langkah.
-2. **🪑 Ubah Posisi Fisik Segera: Duduk atau Berbaring (HR. Abu Dawud 4782)**
+   - *Aksi:* Kunci mulut rapat-rapat. Satu kata bentakan atau doa buruk saat marah dapat merusak fitrah anak dan diijabah menjadi musibah (HR. Muslim 3009).
+3. **🪑 Ubah Posisi Fisik & Basuh Air Dingin (HR. Abu Dawud 4782 & 4784):**
    - *Hadits:* *"Bila salah seorang di antara kalian marah dalam keadaan berdiri, hendaklah ia duduk. Jika amarahnya belum reda, hendaklah ia berbaring."* (HR. Abu Dawud no. 4782).
-   - *Fisiologi:* Perubahan posisi dari berdiri ke duduk menurunkan frekuensi denyut jantung, meredakan tekanan darah sistolik, dan mematikan dorongan motorik untuk melakukan serangan agresi.
-3. **💧 Basuh Wajah & Tengkuk dengan Air Dingin / Wudhu (HR. Abu Dawud 4784)**
-   - *Hadits:* *"Sesungguhnya amarah itu dari setan, dan setan diciptakan dari api, dan api itu dipadamkan dengan air. Maka jika salah seorang di antara kalian marah, berwudhulah."* (HR. Abu Dawud no. 4784).
-   - *Fisiologi Vagus Nerve:* Membasuh air dingin ke wajah dan bagian belakang leher (*mammalian dive reflex*) merangsang saraf vagus parasimpatik untuk menghentikan respon *fight-or-flight* seketika.
+   - *Fisiologi Vagus Nerve:* Duduk/berbaring menurunkan tekanan darah sistolik. Membasuh air dingin/wudhu memicu *mammalian dive reflex* untuk memutus lonjakan amigdala seketika.
 4. **⏱️ Interaktif Kalibrasi Nafas Nabawi 60 Detik (Box Breathing 4-4-4):**
    - Panduan nafas visual: Tarik nafas (4 detik) ➔ Tahan nafas (4 detik) ➔ Hembuskan nafas perlahan (4 detik).
    - Disertai bacaan Isti'adzah: *A'udzu billahi minasy-syaithanir-rajim* (HR. Bukhari no. 6115).
@@ -211,5 +211,17 @@ Setelah tombol `[ 🕊️ Alhamdulillah, Hati Saya Sudah Tenang ➔ ]` ditekan:
    *“Rabbi syrahli shadri wa yassirli amri”* (Ya Rabbku, lapangkanlah untukku dadaku, dan mudahkanlah untukku urusanku).
 4. **Tazkiyah & Rekonsiliasi:**  
    Menyadari bahwa orang tua bukan malaikat, beristighfar, lalu memeluk kembali anak dengan kehangatan tanpa mengungkit kemarahan tadi.
+
+---
+
+### C. Landasan Maqashid Syariah & Kaidah Fiqih Pengasuhan Darurat
+
+| Prinsip Syariat | Kaidah Fiqih Terkait | Aplikasi Nyata pada Fitur P3K |
+| :--- | :--- | :--- |
+| **1. Hifzhun Nafs (حفظ النفس - Perlindungan Jiwa & Raga)** | *Dar’ul Mafasid Muqaddamun ‘ala Jalbil Mashalih* (درء المفاسد مقدم على جلب المصالح) | **Langkah 1 Mutlak:** Mengamankan bahaya fisik (tangga, sudut tajam, benda keras) harus mendahului dialog batin, eye contact, atau pelukan. |
+| **2. Penghilangan Bahaya Seketika** | *Adh-Dhararu Yuzalu* (الضرر يزال) | Jika barang yang diminta anak membahayakan fisik/keselamatan, wajib ditolak/diamankan tanpa kompromi, lalu dampingi tangisnya sampai reda. |
+| **3. Hifzhun Nasl & Lisan (حفظ النسل واللسان)** | Larangan mendoakan buruk atas anak (HR. Muslim 3009) | **Puasa Lisan Darurat:** Mengunci mulut seketika untuk mencegah bentakan verbal yang merusak sambungan syaraf amigdala balita atau doa laknat yang terijabah. |
+| **4. Penundaan Nasihat Sampai Stabil** | *Ta’khirul Bayan Ila Waqtil Hajah* (تأخير البيان إلى وقت الحاجة) | Memisahkan Fase Genting (&lt; 10 dtk) dan Fase Stabil. Mengharamkan ceramah/evaluasi saat anak/ortu masih dalam keadaan amarah membara. |
+
 
 
