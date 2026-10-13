@@ -108,49 +108,121 @@
       <!-- ========================================== -->
       <!-- TAB 1: BERANDA (GOAL-DIRECTED LAUNCHPAD) -->
       <!-- ========================================== -->
-      <div id="view-beranda" class="tab-view block px-5 space-y-5 pt-2">
+      <div id="view-beranda" class="tab-view block">
         
-        <!-- 1. HEADER SALAM & CONTROLS -->
-        <header class="flex items-center justify-between pt-1">
-          <div>
-            <p class="text-xs font-semibold text-pine-600 dark:text-pine-100 tracking-wide uppercase flex items-center gap-1">
-              <span class="w-2 h-2 rounded-full bg-pine-500 animate-pulse"></span>
-              Fase Tamyiz • Usia 8 Th
-            </p>
-            <h1 class="text-2xl font-bold font-serif text-basalt-900 dark:text-sand-50 tracking-tight mt-0.5">
-              Ahlan, Abu Zaid
-            </h1>
-          </div>
+        <!-- PULL-DOWN OVER-SCROLL INDICATOR (MODE RENUNGAN TRIGGER) -->
+        <div id="pull-indicator" class="hidden overflow-hidden transition-all duration-200 flex items-center justify-center bg-gradient-to-r from-pine-900 via-pine-800 to-pine-900 text-white text-xs font-bold text-center gap-2 select-none shadow-inner border-b border-pine-700/60 py-0">
+          <span id="pull-icon" class="material-symbols-outlined text-[18px] transition-transform duration-200 text-ambercustom-300">arrow_downward</span>
+          <span id="pull-text">Tarik ke bawah untuk Mode Renungan...</span>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- VARIANT A: HERO POHON ALAM 1/3 LAYAR (ALTERNATIF AKTIF DEFAULT) -->
+        <!-- ============================================================== -->
+        <div id="beranda-hero-nature" class="relative w-full h-[280px] bg-cover bg-center overflow-hidden flex flex-col justify-between p-5 select-none transition-all duration-300"
+             style="background-image: url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80');">
           
-          <div class="flex items-center gap-2">
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-800 dark:text-sand-100 flex items-center justify-center hover:scale-105 active:scale-95 transition shadow-sm">
-              <span class="material-symbols-outlined text-[18px]" id="theme-icon">dark_mode</span>
-            </button>
-            <!-- User Avatar with Settings Link -->
-            <button onclick="switchTab('profil')" class="w-10 h-10 rounded-full border-2 border-pine-600 overflow-hidden bg-sand-200 shadow-sm active:scale-95 transition">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Avatar" class="w-full h-full object-cover">
+          <!-- Serene Gradient Overlay (Emerald-Basalt to Transparent) -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80 pointer-events-none"></div>
+
+          <!-- Top Row Controls (Inside Tree Hero) -->
+          <div class="relative z-10 flex items-start justify-between">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-emerald-200 border border-white/20 shadow-sm">
+                  Fase Tamyiz • Usia 8 Th
+                </span>
+              </div>
+              <h1 class="text-2xl font-bold font-serif text-white tracking-tight mt-1 drop-shadow-md">
+                Ahlan, Abu Zaid
+              </h1>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <!-- Design Switcher (Alternatif vs Klasik) -->
+              <button onclick="toggleBerandaLayout()" id="layout-toggle-btn" title="Ganti Tampilan Beranda" class="px-2.5 py-1.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-[10px] font-extrabold text-white border border-white/20 flex items-center gap-1 active:scale-95 transition shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">nature</span>
+                <span id="layout-toggle-label">Alternatif</span>
+              </button>
+              <!-- Theme Toggle -->
+              <button onclick="toggleTheme()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center active:scale-95 transition shadow-sm border border-white/20">
+                <span class="material-symbols-outlined text-[16px]" id="theme-icon-nature">dark_mode</span>
+              </button>
+              <!-- User Avatar -->
+              <button onclick="switchTab('profil')" class="w-9 h-9 rounded-full border-2 border-emerald-400 overflow-hidden bg-sand-200 shadow-sm active:scale-95 transition">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Avatar" class="w-full h-full object-cover">
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Nabawiyah di dalam Hero Pohon (Calm Anchor + Tap to Enter Mode Renungan) -->
+          <div onclick="openModeRenungan()" class="relative z-10 cursor-pointer group p-3.5 rounded-2xl bg-black/45 hover:bg-black/60 backdrop-blur-md border border-white/25 text-center transition active:scale-98 shadow-xl">
+            <div class="flex items-center justify-center gap-1 text-ambercustom-300 mb-1">
+              <span class="material-symbols-outlined text-[16px]">format_quote</span>
+              <span class="text-[9px] font-bold tracking-widest uppercase">Sentuhan Qalbu Hari Ini</span>
+            </div>
+            <p class="text-xs md:text-sm font-serif italic text-sand-50 tracking-wide leading-relaxed drop-shadow">
+              "Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan."
+            </p>
+            <div class="mt-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 text-sand-100 text-[9px] font-bold group-hover:bg-pine-600 group-hover:text-white transition">
+              <span class="material-symbols-outlined text-[12px] animate-bounce">south</span>
+              <span>Tarik ke Bawah untuk Mode Renungan</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- VARIANT B: HEADER KLASIK (FALLBACK JIKA DI-TOGGLE) -->
+        <!-- ============================================================== -->
+        <div id="beranda-header-classic" class="hidden px-5 pt-3 space-y-3">
+          <header class="flex items-center justify-between pt-1">
+            <div>
+              <p class="text-xs font-semibold text-pine-600 dark:text-pine-100 tracking-wide uppercase flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-pine-500 animate-pulse"></span>
+                Fase Tamyiz • Usia 8 Th
+              </p>
+              <h1 class="text-2xl font-bold font-serif text-basalt-900 dark:text-sand-50 tracking-tight mt-0.5">
+                Ahlan, Abu Zaid
+              </h1>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="toggleBerandaLayout()" class="px-2.5 py-1.5 rounded-full bg-sand-100 dark:bg-basalt-800 text-[10px] font-extrabold text-pine-600 dark:text-pine-300 border border-sand-200 dark:border-basalt-700 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">view_agenda</span>
+                <span>Klasik</span>
+              </button>
+              <button onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-basalt-800 text-basalt-800 dark:text-sand-100 flex items-center justify-center hover:scale-105 active:scale-95 transition shadow-sm">
+                <span class="material-symbols-outlined text-[18px]" id="theme-icon-classic">dark_mode</span>
+              </button>
+              <button onclick="switchTab('profil')" class="w-10 h-10 rounded-full border-2 border-pine-600 overflow-hidden bg-sand-200 shadow-sm active:scale-95 transition">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Avatar" class="w-full h-full object-cover">
+              </button>
+            </div>
+          </header>
+
+          <div id="beranda-quote-classic" class="px-3.5 py-2.5 rounded-xl bg-sand-100/70 dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-center">
+            <p class="text-xs font-serif italic text-basalt-700 dark:text-sand-200">
+              "Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan."
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- SHEET KONTEN UTAMA (DITEMPATKAN 1/3 DARI ATAS) -->
+        <!-- ============================================================== -->
+        <div id="beranda-sheet-content" class="-mt-6 rounded-t-[32px] bg-sand-50 dark:bg-basalt-950 px-5 pt-5 pb-8 space-y-5 shadow-2xl relative z-10 border-t border-sand-200/60 dark:border-basalt-800 transition-all">
+          
+          <!-- SEARCH BAR TERPADU (FTS5 / ROTATING TICKER) -->
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-basalt-400 dark:text-sand-400 text-[20px]">search</span>
+            <input type="text" id="beranda-search" placeholder="Cari panduan adab, dalil, atau tips..." 
+              class="w-full pl-10 pr-12 py-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-xs font-medium text-basalt-900 dark:text-sand-50 placeholder-basalt-400 dark:placeholder-sand-400 focus:outline-none focus:ring-2 focus:ring-pine-500 shadow-sm transition">
+            <button onclick="openCurhatModal()" class="absolute right-2 px-2.5 py-1.5 rounded-xl bg-pine-50 dark:bg-pine-950 text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center gap-1 active:scale-95 transition">
+              <span class="material-symbols-outlined text-[16px]">mic</span>
+              <span class="text-[11px]">PTT</span>
             </button>
           </div>
-        </header>
-
-        <!-- KUTIPAN NABAWIYAH TETAP (CALM ANCHOR) -->
-        <div class="px-3.5 py-2.5 rounded-xl bg-sand-100/70 dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-center">
-          <p class="text-xs font-serif italic text-basalt-700 dark:text-sand-200">
-            "Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan."
-          </p>
-        </div>
-
-        <!-- SEARCH BAR TERPADU (FTS5 / ROTATING TICKER) -->
-        <div class="relative flex items-center">
-          <span class="material-symbols-outlined absolute left-3.5 text-basalt-400 dark:text-sand-400 text-[20px]">search</span>
-          <input type="text" id="beranda-search" placeholder="Cari panduan adab, dalil, atau tips..." 
-            class="w-full pl-10 pr-12 py-3 rounded-2xl bg-white dark:bg-basalt-900 border border-sand-200 dark:border-basalt-800 text-xs font-medium text-basalt-900 dark:text-sand-50 placeholder-basalt-400 dark:placeholder-sand-400 focus:outline-none focus:ring-2 focus:ring-pine-500 shadow-sm transition">
-          <button onclick="openCurhatModal()" class="absolute right-2 px-2.5 py-1.5 rounded-xl bg-pine-50 dark:bg-pine-950 text-pine-600 dark:text-pine-400 text-xs font-bold flex items-center gap-1 active:scale-95 transition">
-            <span class="material-symbols-outlined text-[16px]">mic</span>
-            <span class="text-[11px]">PTT</span>
-          </button>
-        </div>
 
         <!-- ============================================== -->
         <!-- 🎯 GOAL 1: PERTOLONGAN CEPAT (EMERGENCY < 10 DETIK) -->
@@ -551,7 +623,8 @@
           </div>
         </section>
 
-      </div>
+        </div> <!-- /#beranda-sheet-content -->
+      </div> <!-- /#view-beranda -->
 
       <!-- ========================================== -->
       <!-- TAB 2: EVENT (AGENDA MAJELIS & DAURAH) -->
@@ -1952,24 +2025,106 @@
       </div>
     </div>
 
+    <!-- ============================================================== -->
+    <!-- FULL-SCREEN MODE RENUNGAN (TADABBUR & DIGITAL CLOCK SLIDESHOW) -->
+    <!-- ============================================================== -->
+    <div id="mode-renungan" class="hidden absolute inset-0 z-50 flex flex-col justify-between transition-all duration-500 overflow-hidden bg-black text-white select-none animate-in fade-in duration-300">
+      
+      <!-- Serene Forest Background with slow scale -->
+      <div id="renungan-bg" 
+           class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out scale-100"
+           style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80');">
+      </div>
+      <!-- Deep meditative gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 backdrop-blur-[2px]"></div>
+
+      <!-- Top Header Renungan -->
+      <div class="relative z-10 pt-4 px-5 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-300">Mode Renungan • Tadabbur Qalbu</span>
+        </div>
+        <button onclick="closeModeRenungan()" class="px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/20 text-xs font-bold text-white flex items-center gap-1 active:scale-95 transition">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+          <span>Tutup</span>
+        </button>
+      </div>
+
+      <!-- Center: Big Quote Slideshow -->
+      <div class="relative z-10 px-6 py-4 flex-1 flex flex-col items-center justify-center text-center max-w-md mx-auto">
+        <span class="material-symbols-outlined text-ambercustom-400/90 text-[44px] mb-2 select-none animate-pulse">format_quote</span>
+        
+        <div id="renungan-quote-card" class="space-y-4 min-h-[190px] flex flex-col justify-center transition-opacity duration-500 opacity-100">
+          <p id="renungan-quote-arabic" class="font-arabic text-xl md:text-2xl text-ambercustom-200 leading-loose"></p>
+          <h2 id="renungan-quote-text" class="font-serif text-lg md:text-2xl font-normal text-sand-50 leading-relaxed drop-shadow-md">
+            "Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan."
+          </h2>
+          <p id="renungan-quote-source" class="text-xs font-sans text-sand-300 uppercase tracking-widest font-semibold text-emerald-300">
+            — Prinsip Dasar Manhaj PKN
+          </p>
+        </div>
+
+        <!-- Slideshow Controls (Previous, Dots, Next) -->
+        <div class="flex items-center justify-center gap-4 mt-6">
+          <button onclick="prevRenunganQuote()" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition">
+            <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+          </button>
+          
+          <div id="renungan-dots" class="flex items-center gap-2"></div>
+
+          <button onclick="nextRenunganQuote()" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white active:scale-90 transition">
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom: Large Digital Clock & Date & Exit Gesture -->
+      <div class="relative z-10 pb-8 px-5 flex flex-col items-center text-center space-y-2 border-t border-white/10 pt-4 bg-gradient-to-t from-black/90 to-transparent">
+        
+        <!-- Real-Time Digital Clock -->
+        <div id="renungan-clock" class="text-4xl md:text-5xl font-mono font-extrabold tracking-widest text-sand-50 drop-shadow-lg">
+          00:00:00
+        </div>
+
+        <!-- Date Display (Gregorian & Hijri) -->
+        <div id="renungan-date" class="text-xs text-sand-300/90 font-medium">
+          Rabu, 14 Oktober 2026 • 3 Rabiul Akhir 1448 H
+        </div>
+
+        <!-- Calming Tagline -->
+        <div class="text-[11px] text-emerald-300/90 font-medium tracking-wide">
+          "Hati yang hening adalah tempat turunnya taufiq dan kesabaran."
+        </div>
+
+        <!-- Swipe Up / Exit Button -->
+        <button onclick="closeModeRenungan()" class="mt-2 px-5 py-2 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-[16px] animate-bounce">north</span>
+          <span>Geser ke Atas untuk Kembali</span>
+        </button>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- SCRIPT INTERAKSI LENGKAP -->
   <script>
     // 1. THEME SWITCHER
+    function toggleTheme() {
+      const htmlElement = document.documentElement;
+      const isDark = htmlElement.classList.toggle('dark');
+      const iconNature = document.getElementById('theme-icon-nature');
+      const iconClassic = document.getElementById('theme-icon-classic');
+      const iconDefault = document.getElementById('theme-icon');
+      const iconName = isDark ? 'light_mode' : 'dark_mode';
+      if (iconNature) iconNature.innerText = iconName;
+      if (iconClassic) iconClassic.innerText = iconName;
+      if (iconDefault) iconDefault.innerText = iconName;
+    }
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const htmlElement = document.documentElement;
-
-    themeToggleBtn.addEventListener('click', () => {
-      if (htmlElement.classList.contains('dark')) {
-        htmlElement.classList.remove('dark');
-        themeIcon.innerText = 'dark_mode';
-      } else {
-        htmlElement.classList.add('dark');
-        themeIcon.innerText = 'light_mode';
-      }
-    });
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', toggleTheme);
+    }
 
     // 2. TAB ROUTER (5 TABS JAKOB'S LAW)
     const tabs = ['beranda', 'event', 'materi', 'curhat', 'profil'];
@@ -2382,6 +2537,220 @@
           timerDisplay.innerText = `${m}:${s}`;
         }, 1000);
       }
+    }
+
+    // ==============================================================
+    // 10. MODE RENUNGAN & NATURE HERO CONTROLLER
+    // ==============================================================
+    let berandaLayout = 'nature'; // 'nature' or 'classic'
+    let renunganClockInterval = null;
+    let renunganSlideInterval = null;
+    let currentQuoteIdx = 0;
+
+    const renunganQuotes = [
+      {
+        arabic: "",
+        text: "“Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan.”",
+        source: "Prinsip Emas Manhaj PKN"
+      },
+      {
+        arabic: "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+        text: "“Bukanlah orang yang kuat itu yang pandai bergulat, melainkan orang yang mampu menahan dirinya ketika sedang marah.”",
+        source: "HR. Bukhari no. 6114 & Muslim no. 2609"
+      },
+      {
+        arabic: "اللَّهُمَّ إِنِّيْ اجْتَهَدْتُ أَنْ أَؤدِّبَهُ فَلَمْ أَقْدِرْ عَلَى تَأَدِيْبِهِ فَأَدِّبْهُ أَنْتَ لِي",
+        text: "“Ya Allah, sesungguhnya aku telah berusaha mendidik anakku namun aku tidak berdaya, maka didiklah dia untukku.”",
+        source: "Munajat Imam Fudhail bin 'Iyadh (Siyar 7/408)"
+      },
+      {
+        arabic: "إِذَا غَضِبَ أَحَدُكُمْ فَلْيَسْكُتْ",
+        text: "“Bila salah seorang di antara kalian sedang marah, hendaklah ia diam.”",
+        source: "HR. Ahmad no. 2136 (Hadits Shahih)"
+      },
+      {
+        arabic: "",
+        text: "“Anak kecil belum mukallaf. Jangan menuntut kedewasaan sebelum waktunya. Peluk hak egosentris fitrahnya agar kelak tidak memberontak saat pubertas.”",
+        source: "Ustadz Abdul Kholiq, S.Pd (SOTAB HEBAT)"
+      },
+      {
+        arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+        text: "“Ya Rabb kami, anugerahkanlah kepada kami pasangan dan keturunan kami sebagai penyejuk hati kami, dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa.”",
+        source: "QS. Al-Furqan: 74"
+      }
+    ];
+
+    function toggleBerandaLayout() {
+      berandaLayout = (berandaLayout === 'nature') ? 'classic' : 'nature';
+      const heroNature = document.getElementById('beranda-hero-nature');
+      const headerClassic = document.getElementById('beranda-header-classic');
+      const sheetContent = document.getElementById('beranda-sheet-content');
+      const label = document.getElementById('layout-toggle-label');
+
+      if (berandaLayout === 'nature') {
+        if (heroNature) heroNature.classList.remove('hidden');
+        if (headerClassic) headerClassic.classList.add('hidden');
+        if (sheetContent) sheetContent.className = "-mt-6 rounded-t-[32px] bg-sand-50 dark:bg-basalt-950 px-5 pt-5 pb-8 space-y-5 shadow-2xl relative z-10 border-t border-sand-200/60 dark:border-basalt-800 transition-all";
+        if (label) label.textContent = 'Alternatif';
+      } else {
+        if (heroNature) heroNature.classList.add('hidden');
+        if (headerClassic) headerClassic.classList.remove('hidden');
+        if (sheetContent) sheetContent.className = "px-5 space-y-5 pt-1 pb-8 transition-all";
+        if (label) label.textContent = 'Klasik';
+      }
+    }
+
+    function openModeRenungan() {
+      const modal = document.getElementById('mode-renungan');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      updateRenunganClock();
+      if (renunganClockInterval) clearInterval(renunganClockInterval);
+      renunganClockInterval = setInterval(updateRenunganClock, 1000);
+
+      renderRenunganQuote(currentQuoteIdx);
+      if (renunganSlideInterval) clearInterval(renunganSlideInterval);
+      renunganSlideInterval = setInterval(nextRenunganQuote, 7000);
+    }
+
+    function closeModeRenungan() {
+      const modal = document.getElementById('mode-renungan');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      if (renunganClockInterval) clearInterval(renunganClockInterval);
+      if (renunganSlideInterval) clearInterval(renunganSlideInterval);
+      renunganClockInterval = null;
+      renunganSlideInterval = null;
+    }
+
+    function renderRenunganQuote(idx) {
+      currentQuoteIdx = (idx + renunganQuotes.length) % renunganQuotes.length;
+      const quote = renunganQuotes[currentQuoteIdx];
+      const card = document.getElementById('renungan-quote-card');
+      const arabicEl = document.getElementById('renungan-quote-arabic');
+      const textEl = document.getElementById('renungan-quote-text');
+      const srcEl = document.getElementById('renungan-quote-source');
+
+      if (card) {
+        card.style.opacity = '0';
+        setTimeout(() => {
+          if (arabicEl) arabicEl.textContent = quote.arabic || '';
+          if (textEl) textEl.textContent = quote.text;
+          if (srcEl) srcEl.textContent = quote.source;
+          card.style.opacity = '1';
+        }, 200);
+      }
+
+      // Render dots
+      const dotsContainer = document.getElementById('renungan-dots');
+      if (dotsContainer) {
+        dotsContainer.innerHTML = renunganQuotes.map((_, i) => `
+          <button onclick="renderRenunganQuote(${i})" class="w-2 h-2 rounded-full transition-all duration-300 ${i === currentQuoteIdx ? 'w-5 bg-ambercustom-400' : 'bg-white/30 hover:bg-white/50'}"></button>
+        `).join('');
+      }
+    }
+
+    function nextRenunganQuote() {
+      renderRenunganQuote(currentQuoteIdx + 1);
+    }
+
+    function prevRenunganQuote() {
+      renderRenunganQuote(currentQuoteIdx - 1);
+    }
+
+    function updateRenunganClock() {
+      const clockEl = document.getElementById('renungan-clock');
+      const dateEl = document.getElementById('renungan-date');
+      if (!clockEl) return;
+      const now = new Date();
+      const hrs = String(now.getHours()).padStart(2, '0');
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      const secs = String(now.getSeconds()).padStart(2, '0');
+      clockEl.textContent = `${hrs}:${mins}:${secs}`;
+
+      if (dateEl) {
+        const days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        dateEl.textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} • Waktu Renungan Qalbu`;
+      }
+    }
+
+    // PULL-DOWN GESTURE DETECTOR TO ENTER MODE RENUNGAN
+    const contentContainer = document.getElementById('content-container');
+    const pullIndicator = document.getElementById('pull-indicator');
+    const pullIcon = document.getElementById('pull-icon');
+    const pullText = document.getElementById('pull-text');
+    let touchStartY = 0;
+    let pullDistance = 0;
+    const PULL_THRESHOLD = 60;
+
+    if (contentContainer) {
+      contentContainer.addEventListener('touchstart', (e) => {
+        if (contentContainer.scrollTop <= 0) {
+          touchStartY = e.touches[0].clientY;
+        } else {
+          touchStartY = 0;
+        }
+      }, { passive: true });
+
+      contentContainer.addEventListener('touchmove', (e) => {
+        if (touchStartY > 0 && contentContainer.scrollTop <= 0) {
+          const currentY = e.touches[0].clientY;
+          const delta = (currentY - touchStartY) * 0.45;
+          if (delta > 8) {
+            pullDistance = delta;
+            if (pullIndicator) {
+              pullIndicator.classList.remove('hidden');
+              pullIndicator.style.height = `${Math.min(pullDistance, 75)}px`;
+              if (pullDistance >= PULL_THRESHOLD) {
+                if (pullText) pullText.textContent = 'Lepaskan untuk Masuk Mode Renungan ✨';
+                if (pullIcon) pullIcon.style.transform = 'rotate(180deg)';
+              } else {
+                if (pullText) pullText.textContent = 'Tarik ke bawah untuk Mode Renungan...';
+                if (pullIcon) pullIcon.style.transform = 'rotate(0deg)';
+              }
+            }
+          }
+        }
+      }, { passive: true });
+
+      contentContainer.addEventListener('touchend', () => {
+        if (pullDistance >= PULL_THRESHOLD && contentContainer.scrollTop <= 0) {
+          openModeRenungan();
+        }
+        pullDistance = 0;
+        touchStartY = 0;
+        if (pullIndicator) {
+          pullIndicator.style.height = '0px';
+          setTimeout(() => {
+            pullIndicator.classList.add('hidden');
+            if (pullIcon) pullIcon.style.transform = 'rotate(0deg)';
+          }, 250);
+        }
+      }, { passive: true });
+
+      // Desktop wheel-up gesture at top
+      contentContainer.addEventListener('wheel', (e) => {
+        if (contentContainer.scrollTop <= 0 && e.deltaY < -45) {
+          openModeRenungan();
+        }
+      }, { passive: true });
+    }
+
+    // SWIPE-UP GESTURE TO CLOSE MODE RENUNGAN
+    const modeRenunganEl = document.getElementById('mode-renungan');
+    let renunganTouchStartY = 0;
+    if (modeRenunganEl) {
+      modeRenunganEl.addEventListener('touchstart', (e) => {
+        renunganTouchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      modeRenunganEl.addEventListener('touchend', (e) => {
+        const renunganTouchEndY = e.changedTouches[0].clientY;
+        if (renunganTouchStartY - renunganTouchEndY > 50) {
+          closeModeRenungan();
+        }
+      }, { passive: true });
     }
   </script>
 </body>
