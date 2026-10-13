@@ -79,9 +79,9 @@ Navigasi bilah bawah dipertahankan menggunakan **5 menu standar dengan label kon
 
 ---
 
-## 4. Komposisi Beranda Baru: "Goal-Directed Launchpad"
+## 4. Komposisi Beranda Baru: "Goal-Directed Launchpad + Discovery Hub"
 
-Beranda tidak lagi menampilkan seluruh modul sebagai galeri kartu yang padat, melainkan ditata berdasarkan **3 Kategori Tujuan Utama Pengguna (*User Goals*)**:
+Beranda memadukan ketegasan **Goal-Directed Actions** (untuk kebutuhan mendesak & habit harian) dengan **Discovery Hub Terpadu** (kombinasi Carousel & Grid untuk modul pelengkap, serta Highlight Promosi Event Terdekat):
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -109,13 +109,33 @@ Beranda tidak lagi menampilkan seluruh modul sebagai galeri kartu yang padat, me
 │                                                                        │
 ├────────────────────────────────────────────────────────────────────────┤
 │                                                                        │
-│ 🎯 GOAL 3: INSPIRASI & PENGEMBANGAN DIRI (DISCOVERY RELEVAN)           │
-│ [Satu Sorotan Terkurasi: Mencegah Banjir Informasi]                   │
+│ 📢 HIGHLIGHT PROMOSI EVENT TERDEKAT (HIGH-VISIBILITY BANNER)          │
 │ ┌────────────────────────────────────────────────────────────────────┐ │
-│ │ 🌟 REKOMENDASI HIKMAH HARI INI                                     │ │
-│ │ 📖 Artikel Pilihan: 6 Kaidah Tutur Kata Menasihati Anak            │ │
-│ │ 📅 Daurah Terdekat: Majelis Akbar Parenting (H-3) • [Lihat ➔]      │ │
+│ │ 📅 H-3 DAURAH PARENTING NABAWIYAH (MAJELIS AKBAR NASIONAL)         │ │
+│ │ "Menumbuhkan Fitrah Keimanan Sebelum Usia Baligh" bersama Asatidzah│ │
+│ │ 📍 Masjid SKIS / Live Zoom • 500 Peserta Terdaftar  [Daftar ➔]     │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
+│ 🎨 DISCOVERY HUB: MODUL PELENGKAP (KOMBINASI CAROUSEL & GRID)          │
+│                                                                        │
+│ 1. HORIZONTAL CAROUSEL (KONTEN NARASI & PUSTAKA VISUAL)                │
+│ [Geser Horizontal ➔]                                                   │
+│ ┌──────────────────────────────┐ ┌──────────────────────────────────┐  │
+│ │ 🎬 SERIAL ZAID: Episode 4    │ │ 📚 BUKU PILIHAN BULAN INI        │  │
+│ │ "Ketika Anak Menolak Shalat" │ │ "Seni Berbicara Nabawiyah"       │  │
+│ │ [Latih Respon Adab ➔]        │ │ [Lihat Sinopsis & Pesan ➔]       │  │
+│ └──────────────────────────────┘ └──────────────────────────────────┘  │
+│                                                                        │
+│ 2. GRID 2x2 ACTION TILES (UTILITAS & EKSPLORASI EKOSISTEM)             │
+│ ┌──────────────────────────────┬────────────────────────────────────┐  │
+│ │ 🎯 Tafsir Bakat 40 (TB-40)   │ 🏛️ Kemitraan Lembaga              │  │
+│ │ Cermin bakat fitrah ciptaan  │ Visitasi, coaching, & kurikulum    │  │
+│ ├──────────────────────────────┼────────────────────────────────────┤  │
+│ │ 👥 Direktori Tokoh Pakar     │ 🏫 Jaringan Lembaga Mitra          │  │
+│ │ Ust. Abdul Kholiq, Ust. Bayu │ SKIS, SOTAB, Darul Atsar, HU, YBIT │  │
+│ └──────────────────────────────┴────────────────────────────────────┘  │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
@@ -124,13 +144,14 @@ Beranda tidak lagi menampilkan seluruh modul sebagai galeri kartu yang padat, me
 
 ## 5. Matriks Perbandingan: Sebelum vs. Sesudah Redesain
 
-| Aspek Desain | Desain Awal (Cetak Biru v2) | Desain Baru (Goal-Directed UX) | Dampak Positif bagi Pengguna |
+| Aspek Desain | Desain Awal (Cetak Biru v2) | Desain Baru (Goal-Directed + Discovery Hub) | Dampak Positif bagi Pengguna |
 | :--- | :--- | :--- | :--- |
-| **Fokus Homescreen** | Menampilkan 12 modul dalam 6 widget berbeda di satu layar panjang. | Menyajikan 3 tujuan utama pengguna: Solusi Cepat, Amalan Hari Ini, Inspirasi Relevan. | Mengeliminasi beban mental (*extraneous cognitive load*), jiwa terasa tenang (*calm*). |
-| **Waktu Menemukan Solusi** | > 30 detik (harus mencari di antara tumpukan carousel & bento). | **< 10 detik** (P3K Tantrum & Curhat diletakkan di slot aksi tercepat teratas). | Memenuhi janji inti produk untuk krisis pengasuhan nyata di lapangan. |
+| **Fokus Homescreen** | Menampilkan 12 modul dalam 6 widget berbeda tanpa prioritas yang jelas. | **Hirarki Terpadu:** Goal Cepat ➔ Amalan Harian ➔ Highlight Event ➔ Carousel Narasi ➔ Grid Utilitas. | Menghilangkan kebingungan visual seraya tetap memberi panggung proporsional bagi seluruh 12 modul. |
+| **Promosi Event** | Tercecer sebagai kartu biasa di antara bento grid. | **Dedicated Highlight Banner:** Kartu H-countdown dengan visibilitas tinggi di tengah Beranda. | Konversi pendaftaran daurah dan kehadiran majelis meningkat drastis. |
+| **Modul Pelengkap** | Menumpuk tanpa struktur pola yang harmonis. | **Harmoni Carousel + Grid:** Carousel untuk narasi (Buku & Serial Zaid), Grid 2x2 untuk utilitas (TB-40, Mitra, Tokoh). | Pengguna dapat menikmati konten santai secara horizontal dan mengakses alat teknis via grid cepat. |
+| **Waktu Menemukan Solusi** | > 30 detik (harus mencari di antara tumpukan kartu). | **< 10 detik** (P3K Tantrum & Curhat diletakkan di slot aksi tercepat teratas). | Memenuhi janji inti produk untuk krisis pengasuhan nyata di lapangan. |
 | **Label Navigasi Bawah** | Terancam dipindah ke label puitis/asing yang membingungkan. | Menggunakan 5 label standar industri: `Beranda, Event, Materi, Curhat, Profil`. | Mematuhi *Jakob's Law*; pengguna langsung paham tanpa perlu petunjuk manual. |
 | **Status Tangki Cinta** | Menampilkan persentase angka mati `Zaid (95%)`. | Menampilkan status kualitatif reflektif *"Penuh Kehangatan"*. | Mencegah kecemasan dan rasa bersalah semu (*anti-spiritual guilt*). |
-| **Aksesibilitas Arab** | Potensi harakat terpotong pada baris teks statis. | Dynamic line-height dan scaling teruji hingga 200%. | Teks suci Al-Qur'an dan Hadits terbaca jernih, mulia, dan sempurna. |
 
 ---
 
