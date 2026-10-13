@@ -113,12 +113,34 @@ cd prototype/compile && flutter test
 # 2. Uji Fitur Chart & Relasi (v5)
 cd prototype/v5 && flutter test
 
-# 2. Uji Beranda & UI Kanonikal (v4)
+# 3. Uji Beranda & UI Kanonikal (v4)
 cd prototype/v4 && flutter test
 
-# 3. Uji Backend v2 & LibSQL Vector Search (7 acceptance tests)
+# 4. Uji Backend v2 & LibSQL Vector Search (7 acceptance tests)
 cd "prototype/backend v2" && python3 test_backend_v2.py -v
 
-# 4. Uji Layar Event (Event v1)
+# 5. Uji Layar Event (Event v1)
 cd "prototype/Event v1" && flutter test
 ```
+
+---
+
+## 5. Menjalankan Master Unified App (compile) di Lingkungan Lokal & Remote
+
+Aplikasi master modular di [`prototype/compile`](./compile/) siap dijalankan pada multi-platform:
+
+```bash
+# A. Jalankan versi Web (otomatis rilis bundle & server mandiri)
+cd prototype/compile && ./run_web.sh
+
+# Akses lokal di browser host:
+# -> http://localhost:3010
+
+# Akses lintas perangkat via jaringan Tailscale VPN:
+# -> http://100.118.34.69:3010
+# -> http://cachyos-5600gt.tail0faa6b.ts.net:3010
+
+# B. Buka di Android Studio (GUI Wayland/X11):
+/opt/android-studio/bin/studio.sh prototype/compile &
+```
+

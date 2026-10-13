@@ -121,8 +121,22 @@ flutter analyze
 ```
 *Hasil:* **0 Errors, 0 Warnings**.
 
-### Menjalankan Aplikasi di Emulator/Device:
+### Menjalankan Versi Web (Produksi Mandiri & Tailscale):
+```bash
+./run_web.sh
+```
+- Menjalankan web server mandiri (`serve_web.py`) di `http://0.0.0.0:3010`.
+- Otomatis mengompilasi release bundle `main.dart.js` terpadu jika belum tersedia.
+- Mendukung akses jarak jauh via Tailscale VPN:
+  - `http://100.118.34.69:3010`
+  - `http://cachyos-5600gt.tail0faa6b.ts.net:3010`
+- Opsi tambahan: `./run_web.sh --rebuild` (paksa kompilasi ulang) atau `./run_web.sh --dev` (debug hot-reload).
+
+### Menjalankan Aplikasi di Emulator / Android Studio:
 ```bash
 flutter run
 ```
+Atau buka proyek di Android Studio (`/opt/android-studio/bin/studio.sh prototype/compile`).
+
 Akses tombol **Pengaturan Modul (ikon gerigi)** di pojok kanan atas Beranda untuk mencoba mematikan dan menghidupkan modul secara langsung dan melihat respon antarmuka secara *real-time*.
+
