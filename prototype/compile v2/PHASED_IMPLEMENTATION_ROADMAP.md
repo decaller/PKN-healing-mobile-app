@@ -440,6 +440,7 @@ Bagian ini memvisualisasikan susunan hierarki antarmuka, tata letak visual (*wir
   - Pasang `drift`, `drift_flutter`, `sqlite3_flutter_libs`.
   - Compile tabel-tabel Drift sesuai `DATABASE_AND_BACKEND_SCHEMA.md`.
 - [ ] **Task 3.2 — Modul 7 (Tafsir Bakat 40 / TB-40):**
+  - **Prasyarat Wajib (Pra-Implementasi):** Telaah teknis mendalam terhadap skema dan repositori mandiri `tb-40` (`/home/abuhafi/Project/tb40*`) sebelum kode dibuat.
   - Buat `Tb40HomeWidget` (Kartu bakat aktif).
   - Buat `Tb40ToolPage` (Dashboard bakat & radar chart 4 rumpun via `fl_chart`).
   - Buat `Tb40ListPage` (Katalog 40 bakat fitrah).
@@ -476,6 +477,7 @@ Bagian ini memvisualisasikan susunan hierarki antarmuka, tata letak visual (*wir
   - Buat `CurhatListPage` (Riwayat percakapan tersimpan aman secara luring).
   - Buat `CurhatDetailPage` (Dialog tenang, doa penenang jiwa, ekspor RPP Adab).
 - [ ] **Task 4.2 — Modul 12 (Cerita Interaktif & Rehearsal Tazkiyatun Nafs):**
+  - **Prasyarat Wajib (Pra-Implementasi):** Analisis ulang mendalam terhadap alur cerita bercabang (*branching narrative tree*) dan standarisasi kebutuhan ilustrasi visual (*scene art style Earth-Tree*) sebelum kode dibuat.
   - Buat `CeritaHomeWidget` (`MultiSerialStoryCard` carousel episode aktif Serial Zaid).
   - Buat `CeritaToolPage` (Katalog skenario krisis pengasuhan per fase fitrah usia anak: Thufulah, Tamyiz, Murahaqah, Syabab).
   - Buat `CeritaListPage` dan `CeritaDetailPage`:

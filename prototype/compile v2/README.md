@@ -47,7 +47,7 @@ Mengacu pada naskah induk `wiki-pkn` (*Master Hub Arsitektur 00*):
 ### B. Epistemologi Tazkiyatun Nafs Pendidik
 Dalam manhaj PKN, **Tazkiyatun Nafs** (penyucian jiwa) adalah jantung utama pendidikan. Tarbiyah nabawiyah bukanlah transfer informasi mekanis, melainkan **resonansi spiritual (*al-hal anfa' minal maqal*)** di mana frekuensi kesucian kalbu pendidik memancarkan getaran hikmah yang langsung meresap ke dalam sanubari anak.
 
-Proses tazkiyah berlangsung melalui dua tahapan berkesinambungan:
+Proses tazkiyah berlangsung melalui tahapan dialektis terpadu:
 1. **Fase Takhalli (Detoksifikasi Bejana Batin Pendidik):**
    - *Mengikis Riya' Pengasuhan & Gengsi Sosial:* Menghilangkan syirik kecil berupa keinginan dipuji sebagai orang tua sukses atau membanggakan anak di mata manusia (HR. Ahmad No. 23630).
    - *Membuang Ego dan Amarah (Ghadhab):* Melatih pengendalian amarah (*kazhmul ghaizh*, QS. Ali 'Imran: 134) dan menahan dorongan membentak/memukul anak (HR. Bukhari No. 6116).
@@ -58,21 +58,31 @@ Proses tazkiyah berlangsung melalui dua tahapan berkesinambungan:
    - *Qiyamullail (Generator Spiritualitas Pengasuhan):* Mengisi ulang energi kesabaran dan ketabahan batin di sepertiga malam terakhir (QS. Al-Muzzammil: 1–6).
    - *Dawamul 'Amal (Istiqamah Amalan Harian):* Konsisten menjaga wirid amalan sunnah dan adab keseharian (HR. Bukhari No. 6464).
    - *Menuju Qalbun Salim:* Merawat hati yang selamat dan suci saat kembali menghadap Allah (QS. Asy-Syu'ara: 88–89).
+3. **Kaidah Muhasabah Kapasitas Diri & Realisme Syar'i (*Anti-Burnout*):**
+   - *Maksimalisasi Bakat & Menyesuaikan Kemampuan Diri:* Melakukan penyesuaian target ibadah agar tidak terbebani dengan standar ekspektasi tinggi yang kaku. Pendidik memilih amalan-amalan sunnah yang selaras dengan kecenderungan bakat unik dirinya (*muyassarun lima khuliqa lah*), menghindari kejenuhan batin (*al-malal*) atau rasa bersalah semu (*parenting/spiritual guilt*).
+   - *Pemeriksaan Tangki Cinta Diri:* Sebelum menuangkan cinta kepada anak dan pasangan, periksa terlebih dahulu bejana batin sendiri. Jika tangki cinta diri masih kosong—akibat kelelahan beban aktivitas harian atau luka/hutang pengasuhan masa lalu—**turunkan ekspektasi aktivitas ke standar minimal (*minimum viable activity*)**. Selesaikan amanah seperlunya agar memberi ruang dan waktu bagi jiwa untuk merenung (*muhasabah / uzlah sejenak*).
+   - *Allah sebagai Sumber Cinta Tak Terbatas:* Penuhi tangki cinta diri dengan meyakini dan bersandar penuh bahwa **Allah Ta'ala adalah Sumber Tangki Cinta yang Maha Tak Terbatas**. Saat bejana jiwa telah terisi oleh kasih sayang Ilahi melalui sujud dan istighfar, cinta tersebut akan meluap secara alami untuk dialirkan kepada keluarga, santri, dan dalam karya produktif.
 
 ---
 
-### C. Kaidah Asas Pengasuhan & Pemulihan Jiwa
+### C. Kaidah Asas Pengasuhan, Metodologi Bahasa & Pemulihan Jiwa
 - **Prinsip In'ikas (Pantulan Spiritual):** Kebeningan hati orang tua tercermin pada kelembutan tabiat anak; kemaksiatan orang tua sering kali memantul pada pembangkangan anak (atsar Utbah bin Abi Sufyan dan Al-Fudhail bin 'Iyadh).
 - **Koneksi Sebelum Koreksi (*Connection Before Correction*):** Tautkan hati dan penuhi *Tangki Cinta* anak sebelum menegakkan aturan atau meluruskan kekeliruan.
-- **Pemulihan Hutang Pengasuhan (*Debt of Parenting Recovery*):** Menuntaskan luka masa lalu orang tua secara vertikal (taubat nasuha & tazkiyah) dan horizontal (merangkul dan meminta maaf).
-- **Tiga Bahasa Mendidik:**
-  1. *Bahasa Tubuh:* Postur tenang, mendekat setara tinggi mata anak, dekapan yang memberi rasa aman.
-  2. *Bahasa Mata:* Kontak mata teduh yang memancarkan penerimaan dan cinta tulus.
-  3. *Bahasa Hati:* Komunikasi jiwa yang memvalidasi emosi sebelum memberikan bimbingan syar'i.
+- **Pemulihan Hutang Pengasuhan (*Debt of Parenting Recovery*):** Menuntaskan luka masa lalu orang tua secara vertikal (taubat nasuha & tazkiyah) dan horizontal (merangkul, meminta maaf, dan memperbaiki hubungan).
+- **Kaidah Muhasabah Bakat: Kuatkan Kelebihan, Pelihara Kekurangan:**
+  - Mengenali diri secara jujur: **Fokus menguatkan bakat dan kelebihan dominan ciptaan Allah**, seraya **memelihara kekurangan pada batas minimal syar'i (*fardhu 'ain*)** agar tidak menimbulkan madharat.
+  - Tidak membuang-buang energi memaksakan diri menjadi sempurna pada area yang bukan fitrahnya. Seiring dengan semakin kuat dan matangnya bakat utama, kekurangan tersebut sedikit demi sedikit akan ikut terangkat naik secara alamiah.
+- **Tiga Bahasa Mendidik (Hirarki Metodologi Nabawiyah):**
+  1. **Bahasa Hati (Dominan pada Usia 0–7 Tahun / Fase Thufulah):**
+     - Bahasa kehangatan batiniah, tautan ruh (*al-hal anfa' minal maqal*), sentuhan rasa aman, dan pengisian Tangki Cinta penuh tanpa syarat. Prinsip: *Koneksi Sebelum Koreksi*.
+  2. **Bahasa Lisan (Dominan pada Usia 7–10 Tahun / Fase Tamyiz):**
+     - Dialog maieutik nabawiyah dan penyadaran nalar moral sebab-akibat. Menerapkan 6 filter tutur kata Al-Qur'an (*qaulan sadida, baligha, layyina, karima, maisura, ma'rufa*). Pembiasaan perintah shalat 3 tahun penuh (~5.000 kali) secara persuasif tanpa pukulan fisik.
+  3. **Bahasa Tangan (Penerapan pada Usia 10–14 Tahun / Fase Murahaqah):**
+     - Ketegasan terukur (*ta'dib*) dan batas disiplin syar'i sanksi 10 tahun bagi yang meninggalkan shalat dengan batasan ketat: **dilarang keras memukul wajah**, tidak meremukkan raga/jiwa, serta pemisahan tempat tidur (*madhaji'*).
 - **Kaidah Tadarruj (4 Tangga Fase Usia Fitrah):**
   1. *Fase Thufulah (2–7 Tahun):* Fitrah keimanan & bermain; haram sanksi fisik; tanpa doktrin menakut-nakuti neraka.
-  2. *Fase Tamyiz (7–10 Tahun):* Pembedaan baik-buruk; pembiasaan shalat 5 waktu bertahap tanpa pukulan.
-  3. *Fase Murahaqah (10–14 Tahun):* Pemisahan ranjang (*madhaji'*), batas disiplin syar'i sanksi 10 tahun (larangan keras memukul wajah), penguatan rasa malu (*haya'*).
+  2. *Fase Tamyiz (7–10 Tahun):* Pembedaan baik-buruk; pembiasaan shalat 5 waktu bertahap tanpa pukulan via Bahasa Lisan.
+  3. *Fase Murahaqah (10–14 Tahun):* Pemisahan ranjang (*madhaji'*), batas disiplin syar'i sanksi 10 tahun (Bahasa Tangan terukur), penguatan rasa malu (*haya'*).
   4. *Fase Syabab (14–18+ Tahun):* Kematangan aqil baligh mukallaf, penjagaan kehormatan (*iffah*), dan penemuan peran peradaban (*syakilah*).
 
 ---
@@ -132,12 +142,12 @@ Setiap modul dipecah menjadi 6 surface visual yang fleksibel dan konsisten:
 | **4** | **Kemitraan Lembaga** | Home Widget (Grid 2x2 Action Tiles), List, Detail | Program kemitraan v2: Konsultasi Online, Visitasi Lapangan, Coaching Guru, Pengadaan Daurah. |
 | **5** | **User (Profil)** | Home Widget (Top Header), Bottom Bar, Detail Page | Identitas akun, peran keluarga/sekolah, koleksi event badges, agregator seluruh User Widget, pengaturan. |
 | **6** | **Wiki (Khazanah)** | Home Widget (Search Ticker), Bottom Bar, Explore, Detail, User Widget | Wiki Penulis (6 format media) + Wiki AI (Paradigma, Bakat, Dalil, Doa, Software Bantuan: OpenBayan, Qaf, Quran.org, Tafsirweb, yufid). |
-| **7** | **Tafsir Bakat 40** | Home Widget (Radar/Highlight), Tool Page, List, Detail, User Widget | Peta 40 bakat fitrah (sisi Ihsan vs sisi Afat/over-investment), radar chart 4 rumpun via `fl_chart`, cermin batin. |
+| **7** | **Tafsir Bakat 40** | Home Widget (Radar/Highlight), Tool Page, List, Detail, User Widget | Peta 40 bakat fitrah (sisi Ihsan vs sisi Afat/over-investment), radar chart 4 rumpun via `fl_chart`, cermin batin.<br>*(Catatan: Mengacu pada proyek mandiri `tb-40`; memerlukan analisis teknis mendalam sebelum implementasi).* |
 | **8** | **Ceklist Harian** | Home Widget (Collapsible List), Tool Page, List, Detail, User Widget | Wirid amalan adab harian (*Dawamul 'Amal*), muhasabah Takhalli-Tahalli, modal review 3 derajat jiwa (Muthma'innah, Lawwamah, Ammarah). |
 | **9** | **Relasi Keluarga & Teman Dekat** | Home Widget (Carousel Status Cinta), Tool Page, List, Detail, User Widget | Lingkaran keluarga (pasangan, anak per fase usia fitrah, orang tua) & teman dekat/seperjuangan; neraca qalbiyah, Tangki Cinta, tadabbur AI. |
 | **10** | **Onboarding** | Wizard 4 Langkah (Diri, Kerja, Relasi, Ceklist) + **Tombol Akses Langsung TB-40** | Personalisasi profil awal terpandu (bisa dilewati) yang menginisialisasi modul 5, 8, 9, serta menyediakan jalan pintas langsung mencoba tools Tafsir Bakat 40. |
 | **11** | **Curhat AI** | Home Widget (Action Banner), Bottom Bar, Tool Page, List, Detail | Ruang Qalbu, Walkie-talkie PTT waveform, pijakan dialog, riwayat konsultasi amanah luring (*zero retention*). |
-| **12** | **Cerita Interaktif** | Home Widget (Multi-Serial Carousel), Tool Hub, List, Detail | Living narrative Serial Zaid, skenario krisis adab 10 detik, respon berjenjang 3 derajat jiwa, dialektika batin bakat TB-40, ulasan takhrij dalil & pemulihan hutang pengasuhan. |
+| **12** | **Cerita Interaktif** | Home Widget (Multi-Serial Carousel), Tool Hub, List, Detail | Living narrative Serial Zaid, skenario krisis adab 10 detik, respon berjenjang 3 derajat jiwa, dialektika batin bakat TB-40, ulasan takhrij dalil & pemulihan hutang pengasuhan.<br>*(Catatan: Memerlukan analisis ulang mendalam terhadap alur cerita dan kebutuhan ilustrasi visual sebelum implementasi).* |
 
 ---
 

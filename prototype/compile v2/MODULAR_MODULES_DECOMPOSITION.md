@@ -167,6 +167,9 @@ Dalam PKN Mobile, `Home Widget` **tidak terpaku pada Bento Card semata**, melain
 ### Modul 7: Tafsir Bakat 40 (TB-40)
 *Instrumen pemetaan 40 bakat fitrah ciptaan Allah dan dialektika batin.*
 
+> [!NOTE] **Catatan Pra-Implementasi (Ketergantungan Eksternal):**  
+> Implementasi teknis Modul 7 mengacu pada basis riset dan repo mandiri **TB-40** (`/home/abuhafi/Project/tb40*`). Sebelum penulisan kode dimulai, **diwajibkan melakukan analisis teknis mendalam terhadap skema dan repositori TB-40 tersebut** guna memastikan konsistensi taksonomi 40 bakat dan formula radar chart.
+
 - **Peran Manhaj:** Membantu orang tua dan pendidik mengenali keunikan syakilah anak tanpa melabeli secara kaku atau mengadu skor komparatif.
 - **4 Rumpun Bakat Utama:**
   1. *Al-Qiyadah* (Kepemimpinan & Ketegasan): Misal *Syajaa'ah*, *Himmah*, *Qawiyy*.
@@ -203,7 +206,11 @@ Dalam PKN Mobile, `Home Widget` **tidak terpaku pada Bento Card semata**, melain
     - Qiyamullail / munajat malam (generator spiritualitas pengasuhan, QS. Al-Muzzammil: 1-6).
     - Zikir pagi-petang & istighfar harian minimal 100 kali.
     - Tilawah Al-Qur'an dan tadabbur dalil.
-    - Memeluk anak / memberikan hak *Bahasa Tubuh & Mata* tanpa distraksi layar HP.
+    - Memeluk anak / memberikan hak *Bahasa Hati & Bahasa Lisan santun* tanpa distraksi layar HP.
+  - **Kaidah Muhasabah Kapasitas Diri & Realisme Syar'i (Anti-Burnout):**
+    - Amalan sunnah disesuaikan dengan kecondongan bakat unik (*muyassarun lima khuliqa lah*).
+    - **Pemeriksaan Tangki Cinta Diri:** Jika tangki cinta diri kering karena beban amanah harian, turunkan ekspektasi ke batas minimal (*minimum viable activity*) untuk memberi ruang muhasabah/uzlah sejenak dan mengisi tangki cinta dari Allah Ta'ala (Sang Sumber Tak Terbatas).
+    - **Kaidah Bakat:** Kuatkan kelebihan dominan, pelihara kekurangan pada batas fardhu 'ain minimal.
 - **Ragam Surface Komponen:**
   1. `CeklistHomeWidget`: 
      - *Bentuk Visual:* `Collapsible List Section` atau `DailyActivityCarousel` di Beranda dengan status progress pill ("3 dari 5 amalan tertunaikan").
@@ -227,6 +234,11 @@ Dalam PKN Mobile, `Home Widget` **tidak terpaku pada Bento Card semata**, melain
 - **Cakupan Lingkaran Relasi:**
   1. **Keluarga:** Pasangan, Anak per fase fitrah (*Thufulah, Tamyiz, Murahaqah, Syabab*), Orang Tua / Mertua.
   2. **Teman Dekat:** Sahabat hijrah, rekan kerja/guru seperjuangan, teman belajar santri/murid.
+- **Penerapan Tiga Bahasa Mendidik Berdasarkan Fase Usia Anak:**
+  1. *Fase Thufulah (0–7 Tahun):* **Bahasa Hati** (tautan batin murni, pelukan hangat, pemenuhan Tangki Cinta penuh tanpa syarat, *Koneksi Sebelum Koreksi*, haram sanksi fisik).
+  2. *Fase Tamyiz (7–10 Tahun):* **Bahasa Lisan** (dialog persuasif, kesadaran nalar kausalitas, 6 kaidah bicara Al-Qur'an, pembiasaan shalat 3 tahun tanpa pukulan fisik).
+  3. *Fase Murahaqah (10–14 Tahun):* **Bahasa Tangan Terukur** (ketegasan adab *ta'dib*, larangan keras memukul wajah, tidak meremukkan raga/jiwa, pemisahan tempat tidur *madhaji'*).
+  4. *Fase Syabab (14–18+ Tahun):* Dialog persahabatan, aqil baligh mukallaf, penjagaan kehormatan (*iffah*), dan penemuan peran peradaban (*syakilah*).
 - **Ragam Surface Komponen:**
   1. `RelasiHomeWidget`: 
      - *Bentuk Visual:* `Horizontal Carousel` status cinta keluarga dan teman dekat di Beranda (misal "Ananda Zaid: Penuh Kehangatan", "Sahabat Abu Bakar: Ukhuwah Terjaga").
@@ -276,6 +288,9 @@ Dalam PKN Mobile, `Home Widget` **tidak terpaku pada Bento Card semata**, melain
 
 ### Modul 12: Cerita Interaktif (Simulasi Rehearsal Adab & Serial Zaid)
 *Latihan simulasi pengasuhan berbasis Tazkiyatun Nafs dan dialektika bakat.*
+
+> [!NOTE] **Catatan Pra-Implementasi (Alur Cerita & Kebutuhan Ilustrasi Visual):**  
+> Modul 12 membutuhkan **analisis ulang mendalam terhadap alur cerita (branching narrative flow) dan kebutuhan ilustrasi visual (scene art style Earth-Tree)** sebelum implementasi teknis dilakukan, guna memastikan kedalaman nilai manhaj dan konsistensi visual narasi.
 
 - **Peran Manhaj:** Melatih respon spontan orang tua menghadapi krisis nyata (anak tantrum, menolak shalat, benturan ego remaja) menggunakan dialog bercabang dan umpan balik syar'i.
 - **Karakteristik Narasi Berbasis Manhaj:**
