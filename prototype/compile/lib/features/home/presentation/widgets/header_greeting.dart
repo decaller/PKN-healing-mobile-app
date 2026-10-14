@@ -46,7 +46,7 @@ class HeaderGreeting extends StatelessWidget {
                 icon: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
-                    color: colors.tactileBorder.withOpacity(0.15),
+                    color: colors.tactileBorder.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: iconoir.Settings(
