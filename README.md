@@ -152,6 +152,7 @@ Aplikasi ini menaungi **17 persona pengguna** dalam 5 ranah ekosistem peran, dia
   * [06 — Siswa & Santri (Pelajar Muda & TB-40)](docs/personas/06-siswa-santri.md)
   * [07 — Masyarakat Umum & Pembelajar Mandiri (Self-Improvement)](docs/personas/07-masyarakat-pengembangan-diri.md)
 * 🗺️ **Peta Detail User Journey**: Telusuri alur lengkap, JTBD, dan titik gesek di [`docs/USER_JOURNEYS.md`](docs/USER_JOURNEYS.md).
+* 📑 **Master Userflow & Arsitektur Aliran Data**: Panduan urutan alur pengguna terlengkap dari Onboarding hingga Fitur Lanjutan beserta ERD & kaitan datanya di [`docs/USERFLOW_DAN_ARUS_DATA_LENGKAP.md`](docs/USERFLOW_DAN_ARUS_DATA_LENGKAP.md).
 
 ---
 
