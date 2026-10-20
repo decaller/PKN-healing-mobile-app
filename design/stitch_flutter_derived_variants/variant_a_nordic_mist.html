@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PKN Healing - Nordic Mist Sanctuary</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Inter and Amiri -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['"Amiri"', 'serif'],
+          },
+          colors: {
+            sanctuary: {
+              50: '#f4f7f6',
+              100: '#e5ece9',
+              200: '#cddbd5',
+              300: '#a7c2b7',
+              400: '#7ba295',
+              500: '#588677',
+              600: '#436b5e',
+              700: '#36564c',
+              800: '#2d463e',
+              900: '#273a35',
+              950: '#14201d',
+            },
+            pine: {
+              800: '#1c2e27',
+              900: '#13211c',
+              950: '#0c1613',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom styles for sanctuary mist atmosphere -->
+<style data-purpose="custom-scroll-and-effects">
+    /* Hide scrollbar for neat horizontal carousels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Ethereal frosted glass effect */
+    .glass-card {
+      background: rgba(18, 32, 28, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .glass-card-subtle {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-[#f5f7f6] text-slate-800 font-sans antialiased min-h-screen selection:bg-emerald-200">
+<!-- Outer Mobile Container: iPhone dimensions preview simulation -->
+<div class="max-w-md mx-auto relative min-h-screen bg-[#f5f7f6] shadow-2xl overflow-x-hidden flex flex-col justify-between">
+<!-- BEGIN: TopMistyHeroSection -->
+<header class="relative min-h-[460px] bg-pine-950 text-white overflow-hidden flex flex-col justify-between pt-3 pb-8 px-5">
+<!-- Background Image Layer: Misty Pine Forest with Fog Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Misty Pine Sanctuary Canopy" class="w-full h-full object-cover object-top opacity-55 scale-105 transform -translate-y-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFxwoRoIaN12xl4ojYK1EFgZEKoey6dwpakrcCFp1fnsBcKnlh1QJZIfLbC9CdvF7RH8voSizIFBNOzo5YVtT-LotwKPLG6gH3AftxM8M5iikAZauOHD41ACf0_Td4i1DHbTCSepjG_HoIYwapADMSocBa6JSHhGZ43HpOb_4b2krDDfEuBH6r2WAf9cOzh8lBe6mdj0BcL41GNeytP4NRYikyKP-hfAqBIAIaSzqHEWh46REV0Ic5HQwkXPvnILcAwkU-BqszDPL7"/>
+<!-- Atmospheric Top/Bottom Gradient Fogs -->
+<div class="absolute inset-0 bg-gradient-to-b from-pine-950/70 via-pine-900/35 to-[#f5f7f6]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#f5f7f6] via-[#f5f7f6]/40 to-transparent"></div>
+</div>
+<!-- Hero Header Contents -->
+<div class="relative z-10 flex flex-col w-full">
+<!-- Top Gesture Pull Indicator -->
+<div class="flex justify-center pt-1 pb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-[11px] text-emerald-100/80 font-medium">
+<svg class="w-3 h-3 text-emerald-300 animate-pulse" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Tarik ke bawah untuk Mode Jam</span>
+</div>
+</div>
+<!-- User Profile & Action Bar -->
+<div class="flex items-center justify-between mt-1">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-white drop-shadow-sm">Ahlan, Abu Zaid</h1>
+<p class="text-xs font-medium text-emerald-200/90 tracking-wide mt-0.5 flex items-center gap-1.5">
+<span>Keluarga Tangguh</span>
+<span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+<span>Baiti Jannati</span>
+</p>
+</div>
+<!-- Quick Action Icons: Dark Mode & Initials Avatar -->
+<div class="flex items-center gap-2.5">
+<button aria-label="Toggle Night Mode" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-emerald-200 hover:bg-white/20 transition-all duration-200 active:scale-95 shadow-sm">
+<svg class="w-5 h-5 text-emerald-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</button>
+<div class="w-10 h-10 rounded-full bg-emerald-700/80 border border-emerald-400/40 text-emerald-100 font-semibold text-sm flex items-center justify-center shadow-inner tracking-wider">
+              AZ
+            </div>
+</div>
+</div>
+</div>
+<!-- Daily Tadabbur Glass Card (Frosted Glass Sanctuary) -->
+<section aria-label="Renungan Qalbu Hari Ini" class="relative z-10 mt-6 mb-2">
+<div class="glass-card rounded-2xl p-4 shadow-xl text-white">
+<!-- Glass Card Header -->
+<div class="flex items-center justify-between pb-2.5 border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="text-amber-300 text-sm">✦</span>
+<span class="text-xs font-semibold uppercase tracking-wider text-emerald-200">Renungan Qalbu Hari Ini</span>
+</div>
+<button class="inline-flex items-center text-[11px] font-medium text-white/70 hover:text-white transition">
+<span>Buka Layar Penuh</span>
+<svg class="w-3.5 h-3.5 ml-0.5 text-white/60" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Arabic Verse Calligraphy -->
+<div class="text-center pt-3.5 pb-2">
+<p class="font-arabic text-xl sm:text-2xl text-emerald-50 leading-relaxed tracking-wide font-normal">
+              أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
+            </p>
+</div>
+<!-- Tadabbur Quote / Wisdom Content -->
+<div class="text-center pt-1">
+<p class="text-xs sm:text-sm italic font-normal text-white/90 leading-relaxed font-sans">
+              “Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan.”
+            </p>
+<span class="block text-[10px] text-emerald-300/80 mt-1.5 font-medium tracking-wide">
+              (Refleksi Parenting Nabawiyah • QS. Ar-Ra'd: 28)
+            </span>
+</div>
+</div>
+</section>
+</header>
+<!-- END: TopMistyHeroSection -->
+<!-- BEGIN: MainContentBody -->
+<main class="relative z-20 -mt-6 px-4 flex-1 pb-28 space-y-5">
+<!-- Unified Translucent Search Bar -->
+<section aria-label="Pencarian Cepat" class="w-full">
+<div class="glass-card-subtle bg-white/90 border border-slate-200/80 rounded-2xl px-3.5 py-2.5 shadow-sm flex items-center justify-between gap-3 focus-within:ring-2 focus-within:ring-emerald-600/20 transition-all">
+<div class="flex items-center gap-2.5 flex-1 min-w-0">
+<svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<input class="w-full text-xs text-slate-700 placeholder-slate-400 bg-transparent border-none p-0 focus:outline-none focus:ring-0 truncate" placeholder="Cari agenda daurah, buku pustaka, artikel..." type="text"/>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-2 py-0.5 text-[10px] font-bold tracking-wider rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">PKN 1.0</span>
+<button aria-label="Pencarian Suara" class="p-1 rounded-full text-slate-400 hover:text-slate-600">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<!-- P3K Krisis Genting (< 10 Detik) Card -->
+<section aria-label="P3K Krisis Genting" class="relative group">
+<a class="block bg-rose-50/80 hover:bg-rose-50/95 border border-rose-200/80 rounded-2xl p-3.5 shadow-sm transition-all duration-200" href="#p3k-detail">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 shrink-0 border border-rose-200/50 shadow-inner">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-xs font-bold text-rose-950 uppercase tracking-tight">P3K Krisis Genting</h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-600 text-white tracking-wide animate-pulse">
+                  &lt; 10 Detik
+                </span>
+</div>
+<p class="text-[11px] font-medium text-rose-900/85 mt-0.5 truncate">
+                SOP Anak Mengamuk &amp; Ortu Burnout (Maqashid)
+              </p>
+<p class="text-[10px] text-rose-700/80 mt-1 line-clamp-1">
+                Tiga tarikan nafas hening, tatap mata lembut, rendahkan tinggi badan...
+              </p>
+</div>
+<div class="self-center pl-1 text-rose-400 group-hover:translate-x-0.5 transition-transform">
+<svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+</a>
+</section>
+<!-- Amalan Adab Hari Ini (Daily Spiritual Wellness Tracker) -->
+<section aria-label="Amalan Adab Hari Ini" class="bg-white/80 border border-emerald-950/10 rounded-2xl p-4 shadow-sm backdrop-blur-sm">
+<!-- Tracker Header -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="text-emerald-700">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h2 class="text-sm font-bold text-slate-800">Amalan Adab Hari Ini</h2>
+</div>
+<span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+            2 / 3 Selesai
+          </span>
+</div>
+<!-- Checkable Amalan Items -->
+<div class="mt-3 space-y-2.5">
+<!-- Item 1 (Checked) -->
+<div class="p-3 rounded-xl bg-emerald-50/50 border border-emerald-200/70 flex items-start gap-3 transition">
+<button aria-label="Selesai" class="mt-0.5 w-5 h-5 rounded-md bg-emerald-800 text-white flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<div class="flex-1">
+<h3 class="text-xs font-semibold text-slate-800 line-through opacity-85">Bicara Lembut Tanpa Nada Tinggi</h3>
+<p class="text-[11px] text-slate-500 mt-0.5">Menatap mata ananda dan menjawab panggilan dengan suara tenang.</p>
+</div>
+</div>
+<!-- Item 2 (Checked) -->
+<div class="p-3 rounded-xl bg-emerald-50/50 border border-emerald-200/70 flex items-start gap-3 transition">
+<button aria-label="Selesai" class="mt-0.5 w-5 h-5 rounded-md bg-emerald-800 text-white flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<div class="flex-1">
+<h3 class="text-xs font-semibold text-slate-800 line-through opacity-85">Mendengarkan Cerita Sampai Tuntas</h3>
+<p class="text-[11px] text-slate-500 mt-0.5">Menahan diri dari memotong pembicaraan anak atau buru-buru menceramahi.</p>
+</div>
+</div>
+<!-- Item 3 (Unchecked) -->
+<div class="p-3 rounded-xl bg-white border border-slate-200/80 hover:border-emerald-300 flex items-start gap-3 transition shadow-xs">
+<button aria-label="Tandai Selesai" class="mt-0.5 w-5 h-5 rounded-md border-2 border-slate-300 hover:border-emerald-600 bg-white flex items-center justify-center shrink-0">
+</button>
+<div class="flex-1">
+<h3 class="text-xs font-bold text-slate-800">Doa Penyejuk Hati Ba'da Shalat</h3>
+<p class="text-[11px] text-slate-500 mt-0.5">Melafalkan QS. Al-Furqan: 74 khusus untuk ananda di waktu mustajab.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Direktori 6 Layanan & Pustaka (2-column balanced grid) -->
+<section aria-label="Direktori Layanan &amp; Pustaka">
+<div class="flex items-center justify-between mb-2.5 px-0.5">
+<h2 class="text-xs font-bold tracking-wider uppercase text-slate-500">Khazanah &amp; Layanan Utama</h2>
+<span class="text-[11px] font-medium text-emerald-800">Ekosistem PKN</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Layanan 1 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#agenda-daurah">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-slate-800 truncate">Agenda Daurah</h3>
+<p class="text-[10px] text-slate-500 truncate">Jadwal Majelis Ilmu</p>
+</div>
+</a>
+<!-- Layanan 2 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#pustaka-buku">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-slate-800 truncate">Pustaka Buku</h3>
+<p class="text-[10px] text-slate-500 truncate">Karya Asatidzah</p>
+</div>
+</a>
+<!-- Layanan 3 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#tokoh-pakar">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-slate-800 truncate">Tokoh Pakar</h3>
+<p class="text-[10px] text-slate-500 truncate">4 Asatidzah Ahli</p>
+</div>
+</a>
+<!-- Layanan 4 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#lembaga-mitra">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-slate-800 truncate">Lembaga Mitra</h3>
+<p class="text-[10px] text-slate-500 truncate">6 Sekolah Kuttab</p>
+</div>
+</a>
+<!-- Layanan 5 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#kemitraan">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-slate-800 truncate">Kemitraan</h3>
+<p class="text-[10px] text-slate-500 truncate">Al-Layanan Resmi</p>
+</div>
+</a>
+<!-- Layanan 6 -->
+<a class="bg-white/85 border border-slate-200/90 hover:border-emerald-300 p-3 rounded-xl flex items-center gap-2.5 shadow-xs transition hover:shadow-sm" href="#p3k-jiwa">
+<div class="w-9 h-9 rounded-lg bg-rose-50 text-rose-700 flex items-center justify-center shrink-0 border border-rose-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<h3 class="text-xs font-bold text-rose-950 truncate">P3K Jiwa</h3>
+<p class="text-[10px] text-rose-600 truncate">SOP 10 Detik</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Agenda Daurah Terdekat (2 events stack) -->
+<section aria-label="Agenda Daurah Terdekat" class="space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-sm font-bold text-slate-800">Agenda Daurah Terdekat</h2>
+<p class="text-[11px] text-slate-500">Majelis Parenting &amp; Fitrah Terdekat</p>
+</div>
+<a class="text-xs font-semibold text-emerald-800 hover:text-emerald-900 inline-flex items-center gap-1" href="#semua-agenda">
+<span>Lihat Semua</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+<!-- Event 1 Card -->
+<article class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-sm hover:border-emerald-300 transition space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+              Majelis Akbar • Sabtu, 24 Okt
+            </span>
+<span class="text-[11px] font-semibold text-slate-500">08:30 - 11:30 WIB</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 leading-snug">
+              Majelis Akbar Parenting Nabawiyah: Menemani Balita Tanpa Bentakan
+            </h3>
+<p class="text-xs text-emerald-800 font-medium mt-1">
+              Ustadz Adriano Rusfi, S.Psi &amp; dr. Fitriani Sp.A
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100">
+<div class="flex items-center gap-1 text-[11px] text-slate-500">
+<svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="truncate">Masjid Agung Al-Azhar, Jakarta</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold shadow-xs">
+              Detail
+            </button>
+</div>
+</article>
+<!-- Event 2 Card -->
+<article class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-sm hover:border-emerald-300 transition space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-100 text-teal-800 border border-teal-200">
+              Workshop Khusus • Ahad, 8 Nov
+            </span>
+<span class="text-[11px] font-semibold text-slate-500">09:00 - Ashar</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 leading-snug">
+              Workshop Tamyiz: Membangun Kedisiplinan Shalat Usia 7–10 Tahun
+            </h3>
+<p class="text-xs text-emerald-800 font-medium mt-1">
+              Ustadz Harry Santosa &amp; Kak Erlan
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100">
+<div class="flex items-center gap-1 text-[11px] text-slate-500">
+<svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="truncate">Pusat Khazanah Nabawiyah, Bandung</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold shadow-xs">
+              Detail
+            </button>
+</div>
+</article>
+</section>
+<!-- Rekomendasi Pustaka & Karya Pilihan (Horizontal Carousel) -->
+<section aria-label="Pustaka &amp; Audio Penyejuk" class="pt-1">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h2 class="text-sm font-bold text-slate-800">Pustaka &amp; Audio Penyejuk</h2>
+<p class="text-[11px] text-slate-500">Panduan rujukan mendidik dengan fitrah</p>
+</div>
+<a class="text-xs font-semibold text-emerald-800 hover:text-emerald-900 inline-flex items-center gap-1" href="#katalog-buku">
+<span>Katalog Buku</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+<!-- Horizontal scroll row -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar -mx-4 px-4 pb-2">
+<!-- Item 1 -->
+<div class="w-[200px] shrink-0 bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex flex-col justify-between">
+<div>
+<div class="h-28 rounded-xl bg-gradient-to-br from-emerald-900 to-pine-800 p-3 text-white flex flex-col justify-between relative overflow-hidden">
+<span class="text-[10px] font-bold text-emerald-300">Kitab Rujukan</span>
+<span class="font-arabic text-lg text-emerald-100">لسان القلب</span>
+<div class="absolute right-0 bottom-0 opacity-15 transform translate-x-3 translate-y-3">
+<svg class="w-16 h-16 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+</div>
+</div>
+<h3 class="text-xs font-bold text-slate-800 mt-2.5 leading-snug">Tiga Bahasa Mendidik (Hati, Lisan, Tangan)</h3>
+<p class="text-[10px] text-slate-500 mt-0.5">Ust. Abdul Kholiq</p>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-emerald-800 font-bold">Audio &amp; PDF</span>
+<span class="text-slate-400">140 hal</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="w-[200px] shrink-0 bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex flex-col justify-between">
+<div>
+<div class="h-28 rounded-xl bg-gradient-to-br from-sanctuary-800 to-teal-900 p-3 text-white flex flex-col justify-between relative overflow-hidden">
+<span class="text-[10px] font-bold text-teal-200">Konsep Fitrah</span>
+<span class="font-arabic text-lg text-teal-100">فطرة الشاكلة</span>
+<div class="absolute right-0 bottom-0 opacity-15 transform translate-x-3 translate-y-3">
+<svg class="w-16 h-16 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"></path></svg>
+</div>
+</div>
+<h3 class="text-xs font-bold text-slate-800 mt-2.5 leading-snug">Kaidah Syakilah: Menemukan Desain Fitrah</h3>
+<p class="text-[10px] text-slate-500 mt-0.5">Ust. Adriano Rusfi</p>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-emerald-800 font-bold">Buku Seri</span>
+<span class="text-slate-400">188 hal</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="w-[200px] shrink-0 bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex flex-col justify-between">
+<div>
+<div class="h-28 rounded-xl bg-gradient-to-br from-emerald-950 to-slate-800 p-3 text-white flex flex-col justify-between relative overflow-hidden">
+<span class="text-[10px] font-bold text-emerald-300">Shalat &amp; Adab</span>
+<span class="font-arabic text-lg text-emerald-100">مرحلة التمييز</span>
+<div class="absolute right-0 bottom-0 opacity-15 transform translate-x-3 translate-y-3">
+<svg class="w-16 h-16 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+</div>
+</div>
+<h3 class="text-xs font-bold text-slate-800 mt-2.5 leading-snug">Fase Tamyiz: Menumbuhkan Shalat Khusyu</h3>
+<p class="text-[10px] text-slate-500 mt-0.5">Ust. Bayu Chandra</p>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="text-emerald-800 font-bold">Kajian Tematik</span>
+<span class="text-slate-400">92 hal</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- END: MainContentBody -->
+<!-- BEGIN: FloatingBottomNavigation -->
+<nav aria-label="Navigasi Bawah" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-40 px-4 pb-4 pt-1 pointer-events-none">
+<div class="pointer-events-auto bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-xl px-2 py-1.5 flex items-center justify-around">
+<!-- Tab 1: Beranda (Active) -->
+<a class="flex flex-col items-center py-1 px-3 text-emerald-800 group relative" href="#beranda">
+<div class="relative">
+<svg class="w-5 h-5 text-emerald-800" fill="currentColor" viewbox="0 0 24 24">
+<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+</svg>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+</div>
+<span class="text-[10px] font-bold mt-0.5 tracking-tight">Beranda</span>
+</a>
+<!-- Tab 2: Agenda -->
+<a class="flex flex-col items-center py-1 px-3 text-slate-400 hover:text-slate-700 transition" href="#agenda">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Agenda</span>
+</a>
+<!-- Tab 3: Pustaka -->
+<a class="flex flex-col items-center py-1 px-3 text-slate-400 hover:text-slate-700 transition" href="#pustaka">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Pustaka</span>
+</a>
+<!-- Tab 4: Mitra -->
+<a class="flex flex-col items-center py-1 px-3 text-slate-400 hover:text-slate-700 transition" href="#mitra">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Mitra</span>
+</a>
+<!-- Tab 5: Profil -->
+<a class="flex flex-col items-center py-1 px-3 text-slate-400 hover:text-slate-700 transition" href="#profil">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Profil</span>
+</a>
+</div>
+</nav>
+<!-- END: FloatingBottomNavigation -->
+</div>
+</body></html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>Sanctuary of Sakinah - PKN</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FDF9F0",
+            "surface-container": "#F5EFE4",
+            "surface-container-low": "#FAF5EC",
+            "surface-container-high": "#EDE5D6",
+            "surface-card": "#FFFFFF",
+            "sage": {
+              50: "#F2F6F4",
+              100: "#E2ECE7",
+              200: "#C5D8CF",
+              500: "#4A6B5D",
+              600: "#3D5B4F",
+              700: "#324B41",
+            },
+            "clay": {
+              50: "#FAF2EE",
+              100: "#F4E3DC",
+              500: "#9A634E",
+              600: "#804E3C",
+            },
+            "rose-gentle": {
+              bg: "#FBF1EE",
+              border: "#F1DCD6",
+              text: "#8C4A42"
+            },
+            "on-surface": "#24231E",
+            "on-surface-variant": "#626058",
+            "outline-soft": "#E2DACF"
+          },
+          fontFamily: {
+            serif: ["Merriweather", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #FDF9F0;
+      color: #24231E;
+      overscroll-behavior-y: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    .pt-safe { padding-top: env(safe-area-inset-top, 16px); }
+    ::-webkit-scrollbar { display: none; }
+    
+    @keyframes gentlePulse {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.12); opacity: 0.45; }
+    }
+    .breath-circle {
+      animation: gentlePulse 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-sage-200 selection:text-sage-700 min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TOP PULL-DOWN HINT -->
+<div class="w-full pt-safe text-center py-1.5 cursor-pointer select-none bg-surface-container-low/70 border-b border-outline-soft/40 transition-colors hover:bg-surface-container" id="open-clock-hint" role="button" tabindex="0">
+<span class="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-sage-600">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+      Tarik ke bawah untuk Mode Jam &amp; Renungan
+    </span>
+</div>
+<main class="flex-1 w-full px-4 pt-3 pb-28 max-w-md mx-auto space-y-6">
+<!-- 1. NATURE HERO HEADER -->
+<header class="flex flex-col space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-wider font-semibold text-sage-600">Sanctuary of Sakinah</span>
+<h1 class="font-serif text-2xl font-bold text-on-surface tracking-tight mt-0.5">Ahlan, Abu Zaid</h1>
+<p class="text-xs text-on-surface-variant font-medium mt-0.5 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sage-500"></span>
+            Keluarga Tangguh • Baiti Jannati
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<!-- Theme toggle -->
+<button aria-label="Ganti Tema" class="w-9 h-9 rounded-full bg-surface-card border border-outline-soft flex items-center justify-center text-on-surface-variant shadow-xs hover:text-sage-600 transition-colors active:scale-95" id="theme-toggle-btn" type="button">
+<span class="material-symbols-outlined text-[19px]" id="theme-icon">wb_sunny</span>
+</button>
+<!-- User Avatar -->
+<div class="w-10 h-10 rounded-full bg-sage-500 text-white font-semibold text-sm flex items-center justify-center shadow-xs border-2 border-surface-card">
+            AZ
+          </div>
+</div>
+</div>
+<!-- Tappable Quote Card (Mode Renungan Trigger) -->
+<div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface-card to-surface-container-low border border-outline-soft/70 p-4 shadow-xs transition-all active:scale-[0.99] cursor-pointer hover:border-sage-500/40" id="open-clock-card" role="button" tabindex="0">
+<div class="flex items-center justify-between mb-2">
+<div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-sage-600 bg-sage-50 px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">spa</span>
+            Renungan Qalbu Hari Ini
+          </div>
+<span class="text-[11px] text-sage-600 font-medium flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+            Buka Layar Penuh <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<blockquote class="font-serif italic text-[14px] text-on-surface leading-relaxed pl-3 border-l-2 border-sage-500">
+          “Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan.”
+        </blockquote>
+<div class="mt-2.5 flex items-center justify-between text-[11px] text-on-surface-variant font-medium pt-1">
+<span>Prinsip Thuma'ninah Ayah Bunda</span>
+<span class="inline-flex items-center gap-1 text-sage-600">
+<span class="material-symbols-outlined text-[13px]">schedule</span> Mode Jam Hening
+          </span>
+</div>
+</div>
+</header>
+<!-- 2. INTEGRATED SEARCH BAR -->
+<section>
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-[18px] text-on-surface-variant/70 pointer-events-none">search</span>
+<input class="w-full h-11 bg-surface-card border border-outline-soft/80 rounded-full pl-10 pr-20 text-xs text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-sage-500 focus:ring-1 focus:ring-sage-500 shadow-xs transition-all" placeholder="Cari agenda daurah, buku pustaka, atau artikel..." type="text"/>
+<span class="absolute right-3 px-2 py-0.5 text-[10px] font-semibold rounded-full bg-surface-container text-on-surface-variant/80 border border-outline-soft/50">
+          PKN 1.0
+        </span>
+</div>
+</section>
+<!-- 3. GOAL 1 — P3K KRISIS GENTING (< 10 DETIK SOP) -->
+<section>
+<div class="rounded-2xl bg-rose-gentle-bg border border-rose-gentle-border p-3.5 flex items-start gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-rose-gentle-text shrink-0 shadow-xs border border-rose-gentle-border">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-white text-rose-gentle-text text-[10px] font-bold border border-rose-gentle-border shadow-2xs">
+              &lt; 10 Detik SOP
+            </span>
+<span class="text-[10px] font-semibold text-rose-gentle-text/80">Maqashid: Hifzhun Nafs</span>
+</div>
+<h2 class="font-serif text-[13px] font-bold text-on-surface leading-snug">
+            P3K Krisis Genting: Anak Mengamuk &amp; Ortu Burnout
+          </h2>
+<p class="text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+            Berhenti bicara, sejajarkan pandangan mata, dekap dada sendiri 3 tarikan nafas tenang.
+          </p>
+</div>
+<button aria-label="Buka SOP Genting" class="self-center px-2.5 py-1.5 rounded-lg bg-rose-gentle-text text-white text-[11px] font-semibold shrink-0 shadow-xs active:scale-95 transition-transform" type="button">
+          Buka SOP
+        </button>
+</div>
+</section>
+<!-- 4. GOAL 2 — AMALAN ADAB HARI INI -->
+<section class="bg-surface-card border border-outline-soft/80 rounded-2xl p-4 shadow-xs space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-sage-50 text-sage-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">task_alt</span>
+</div>
+<h2 class="font-serif text-[15px] font-bold text-on-surface">Amalan Adab Hari Ini</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-sage-50 text-sage-600 text-[11px] font-semibold border border-sage-200">
+          1 dari 3 Selesai
+        </span>
+</div>
+<div class="space-y-2 pt-1" id="amalan-list">
+<!-- Checklist 1: Checked -->
+<label class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-sage-500 focus:ring-sage-500 border-outline-soft cursor-pointer" type="checkbox"/>
+<div class="flex-1 text-xs">
+<span class="font-semibold text-on-surface line-through text-on-surface-variant/80">Dekap Ananda Zaid 3 menit</span>
+<span class="block text-[11px] text-on-surface-variant/70">Bahasa Hati &amp; Memenuhi Bejana Kasih Sayang</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-sage-500">done_all</span>
+</label>
+<!-- Checklist 2: Unchecked -->
+<label class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-container-low/40 hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-0.5 w-4 h-4 rounded text-sage-500 focus:ring-sage-500 border-outline-soft cursor-pointer" type="checkbox"/>
+<div class="flex-1 text-xs">
+<span class="font-semibold text-on-surface">Tahan amarah &amp; puasa lisan saat lelah</span>
+<span class="block text-[11px] text-on-surface-variant">Kazhmul ghaizh — jeda 10 detik sebelum bersuara</span>
+</div>
+<span class="text-[10px] text-clay-500 font-semibold bg-clay-50 px-1.5 py-0.5 rounded">Prioritas</span>
+</label>
+<!-- Checklist 3: Unchecked -->
+<label class="flex items-start gap-2.5 p-2 rounded-xl bg-surface-container-low/40 hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-0.5 w-4 h-4 rounded text-sage-500 focus:ring-sage-500 border-outline-soft cursor-pointer" type="checkbox"/>
+<div class="flex-1 text-xs">
+<span class="font-semibold text-on-surface">Dzikir sore &amp; doa kelembutan kalbu anak</span>
+<span class="block text-[11px] text-on-surface-variant">Rabbana hablana min azwajina wa dzurriyyatina</span>
+</div>
+<span class="text-[10px] text-on-surface-variant/80">17:00</span>
+</label>
+</div>
+</section>
+<!-- 5. HIGHLIGHT 2 AGENDA TERDEKAT (VERTICAL STACK) -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-[15px] font-bold text-on-surface">Agenda Daurah Terdekat</h2>
+<span class="text-xs text-sage-600 font-semibold cursor-pointer hover:underline">Lihat Kalender</span>
+</div>
+<div class="space-y-2.5">
+<!-- Agenda 1 -->
+<div class="bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between hover:border-sage-500/50 transition-all">
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-50 text-sage-600 text-[10px] font-bold tracking-wide">
+                H-3 • Sabtu, 18 Okt
+              </span>
+<span class="text-[11px] text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-sage-500">schedule</span> 08.00 WIB
+              </span>
+</div>
+<h3 class="font-serif text-[14px] font-bold text-on-surface leading-snug">
+              Daurah Akbar: Menumbuhkan Fitrah Keimanan Usia Tamyiz
+            </h3>
+<p class="text-xs text-on-surface-variant mt-1 line-clamp-1">
+              Ust. Abdul Kholiq, Lc.
+            </p>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-soft/50 flex items-center justify-between text-xs">
+<span class="inline-flex items-center gap-1 text-on-surface-variant text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-clay-500">location_on</span>
+              Masjid SKIS &amp; Zoom
+            </span>
+<button class="px-3 py-1 rounded-lg bg-sage-500 text-white font-semibold text-[11px] hover:bg-sage-600 active:scale-95 transition-all shadow-xs" type="button">
+              Masuk Kelas
+            </button>
+</div>
+</div>
+<!-- Agenda 2 -->
+<div class="bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between hover:border-sage-500/50 transition-all">
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-clay-50 text-clay-600 text-[10px] font-bold tracking-wide">
+                Ahad, 26 Okt
+              </span>
+<span class="text-[11px] text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-clay-500">schedule</span> 19.30 WIB
+              </span>
+</div>
+<h3 class="font-serif text-[14px] font-bold text-on-surface leading-snug">
+              Kajian Khusus Pasutri: Memulihkan Hutang Pengasuhan
+            </h3>
+<p class="text-xs text-on-surface-variant mt-1 line-clamp-1">
+              Ust. Bayu, S.Pd. &amp; Ummu Khusna, M.Psi.
+            </p>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-soft/50 flex items-center justify-between text-xs">
+<span class="inline-flex items-center gap-1 text-on-surface-variant text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-sage-500">videocam</span>
+              Interactive Live Zoom
+            </span>
+<button class="px-3 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-[11px] active:scale-95 transition-all" type="button">
+              Detail Tiket
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. REKOMENDASI AKTIVITAS & PUSTAKA (HORIZONTAL SNAP CAROUSEL) -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-serif text-[15px] font-bold text-on-surface">Rekomendasi Aktivitas &amp; Pustaka</h2>
+<p class="text-[11px] text-on-surface-variant">Langkah bertahap penempaan fitrah</p>
+</div>
+<span class="text-xs text-sage-600 font-semibold cursor-pointer">Semua</span>
+</div>
+<div class="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 -mx-4 px-4 scrollbar-none">
+<!-- Card 1: Modul Adab -->
+<div class="snap-start shrink-0 w-64 bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-50 text-sage-600 font-bold">Modul Belajar</span>
+<span class="text-on-surface-variant font-medium">Sisa 8 Menit</span>
+</div>
+<h4 class="font-serif text-[13px] font-bold text-on-surface leading-snug">
+              Lanjutkan Modul Adab
+            </h4>
+<p class="text-[11px] text-on-surface-variant mt-1">Bab 3/5: Membangun Shalat dengan Kelembutan</p>
+<div class="mt-3">
+<div class="flex justify-between text-[10px] text-on-surface-variant mb-1">
+<span>Progress Bab</span>
+<span class="font-bold text-sage-600">65%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="w-[65%] h-full bg-sage-500 rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-1.5 rounded-lg bg-sage-500 text-white font-semibold text-xs flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+            Lanjutkan Modul <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</button>
+</div>
+<!-- Card 2: Serial Zaid Rehearsal -->
+<div class="snap-start shrink-0 w-64 bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-clay-50 text-clay-600 font-bold">RPG Rehearsal</span>
+<span class="text-on-surface-variant font-medium">Episode 3</span>
+</div>
+<h4 class="font-serif text-[13px] font-bold text-on-surface leading-snug">
+              Serial Zaid: Simulasi Meja Makan
+            </h4>
+<p class="text-[11px] text-on-surface-variant mt-1">Merespon penolakan tanpa intonasi tinggi.</p>
+<!-- 4 Milestone Tracker Dots -->
+<div class="mt-3 bg-surface-container-low p-2 rounded-xl border border-outline-soft/40">
+<span class="text-[10px] font-semibold text-on-surface-variant block mb-1">Milestone Serial:</span>
+<div class="flex items-center justify-between text-[10px] font-medium text-on-surface">
+<span class="flex items-center gap-0.5 text-sage-600">Ep 1 <span class="material-symbols-outlined text-[12px]">check</span></span>
+<span class="flex items-center gap-0.5 text-sage-600">Ep 2 <span class="material-symbols-outlined text-[12px]">check</span></span>
+<span class="flex items-center gap-0.5 text-on-surface font-bold text-sage-700">Ep 3 ●</span>
+<span class="flex items-center gap-0.5 text-on-surface-variant/60">Ep 4 🔒</span>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-xs flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+            Simulasi Dialog <span class="material-symbols-outlined text-[14px]">chat_bubble_outline</span>
+</button>
+</div>
+<!-- Card 3: Latihan Hening Qalbu -->
+<div class="snap-start shrink-0 w-64 bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-sage-50 text-sage-600 font-bold">Thuma'ninah</span>
+<span class="text-on-surface-variant font-medium">3 Menit SOP</span>
+</div>
+<h4 class="font-serif text-[13px] font-bold text-on-surface leading-snug">
+              Latihan Hening Qalbu
+            </h4>
+<p class="text-[11px] text-on-surface-variant mt-1">
+              Panduan Kazhmul ghaizh &amp; siklus pernapasan 4-7-8 untuk menenangkan detak jantung.
+            </p>
+<div class="mt-3 flex items-center gap-2 text-xs text-sage-600 bg-sage-50/70 p-2 rounded-xl">
+<span class="material-symbols-outlined text-[18px]">self_improvement</span>
+<span class="text-[11px] leading-tight">Meredam ketegangan emosi rumah tangga</span>
+</div>
+</div>
+<button class="mt-3 w-full py-1.5 rounded-lg bg-sage-500 text-white font-semibold text-xs flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+            Mulai Tarik Nafas <span class="material-symbols-outlined text-[14px]">air</span>
+</button>
+</div>
+<!-- Card 4: Observasi Bakat TB-40 -->
+<div class="snap-start shrink-0 w-64 bg-surface-card border border-outline-soft rounded-2xl p-3.5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<span class="px-2 py-0.5 rounded-full bg-clay-50 text-clay-600 font-bold">Radar Fitrah</span>
+<span class="text-on-surface-variant font-medium">Syakilah 40</span>
+</div>
+<h4 class="font-serif text-[13px] font-bold text-on-surface leading-snug">
+              Observasi Bakat TB-40
+            </h4>
+<p class="text-[11px] text-on-surface-variant mt-1">
+              Pencatatan radar nalar dan keunikan fitrah bawaan anak hari ini.
+            </p>
+<div class="mt-3 flex items-center gap-2 text-xs text-clay-600 bg-clay-50 p-2 rounded-xl">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span class="text-[11px] leading-tight">Deteksi 40 ragam potensi fitrah</span>
+</div>
+</div>
+<button class="mt-3 w-full py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-xs flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+            Input Catatan <span class="material-symbols-outlined text-[14px]">edit_note</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 7. INSTRUMEN & UTILITAS PRAKTIS (6 GRID TILES) -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-[15px] font-bold text-on-surface">Instrumen &amp; Utilitas Praktis</h2>
+<span class="text-xs text-sage-600 font-semibold cursor-pointer">Lengkap</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Tile 1 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-sage-50 text-sage-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Generator RPP</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">1 Lembar Siap Cetak</p>
+</div>
+</button>
+<!-- Tile 2 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-sage-50 text-sage-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Modul Adab Harian</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Checklist Perilaku</p>
+</div>
+</button>
+<!-- Tile 3 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-clay-50 text-clay-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">front_hand</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Doa Penenang Hati</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Dzikir Redam Emosi</p>
+</div>
+</button>
+<!-- Tile 4 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-clay-50 text-clay-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Tafsir Bakat 40</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Analisis Radar TB-40</p>
+</div>
+</button>
+<!-- Tile 5 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-sage-50 text-sage-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Pustaka Nabawiyah</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Buku &amp; Risalah Ilmiah</p>
+</div>
+</button>
+<!-- Tile 6 -->
+<button class="text-left bg-surface-card border border-outline-soft/80 hover:border-sage-500/50 p-3 rounded-2xl shadow-xs transition-all active:scale-[0.98] flex items-start gap-2.5" type="button">
+<div class="w-8 h-8 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</div>
+<div class="min-w-0">
+<h5 class="text-xs font-bold text-on-surface leading-tight">Kemitraan Lembaga</h5>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Sekolah &amp; Komunitas</p>
+</div>
+</button>
+</div>
+</section>
+</main>
+<!-- 8. FLOATING BOTTOM DOCK -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 pb-safe bg-surface/90 backdrop-blur-md border-t border-outline-soft/70">
+<div class="max-w-md mx-auto h-16 px-4 flex items-center justify-around">
+<!-- Beranda (Active with soft sage tint) -->
+<a class="flex flex-col items-center justify-center py-1 px-3 rounded-xl bg-sage-100 text-sage-700 font-semibold text-[11px] transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-[10px] tracking-tight">Beranda</span>
+</a>
+<!-- Event -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">event_seat</span>
+<span class="text-[10px] font-medium tracking-tight">Event</span>
+</a>
+<!-- Materi -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="text-[10px] font-medium tracking-tight">Materi</span>
+</a>
+<!-- Curhat -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">graphic_eq</span>
+<span class="text-[10px] font-medium tracking-tight">Curhat</span>
+</a>
+<!-- Profil -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">person_outline</span>
+<span class="text-[10px] font-medium tracking-tight">Profil</span>
+</a>
+</div>
+</nav>
+<!-- FULL-SCREEN DIGITAL CLOCK & MODE RENUNGAN OVERLAY -->
+<div class="fixed inset-0 z-50 bg-[#FDF9F0] text-[#24231E] flex flex-col justify-between p-6 transition-all duration-300 transform translate-y-full opacity-0 pointer-events-none" id="clock-renungan-modal">
+<!-- Modal Top Bar -->
+<div class="w-full flex items-center justify-between pt-safe">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sage-600 text-[20px]">spa</span>
+<span class="font-serif text-sm font-semibold text-sage-700">Mode Renungan &amp; Jam Sakinah</span>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95" id="close-clock-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Center Section: Live Clock & Breathing Circle Guide -->
+<div class="flex flex-col items-center justify-center text-center my-auto space-y-6">
+<!-- Prayer Countdown Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 border border-sage-200 text-xs font-medium text-sage-700 shadow-2xs">
+<span class="w-2 h-2 rounded-full bg-sage-500 animate-ping"></span>
+<span>Menuju Maghrib: <strong>-00:38:20</strong></span>
+</div>
+<!-- Live Digital Clock -->
+<div class="flex flex-col items-center">
+<span class="font-serif text-6xl sm:text-7xl font-bold tracking-tight text-on-surface" id="live-clock">
+          17:42
+        </span>
+<span class="text-xs uppercase font-semibold tracking-widest text-on-surface-variant mt-1">Waktu Indonesia Barat (WIB)</span>
+</div>
+<!-- Breathing Circle Guide -->
+<div class="relative flex items-center justify-center w-52 h-52">
+<div class="absolute inset-0 rounded-full bg-sage-200/40 breath-circle"></div>
+<div class="w-36 h-36 rounded-full bg-surface-card border border-sage-200 shadow-sm flex flex-col items-center justify-center p-4 z-10">
+<span class="material-symbols-outlined text-sage-600 text-[26px]">air</span>
+<span class="text-xs font-semibold text-sage-700 mt-1" id="breath-status">Tarik Napas</span>
+<span class="text-[10px] text-on-surface-variant mt-0.5">Penuhi Thuma'ninah</span>
+</div>
+</div>
+<!-- Fullscreen Quote -->
+<div class="max-w-xs px-4">
+<p class="font-serif italic text-sm text-on-surface leading-relaxed">
+          “Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan.”
+        </p>
+<span class="block text-[11px] text-sage-600 mt-2 font-medium">Prinsip Parenting Nabawiyah • Ust. Harry Santosa</span>
+</div>
+</div>
+<!-- Modal Footer Controls -->
+<div class="w-full pb-safe flex flex-col items-center gap-2">
+<span class="text-[11px] text-on-surface-variant">Geser ke bawah atau sentuh tombol silang untuk kembali</span>
+<button class="px-6 py-2 rounded-full bg-sage-500 text-white text-xs font-semibold shadow-xs active:scale-95 transition-all" id="close-clock-btn-bottom" type="button">
+        Kembali ke Beranda
+      </button>
+</div>
+</div>
+<!-- Vanilla JS Interaction Logic -->
+<script>
+    (function() {
+      // Clock & Renungan modal handles
+      const openCard = document.getElementById('open-clock-card');
+      const openHint = document.getElementById('open-clock-hint');
+      const closeBtn = document.getElementById('close-clock-btn');
+      const closeBtnBottom = document.getElementById('close-clock-btn-bottom');
+      const modal = document.getElementById('clock-renungan-modal');
+      const liveClockEl = document.getElementById('live-clock');
+      const breathStatusEl = document.getElementById('breath-status');
+
+      function showModal() {
+        if (!modal) return;
+        modal.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+        modal.classList.add('translate-y-0', 'opacity-100');
+        updateClock();
+      }
+
+      function hideModal() {
+        if (!modal) return;
+        modal.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+        modal.classList.remove('translate-y-0', 'opacity-100');
+      }
+
+      if (openCard) openCard.addEventListener('click', showModal);
+      if (openHint) openHint.addEventListener('click', showModal);
+      if (closeBtn) closeBtn.addEventListener('click', hideModal);
+      if (closeBtnBottom) closeBtnBottom.addEventListener('click', hideModal);
+
+      // Realtime Clock Updater
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        if (liveClockEl) {
+          liveClockEl.textContent = `${hours}:${minutes}`;
+        }
+      }
+      setInterval(updateClock, 1000);
+
+      // Breathing Cycle Text (4s Tarik, 2s Tahan, 4s Hembus)
+      let breathPhase = 0;
+      const phases = ["Tarik Napas", "Tahan Lembut", "Hembuskan Tenang", "Hening Sejenak"];
+      setInterval(() => {
+        breathPhase = (breathPhase + 1) % phases.length;
+        if (breathStatusEl) {
+          breathStatusEl.textContent = phases[breathPhase];
+        }
+      }, 3000);
+
+      // Theme toggle icon interaction
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+      let isDarkTone = false;
+      if (themeBtn && themeIcon) {
+        themeBtn.addEventListener('click', () => {
+          isDarkTone = !isDarkTone;
+          themeIcon.textContent = isDarkTone ? 'dark_mode' : 'wb_sunny';
+          if (isDarkTone) {
+            document.body.classList.add('brightness-95');
+          } else {
+            document.body.classList.remove('brightness-95');
+          }
+        });
+      }
+    })();
+  </script>
+</body></html>

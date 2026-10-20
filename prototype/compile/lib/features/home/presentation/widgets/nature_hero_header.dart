@@ -28,7 +28,7 @@ class NatureHeroHeader extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 275,
+        height: 365,
         decoration: const BoxDecoration(
           color: Color(0xFF0F1E19),
           gradient: LinearGradient(
@@ -46,9 +46,9 @@ class NatureHeroHeader extends StatelessWidget {
             // Ambient Tree/Nature Background Layer (with graceful offline fallback)
             Positioned.fill(
               child: Opacity(
-                opacity: 0.35,
+                opacity: 0.50,
                 child: Image.network(
-                  'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80',
+                  'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80',
                   fit: BoxFit.cover,
                   errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
@@ -60,16 +60,16 @@ class NatureHeroHeader extends StatelessWidget {
               top: -60,
               right: -40,
               child: Container(
-                width: 220,
-                height: 220,
+                width: 240,
+                height: 240,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF235347).withValues(alpha: 0.35),
+                  color: const Color(0xFF235347).withValues(alpha: 0.40),
                 ),
               ),
             ),
 
-            // Top gradient overlay for seamless contrast
+            // Top gradient overlay for seamless contrast & mist
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
@@ -77,11 +77,11 @@ class NatureHeroHeader extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.black.withValues(alpha: 0.45),
+                      Colors.black.withValues(alpha: 0.50),
                       Colors.transparent,
                       colors.surface.withValues(alpha: 0.95),
                     ],
-                    stops: const [0.0, 0.6, 1.0],
+                    stops: const [0.0, 0.55, 1.0],
                   ),
                 ),
               ),
@@ -91,12 +91,54 @@ class NatureHeroHeader extends StatelessWidget {
             SafeArea(
               bottom: false,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 16),
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Pull-Down Gesture Indicator for Clock Mode
+                    Center(
+                      child: GestureDetector(
+                        onTap: onOpenRenungan,
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 5,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.40),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.18),
+                              width: 0.8,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(
+                                Icons.arrow_downward_rounded,
+                                size: 13,
+                                color: Color(0xFF79DB8D),
+                              ),
+                              const SizedBox(width: 6),
+                              Text(
+                                "Tarik ke bawah untuk Mode Jam",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(0xFFFBF8F2)
+                                      .withValues(alpha: 0.90),
+                                  letterSpacing: 0.2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
                     // Clean Top Bar: Greeting on Left, Theme Toggle & Avatar on Right
-                    // (Explicitly NO "Fase Tamyiz" badge and NO "Alternatif" button)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -108,7 +150,7 @@ class NatureHeroHeader extends StatelessWidget {
                               Text(
                                 "Ahlan, Abu Zaid",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.w800,
                                   color: Color(0xFFFBF8F2),
                                   letterSpacing: -0.3,
@@ -116,7 +158,7 @@ class NatureHeroHeader extends StatelessWidget {
                               ),
                               SizedBox(height: 2),
                               Text(
-                                "Keluarga Tangguh • Baiti Jannati",
+                                "Menemani proses healing qalbu • Baiti Jannati",
                                 style: TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w500,
@@ -186,6 +228,7 @@ class NatureHeroHeader extends StatelessWidget {
                       ],
                     ),
 
+                    // Generous Whitespace / Breathing Room
                     const Spacer(),
 
                     // Integrated Nature Hero Quote Card (Tappable to Mode Renungan)
@@ -193,54 +236,59 @@ class NatureHeroHeader extends StatelessWidget {
                       onTap: onOpenRenungan,
                       child: Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 14,
+                        ),
                         decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.5),
+                          color: Colors.black.withValues(alpha: 0.55),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: const Color(0xFF79DB8D).withValues(alpha: 0.35),
+                            color:
+                                const Color(0xFF79DB8D).withValues(alpha: 0.35),
                             width: 1,
                           ),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.25),
-                              blurRadius: 15,
+                              blurRadius: 16,
                               offset: const Offset(0, 4),
                             ),
                           ],
                         ),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  padding: const EdgeInsets.all(4),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFD97706).withValues(alpha: 0.2),
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: const iconoir.Spark(
-                                    width: 14,
-                                    height: 14,
-                                    color: Color(0xFFD97706),
-                                  ),
-                                ),
-                                const SizedBox(width: 8),
-                                const Flexible(
-                                  child: Text(
-                                    "Renungan Qalbu Hari Ini",
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w700,
-                                      color: Color(0xFF79DB8D),
-                                      letterSpacing: 0.5,
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFFD97706)
+                                            .withValues(alpha: 0.2),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: const iconoir.Spark(
+                                        width: 14,
+                                        height: 14,
+                                        color: Color(0xFFD97706),
+                                      ),
                                     ),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
+                                    const SizedBox(width: 8),
+                                    const Text(
+                                      "Renungan Qalbu Hari Ini",
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xFF79DB8D),
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                const SizedBox(width: 6),
                                 Row(
                                   children: [
                                     Text(
@@ -248,38 +296,64 @@ class NatureHeroHeader extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.white.withValues(alpha: 0.75),
+                                        color:
+                                            Colors.white.withValues(alpha: 0.75),
                                       ),
                                     ),
                                     const SizedBox(width: 2),
                                     Icon(
                                       Icons.arrow_forward_ios_rounded,
                                       size: 10,
-                                      color: Colors.white.withValues(alpha: 0.75),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.75),
                                     ),
                                   ],
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: 10),
                             const Text(
-                              "“Koneksi Sebelum Koreksi — Tautkan hati dan penuhi bejana cinta sebelum menegakkan aturan.”",
+                              "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Amiri',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFFFBF8F2),
+                                height: 1.6,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+                            const Text(
+                              "“Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram.”",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Merriweather',
-                                fontSize: 12.5,
+                                fontSize: 12,
                                 fontStyle: FontStyle.italic,
-                                color: Color(0xFFFBF8F2),
+                                color: Color(0xFFE2E8F0),
                                 height: 1.5,
                               ),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              "(Refleksi Parenting Nabawiyah • QS. Ar-Ra'd: 28)",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                                color: const Color(0xFF79DB8D)
+                                    .withValues(alpha: 0.9),
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
 
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 4),
                   ],
                 ),
               ),

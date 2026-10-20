@@ -4,7 +4,7 @@ import socketserver
 import os
 import sys
 
-PORT = 3010
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 3018
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 class Handler(http.server.SimpleHTTPRequestHandler):

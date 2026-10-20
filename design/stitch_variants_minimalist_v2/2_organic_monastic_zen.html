@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #F7F4EE;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* Subtle breath pulsing animation */
+    @keyframes slowPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.85;
+      }
+      50% {
+        transform: scale(1.04);
+        opacity: 1;
+      }
+    }
+    .animate-breath {
+      animation: slowPulse 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            parchment: "#F7F4EE",
+            "parchment-deep": "#EFECE3",
+            sand: "#E8DFD1",
+            "sand-subtle": "#F2EBE0",
+            bistre: "#23201D",
+            "bistre-muted": "#6E6960",
+            sage: "#5A7261",
+            "sage-soft": "#DCE5DF",
+            "sage-deep": "#3A4D40",
+            border: "#E2D9CC",
+          },
+          fontFamily: {
+            serif: ["Newsreader", "serif"],
+            display: ["Cinzel", "serif"],
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-parchment text-bistre font-sans antialiased min-h-screen flex flex-col selection:bg-sage-soft selection:text-sage-deep">
+<!-- Subtle Top Atmospheric Status Bar -->
+<header class="w-full pt-safe px-7 pt-4 pb-2 flex items-center justify-between text-bistre-muted">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span>
+<span class="text-[11px] font-sans tracking-[0.2em] uppercase text-bistre-muted/80">
+        14 Rabi'ul Awwal • Waktu Ashar
+      </span>
+</div>
+<div class="relative w-8 h-8 rounded-full overflow-hidden border border-border/80 p-0.5">
+<img class="w-full h-full rounded-full object-cover grayscale-[20%]" data-alt="Portrait of Indonesian father" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATYdxE5c_PLPvonWeWf_YBSXKwMqJxQhMQJJAiXUc0FEgmClA6G6GIdOZx-h1fGLmZHXav_Q_WXFtMexe0-YFeGg4Ggz3xpLaE92r5Qf_J9rasJfU9urW0s9u5poOp1xPdJWMkoQfjrQGFmDkfz4UBaIK7aTHqeIKcvgCAIIx9LC0l4tHyzzZGBGWz8DUWHhFYdU-Z5R4gGQMlS-WheMGbnhFKiub8VIWAPb1NLh2MjgWLgNmJnOquZQ"/>
+</div>
+</header>
+<!-- Main Scroll Canvas -->
+<main class="flex-1 w-full px-6 pt-6 pb-36 max-w-md mx-auto space-y-9">
+<!-- 1. GREETING & FOCAL MANTRA -->
+<section class="text-center pt-2">
+<p class="font-serif italic text-sm tracking-wide text-bistre-muted mb-2">
+        Tenang &amp; Hadir, Abu Hafi
+      </p>
+<div class="relative inline-block py-2">
+<h1 class="font-serif text-[28px] sm:text-[32px] font-light tracking-wide text-bistre leading-snug">
+          Koneksi Sebelum Koreksi
+        </h1>
+<div class="w-10 h-[1px] bg-border mx-auto mt-3"></div>
+</div>
+<p class="font-sans text-[12px] font-light tracking-wider text-bistre-muted mt-2 max-w-[260px] mx-auto">
+        Rengkuh kembali jiwa ananda sebelum menuntut ketaatan lisan.
+      </p>
+</section>
+<!-- 2. THE SACRED PAUSE (Interactive Organic Pebble) -->
+<section class="w-full">
+<div class="relative w-full rounded-[36px] bg-sand-subtle/80 border border-border/70 p-6 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(232,223,209,0.3)] backdrop-blur-sm">
+<div class="w-14 h-14 rounded-full bg-parchment flex items-center justify-center border border-border shadow-inner mb-4 animate-breath">
+<span class="material-symbols-outlined text-[24px] text-sage">spa</span>
+</div>
+<span class="text-[10px] uppercase font-sans tracking-[0.25em] text-sage font-semibold mb-1">Jeda Hening Petang</span>
+<h2 class="font-serif text-lg font-normal text-bistre mb-1.5">
+          Tarik Nafas 4 Detik — Hembuskan 6 Detik
+        </h2>
+<p class="text-[12px] text-bistre-muted font-light max-w-[270px] leading-relaxed mb-4">
+          Kosongkan residu kepenatan kantor di ambang pintu sebelum mengetuk rumah.
+        </p>
+<button class="px-5 py-2 rounded-full border border-bistre/20 text-bistre font-sans text-xs tracking-wider font-medium hover:bg-parchment active:scale-95 transition-all flex items-center gap-2" id="breath-btn" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+<span>Mulai 1 Menit Thuma'ninah</span>
+</button>
+</div>
+</section>
+<!-- 3. THE SINGLE ANCHOR (Amanah Tunggal) -->
+<section class="w-full">
+<div class="flex items-center justify-between mb-3 px-1">
+<span class="text-[10px] uppercase font-sans tracking-[0.2em] text-bistre-muted">Amanah Tunggal Senja</span>
+<span class="text-[11px] font-serif italic text-sage">Fokus Satu Sentuhan</span>
+</div>
+<div class="rounded-2xl border border-border bg-parchment p-5 shadow-xs">
+<div class="flex items-start gap-3.5">
+<button class="mt-0.5 w-6 h-6 rounded-full border border-border flex items-center justify-center shrink-0 hover:border-sage transition-colors" id="anchor-toggle" type="button">
+<span class="material-symbols-outlined text-[15px] text-sage hidden" id="anchor-check">check</span>
+</button>
+<div class="flex-1">
+<p class="font-serif text-[16px] text-bistre leading-relaxed font-normal transition-all" id="anchor-text">
+              "Duduk bersimpuh sejajar mata Zaid saat ia pulang, tanpa menuntut laporan sekolah."
+            </p>
+<div class="mt-3 flex items-center gap-3 text-[11px] text-bistre-muted font-sans font-light">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-sage">visibility</span>
+                Kontak Mata Teduh
+              </span>
+<span>•</span>
+<span class="italic font-serif">Usia Tamyiz (8 thn)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. STORY JOURNAL — KISAH PENGASUHAN ZAID -->
+<section class="w-full">
+<div class="flex items-center justify-between mb-3 px-1">
+<span class="text-[10px] uppercase font-sans tracking-[0.2em] text-bistre-muted">Lembar Refleksi RPG</span>
+<a class="text-[11px] font-sans text-bistre-muted hover:text-bistre underline underline-offset-4 decoration-border" href="#">Lihat Bab Lain</a>
+</div>
+<div class="rounded-2xl border border-border bg-parchment overflow-hidden">
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center justify-between text-[11px] text-bistre-muted">
+<span class="font-serif italic">Kisah Pengasuhan Zaid • Episode 3</span>
+<span class="material-symbols-outlined text-[16px] text-bistre-muted/70 hover:text-bistre cursor-pointer">bookmark_border</span>
+</div>
+<h3 class="font-serif text-[18px] text-bistre font-normal leading-snug">
+            Meredakan Denting Sendok dan Amarah Senja
+          </h3>
+<p class="font-serif text-[13px] text-bistre-muted leading-relaxed italic border-l-2 border-sand pl-3">
+            "Ketika mangkuk sup digeser dengan hentakan kasar, bukan perutnya yang lapar, melainkan jiwanya yang dahaga pengakuan setelah seharian berjuang..."
+          </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-sans text-bistre-muted/80">3 menit perenungan</span>
+<button class="text-xs font-sans font-medium text-sage hover:text-sage-deep flex items-center gap-1" type="button">
+<span>Buka Bab Ini</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. AUDIO SANCTUARY PILL -->
+<section class="w-full">
+<div class="w-full rounded-full border border-border/80 bg-sand/40 hover:bg-sand/60 px-4 py-3 flex items-center justify-between transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-parchment border border-border flex items-center justify-center text-sage shrink-0">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-serif text-[13px] text-bistre leading-tight">Kidung Dzikir Petang &amp; Doa Qalbu</span>
+<span class="text-[10px] font-sans text-bistre-muted">Audio Menenangkan • 8 Menit</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sage pr-1">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</div>
+</div>
+</section>
+<!-- 6. WABI-SABI FOOTNOTE / WHISPER -->
+<section class="text-center pt-4 pb-2">
+<p class="font-serif italic text-[12px] text-bistre-muted/70">
+        "Fitrah anak bertumbuh dalam keheningan yang dipahami, bukan kebisingan yang dipaksakan."
+      </p>
+</section>
+</main>
+<!-- 7. FLOATING MONASTIC DOCK (MINIMALIST SEMI-TRANSLUCENT CAPSULE) -->
+<nav class="fixed bottom-6 inset-x-0 mx-auto w-[82%] max-w-[310px] z-50">
+<div class="rounded-full bg-parchment/90 backdrop-blur-md border border-border shadow-[0_8px_24px_rgba(35,32,29,0.08)] px-5 py-2.5 flex items-center justify-between">
+<!-- Home Active -->
+<a aria-label="Home" class="flex flex-col items-center justify-center text-sage" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="w-1 h-1 rounded-full bg-sage mt-0.5"></span>
+</a>
+<!-- Wiki -->
+<a aria-label="Wiki" class="flex flex-col items-center justify-center text-bistre-muted hover:text-bistre transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="w-1 h-1 rounded-full bg-transparent mt-0.5"></span>
+</a>
+<!-- Curhat AI -->
+<a aria-label="Curhat AI" class="flex flex-col items-center justify-center text-bistre-muted hover:text-bistre transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">graphic_eq</span>
+<span class="w-1 h-1 rounded-full bg-transparent mt-0.5"></span>
+</a>
+<!-- Jurnal -->
+<a aria-label="Jurnal" class="flex flex-col items-center justify-center text-bistre-muted hover:text-bistre transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+<span class="w-1 h-1 rounded-full bg-transparent mt-0.5"></span>
+</a>
+</div>
+</nav>
+<script>
+    (function() {
+      // Toggle single anchor check
+      const anchorToggle = document.getElementById("anchor-toggle");
+      const anchorCheck = document.getElementById("anchor-check");
+      const anchorText = document.getElementById("anchor-text");
+
+      if (anchorToggle && anchorCheck && anchorText) {
+        anchorToggle.addEventListener("click", () => {
+          anchorCheck.classList.toggle("hidden");
+          if (!anchorCheck.classList.contains("hidden")) {
+            anchorToggle.classList.add("bg-sage/10", "border-sage");
+            anchorText.classList.add("line-through", "text-bistre-muted/60");
+          } else {
+            anchorToggle.classList.remove("bg-sage/10", "border-sage");
+            anchorText.classList.remove("line-through", "text-bistre-muted/60");
+          }
+        });
+      }
+
+      // Breathing button feedback
+      const breathBtn = document.getElementById("breath-btn");
+      if (breathBtn) {
+        breathBtn.addEventListener("click", () => {
+          breathBtn.innerHTML = '<span class="material-symbols-outlined text-[14px] text-sage animate-spin">sync</span><span>Tarik nafas... hembuskan...</span>';
+          setTimeout(() => {
+            breathBtn.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-sage"></span><span>Alhamdulillah, Jiwa Kembali Hadir</span>';
+          }, 4000);
+        });
+      }
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>Nordic Sakinah - Home</title>
+<!-- Google Fonts: Playfair Display + Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              ivory: "#FBF9F5",
+              mist: "#EDF0EC",
+              surface: "#F4F5F1",
+              card: "#FFFFFF",
+              slate: "#1E2621",
+              muted: "#606A63",
+              soft: "#8D9790",
+              sage: "#4A6B5B",
+              "sage-light": "#A3B899",
+              "sage-soft": "#E2E8DF",
+              clay: "#C49A76",
+              "clay-light": "#F8F1EB"
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #FBF9F5;
+      color: #1E2621;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior-y: none;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    .pt-safe { padding-top: env(safe-area-inset-top, 16px); }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-nordic-ivory text-nordic-slate font-sans selection:bg-nordic-sage/15 selection:text-nordic-sage min-h-screen flex flex-col justify-between">
+<!-- TOP HEADER & QUIET STATUS -->
+<header class="w-full pt-safe px-6 pt-5 pb-3 bg-nordic-ivory/80 backdrop-blur-md sticky top-0 z-30 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-nordic-mist text-[11px] font-medium tracking-wide text-nordic-muted border border-nordic-soft/20">
+<span class="w-1.5 h-1.5 rounded-full bg-nordic-sage animate-pulse"></span>
+          14 Rabiul Awwal 1446 H
+        </span>
+</div>
+<!-- User Avatar & Quiet Notification Counter -->
+<div class="relative flex items-center gap-3">
+<button aria-label="Notifikasi tenang" class="w-9 h-9 rounded-full bg-nordic-mist/80 border border-nordic-soft/25 flex items-center justify-center text-nordic-muted hover:text-nordic-slate transition">
+<span class="material-symbols-outlined text-[19px]">notifications_none</span>
+</button>
+<div class="relative">
+<div class="w-10 h-10 rounded-full overflow-hidden p-0.5 bg-nordic-sage-soft border border-nordic-sage-light/40 shadow-xs">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close up warm portrait of an approachable Indonesian Muslim father smiling gently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATYdxE5c_PLPvonWeWf_YBSXKwMqJxQhMQJJAiXUc0FEgmClA6G6GIdOZx-h1fGLmZHXav_Q_WXFtMexe0-YFeGg4Ggz3xpLaE92r5Qf_J9rasJfU9urW0s9u5poOp1xPdJWMkoQfjrQGFmDkfz4UBaIK7aTHqeIKcvgCAIIx9LC0l4tHyzzZGBGWz8DUWHhFYdU-Z5R4gGQMlS-WheMGbnhFKiub8VIWAPb1NLh2MjgWLgNmJnOquZQ"/>
+</div>
+<span class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-nordic-sage text-white text-[9px] font-semibold flex items-center justify-center shadow-xs">
+            3
+          </span>
+</div>
+</div>
+</div>
+<!-- Salutation & Gentle Nordic Tagline -->
+<div class="mt-4">
+<p class="text-[13px] font-normal tracking-wider text-nordic-muted uppercase">Sapaan Pagi</p>
+<h1 class="font-serif text-3xl font-medium tracking-tight text-nordic-slate mt-0.5">
+        Assalamu’alaykum, <span class="italic font-normal">Abu Hafi</span>
+</h1>
+<!-- Golden / Clay Italic Ribbon -->
+<div class="mt-3 py-2 px-3.5 rounded-lg bg-nordic-clay-light border border-nordic-clay/20 flex items-center gap-2.5">
+<span class="material-symbols-outlined text-nordic-clay text-[18px] shrink-0">spa</span>
+<p class="font-serif italic text-xs leading-relaxed text-nordic-slate/85">
+          “Koneksi Sebelum Koreksi” — Menjaga fitrah mendahului aturan.
+        </p>
+</div>
+</div>
+</header>
+<!-- MAIN EDITORIAL CONTENT -->
+<main class="flex-1 w-full px-6 py-4 space-y-7 pb-32">
+<!-- 1. RUANG SAKINAH AUDIO COMPANION -->
+<section class="w-full">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#EBF2EC] via-[#F3ECE5] to-[#FBF9F5] p-5 border border-nordic-sage-light/30 shadow-[0_4px_24px_rgba(30,38,33,0.03)]">
+<!-- Subtle Nordic Watermark Accent -->
+<div class="absolute -right-6 -bottom-8 w-32 h-32 rounded-full bg-nordic-sage/5 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-3.5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/70 backdrop-blur-sm border border-nordic-sage-light/30 text-[11px] font-medium text-nordic-sage">
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+            Audio Pendamping • 7 Menit
+          </div>
+<span class="text-[11px] font-medium text-nordic-soft tracking-wide">Sesi Senja</span>
+</div>
+<div class="pr-2">
+<h2 class="font-serif text-lg font-medium text-nordic-slate leading-snug">
+            Ruang Batin Ayah: Menetralisir Lelah Kerja Sebelum Membuka Pintu Rumah
+          </h2>
+<p class="text-xs text-nordic-muted mt-1.5 font-light leading-relaxed">
+            Napas sadar dan dzikir tenang untuk meletakkan beban kantor sebelum merengkuh ananda.
+          </p>
+</div>
+<!-- Ambient Waveform & Minimal Play Control -->
+<div class="mt-5 pt-3 border-t border-nordic-sage-light/20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-1 flex-1 h-7">
+<span class="w-1 h-3 rounded-full bg-nordic-sage/40"></span>
+<span class="w-1 h-5 rounded-full bg-nordic-sage/60"></span>
+<span class="w-1 h-7 rounded-full bg-nordic-sage"></span>
+<span class="w-1 h-4 rounded-full bg-nordic-sage/70"></span>
+<span class="w-1 h-2 rounded-full bg-nordic-sage/30"></span>
+<span class="w-1 h-5 rounded-full bg-nordic-sage/80"></span>
+<span class="w-1 h-6 rounded-full bg-nordic-sage"></span>
+<span class="w-1 h-3 rounded-full bg-nordic-sage/50"></span>
+<span class="w-1 h-5 rounded-full bg-nordic-sage/75"></span>
+<span class="w-1 h-2.5 rounded-full bg-nordic-sage/40"></span>
+<span class="w-1 h-4 rounded-full bg-nordic-sage/60"></span>
+<span class="w-1 h-6 rounded-full bg-nordic-sage/90"></span>
+<span class="w-1 h-3 rounded-full bg-nordic-sage/30"></span>
+<span class="w-1 h-1.5 rounded-full bg-nordic-sage/20"></span>
+</div>
+<button aria-label="Putar Ruang Sakinah" class="w-11 h-11 rounded-full bg-nordic-sage text-white flex items-center justify-center hover:opacity-90 active:scale-95 transition-all shadow-md shrink-0">
+<span class="material-symbols-outlined text-[22px] ml-0.5">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. IKHTIAR JIWA HARI INI (Solitary Unrushed Reflection) -->
+<section class="w-full">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-xs uppercase font-medium tracking-widest text-nordic-soft">Ikhtiar Jiwa Hari Ini</h3>
+<span class="text-[11px] text-nordic-sage font-medium tracking-wide">Refleksi Santun</span>
+</div>
+<div class="rounded-2xl bg-white p-6 border border-nordic-mist shadow-[0_2px_16px_rgba(30,38,33,0.02)]">
+<div class="w-8 h-8 rounded-full bg-nordic-clay-light text-nordic-clay flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<blockquote class="font-serif text-lg leading-relaxed text-nordic-slate font-normal">
+          “Hari ini, dengarkan keluh kesah pasangan dan anak selama 10 menit tanpa memberi solusi terburu-buru.”
+        </blockquote>
+<div class="mt-4 pt-3 border-t border-nordic-mist flex items-center justify-between text-xs text-nordic-muted">
+<span class="font-light italic text-nordic-soft font-serif">Pilar: Fitrah Kasih Sayang &amp; Emosi</span>
+<button class="inline-flex items-center gap-1 font-medium text-nordic-sage hover:underline">
+            Tandai Selesai <span class="material-symbols-outlined text-[15px]">done</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. SERIAL ZAID — LEMBAR KISAH THUMA'NINAH -->
+<section class="w-full">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-xs uppercase font-medium tracking-widest text-nordic-soft">Serial Zaid — Kisah Thuma'ninah</h3>
+<span class="text-[11px] text-nordic-muted font-normal">Bab 3 • 60%</span>
+</div>
+<div class="rounded-2xl bg-white overflow-hidden border border-nordic-mist shadow-[0_2px_20px_rgba(30,38,33,0.03)]">
+<!-- Artistic Wide View -->
+<div class="relative w-full aspect-[21/9] bg-nordic-mist overflow-hidden">
+<img class="w-full h-full object-cover filter saturate-[0.85] contrast-[0.95]" data-alt="A father and young son reading together peacefully beside a sunlit courtyard fountain with lush palm fronds and stone masonry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGXdc1elsOdW8HkNqNIHtsVO0Y16GPpXfQuhX2vKP7sKlJY4-omahQyabzby_YGtFwC3igCt_cB7qBQWGEjv6vc-hmuYOMhryo4P-1Qi5x3DKF_4pCQ8ZhrEJ0ZnndrvgvEuODwdIP5yUSRaJ5DUmDfKBjaLVNzUl0ZS5oIYkCc6qPAUsConU1J5I-z6f6l_JcmO193b9pF8jVfTn3l7fAIqtEt61H34S-K_L2-LHyFOZdGS-3e2JxUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-nordic-slate/60 via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3.5 text-white/95 text-[11px] font-light tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+            Diceritakan untuk Ayah &amp; Bunda
+          </span>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-nordic-sage-soft text-nordic-sage text-[10px] font-medium tracking-wide">
+              Episode 3
+            </span>
+<span class="text-[11px] text-nordic-soft">Saat Petang &amp; Menjelang Maghrib</span>
+</div>
+<h4 class="font-serif text-base font-semibold text-nordic-slate leading-snug">
+            Kisah Zaid: Menemukan Tenang Tanpa Teriakan di Akhir Hari
+          </h4>
+<!-- Delicate quote from Rasulullah ﷺ -->
+<div class="mt-3 pl-3 py-1 border-l-2 border-nordic-sage-light text-xs text-nordic-muted font-serif italic leading-relaxed">
+            “Sesungguhnya kelembutan tidaklah berada pada sesuatu melainkan ia akan menghiasinya...” 
+            <span class="not-italic font-sans text-[10px] text-nordic-soft block mt-0.5">(HR. Muslim)</span>
+</div>
+<!-- Progress track -->
+<div class="mt-4">
+<div class="flex items-center justify-between text-[11px] text-nordic-soft mb-1.5 font-light">
+<span>Kelanjutan Alur</span>
+<span>Ep. 3 dari 5 Selesai</span>
+</div>
+<div class="w-full h-1 bg-nordic-mist rounded-full overflow-hidden">
+<div class="w-[60%] h-full bg-nordic-sage rounded-full"></div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between gap-3">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-nordic-slate text-white text-xs font-medium tracking-wide hover:bg-nordic-slate/90 active:scale-[0.98] transition">
+              Buka Kisah Zaid
+            </button>
+<button aria-label="Simpan Lembaran" class="w-10 h-10 rounded-xl border border-nordic-mist bg-nordic-ivory text-nordic-muted flex items-center justify-center hover:text-nordic-slate transition">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. DUA JALUR KEHENINGAN -->
+<section class="w-full space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xs uppercase font-medium tracking-widest text-nordic-soft">Dua Jalur Keheningan</h3>
+</div>
+<!-- Jalur 1: AI Teman Curhat -->
+<a class="group w-full p-4 rounded-2xl bg-white border border-nordic-mist hover:border-nordic-sage/30 flex items-center justify-between transition-all shadow-xs" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-full bg-nordic-mist text-nordic-sage flex items-center justify-center group-hover:bg-nordic-sage group-hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</div>
+<div>
+<h4 class="font-serif text-[15px] font-medium text-nordic-slate">Teman Curhat AI</h4>
+<p class="text-xs text-nordic-soft font-light">On-Device &amp; Privat, tanpa penghakiman</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-nordic-soft group-hover:translate-x-0.5 group-hover:text-nordic-sage transition-all text-[20px]">
+          arrow_forward
+        </span>
+</a>
+<!-- Jalur 2: Pustaka Penyejuk Adab -->
+<a class="group w-full p-4 rounded-2xl bg-white border border-nordic-mist hover:border-nordic-clay/30 flex items-center justify-between transition-all shadow-xs" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-full bg-nordic-clay-light text-nordic-clay flex items-center justify-center group-hover:bg-nordic-clay group-hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_library</span>
+</div>
+<div>
+<h4 class="font-serif text-[15px] font-medium text-nordic-slate">Pustaka Penyejuk Adab</h4>
+<p class="text-xs text-nordic-soft font-light">Glosarium Syakilah &amp; Rujukan Nabawi</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-nordic-soft group-hover:translate-x-0.5 group-hover:text-nordic-clay transition-all text-[20px]">
+          arrow_forward
+        </span>
+</a>
+</section>
+</main>
+<!-- ULTRA-REFINED FLOATING DOCK BOTTOM NAVIGATION -->
+<nav class="fixed bottom-5 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] max-w-sm z-50">
+<div class="bg-white/90 backdrop-blur-xl border border-nordic-mist/80 rounded-full px-4 py-2.5 shadow-[0_8px_32px_rgba(30,38,33,0.08)] flex items-center justify-between">
+<!-- Home (Active) -->
+<a aria-label="Beranda" class="relative flex flex-col items-center justify-center w-12 h-10 text-nordic-sage" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="w-1 h-1 rounded-full bg-nordic-sage mt-0.5"></span>
+</a>
+<!-- Events / Agenda -->
+<a aria-label="Agenda Acara" class="flex flex-col items-center justify-center w-12 h-10 text-nordic-soft hover:text-nordic-slate transition" href="#">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</a>
+<!-- Audio / Ruang Batin Central Button -->
+<a aria-label="Ruang Batin Sakinah" class="relative -top-2 flex items-center justify-center w-11 h-11 rounded-full bg-nordic-sage text-white shadow-md active:scale-95 transition" href="#">
+<span class="material-symbols-outlined text-[22px]">graphic_eq</span>
+</a>
+<!-- Wiki / Khazanah -->
+<a aria-label="Khazanah Fitrah" class="flex flex-col items-center justify-center w-12 h-10 text-nordic-soft hover:text-nordic-slate transition" href="#">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+</a>
+<!-- Profile -->
+<a aria-label="Profil Abu Hafi" class="flex flex-col items-center justify-center w-12 h-10 text-nordic-soft hover:text-nordic-slate transition" href="#">
+<span class="material-symbols-outlined text-[22px]">person_outline</span>
+</a>
+</div>
+</nav>
+</body></html>

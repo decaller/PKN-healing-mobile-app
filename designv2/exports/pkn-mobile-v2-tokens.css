@@ -1,0 +1,88 @@
+:root {
+  --color-bg-canvas: #FDFBF7;
+  --color-bg-surface-card: #FFFFFF;
+  --color-bg-surface-subtle: #F7F2E7;
+  --color-bg-dock-frosted: #FFFFFF;
+  --color-text-primary: #1C1C17;
+  --color-text-secondary: #52524E;
+  --color-text-muted: #8E8E88;
+  --color-border-subtle: #EEE5D1;
+  --color-brand-pine-primary: #006D30;
+  --color-brand-pine-tint: #EDF9F0;
+  --color-crisis-terracotta: #C05621;
+  --color-crisis-red-urgent: #DC2626;
+  --color-accent-amber-gold: #D97706;
+  --radius-card-sm: 12px;
+  --radius-card-md: 16px;
+  --radius-card-lg: 24px;
+  --radius-sheet-xl: 32px;
+  --radius-device: 44px;
+  --spacing-page-padding: 20px;
+  --spacing-section-gap: 20px;
+  --spacing-card-gap: 12px;
+  --color-bg-canvas-2: #FDFBF7;
+  --color-bg-surface-card-2: #FFFFFF;
+  --color-bg-surface-subtle-2: #F7F2E7;
+  --color-bg-dock-frosted-2: #FFFFFF;
+  --color-text-primary-2: #1C1C17;
+  --color-text-secondary-2: #52524E;
+  --color-text-muted-2: #8E8E88;
+  --color-border-subtle-2: #EEE5D1;
+  --color-brand-pine-50: #EDF9F0;
+  --color-brand-pine-500: #1B8A43;
+  --color-brand-pine-600: #006D30;
+  --color-brand-pine-700: #005826;
+  --color-crisis-terracotta-500: #C05621;
+  --color-crisis-terracotta-600: #9C4114;
+  --color-crisis-red-600: #DC2626;
+  --color-accent-amber-300: #FCD34D;
+  --color-accent-amber-500: #D97706;
+  --color-accent-amber-600: #B45309;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-sheet: 32px;
+  --radius-device-2: 44px;
+  --spacing-page-padding-2: 20px;
+  --spacing-card-gap-2: 12px;
+  --spacing-section-gap-2: 16px;
+}
+
+/* Earth-Tree Theme: Dark (Tahajjud) */
+[data-earth-tree-theme="dark-tahajjud"] {
+  --color-bg-canvas: #12120E;
+  --color-bg-surface-card: #1C1C17;
+  --color-bg-surface-subtle: #2B2B28;
+  --color-bg-dock-frosted: #1C1C17;
+  --color-text-primary: #FDFBF7;
+  --color-text-secondary: #E1D2B3;
+  --color-text-muted: #CFB990;
+  --color-border-subtle: #2B2B28;
+  --color-brand-pine-primary: #1B8A43;
+  --color-brand-pine-tint: #052412;
+  --color-crisis-terracotta: #9C4114;
+  --color-crisis-red-urgent: #EF4444;
+  --color-accent-amber-gold: #FBBF24;
+}
+
+/* Earth-Tree Theme: Dark (Tahajjud) */
+[data-earth-tree-theme="dark-tahajjud"] {
+  --color-bg-canvas-2: #12120E;
+  --color-bg-surface-card-2: #1C1C17;
+  --color-bg-surface-subtle-2: #2B2B28;
+  --color-bg-dock-frosted-2: #1C1C17;
+  --color-text-primary-2: #FDFBF7;
+  --color-text-secondary-2: #E1D2B3;
+  --color-text-muted-2: #CFB990;
+  --color-border-subtle-2: #2B2B28;
+  --color-brand-pine-50: #052412;
+  --color-brand-pine-500: #3FB363;
+  --color-brand-pine-600: #1B8A43;
+  --color-brand-pine-700: #006D30;
+  --color-crisis-terracotta-500: #E07A47;
+  --color-crisis-terracotta-600: #C05621;
+  --color-crisis-red-600: #EF4444;
+  --color-accent-amber-300: #FBBF24;
+  --color-accent-amber-500: #F59E0B;
+  --color-accent-amber-600: #D97706;
+}

@@ -85,17 +85,29 @@ class _ModeRenunganScreenState extends State<ModeRenunganScreen> {
       backgroundColor: const Color(0xFF0F1E19),
       body: Stack(
         children: [
+          // Ambient Forest Background Layer
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.38,
+              child: Image.network(
+                'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80',
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+              ),
+            ),
+          ),
+
           // Background Gradient & Ambient Glow
           Positioned.fill(
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xFF0D1B15),
-                    Color(0xFF132A20),
-                    Color(0xFF0B1612),
+                    const Color(0xFF0D1B15).withValues(alpha: 0.75),
+                    const Color(0xFF132A20).withValues(alpha: 0.85),
+                    const Color(0xFF0B1612).withValues(alpha: 0.92),
                   ],
                 ),
               ),
@@ -402,16 +414,6 @@ class _ModeRenunganScreenState extends State<ModeRenunganScreen> {
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xFF94A3B8).withValues(alpha: 0.9),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        "Tarik nafas perlahan... tahan 4 hitungan... hembuskan dengan istighfar.",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontStyle: FontStyle.italic,
-                          color: const Color(0xFF79DB8D).withValues(alpha: 0.9),
                         ),
                       ),
                     ],
